@@ -10,15 +10,20 @@ options {
   import java.util.Map;
   import java.util.HashMap;
   import com.pixelmaid.dresscode.antlr.types.*;
+  import com.pixelmaid.dresscode.antlr.types.tree.*;
   
 }
 
 
 @members {
-
+public JogoTree(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns) { 
+    super(nds); 
+    currentScope = sc; 
+    functions = fns; 
+  } 
 }
 
-program  returns [int result]
+program  returns [DCNode node]
 	: ^(PROGRAM atom* function*){ result = 1; }
 	;
 

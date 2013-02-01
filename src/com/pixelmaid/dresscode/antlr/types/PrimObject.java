@@ -1,6 +1,6 @@
 package com.pixelmaid.dresscode.antlr.types;
 
-public class PrimObject {
+public class PrimObject extends Object {
 	public Object result;
 	public int primType;
 	

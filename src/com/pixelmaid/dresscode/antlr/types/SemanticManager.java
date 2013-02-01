@@ -2,15 +2,17 @@ package com.pixelmaid.dresscode.antlr.types;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+
+import org.antlr.runtime.tree.CommonTree;
 
 public class SemanticManager { //data object to store variable declarations
 
-    public static HashMap<String, FunctionType> functions = new HashMap<String, FunctionType>(); //set for storing top level functions
-    public static HashMap<String, VarType> variables = new HashMap<String, VarType>(); //set for storing global variables
-    public static HashMap<String, ArrayType> arrays = new HashMap<String, ArrayType>();// set for storing global arrays
+    public static Map<String, FunctionType> functions = new HashMap<String, FunctionType>(); //set for storing top level functions
+    public static Map<String, VarType> variables = null; //set for storing global variables
     
-    public static ArrayList<FunctionType> scopes = new ArrayList<FunctionType>(); //variable to store scope of current lookup. Must be reset each function call.
-	
+    public static Scope currentScope = null; 
+    
 	public final static int INTNUM = 0;
 	public final static int FLOATNUM = 1;
 	public final static int STRINGNUM = 2;
@@ -18,22 +20,39 @@ public class SemanticManager { //data object to store variable declarations
 	public final static int ARRAYNUM = 4;
 
 	
+	//function methods
+	//function definition
+	public static boolean defineFunction(String id, Object idList, Object block){
+		boolean set = false;
+		 // `idList` is possibly null!  Create an empty tree in that case.  
+	    CommonTree idListTree = idList == null ? new CommonTree() : (CommonTree)idList; 
+	 
+	    // `block` is never null 
+	    CommonTree blockTree = (CommonTree)block; 
+	 
+	    // The function name with the number of parameters after it, is the unique key 
+	    String key = id + idListTree.getChildCount(); 
+	    functions.put(key, new FunctionType(id, idListTree, blockTree)); 
+		return set;
+		
+	}
+	
 	//Hash Set get methods
 	
 	//variable set method
 	
-	public static boolean setPrimVar(String id, PrimObject val){
+	public static boolean setPrimVar(String id, Object val){
 		boolean set = false;
 		if(!variables.containsKey(id)){
 			System.err.println("variable not yet defined at line");
 		}
 		else{
-			VarType var = variables.get(id);
+		/*VarType var = variables.get(id);
 			int prevType = var.type;
 			String prevVal = var.val;
 			var.type=val.getType();
 			var.val=val.getResult().toString();
-			System.out.println("set variable "+ id +" of type "+ prevType+ " =" + prevVal+" to " + val.getResult()+" of type " + var.type);
+			//System.out.println("set variable "+ id +" of type "+ prevType+ " =" + prevVal+" to " + val.getResult()+" of type " + var.type);*/
 			
 		
 			set = true;
@@ -43,7 +62,7 @@ public class SemanticManager { //data object to store variable declarations
 	}
 	
 	//variable access method
-	public static PrimObject getPrimVar(String id){
+	/*public static PrimObject getPrimVar(String id){
 		PrimObject pf;
 		if(variables.containsKey(id)){
 		
@@ -100,7 +119,7 @@ public class SemanticManager { //data object to store variable declarations
 		}
 		return set;
 	}
-	
+	*/
 	
 	//function for handling negation
 	public static PrimObject negation(PrimObject p){

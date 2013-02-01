@@ -1,9 +1,10 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g 2013-01-30 17:12:45
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g 2013-01-31 17:30:02
 
   package com.pixelmaid.dresscode.antlr;
   import java.util.Map;
   import java.util.HashMap;
   import com.pixelmaid.dresscode.antlr.types.*;
+  import com.pixelmaid.dresscode.antlr.types.tree.*;
   
 
 
@@ -126,24 +127,28 @@ public class JogoTree extends TreeParser {
 	@Override public String getGrammarFileName() { return "/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g"; }
 
 
-
+	public JogoTree(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns) { 
+	    super(nds); 
+	    currentScope = sc; 
+	    functions = fns; 
+	  } 
 
 
 
 	// $ANTLR start "program"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:21:1: program returns [int result] : ^( PROGRAM ( atom )* ( function )* ) ;
-	public final int program() throws RecognitionException {
-		int result = 0;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:26:1: program returns [DCNode node] : ^( PROGRAM ( atom )* ( function )* ) ;
+	public final DCNode program() throws RecognitionException {
+		DCNode node = null;
 
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:22:2: ( ^( PROGRAM ( atom )* ( function )* ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:22:4: ^( PROGRAM ( atom )* ( function )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:27:2: ( ^( PROGRAM ( atom )* ( function )* ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:27:4: ^( PROGRAM ( atom )* ( function )* )
 			{
 			match(input,PROGRAM,FOLLOW_PROGRAM_in_program63); 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:22:14: ( atom )*
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:27:14: ( atom )*
 				loop1:
 				while (true) {
 					int alt1=2;
@@ -154,7 +159,7 @@ public class JogoTree extends TreeParser {
 
 					switch (alt1) {
 					case 1 :
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:22:14: atom
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:27:14: atom
 						{
 						pushFollow(FOLLOW_atom_in_program65);
 						atom();
@@ -168,7 +173,7 @@ public class JogoTree extends TreeParser {
 					}
 				}
 
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:22:20: ( function )*
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:27:20: ( function )*
 				loop2:
 				while (true) {
 					int alt2=2;
@@ -179,7 +184,7 @@ public class JogoTree extends TreeParser {
 
 					switch (alt2) {
 					case 1 :
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:22:20: function
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:27:20: function
 						{
 						pushFollow(FOLLOW_function_in_program68);
 						function();
@@ -207,20 +212,20 @@ public class JogoTree extends TreeParser {
 		finally {
 			// do for sure before leaving
 		}
-		return result;
+		return node;
 	}
 	// $ANTLR end "program"
 
 
 
 	// $ANTLR start "atom"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:25:1: atom : ( variable | statement | typeDecl ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:30:1: atom : ( variable | statement | typeDecl ) ;
 	public final void atom() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:26:2: ( ( variable | statement | typeDecl ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:26:4: ( variable | statement | typeDecl )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:31:2: ( ( variable | statement | typeDecl ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:31:4: ( variable | statement | typeDecl )
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:26:4: ( variable | statement | typeDecl )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:31:4: ( variable | statement | typeDecl )
 			int alt3=3;
 			switch ( input.LA(1) ) {
 			case VAR_DECL:
@@ -249,7 +254,7 @@ public class JogoTree extends TreeParser {
 			}
 			switch (alt3) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:26:5: variable
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:31:5: variable
 					{
 					pushFollow(FOLLOW_variable_in_atom84);
 					variable();
@@ -258,7 +263,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:27:4: statement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:32:4: statement
 					{
 					pushFollow(FOLLOW_statement_in_atom90);
 					statement();
@@ -267,7 +272,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:28:4: typeDecl
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:33:4: typeDecl
 					{
 					pushFollow(FOLLOW_typeDecl_in_atom96);
 					typeDecl();
@@ -294,18 +299,18 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "function"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:31:1: function : ^( FUNC_DECL IDENT ( atom )* ( parameters[$IDENT.text] )? ( returnStatement )* ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:36:1: function : ^( FUNC_DECL IDENT ( atom )* ( parameters[$IDENT.text] )? ( returnStatement )* ) ;
 	public final void function() throws RecognitionException {
 		CommonTree IDENT1=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:32:2: ( ^( FUNC_DECL IDENT ( atom )* ( parameters[$IDENT.text] )? ( returnStatement )* ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:32:5: ^( FUNC_DECL IDENT ( atom )* ( parameters[$IDENT.text] )? ( returnStatement )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:37:2: ( ^( FUNC_DECL IDENT ( atom )* ( parameters[$IDENT.text] )? ( returnStatement )* ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:37:5: ^( FUNC_DECL IDENT ( atom )* ( parameters[$IDENT.text] )? ( returnStatement )* )
 			{
 			match(input,FUNC_DECL,FOLLOW_FUNC_DECL_in_function111); 
 			match(input, Token.DOWN, null); 
 			IDENT1=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_function113); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:32:23: ( atom )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:37:23: ( atom )*
 			loop4:
 			while (true) {
 				int alt4=2;
@@ -323,7 +328,7 @@ public class JogoTree extends TreeParser {
 
 				switch (alt4) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:32:24: atom
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:37:24: atom
 					{
 					pushFollow(FOLLOW_atom_in_function116);
 					atom();
@@ -337,7 +342,7 @@ public class JogoTree extends TreeParser {
 				}
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:32:31: ( parameters[$IDENT.text] )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:37:31: ( parameters[$IDENT.text] )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0==IDENT||LA5_0==57||LA5_0==65||(LA5_0 >= 68 && LA5_0 <= 69)||LA5_0==75) ) {
@@ -345,7 +350,7 @@ public class JogoTree extends TreeParser {
 			}
 			switch (alt5) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:32:31: parameters[$IDENT.text]
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:37:31: parameters[$IDENT.text]
 					{
 					pushFollow(FOLLOW_parameters_in_function120);
 					parameters((IDENT1!=null?IDENT1.getText():null));
@@ -356,7 +361,7 @@ public class JogoTree extends TreeParser {
 
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:32:56: ( returnStatement )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:37:56: ( returnStatement )*
 			loop6:
 			while (true) {
 				int alt6=2;
@@ -367,7 +372,7 @@ public class JogoTree extends TreeParser {
 
 				switch (alt6) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:32:57: returnStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:37:57: returnStatement
 					{
 					pushFollow(FOLLOW_returnStatement_in_function125);
 					returnStatement();
@@ -405,17 +410,17 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "parameters"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:41:1: parameters[String funcName] : parameter[funcName] ( ',' parameter[funcName] )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:46:1: parameters[String funcName] : parameter[funcName] ( ',' parameter[funcName] )* ;
 	public final void parameters(String funcName) throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:42:2: ( parameter[funcName] ( ',' parameter[funcName] )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:42:4: parameter[funcName] ( ',' parameter[funcName] )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:47:2: ( parameter[funcName] ( ',' parameter[funcName] )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:47:4: parameter[funcName] ( ',' parameter[funcName] )*
 			{
 			pushFollow(FOLLOW_parameter_in_parameters144);
 			parameter(funcName);
 			state._fsp--;
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:42:24: ( ',' parameter[funcName] )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:47:24: ( ',' parameter[funcName] )*
 			loop7:
 			while (true) {
 				int alt7=2;
@@ -426,7 +431,7 @@ public class JogoTree extends TreeParser {
 
 				switch (alt7) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:42:25: ',' parameter[funcName]
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:47:25: ',' parameter[funcName]
 					{
 					match(input,43,FOLLOW_43_in_parameters148); 
 					pushFollow(FOLLOW_parameter_in_parameters150);
@@ -457,13 +462,13 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "parameter"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:45:1: parameter[String funcName] : ^( type IDENT ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:50:1: parameter[String funcName] : ^( type IDENT ) ;
 	public final void parameter(String funcName) throws RecognitionException {
 		CommonTree IDENT2=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:46:2: ( ^( type IDENT ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:46:4: ^( type IDENT )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:51:2: ( ^( type IDENT ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:51:4: ^( type IDENT )
 			{
 			pushFollow(FOLLOW_type_in_parameter167);
 			type();
@@ -493,13 +498,13 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "statement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:52:1: statement returns [boolean result] : ( assignmentStatement | ifStatement | loopStatement | whileStatement | functionCallStatement );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:57:1: statement returns [boolean result] : ( assignmentStatement | ifStatement | loopStatement | whileStatement | functionCallStatement );
 	public final boolean statement() throws RecognitionException {
 		boolean result = false;
 
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:53:2: ( assignmentStatement | ifStatement | loopStatement | whileStatement | functionCallStatement )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:58:2: ( assignmentStatement | ifStatement | loopStatement | whileStatement | functionCallStatement )
 			int alt8=5;
 			switch ( input.LA(1) ) {
 			case 50:
@@ -534,7 +539,7 @@ public class JogoTree extends TreeParser {
 			}
 			switch (alt8) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:53:4: assignmentStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:58:4: assignmentStatement
 					{
 					pushFollow(FOLLOW_assignmentStatement_in_statement188);
 					assignmentStatement();
@@ -543,7 +548,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:54:4: ifStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:59:4: ifStatement
 					{
 					pushFollow(FOLLOW_ifStatement_in_statement193);
 					ifStatement();
@@ -552,7 +557,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:55:4: loopStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:60:4: loopStatement
 					{
 					pushFollow(FOLLOW_loopStatement_in_statement198);
 					loopStatement();
@@ -561,7 +566,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:56:4: whileStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:61:4: whileStatement
 					{
 					pushFollow(FOLLOW_whileStatement_in_statement203);
 					whileStatement();
@@ -570,7 +575,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:57:4: functionCallStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:62:4: functionCallStatement
 					{
 					pushFollow(FOLLOW_functionCallStatement_in_statement208);
 					functionCallStatement();
@@ -595,19 +600,19 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "functionCallStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:61:1: functionCallStatement : ^( FUNC_CALL IDENT ( actualParameters )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:66:1: functionCallStatement : ^( FUNC_CALL IDENT ( actualParameters )? ) ;
 	public final void functionCallStatement() throws RecognitionException {
 
 			//scopes.add(scopes.size()-1,FUNC_
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:65:2: ( ^( FUNC_CALL IDENT ( actualParameters )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:65:4: ^( FUNC_CALL IDENT ( actualParameters )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:70:2: ( ^( FUNC_CALL IDENT ( actualParameters )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:70:4: ^( FUNC_CALL IDENT ( actualParameters )? )
 			{
 			match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCallStatement226); 
 			match(input, Token.DOWN, null); 
 			match(input,IDENT,FOLLOW_IDENT_in_functionCallStatement228); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:65:22: ( actualParameters )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:70:22: ( actualParameters )?
 			int alt9=2;
 			int LA9_0 = input.LA(1);
 			if ( (LA9_0==BOOLEAN||(LA9_0 >= FLOATLITERAL && LA9_0 <= FUNC_CALL)||LA9_0==IDENT||LA9_0==INTLITERAL||LA9_0==NEGATION||(LA9_0 >= POSTDECREMENT && LA9_0 <= POSTINCREMENT)||LA9_0==STRINGLITERAL||(LA9_0 >= 36 && LA9_0 <= 37)||(LA9_0 >= 40 && LA9_0 <= 41)||LA9_0==44||LA9_0==46||(LA9_0 >= 48 && LA9_0 <= 49)||(LA9_0 >= 51 && LA9_0 <= 53)||LA9_0==56||LA9_0==72) ) {
@@ -615,7 +620,7 @@ public class JogoTree extends TreeParser {
 			}
 			switch (alt9) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:65:22: actualParameters
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:70:22: actualParameters
 					{
 					pushFollow(FOLLOW_actualParameters_in_functionCallStatement230);
 					actualParameters();
@@ -647,17 +652,17 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "actualParameters"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:73:1: actualParameters : actualParameter ( ',' actualParameter )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:78:1: actualParameters : actualParameter ( ',' actualParameter )* ;
 	public final void actualParameters() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:74:2: ( actualParameter ( ',' actualParameter )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:74:5: actualParameter ( ',' actualParameter )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:79:2: ( actualParameter ( ',' actualParameter )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:79:5: actualParameter ( ',' actualParameter )*
 			{
 			pushFollow(FOLLOW_actualParameter_in_actualParameters253);
 			actualParameter();
 			state._fsp--;
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:74:21: ( ',' actualParameter )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:79:21: ( ',' actualParameter )*
 			loop10:
 			while (true) {
 				int alt10=2;
@@ -668,7 +673,7 @@ public class JogoTree extends TreeParser {
 
 				switch (alt10) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:74:22: ',' actualParameter
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:79:22: ',' actualParameter
 					{
 					match(input,43,FOLLOW_43_in_actualParameters256); 
 					pushFollow(FOLLOW_actualParameter_in_actualParameters258);
@@ -699,14 +704,14 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "actualParameter"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:77:1: actualParameter : ( expression ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:82:1: actualParameter : ( expression ) ;
 	public final void actualParameter() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:78:2: ( ( expression ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:78:4: ( expression )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:83:2: ( ( expression ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:83:4: ( expression )
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:78:4: ( expression )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:78:5: expression
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:83:4: ( expression )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:83:5: expression
 			{
 			pushFollow(FOLLOW_expression_in_actualParameter273);
 			expression();
@@ -730,11 +735,11 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "returnStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:81:1: returnStatement : 'return' expression ';' ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:86:1: returnStatement : 'return' expression ';' ;
 	public final void returnStatement() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:82:2: ( 'return' expression ';' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:82:3: 'return' expression ';'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:87:2: ( 'return' expression ';' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:87:3: 'return' expression ';'
 			{
 			match(input,74,FOLLOW_74_in_returnStatement285); 
 			pushFollow(FOLLOW_expression_in_returnStatement287);
@@ -758,7 +763,7 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "ifStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:85:1: ifStatement returns [boolean result] : ^( IF_STATEMENT e1= expression {...}? => (s1= statement )* ( ELSEIF_STATEMENT e2= expression (s2= statement )* )* ( ELSE_STATEMENT (e3= statement )* )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:90:1: ifStatement returns [boolean result] : ^( IF_STATEMENT e1= expression {...}? => (s1= statement )* ( ELSEIF_STATEMENT e2= expression (s2= statement )* )* ( ELSE_STATEMENT (e3= statement )* )? ) ;
 	public final boolean ifStatement() throws RecognitionException {
 		boolean result = false;
 
@@ -773,8 +778,8 @@ public class JogoTree extends TreeParser {
 		System.out.println("found if statement");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:2: ( ^( IF_STATEMENT e1= expression {...}? => (s1= statement )* ( ELSEIF_STATEMENT e2= expression (s2= statement )* )* ( ELSE_STATEMENT (e3= statement )* )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:4: ^( IF_STATEMENT e1= expression {...}? => (s1= statement )* ( ELSEIF_STATEMENT e2= expression (s2= statement )* )* ( ELSE_STATEMENT (e3= statement )* )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:2: ( ^( IF_STATEMENT e1= expression {...}? => (s1= statement )* ( ELSEIF_STATEMENT e2= expression (s2= statement )* )* ( ELSE_STATEMENT (e3= statement )* )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:4: ^( IF_STATEMENT e1= expression {...}? => (s1= statement )* ( ELSEIF_STATEMENT e2= expression (s2= statement )* )* ( ELSE_STATEMENT (e3= statement )* )? )
 			{
 			match(input,IF_STATEMENT,FOLLOW_IF_STATEMENT_in_ifStatement310); 
 			match(input, Token.DOWN, null); 
@@ -785,7 +790,7 @@ public class JogoTree extends TreeParser {
 			if ( !(((Boolean)e1.result)) ) {
 				throw new FailedPredicateException(input, "ifStatement", "(Boolean)e1.result");
 			}
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:59: (s1= statement )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:59: (s1= statement )*
 			loop11:
 			while (true) {
 				int alt11=2;
@@ -796,7 +801,7 @@ public class JogoTree extends TreeParser {
 
 				switch (alt11) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:59: s1= statement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:59: s1= statement
 					{
 					pushFollow(FOLLOW_statement_in_ifStatement321);
 					s1=statement();
@@ -810,7 +815,7 @@ public class JogoTree extends TreeParser {
 				}
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:71: ( ELSEIF_STATEMENT e2= expression (s2= statement )* )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:71: ( ELSEIF_STATEMENT e2= expression (s2= statement )* )*
 			loop13:
 			while (true) {
 				int alt13=2;
@@ -821,14 +826,14 @@ public class JogoTree extends TreeParser {
 
 				switch (alt13) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:72: ELSEIF_STATEMENT e2= expression (s2= statement )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:72: ELSEIF_STATEMENT e2= expression (s2= statement )*
 					{
 					match(input,ELSEIF_STATEMENT,FOLLOW_ELSEIF_STATEMENT_in_ifStatement325); 
 					pushFollow(FOLLOW_expression_in_ifStatement329);
 					e2=expression();
 					state._fsp--;
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:105: (s2= statement )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:105: (s2= statement )*
 					loop12:
 					while (true) {
 						int alt12=2;
@@ -839,7 +844,7 @@ public class JogoTree extends TreeParser {
 
 						switch (alt12) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:105: s2= statement
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:105: s2= statement
 							{
 							pushFollow(FOLLOW_statement_in_ifStatement333);
 							s2=statement();
@@ -861,7 +866,7 @@ public class JogoTree extends TreeParser {
 				}
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:119: ( ELSE_STATEMENT (e3= statement )* )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:119: ( ELSE_STATEMENT (e3= statement )* )?
 			int alt15=2;
 			int LA15_0 = input.LA(1);
 			if ( (LA15_0==ELSE_STATEMENT) ) {
@@ -869,10 +874,10 @@ public class JogoTree extends TreeParser {
 			}
 			switch (alt15) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:120: ELSE_STATEMENT (e3= statement )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:120: ELSE_STATEMENT (e3= statement )*
 					{
 					match(input,ELSE_STATEMENT,FOLLOW_ELSE_STATEMENT_in_ifStatement339); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:137: (e3= statement )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:137: (e3= statement )*
 					loop14:
 					while (true) {
 						int alt14=2;
@@ -883,7 +888,7 @@ public class JogoTree extends TreeParser {
 
 						switch (alt14) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:89:137: e3= statement
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:94:137: e3= statement
 							{
 							pushFollow(FOLLOW_statement_in_ifStatement343);
 							e3=statement();
@@ -929,11 +934,11 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "whileStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:101:1: whileStatement : 'while' expression loopStatement ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:106:1: whileStatement : 'while' expression loopStatement ;
 	public final void whileStatement() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:102:2: ( 'while' expression loopStatement )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:102:3: 'while' expression loopStatement
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:107:2: ( 'while' expression loopStatement )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:107:3: 'while' expression loopStatement
 			{
 			match(input,79,FOLLOW_79_in_whileStatement363); 
 			pushFollow(FOLLOW_expression_in_whileStatement365);
@@ -960,14 +965,14 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "loopStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:105:1: loopStatement : 'loop' ( statement | exitStatement )* 'end' 'loop' ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:110:1: loopStatement : 'loop' ( statement | exitStatement )* 'end' 'loop' ;
 	public final void loopStatement() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:106:2: ( 'loop' ( statement | exitStatement )* 'end' 'loop' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:106:4: 'loop' ( statement | exitStatement )* 'end' 'loop'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:111:2: ( 'loop' ( statement | exitStatement )* 'end' 'loop' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:111:4: 'loop' ( statement | exitStatement )* 'end' 'loop'
 			{
 			match(input,71,FOLLOW_71_in_loopStatement379); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:106:11: ( statement | exitStatement )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:111:11: ( statement | exitStatement )*
 			loop16:
 			while (true) {
 				int alt16=3;
@@ -981,7 +986,7 @@ public class JogoTree extends TreeParser {
 
 				switch (alt16) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:106:12: statement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:111:12: statement
 					{
 					pushFollow(FOLLOW_statement_in_loopStatement382);
 					statement();
@@ -990,7 +995,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:106:22: exitStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:111:22: exitStatement
 					{
 					pushFollow(FOLLOW_exitStatement_in_loopStatement384);
 					exitStatement();
@@ -1022,11 +1027,11 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "exitStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:109:1: exitStatement : 'exit' 'when' expression ';' ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:114:1: exitStatement : 'exit' 'when' expression ';' ;
 	public final void exitStatement() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:110:2: ( 'exit' 'when' expression ';' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:110:4: 'exit' 'when' expression ';'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:115:2: ( 'exit' 'when' expression ';' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:115:4: 'exit' 'when' expression ';'
 			{
 			match(input,64,FOLLOW_64_in_exitStatement402); 
 			match(input,78,FOLLOW_78_in_exitStatement404); 
@@ -1051,7 +1056,7 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "assignmentStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:113:1: assignmentStatement returns [boolean result] : ^( '=' IDENT expression ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:118:1: assignmentStatement returns [boolean result] : ^( '=' IDENT expression ) ;
 	public final boolean assignmentStatement() throws RecognitionException {
 		boolean result = false;
 
@@ -1060,8 +1065,8 @@ public class JogoTree extends TreeParser {
 		PrimObject expression4 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:114:2: ( ^( '=' IDENT expression ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:114:4: ^( '=' IDENT expression )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:119:2: ( ^( '=' IDENT expression ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:119:4: ^( '=' IDENT expression )
 			{
 			match(input,50,FOLLOW_50_in_assignmentStatement425); 
 			match(input, Token.DOWN, null); 
@@ -1090,13 +1095,13 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "variable"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:119:1: variable : ^( VAR_DECL type variableDeclarator[$type.text] ( variableDeclarator[$type.text] )* ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:124:1: variable : ^( VAR_DECL type variableDeclarator[$type.text] ( variableDeclarator[$type.text] )* ) ;
 	public final void variable() throws RecognitionException {
 		int type5 =0;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:121:2: ( ^( VAR_DECL type variableDeclarator[$type.text] ( variableDeclarator[$type.text] )* ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:121:3: ^( VAR_DECL type variableDeclarator[$type.text] ( variableDeclarator[$type.text] )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:126:2: ( ^( VAR_DECL type variableDeclarator[$type.text] ( variableDeclarator[$type.text] )* ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:126:3: ^( VAR_DECL type variableDeclarator[$type.text] ( variableDeclarator[$type.text] )* )
 			{
 			match(input,VAR_DECL,FOLLOW_VAR_DECL_in_variable450); 
 			match(input, Token.DOWN, null); 
@@ -1108,7 +1113,7 @@ public class JogoTree extends TreeParser {
 			variableDeclarator(type5);
 			state._fsp--;
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:121:50: ( variableDeclarator[$type.text] )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:126:50: ( variableDeclarator[$type.text] )*
 			loop17:
 			while (true) {
 				int alt17=2;
@@ -1119,7 +1124,7 @@ public class JogoTree extends TreeParser {
 
 				switch (alt17) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:121:51: variableDeclarator[$type.text]
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:126:51: variableDeclarator[$type.text]
 					{
 					pushFollow(FOLLOW_variableDeclarator_in_variable458);
 					variableDeclarator(type5);
@@ -1151,14 +1156,14 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "variableDeclarator"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:124:1: variableDeclarator[int type] : ( ^( '=' IDENT expression ) | IDENT );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:129:1: variableDeclarator[int type] : ( ^( '=' IDENT expression ) | IDENT );
 	public final void variableDeclarator(int type) throws RecognitionException {
 		CommonTree IDENT6=null;
 		CommonTree IDENT8=null;
 		PrimObject expression7 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:125:5: ( ^( '=' IDENT expression ) | IDENT )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:130:5: ( ^( '=' IDENT expression ) | IDENT )
 			int alt18=2;
 			int LA18_0 = input.LA(1);
 			if ( (LA18_0==50) ) {
@@ -1176,7 +1181,7 @@ public class JogoTree extends TreeParser {
 
 			switch (alt18) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:125:8: ^( '=' IDENT expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:130:8: ^( '=' IDENT expression )
 					{
 					match(input,50,FOLLOW_50_in_variableDeclarator481); 
 					match(input, Token.DOWN, null); 
@@ -1191,7 +1196,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:126:7: IDENT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:131:7: IDENT
 					{
 					IDENT8=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_variableDeclarator496); 
 					SemanticManager.declarePrimVar(type,(IDENT8!=null?IDENT8.getText():null),null);
@@ -1213,11 +1218,11 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "typeDecl"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:130:1: typeDecl : array ';' ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:135:1: typeDecl : array ';' ;
 	public final void typeDecl() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:131:3: ( array ';' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:131:5: array ';'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:136:3: ( array ';' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:136:5: array ';'
 			{
 			pushFollow(FOLLOW_array_in_typeDecl518);
 			array();
@@ -1240,11 +1245,11 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "array"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:135:2: array : arrayType type arrayDeclarator ( ',' arrayDeclarator )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:140:2: array : arrayType type arrayDeclarator ( ',' arrayDeclarator )* ;
 	public final void array() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:136:3: ( arrayType type arrayDeclarator ( ',' arrayDeclarator )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:136:4: arrayType type arrayDeclarator ( ',' arrayDeclarator )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:141:3: ( arrayType type arrayDeclarator ( ',' arrayDeclarator )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:141:4: arrayType type arrayDeclarator ( ',' arrayDeclarator )*
 			{
 			pushFollow(FOLLOW_arrayType_in_array538);
 			arrayType();
@@ -1258,7 +1263,7 @@ public class JogoTree extends TreeParser {
 			arrayDeclarator();
 			state._fsp--;
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:139:4: ( ',' arrayDeclarator )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:144:4: ( ',' arrayDeclarator )*
 			loop19:
 			while (true) {
 				int alt19=2;
@@ -1269,7 +1274,7 @@ public class JogoTree extends TreeParser {
 
 				switch (alt19) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:139:5: ',' arrayDeclarator
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:144:5: ',' arrayDeclarator
 					{
 					match(input,43,FOLLOW_43_in_array554); 
 					pushFollow(FOLLOW_arrayDeclarator_in_array556);
@@ -1300,14 +1305,14 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "arrayDeclarator"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:143:2: arrayDeclarator : IDENT ( '=' arrayInitializer )? ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:148:2: arrayDeclarator : IDENT ( '=' arrayInitializer )? ;
 	public final void arrayDeclarator() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:144:3: ( IDENT ( '=' arrayInitializer )? )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:144:6: IDENT ( '=' arrayInitializer )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:149:3: ( IDENT ( '=' arrayInitializer )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:149:6: IDENT ( '=' arrayInitializer )?
 			{
 			match(input,IDENT,FOLLOW_IDENT_in_arrayDeclarator578); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:145:4: ( '=' arrayInitializer )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:150:4: ( '=' arrayInitializer )?
 			int alt20=2;
 			int LA20_0 = input.LA(1);
 			if ( (LA20_0==50) ) {
@@ -1315,7 +1320,7 @@ public class JogoTree extends TreeParser {
 			}
 			switch (alt20) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:145:5: '=' arrayInitializer
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:150:5: '=' arrayInitializer
 					{
 					match(input,50,FOLLOW_50_in_arrayDeclarator584); 
 					pushFollow(FOLLOW_arrayInitializer_in_arrayDeclarator586);
@@ -1343,15 +1348,15 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "arrayInitializer"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:149:2: arrayInitializer : '[' ( expression ) ( ',' ( expression ) )* ']' ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:154:2: arrayInitializer : '[' ( expression ) ( ',' ( expression ) )* ']' ;
 	public final void arrayInitializer() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:150:3: ( '[' ( expression ) ( ',' ( expression ) )* ']' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:150:4: '[' ( expression ) ( ',' ( expression ) )* ']'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:155:3: ( '[' ( expression ) ( ',' ( expression ) )* ']' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:155:4: '[' ( expression ) ( ',' ( expression ) )* ']'
 			{
 			match(input,54,FOLLOW_54_in_arrayInitializer613); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:150:7: ( expression )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:150:8: expression
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:155:7: ( expression )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:155:8: expression
 			{
 			pushFollow(FOLLOW_expression_in_arrayInitializer615);
 			expression();
@@ -1359,7 +1364,7 @@ public class JogoTree extends TreeParser {
 
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:151:9: ( ',' ( expression ) )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:156:9: ( ',' ( expression ) )*
 			loop21:
 			while (true) {
 				int alt21=2;
@@ -1370,11 +1375,11 @@ public class JogoTree extends TreeParser {
 
 				switch (alt21) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:151:10: ',' ( expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:156:10: ',' ( expression )
 					{
 					match(input,43,FOLLOW_43_in_arrayInitializer627); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:151:14: ( expression )
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:151:15: expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:156:14: ( expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:156:15: expression
 					{
 					pushFollow(FOLLOW_expression_in_arrayInitializer630);
 					expression();
@@ -1407,11 +1412,11 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "arrayCallStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:155:2: arrayCallStatement : IDENT '[' expression ']' ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:160:2: arrayCallStatement : IDENT '[' expression ']' ;
 	public final void arrayCallStatement() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:156:3: ( IDENT '[' expression ']' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:156:5: IDENT '[' expression ']'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:161:3: ( IDENT '[' expression ']' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:161:5: IDENT '[' expression ']'
 			{
 			match(input,IDENT,FOLLOW_IDENT_in_arrayCallStatement654); 
 			match(input,54,FOLLOW_54_in_arrayCallStatement656); 
@@ -1436,7 +1441,7 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "term"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:160:2: term returns [PrimObject result] : ( IDENT | INTLITERAL | FLOATLITERAL | STRINGLITERAL | BOOLEAN | functionCallStatement | arrayCallStatement );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:165:2: term returns [PrimObject result] : ( IDENT | INTLITERAL | FLOATLITERAL | STRINGLITERAL | BOOLEAN | functionCallStatement | arrayCallStatement );
 	public final PrimObject term() throws RecognitionException {
 		PrimObject result = null;
 
@@ -1451,7 +1456,7 @@ public class JogoTree extends TreeParser {
 			
 			
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:165:2: ( IDENT | INTLITERAL | FLOATLITERAL | STRINGLITERAL | BOOLEAN | functionCallStatement | arrayCallStatement )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:170:2: ( IDENT | INTLITERAL | FLOATLITERAL | STRINGLITERAL | BOOLEAN | functionCallStatement | arrayCallStatement )
 			int alt22=7;
 			switch ( input.LA(1) ) {
 			case IDENT:
@@ -1510,42 +1515,42 @@ public class JogoTree extends TreeParser {
 			}
 			switch (alt22) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:165:4: IDENT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:170:4: IDENT
 					{
 					IDENT9=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_term686); 
 					result = SemanticManager.getPrimVar((IDENT9!=null?IDENT9.getText():null));
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:166:4: INTLITERAL
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:171:4: INTLITERAL
 					{
 					INTLITERAL10=(CommonTree)match(input,INTLITERAL,FOLLOW_INTLITERAL_in_term693); 
 					result = SemanticManager.parseInt((INTLITERAL10!=null?INTLITERAL10.getText():null));
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:167:4: FLOATLITERAL
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:172:4: FLOATLITERAL
 					{
 					FLOATLITERAL11=(CommonTree)match(input,FLOATLITERAL,FOLLOW_FLOATLITERAL_in_term700); 
 					result = SemanticManager.parseFloat((FLOATLITERAL11!=null?FLOATLITERAL11.getText():null));
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:168:4: STRINGLITERAL
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:173:4: STRINGLITERAL
 					{
 					STRINGLITERAL12=(CommonTree)match(input,STRINGLITERAL,FOLLOW_STRINGLITERAL_in_term706); 
 					result = SemanticManager.parseString((STRINGLITERAL12!=null?STRINGLITERAL12.getText():null));
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:169:4: BOOLEAN
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:174:4: BOOLEAN
 					{
 					BOOLEAN13=(CommonTree)match(input,BOOLEAN,FOLLOW_BOOLEAN_in_term712); 
 					result = SemanticManager.parseBool((BOOLEAN13!=null?BOOLEAN13.getText():null));
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:170:4: functionCallStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:175:4: functionCallStatement
 					{
 					pushFollow(FOLLOW_functionCallStatement_in_term719);
 					functionCallStatement();
@@ -1554,7 +1559,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:171:4: arrayCallStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:176:4: arrayCallStatement
 					{
 					pushFollow(FOLLOW_arrayCallStatement_in_term724);
 					arrayCallStatement();
@@ -1583,7 +1588,7 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "expression"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:181:1: expression returns [PrimObject result] : ( ^( NEGATION op1= expression ) | ^( POSTINCREMENT op1= expression ) | ^( POSTDECREMENT op1= expression ) | ^( '*' op1= expression op2= expression ) | ^( '/' op1= expression op2= expression ) | ^( '%' op1= expression op2= expression ) | ^( '+' op1= expression op2= expression ) | ^( '-' op1= expression op2= expression ) | ^( '==' op1= expression op2= expression ) | ^( '!=' op1= expression op2= expression ) | ^( '<' op1= expression op2= expression ) | ^( '<=' op1= expression op2= expression ) | ^( '>' op1= expression op2= expression ) | ^( '>=' op1= expression op2= expression ) | ^( 'and' op1= expression op2= expression ) | ^( 'or' op1= expression op2= expression ) |op1= term );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:186:1: expression returns [PrimObject result] : ( ^( NEGATION op1= expression ) | ^( POSTINCREMENT op1= expression ) | ^( POSTDECREMENT op1= expression ) | ^( '*' op1= expression op2= expression ) | ^( '/' op1= expression op2= expression ) | ^( '%' op1= expression op2= expression ) | ^( '+' op1= expression op2= expression ) | ^( '-' op1= expression op2= expression ) | ^( '==' op1= expression op2= expression ) | ^( '!=' op1= expression op2= expression ) | ^( '<' op1= expression op2= expression ) | ^( '<=' op1= expression op2= expression ) | ^( '>' op1= expression op2= expression ) | ^( '>=' op1= expression op2= expression ) | ^( 'and' op1= expression op2= expression ) | ^( 'or' op1= expression op2= expression ) |op1= term );
 	public final PrimObject expression() throws RecognitionException {
 		PrimObject result = null;
 
@@ -1592,7 +1597,7 @@ public class JogoTree extends TreeParser {
 		PrimObject op2 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:183:2: ( ^( NEGATION op1= expression ) | ^( POSTINCREMENT op1= expression ) | ^( POSTDECREMENT op1= expression ) | ^( '*' op1= expression op2= expression ) | ^( '/' op1= expression op2= expression ) | ^( '%' op1= expression op2= expression ) | ^( '+' op1= expression op2= expression ) | ^( '-' op1= expression op2= expression ) | ^( '==' op1= expression op2= expression ) | ^( '!=' op1= expression op2= expression ) | ^( '<' op1= expression op2= expression ) | ^( '<=' op1= expression op2= expression ) | ^( '>' op1= expression op2= expression ) | ^( '>=' op1= expression op2= expression ) | ^( 'and' op1= expression op2= expression ) | ^( 'or' op1= expression op2= expression ) |op1= term )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:188:2: ( ^( NEGATION op1= expression ) | ^( POSTINCREMENT op1= expression ) | ^( POSTDECREMENT op1= expression ) | ^( '*' op1= expression op2= expression ) | ^( '/' op1= expression op2= expression ) | ^( '%' op1= expression op2= expression ) | ^( '+' op1= expression op2= expression ) | ^( '-' op1= expression op2= expression ) | ^( '==' op1= expression op2= expression ) | ^( '!=' op1= expression op2= expression ) | ^( '<' op1= expression op2= expression ) | ^( '<=' op1= expression op2= expression ) | ^( '>' op1= expression op2= expression ) | ^( '>=' op1= expression op2= expression ) | ^( 'and' op1= expression op2= expression ) | ^( 'or' op1= expression op2= expression ) |op1= term )
 			int alt23=17;
 			switch ( input.LA(1) ) {
 			case NEGATION:
@@ -1692,7 +1697,7 @@ public class JogoTree extends TreeParser {
 			}
 			switch (alt23) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:183:3: ^( NEGATION op1= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:188:3: ^( NEGATION op1= expression )
 					{
 					match(input,NEGATION,FOLLOW_NEGATION_in_expression752); 
 					match(input, Token.DOWN, null); 
@@ -1706,7 +1711,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:184:3: ^( POSTINCREMENT op1= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:189:3: ^( POSTINCREMENT op1= expression )
 					{
 					match(input,POSTINCREMENT,FOLLOW_POSTINCREMENT_in_expression764); 
 					match(input, Token.DOWN, null); 
@@ -1720,7 +1725,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:185:6: ^( POSTDECREMENT op1= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:190:6: ^( POSTDECREMENT op1= expression )
 					{
 					match(input,POSTDECREMENT,FOLLOW_POSTDECREMENT_in_expression779); 
 					match(input, Token.DOWN, null); 
@@ -1734,7 +1739,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:186:6: ^( '*' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:191:6: ^( '*' op1= expression op2= expression )
 					{
 					match(input,40,FOLLOW_40_in_expression794); 
 					match(input, Token.DOWN, null); 
@@ -1752,7 +1757,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:187:3: ^( '/' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:192:3: ^( '/' op1= expression op2= expression )
 					{
 					match(input,46,FOLLOW_46_in_expression810); 
 					match(input, Token.DOWN, null); 
@@ -1770,7 +1775,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:188:3: ^( '%' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:193:3: ^( '%' op1= expression op2= expression )
 					{
 					match(input,37,FOLLOW_37_in_expression826); 
 					match(input, Token.DOWN, null); 
@@ -1788,7 +1793,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:189:3: ^( '+' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:194:3: ^( '+' op1= expression op2= expression )
 					{
 					match(input,41,FOLLOW_41_in_expression842); 
 					match(input, Token.DOWN, null); 
@@ -1806,7 +1811,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:190:3: ^( '-' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:195:3: ^( '-' op1= expression op2= expression )
 					{
 					match(input,44,FOLLOW_44_in_expression858); 
 					match(input, Token.DOWN, null); 
@@ -1824,7 +1829,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:191:3: ^( '==' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:196:3: ^( '==' op1= expression op2= expression )
 					{
 					match(input,51,FOLLOW_51_in_expression875); 
 					match(input, Token.DOWN, null); 
@@ -1842,7 +1847,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:192:3: ^( '!=' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:197:3: ^( '!=' op1= expression op2= expression )
 					{
 					match(input,36,FOLLOW_36_in_expression891); 
 					match(input, Token.DOWN, null); 
@@ -1860,7 +1865,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:193:3: ^( '<' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:198:3: ^( '<' op1= expression op2= expression )
 					{
 					match(input,48,FOLLOW_48_in_expression907); 
 					match(input, Token.DOWN, null); 
@@ -1878,7 +1883,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:194:3: ^( '<=' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:199:3: ^( '<=' op1= expression op2= expression )
 					{
 					match(input,49,FOLLOW_49_in_expression923); 
 					match(input, Token.DOWN, null); 
@@ -1896,7 +1901,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:195:3: ^( '>' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:200:3: ^( '>' op1= expression op2= expression )
 					{
 					match(input,52,FOLLOW_52_in_expression939); 
 					match(input, Token.DOWN, null); 
@@ -1914,7 +1919,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:196:3: ^( '>=' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:201:3: ^( '>=' op1= expression op2= expression )
 					{
 					match(input,53,FOLLOW_53_in_expression955); 
 					match(input, Token.DOWN, null); 
@@ -1932,7 +1937,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 15 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:197:3: ^( 'and' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:202:3: ^( 'and' op1= expression op2= expression )
 					{
 					match(input,56,FOLLOW_56_in_expression971); 
 					match(input, Token.DOWN, null); 
@@ -1950,7 +1955,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 16 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:198:3: ^( 'or' op1= expression op2= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:203:3: ^( 'or' op1= expression op2= expression )
 					{
 					match(input,72,FOLLOW_72_in_expression987); 
 					match(input, Token.DOWN, null); 
@@ -1968,7 +1973,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 17 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:199:4: op1= term
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:204:4: op1= term
 					{
 					pushFollow(FOLLOW_term_in_expression1007);
 					op1=term();
@@ -1998,11 +2003,11 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "typeSpec"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:206:1: typeSpec : arrayType ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:211:1: typeSpec : arrayType ;
 	public final void typeSpec() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:207:2: ( arrayType )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:207:4: arrayType
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:212:2: ( arrayType )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:212:4: arrayType
 			{
 			pushFollow(FOLLOW_arrayType_in_typeSpec1025);
 			arrayType();
@@ -2024,11 +2029,11 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "arrayType"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:210:1: arrayType : 'list' ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:215:1: arrayType : 'list' ;
 	public final void arrayType() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:211:2: ( 'list' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:211:4: 'list'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:216:2: ( 'list' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:216:4: 'list'
 			{
 			match(input,69,FOLLOW_69_in_arrayType1037); 
 			}
@@ -2047,7 +2052,7 @@ public class JogoTree extends TreeParser {
 
 
 	// $ANTLR start "type"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:214:1: type returns [int text] : ( 'int' | 'float' | 'boolean' | 'string' | typeSpec | IDENT );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:219:1: type returns [int text] : ( 'int' | 'float' | 'boolean' | 'string' | typeSpec | IDENT );
 	public final int type() throws RecognitionException {
 		int text = 0;
 
@@ -2055,7 +2060,7 @@ public class JogoTree extends TreeParser {
 		CommonTree IDENT14=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:215:2: ( 'int' | 'float' | 'boolean' | 'string' | typeSpec | IDENT )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:220:2: ( 'int' | 'float' | 'boolean' | 'string' | typeSpec | IDENT )
 			int alt24=6;
 			switch ( input.LA(1) ) {
 			case 68:
@@ -2095,35 +2100,35 @@ public class JogoTree extends TreeParser {
 			}
 			switch (alt24) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:215:6: 'int'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:220:6: 'int'
 					{
 					match(input,68,FOLLOW_68_in_type1058); 
 					text = SemanticManager.INTNUM;
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:216:9: 'float'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:221:9: 'float'
 					{
 					match(input,65,FOLLOW_65_in_type1070); 
 					text = SemanticManager.FLOATNUM;
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:217:8: 'boolean'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:222:8: 'boolean'
 					{
 					match(input,57,FOLLOW_57_in_type1080); 
 					text = SemanticManager.BOOLNUM;
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:218:7: 'string'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:223:7: 'string'
 					{
 					match(input,75,FOLLOW_75_in_type1089); 
 					text = SemanticManager.STRINGNUM;
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:219:7: typeSpec
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:224:7: typeSpec
 					{
 					pushFollow(FOLLOW_typeSpec_in_type1098);
 					typeSpec();
@@ -2133,7 +2138,7 @@ public class JogoTree extends TreeParser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:220:7: IDENT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/JogoTree.g:225:7: IDENT
 					{
 					IDENT14=(CommonTree)match(input,IDENT,FOLLOW_IDENT_in_type1108); 
 					text = Integer.valueOf((IDENT14!=null?IDENT14.getText():null));
