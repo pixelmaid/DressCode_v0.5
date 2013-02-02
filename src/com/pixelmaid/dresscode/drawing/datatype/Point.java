@@ -26,7 +26,7 @@ import com.pixelmaid.dresscode.drawing.math.*;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class Point extends Point2D implements Comparable<Point>,Drawable{
+public class Point extends Point2D implements Comparable<Point>{
 	private double x;
 	private double y;
 	public boolean selected = false; // used for mouse events
@@ -237,7 +237,7 @@ public class Point extends Point2D implements Comparable<Point>,Drawable{
 		return new Point(x,y);
 	}
 
-@Override
+
 	public void draw(float strokeWeight) {
 		//parent.strokeWeight(strokeWeight);
 		//parent.point((float)this.x, (float)this.y);
@@ -245,7 +245,7 @@ public class Point extends Point2D implements Comparable<Point>,Drawable{
 	}
 
 
-@Override
+
 	public void print(float strokeWeight) {
 		//parent.strokeWeight(strokeWeight);
 		//parent.point((float)this.x, (float)this.y);

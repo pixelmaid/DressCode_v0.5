@@ -20,16 +20,26 @@ public class BlockNode implements DCNode {
   }
 
   public void addStatement(DCNode stat) {
+	
     statements.add(stat);
+    System.out.println("added statement, size="+statements.size());
   }
 
-  @Override
-  public VarType evaluate() {
-    for(DCNode stat : statements) {
-      VarType value = stat.evaluate();
+
+  public  VarType evaluate(String message) {
+	  System.out.println("message="+message);
+	  System.out.println(statements.size());
+	  VarType value = evaluate();
+	  return value;
+  }
+ @Override  
+  public VarType evaluate(){
+    for(int i=0;i<statements.size(); i++){
+      VarType value = statements.get(i).evaluate();
+      System.out.println(i);
       if(value != VarType.VOID) {
         // return early from this block if value is a return statement
-        return value;
+        //return value;
       }
     }
 

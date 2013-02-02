@@ -17,6 +17,7 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 import com.pixelmaid.dresscode.antlr.PogoLexer;
 import com.pixelmaid.dresscode.antlr.PogoParser;
 import com.pixelmaid.dresscode.antlr.PogoTreeWalker;
+import com.pixelmaid.dresscode.antlr.types.tree.BlockNode;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 
 public class CodeField extends JTextPane implements DocumentListener{
@@ -50,6 +51,7 @@ public class CodeField extends JTextPane implements DocumentListener{
 
            @Override
            public void actionPerformed(ActionEvent arg0) {
+        	   Container.canvas.clearAllDrawables();
               //System.out.println("tab pressed");
              String txt = ((CodeField) arg0.getSource()).getText();
              CharStream charStream = new ANTLRStringStream(txt);
@@ -75,8 +77,8 @@ public class CodeField extends JTextPane implements DocumentListener{
      	    PogoTreeWalker walker = new PogoTreeWalker(nodes, parser.functions);
      	    
      	    // get the returned node 
-     	    DCNode returned = walker.walk();
-     	    System.out.println(returned == null ? "null" : returned.evaluate());
+     	    BlockNode returned = walker.walk();
+     	    System.out.println(returned == null ? "null" : returned.evaluate("hello"));
 			} catch (RecognitionException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

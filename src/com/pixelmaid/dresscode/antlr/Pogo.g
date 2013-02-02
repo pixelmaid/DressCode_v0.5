@@ -81,6 +81,7 @@ functionCall
   |  Print '(' expression ')'     -> ^(FUNC_CALL Print expression)
   |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
   |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)
+  |	 Drawable '(' exprList? ')'   -> ^(FUNC_CALL Drawable exprList?) 
   ;
 
 ifStatement
@@ -188,6 +189,8 @@ lookup
 indexes
   :  ('[' expression ']')+ -> ^(INDEXES expression+)
   ;
+  
+Drawable	: 'rect'|'ellipse';
 
 Println  : 'println';
 Print    : 'print';

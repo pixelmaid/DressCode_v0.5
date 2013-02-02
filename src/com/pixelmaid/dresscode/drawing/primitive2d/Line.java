@@ -1,9 +1,11 @@
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
+import javax.media.opengl.GL2;
+
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.datatype.DCHalfEdge;
 
-public class Line extends DCHalfEdge implements Drawable {
+public class Line extends DCHalfEdge implements Drawable{
 	public float strokeWeight=1;
 
 	public Line(Point start, Point end) {
@@ -60,5 +62,11 @@ public class Line extends DCHalfEdge implements Drawable {
 	 public void setStrokeWeight(float strokeWeight){
 	    	this.strokeWeight=strokeWeight;
 	    }
+
+	@Override
+	public void draw(GL2 gl) {
+		// TODO Auto-generated method stub
+		
+	}
 
 }

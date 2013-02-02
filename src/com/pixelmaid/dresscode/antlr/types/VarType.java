@@ -2,6 +2,7 @@ package com.pixelmaid.dresscode.antlr.types;
 
 import java.util.List;
 
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 
 public class VarType implements Comparable<VarType> {  
@@ -22,9 +23,10 @@ public class VarType implements Comparable<VarType> {
 	    }  
 	    value = v;  
 	    // only accept boolean, list, number or string types  
-	    if(!(isBoolean() || isList() || isNumber() || isString())) {  
+	    if(!(isBoolean() || isList() || isNumber() || isString() || isDrawable()) ) {  
 	      throw new RuntimeException("invalid type: " + v + " (" + v.getClass() + ")");  
-	    }  
+	    } 
+	    
 	  }  
 	  
 	  public Boolean asBoolean() {  
@@ -120,7 +122,11 @@ public class VarType implements Comparable<VarType> {
 	  
 	  public boolean isString() {  
 	    return value instanceof String;  
-	  }  
+	  } 
+	  
+	  public boolean isDrawable(){
+		  return value instanceof Drawable;
+	  }
 	  
 	  @Override  
 	  public String toString() {  

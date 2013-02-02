@@ -20,17 +20,22 @@
 
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
+import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.DCHalfEdge;
 import com.pixelmaid.dresscode.drawing.datatype.DoublyConnectedEdgeList;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Vector;
 
+import javax.media.opengl.GL2;
+import static javax.media.opengl.GL.*;  // GL constants
+import static javax.media.opengl.GL2.*; // GL2 constants
 
-public class Ellipse implements Comparable<Ellipse>, Drawable {
+public class Ellipse implements Comparable<Ellipse>,Drawable {
 
     public Point origin;
     public double radius;
@@ -43,7 +48,18 @@ public class Ellipse implements Comparable<Ellipse>, Drawable {
     
     public int strokeWeight = 1;
 
-    public Ellipse(double x, double y, double radius) {
+    public Ellipse (ArrayList<Double> params){
+    	if(params.size()==3){
+    		 this.radius = params.get(2);
+    	     this.origin = new Point(params.get(0),params.get(1));
+    	     this.discsTouching = new Vector<Ellipse>();
+    	}
+    	else{
+    		System.err.println("inccorect number of arguments for ellipse");
+    	}
+    }
+ 
+	public Ellipse(double x, double y, double radius) {
         this.radius = radius;
         this.origin = new Point(x, y);
         this.discsTouching = new Vector<Ellipse>();
@@ -113,14 +129,13 @@ public class Ellipse implements Comparable<Ellipse>, Drawable {
     }
 
 
+	@Override
+    public void draw(Embedded gl) {
+		gl.ellipse((float)origin.getX(),(float)origin.getY(),(float)radius,(float)radius);
 	
-    public void draw(float strokeWeight) {
-       
-        //parent.strokeWeight(strokeWeight);
-        //parent.ellipse((float) origin.getX(), (float) origin.getY(), (float) radius * 2, (float) radius * 2);
     }
 
-	@Override
+	
 	public void print( float strokeWeight) {
 		//parent.strokeWeight(strokeWeight);
 		//parent.ellipse((float) origin.getX(), (float) origin.getY(), (float) radius * 2, (float) radius * 2);

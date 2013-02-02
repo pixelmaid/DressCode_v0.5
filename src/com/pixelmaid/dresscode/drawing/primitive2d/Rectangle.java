@@ -2,7 +2,7 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 
 import com.pixelmaid.dresscode.drawing.datatype.*;
 
-public class Rectangle extends Polygon {
+public class Rectangle extends Polygon implements Drawable{
 	private double width;
 	private double height;
 	private Line top;

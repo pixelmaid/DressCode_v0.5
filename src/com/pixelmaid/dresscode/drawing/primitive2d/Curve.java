@@ -6,7 +6,7 @@ import java.util.Vector;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
-public class Curve extends LineCollection implements Drawable{ //series of symmetrical curved lines grouped together in a single line
+public class Curve extends LineCollection implements Drawable { //series of symmetrical curved lines grouped together in a single line
 	private Vector<HalfCurve> halfCurves = new Vector<HalfCurve>(); //stores all of the individual parabolas
 	private int resolution = 20; // resolution of each curve
 	private boolean showPoints = false;

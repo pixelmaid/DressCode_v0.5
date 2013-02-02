@@ -4,6 +4,8 @@ import java.util.Collections;
 import java.util.Set;
 import java.util.Vector;
 
+import javax.media.opengl.GL2;
+
 
 
 import com.pixelmaid.dresscode.drawing.datatype.CmpX;
@@ -14,7 +16,7 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
 //base class for patterns and primitives
-public class LineCollection extends DCFace implements Drawable, Turtle{
+public class LineCollection extends DCFace implements Turtle, Drawable{
 	
 	private Vector<Line> lines;
 	private Vector<Point> points; 
@@ -760,6 +762,13 @@ public class LineCollection extends DCFace implements Drawable, Turtle{
 	public void rotateTurtleTo(double theta){
 		
 		TurtleStruct.angle = theta;
+	}
+
+
+	@Override
+	public void draw(GL2 gl) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

@@ -31,12 +31,15 @@ options {
   }
 }
 
-walk returns [DCNode node]
+walk returns [BlockNode node]
   :  block {node = $block.node;}
   ;
 
-block returns [DCNode node]
-@init {
+block returns [BlockNode node]
+
+@init{
+	System.out.println(" new block called");
+
   BlockNode bn = new BlockNode();
   node = bn;
   Scope local = new Scope(currentScope);
@@ -49,6 +52,9 @@ block returns [DCNode node]
   ;
 
 statement returns [DCNode node]
+@init{
+	System.out.println(" statement called");
+}
   :  assignment     {node = $assignment.node;}
   |  functionCall   {node = $functionCall.node;}
   |  ifStatement    {node = $ifStatement.node;}
@@ -61,11 +67,15 @@ assignment returns [DCNode node]
   ;
 
 functionCall returns [DCNode node]
+@init{
+	System.out.println("function called");
+}
   :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions);}
   |  ^(FUNC_CALL Println expression?)  {node = new PrintlnNode($expression.node);}
   |  ^(FUNC_CALL Print expression)     {node = new PrintNode($expression.node);}
   |  ^(FUNC_CALL Assert expression)    {node = new AssertNode($expression.node);}
   |  ^(FUNC_CALL Size expression)      {node = new SizeNode($expression.node);}
+  |	 ^(FUNC_CALL Drawable exprList?)   {node = new DrawableNode($exprList.e,$FUNC_CALL.getLine());}
   ;
 
 ifStatement returns [DCNode node]

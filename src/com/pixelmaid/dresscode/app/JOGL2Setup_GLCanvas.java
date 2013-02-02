@@ -1,14 +1,21 @@
 package com.pixelmaid.dresscode.app;
 
 
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+
 import javax.media.opengl.GL2;
 import javax.media.opengl.GLAutoDrawable;
 import javax.media.opengl.GLEventListener;
 import javax.media.opengl.awt.GLCanvas;
 import javax.media.opengl.glu.GLU;
+
 import static javax.media.opengl.GL.*;  // GL constants
 import static javax.media.opengl.GL2.*; // GL2 constants
- 
+import java.util.Iterator; 
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+
 /**
  * JOGL 2.0 Program Template (GLCanvas)
  * This is a "Component" which can be added into a top-level "Container".
@@ -21,6 +28,8 @@ public class JOGL2Setup_GLCanvas extends GLCanvas implements GLEventListener {
    // Setup OpenGL Graphics Renderer
  
    private GLU glu;  // for the GL Utility
+   private Map<String, Drawable> drawables = new HashMap<String, Drawable>();
+
  
    /** Constructor to setup the GUI for this Component */
    public JOGL2Setup_GLCanvas() {
@@ -37,7 +46,7 @@ public class JOGL2Setup_GLCanvas extends GLCanvas implements GLEventListener {
    public void init(GLAutoDrawable drawable) {
       GL2 gl = drawable.getGL().getGL2();      // get the OpenGL graphics context
       glu = new GLU();                         // get GL Utilities
-      gl.glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // set background (clear) color
+      gl.glClearColor(0.5f, 0.5f, 0.5f, 1.0f); // set background (clear) color
       gl.glClearDepth(1.0f);      // set clear depth value to farthest
       gl.glEnable(GL_DEPTH_TEST); // enables depth testing
       gl.glDepthFunc(GL_LEQUAL);  // the type of depth test to do
@@ -75,18 +84,32 @@ public class JOGL2Setup_GLCanvas extends GLCanvas implements GLEventListener {
     * Called back by the animator to perform rendering.
     */
    @Override
-   public void display(GLAutoDrawable drawable) {
-      GL2 gl = drawable.getGL().getGL2();  // get the OpenGL 2 graphics context
+   public void display(GLAutoDrawable autoDrawable) {
+      GL2 gl = autoDrawable.getGL().getGL2();  // get the OpenGL 2 graphics context
       gl.glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT); // clear color and depth buffers
       gl.glLoadIdentity();  // reset the model-view matrix
  
-      // ----- Your OpenGL rendering code here (Render a white triangle for testing) -----
-      gl.glTranslatef(0.0f, 0.0f, -6.0f); // translate into the screen
+      // ----- Your OpenGL rendering code here -----
+      
+    // gl.glTranslatef(0.0f, 0.0f, -6.0f); // translate into the screen
+      
+      Iterator<Entry<String, Drawable>> it = drawables.entrySet().iterator();
+
+      while (it.hasNext()) {
+       Drawable d = it.next().getValue();
+      // d.draw(gl);
+       
+      }
+
+        // Remove entry if key is null or equals 0.
+      
+      
+    /* gl.glTranslatef(0.0f, 0.0f, -6.0f); // translate into the screen
       gl.glBegin(GL_TRIANGLES); // draw using triangles
          gl.glVertex3f(0.0f, 1.0f, 0.0f);
          gl.glVertex3f(-1.0f, -1.0f, 0.0f);
          gl.glVertex3f(1.0f, -1.0f, 0.0f);
-      gl.glEnd();
+      gl.glEnd();*/
    }
  
    /**
@@ -94,5 +117,21 @@ public class JOGL2Setup_GLCanvas extends GLCanvas implements GLEventListener {
     */
    @Override
    public void dispose(GLAutoDrawable drawable) { }
+   
+   
+   public void addDrawable(String id, int lineNumber, Drawable d) {
+	    String key = id + Integer.toString(lineNumber);
+	    drawables.put(key, d);
+	    
+	  }
+   
+   public void removeDrawable(String id, int lineNumber) {
+	    String key = id + Integer.toString(lineNumber);
+	    drawables.remove(key);
+	  }
+   
+   public void clearAllDrawables() {
+	   drawables.clear();
+	  }
 }
 

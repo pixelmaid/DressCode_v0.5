@@ -9,7 +9,7 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
 
-public class Polygon extends LineCollection{
+public class Polygon extends LineCollection implements Drawable{
 
 public boolean fill = false;
 private int fR=0;

@@ -11,18 +11,20 @@ import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.SwingUtilities;
 
+import processing.core.*;
+
 //import org.antlr.runtime.ANTLRStringStream;
 //import org.antlr.runtime.CommonTokenStream;
 //import org.antlr.runtime.RecognitionException;
 
 import com.jogamp.opengl.util.FPSAnimator;
 
-public class Container {
+public final class Container {
 	
 	
 	 private static String TITLE = "JOGL 2.0 Setup (GLCanvas)";  // window's title
-	   private static final int CANVAS_WIDTH = 640;  // width of the drawable
-	   private static final int CANVAS_HEIGHT = 480; // height of the drawable
+	 public static final int CANVAS_WIDTH = 488;  // width of the drawable
+	 public static final int CANVAS_HEIGHT = 768; // height of the drawable
 	   private static final int FPS = 60; // animator's target frames per second
 	
 	   
@@ -31,20 +33,24 @@ public class Container {
 	  private static  JInternalFrame flatFrame; //panel for 2d rendering
 	  private static JInternalFrame textFrame; //panel for textRendering
 	  private static CodeField codeField; //textField for code entry
-		    
+	  //public static final JOGL2Setup_GLCanvas canvas =new JOGL2Setup_GLCanvas();   
 	 
+	  public static final Embedded canvas = new Embedded();
+	  
 	   /** The entry main() method to setup the top-level container and animator */
 	   public static void main(String[] args) {
 	      // Run the GUI codes in the event-dispatching thread for thread safety
-	      SwingUtilities.invokeLater(new Runnable() {
+		   canvas.init();
+		   SwingUtilities.invokeLater(new Runnable() {
 	         @Override
 	         public void run() {
 	            // Create the OpenGL rendering canvas
-	            GLCanvas canvas = new JOGL2Setup_GLCanvas();
-	            canvas.setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));
 	 
+	            //canvas.setPreferredSize(new Dimension(CANVAS_WIDTH, CANVAS_HEIGHT));
+	        	 canvas.background(255f,0,0);
+	        	 //canvas.size(CANVAS_WIDTH,CANVAS_HEIGHT);	
 	            // Create a animator that drives canvas' display() at the specified FPS.
-	            final FPSAnimator animator = new FPSAnimator(canvas, FPS, true);
+	            //final FPSAnimator animator = new FPSAnimator(canvas, FPS, true);
 	 
 	            // Create the top-level container
 	            frame = new JFrame(); // Swing's JFrame or AWT's Frame
@@ -83,7 +89,7 @@ public class Container {
 	                  new Thread() {
 	                     @Override
 	                     public void run() {
-	                        if (animator.isStarted()) animator.stop();
+	                        //if (animator.isStarted()) animator.stop();
 	                        System.exit(0);
 	                     }
 	                  }.start();
@@ -92,7 +98,7 @@ public class Container {
 	            frame.setTitle(TITLE);
 	            frame.pack();
 	            frame.setVisible(true);
-	            animator.start(); // start the animation loop
+	            //animator.start(); // start the animation loop
 	         }
 	      });
 	   }
