@@ -6,21 +6,18 @@ import java.util.List;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
-import com.pixelmaid.dresscode.app.Container;
+import com.pixelmaid.dresscode.app.Manager;
 
 public class DrawableNode implements DCNode {
 
-    private List<DCNode> params;
-
-    private int line;
-
+	protected List<DCNode> params;
+    protected int line;
 
     
     public DrawableNode(List<DCNode> ps, int l) {
         params = ps;
         line = l;
-        System.out.println("created new drawable node at line:"+line);
+        //System.out.println("created new drawable node at line:"+line);
     }
 
     @Override
@@ -33,10 +30,9 @@ public class DrawableNode implements DCNode {
                values.add(value.asDouble());
             }
     	}
-    	Ellipse e = new Ellipse(values);
-    	Container.canvas.addDrawable("ellipse",line,e);
-    	return new VarType(e);
-    		
+    	Drawable e = new Drawable(values);
+    	Manager.canvas.addDrawable("drawable",line,e);
+    	return new VarType(e);	
         //throw new RuntimeException("Illegal function call: " + this);
     }
 

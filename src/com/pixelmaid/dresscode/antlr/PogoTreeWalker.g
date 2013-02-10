@@ -11,6 +11,7 @@ options {
   import com.pixelmaid.dresscode.antlr.types.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.functions.*; 
+   import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
   import java.util.Map;
   import java.util.HashMap;
 }
@@ -38,7 +39,7 @@ walk returns [BlockNode node]
 block returns [BlockNode node]
 
 @init{
-	System.out.println(" new block called");
+	//System.out.println(" new block called");
 
   BlockNode bn = new BlockNode();
   node = bn;
@@ -51,9 +52,10 @@ block returns [BlockNode node]
   :  ^(BLOCK ^(STATEMENTS (statement {bn.addStatement($statement.node);})*) ^(RETURN (expression {bn.addReturn($expression.node);})?))
   ;
 
+
 statement returns [DCNode node]
 @init{
-	System.out.println(" statement called");
+	//System.out.println(" statement called");
 }
   :  assignment     {node = $assignment.node;}
   |  functionCall   {node = $functionCall.node;}
@@ -68,15 +70,43 @@ assignment returns [DCNode node]
 
 functionCall returns [DCNode node]
 @init{
-	System.out.println("function called");
+	//System.out.println("function called");
 }
   :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions);}
   |  ^(FUNC_CALL Println expression?)  {node = new PrintlnNode($expression.node);}
   |  ^(FUNC_CALL Print expression)     {node = new PrintNode($expression.node);}
   |  ^(FUNC_CALL Assert expression)    {node = new AssertNode($expression.node);}
   |  ^(FUNC_CALL Size expression)      {node = new SizeNode($expression.node);}
-  |	 ^(FUNC_CALL Drawable exprList?)   {node = new DrawableNode($exprList.e,$FUNC_CALL.getLine());}
+  |	 primitiveCall {node = $primitiveCall.node;}
+  |	 transformCall {node = $transformCall.node;}
+  |	 mathCall {node= $mathCall.node;}
   ;
+  
+  
+  primitiveCall returns [DCNode node]
+  	:^(FUNC_CALL Ellipse exprList?)  {node = new EllipseNode($exprList.e,$FUNC_CALL.getLine());}
+  	|^(FUNC_CALL Line exprList?) 	 {node = new LineNode($exprList.e,$FUNC_CALL.getLine());}
+  	|^(FUNC_CALL Rect exprList?) 	 {node = new RectangleNode($exprList.e,$FUNC_CALL.getLine());}
+  	| ^(FUNC_CALL Curve exprList?)   {node = new CurveNode($exprList.e,$FUNC_CALL.getLine());}
+  	| ^(FUNC_CALL Polygon exprList?) {node = new PolygonNode($exprList.e,$FUNC_CALL.getLine());}
+  	;
+  
+  transformCall returns [DCNode node]
+   :^(FUNC_CALL Move exprList?)   {node = new MoveNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Copy expression)  {node = new CopyNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Rotate exprList?) {node = new RotateNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Fill exprList?)   {node = new FillNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Stroke exprList?) {node = new StrokeNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL NoFill expression) {node = new NoFillNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL NoStroke expression) {node = new NoStrokeNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Weight exprList?) {node = new WeightNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Hide expression) {node = new HideNode($expression.node,$FUNC_CALL.getLine());}
+   ;
+   
+   mathCall returns [DCNode node]
+   :^(FUNC_CALL Cosine expression) {node = new CosineNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Sine expression) {node = new SineNode($expression.node,$FUNC_CALL.getLine());}
+   ;
 
 ifStatement returns [DCNode node]
 @init  {IfNode ifNode = new IfNode();}
@@ -114,6 +144,7 @@ exprList returns [java.util.List<DCNode> e]
   :  ^(EXP_LIST (expression {e.add($expression.node);})+)
   ;
 
+
 expression returns [DCNode node]
   :  ^(TERNARY a=expression b=expression c=expression) {node = new TernaryNode($a.node, $b.node, $c.node);}
   |  ^(In a=expression b=expression)                   {node = new InNode($a.node, $b.node);}
@@ -137,6 +168,8 @@ expression returns [DCNode node]
   |  Bool                                              {node = new AtomNode(Boolean.parseBoolean($Bool.text));}
   |  Null                                              {node = new AtomNode(null);}
   |  lookup                                            {node = $lookup.node;}
+  |  COLOR_CONSTANT									   {node = new AtomNode($COLOR_CONSTANT.text);}
+  |	PI_CONSTANT                                        {node = new AtomNode(Math.PI);}
   ;
 
 list returns [DCNode node]
@@ -149,7 +182,10 @@ lookup returns [DCNode node]
   |  ^(LOOKUP expression i=indexes?)   {node = $i.e != null ? new LookupNode($expression.node, $indexes.e) : $expression.node;}
   |  ^(LOOKUP Identifier i=indexes?)   {node = $i.e != null ? new LookupNode(new IdentifierNode($Identifier.text, currentScope), $indexes.e) : new IdentifierNode($Identifier.text, currentScope);}
   |  ^(LOOKUP String i=indexes?)       {node = $i.e != null ? new LookupNode(new AtomNode($String.text), $indexes.e) : new AtomNode($String.text);}
+  |  ^(LOOKUP forStatement i=indexes?)   {node = $i.e != null ? new LookupNode($forStatement.node, $indexes.e) : $forStatement.node;}
   ;
+  
+  
 
 indexes returns [java.util.List<DCNode> e]
 @init {e = new java.util.ArrayList<DCNode>();}

@@ -20,137 +20,152 @@
 
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
-import com.pixelmaid.dresscode.app.Embedded;
-import com.pixelmaid.dresscode.drawing.datatype.DCHalfEdge;
-import com.pixelmaid.dresscode.drawing.datatype.DoublyConnectedEdgeList;
-import com.pixelmaid.dresscode.drawing.datatype.Point;
-import com.pixelmaid.dresscode.drawing.math.Geom;
-
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.Vector;
 
-import javax.media.opengl.GL2;
-import static javax.media.opengl.GL.*;  // GL constants
-import static javax.media.opengl.GL2.*; // GL2 constants
+import processing.core.PApplet;
 
-public class Ellipse implements Comparable<Ellipse>,Drawable {
+import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.drawing.datatype.Point;
 
-    public Point origin;
-    public double radius;
-    public DoublyConnectedEdgeList border;
-    public int setColor;
-    public boolean insideGrid = false;
-    public boolean kept = false;
-    public int numTouching = 0;
-    public Vector<Ellipse> discsTouching;
+
+public class Ellipse extends Drawable implements DrawableInterface {
+
+    private double width;
+    private double height;
+    private double resolution = 100;
+   
     
-    public int strokeWeight = 1;
 
-    public Ellipse (ArrayList<Double> params){
-    	if(params.size()==3){
-    		 this.radius = params.get(2);
-    	     this.origin = new Point(params.get(0),params.get(1));
-    	     this.discsTouching = new Vector<Ellipse>();
-    	}
-    	else{
-    		System.err.println("inccorect number of arguments for ellipse");
-    	}
+    public Ellipse(double x, double y) {
+    	
+    	this(x,y,DEFAULT_WIDTH,DEFAULT_WIDTH);
     }
- 
-	public Ellipse(double x, double y, double radius) {
-        this.radius = radius;
-        this.origin = new Point(x, y);
-        this.discsTouching = new Vector<Ellipse>();
+    
+	public Ellipse(double x, double y, double width, double height) {
 
+		this(new Point(x,y), width, height);
+		System.out.println("original ellipse1="+x+","+y);
 
     }
     
-    public Ellipse(Point origin, double radius) {
-        this.radius = radius;
-        this.origin = origin;
-        this.discsTouching = new Vector<Ellipse>();
-
-
-    }
-
-
-    public boolean discOverlap(Ellipse disc) {
-        double dist = Geom.distance(this.origin, disc.origin);
-        if (dist < this.radius + disc.radius) {
-            disc.numTouching++;
-            this.numTouching++;
-            disc.addTouching(this);
-            this.addTouching(disc);
-            return true;
-        } else {
-            return false;
-        }
-
-    }
-
-    public void resetTouching() {
-        this.discsTouching = new Vector<Ellipse>();
-        numTouching = 0;
-
-    }
-
-    public void addTouching(Ellipse d) {
-        this.discsTouching.addElement(d);
-        Collections.sort(discsTouching, new DiscTouchInternal());
-
-    }
-
-    public boolean removeTouching(Ellipse d) {
-        if (this.discsTouching.indexOf(d) != -1) {
-            this.discsTouching.removeElement(d);
-            numTouching--;
-            return true;
-        } else {
-            return false;
-        }
+    public Ellipse(Point o, double width, double height) {
+    
+    	this.width = width;
+        this.height = height;
+        this.origin = o;
+    	System.out.println("original ellipse2="+getOrigin().getX()+","+getOrigin().getY());
+    	System.out.println("original ellipse2="+origin.getX()+","+origin.getY());
+        
+		
 
 
     }
     
     
-
-    @Override
-    public int compareTo(Ellipse disc) {
-        if (this.discOverlap(disc)) {
-
-            return 1;
-
-
-        } else {
-            return -1;
-        }
+   
+    
+    public Ellipse copy(){
+    	return new Ellipse(origin.getX(),origin.getY(),width,height);
     }
 
 
 	@Override
-    public void draw(Embedded gl) {
-		gl.ellipse((float)origin.getX(),(float)origin.getY(),(float)radius,(float)radius);
-	
+    public void draw(Embedded e) {
+		e.pushMatrix();
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.rotate(PApplet.radians((float)getRotation()));
+		System.out.println("ellipse="+getOrigin().getX()+","+getOrigin().getY());
+		e.ellipse(0,0,(float)width,(float)height);
+		e.popMatrix();
+		
     }
 
-	
-	public void print( float strokeWeight) {
+	@Override
+	public void print(Embedded e) {
+		// TODO Auto-generated method stub
 		//parent.strokeWeight(strokeWeight);
 		//parent.ellipse((float) origin.getX(), (float) origin.getY(), (float) radius * 2, (float) radius * 2);
 		
 	}
+
 	
-	public Ellipse copy(){
-		return new Ellipse(this.origin.copy(),this.radius);
+	@Override
+	public void moveTo(double x, double y) {
+	    	//this.removeDuplicatePoints();
+	        this.origin = new Point(x,y);
+	        System.out.println("moving ellipse");
+	        
+	    }
+
+	@Override
+	public void moveBy(double x, double y) {
+		this.origin.setX(origin.getX()+x);
+		this.origin.setY(origin.getY()+y);
+		
 	}
 
-}
+	@Override
+	public void scaleX(double x) {
+		// TODO Auto-generated method stub
+		
+	}
 
+	@Override
+	public void scaleY(double y) {
+		// TODO Auto-generated method stub
+		
+	}
 
-class DiscTouchInternal implements Comparator<Ellipse> {
-    public int compare(Ellipse a, Ellipse b) {
-        return (a.numTouching < b.numTouching) ? -1 : (a.numTouching > b.numTouching) ? 1 : 0;
-    }
+	@Override
+	public void scale(double s) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Drawable difference(Drawable d) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Drawable union(Drawable d) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Drawable clip(Drawable d) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+	@Override
+	public ArrayList<Line> getAllLines() {
+		ArrayList<Line>lines = new ArrayList<Line>();
+		double lastX=0;
+		double lastY=0;
+		double pR = (Math.PI*2)/resolution;
+		double wR = width/2.0;
+		double hR = height/2.0;
+		for (int i = 0; i <= resolution; i++) {
+			double t = pR*i;
+			double x = wR* Math.cos(t)+origin.getX();
+			double y = hR* Math.sin(t)+origin.getY();
+
+			if(i==0){
+				lastX=x;
+				lastY=y;
+			}
+			else{
+				Line line = new Line(lastX,lastY,x,y);
+				lines.add(line);
+				lastX=x;
+				lastY=y;
+			}
+		}
+		return lines;
+	}
+
 }

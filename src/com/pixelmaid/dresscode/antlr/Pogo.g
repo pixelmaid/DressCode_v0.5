@@ -71,8 +71,8 @@ statement
   ;
 
 assignment
-  :  Identifier indexes? '=' expression 
-     -> ^(ASSIGNMENT Identifier indexes? expression)
+  :  Identifier indexes? '=' expression  -> ^(ASSIGNMENT Identifier indexes? expression)
+  |  
   ;
 
 functionCall
@@ -81,8 +81,38 @@ functionCall
   |  Print '(' expression ')'     -> ^(FUNC_CALL Print expression)
   |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
   |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)
-  |	 Drawable '(' exprList? ')'   -> ^(FUNC_CALL Drawable exprList?) 
+  |	 primitiveCall
+  |	 transformCall
+  |	 mathCall
   ;
+  
+  
+  primitiveCall
+  	:Ellipse '(' exprList? ')'   -> ^(FUNC_CALL Ellipse exprList?) 
+  	|Line '(' exprList? ')'   -> ^(FUNC_CALL Line exprList?) 
+  	|Rect '(' exprList? ')'   -> ^(FUNC_CALL Rect exprList?) 
+  	|Curve '(' exprList? ')' ->  ^(FUNC_CALL Curve exprList?)
+  	|Polygon '(' exprList? ')' ->  ^(FUNC_CALL Polygon exprList?)
+  	;
+  
+  transformCall
+   : Move '(' exprList? ')' -> ^(FUNC_CALL Move exprList?) 
+   | Copy '(' expression ')' -> ^(FUNC_CALL Copy expression)
+   | Rotate '(' exprList? ')'-> ^(FUNC_CALL Rotate exprList?)
+   | Fill '(' exprList? ')'-> ^(FUNC_CALL Fill exprList?)
+   | Stroke '(' exprList? ')'-> ^(FUNC_CALL Stroke exprList?)
+   | NoFill	'(' expression ')'-> ^(FUNC_CALL NoFill expression)
+   | NoStroke '(' expression ')'-> ^(FUNC_CALL NoStroke expression)
+   | Weight	'(' exprList? ')'-> ^(FUNC_CALL Weight exprList?)
+   | Hide	'(' expression ')'-> ^(FUNC_CALL Hide expression)
+   ;
+   
+   mathCall
+   	:Cosine '(' expression ')'   -> ^(FUNC_CALL Cosine expression)
+   	|Sine '(' expression ')'   -> ^(FUNC_CALL Sine expression)
+   	;
+  
+  
 
 ifStatement
   :  ifStat elseIfStat* elseStat? End -> ^(IF ifStat elseIfStat* elseStat?)
@@ -172,6 +202,8 @@ atom
   |  Bool
   |  Null
   |  lookup
+  | COLOR_CONSTANT
+  | PI_CONSTANT
   ;
 
 list
@@ -184,13 +216,44 @@ lookup
   |  Identifier indexes?         -> ^(LOOKUP Identifier indexes?)
   |  String indexes?             -> ^(LOOKUP String indexes?)
   |  '(' expression ')' indexes? -> ^(LOOKUP expression indexes?)
+  |	 forStatement indexes?		 -> ^(LOOKUP forStatement indexes?)
   ;
 
 indexes
   :  ('[' expression ']')+ -> ^(INDEXES expression+)
   ;
   
-Drawable	: 'rect'|'ellipse';
+ 
+ //shape primitives 
+Ellipse	: 'ellipse';
+Rect	: 'rect';
+Line	: 'line';
+Curve	: 'curve';
+Quad	: 'quad';
+Point	: 'point';
+Triangle: 'triangle';
+Polygon	: 'poly';
+
+//math keywords
+Cosine	:'cos';
+Sine	: 'sin';
+
+//transforms
+Move	: 'move';
+Copy	: 'copy';
+Rotate	: 'rotate';
+Scale	: 'scale';
+Fill : 'fill';
+Stroke : 'stroke';
+NoFill	: 'noFill';
+NoStroke : 'noStroke';
+Weight	: 'weight';
+Hide	: 'hide';
+
+
+COLOR_CONSTANT: 'RED'|'BLUE'|'GREEN'|'PURPLE'|'YELLOW'|'ORANGE'|'PINK'|'BLACK'|'WHITE'|'GREY';
+
+PI_CONSTANT: 'PI';
 
 Println  : 'println';
 Print    : 'print';

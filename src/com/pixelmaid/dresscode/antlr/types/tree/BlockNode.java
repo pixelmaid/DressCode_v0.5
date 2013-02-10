@@ -1,6 +1,8 @@
 package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
+import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -22,29 +24,48 @@ public class BlockNode implements DCNode {
   public void addStatement(DCNode stat) {
 	
     statements.add(stat);
-    System.out.println("added statement, size="+statements.size());
+    //System.out.println("added statement, size="+statements.size());
   }
 
 
-  public  VarType evaluate(String message) {
-	  System.out.println("message="+message);
-	  System.out.println(statements.size());
-	  VarType value = evaluate();
-	  return value;
-  }
  @Override  
   public VarType evaluate(){
-    for(int i=0;i<statements.size(); i++){
+    Drawable d = new Drawable();
+	boolean drawAdded=false;
+	 for(int i=0;i<statements.size(); i++){
       VarType value = statements.get(i).evaluate();
-      System.out.println(i);
+      
       if(value != VarType.VOID) {
         // return early from this block if value is a return statement
         //return value;
       }
+      
+      //if value is drawable then add it to master drawable and remove it from the canvas
+      if (value.isDrawable()){
+    	  Drawable d2 = value.asDrawable();
+    	  d.add(d2);
+    	  d2.removeFromCanvas();
+    	  d2.setParent(d);
+    	  drawAdded=true;
+      }
     }
+	
+ // return VOID or returnStatement.evaluate() if it's not null
+	 if(returnStatement ==null){
+		 if(drawAdded){
+			 //TODO: add actual line number instead of 0 here
+			 Manager.canvas.addDrawable("drawable",-1,d);
+			 return new VarType(d);
+		 }
+		 else{
+			 return VarType.VOID;
+		 }
+	 }
+	 else{
+		return returnStatement.evaluate();
+	 }
 
-    // return VOID or returnStatement.evaluate() if it's not null
-    return returnStatement == null ? VarType.VOID : returnStatement.evaluate();
+   
   }
 
   @Override

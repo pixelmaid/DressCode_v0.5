@@ -4,7 +4,23 @@
 	<classpathentry kind="src" path="antlr-generated"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="lib" path="lib/antlr-3.5-complete.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/jogl-2.0"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/libs/core.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/libs/jsyntaxpane-0.9.5-b29.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/libs/gpcj-2.2.0-full.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/gluegen-rt-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/gluegen-rt-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/gluegen-rt-natives-linux-i586.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/gluegen-rt-natives-macosx-universal.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/gluegen-rt-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/gluegen-rt-natives-windows-i586.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/jogl-all-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/jogl-all-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/jogl-all-natives-linux-i586.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/jogl-all-natives-macosx-universal.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/jogl-all-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/jogl-all-natives-windows-i586.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/jogl-all.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/pde.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs/core.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -21,6 +21,7 @@
 package com.pixelmaid.dresscode.drawing.datatype;
 
 import java.awt.geom.Point2D;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
@@ -32,7 +33,7 @@ import com.pixelmaid.dresscode.drawing.math.Geom;
 
 public class DCFace extends DoublyConnectedEdgeList {
 
-    public Vector<DCHalfEdge> innerComponents;
+    public ArrayList<DCHalfEdge> innerComponents;
     protected Point origin;
     public int color;
     public DCFace() {
@@ -58,7 +59,7 @@ public class DCFace extends DoublyConnectedEdgeList {
     
     public void orderEdges(){
     	int missedEdges = 0;
-    	Vector<DCHalfEdge> newEdges = new Vector<DCHalfEdge>(0);
+    	ArrayList<DCHalfEdge> newEdges = new ArrayList<DCHalfEdge>(0);
     	Collections.sort(edges);
     
     	//copy over new edges;
@@ -68,13 +69,13 @@ public class DCFace extends DoublyConnectedEdgeList {
     		//System.out.println("start ="+edges.get(i).start.getX()+","+edges.get(i).start.getY()+" end="+edges.get(i).end.getX()+","+edges.get(i).end.getY());
     		
     	}
-    	Vector <Point> dupVerticies = new Vector<Point>(0);
+    	ArrayList<Point> dupVerticies = new ArrayList<Point>(0);
     	for(int i=0;i<this.edges.size();i++)
     	{
     		dupVerticies.add(this.edges.get(i).start);
     		dupVerticies.add(this.edges.get(i).end);
     	}
-    	Vector<Point> verticies = Geom.removeDuplicateVerts(this);
+    	ArrayList<Point> verticies = Geom.removeDuplicateVerts(this);
     	//System.out.println("vert num="+verticies.size()+" edge num="+edges.size());
     	//find case based on verticies
     	
@@ -138,9 +139,9 @@ public class DCFace extends DoublyConnectedEdgeList {
     	}
     }*/
     
-    public void findUnconnectedEdges(Vector<Point> dupVerticies, Vector<Point> verticies){
-    	Vector <Point>unconnectedVerticies = new Vector<Point>(0);
-    	Vector<DCHalfEdge> unconnectedEdges = new Vector<DCHalfEdge>(0);
+    public void findUnconnectedEdges(ArrayList<Point> dupVerticies, ArrayList<Point> verticies){
+    	ArrayList<Point>unconnectedVerticies = new ArrayList<Point>(0);
+    	ArrayList<DCHalfEdge> unconnectedEdges = new ArrayList<DCHalfEdge>(0);
     	
     	
     	for(int i =0;i<verticies.size();i++){
@@ -170,7 +171,7 @@ public class DCFace extends DoublyConnectedEdgeList {
 		sortEdges(verticies);
     }
     
-    private void sortEdges(Vector<Point> verticies){
+    private void sortEdges(ArrayList<Point> verticies){
     	DCHalfEdge highestEdge1 = null;
 		DCHalfEdge highestEdge2 = null;
 		Collections.sort(verticies,new CmpY());
@@ -228,7 +229,7 @@ public class DCFace extends DoublyConnectedEdgeList {
     	System.out.println(highestEdge2.start.getX()+","+highestEdge2.start.getY());
     	System.out.println(highestEdge2.end.getX()+","+highestEdge2.end.getY());
 		*/
-		Vector<DCHalfEdge>sortedEdges = new Vector<DCHalfEdge>(0);
+		ArrayList<DCHalfEdge>sortedEdges = new ArrayList<DCHalfEdge>(0);
 		
 			
 		
@@ -237,7 +238,7 @@ public class DCFace extends DoublyConnectedEdgeList {
     }
     
     
-    private void recurseSort(DCHalfEdge currentEdge,DCHalfEdge edgeToRemove, Vector<DCHalfEdge>sortedEdges){
+    private void recurseSort(DCHalfEdge currentEdge,DCHalfEdge edgeToRemove, ArrayList<DCHalfEdge>sortedEdges){
     	DCHalfEdge currentEdgeNew=null;
     	DCHalfEdge edgeToRemoveNew=null;
     	edges.remove(edgeToRemove);

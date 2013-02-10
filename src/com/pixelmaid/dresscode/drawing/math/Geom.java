@@ -20,15 +20,16 @@
 
 package com.pixelmaid.dresscode.drawing.math;
 
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
-import com.pixelmaid.dresscode.drawing.primitive2d.LineCollection;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.drawing.datatype.DCHalfEdge;
 import com.pixelmaid.dresscode.drawing.datatype.DoublyConnectedEdgeList;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -242,30 +243,29 @@ public class Geom {
 
   //ray determined point in polygon (returns bool)
     
-    public static DoublyConnectedEdgeList linesToDCEdgeList(LineCollection lc){
+    public static DoublyConnectedEdgeList linesToDCEdgeList(ArrayList<Line> l){
     	DoublyConnectedEdgeList p = new DoublyConnectedEdgeList();
-    	Vector<Line> l = lc.getAllLines();
     	for(int i=0;i<l.size();i++){
-    		p.addHalfEdge(new DCHalfEdge(l.get(i).start.copy(),l.get(i).end.copy()));
+    		p.addHalfEdge(new DCHalfEdge(l.get(i).getStart(),l.get(i).getEnd()));
     	}
     	return p;
-    	
+    
     }
     
-    public static LineCollection dCEdgeListToLines(DoublyConnectedEdgeList p){
+    /*public static LineCollection dCEdgeListToLines(DoublyConnectedEdgeList p){
    
     	LineCollection lc = new LineCollection();
-    	Vector<DCHalfEdge> edges = p.edges;
+    	ArrayList<DCHalfEdge> edges = p.edges;
     	for(int i=0;i<edges.size();i++){
     		lc.addLine(edges.get(i).start.copy(),edges.get(i).end.copy());
     	}
     	return lc;
     	
-    }
+    }*/
     
-    public static boolean rayPointInPolygon(Point q, LineCollection lc){
+   /* public static boolean rayPointInPolygon(Point q, LineCollection lc){
     	
-    	DoublyConnectedEdgeList p = linesToDCEdgeList(lc);
+    	DoublyConnectedEdgeList p = linesToDCEdgeList(lc.getAllLines());
     
     	
     	char type = rayTypePointInPolygon(q, p);
@@ -275,7 +275,7 @@ public class Geom {
     	else{
     		return false;
     	}
-    } 
+    } */
     
     
   //ray determined point in polygon (returns bool)
@@ -300,7 +300,7 @@ public class Geom {
     	int Rcross = 0; //number of right edge/ray crossings
     	int Lcross = 0; //number of left edge/ray crossings
     	boolean Rstrad, Lstrad; //flags that indicate the edge straddles the x axis 
-    	//Vector<CompPoint> p = new Vector<CompPoint>();
+    	//ArrayList<CompPoint> p = new ArrayList<CompPoint>();
     	
     	// for each edge in poly, see if crosses rays
     	/*for(i=0;i<n;i++){
@@ -400,11 +400,11 @@ public class Geom {
 
     
     //determines if a segment intersects a polygon defined by a doubly connected edge list and returns edges of intersection if they exist
-    public static Vector<Line> edgeIntersectsPolygon(Line edge, Vector<Line> border) {
-        Vector<Line> intersectedEdges = new Vector<Line>();
+    public static ArrayList<Line> edgeIntersectsPolygon(Line edge, ArrayList<Line> border) {
+        ArrayList<Line> intersectedEdges = new ArrayList<Line>();
         for (int i = border.size() - 1; i >= 0; i--) {
             Line borderEdge = border.get(i);
-            if (lineIntersect(borderEdge.start, borderEdge.end, edge.start, edge.end)) {
+            if (lineIntersect(borderEdge.getStart(), borderEdge.getEnd(), edge.getStart(), edge.getEnd())) {
                 intersectedEdges.add(borderEdge);
             }
         }
@@ -413,12 +413,12 @@ public class Geom {
     
 
     //determines if a segment intersects a polygon defined by a doubly connected edge list and returns edges of intersection if they exist
-    public static Vector<DCHalfEdge> edgeIntersectsPolygon(DCHalfEdge edge, DoublyConnectedEdgeList border) {
-        Vector<DCHalfEdge> intersectedEdges = new Vector<DCHalfEdge>();
+    public static ArrayList<DCHalfEdge> edgeIntersectsPolygon(DCHalfEdge edge, DoublyConnectedEdgeList border) {
+        ArrayList<DCHalfEdge> intersectedEdges = new ArrayList<DCHalfEdge>();
         for (int i = border.edges.size() - 1; i >= 0; i--) {
             DCHalfEdge borderEdge = border.edges.get(i);
             if (lineIntersect(borderEdge.start, borderEdge.end, edge.start, edge.end)) {
-                intersectedEdges.addElement(borderEdge);
+                intersectedEdges.add(borderEdge);
             }
         }
         return intersectedEdges;
@@ -572,9 +572,9 @@ public class Geom {
     public static boolean ellipseEdgeIntersect(Ellipse disc, DCHalfEdge edge) {
         Vec2d seg_a = new Vec2d(edge.start.getX(), edge.start.getY());
         Vec2d seg_b = new Vec2d(edge.end.getX(), edge.end.getY());
-        Point closest = closestPoint(seg_a, seg_b, disc.origin);
-        double dist = new DCHalfEdge(closest, disc.origin).getLength();
-        if (dist > disc.radius) {
+        Point closest = closestPoint(seg_a, seg_b, disc.getOrigin());
+        double dist = new DCHalfEdge(closest, disc.getOrigin()).getLength();
+        if (dist > disc.getWidth()) {
             return false;
         } else {
             return true;
@@ -640,11 +640,13 @@ public class Geom {
 }
  
  
-//find centroid of a polygon
-public static Point findCentroid(Polygon polygon){
-	DoublyConnectedEdgeList dc = Geom.linesToDCEdgeList(polygon);
+//find centroid of a drawable
+public static Point findCentroid(Drawable polygon){
+	DoublyConnectedEdgeList dc = Geom.linesToDCEdgeList(polygon.getAllLines());
 	return Geom.findCentroid(dc);
 }
+
+ 
     
     
 public static Point findCentroid(DoublyConnectedEdgeList polygon)
@@ -656,7 +658,7 @@ public static Point findCentroid(DoublyConnectedEdgeList polygon)
 	int i,j;
 	int N = polygon.edges.size();
 	double factor=0;
-	Vector<Point> verticies = new Vector<Point>(0);
+	ArrayList<Point> verticies = new ArrayList<Point>(0);
 	
 	for (i=N-1;i>=0;i--) {
 		verticies.add(polygon.edges.get(i).start);
@@ -686,8 +688,8 @@ public static Point findCentroid(DoublyConnectedEdgeList polygon)
     
     
     //remove duplicate vertices from a polygon (accepts a dcedge list)
-    public static Vector<Point> removeDuplicateVerts(DoublyConnectedEdgeList poly){
-    	Vector <Point> verticies = new Vector<Point>(0);
+    public static ArrayList<Point> removeDuplicateVerts(DoublyConnectedEdgeList poly){
+    	ArrayList<Point> verticies = new ArrayList<Point>(0);
     	for(int i=0;i<poly.edges.size();i++)
     	{
     		verticies.add(poly.edges.get(i).start);
@@ -698,15 +700,15 @@ public static Point findCentroid(DoublyConnectedEdgeList polygon)
     
     
     //remove duplicate vertices from a polygon (accepts a vector of points)
-    public static Vector<Point> removeDuplicateVerts(Vector<Point> verticies){
+    public static ArrayList<Point> removeDuplicateVerts(ArrayList<Point> verticies){
     	//System.out.println("org#="+verticies.size());
     	Collection<Point> noDup = new LinkedHashSet<Point>(verticies);
-    	Vector<Point> newVerticies = new Vector<Point>();
+    	ArrayList<Point> newVerticies = new ArrayList<Point>();
     	newVerticies.addAll(noDup);
     	//System.out.println("new#="+noDup.size());
 
     	return newVerticies;
-    	/*Vector <CompPoint> newVerts = new Vector<CompPoint>(0);
+    	/*Vector <CompPoint> newVerts = new ArrayList<CompPoint>(0);
     	
     	for(int i=0;i<verticies.size();i++){
     		for(int j=0;j<verticies.size();j++){

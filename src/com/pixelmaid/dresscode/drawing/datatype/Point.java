@@ -22,8 +22,9 @@ package com.pixelmaid.dresscode.drawing.datatype;
 
 import java.awt.geom.Point2D;
 
+import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.math.*;
-import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.DrawableInterface;
 
 
 public class Point extends Point2D implements Comparable<Point>{
@@ -250,6 +251,12 @@ public class Point extends Point2D implements Comparable<Point>{
 		//parent.strokeWeight(strokeWeight);
 		//parent.point((float)this.x, (float)this.y);
 		//TODO:implement print method
+		
+	}
+
+
+	public void draw(Embedded embedded) {
+		// TODO Auto-generated method stub
 		
 	}
 	

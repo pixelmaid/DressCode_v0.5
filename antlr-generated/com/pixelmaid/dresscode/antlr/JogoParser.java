@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Jogo.g 2013-02-01 14:44:07
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Jogo.g 2013-02-08 14:19:32
 
   package com.pixelmaid.dresscode.antlr;
 
@@ -589,7 +589,7 @@ public class JogoParser extends Parser {
 			stream_IDENT.add(IDENT19);
 
 			// AST REWRITE
-			// elements: atom, IDENT, parameters, returnStatement
+			// elements: atom, IDENT, returnStatement, parameters
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1029,7 +1029,7 @@ public class JogoParser extends Parser {
 			stream_47.add(char_literal34);
 
 			// AST REWRITE
-			// elements: IDENT, actualParameters
+			// elements: actualParameters, IDENT
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1436,7 +1436,7 @@ public class JogoParser extends Parser {
 			stream_67.add(string_literal52);
 
 			// AST REWRITE
-			// elements: statement, statement, expression, statement, expression
+			// elements: statement, statement, expression, expression, statement
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -1938,7 +1938,7 @@ public class JogoParser extends Parser {
 			stream_47.add(char_literal75);
 
 			// AST REWRITE
-			// elements: variableDeclarator, type, variableDeclarator
+			// elements: variableDeclarator, variableDeclarator, type
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -2072,7 +2072,7 @@ public class JogoParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: 50, IDENT, expression
+					// elements: expression, IDENT, 50
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 

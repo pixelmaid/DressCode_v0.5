@@ -2,6 +2,7 @@ package com.pixelmaid.dresscode.app;
 
 
 import java.awt.event.*;
+
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
@@ -20,7 +21,7 @@ import com.pixelmaid.dresscode.antlr.PogoTreeWalker;
 import com.pixelmaid.dresscode.antlr.types.tree.BlockNode;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 
-public class CodeField extends JTextPane implements DocumentListener{
+public class CodeField extends JEditorPane implements DocumentListener, KeyListener{
 
     /**
 	 * 
@@ -29,75 +30,72 @@ public class CodeField extends JTextPane implements DocumentListener{
  
     public CodeField() {
         super();
-
-        
-		
-		
-		
-		
-        
-        
         this.setEditable(true);
         this.getDocument().addDocumentListener(this);
         JScrollPane scrollPane = new JScrollPane(this);
+        this.addKeyListener(this);
         
-        
-        int condition = JComponent.WHEN_FOCUSED;
+       /* int condition = JComponent.WHEN_FOCUSED;
         InputMap iMap = this.getInputMap(condition);
         ActionMap aMap = this.getActionMap();
-        String tab = "tab";
-        iMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_TAB, 0), tab);
-        aMap.put(tab, new AbstractAction() {
+        String enter = "enter";
+        iMap.put(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), enter);
+        aMap.put(enter, new AbstractAction() {
 
            @Override
-           public void actionPerformed(ActionEvent arg0) {
-        	   Container.canvas.clearAllDrawables();
-              //System.out.println("tab pressed");
-             String txt = ((CodeField) arg0.getSource()).getText();
-             CharStream charStream = new ANTLRStringStream(txt);
-     		
-     	    // create an instance of the lexer
+           public void actionPerformed(ActionEvent arg0) {*/
+        	
+        
+ 
+    }
+    
+    private void updateCanvas(){
+    	
+		   Manager.canvas.clearAllDrawables();
+        
+          String txt = this.getText();
+          System.out.println("txt="+txt);
+          CharStream charStream = new ANTLRStringStream(txt);
+  		
+  	    // create an instance of the lexer
 
-     		PogoLexer lexer = new PogoLexer(charStream);
+  		PogoLexer lexer = new PogoLexer(charStream);
 
-     		// wrap a token-stream around the lexer
-     	    CommonTokenStream tokens = new CommonTokenStream(lexer);
-     	        
-     	    // create the parser
-     	    PogoParser parser = new PogoParser(tokens);
-     	    
-     	    // walk the tree
-     	    CommonTree tree;
+  		// wrap a token-stream around the lexer
+  	    CommonTokenStream tokens = new CommonTokenStream(lexer);
+  	        
+  	    // create the parser
+  	    PogoParser parser = new PogoParser(tokens);
+  	    
+  	    // walk the tree
+  	    CommonTree tree;
 			try {
 				tree = (CommonTree)parser.parse().getTree();
 			
-     	    CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
-     	    
-     	    // pass the reference to the Map of functions to the tree walker
-     	    PogoTreeWalker walker = new PogoTreeWalker(nodes, parser.functions);
-     	    
-     	    // get the returned node 
-     	    BlockNode returned = walker.walk();
-     	    System.out.println(returned == null ? "null" : returned.evaluate("hello"));
+  	    CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
+  	    
+  	    // pass the reference to the Map of functions to the tree walker
+  	    PogoTreeWalker walker = new PogoTreeWalker(nodes, parser.functions);
+  	    
+  	    // get the returned node 
+  	    BlockNode returned = walker.walk();
+  	    
+  	    returned.evaluate();
+  	    Manager.canvas.draw();
+  	    Manager.canvas.init();
+  	  //System.out.println("updated canvas");
+  	   
+
+  	    
 			} catch (RecognitionException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-           }
-        });
         
-        //Add Components to this panel.
-       /* GridBagConstraints c = new GridBagConstraints();
-        c.gridwidth = GridBagConstraints.REMAINDER;
- 
-        c.fill = GridBagConstraints.HORIZONTAL;
-       
- 
-        c.fill = GridBagConstraints.BOTH;
-        c.weightx = 1.0;
-        c.weighty = 1.0;*/
-       
+    
     }
+    
+    
 
 	@Override
 	public void changedUpdate(DocumentEvent arg0) {
@@ -121,6 +119,37 @@ public class CodeField extends JTextPane implements DocumentListener{
 	public void removeUpdate(DocumentEvent arg0) {
 		// TODO Auto-generated method stub
 		//System.out.println("removeUpdate");
+		
+		
+	}
+
+	@Override
+	public void keyPressed(KeyEvent e) {
+		if(e.getKeyCode()==10){
+			updateCanvas();
+		}
+		//this.getParent().dispatchEvent(e);
+	}
+	
+
+	@Override
+	public void keyReleased(KeyEvent e) {
+		// TODO Auto-generated method stub
+		//this.getParent().dispatchEvent(e);
+		
+	}
+
+	@Override
+	public void keyTyped(KeyEvent e) {
+		// TODO Auto-generated method stub
+		//this.getParent().dispatchEvent(e);
+		
+	}
+
+	public void loadFile(String filetxt) {
+		System.out.println("load file="+filetxt);
+		this.setText(filetxt);
+		updateCanvas();
 		
 	}
  

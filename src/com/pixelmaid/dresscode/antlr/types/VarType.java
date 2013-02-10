@@ -2,8 +2,11 @@ package com.pixelmaid.dresscode.antlr.types;
 
 import java.util.List;
 
+import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.primitive2d.Color;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
+import com.pixelmaid.dresscode.drawing.primitive2d.Line;
+import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
 public class VarType implements Comparable<VarType> {  
 	  
@@ -50,11 +53,25 @@ public class VarType implements Comparable<VarType> {
 	    return (String)value;  
 	  }
 	  
-	  public Ellipse asEllipse(){
-		  
-		  return  new Ellipse(0, 0, 0);
-	  }
+	  public Drawable asDrawable() {  
+		    return (Drawable)value;  
+		  }
 	  
+	  public Line asLine() {  
+		    return (Line)value;  
+		  }
+	  
+	  public Point asPoint() {  
+		    return (Point)value;  
+		  }
+	  
+	  public Polygon asPolygon() {  
+		    return (Polygon)value;  
+		  }
+	  
+	  public Color asColor() {
+		  return new Color((String)value);
+		}
 	  @Override  
 	  public int compareTo(VarType that) {  
 	    if(this.isNumber() && that.isNumber()) {  
@@ -128,8 +145,22 @@ public class VarType implements Comparable<VarType> {
 		  return value instanceof Drawable;
 	  }
 	  
+	  public boolean isLine(){
+		  return value instanceof Line;
+	  }
+	  
+	  public boolean isPoint(){
+		  return value instanceof Point;
+	  }
+	  
+	  public boolean isPolygon(){
+		  return value instanceof Polygon;
+	  }
+	  
 	  @Override  
 	  public String toString() {  
 	    return isNull() ? "NULL" : isVoid() ? "VOID" : String.valueOf(value);  
-	  }  
+	  }
+
+	  
 	}  

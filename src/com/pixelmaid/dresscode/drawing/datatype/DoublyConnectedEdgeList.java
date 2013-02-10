@@ -20,6 +20,7 @@
 
 package com.pixelmaid.dresscode.drawing.datatype;
 
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.Vector;
 
@@ -27,9 +28,9 @@ import com.pixelmaid.dresscode.drawing.math.Geom;
 
 public class DoublyConnectedEdgeList {
 
-    public Vector<DCFace> faces = new Vector<DCFace>();
-    public Vector<DCHalfEdge> edges = new Vector<DCHalfEdge>();
-    public Vector<Point> verticies = new Vector<Point>();
+    public ArrayList<DCFace> faces = new ArrayList<DCFace>();
+    public ArrayList<DCHalfEdge> edges = new ArrayList<DCHalfEdge>();
+    public ArrayList<Point> verticies = new ArrayList<Point>();
     public Point centroid;
 
     public DoublyConnectedEdgeList() {
@@ -39,13 +40,13 @@ public class DoublyConnectedEdgeList {
 
     public void addVertex(Point p) {
 
-        verticies.addElement(p);
+        verticies.add(p);
 
     }
     
     public DCHalfEdge addHalfEdge(DCHalfEdge newEdge) {
 
-        edges.addElement(newEdge);
+        edges.add(newEdge);
        
         return newEdge;
     }
@@ -76,7 +77,7 @@ public class DoublyConnectedEdgeList {
     
    
     public boolean deleteEdge(DCHalfEdge edge) {
-        return edges.removeElement(edge);
+        return edges.remove(edge);
 
     }
 

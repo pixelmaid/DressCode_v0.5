@@ -4,6 +4,10 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
+import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
 public class AddNode implements DCNode {
 
@@ -42,6 +46,17 @@ public class AddNode implements DCNode {
     if(b.isString()) {
       return new VarType(a.toString() + "" + b.asString());
     }
+    
+    if(a.isPolygon() && b.isPolygon()) {
+    	Polygon aP = a.asPolygon();
+    	Polygon bP = b.asPolygon();
+    	aP.removeFromCanvas();
+    	bP.removeFromCanvas();
+    	Polygon d = PolyBoolean.union(aP,bP);
+    	 //TODO: add actual line number instead of 0 here
+		Manager.canvas.addDrawable("polygon",-1,d);
+    	return new VarType(d);
+      }
 
     throw new RuntimeException("illegal expression: " + this);
   }
