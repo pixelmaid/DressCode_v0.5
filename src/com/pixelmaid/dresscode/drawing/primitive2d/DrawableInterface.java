@@ -65,6 +65,12 @@ public interface DrawableInterface {
 
 	//gets absolute origin
 	public Point getAbsoluteOrigin();
+	
+	//sets absolute origin
+	public void setAbsoluteOrigin();
+	
+	//returns drawable with a collection of polygons rather than other forms.
+	public Drawable toPolygon();
 
 	
 		

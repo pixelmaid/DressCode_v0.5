@@ -47,14 +47,14 @@ public class AddNode implements DCNode {
       return new VarType(a.toString() + "" + b.asString());
     }
     
-    if(a.isPolygon() && b.isPolygon()) {
-    	Polygon aP = a.asPolygon();
-    	Polygon bP = b.asPolygon();
+    if(a.isDrawable() && b.isDrawable()) {
+    	Drawable aP = a.asDrawable();
+    	Drawable bP = b.asDrawable();
     	aP.removeFromCanvas();
     	bP.removeFromCanvas();
-    	Polygon d = PolyBoolean.union(aP,bP);
+    	Drawable d = PolyBoolean.union(aP,bP);
     	 //TODO: add actual line number instead of 0 here
-		Manager.canvas.addDrawable("polygon",-1,d);
+		Manager.canvas.addDrawable("drawable",-1,d);
     	return new VarType(d);
       }
 

@@ -71,12 +71,17 @@ public class Ellipse extends Drawable implements DrawableInterface {
 
 	@Override
     public void draw(Embedded e) {
+		appearance(e);
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
 		System.out.println("ellipse="+getOrigin().getX()+","+getOrigin().getY());
 		e.ellipse(0,0,(float)width,(float)height);
 		e.popMatrix();
+		
+		if(this.getDrawOrigin()){
+			this.drawOrigin(e);
+		}
 		
     }
 
@@ -88,14 +93,6 @@ public class Ellipse extends Drawable implements DrawableInterface {
 		
 	}
 
-	
-	@Override
-	public void moveTo(double x, double y) {
-	    	//this.removeDuplicatePoints();
-	        this.origin = new Point(x,y);
-	        System.out.println("moving ellipse");
-	        
-	    }
 
 	@Override
 	public void moveBy(double x, double y) {
@@ -166,6 +163,25 @@ public class Ellipse extends Drawable implements DrawableInterface {
 			}
 		}
 		return lines;
+	}
+	
+	@Override
+	//converts ellipse to polygon
+	public Drawable toPolygon() {
+		Polygon poly = new Polygon(this.origin.copy());
+		double pR = (Math.PI*2)/resolution;
+		double wR = width/2.0;
+		double hR = height/2.0;
+		
+		for (int i = 0; i <= resolution; i++) {
+			double t = pR*i;
+			double x = wR* Math.cos(t);
+			double y = hR* Math.sin(t);
+			poly.addPoint(x,y);
+
+		}
+		
+		return poly;
 	}
 
 }

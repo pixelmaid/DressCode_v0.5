@@ -113,6 +113,16 @@ public class Geom {
 	   
 	   return new Point(x,y);
    }
+   
+   public static Point getAveragePoint(ArrayList<Point> p){
+	   Point average = p.get(0);
+	   for(int i=1;i<p.size();i++){
+		   average = average.add(p.get(i));
+	   }
+	   average.setX(average.getX()/((double)(p.size())));
+	   average.setY(average.getY()/((double)(p.size())));
+	   return average;
+   }
     
    
    public static boolean isEven(double num){
@@ -622,16 +632,17 @@ public class Geom {
     }
   
  //find area of a polygon
-    public static double SignedPolygonArea(DoublyConnectedEdgeList poly)
+    public static double SignedPolygonArea(Polygon poly)
     {
 	
     	int i,j;
     	double area = 0;
-    	int N = poly.edges.size();
+    	ArrayList<Point> points = poly.getPoints();
+    	int N = points.size();
     	for (i=0;i<N;i++) {
     		j = (i + 1) % N;
-    		area += poly.edges.get(i).start.getX() * poly.edges.get(j).start.getY();
-    		area -= poly.edges.get(i).start.getY() * poly.edges.get(j).start.getX();
+    		area += points.get(i).getX() * points.get(j).getY();
+    		area -= points.get(i).getY() * points.get(j).getX();
     	}
 	area /= 2.0;
 	
@@ -640,31 +651,22 @@ public class Geom {
 }
  
  
-//find centroid of a drawable
-public static Point findCentroid(Drawable polygon){
-	DoublyConnectedEdgeList dc = Geom.linesToDCEdgeList(polygon.getAllLines());
-	return Geom.findCentroid(dc);
-}
 
  
     
     
-public static Point findCentroid(DoublyConnectedEdgeList polygon)
+public static Point findCentroid(Polygon polygon)
 {
 	double cx=0,cy=0;
 	double A= SignedPolygonArea(polygon);
+	ArrayList<Point> verticies = polygon.getPoints();
 	//System.out.println("signedArea="+A);
 	Point res;
 	int i,j;
-	int N = polygon.edges.size();
+	int N = verticies.size();
 	double factor=0;
-	ArrayList<Point> verticies = new ArrayList<Point>(0);
 	
-	for (i=N-1;i>=0;i--) {
-		verticies.add(polygon.edges.get(i).start);
-		//System.out.println(polygon.edges.get(i).start.getX()+","+polygon.edges.get(i).start.getY());
-	}
-	verticies.add(polygon.edges.get(N-1).start);
+	verticies.add(verticies.get(0).copy());
 	//System.out.println("added");
 	
 	

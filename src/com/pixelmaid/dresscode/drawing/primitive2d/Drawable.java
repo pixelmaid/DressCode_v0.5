@@ -9,7 +9,7 @@ import com.pixelmaid.dresscode.drawing.math.Geom;
 
 public class Drawable implements DrawableInterface {
 
-	private ArrayList<Drawable> children; //stores all children of a drawable
+	public  ArrayList<Drawable> children; //stores all children of a drawable
 	/*private ArrayList<Curve> curves; //stores all lines of a drawable
 	private ArrayList<Point> points; //stores all points of a drawable
 	private ArrayList<Polygon> polygons; //stores all polygons of a drawable
@@ -26,7 +26,7 @@ public class Drawable implements DrawableInterface {
 	private double strokeWeight;
 	private boolean doFill = true;
 	private boolean doStroke=true;
-	
+	private boolean drawOrigin=true;
 	
 	protected final static int DEFAULT_WIDTH= 50;
 
@@ -50,44 +50,60 @@ public class Drawable implements DrawableInterface {
 
 	@Override
 	public void draw(Embedded embedded) {
+		if(!this.getHide()){
+		appearance(embedded);
 		embedded.pushMatrix();
 		embedded.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		embedded.rotate((float)getRotation());
 		
 				for(int j =0;j<this.children.size();j++){
-					int rf=this.children.get(j).getFillColor().r();
-					int gf=this.children.get(j).getFillColor().g();
-					int bf=this.children.get(j).getFillColor().b();
-					int rS=this.children.get(j).getStrokeColor().r();
-					int gS=this.children.get(j).getStrokeColor().g();
-					int bS=this.children.get(j).getStrokeColor().b();
-					
-					
-					if(this.children.get(j).doStroke()){
-						embedded.stroke(rS,gS,bS);
-						embedded.strokeWeight((float)this.children.get(j).getStrokeWeight());
-					}
-					else{
-						embedded.noStroke();
-					}
-					if(this.children.get(j).doFill()){
-						embedded.fill(rf,gf,bf);
-					}
-					else{
-						embedded.noFill();
-					}
-					if(this.children.get(j).getHide()==false){
-						
 						this.children.get(j).draw(embedded);
-					}
-					
-						System.out.println("hide ="+this.children.get(j).getHide());
 					
 				}
 				
-		embedded.popMatrix();	
+		embedded.popMatrix();
+		
+		if(this.getDrawOrigin()){
+			this.drawOrigin(embedded);
+		}
+		}
 	}
 
+	//sets up proper fill and stroke settings
+	public void appearance(Embedded e){
+		int rf=this.getFillColor().r();
+		int gf=this.getFillColor().g();
+		int bf=this.getFillColor().b();
+		int rS=this.getStrokeColor().r();
+		int gS=this.getStrokeColor().g();
+		int bS=this.getStrokeColor().b();
+		
+		
+		if(this.doStroke()){
+			e.stroke(rS,gS,bS);
+			
+		}
+		else{
+			e.noStroke();
+		}
+		e.strokeWeight((float)this.getStrokeWeight());
+		
+		if(this.doFill()){
+			e.fill(rf,gf,bf);
+		}
+		else{
+			e.noFill();
+		}
+	}
+	
+	//draws the origin of the drawable
+	public void drawOrigin(Embedded embedded){
+		embedded.stroke(255,0,0);
+		embedded.strokeWeight(5);
+		embedded.point((float)this.origin.getX(),(float)this.origin.getY());
+		System.out.println("drawOrigin");
+	}
+	
 	@Override
 	public void print(Embedded embedded) {
 		// TODO Auto-generated method stub
@@ -110,6 +126,16 @@ public class Drawable implements DrawableInterface {
 		this.hide=false;
 
 	}
+	
+	//methods for getting and setting drawOrigin value
+	
+	public boolean getDrawOrigin(){
+		return drawOrigin;
+	}
+	
+	public void setDrawOrigin(boolean d){
+		drawOrigin=d;
+	}
 
 	@Override
 	public void removeFromCanvas(){
@@ -118,22 +144,20 @@ public class Drawable implements DrawableInterface {
 
 	@Override
 	public void moveTo(double x, double y) {
-		
-	
-		if(isDrawable(this)){
-			System.out.println("x,y="+x+","+y);
-			this.origin=new Point(x,y);
-			/*for(int j =0;j<this.children.size();j++){
-				double dx= x-this.origin.getX();
-				double dy = y-this.origin.getY();
-				System.out.println("dx,dy="+dx+","+dy);
-				this.children.get(j).moveTo(Math.random()*100,Math.random()*100);
-				his.children.get(j).moveTo(dx+this.children.get(j).getOrigin().getX(),dy+this.children.get(j).getOrigin().getY());
-			//}
-			//this.origin=new Point(x,y);*/
-		}
 
+		this.origin=new Point(x,y);
+	
 	}
+	
+	@Override
+	public Drawable toPolygon(){
+		for(int j =0;j<this.children.size();j++){
+			Drawable poly = this.children.get(j).toPolygon();
+			this.children.set(j, poly);
+		}
+		return this;
+	}
+	
 
 	@Override
 	public void moveBy(double x, double y) {
@@ -193,6 +217,7 @@ public class Drawable implements DrawableInterface {
 		return null;
 	}
 
+	//gets the absolute position of the object
 	@Override
 	public Point getAbsoluteOrigin() {
 		if(this.parent!=null){
@@ -203,6 +228,27 @@ public class Drawable implements DrawableInterface {
 		}
 		//return Geom.findCentroid(this);
 	}
+	
+	@Override
+	public void setAbsoluteOrigin() {
+		if(this.parent!=null){
+			this.origin= this.origin.add(this.parent.getOrigin());
+		}
+	}
+	
+
+	public void setOriginRelativeTo(Point p) {
+		this.origin= this.origin.difference(p);
+	}
+	
+	public void alterOrigin(Point p){
+		this.setOrigin(p);
+		for(int i=0;i<this.children.size();i++){
+			children.get(i).setOriginRelativeTo(p);
+		}
+		
+	}
+	
 	
 	@Override
 	public Point getOrigin(){
@@ -225,6 +271,9 @@ public class Drawable implements DrawableInterface {
 	
 	public void setStrokeWeight(double w){
 		this.strokeWeight=w;
+		for(int i=0;i<this.children.size();i++){
+			this.children.get(i).setStrokeWeight(w);
+		}
 	}
 	
 	public Color getFillColor(){
@@ -237,17 +286,29 @@ public class Drawable implements DrawableInterface {
 	
 	public void setStrokeColor(int r, int g, int b){
 		this.strokeColor.set(r, g, b);
+		for(int i=0;i<this.children.size();i++){
+			this.children.get(i).setStrokeColor(r,g,b);
+		}
 	}
 		
 	public void setFillColor(int r, int g, int b){
 		this.fillColor.set(r, g, b);
+		for(int i=0;i<this.children.size();i++){
+			this.children.get(i).setFillColor(r, g, b);
+		}
 	}
 	
 	public void setFillColor(Color c){
 		this.fillColor=c;
+		for(int i=0;i<this.children.size();i++){
+			this.children.get(i).setFillColor(c);
+		}
 	}
 	public void setStrokeColor(Color c){
 		this.strokeColor=c;
+		for(int i=0;i<this.children.size();i++){
+			this.children.get(i).setStrokeColor(c);
+		}
 	}
 	
 	public void doFill(Boolean f){
@@ -287,26 +348,26 @@ public class Drawable implements DrawableInterface {
 	}
 
 	//boolean returns to check type of drawables
-	public boolean isDrawable(Object value){
-		return value instanceof Drawable;
+	public boolean isDrawable(){
+		return this instanceof Drawable;
 	}
 
-	public boolean isEllipse(Object value){
-		return value instanceof Ellipse;
+	public boolean isEllipse(){
+		return this instanceof Ellipse;
 	}
 
-	public boolean isRectangle(Object value){
-		return value instanceof Rectangle;
+	public boolean isRectangle(){
+		return this instanceof Rectangle;
 	}
 
-	public boolean isCurve(Object value){
-		return value instanceof Curve;
+	public boolean isCurve(){
+		return this instanceof Curve;
 	}
-	public boolean isLine(Object value){
-		return value instanceof Line;
+	public boolean isLine(){
+		return this instanceof Line;
 	}
-	public boolean isPolygon(Object value){
-		return value instanceof Polygon;
+	public boolean isPolygon(){
+		return this instanceof Polygon;
 	}
 
 	
@@ -318,6 +379,35 @@ public class Drawable implements DrawableInterface {
 		this.parent = p;
 	}
 
+	//condenses all drawable children into one dimensional list
+	public Drawable condense(){
+		Drawable dp = this.toPolygon(); //first convert all children primitves to polygons
+		if(dp.isPolygon()){
+			return dp;
+		}
+		else{
+			ArrayList<Drawable> empty = new ArrayList<Drawable>();
+			ArrayList<Drawable> finalPolys = condenseRec(dp,empty); 
+			this.children=finalPolys;
+			return dp;
+		}
+	}
+	
+	//recursive condense function
+	public ArrayList<Drawable> condenseRec(Drawable d, ArrayList<Drawable> polygons){
+		for(int i=0;i<d.children.size(); i++){
+			d.children.get(i).setAbsoluteOrigin();
+			if (!d.children.get(i).isPolygon()){
+				condenseRec(d.children.get(i),polygons);
+				
+			}
+			else{
+				polygons.add(d.children.get(i));
+			}
+		}
+		return polygons;
+		
+	}
 	
 
 

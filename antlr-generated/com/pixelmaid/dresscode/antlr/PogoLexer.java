@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g 2013-02-08 23:21:01
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g 2013-02-12 19:12:17
 
   package com.pixelmaid.dresscode.antlr;
 
@@ -11,6 +11,10 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class PogoLexer extends Lexer {
 	public static final int EOF=-1;
+	public static final int T__92=92;
+	public static final int T__93=93;
+	public static final int T__94=94;
+	public static final int T__95=95;
 	public static final int ASSIGNMENT=4;
 	public static final int Add=5;
 	public static final int And=6;
@@ -22,29 +26,29 @@ public class PogoLexer extends Lexer {
 	public static final int CBracket=12;
 	public static final int COLOR_CONSTANT=13;
 	public static final int CParen=14;
-	public static final int Colon=15;
-	public static final int Comma=16;
-	public static final int Comment=17;
-	public static final int Copy=18;
-	public static final int Cosine=19;
-	public static final int Curve=20;
-	public static final int Def=21;
-	public static final int Digit=22;
-	public static final int Divide=23;
-	public static final int Do=24;
-	public static final int EXP=25;
-	public static final int EXP_LIST=26;
-	public static final int Ellipse=27;
-	public static final int Else=28;
-	public static final int End=29;
-	public static final int Equals=30;
-	public static final int Excl=31;
-	public static final int FUNCTION=32;
-	public static final int FUNC_CALL=33;
-	public static final int Fill=34;
-	public static final int For=35;
-	public static final int GT=36;
-	public static final int GTEquals=37;
+	public static final int Comma=15;
+	public static final int Comment=16;
+	public static final int Copy=17;
+	public static final int Cosine=18;
+	public static final int Curve=19;
+	public static final int Def=20;
+	public static final int Digit=21;
+	public static final int Divide=22;
+	public static final int Do=23;
+	public static final int EXP=24;
+	public static final int EXP_LIST=25;
+	public static final int Ellipse=26;
+	public static final int Else=27;
+	public static final int End=28;
+	public static final int Equals=29;
+	public static final int Excl=30;
+	public static final int FUNCTION=31;
+	public static final int FUNC_CALL=32;
+	public static final int Fill=33;
+	public static final int For=34;
+	public static final int GT=35;
+	public static final int GTEquals=36;
+	public static final int Group=37;
 	public static final int Hide=38;
 	public static final int ID_LIST=39;
 	public static final int IF=40;
@@ -81,23 +85,28 @@ public class PogoLexer extends Lexer {
 	public static final int Quad=71;
 	public static final int RETURN=72;
 	public static final int Rect=73;
-	public static final int Return=74;
-	public static final int Rotate=75;
-	public static final int SColon=76;
-	public static final int STATEMENTS=77;
-	public static final int Scale=78;
-	public static final int Sine=79;
-	public static final int Size=80;
-	public static final int Space=81;
-	public static final int String=82;
-	public static final int Stroke=83;
-	public static final int Subtract=84;
-	public static final int TERNARY=85;
-	public static final int To=86;
-	public static final int Triangle=87;
-	public static final int UNARY_MIN=88;
-	public static final int Weight=89;
-	public static final int While=90;
+	public static final int Repeat=74;
+	public static final int Return=75;
+	public static final int Rotate=76;
+	public static final int SPECIAL=77;
+	public static final int STATEMENTS=78;
+	public static final int Scale=79;
+	public static final int Sine=80;
+	public static final int Size=81;
+	public static final int Space=82;
+	public static final int String=83;
+	public static final int Stroke=84;
+	public static final int Subtract=85;
+	public static final int TERNARY=86;
+	public static final int To=87;
+	public static final int Triangle=88;
+	public static final int UNARY_MIN=89;
+	public static final int Weight=90;
+	public static final int While=91;
+
+	int implicitLineJoiningLevel = 0;
+	int startPos=-1;
+
 
 	// delegates
 	// delegators
@@ -114,13 +123,95 @@ public class PogoLexer extends Lexer {
 	}
 	@Override public String getGrammarFileName() { return "/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g"; }
 
+	// $ANTLR start "T__92"
+	public final void mT__92() throws RecognitionException {
+		try {
+			int _type = T__92;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:10:7: ( '&&' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:10:9: '&&'
+			{
+			match("&&"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__92"
+
+	// $ANTLR start "T__93"
+	public final void mT__93() throws RecognitionException {
+		try {
+			int _type = T__93;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:11:7: ( ';' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:11:9: ';'
+			{
+			match(';'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__93"
+
+	// $ANTLR start "T__94"
+	public final void mT__94() throws RecognitionException {
+		try {
+			int _type = T__94;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:12:7: ( '|' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:12:9: '|'
+			{
+			match('|'); 
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__94"
+
+	// $ANTLR start "T__95"
+	public final void mT__95() throws RecognitionException {
+		try {
+			int _type = T__95;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:13:7: ( '||' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:13:9: '||'
+			{
+			match("||"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "T__95"
+
 	// $ANTLR start "Ellipse"
 	public final void mEllipse() throws RecognitionException {
 		try {
 			int _type = Ellipse;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:9: ( 'ellipse' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:11: 'ellipse'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:242:9: ( 'ellipse' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:242:11: 'ellipse'
 			{
 			match("ellipse"); 
 
@@ -140,8 +231,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Rect;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:6: ( 'rect' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:8: 'rect'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:243:6: ( 'rect' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:243:8: 'rect'
 			{
 			match("rect"); 
 
@@ -161,8 +252,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Line;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:6: ( 'line' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:8: 'line'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:6: ( 'line' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:8: 'line'
 			{
 			match("line"); 
 
@@ -182,8 +273,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Curve;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:7: ( 'curve' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:9: 'curve'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:245:7: ( 'curve' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:245:9: 'curve'
 			{
 			match("curve"); 
 
@@ -203,8 +294,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Quad;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:6: ( 'quad' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:8: 'quad'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:246:6: ( 'quad' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:246:8: 'quad'
 			{
 			match("quad"); 
 
@@ -224,8 +315,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Point;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:7: ( 'point' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:9: 'point'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:247:7: ( 'point' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:247:9: 'point'
 			{
 			match("point"); 
 
@@ -245,8 +336,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Triangle;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:9: ( 'triangle' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:11: 'triangle'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:248:9: ( 'triangle' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:248:11: 'triangle'
 			{
 			match("triangle"); 
 
@@ -266,8 +357,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Polygon;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:235:9: ( 'poly' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:235:11: 'poly'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:249:9: ( 'poly' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:249:11: 'poly'
 			{
 			match("poly"); 
 
@@ -287,8 +378,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Cosine;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:238:8: ( 'cos' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:238:9: 'cos'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:252:8: ( 'cos' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:252:9: 'cos'
 			{
 			match("cos"); 
 
@@ -308,8 +399,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Sine;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:239:6: ( 'sin' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:239:8: 'sin'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:253:6: ( 'sin' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:253:8: 'sin'
 			{
 			match("sin"); 
 
@@ -329,8 +420,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Move;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:242:6: ( 'move' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:242:8: 'move'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:256:6: ( 'move' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:256:8: 'move'
 			{
 			match("move"); 
 
@@ -350,8 +441,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Copy;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:243:6: ( 'copy' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:243:8: 'copy'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:257:6: ( 'copy' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:257:8: 'copy'
 			{
 			match("copy"); 
 
@@ -371,8 +462,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Rotate;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:8: ( 'rotate' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:10: 'rotate'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:258:8: ( 'rotate' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:258:10: 'rotate'
 			{
 			match("rotate"); 
 
@@ -392,8 +483,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Scale;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:245:7: ( 'scale' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:245:9: 'scale'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:259:7: ( 'scale' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:259:9: 'scale'
 			{
 			match("scale"); 
 
@@ -413,8 +504,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Fill;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:246:6: ( 'fill' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:246:8: 'fill'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:260:6: ( 'fill' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:260:8: 'fill'
 			{
 			match("fill"); 
 
@@ -434,8 +525,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Stroke;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:247:8: ( 'stroke' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:247:10: 'stroke'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:261:8: ( 'stroke' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:261:10: 'stroke'
 			{
 			match("stroke"); 
 
@@ -455,8 +546,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = NoFill;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:248:8: ( 'noFill' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:248:10: 'noFill'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:262:8: ( 'noFill' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:262:10: 'noFill'
 			{
 			match("noFill"); 
 
@@ -476,8 +567,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = NoStroke;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:249:10: ( 'noStroke' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:249:12: 'noStroke'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:263:10: ( 'noStroke' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:263:12: 'noStroke'
 			{
 			match("noStroke"); 
 
@@ -497,8 +588,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Weight;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:250:8: ( 'weight' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:250:10: 'weight'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:264:8: ( 'weight' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:264:10: 'weight'
 			{
 			match("weight"); 
 
@@ -518,8 +609,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Hide;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:251:6: ( 'hide' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:251:8: 'hide'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:265:6: ( 'hide' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:265:8: 'hide'
 			{
 			match("hide"); 
 
@@ -534,12 +625,33 @@ public class PogoLexer extends Lexer {
 	}
 	// $ANTLR end "Hide"
 
+	// $ANTLR start "Group"
+	public final void mGroup() throws RecognitionException {
+		try {
+			int _type = Group;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:266:7: ( 'group' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:266:9: 'group'
+			{
+			match("group"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "Group"
+
 	// $ANTLR start "COLOR_CONSTANT"
 	public final void mCOLOR_CONSTANT() throws RecognitionException {
 		try {
 			int _type = COLOR_CONSTANT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:15: ( 'RED' | 'BLUE' | 'GREEN' | 'PURPLE' | 'YELLOW' | 'ORANGE' | 'PINK' | 'BLACK' | 'WHITE' | 'GREY' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:15: ( 'RED' | 'BLUE' | 'GREEN' | 'PURPLE' | 'YELLOW' | 'ORANGE' | 'PINK' | 'BLACK' | 'WHITE' | 'GREY' )
 			int alt1=10;
 			switch ( input.LA(1) ) {
 			case 'R':
@@ -695,70 +807,70 @@ public class PogoLexer extends Lexer {
 			}
 			switch (alt1) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:17: 'RED'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:17: 'RED'
 					{
 					match("RED"); 
 
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:23: 'BLUE'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:23: 'BLUE'
 					{
 					match("BLUE"); 
 
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:30: 'GREEN'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:30: 'GREEN'
 					{
 					match("GREEN"); 
 
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:38: 'PURPLE'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:38: 'PURPLE'
 					{
 					match("PURPLE"); 
 
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:47: 'YELLOW'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:47: 'YELLOW'
 					{
 					match("YELLOW"); 
 
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:56: 'ORANGE'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:56: 'ORANGE'
 					{
 					match("ORANGE"); 
 
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:65: 'PINK'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:65: 'PINK'
 					{
 					match("PINK"); 
 
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:72: 'BLACK'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:72: 'BLACK'
 					{
 					match("BLACK"); 
 
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:80: 'WHITE'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:80: 'WHITE'
 					{
 					match("WHITE"); 
 
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:254:88: 'GREY'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:88: 'GREY'
 					{
 					match("GREY"); 
 
@@ -780,8 +892,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = PI_CONSTANT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:256:12: ( 'PI' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:256:14: 'PI'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:12: ( 'PI' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:14: 'PI'
 			{
 			match("PI"); 
 
@@ -801,8 +913,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Println;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:258:10: ( 'println' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:258:12: 'println'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:273:10: ( 'println' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:273:12: 'println'
 			{
 			match("println"); 
 
@@ -822,8 +934,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Print;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:259:10: ( 'print' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:259:12: 'print'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:274:10: ( 'print' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:274:12: 'print'
 			{
 			match("print"); 
 
@@ -843,8 +955,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Assert;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:260:10: ( 'assert' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:260:12: 'assert'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:10: ( 'assert' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:12: 'assert'
 			{
 			match("assert"); 
 
@@ -864,8 +976,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Size;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:261:10: ( 'size' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:261:12: 'size'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:276:10: ( 'size' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:276:12: 'size'
 			{
 			match("size"); 
 
@@ -885,8 +997,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Def;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:262:10: ( 'def' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:262:12: 'def'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:277:10: ( 'def' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:277:12: 'def'
 			{
 			match("def"); 
 
@@ -906,8 +1018,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = If;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:263:10: ( 'if' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:263:12: 'if'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:278:10: ( 'if' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:278:12: 'if'
 			{
 			match("if"); 
 
@@ -927,8 +1039,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Else;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:264:10: ( 'else' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:264:12: 'else'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:10: ( 'else' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:12: 'else'
 			{
 			match("else"); 
 
@@ -948,8 +1060,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Return;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:265:10: ( 'return' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:265:12: 'return'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:280:10: ( 'return' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:280:12: 'return'
 			{
 			match("return"); 
 
@@ -969,8 +1081,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = For;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:266:10: ( 'for' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:266:12: 'for'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:281:10: ( 'for' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:281:12: 'for'
 			{
 			match("for"); 
 
@@ -985,13 +1097,34 @@ public class PogoLexer extends Lexer {
 	}
 	// $ANTLR end "For"
 
+	// $ANTLR start "Repeat"
+	public final void mRepeat() throws RecognitionException {
+		try {
+			int _type = Repeat;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:282:9: ( 'repeat' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:282:11: 'repeat'
+			{
+			match("repeat"); 
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "Repeat"
+
 	// $ANTLR start "While"
 	public final void mWhile() throws RecognitionException {
 		try {
 			int _type = While;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:267:10: ( 'while' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:267:12: 'while'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:283:10: ( 'while' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:283:12: 'while'
 			{
 			match("while"); 
 
@@ -1011,8 +1144,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = To;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:268:10: ( 'to' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:268:12: 'to'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:284:10: ( 'to' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:284:12: 'to'
 			{
 			match("to"); 
 
@@ -1032,11 +1165,10 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Do;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:10: ( 'do' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:269:12: 'do'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:285:10: ( ':' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:285:12: ':'
 			{
-			match("do"); 
-
+			match(':'); 
 			}
 
 			state.type = _type;
@@ -1053,8 +1185,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = End;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:270:10: ( 'end' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:270:12: 'end'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:286:10: ( 'end' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:286:12: 'end'
 			{
 			match("end"); 
 
@@ -1074,8 +1206,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = In;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:10: ( 'in' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:12: 'in'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:10: ( 'in' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:12: 'in'
 			{
 			match("in"); 
 
@@ -1095,8 +1227,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Null;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:272:10: ( 'null' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:272:12: 'null'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:288:10: ( 'null' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:288:12: 'null'
 			{
 			match("null"); 
 
@@ -1116,10 +1248,10 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Or;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:274:10: ( '||' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:274:12: '||'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:290:10: ( 'or' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:290:12: 'or'
 			{
-			match("||"); 
+			match("or"); 
 
 			}
 
@@ -1137,10 +1269,10 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = And;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:10: ( '&&' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:12: '&&'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:291:10: ( 'and' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:291:12: 'and'
 			{
-			match("&&"); 
+			match("and"); 
 
 			}
 
@@ -1158,8 +1290,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Equals;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:276:10: ( '==' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:276:12: '=='
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:292:10: ( '==' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:292:12: '=='
 			{
 			match("=="); 
 
@@ -1179,8 +1311,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = NEquals;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:277:10: ( '!=' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:277:12: '!='
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:293:10: ( '!=' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:293:12: '!='
 			{
 			match("!="); 
 
@@ -1200,8 +1332,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = GTEquals;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:278:10: ( '>=' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:278:12: '>='
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:294:10: ( '>=' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:294:12: '>='
 			{
 			match(">="); 
 
@@ -1221,8 +1353,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = LTEquals;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:10: ( '<=' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:12: '<='
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:295:10: ( '<=' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:295:12: '<='
 			{
 			match("<="); 
 
@@ -1242,8 +1374,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Pow;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:280:10: ( '^' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:280:12: '^'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:296:10: ( '^' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:296:12: '^'
 			{
 			match('^'); 
 			}
@@ -1262,8 +1394,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Excl;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:281:10: ( '!' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:281:12: '!'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:297:10: ( '!' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:297:12: '!'
 			{
 			match('!'); 
 			}
@@ -1282,8 +1414,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = GT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:282:10: ( '>' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:282:12: '>'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:298:10: ( '>' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:298:12: '>'
 			{
 			match('>'); 
 			}
@@ -1302,8 +1434,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = LT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:283:10: ( '<' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:283:12: '<'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:299:10: ( '<' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:299:12: '<'
 			{
 			match('<'); 
 			}
@@ -1322,8 +1454,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Add;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:284:10: ( '+' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:284:12: '+'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:300:10: ( '+' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:300:12: '+'
 			{
 			match('+'); 
 			}
@@ -1342,8 +1474,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Subtract;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:285:10: ( '-' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:285:12: '-'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:301:10: ( '-' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:301:12: '-'
 			{
 			match('-'); 
 			}
@@ -1362,8 +1494,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Multiply;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:286:10: ( '*' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:286:12: '*'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:302:10: ( '*' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:302:12: '*'
 			{
 			match('*'); 
 			}
@@ -1382,8 +1514,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Divide;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:10: ( '/' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:12: '/'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:303:10: ( '/' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:303:12: '/'
 			{
 			match('/'); 
 			}
@@ -1402,8 +1534,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Modulus;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:288:10: ( '%' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:288:12: '%'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:304:10: ( '%' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:304:12: '%'
 			{
 			match('%'); 
 			}
@@ -1422,8 +1554,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = OBrace;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:289:10: ( '{' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:289:12: '{'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:305:10: ( '{' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:305:12: '{'
 			{
 			match('{'); 
 			}
@@ -1442,8 +1574,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = CBrace;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:290:10: ( '}' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:290:12: '}'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:306:10: ( '}' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:306:12: '}'
 			{
 			match('}'); 
 			}
@@ -1462,8 +1594,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = OBracket;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:291:10: ( '[' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:291:12: '['
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:307:10: ( '[' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:307:12: '['
 			{
 			match('['); 
 			}
@@ -1482,8 +1614,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = CBracket;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:292:10: ( ']' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:292:12: ']'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:308:10: ( ']' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:308:12: ']'
 			{
 			match(']'); 
 			}
@@ -1502,8 +1634,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = OParen;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:293:10: ( '(' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:293:12: '('
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:309:10: ( '(' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:309:12: '('
 			{
 			match('('); 
 			}
@@ -1522,8 +1654,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = CParen;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:294:10: ( ')' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:294:12: ')'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:310:10: ( ')' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:310:12: ')'
 			{
 			match(')'); 
 			}
@@ -1537,33 +1669,13 @@ public class PogoLexer extends Lexer {
 	}
 	// $ANTLR end "CParen"
 
-	// $ANTLR start "SColon"
-	public final void mSColon() throws RecognitionException {
-		try {
-			int _type = SColon;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:295:10: ( ';' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:295:12: ';'
-			{
-			match(';'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "SColon"
-
 	// $ANTLR start "Assign"
 	public final void mAssign() throws RecognitionException {
 		try {
 			int _type = Assign;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:296:10: ( '=' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:296:12: '='
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:312:10: ( '=' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:312:12: '='
 			{
 			match('='); 
 			}
@@ -1582,8 +1694,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Comma;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:297:10: ( ',' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:297:12: ','
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:313:10: ( ',' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:313:12: ','
 			{
 			match(','); 
 			}
@@ -1602,8 +1714,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = QMark;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:298:10: ( '?' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:298:12: '?'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:314:10: ( '?' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:314:12: '?'
 			{
 			match('?'); 
 			}
@@ -1617,32 +1729,12 @@ public class PogoLexer extends Lexer {
 	}
 	// $ANTLR end "QMark"
 
-	// $ANTLR start "Colon"
-	public final void mColon() throws RecognitionException {
-		try {
-			int _type = Colon;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:299:10: ( ':' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:299:12: ':'
-			{
-			match(':'); 
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "Colon"
-
 	// $ANTLR start "Bool"
 	public final void mBool() throws RecognitionException {
 		try {
 			int _type = Bool;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:302:3: ( 'true' | 'false' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:3: ( 'true' | 'false' )
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0=='t') ) {
@@ -1660,14 +1752,14 @@ public class PogoLexer extends Lexer {
 
 			switch (alt2) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:302:6: 'true'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:6: 'true'
 					{
 					match("true"); 
 
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:303:6: 'false'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:319:6: 'false'
 					{
 					match("false"); 
 
@@ -1689,12 +1781,12 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Number;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:307:3: ( Int ( '.' ( Digit )* )? )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:307:6: Int ( '.' ( Digit )* )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:3: ( Int ( '.' ( Digit )* )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:6: Int ( '.' ( Digit )* )?
 			{
 			mInt(); 
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:307:10: ( '.' ( Digit )* )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:10: ( '.' ( Digit )* )?
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0=='.') ) {
@@ -1702,10 +1794,10 @@ public class PogoLexer extends Lexer {
 			}
 			switch (alt4) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:307:11: '.' ( Digit )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:11: '.' ( Digit )*
 					{
 					match('.'); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:307:15: ( Digit )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:15: ( Digit )*
 					loop3:
 					while (true) {
 						int alt3=2;
@@ -1755,8 +1847,8 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Identifier;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:311:3: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:311:6: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:327:3: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:327:6: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -1766,7 +1858,7 @@ public class PogoLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:311:34: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:327:34: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )*
 			loop5:
 			while (true) {
 				int alt5=2;
@@ -1811,7 +1903,7 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = String;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:3: ( '\"' (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )* '\"' | '\\'' (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )* '\\'' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:334:3: ( '\"' (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )* '\"' | '\\'' (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )* '\\'' )
 			int alt8=2;
 			int LA8_0 = input.LA(1);
 			if ( (LA8_0=='\"') ) {
@@ -1829,10 +1921,10 @@ public class PogoLexer extends Lexer {
 
 			switch (alt8) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:6: '\"' (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )* '\"'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:334:6: '\"' (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )* '\"'
 					{
 					match('\"'); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:11: (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:334:11: (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )*
 					loop6:
 					while (true) {
 						int alt6=3;
@@ -1846,7 +1938,7 @@ public class PogoLexer extends Lexer {
 
 						switch (alt6) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:12: ~ ( '\"' | '\\\\' )
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:334:12: ~ ( '\"' | '\\\\' )
 							{
 							if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 								input.consume();
@@ -1859,7 +1951,7 @@ public class PogoLexer extends Lexer {
 							}
 							break;
 						case 2 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:29: '\\\\' ( '\\\\' | '\"' )
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:334:29: '\\\\' ( '\\\\' | '\"' )
 							{
 							match('\\'); 
 							if ( input.LA(1)=='\"'||input.LA(1)=='\\' ) {
@@ -1882,10 +1974,10 @@ public class PogoLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:319:6: '\\'' (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )* '\\''
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:335:6: '\\'' (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )* '\\''
 					{
 					match('\''); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:319:11: (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:335:11: (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )*
 					loop7:
 					while (true) {
 						int alt7=3;
@@ -1899,7 +1991,7 @@ public class PogoLexer extends Lexer {
 
 						switch (alt7) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:319:12: ~ ( '\\'' | '\\\\' )
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:335:12: ~ ( '\\'' | '\\\\' )
 							{
 							if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 								input.consume();
@@ -1912,7 +2004,7 @@ public class PogoLexer extends Lexer {
 							}
 							break;
 						case 2 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:319:29: '\\\\' ( '\\\\' | '\\'' )
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:335:29: '\\\\' ( '\\\\' | '\\'' )
 							{
 							match('\\'); 
 							if ( input.LA(1)=='\''||input.LA(1)=='\\' ) {
@@ -1953,7 +2045,7 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Comment;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:3: ( '//' (~ ( '\\r' | '\\n' ) )* | '/*' ( . )* '*/' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:339:3: ( '//' (~ ( '\\n' | '\\r' ) )* | '/*' ( . )* '*/' )
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0=='/') ) {
@@ -1987,11 +2079,11 @@ public class PogoLexer extends Lexer {
 
 			switch (alt11) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:6: '//' (~ ( '\\r' | '\\n' ) )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:339:6: '//' (~ ( '\\n' | '\\r' ) )*
 					{
 					match("//"); 
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:11: (~ ( '\\r' | '\\n' ) )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:339:11: (~ ( '\\n' | '\\r' ) )*
 					loop9:
 					while (true) {
 						int alt9=2;
@@ -2024,11 +2116,11 @@ public class PogoLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:324:6: '/*' ( . )* '*/'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:340:6: '/*' ( . )* '*/'
 					{
 					match("/*"); 
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:324:11: ( . )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:340:11: ( . )*
 					loop10:
 					while (true) {
 						int alt10=2;
@@ -2049,7 +2141,7 @@ public class PogoLexer extends Lexer {
 
 						switch (alt10) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:324:11: .
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:340:11: .
 							{
 							matchAny(); 
 							}
@@ -2081,10 +2173,10 @@ public class PogoLexer extends Lexer {
 		try {
 			int _type = Space;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:328:3: ( ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+ )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:328:5: ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:344:3: ( ( ' ' | '\\t' | '\\r' | '\\f' | '\\n' )+ )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:344:5: ( ' ' | '\\t' | '\\r' | '\\f' | '\\n' )+
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:328:5: ( ' ' | '\\t' | '\\n' | '\\r' | '\\f' )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:344:5: ( ' ' | '\\t' | '\\r' | '\\f' | '\\n' )+
 			int cnt12=0;
 			loop12:
 			while (true) {
@@ -2132,7 +2224,7 @@ public class PogoLexer extends Lexer {
 	// $ANTLR start "Int"
 	public final void mInt() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:332:3: ( '1' .. '9' ( Digit )* | '0' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:391:3: ( '1' .. '9' ( Digit )* | '0' )
 			int alt14=2;
 			int LA14_0 = input.LA(1);
 			if ( ((LA14_0 >= '1' && LA14_0 <= '9')) ) {
@@ -2150,10 +2242,10 @@ public class PogoLexer extends Lexer {
 
 			switch (alt14) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:332:6: '1' .. '9' ( Digit )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:391:6: '1' .. '9' ( Digit )*
 					{
 					matchRange('1','9'); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:332:15: ( Digit )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:391:15: ( Digit )*
 					loop13:
 					while (true) {
 						int alt13=2;
@@ -2185,7 +2277,7 @@ public class PogoLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:333:6: '0'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:392:6: '0'
 					{
 					match('0'); 
 					}
@@ -2202,7 +2294,7 @@ public class PogoLexer extends Lexer {
 	// $ANTLR start "Digit"
 	public final void mDigit() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:337:3: ( '0' .. '9' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:396:3: ( '0' .. '9' )
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
@@ -2224,488 +2316,516 @@ public class PogoLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:8: ( Ellipse | Rect | Line | Curve | Quad | Point | Triangle | Polygon | Cosine | Sine | Move | Copy | Rotate | Scale | Fill | Stroke | NoFill | NoStroke | Weight | Hide | COLOR_CONSTANT | PI_CONSTANT | Println | Print | Assert | Size | Def | If | Else | Return | For | While | To | Do | End | In | Null | Or | And | Equals | NEquals | GTEquals | LTEquals | Pow | Excl | GT | LT | Add | Subtract | Multiply | Divide | Modulus | OBrace | CBrace | OBracket | CBracket | OParen | CParen | SColon | Assign | Comma | QMark | Colon | Bool | Number | Identifier | String | Comment | Space )
-		int alt15=69;
+		// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:8: ( T__92 | T__93 | T__94 | T__95 | Ellipse | Rect | Line | Curve | Quad | Point | Triangle | Polygon | Cosine | Sine | Move | Copy | Rotate | Scale | Fill | Stroke | NoFill | NoStroke | Weight | Hide | Group | COLOR_CONSTANT | PI_CONSTANT | Println | Print | Assert | Size | Def | If | Else | Return | For | Repeat | While | To | Do | End | In | Null | Or | And | Equals | NEquals | GTEquals | LTEquals | Pow | Excl | GT | LT | Add | Subtract | Multiply | Divide | Modulus | OBrace | CBrace | OBracket | CBracket | OParen | CParen | Assign | Comma | QMark | Bool | Number | Identifier | String | Comment | Space )
+		int alt15=73;
 		alt15 = dfa15.predict(input);
 		switch (alt15) {
 			case 1 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:10: Ellipse
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:10: T__92
+				{
+				mT__92(); 
+
+				}
+				break;
+			case 2 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:16: T__93
+				{
+				mT__93(); 
+
+				}
+				break;
+			case 3 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:22: T__94
+				{
+				mT__94(); 
+
+				}
+				break;
+			case 4 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:28: T__95
+				{
+				mT__95(); 
+
+				}
+				break;
+			case 5 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:34: Ellipse
 				{
 				mEllipse(); 
 
 				}
 				break;
-			case 2 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:18: Rect
+			case 6 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:42: Rect
 				{
 				mRect(); 
 
 				}
 				break;
-			case 3 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:23: Line
+			case 7 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:47: Line
 				{
 				mLine(); 
 
 				}
 				break;
-			case 4 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:28: Curve
+			case 8 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:52: Curve
 				{
 				mCurve(); 
 
 				}
 				break;
-			case 5 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:34: Quad
+			case 9 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:58: Quad
 				{
 				mQuad(); 
 
 				}
 				break;
-			case 6 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:39: Point
+			case 10 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:63: Point
 				{
 				mPoint(); 
 
 				}
 				break;
-			case 7 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:45: Triangle
+			case 11 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:69: Triangle
 				{
 				mTriangle(); 
 
 				}
 				break;
-			case 8 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:54: Polygon
+			case 12 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:78: Polygon
 				{
 				mPolygon(); 
 
 				}
 				break;
-			case 9 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:62: Cosine
+			case 13 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:86: Cosine
 				{
 				mCosine(); 
 
 				}
 				break;
-			case 10 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:69: Sine
+			case 14 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:93: Sine
 				{
 				mSine(); 
 
 				}
 				break;
-			case 11 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:74: Move
+			case 15 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:98: Move
 				{
 				mMove(); 
 
 				}
 				break;
-			case 12 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:79: Copy
+			case 16 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:103: Copy
 				{
 				mCopy(); 
 
 				}
 				break;
-			case 13 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:84: Rotate
+			case 17 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:108: Rotate
 				{
 				mRotate(); 
 
 				}
 				break;
-			case 14 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:91: Scale
+			case 18 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:115: Scale
 				{
 				mScale(); 
 
 				}
 				break;
-			case 15 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:97: Fill
+			case 19 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:121: Fill
 				{
 				mFill(); 
 
 				}
 				break;
-			case 16 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:102: Stroke
+			case 20 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:126: Stroke
 				{
 				mStroke(); 
 
 				}
 				break;
-			case 17 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:109: NoFill
+			case 21 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:133: NoFill
 				{
 				mNoFill(); 
 
 				}
 				break;
-			case 18 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:116: NoStroke
+			case 22 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:140: NoStroke
 				{
 				mNoStroke(); 
 
 				}
 				break;
-			case 19 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:125: Weight
+			case 23 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:149: Weight
 				{
 				mWeight(); 
 
 				}
 				break;
-			case 20 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:132: Hide
+			case 24 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:156: Hide
 				{
 				mHide(); 
 
 				}
 				break;
-			case 21 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:137: COLOR_CONSTANT
+			case 25 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:161: Group
+				{
+				mGroup(); 
+
+				}
+				break;
+			case 26 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:167: COLOR_CONSTANT
 				{
 				mCOLOR_CONSTANT(); 
 
 				}
 				break;
-			case 22 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:152: PI_CONSTANT
+			case 27 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:182: PI_CONSTANT
 				{
 				mPI_CONSTANT(); 
 
 				}
 				break;
-			case 23 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:164: Println
+			case 28 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:194: Println
 				{
 				mPrintln(); 
 
 				}
 				break;
-			case 24 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:172: Print
+			case 29 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:202: Print
 				{
 				mPrint(); 
 
 				}
 				break;
-			case 25 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:178: Assert
+			case 30 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:208: Assert
 				{
 				mAssert(); 
 
 				}
 				break;
-			case 26 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:185: Size
+			case 31 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:215: Size
 				{
 				mSize(); 
 
 				}
 				break;
-			case 27 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:190: Def
+			case 32 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:220: Def
 				{
 				mDef(); 
 
 				}
 				break;
-			case 28 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:194: If
+			case 33 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:224: If
 				{
 				mIf(); 
 
 				}
 				break;
-			case 29 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:197: Else
+			case 34 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:227: Else
 				{
 				mElse(); 
 
 				}
 				break;
-			case 30 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:202: Return
+			case 35 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:232: Return
 				{
 				mReturn(); 
 
 				}
 				break;
-			case 31 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:209: For
+			case 36 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:239: For
 				{
 				mFor(); 
 
 				}
 				break;
-			case 32 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:213: While
+			case 37 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:243: Repeat
+				{
+				mRepeat(); 
+
+				}
+				break;
+			case 38 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:250: While
 				{
 				mWhile(); 
 
 				}
 				break;
-			case 33 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:219: To
+			case 39 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:256: To
 				{
 				mTo(); 
 
 				}
 				break;
-			case 34 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:222: Do
+			case 40 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:259: Do
 				{
 				mDo(); 
 
 				}
 				break;
-			case 35 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:225: End
+			case 41 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:262: End
 				{
 				mEnd(); 
 
 				}
 				break;
-			case 36 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:229: In
+			case 42 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:266: In
 				{
 				mIn(); 
 
 				}
 				break;
-			case 37 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:232: Null
+			case 43 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:269: Null
 				{
 				mNull(); 
 
 				}
 				break;
-			case 38 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:237: Or
+			case 44 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:274: Or
 				{
 				mOr(); 
 
 				}
 				break;
-			case 39 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:240: And
+			case 45 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:277: And
 				{
 				mAnd(); 
 
 				}
 				break;
-			case 40 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:244: Equals
+			case 46 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:281: Equals
 				{
 				mEquals(); 
 
 				}
 				break;
-			case 41 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:251: NEquals
+			case 47 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:288: NEquals
 				{
 				mNEquals(); 
 
 				}
 				break;
-			case 42 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:259: GTEquals
+			case 48 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:296: GTEquals
 				{
 				mGTEquals(); 
 
 				}
 				break;
-			case 43 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:268: LTEquals
+			case 49 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:305: LTEquals
 				{
 				mLTEquals(); 
 
 				}
 				break;
-			case 44 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:277: Pow
+			case 50 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:314: Pow
 				{
 				mPow(); 
 
 				}
 				break;
-			case 45 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:281: Excl
+			case 51 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:318: Excl
 				{
 				mExcl(); 
 
 				}
 				break;
-			case 46 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:286: GT
+			case 52 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:323: GT
 				{
 				mGT(); 
 
 				}
 				break;
-			case 47 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:289: LT
+			case 53 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:326: LT
 				{
 				mLT(); 
 
 				}
 				break;
-			case 48 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:292: Add
+			case 54 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:329: Add
 				{
 				mAdd(); 
 
 				}
 				break;
-			case 49 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:296: Subtract
+			case 55 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:333: Subtract
 				{
 				mSubtract(); 
 
 				}
 				break;
-			case 50 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:305: Multiply
+			case 56 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:342: Multiply
 				{
 				mMultiply(); 
 
 				}
 				break;
-			case 51 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:314: Divide
+			case 57 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:351: Divide
 				{
 				mDivide(); 
 
 				}
 				break;
-			case 52 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:321: Modulus
+			case 58 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:358: Modulus
 				{
 				mModulus(); 
 
 				}
 				break;
-			case 53 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:329: OBrace
+			case 59 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:366: OBrace
 				{
 				mOBrace(); 
 
 				}
 				break;
-			case 54 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:336: CBrace
+			case 60 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:373: CBrace
 				{
 				mCBrace(); 
 
 				}
 				break;
-			case 55 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:343: OBracket
+			case 61 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:380: OBracket
 				{
 				mOBracket(); 
 
 				}
 				break;
-			case 56 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:352: CBracket
+			case 62 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:389: CBracket
 				{
 				mCBracket(); 
 
 				}
 				break;
-			case 57 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:361: OParen
+			case 63 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:398: OParen
 				{
 				mOParen(); 
 
 				}
 				break;
-			case 58 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:368: CParen
+			case 64 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:405: CParen
 				{
 				mCParen(); 
 
 				}
 				break;
-			case 59 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:375: SColon
-				{
-				mSColon(); 
-
-				}
-				break;
-			case 60 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:382: Assign
+			case 65 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:412: Assign
 				{
 				mAssign(); 
 
 				}
 				break;
-			case 61 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:389: Comma
+			case 66 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:419: Comma
 				{
 				mComma(); 
 
 				}
 				break;
-			case 62 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:395: QMark
+			case 67 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:425: QMark
 				{
 				mQMark(); 
 
 				}
 				break;
-			case 63 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:401: Colon
-				{
-				mColon(); 
-
-				}
-				break;
-			case 64 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:407: Bool
+			case 68 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:431: Bool
 				{
 				mBool(); 
 
 				}
 				break;
-			case 65 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:412: Number
+			case 69 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:436: Number
 				{
 				mNumber(); 
 
 				}
 				break;
-			case 66 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:419: Identifier
+			case 70 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:443: Identifier
 				{
 				mIdentifier(); 
 
 				}
 				break;
-			case 67 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:430: String
+			case 71 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:454: String
 				{
 				mString(); 
 
 				}
 				break;
-			case 68 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:437: Comment
+			case 72 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:461: Comment
 				{
 				mComment(); 
 
 				}
 				break;
-			case 69 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:445: Space
+			case 73 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:1:469: Space
 				{
 				mSpace(); 
 
@@ -2718,325 +2838,343 @@ public class PogoLexer extends Lexer {
 
 	protected DFA15 dfa15 = new DFA15(this);
 	static final String DFA15_eotS =
-		"\1\uffff\27\57\2\uffff\1\130\1\132\1\134\1\136\4\uffff\1\140\17\uffff"+
-		"\13\57\1\161\20\57\1\u0086\5\57\1\u008c\1\u008d\1\u008e\12\uffff\2\57"+
-		"\1\u0091\5\57\1\u0097\7\57\1\uffff\1\u009f\5\57\1\u00a5\7\57\1\u00ad\5"+
-		"\57\1\uffff\4\57\1\u00b8\3\uffff\1\57\1\u00ba\1\uffff\1\u00bb\2\57\1\u00be"+
-		"\1\57\1\uffff\1\u00c0\1\u00c1\1\57\1\u00c3\2\57\1\u00c6\1\uffff\1\u00c7"+
-		"\2\57\1\u00ca\1\u00cb\1\uffff\3\57\1\u00cf\2\57\1\u00d2\1\uffff\1\u00ad"+
-		"\2\57\1\u00ad\1\57\1\u00ad\4\57\1\uffff\1\57\2\uffff\2\57\1\uffff\1\u00dd"+
-		"\2\uffff\1\u00de\1\uffff\1\u00e0\1\57\2\uffff\1\u00e2\1\57\2\uffff\1\u00c6"+
-		"\2\57\1\uffff\1\57\1\u00e7\1\uffff\2\u00ad\3\57\1\u00ad\2\57\1\u00ed\1"+
-		"\u00ee\2\uffff\1\57\1\uffff\1\57\1\uffff\1\u00f1\1\u00f2\1\57\1\u00f4"+
-		"\1\uffff\3\u00ad\1\u00f5\1\u00f6\2\uffff\1\u00f7\1\57\2\uffff\1\57\4\uffff"+
-		"\1\u00fa\1\u00fb\2\uffff";
+		"\3\uffff\1\65\30\61\1\uffff\1\61\1\136\1\140\1\142\1\144\4\uffff\1\146"+
+		"\17\uffff\13\61\1\170\21\61\1\u008e\6\61\1\u0095\1\u0096\1\u0097\12\uffff"+
+		"\2\61\1\u009a\6\61\1\u00a1\7\61\1\uffff\1\u00a9\5\61\1\u00af\10\61\1\u00b8"+
+		"\5\61\1\uffff\4\61\1\u00c3\1\u00c4\3\uffff\1\61\1\u00c6\1\uffff\1\u00c7"+
+		"\3\61\1\u00cb\1\61\1\uffff\1\u00cd\1\u00ce\1\61\1\u00d0\2\61\1\u00d3\1"+
+		"\uffff\1\u00d4\2\61\1\u00d7\1\u00d8\1\uffff\3\61\1\u00dc\2\61\1\u00df"+
+		"\1\61\1\uffff\1\u00b8\2\61\1\u00b8\1\61\1\u00b8\4\61\2\uffff\1\61\2\uffff"+
+		"\3\61\1\uffff\1\u00ec\2\uffff\1\u00ed\1\uffff\1\u00ef\1\61\2\uffff\1\u00f1"+
+		"\1\61\2\uffff\1\u00d3\2\61\1\uffff\1\61\1\u00f6\1\uffff\1\u00f7\2\u00b8"+
+		"\3\61\1\u00b8\2\61\1\u00fd\1\u00fe\1\u00ff\2\uffff\1\61\1\uffff\1\61\1"+
+		"\uffff\1\u0102\1\u0103\1\61\1\u0105\2\uffff\3\u00b8\1\u0106\1\u0107\3"+
+		"\uffff\1\u0108\1\61\2\uffff\1\61\4\uffff\1\u010b\1\u010c\2\uffff";
 	static final String DFA15_eofS =
-		"\u00fc\uffff";
+		"\u010d\uffff";
 	static final String DFA15_minS =
-		"\1\11\1\154\1\145\1\151\1\157\1\165\2\157\1\143\1\157\1\141\1\157\1\145"+
-		"\1\151\1\105\1\114\1\122\1\111\1\105\1\122\1\110\1\163\1\145\1\146\2\uffff"+
-		"\4\75\4\uffff\1\52\17\uffff\1\154\1\144\1\143\1\164\1\156\1\162\1\160"+
-		"\1\141\3\151\1\60\1\156\1\141\1\162\1\166\1\154\1\162\1\154\1\106\1\154"+
-		"\2\151\1\144\1\104\1\101\1\105\1\122\1\60\1\114\1\101\1\111\1\163\1\146"+
-		"\3\60\12\uffff\1\151\1\145\1\60\1\164\1\165\1\141\1\145\1\166\1\60\1\171"+
-		"\1\144\1\156\1\171\1\156\1\141\1\145\1\uffff\1\60\1\145\1\154\1\157\1"+
-		"\145\1\154\1\60\1\163\1\151\1\164\1\154\1\147\1\154\1\145\1\60\1\105\1"+
-		"\103\1\105\1\120\1\113\1\uffff\1\114\1\116\1\124\1\145\1\60\3\uffff\1"+
-		"\160\1\60\1\uffff\1\60\1\162\1\164\1\60\1\145\1\uffff\2\60\1\164\1\60"+
-		"\1\164\1\156\1\60\1\uffff\1\60\1\145\1\153\2\60\1\uffff\1\145\1\154\1"+
-		"\162\1\60\1\150\1\145\1\60\1\uffff\1\60\1\113\1\116\1\60\1\114\1\60\1"+
-		"\117\1\107\1\105\1\162\1\uffff\1\163\2\uffff\1\156\1\145\1\uffff\1\60"+
-		"\2\uffff\1\60\1\uffff\1\60\1\147\2\uffff\1\60\1\145\2\uffff\1\60\1\154"+
-		"\1\157\1\uffff\1\164\1\60\1\uffff\2\60\1\105\1\127\1\105\1\60\1\164\1"+
-		"\145\2\60\2\uffff\1\156\1\uffff\1\154\1\uffff\2\60\1\153\1\60\1\uffff"+
-		"\5\60\2\uffff\1\60\1\145\2\uffff\1\145\4\uffff\2\60\2\uffff";
+		"\1\11\2\uffff\1\174\1\154\1\145\1\151\1\157\1\165\2\157\1\143\1\157\1"+
+		"\141\1\157\1\145\1\151\1\162\1\105\1\114\1\122\1\111\1\105\1\122\1\110"+
+		"\1\156\1\145\1\146\1\uffff\1\162\4\75\4\uffff\1\52\17\uffff\1\154\1\144"+
+		"\1\143\1\164\1\156\1\162\1\160\1\141\3\151\1\60\1\156\1\141\1\162\1\166"+
+		"\1\154\1\162\1\154\1\106\1\154\2\151\1\144\1\157\1\104\1\101\1\105\1\122"+
+		"\1\60\1\114\1\101\1\111\1\163\1\144\1\146\3\60\12\uffff\1\151\1\145\1"+
+		"\60\1\164\1\165\1\145\1\141\1\145\1\166\1\60\1\171\1\144\1\156\1\171\1"+
+		"\156\1\141\1\145\1\uffff\1\60\1\145\1\154\1\157\1\145\1\154\1\60\1\163"+
+		"\1\151\1\164\1\154\1\147\1\154\1\145\1\165\1\60\1\105\1\103\1\105\1\120"+
+		"\1\113\1\uffff\1\114\1\116\1\124\1\145\2\60\3\uffff\1\160\1\60\1\uffff"+
+		"\1\60\1\162\1\141\1\164\1\60\1\145\1\uffff\2\60\1\164\1\60\1\164\1\156"+
+		"\1\60\1\uffff\1\60\1\145\1\153\2\60\1\uffff\1\145\1\154\1\162\1\60\1\150"+
+		"\1\145\1\60\1\160\1\uffff\1\60\1\113\1\116\1\60\1\114\1\60\1\117\1\107"+
+		"\1\105\1\162\2\uffff\1\163\2\uffff\1\156\1\164\1\145\1\uffff\1\60\2\uffff"+
+		"\1\60\1\uffff\1\60\1\147\2\uffff\1\60\1\145\2\uffff\1\60\1\154\1\157\1"+
+		"\uffff\1\164\1\60\1\uffff\3\60\1\105\1\127\1\105\1\60\1\164\1\145\3\60"+
+		"\2\uffff\1\156\1\uffff\1\154\1\uffff\2\60\1\153\1\60\2\uffff\5\60\3\uffff"+
+		"\1\60\1\145\2\uffff\1\145\4\uffff\2\60\2\uffff";
 	static final String DFA15_maxS =
-		"\1\175\1\156\1\157\1\151\2\165\2\162\1\164\2\157\1\165\1\150\1\151\1\105"+
-		"\1\114\1\122\1\125\1\105\1\122\1\110\1\163\1\157\1\156\2\uffff\4\75\4"+
-		"\uffff\1\57\17\uffff\1\163\1\144\2\164\1\156\1\162\1\163\1\141\1\154\1"+
-		"\151\1\165\2\172\1\141\1\162\1\166\1\154\1\162\1\154\1\123\1\154\2\151"+
-		"\1\144\1\104\1\125\1\105\1\122\1\172\1\114\1\101\1\111\1\163\1\146\3\172"+
-		"\12\uffff\1\151\1\145\1\172\1\164\1\165\1\141\1\145\1\166\1\172\1\171"+
-		"\1\144\1\156\1\171\1\156\1\141\1\145\1\uffff\1\172\1\145\1\154\1\157\1"+
-		"\145\1\154\1\172\1\163\1\151\1\164\1\154\1\147\1\154\1\145\1\172\1\105"+
-		"\1\103\1\131\1\120\1\113\1\uffff\1\114\1\116\1\124\1\145\1\172\3\uffff"+
-		"\1\160\1\172\1\uffff\1\172\1\162\1\164\1\172\1\145\1\uffff\2\172\1\164"+
-		"\1\172\1\164\1\156\1\172\1\uffff\1\172\1\145\1\153\2\172\1\uffff\1\145"+
-		"\1\154\1\162\1\172\1\150\1\145\1\172\1\uffff\1\172\1\113\1\116\1\172\1"+
-		"\114\1\172\1\117\1\107\1\105\1\162\1\uffff\1\163\2\uffff\1\156\1\145\1"+
-		"\uffff\1\172\2\uffff\1\172\1\uffff\1\172\1\147\2\uffff\1\172\1\145\2\uffff"+
-		"\1\172\1\154\1\157\1\uffff\1\164\1\172\1\uffff\2\172\1\105\1\127\1\105"+
-		"\1\172\1\164\1\145\2\172\2\uffff\1\156\1\uffff\1\154\1\uffff\2\172\1\153"+
-		"\1\172\1\uffff\5\172\2\uffff\1\172\1\145\2\uffff\1\145\4\uffff\2\172\2"+
-		"\uffff";
+		"\1\175\2\uffff\1\174\1\156\1\157\1\151\2\165\2\162\1\164\2\157\1\165\1"+
+		"\150\1\151\1\162\1\105\1\114\1\122\1\125\1\105\1\122\1\110\1\163\1\145"+
+		"\1\156\1\uffff\1\162\4\75\4\uffff\1\57\17\uffff\1\163\1\144\2\164\1\156"+
+		"\1\162\1\163\1\141\1\154\1\151\1\165\2\172\1\141\1\162\1\166\1\154\1\162"+
+		"\1\154\1\123\1\154\2\151\1\144\1\157\1\104\1\125\1\105\1\122\1\172\1\114"+
+		"\1\101\1\111\1\163\1\144\1\146\3\172\12\uffff\1\151\1\145\1\172\1\164"+
+		"\1\165\1\145\1\141\1\145\1\166\1\172\1\171\1\144\1\156\1\171\1\156\1\141"+
+		"\1\145\1\uffff\1\172\1\145\1\154\1\157\1\145\1\154\1\172\1\163\1\151\1"+
+		"\164\1\154\1\147\1\154\1\145\1\165\1\172\1\105\1\103\1\131\1\120\1\113"+
+		"\1\uffff\1\114\1\116\1\124\1\145\2\172\3\uffff\1\160\1\172\1\uffff\1\172"+
+		"\1\162\1\141\1\164\1\172\1\145\1\uffff\2\172\1\164\1\172\1\164\1\156\1"+
+		"\172\1\uffff\1\172\1\145\1\153\2\172\1\uffff\1\145\1\154\1\162\1\172\1"+
+		"\150\1\145\1\172\1\160\1\uffff\1\172\1\113\1\116\1\172\1\114\1\172\1\117"+
+		"\1\107\1\105\1\162\2\uffff\1\163\2\uffff\1\156\1\164\1\145\1\uffff\1\172"+
+		"\2\uffff\1\172\1\uffff\1\172\1\147\2\uffff\1\172\1\145\2\uffff\1\172\1"+
+		"\154\1\157\1\uffff\1\164\1\172\1\uffff\3\172\1\105\1\127\1\105\1\172\1"+
+		"\164\1\145\3\172\2\uffff\1\156\1\uffff\1\154\1\uffff\2\172\1\153\1\172"+
+		"\2\uffff\5\172\3\uffff\1\172\1\145\2\uffff\1\145\4\uffff\2\172\2\uffff";
 	static final String DFA15_acceptS =
-		"\30\uffff\1\46\1\47\4\uffff\1\54\1\60\1\61\1\62\1\uffff\1\64\1\65\1\66"+
-		"\1\67\1\70\1\71\1\72\1\73\1\75\1\76\1\77\1\101\1\102\1\103\1\105\45\uffff"+
-		"\1\50\1\74\1\51\1\55\1\52\1\56\1\53\1\57\1\104\1\63\20\uffff\1\41\24\uffff"+
-		"\1\26\5\uffff\1\42\1\34\1\44\2\uffff\1\43\5\uffff\1\11\7\uffff\1\12\5"+
-		"\uffff\1\37\7\uffff\1\25\12\uffff\1\33\1\uffff\1\35\1\2\2\uffff\1\3\1"+
-		"\uffff\1\14\1\5\1\uffff\1\10\2\uffff\1\100\1\32\2\uffff\1\13\1\17\3\uffff"+
-		"\1\45\2\uffff\1\24\12\uffff\1\4\1\6\1\uffff\1\30\1\uffff\1\16\4\uffff"+
-		"\1\40\5\uffff\1\36\1\15\2\uffff\1\20\1\21\1\uffff\1\23\1\31\1\1\1\27\2"+
-		"\uffff\1\7\1\22";
+		"\1\uffff\1\1\1\2\31\uffff\1\50\5\uffff\1\62\1\66\1\67\1\70\1\uffff\1\72"+
+		"\1\73\1\74\1\75\1\76\1\77\1\100\1\102\1\103\1\105\1\106\1\107\1\111\1"+
+		"\4\1\3\47\uffff\1\56\1\101\1\57\1\63\1\60\1\64\1\61\1\65\1\110\1\71\21"+
+		"\uffff\1\47\25\uffff\1\33\6\uffff\1\41\1\52\1\54\2\uffff\1\51\6\uffff"+
+		"\1\15\7\uffff\1\16\5\uffff\1\44\10\uffff\1\32\12\uffff\1\55\1\40\1\uffff"+
+		"\1\42\1\6\3\uffff\1\7\1\uffff\1\20\1\11\1\uffff\1\14\2\uffff\1\104\1\37"+
+		"\2\uffff\1\17\1\23\3\uffff\1\53\2\uffff\1\30\14\uffff\1\10\1\12\1\uffff"+
+		"\1\35\1\uffff\1\22\4\uffff\1\46\1\31\5\uffff\1\43\1\45\1\21\2\uffff\1"+
+		"\24\1\25\1\uffff\1\27\1\36\1\5\1\34\2\uffff\1\13\1\26";
 	static final String DFA15_specialS =
-		"\u00fc\uffff}>";
+		"\u010d\uffff}>";
 	static final String[] DFA15_transitionS = {
-			"\2\61\1\uffff\2\61\22\uffff\1\61\1\33\1\60\2\uffff\1\43\1\31\1\60\1\50"+
-			"\1\51\1\41\1\37\1\53\1\40\1\uffff\1\42\12\56\1\55\1\52\1\35\1\32\1\34"+
-			"\1\54\1\uffff\1\57\1\17\4\57\1\20\7\57\1\23\1\21\1\57\1\16\4\57\1\24"+
-			"\1\57\1\22\1\57\1\46\1\uffff\1\47\1\36\1\57\1\uffff\1\25\1\57\1\4\1\26"+
-			"\1\1\1\12\1\57\1\15\1\27\2\57\1\3\1\11\1\13\1\57\1\6\1\5\1\2\1\10\1\7"+
-			"\2\57\1\14\3\57\1\44\1\30\1\45",
-			"\1\62\1\uffff\1\63",
-			"\1\64\11\uffff\1\65",
-			"\1\66",
-			"\1\70\5\uffff\1\67",
-			"\1\71",
-			"\1\72\2\uffff\1\73",
-			"\1\75\2\uffff\1\74",
-			"\1\77\5\uffff\1\76\12\uffff\1\100",
-			"\1\101",
-			"\1\104\7\uffff\1\102\5\uffff\1\103",
-			"\1\105\5\uffff\1\106",
-			"\1\107\2\uffff\1\110",
-			"\1\111",
-			"\1\112",
-			"\1\113",
-			"\1\114",
-			"\1\116\13\uffff\1\115",
+			"\2\63\1\uffff\2\63\22\uffff\1\63\1\37\1\62\2\uffff\1\47\1\1\1\62\1\54"+
+			"\1\55\1\45\1\43\1\56\1\44\1\uffff\1\46\12\60\1\34\1\2\1\41\1\36\1\40"+
+			"\1\57\1\uffff\1\61\1\23\4\61\1\24\7\61\1\27\1\25\1\61\1\22\4\61\1\30"+
+			"\1\61\1\26\1\61\1\52\1\uffff\1\53\1\42\1\61\1\uffff\1\31\1\61\1\7\1\32"+
+			"\1\4\1\15\1\21\1\20\1\33\2\61\1\6\1\14\1\16\1\35\1\11\1\10\1\5\1\13\1"+
+			"\12\2\61\1\17\3\61\1\50\1\3\1\51",
+			"",
+			"",
+			"\1\64",
+			"\1\66\1\uffff\1\67",
+			"\1\70\11\uffff\1\71",
+			"\1\72",
+			"\1\74\5\uffff\1\73",
+			"\1\75",
+			"\1\76\2\uffff\1\77",
+			"\1\101\2\uffff\1\100",
+			"\1\103\5\uffff\1\102\12\uffff\1\104",
+			"\1\105",
+			"\1\110\7\uffff\1\106\5\uffff\1\107",
+			"\1\111\5\uffff\1\112",
+			"\1\113\2\uffff\1\114",
+			"\1\115",
+			"\1\116",
 			"\1\117",
 			"\1\120",
 			"\1\121",
-			"\1\122",
-			"\1\123\11\uffff\1\124",
-			"\1\125\7\uffff\1\126",
-			"",
-			"",
-			"\1\127",
+			"\1\123\13\uffff\1\122",
+			"\1\124",
+			"\1\125",
+			"\1\126",
+			"\1\130\4\uffff\1\127",
 			"\1\131",
-			"\1\133",
+			"\1\132\7\uffff\1\133",
+			"",
+			"\1\134",
 			"\1\135",
-			"",
-			"",
-			"",
-			"",
-			"\1\137\4\uffff\1\137",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"\1\141\6\uffff\1\142",
+			"\1\137",
+			"\1\141",
 			"\1\143",
-			"\1\144\20\uffff\1\145",
-			"\1\146",
-			"\1\147",
-			"\1\150",
-			"\1\152\2\uffff\1\151",
-			"\1\153",
-			"\1\154\2\uffff\1\155",
+			"",
+			"",
+			"",
+			"",
+			"\1\145\4\uffff\1\145",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"\1\147\6\uffff\1\150",
+			"\1\151",
+			"\1\152\14\uffff\1\154\3\uffff\1\153",
+			"\1\155",
 			"\1\156",
-			"\1\157\13\uffff\1\160",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\1\162\13\uffff\1\163",
-			"\1\164",
+			"\1\157",
+			"\1\161\2\uffff\1\160",
+			"\1\162",
+			"\1\163\2\uffff\1\164",
 			"\1\165",
-			"\1\166",
-			"\1\167",
-			"\1\170",
-			"\1\171",
-			"\1\172\14\uffff\1\173",
+			"\1\166\13\uffff\1\167",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\171\13\uffff\1\172",
+			"\1\173",
 			"\1\174",
 			"\1\175",
 			"\1\176",
 			"\1\177",
 			"\1\u0080",
-			"\1\u0082\23\uffff\1\u0081",
+			"\1\u0081\14\uffff\1\u0082",
 			"\1\u0083",
 			"\1\u0084",
-			"\12\57\7\uffff\15\57\1\u0085\14\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u0085",
+			"\1\u0086",
 			"\1\u0087",
 			"\1\u0088",
-			"\1\u0089",
-			"\1\u008a",
+			"\1\u008a\23\uffff\1\u0089",
 			"\1\u008b",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
-			"",
+			"\1\u008c",
+			"\12\61\7\uffff\15\61\1\u008d\14\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u008f",
 			"\1\u0090",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u0091",
 			"\1\u0092",
 			"\1\u0093",
 			"\1\u0094",
-			"\1\u0095",
-			"\1\u0096",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
+			"",
 			"\1\u0098",
 			"\1\u0099",
-			"\1\u009a",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u009b",
 			"\1\u009c",
 			"\1\u009d",
 			"\1\u009e",
-			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u009f",
 			"\1\u00a0",
-			"\1\u00a1",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00a2",
 			"\1\u00a3",
 			"\1\u00a4",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u00a5",
 			"\1\u00a6",
 			"\1\u00a7",
 			"\1\u00a8",
-			"\1\u00a9",
+			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00aa",
 			"\1\u00ab",
 			"\1\u00ac",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u00ad",
 			"\1\u00ae",
-			"\1\u00af",
-			"\1\u00b0\23\uffff\1\u00b1",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u00b0",
+			"\1\u00b1",
 			"\1\u00b2",
 			"\1\u00b3",
-			"",
 			"\1\u00b4",
 			"\1\u00b5",
 			"\1\u00b6",
 			"\1\u00b7",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"",
-			"",
-			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00b9",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\1\u00bc",
+			"\1\u00ba",
+			"\1\u00bb\23\uffff\1\u00bc",
 			"\1\u00bd",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u00be",
+			"",
 			"\1\u00bf",
-			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u00c0",
+			"\1\u00c1",
 			"\1\u00c2",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\1\u00c4",
-			"\1\u00c5",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"",
+			"",
+			"\1\u00c5",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00c8",
 			"\1\u00c9",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"",
+			"\1\u00ca",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00cc",
-			"\1\u00cd",
-			"\1\u00ce",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\1\u00d0",
+			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u00cf",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00d1",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u00d2",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\1\u00d3",
-			"\1\u00d4",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00d5",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
 			"\1\u00d6",
-			"\1\u00d7",
-			"\1\u00d8",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"",
 			"\1\u00d9",
-			"",
 			"\1\u00da",
-			"",
-			"",
 			"\1\u00db",
-			"\1\u00dc",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u00dd",
+			"\1\u00de",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u00e0",
 			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"",
-			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\13\57\1\u00df\16\57",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00e1",
-			"",
-			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u00e2",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00e3",
-			"",
-			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00e4",
 			"\1\u00e5",
-			"",
 			"\1\u00e6",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u00e7",
 			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"",
 			"\1\u00e8",
+			"",
+			"",
 			"\1\u00e9",
 			"\1\u00ea",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
 			"\1\u00eb",
-			"\1\u00ec",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"",
 			"",
-			"\1\u00ef",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\13\61\1\u00ee\16\61",
 			"\1\u00f0",
 			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u00f2",
+			"",
+			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00f3",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u00f4",
 			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\1\u00f5",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"",
-			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"\1\u00f8",
-			"",
-			"",
 			"\1\u00f9",
+			"\1\u00fa",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u00fb",
+			"\1\u00fc",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"",
+			"",
+			"\1\u0100",
+			"",
+			"\1\u0101",
+			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u0104",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"",
+			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"",
+			"",
+			"",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\1\u0109",
+			"",
+			"",
+			"\1\u010a",
 			"",
 			"",
 			"",
 			"",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
-			"\12\57\7\uffff\32\57\4\uffff\1\57\1\uffff\32\57",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
+			"\12\61\7\uffff\32\61\4\uffff\1\61\1\uffff\32\61",
 			"",
 			""
 	};
@@ -3072,7 +3210,7 @@ public class PogoLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( Ellipse | Rect | Line | Curve | Quad | Point | Triangle | Polygon | Cosine | Sine | Move | Copy | Rotate | Scale | Fill | Stroke | NoFill | NoStroke | Weight | Hide | COLOR_CONSTANT | PI_CONSTANT | Println | Print | Assert | Size | Def | If | Else | Return | For | While | To | Do | End | In | Null | Or | And | Equals | NEquals | GTEquals | LTEquals | Pow | Excl | GT | LT | Add | Subtract | Multiply | Divide | Modulus | OBrace | CBrace | OBracket | CBracket | OParen | CParen | SColon | Assign | Comma | QMark | Colon | Bool | Number | Identifier | String | Comment | Space );";
+			return "1:1: Tokens : ( T__92 | T__93 | T__94 | T__95 | Ellipse | Rect | Line | Curve | Quad | Point | Triangle | Polygon | Cosine | Sine | Move | Copy | Rotate | Scale | Fill | Stroke | NoFill | NoStroke | Weight | Hide | Group | COLOR_CONSTANT | PI_CONSTANT | Println | Print | Assert | Size | Def | If | Else | Return | For | Repeat | While | To | Do | End | In | Null | Or | And | Equals | NEquals | GTEquals | LTEquals | Pow | Excl | GT | LT | Add | Subtract | Multiply | Divide | Modulus | OBrace | CBrace | OBracket | CBracket | OParen | CParen | Assign | Comma | QMark | Bool | Number | Identifier | String | Comment | Space );";
 		}
 	}
 

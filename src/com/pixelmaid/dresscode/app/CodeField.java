@@ -53,7 +53,14 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
     	
 		   Manager.canvas.clearAllDrawables();
         
-          String txt = this.getText();
+          String txt = 	this.getText()+"\n";
+        /* while(txt.charAt(0)=='\n'){
+        	 txt=txt.substring(1);
+        	 if(txt.length()<1){
+        		 break;
+        	 }
+         }*/
+          
           System.out.println("txt="+txt);
           CharStream charStream = new ANTLRStringStream(txt);
   		

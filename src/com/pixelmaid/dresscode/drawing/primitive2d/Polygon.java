@@ -66,6 +66,7 @@ public class Polygon extends Drawable implements DrawableInterface, Turtle{
 	
 	@Override
 	public void draw(Embedded e){
+		appearance(e);
 		System.out.println("number of holes="+this.holes.size()+"number of points="+this.points.size());
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
@@ -79,10 +80,23 @@ public class Polygon extends Drawable implements DrawableInterface, Turtle{
 			holes.get(i).draw(e);
 		}
 		e.popMatrix();
+		
+		if(this.getDrawOrigin()){
+			this.drawOrigin(e);
+		}
 	}
 	
 	public ArrayList<Point> getPoints(){
 		return this.points;
+	}
+	
+	public ArrayList<Hole> getHoles(){
+		return this.holes;
+	}
+	
+	public Polygon toPolygon(){
+		System.out.println("polygon to polygon");
+		return this;
 	}
 	
 	

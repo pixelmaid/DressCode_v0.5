@@ -10,7 +10,7 @@ tokens {
   STATEMENTS;
   ASSIGNMENT;
   FUNC_CALL;
-  EXP;
+  EXP;	
   EXP_LIST;
   ID_LIST;
   IF;
@@ -21,6 +21,7 @@ tokens {
   INDEXES;
   LIST;
   LOOKUP;
+  SPECIAL;
 }
 
 @parser::header {
@@ -52,22 +53,27 @@ tokens {
   }
 }
 
+@lexer::members{
+int implicitLineJoiningLevel = 0;
+int startPos=-1;
+}
 
 parse
   :  block EOF -> block
   ;
 
 block
-  :  (statement | functionDecl)* (Return expression ';')? 
+  : (statement | functionDecl)* (Return expression ';')? 
      -> ^(BLOCK ^(STATEMENTS statement*) ^(RETURN expression?))
   ;
 
 statement
   :  assignment ';'   -> assignment
-  |  functionCall ';' -> functionCall
+  |  functionCall ';'  -> functionCall
   |  ifStatement
   |  forStatement
   |  whileStatement
+  |	 repeatStatement
   ;
 
 assignment
@@ -105,6 +111,7 @@ functionCall
    | NoStroke '(' expression ')'-> ^(FUNC_CALL NoStroke expression)
    | Weight	'(' exprList? ')'-> ^(FUNC_CALL Weight exprList?)
    | Hide	'(' expression ')'-> ^(FUNC_CALL Hide expression)
+   | Group	'(' exprList? ')'-> ^(FUNC_CALL Group exprList?)
    ;
    
    mathCall
@@ -117,6 +124,7 @@ functionCall
 ifStatement
   :  ifStat elseIfStat* elseStat? End -> ^(IF ifStat elseIfStat* elseStat?)
   ;
+
 
 ifStat
   :  If expression Do block -> ^(EXP expression block)
@@ -131,13 +139,17 @@ elseStat
   ;
 
 functionDecl
-  :  Def Identifier '(' idList? ')' block End 
+  :  Def Identifier '(' idList? ')' Do block End 
      {defineFunction($Identifier.text, $idList.tree, $block.tree);}
   ;
 
 forStatement
-  :  For Identifier '=' expression To expression Do block End 
+  :  For Identifier '=' expression Do expression Do block End 
      -> ^(For Identifier expression expression block)
+  ;
+
+repeatStatement
+  : Repeat Identifier '=' expression Do expression ('|' expression)* Do block End -> ^(Repeat Identifier expression expression block)
   ;
 
 whileStatement
@@ -217,6 +229,8 @@ lookup
   |  String indexes?             -> ^(LOOKUP String indexes?)
   |  '(' expression ')' indexes? -> ^(LOOKUP expression indexes?)
   |	 forStatement indexes?		 -> ^(LOOKUP forStatement indexes?)
+  |  repeatStatement indexes?	 -> ^(LOOKUP repeatStatement indexes?)
+  |  whileStatement indexes?	 -> ^(LOOKUP whileStatement indexes?)
   ;
 
 indexes
@@ -249,6 +263,7 @@ NoFill	: 'noFill';
 NoStroke : 'noStroke';
 Weight	: 'weight';
 Hide	: 'hide';
+Group	: 'group';
 
 
 COLOR_CONSTANT: 'RED'|'BLUE'|'GREEN'|'PURPLE'|'YELLOW'|'ORANGE'|'PINK'|'BLACK'|'WHITE'|'GREY';
@@ -264,15 +279,16 @@ If       : 'if';
 Else     : 'else';
 Return   : 'return';
 For      : 'for';
+Repeat	 : 'repeat';
 While    : 'while';
 To       : 'to';
-Do       : 'do';
+Do       : ':';
 End      : 'end';
 In       : 'in';
 Null     : 'null';
 
-Or       : '||';
-And      : '&&';
+Or       : 'or';
+And      : 'and';
 Equals   : '==';
 NEquals  : '!=';
 GTEquals : '>=';
@@ -292,11 +308,11 @@ OBracket : '[';
 CBracket : ']';
 OParen   : '(';
 CParen   : ')';
-SColon   : ';';
+//SColon   : ';';
 Assign   : '=';
 Comma    : ',';
 QMark    : '?';
-Colon    : ':';
+//Colon    : ':';
 
 Bool
   :  'true' 
@@ -320,14 +336,57 @@ String
   ;
 
 Comment
-  :  '//' ~('\r' | '\n')* {skip();}
+  :  '//' ~('\n'|'\r')* {skip();}
   |  '/*' .* '*/'         {skip();}
   ;
 
 Space
-  : (' '| '\t'|'\n'|'\r'|'\f')+{$channel = HIDDEN;}
+  : (' '| '\t'|'\r'|'\f'|'\n')+{$channel = HIDDEN;}
   ;
 
+
+/*
+
+CONTINUED_LINE
+    :    '\\' ('\r')? '\n' (' '|'\t')*  { $channel=HIDDEN; }
+         ( nl=NEWLINE {emit(new ClassicToken(NEWLINE,nl.getText()));}
+         |
+         )
+    ;
+
+
+NEWLINE
+    :   (('\u000C')?('\r')? '\n' )+
+        {if ( startPos==0 || implicitLineJoiningLevel>0 )
+            $channel=HIDDEN;
+        }
+    ;
+    
+
+LEADING_WS
+@init {
+    int spaces = 0;
+}
+    :   {startPos==0}?=>
+        (   {implicitLineJoiningLevel>0}? ( ' ' | '\t' )+ {$channel=HIDDEN;}
+           |    (     ' '  { spaces++; }
+            |    '\t' { spaces += 8; spaces -= (spaces \% 8); }
+               )+
+            {
+            // make a string of n spaces where n is column number - 1
+            char[] indentation = new char[spaces];
+            for (int i=0; i<spaces; i++) {
+                indentation[i] = ' ';
+            }
+            String s = new String(indentation);
+            emit(new ClassicToken(LEADING_WS,new String(indentation)));
+            }
+            // kill trailing newline if present and then ignore
+            ( ('\r')? '\n' {if (token!=null) token.setChannel(HIDDEN); else $channel=HIDDEN;})*
+           // {token.setChannel(99); }
+        )
+    ;
+    */
 fragment Int
   :  '1'..'9' Digit*
   |  '0'

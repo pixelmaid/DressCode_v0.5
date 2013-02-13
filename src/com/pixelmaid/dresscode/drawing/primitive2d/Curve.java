@@ -2,12 +2,10 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 
 
 import java.util.ArrayList;
-
-import processing.core.PApplet;
-
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.app.Manager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.math.Geom;
 
 public class Curve extends Drawable { //series of symmetrical curved lines grouped together in a single line
 	private int resolution = 20; // resolution of each curve
@@ -40,25 +38,22 @@ public class Curve extends Drawable { //series of symmetrical curved lines group
 		this.control1=control1;
 		this.control2=control2;
 		this.end=end;
+		this.origin=Geom.findCentroid((Polygon)this.toPolygon());
 
 	}
 
 	@Override
 	public void draw(Embedded e){
+		appearance(e);
 		float originX = (float)this.getOrigin().getX();
 		float originY= (float)this.getOrigin().getY();
 		e.bezier((float)start.getX()+ originX, (float)start.getY()+ originY,(float)control1.getX()+ originX, (float)control1.getY()+ originY, (float)control2.getX()+ originX, (float)control2.getY()+ originY,(float)end.getX()+ originX, (float)end.getY()+ originY);
 
+		if(this.getDrawOrigin()){
+			this.drawOrigin(e);
+		}
 	}
 
-	@Override
-	public void moveTo(double x, double y) {
-		this.start.moveTo(x, y, new Point(0,0));
-		this.end.moveTo(x, y, new Point(0,0));
-		this.control1.moveTo(x, y,new Point(0,0));
-		this.control2.moveTo(x, y,new Point(0,0));
-
-	}
 
 	@Override
 	public void moveBy(double x, double y){
@@ -98,6 +93,20 @@ public class Curve extends Drawable { //series of symmetrical curved lines group
 		}
 		return lines;
 	}
+	
+	@Override
+	//converts ellipse to polygon
+		public Drawable toPolygon() {
+			Polygon poly = new Polygon(this.origin.copy());
+			for (int i = 0; i <= resolution; i++) {
+				float t = (float)i / (float)resolution;
+				double x = Manager.canvas.bezierPoint((float)start.getX(), (float)control1.getX(), (float)control2.getX(), (float)end.getX(), t);
+				double y = Manager.canvas.bezierPoint((float)start.getY(), (float)control1.getY(), (float)control2.getY(), (float)end.getY(), t);
+				poly.addPoint(x,y);
+			}
+			return poly;
+		}
+			
 
 
 }

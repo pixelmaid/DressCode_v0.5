@@ -22,6 +22,7 @@ public class Line extends Drawable {
 	public Line(Point s, Point e) {
 		this.start = s;
 		this.end = e;
+		this.origin=Geom.getMidpoint(start, end);
 	}
 	
 	//initialize line from polar coordinates
@@ -31,7 +32,13 @@ public class Line extends Drawable {
 	
 	@Override
 	public void draw(Embedded e){
+		appearance(e);
 		e.line((float)start.getX(), (float)start.getY(), (float)end.getX(), (float)end.getY());
+		
+		
+		if(this.getDrawOrigin()){
+			this.drawOrigin(e);
+		}
 	}
 	
 	@Override
@@ -39,12 +46,6 @@ public class Line extends Drawable {
 		//TODO:implement print method
 	}
 	
-	@Override
-	public void moveTo(double x, double y) {
-       this.start.moveTo(x, y, new Point(0,0));
-       this.end.moveTo(x, y, new Point(0,0));
-        
-    }
 	
 	@Override
 	public void moveBy(double x, double y){
@@ -79,5 +80,16 @@ public class Line extends Drawable {
 		return lines;
 	}
 	
+	@Override
+	//converts line to polygon (questionable...)
+	public Drawable toPolygon(){
+		Polygon poly = new Polygon(this.origin);
+		
+		poly.addPoint(start);
+		poly.addPoint(end);
+		
+		return poly;
+		
+	}
 
 }

@@ -89,14 +89,14 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	      	
 	        pane.doLayout();
 	        codeField.setContentType("text/java");
-	        codeField.setText("for i=0 to 9 do\n" + 
-	        		"    for j=0 to 9 do\n" + 
+	        codeField.setText("for i=0 : 9 :\n" + 
+	        		"    for j=0 : 9 :\n" + 
 	        		"    c1=PURPLE;\n" + 
 	        		"    c2=PINK;\n" + 
 	        		"    a=0;\n" + 
-	        		"    if j%2==0 do\n" + 
+	        		"    if j%2==0 :\n" + 
 	        		"    a=flower(100,100,c1,c2);\n" + 
-	        		"     else do\n" + 
+	        		"     else :\n" + 
 	        		"     a=flower(100,100,c2,c1);\n" + 
 	        		"     end\n" + 
 	        		"    move(a,200*j,200*i);\n" + 
@@ -104,7 +104,7 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	        		"end\n" + 
 	        		"\n" + 
 	        		"def flower(x,y,c1,c2)\n" + 
-	        		"   a = for i=1 to 10 do\n" + 
+	        		"   a = for i=1 : 10 :\n" + 
 	        		"        f =ellipse(0,0,50,200);\n" + 
 	        		"        rotate(f,360/10*i);\n" + 
 	        		"        fill(f,c1);\n" + 

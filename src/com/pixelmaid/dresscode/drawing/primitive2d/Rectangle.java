@@ -4,7 +4,7 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 
 import com.pixelmaid.dresscode.app.Embedded;
-import com.pixelmaid.dresscode.drawing.datatype.*;
+import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 public class Rectangle extends Drawable implements DrawableInterface{
 	private double width;
@@ -32,12 +32,6 @@ public class Rectangle extends Drawable implements DrawableInterface{
 		this.origin=o;
 	}
 	
-	
-	@Override
-	public void moveTo(double x, double y) {
-	        this.origin = new Point(x,y);
-	        
-	    }
 
 	@Override
 	public void moveBy(double x, double y) {
@@ -59,12 +53,32 @@ public class Rectangle extends Drawable implements DrawableInterface{
 	
 	@Override
 	public void draw(Embedded e){
+		appearance(e);
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
 		e.rectMode(PConstants.CENTER);
 		e.rect(0,0,(float)width,(float)height);
 		e.popMatrix();
+		
+		if(this.getDrawOrigin()){
+			this.drawOrigin(e);
+		}
+	}
+	
+	@Override
+	//converts rectangle to polygon
+	public Drawable toPolygon() {
+		Polygon poly = new Polygon(this.origin.copy());
+		
+		
+		poly.addPoint(0.0,0.0);
+		poly.addPoint(width,0.0);
+		poly.addPoint(width,height);
+		poly.addPoint(0.0,height);
+
+		
+		return poly;
 	}
 
 }
