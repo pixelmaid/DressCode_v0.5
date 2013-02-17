@@ -6,11 +6,12 @@ import java.util.ArrayList;
 import processing.core.PApplet;
 
 import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.app.Manager;
 
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
-public class Polygon extends Drawable implements DrawableInterface, Turtle{
+public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	private ArrayList<Point> points;
 	private ArrayList<Hole> holes;
 	private static double DEFAULT_LENGTH = 20;
@@ -45,6 +46,7 @@ public class Polygon extends Drawable implements DrawableInterface, Turtle{
 	}
 	
 	public void addHole(Hole h){
+		h.setParent(this);
 		holes.add(h);
 	}
 	
@@ -63,6 +65,17 @@ public class Polygon extends Drawable implements DrawableInterface, Turtle{
 		this.points.addAll(p.getPoints());
 		
 	}
+	
+	public ArrayList<Point> getPoints(){
+		return this.points;
+	}
+	
+	public ArrayList<Hole> getHoles(){
+		return this.holes;
+	}
+	
+	
+	//===================OVERRIDDEN METHODS==================
 	
 	@Override
 	public void draw(Embedded e){
@@ -86,18 +99,113 @@ public class Polygon extends Drawable implements DrawableInterface, Turtle{
 		}
 	}
 	
-	public ArrayList<Point> getPoints(){
-		return this.points;
+	@Override
+	public void print(Embedded embedded){
+		//TODO: implement print method
 	}
 	
-	public ArrayList<Hole> getHoles(){
-		return this.holes;
+	@Override
+	public Drawable copy(){
+		Polygon c = (Polygon)super.copy();
+		for(int i=0;i<points.size();i++){
+			c.addPoint(points.get(i).copy());
+		}
+		for(int i=0;i<holes.size();i++){
+			c.addHole((Hole)holes.get(i).copy());
+		}
+		return c;
 	}
 	
+	@Override
+	//sets the points and holes relative around a new origin
+	public void setRelativeTo(Point p) {
+		for(int i=0;i<this.points.size();i++){
+			Point newPoint = this.points.get(i);
+			this.points.set(i,newPoint.difference(p));
+		}
+		for(int i=0;i<holes.size();i++){
+			holes.get(i).setRelativeTo(p);
+		}
+		this.origin=p;
+	}
+	
+	
+	
+	@Override
+	//sets all points to absolute position based on the origin of the object
+	public void setAbsolute() {
+		if(this.getParent()!=null){
+			this.origin= this.origin.add(this.getParent().getOrigin());
+			this.rotate(this.getRotation()+this.getParent().getRotation());
+		}
+		for(int i=0;i<this.points.size();i++){
+		    Point pt = new Point(points.get(i).getX()+getOrigin().getX(),points.get(i).getY()+getOrigin().getY());
+			pt.rotate(getRotation(),getOrigin());
+			this.points.set(i,pt);
+			
+		}
+		for(int i=0;i<holes.size();i++){
+			holes.get(i).setAbsolute();
+		}
+		
+	
+	}
+	
+	@Override
+	//returns itself (already is a polygon)
 	public Polygon toPolygon(){
 		System.out.println("polygon to polygon");
 		return this;
 	}
+	
+	@Override
+	// creates a new drawable and adds this polygon and d to it and returns new drawable
+	public Drawable addToGroup(Drawable d){
+	 Drawable master = new Drawable();
+	//TODO: adjust indexing here to have new drawable added at same index as this
+	 Manager.canvas.addDrawable("drawable",-1,master);
+    
+    	this.removeFromCanvas();
+    	d.removeFromCanvas();
+    		
+    		master.addToGroup(this);
+    		master.addToGroup(d);
+    	
+    	return master;
+	}
+	
+	@Override
+	//overrides drawable remove from group method- returns a null value since a polygon cannot be a group by itself
+	public Drawable removeFromGroup(Drawable d){
+		System.out.println("cannot remove from group from a polygon group");
+		return null;
+	}
+	
+	@Override
+	//overrides drawable remove all children method- returns a null value since a polygon does not have any children to remove
+	public ArrayList<Drawable> removeAllChildren(){
+		System.out.println("cannot remove all children from a polygon");
+		return null;
+	}
+	
+	@Override
+	// creates a new drawable and adds this polygon all orphans to it and returns new drawable
+	public Drawable addAllChildren(ArrayList<Drawable> orphans){
+		 Drawable master = new Drawable();
+		//TODO: adjust indexing here to have new drawable added at same index as this
+		 Manager.canvas.addDrawable("drawable",-1,master);
+		    
+		  this.removeFromCanvas();
+				
+		   master.addToGroup(this);
+		   
+		   for(int i=0;i<orphans.size();i++){
+				master.addToGroup(orphans.get(i));
+		   }
+		   return master;
+	}
+	
+	
 	
 	
 	//=============================TURTLE METHODS==================================//

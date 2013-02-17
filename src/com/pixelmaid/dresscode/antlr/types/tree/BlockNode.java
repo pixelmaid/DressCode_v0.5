@@ -42,10 +42,8 @@ public class BlockNode implements DCNode {
       
       //if value is drawable then add it to master drawable and remove it from the canvas
       if (value.isDrawable()){
-    	  Drawable d2 = value.asDrawable();
-    	  d.add(d2);
-    	  d2.removeFromCanvas();
-    	  d2.setParent(d);
+    	 d = value.asDrawable();
+    	 
     	  drawAdded=true;
       }
     }
@@ -54,7 +52,7 @@ public class BlockNode implements DCNode {
 	 if(returnStatement ==null){
 		 if(drawAdded){
 			 //TODO: add actual line number instead of 0 here
-			 Manager.canvas.addDrawable("drawable",-1,d);
+			
 			 return new VarType(d);
 		 }
 		 else{

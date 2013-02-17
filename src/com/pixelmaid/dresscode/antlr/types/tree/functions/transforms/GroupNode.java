@@ -10,7 +10,7 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.primitive2d.Color;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.DrawableInterface;
+import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
 
 
 public class GroupNode implements DCNode {
@@ -29,8 +29,7 @@ public class GroupNode implements DCNode {
 
     @Override
     public VarType evaluate() {
-    	Drawable d;
-    	Color c = null;
+    	
     	if(params.size()<1){
     		
     		throw new RuntimeException("Incorrect number of parameters for group at line " + line);
@@ -38,15 +37,17 @@ public class GroupNode implements DCNode {
     	
     	try{
     	Drawable master = new Drawable();	
-    	ArrayList<Point> origins = new ArrayList<Point>();
+    	
     	for(int i=0;i<params.size();i++){
-    		d= (params.get(i).evaluate().asDrawable());
-    		origins.add(d.getOrigin());
+    		Drawable d= (params.get(i).evaluate().asDrawable());
+    		
     		d.removeFromCanvas();
-    		master.add(d);
+    		
+    		master.addToGroup(d);
     	
     	}
-    	master.alterOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+    	
+    	//System.out.println("group children are polygons" + master.childrenArePolygons());
     	Manager.canvas.addDrawable("drawable",-1,master);
     	return new VarType(master);
     	}

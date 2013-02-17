@@ -6,7 +6,7 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.app.Manager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.DrawableInterface;
+import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
 
 
 public class RotateNode implements DCNode {
@@ -25,7 +25,7 @@ public class RotateNode implements DCNode {
 
     @Override
     public VarType evaluate() {
-    	DrawableInterface d;
+    	Drawable d;
     	Double r;
     	if(params.size()!=2){
     		

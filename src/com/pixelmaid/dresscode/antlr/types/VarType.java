@@ -4,9 +4,12 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Color;
+import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
+import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 
 public class VarType implements Comparable<VarType> {  
 	  
@@ -52,13 +55,36 @@ public class VarType implements Comparable<VarType> {
 	  public String asString() {  
 	    return (String)value;  
 	  }
-	  
-	  public Drawable asDrawable() {  
-		    return (Drawable)value;  
+
+	  public Drawable asDrawable() { 
+		/*  if(this.isLine()){
+			  return (Line)value;
 		  }
+		  else if(this.isCurve()){
+			  return (Curve)value;
+		  }
+		  else if(this.isRectangle()){
+			  System.out.println("is rectangle");
+			  return (Rectangle)value;
+		  }
+		  else if(this.isEllipse()){
+			  return (Ellipse)value;
+		  }
+		  else if(this.isPolygon()){
+			  return (Polygon)value;
+		  }
+
+		  else {*/
+			  return (Drawable)value;  
+		// }
+	  }
 	  
 	  public Line asLine() {  
 		    return (Line)value;  
+		  }
+	  
+	  public Curve asCurve() {  
+		    return (Curve)value;  
 		  }
 	  
 	  public Point asPoint() {  
@@ -67,6 +93,14 @@ public class VarType implements Comparable<VarType> {
 	  
 	  public Polygon asPolygon() {  
 		    return (Polygon)value;  
+		  }
+	  
+	  public Ellipse asEllipse() {  
+		    return (Ellipse)value;  
+		  }
+	  
+	  public Rectangle asRectangle() {  
+		    return (Rectangle)value;  
 		  }
 	  
 	  public Color asColor() {
@@ -148,6 +182,9 @@ public class VarType implements Comparable<VarType> {
 	  public boolean isLine(){
 		  return value instanceof Line;
 	  }
+	  public boolean isCurve(){
+		  return value instanceof Curve;
+	  }
 	  
 	  public boolean isPoint(){
 		  return value instanceof Point;
@@ -155,6 +192,14 @@ public class VarType implements Comparable<VarType> {
 	  
 	  public boolean isPolygon(){
 		  return value instanceof Polygon;
+	  }
+	  
+	  public boolean isRectangle(){
+		  return value instanceof Rectangle;
+	  }
+	  
+	  public boolean isEllipse(){
+		  return value instanceof Ellipse;
 	  }
 	  
 	  @Override  

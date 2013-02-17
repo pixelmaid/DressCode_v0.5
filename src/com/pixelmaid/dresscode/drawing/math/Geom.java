@@ -579,7 +579,7 @@ public class Geom {
         return intersection;
     }
 
-    public static boolean ellipseEdgeIntersect(Ellipse disc, DCHalfEdge edge) {
+   /* public static boolean ellipseEdgeIntersect(Ellipse disc, DCHalfEdge edge) {
         Vec2d seg_a = new Vec2d(edge.start.getX(), edge.start.getY());
         Vec2d seg_b = new Vec2d(edge.end.getX(), edge.end.getY());
         Point closest = closestPoint(seg_a, seg_b, disc.getOrigin());
@@ -591,7 +591,7 @@ public class Geom {
         }
 
     }
-
+*/
     public static double clamp(double X, double Min, double Max) {
         if (X > Max)
             X = Max;

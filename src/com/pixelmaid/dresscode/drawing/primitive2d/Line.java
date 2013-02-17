@@ -46,13 +46,6 @@ public class Line extends Drawable {
 		//TODO:implement print method
 	}
 	
-	
-	@Override
-	public void moveBy(double x, double y){
-		 this.start.moveBy(x, y);
-		 this.end.moveBy(x, y);
-	}
-	
 	@Override
 	 public Line copy(){
 	    return new Line(start.copy(),end.copy());
@@ -73,12 +66,7 @@ public class Line extends Drawable {
 	public Point getOrigin(){
 		return this.start;
 	}
-	@Override
-	public ArrayList<Line> getAllLines() {
-		 ArrayList<Line>lines = new ArrayList<Line>();
-		 lines.add(this);
-		return lines;
-	}
+
 	
 	@Override
 	//converts line to polygon (questionable...)
@@ -87,7 +75,7 @@ public class Line extends Drawable {
 		
 		poly.addPoint(start);
 		poly.addPoint(end);
-		
+		poly.rotate(this.getRotation());
 		return poly;
 		
 	}

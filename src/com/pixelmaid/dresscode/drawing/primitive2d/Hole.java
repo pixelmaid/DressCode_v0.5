@@ -21,4 +21,33 @@ public class Hole extends Polygon {
 			}
 			e.endShape(PApplet.CLOSE);
 		}
+		
+		@Override
+		public Drawable copy(){
+			Polygon c = new Polygon();
+			for(int i=0;i<this.getPoints().size();i++){
+				c.addPoint(this.getPoints().get(i).copy());
+			}
+			return c;
+		}
+		
+		@Override
+		//sets the points and holes relative around a new origin
+		public void setRelativeTo(Point p) {
+			for(int i=0;i<this.getPoints().size();i++){
+				Point newPoint = this.getPoints().get(i);
+				this.getPoints().set(i,newPoint.difference(p));
+			}
+			
+		}
+		
+		@Override
+		//sets the points and holes relative around a new origin
+		public void setAbsolute() {
+			for(int i=0;i<this.getPoints().size();i++){
+				Point newPoint = this.getPoints().get(i);
+				this.getPoints().set(i,newPoint.add(this.getParent().origin));
+			}
+			
+		}
 }

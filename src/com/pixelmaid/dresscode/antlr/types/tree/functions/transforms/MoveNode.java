@@ -4,7 +4,8 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
-import com.pixelmaid.dresscode.drawing.primitive2d.DrawableInterface;
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 
 
 public class MoveNode implements DCNode {
@@ -23,7 +24,7 @@ public class MoveNode implements DCNode {
 
     @Override
     public VarType evaluate() {
-    	DrawableInterface d;
+    	Drawable d;
     	Double x;
     	Double y;
     	if(params.size()!=3){

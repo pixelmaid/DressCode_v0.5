@@ -7,7 +7,7 @@ import com.pixelmaid.dresscode.app.Manager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
-public class Curve extends Drawable { //series of symmetrical curved lines grouped together in a single line
+public class Curve extends Polygon { //series of symmetrical curved lines grouped together in a single line
 	private int resolution = 20; // resolution of each curve
 	private boolean showPoints = false;
 	public Point control1;
@@ -55,48 +55,15 @@ public class Curve extends Drawable { //series of symmetrical curved lines group
 	}
 
 
-	@Override
-	public void moveBy(double x, double y){
-		this.start.moveBy(x, y);
-		this.end.moveBy(x, y);
-		this.control1.moveBy(x, y);
-		this.control2.moveBy(x, y);
-	}
 
 	@Override
 	public Curve copy(){
 		return new Curve(start.copy(),control1.copy(),control2.copy(),end.copy());
 	}
-
-
-
-	@Override
-	public ArrayList<Line> getAllLines() {
-		ArrayList<Line>lines = new ArrayList<Line>();
-		double lastX=0;
-		double lastY=0;
-		for (int i = 0; i <= resolution; i++) {
-			float t = (float)i / (float)resolution;
-			double x = Manager.canvas.bezierPoint((float)start.getX(), (float)control1.getX(), (float)control2.getX(), (float)end.getX(), t);
-			double y = Manager.canvas.bezierPoint((float)start.getY(), (float)control1.getY(), (float)control2.getY(), (float)end.getY(), t);
-
-			if(i==0){
-				lastX=x;
-				lastY=y;
-			}
-			else{
-				Line line = new Line(lastX,lastY,x,y);
-				lines.add(line);
-				lastX=x;
-				lastY=y;
-			}
-		}
-		return lines;
-	}
 	
 	@Override
 	//converts ellipse to polygon
-		public Drawable toPolygon() {
+	public Polygon toPolygon() {
 			Polygon poly = new Polygon(this.origin.copy());
 			for (int i = 0; i <= resolution; i++) {
 				float t = (float)i / (float)resolution;
@@ -104,6 +71,7 @@ public class Curve extends Drawable { //series of symmetrical curved lines group
 				double y = Manager.canvas.bezierPoint((float)start.getY(), (float)control1.getY(), (float)control2.getY(), (float)end.getY(), t);
 				poly.addPoint(x,y);
 			}
+			poly.rotate(this.getRotation());
 			return poly;
 		}
 			

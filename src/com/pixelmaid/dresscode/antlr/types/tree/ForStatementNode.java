@@ -42,9 +42,8 @@ public class ForStatementNode implements DCNode {
             }
             else if (returnValue.isDrawable()){
             	  Drawable d2 = returnValue.asDrawable();
-            	  d.add(d2);
+            	  d.addToGroup(d2);
             	  d2.removeFromCanvas();
-            	  d2.setParent(d);
             	  drawAdded=true;
             	  System.out.println("added drawable in for loop at+"+i);
           	  

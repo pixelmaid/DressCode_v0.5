@@ -1,22 +1,21 @@
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.app.Manager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
-public class Drawable implements DrawableInterface {
+public class Drawable {
 
 	public  ArrayList<Drawable> children; //stores all children of a drawable
-	/*private ArrayList<Curve> curves; //stores all lines of a drawable
-	private ArrayList<Point> points; //stores all points of a drawable
-	private ArrayList<Polygon> polygons; //stores all polygons of a drawable
-	private ArrayList<Ellipse> ellipses;//stores all ellipses of a drawable*/
-	private double width;
-	private double height;
-	private double rotation;
+	
+	
+	private double rotation=0;
+	private double scaleX = 1;
+	private double scaleY = 1;
 	private boolean hide= false;
 	public String key;
 	protected Point origin;
@@ -30,7 +29,31 @@ public class Drawable implements DrawableInterface {
 	
 	protected final static int DEFAULT_WIDTH= 50;
 
+	
+	
+	
+	//===============PRIVATE METHODS=================//
+	
+	//adds a child to list of children and sets its parent
+	private void add(Drawable d){
+		children.add(d);
+		d.setParent(this);
+	}
 
+	//removes a child from list of children and destroys reference to child's parent
+	private void remove(Drawable d){
+		children.remove(d);
+		d.setParent(null);
+	}
+	
+	//sets the parent of the drawable
+	protected void setParent(Drawable p){
+		this.parent = p;
+	}
+
+	
+
+	//===============PUBLIC METHODS=================//
 	public Drawable(ArrayList<Double> params){
 		this();
 	}
@@ -48,9 +71,11 @@ public class Drawable implements DrawableInterface {
 		setStrokeColor(0,0,0);
 	}
 
-	@Override
+	//-------------DRAW AND PRINT METHODS-----------------//
+	
+	//draws each child in the drawable. Must be overridden by subclasses
 	public void draw(Embedded embedded) {
-		if(!this.getHide()){
+		if(!this.getHide()){//only draws if child is not hidden
 		appearance(embedded);
 		embedded.pushMatrix();
 		embedded.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
@@ -69,6 +94,16 @@ public class Drawable implements DrawableInterface {
 		}
 	}
 
+	//sets appearance to outline form
+	public void outlineAppearance(Embedded e){
+		
+		e.strokeWeight((float)this.getStrokeWeight());
+		
+		
+		e.fill(255,0,0,25f);
+		
+	}
+	
 	//sets up proper fill and stroke settings
 	public void appearance(Embedded e){
 		int rf=this.getFillColor().r();
@@ -98,58 +133,247 @@ public class Drawable implements DrawableInterface {
 	
 	//draws the origin of the drawable
 	public void drawOrigin(Embedded embedded){
-		embedded.stroke(255,0,0);
+		embedded.stroke(0,0,0);
+		embedded.strokeWeight(8);
+		embedded.point((float)this.origin.getX(),(float)this.origin.getY());
+		
+		embedded.stroke(255,255,255);
 		embedded.strokeWeight(5);
 		embedded.point((float)this.origin.getX(),(float)this.origin.getY());
-		System.out.println("drawOrigin");
 	}
 	
-	@Override
+	//draws each child of the drawable for a vector file version (must be overridden by subclass)
 	public void print(Embedded embedded) {
 		// TODO Auto-generated method stub
 
 	}
+	
+	
+	
+	//------------COLOR AND STROKE GET AND SET METHODS-----------------//
+	
+	//sets the stroke weight value
+		public void setStrokeWeight(double w){
+			this.strokeWeight=w;
+			for(int i=0;i<this.children.size();i++){
+				this.children.get(i).setStrokeWeight(w);
+			}
+		}
+	
+	//returns the stroke weight value
+	public double getStrokeWeight(){
+		return this.strokeWeight;
+	}
+	
+	//sets the fill color to an rgb value
+	public void setFillColor(int r, int g, int b){
+		this.fillColor.set(r, g, b);
+		for(int i=0;i<this.children.size();i++){
+			this.children.get(i).setFillColor(r, g, b);
+		}
+	}
+	
+	//sets the fill color by a color constant
+	public void setFillColor(Color c){
+		this.fillColor=c;
+		for(int i=0;i<this.children.size();i++){
+			this.children.get(i).setFillColor(c);
+		}
+	}
+	
+	//returns the current fill color
+	public Color getFillColor(){
+		return this.fillColor;
+	}
+	
+	//sets the stroke color with an rgb value
+	public void setStrokeColor(int r, int g, int b){
+		this.strokeColor.set(r, g, b);
+		for(int i=0;i<this.children.size();i++){
+			this.children.get(i).setStrokeColor(r,g,b);
+		}
+	}
+		
+	//sets the stroke color with a color constant
+	public void setStrokeColor(Color c){
+		this.strokeColor=c;
+		for(int i=0;i<this.children.size();i++){
+			this.children.get(i).setStrokeColor(c);
+		}
+	}
+	
+	//returns the current stroke color
+	public Color getStrokeColor(){
+		return this.strokeColor;
+	}
+	
+	
+	//sets whether or not the drawable has a fill
+	public void doFill(Boolean f){
+		doFill=f;
+	}
+	
+	//sets whether or not the drawable has a stroke
+	public void doStroke(Boolean f){
+		doStroke=f;
+	}
+	
+	//returns if the object has a stroke
+	public boolean doStroke(){
+		return doStroke;
+	}
+	
+	//returns if the object has a fill
+	public boolean doFill(){
+		return doFill;
+	}
+	
+	
+	//-------------TRANSFORMATION METHODS-----------------//
 
-	@Override
+	//hides the drawable and all children
 	public void hide() {
 		this.hide=true;
 
 	}
-	
+	//returns if the drawable is hidden or not
 	public boolean getHide() {
 		return this.hide;
 
 	}
-
-	@Override
+	//un hides the drawable
 	public void show() {
 		this.hide=false;
 
 	}
 	
-	//methods for getting and setting drawOrigin value
-	
+	//methods for getting and setting drawOrigin value	
 	public boolean getDrawOrigin(){
 		return drawOrigin;
 	}
-	
+	 //sets whether or not to draw the object's origin on the canvas
 	public void setDrawOrigin(boolean d){
 		drawOrigin=d;
 	}
 
-	@Override
+	//removes drawable from canvas
 	public void removeFromCanvas(){
 		Manager.canvas.removeDrawable(this);
 	}
 
-	@Override
+	//resets origin to new point resulting in the moving of the object
 	public void moveTo(double x, double y) {
-
 		this.origin=new Point(x,y);
-	
 	}
 	
-	@Override
+	//sets the rotation to a new angle (in degrees)
+	public void rotate(double theta) {
+		this.rotation=theta;
+		System.out.println("when set, rotation ="+this.rotation);
+
+	}
+	
+	//returns the rotation of an object
+	public double getRotation(){
+		return this.rotation;
+	}
+	
+	// TODO IMPLEMENT SCALING
+	//scales the object on the x axis
+	public void scaleX(double x) {
+		this.scaleX = x;
+
+	}
+
+	//scales the object on the x axis
+	public void scaleY(double y) {
+		this.scaleY = y;
+
+	}
+	
+	//scales the object on the x axis
+	public double getScaleX() {
+		return this.scaleX;
+
+	}
+
+	//scales the object on the x axis
+	public double getScaleY() {
+		return this.scaleY;
+
+	}
+
+	//scales the object on the x and y axis by the same amount
+	public void scale(double s) {
+		this.scaleX = s;
+		this.scaleY = s;
+	}	
+	
+	// TODO TEST COPY
+	//copies drawable and returns copy. Must be overridden by subclasses
+	public Drawable copy() {
+		Drawable d = new Drawable();
+		d.setOrigin(this.origin.copy());
+		d.rotate(this.getRotation());
+		d.scaleX(this.getScaleX());
+		d.scaleY(this.getScaleY());
+		d.setFillColor(this.getFillColor());
+		d.setStrokeColor(this.getStrokeColor());
+		d.setStrokeWeight(this.getStrokeWeight());
+		d.doFill(this.doFill);
+		d.doStroke(this.doStroke);
+		d.setDrawOrigin(this.getDrawOrigin());
+		for(int i=0;i<this.children.size();i++){
+			d.add(this.children.get(i).copy());
+		}
+		
+		return d;
+		
+	}
+	
+	//----------------ORIGIN/CHILDREN/GROUPING MANIPULATION METHODS------------------//
+	
+	//gets the parent of the object
+	protected Drawable getParent(){
+		return this.parent;
+	}
+	
+	
+	//set the current origin of the drawable
+	protected void setOrigin(Point p){
+			this.origin=p;
+		}
+	
+	//get the current origin of the drawable
+	public Point getOrigin(){
+		return this.origin;
+	}
+	
+
+	//sets the drawable's origin relative to a new origin (must be overridden by subclasses)
+	private void setRelativeTo(Point p) {
+		this.origin= this.origin.difference(p);	
+	}
+	
+	//sets the drawable at a new origin, and moves all children relative to that new origin //should only be used when a new child is added to the group
+	private void moveOrigin(Point p){
+			this.setOrigin(p);
+			for(int i=0;i<this.children.size();i++){
+				
+					children.get(i).setRelativeTo(p);	
+			}
+	}
+	
+	//sets the drawable to its absolute position with respect to its parent (must be overridden by subclasses)
+	private void setAbsolute() {
+			if(this.parent!=null){
+				this.origin= this.origin.add(this.parent.getOrigin()); //add parent's origin to its origin
+				this.rotate(this.getRotation()+this.getParent().getRotation()); //adds parent's rotation to its rotation
+			}
+	}
+		
+	
+	//converts all children of the drawable to polygons. (must be overridden by subclasses)
 	public Drawable toPolygon(){
 		for(int j =0;j<this.children.size();j++){
 			Drawable poly = this.children.get(j).toPolygon();
@@ -158,197 +382,151 @@ public class Drawable implements DrawableInterface {
 		return this;
 	}
 	
-
-	@Override
-	public void moveBy(double x, double y) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void rotate(double theta) {
-		this.rotation=theta;
-
-	}
-
-	@Override
-	public void scaleX(double x) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void scaleY(double y) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void scale(double s) {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override public void add(Drawable d){
-			children.add(d);
-	}
-
-	@Override
-	public Drawable copy() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Drawable difference(Drawable d) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Drawable union(Drawable d) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Drawable clip(Drawable d) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	//gets the absolute position of the object
-	@Override
-	public Point getAbsoluteOrigin() {
-		if(this.parent!=null){
-			return this.origin.add(this.parent.getOrigin());
-		}
-		else{
-			return this.origin;
-		}
-		//return Geom.findCentroid(this);
-	}
 	
-	@Override
-	public void setAbsoluteOrigin() {
-		if(this.parent!=null){
-			this.origin= this.origin.add(this.parent.getOrigin());
-		}
-	}
-	
+	//START DEBUGGING HERE!!!! DOES NOT WORK WHEN D ALREADY HAD CHILDREN
+	//adds new child and resets origin of drawable to accommodate child (must be overridden by subclasses)
+	public Drawable addToGroup(Drawable d) {
+		
 
-	public void setOriginRelativeTo(Point p) {
-		this.origin= this.origin.difference(p);
-	}
-	
-	public void alterOrigin(Point p){
-		this.setOrigin(p);
-		for(int i=0;i<this.children.size();i++){
-			children.get(i).setOriginRelativeTo(p);
+			for(int i=0;i<this.children.size();i++){
+				this.children.get(i).setAbsolute();
+			}
+		
+		
+		d.setAbsolute();
+		d.removeFromCanvas(); // remove drawable from canvas - it will be redrawn by its new parent (this)
+		this.add(d);
+		ArrayList<Point> origins = new ArrayList<Point>();
+		
+		if(this.children.size()>1){
+			for(int i=0;i<this.children.size();i++){
+				origins.add(this.children.get(i).getOrigin());
+			}
+			this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
 		}
 		
-	}
-	
-	
-	@Override
-	public Point getOrigin(){
-		return this.origin;
-	}
-	
-	public void setOrigin(Point p){
-		this.origin=p;
-	}
-	
-	public double getRotation(){
-		return this.rotation;
-	}
-	
-	
-//color and stroke get and set
-	public double getStrokeWeight(){
-		return this.strokeWeight;
-	}
-	
-	public void setStrokeWeight(double w){
-		this.strokeWeight=w;
-		for(int i=0;i<this.children.size();i++){
-			this.children.get(i).setStrokeWeight(w);
+		else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
+			this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
 		}
+
+		return this;
+
 	}
-	
-	public Color getFillColor(){
-		return this.fillColor;
-	}
-	
-	public Color getStrokeColor(){
-		return this.strokeColor;
-	}
-	
-	public void setStrokeColor(int r, int g, int b){
-		this.strokeColor.set(r, g, b);
+
+	//removes child and resets origin of drawable to accomodate (must be overridden by subclasses)
+	public Drawable removeFromGroup(Drawable d) {
+		// TODO Auto-generated method stub
+		
+		this.setAbsolute();
 		for(int i=0;i<this.children.size();i++){
-			this.children.get(i).setStrokeColor(r,g,b);
+			this.children.get(i).setAbsolute();
 		}
+		d.removeFromCanvas(); // remove drawable from canvas
+		this.remove(d);
+		
+		
+		ArrayList<Point> origins = new ArrayList<Point>();
+		System.out.println("num children after removal="+this.numChildren());
+		if(this.children.size()>1){
+			for(int i=0;i<this.children.size();i++){
+				origins.add(this.children.get(i).getOrigin());
+			}
+			//this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+			//this.setOrigin(Geom.getAveragePoint(origins));
+		}
+		else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
+			this.removeFromCanvas();
+			
+			return this.children.get(0);
+		}
+		else if(this.children.size()==0){
+			this.removeFromCanvas(); // if no children, remove empty group
+			return null; //return null because group no longer has any children
+		}
+		return this.children.get(1);
+
+		
+
 	}
 		
-	public void setFillColor(int r, int g, int b){
-		this.fillColor.set(r, g, b);
-		for(int i=0;i<this.children.size();i++){
-			this.children.get(i).setFillColor(r, g, b);
+		//removes all children from a drawable and returns them as orphans (must be overridden by subclasses)
+		public ArrayList<Drawable> removeAllChildren(){
+			ArrayList<Drawable> orphans = new ArrayList<Drawable>();
+			for(int i=this.children.size()-1;i>=0;i++){
+				Drawable d = removeFromGroup(this.children.get(i));
+				orphans.add(d);
+			}
+			Collections.reverse(orphans);
+			return orphans;
+			
 		}
-	}
-	
-	public void setFillColor(Color c){
-		this.fillColor=c;
-		for(int i=0;i<this.children.size();i++){
-			this.children.get(i).setFillColor(c);
+		
+		//adds a list of children to the drawable (must be overridden by subclasses)
+		public Drawable addAllChildren(ArrayList<Drawable> orphans){
+		
+			for(int i=0;i<orphans.size();i++){
+				this.addToGroup(orphans.get(i));
+				
+			}
+			
+			return this;
+			
+			
 		}
-	}
-	public void setStrokeColor(Color c){
-		this.strokeColor=c;
-		for(int i=0;i<this.children.size();i++){
-			this.children.get(i).setStrokeColor(c);
+		//returns number of children of the drawable (can be used to tell if it is empty, or potentially a polygon)
+		public int numChildren(){
+			return this.children.size();
 		}
-	}
-	
-	public void doFill(Boolean f){
-		doFill=f;
-	}
-	public void doStroke(Boolean f){
-		doStroke=f;
-	}
-	
-	public boolean doStroke(){
-		return doStroke;
-	}
-	
-	public boolean doFill(){
-		return doFill;
-	}
-	
-	
-	@Override
-	public double getWidth(){
-		return this.height;
-	}
-
-	@Override
-	public double getHeight(){
-		return this.width;
-
-	}
-
-
-	public ArrayList<Line> getAllLines() {
-		ArrayList<Line> lines = new ArrayList<Line>();
-		for(int i=0;i<children.size(); i++){
-			lines.addAll(children.get(i).getAllLines());
+		
+		//returns the children of the drawable
+		public ArrayList<Drawable> getChildren(){
+			return this.children;
 		}
-		return lines;
-	}
+		
+		
+		//condenses all drawable children into one dimensional list
+		public Drawable condense(){
+			Drawable dp = this.toPolygon(); //first convert all children primitves to polygons
+			if(dp.numChildren()==0){
+				return dp;
+			}
+			else{
+				condenseRec(dp,dp);
+				System.out.println("numChildren in drawable after condense ="+dp.children.size());
+				
+				Manager.canvas.finalPolys = dp.children;
+				return dp;
+			}
+		}
+		
+		//recursive condense function
+		public Drawable condenseRec(Drawable d,Drawable parent){
+			ArrayList<Drawable> currentChildren = d.children;
+			
+			for(int i=currentChildren.size()-1;i>=0; i--){
+				if (currentChildren.get(i).numChildren()!=0){ //is not a polygon
+					if(d!=parent){
+						d.removeFromGroup(currentChildren.get(i));
+						parent.addToGroup(currentChildren.get(i));
+					}
+					condenseRec(currentChildren.get(i),parent);
+		
+				}
+				else{
+					if(d!=parent){
+						parent.addToGroup(currentChildren.get(i));
+					}
+				}
+			}
+			
+			return parent;
+			
+		}
+	
+
 
 	//boolean returns to check type of drawables
-	public boolean isDrawable(){
+	/*public boolean isDrawable(){
 		return this instanceof Drawable;
 	}
 
@@ -369,45 +547,35 @@ public class Drawable implements DrawableInterface {
 	public boolean isPolygon(){
 		return this instanceof Polygon;
 	}
-
-	
-	public Drawable getParent(){
-		return this.parent;
-	}
-	
-	public void setParent(Drawable p){
-		this.parent = p;
-	}
-
-	//condenses all drawable children into one dimensional list
-	public Drawable condense(){
-		Drawable dp = this.toPolygon(); //first convert all children primitves to polygons
-		if(dp.isPolygon()){
-			return dp;
+	//checks if all children of a drawable are polygons or if drawable is a polygon itself
+	public boolean childrenArePolygons() {
+		
+		if(this.isPolygon()){
+			return true;
 		}
 		else{
-			ArrayList<Drawable> empty = new ArrayList<Drawable>();
-			ArrayList<Drawable> finalPolys = condenseRec(dp,empty); 
-			this.children=finalPolys;
-			return dp;
+		boolean areP = true;
+		for(int i=0;i<this.children.size();i++){
+			if (!this.children.get(i).isPolygon()){
+				areP=false;
+			}
 		}
-	}
+		return areP;
+		}
+	}*/
+
 	
-	//recursive condense function
-	public ArrayList<Drawable> condenseRec(Drawable d, ArrayList<Drawable> polygons){
-		for(int i=0;i<d.children.size(); i++){
-			d.children.get(i).setAbsoluteOrigin();
-			if (!d.children.get(i).isPolygon()){
-				condenseRec(d.children.get(i),polygons);
-				
-			}
-			else{
-				polygons.add(d.children.get(i));
-			}
-		}
-		return polygons;
+	
+	
+	
+	
+	
+	
+
+	
+
+
 		
-	}
 	
 
 

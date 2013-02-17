@@ -28,10 +28,10 @@ import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 
-public class Ellipse extends Drawable implements DrawableInterface {
+public class Ellipse extends Polygon {
 
-    private double width;
-    private double height;
+    protected double width;
+    protected double height;
     private double resolution = 100;
    
     
@@ -55,17 +55,15 @@ public class Ellipse extends Drawable implements DrawableInterface {
         this.origin = o;
     	System.out.println("original ellipse2="+getOrigin().getX()+","+getOrigin().getY());
     	System.out.println("original ellipse2="+origin.getX()+","+origin.getY());
-        
-		
-
 
     }
     
-    
-   
-    
+    @Override
     public Ellipse copy(){
-    	return new Ellipse(origin.getX(),origin.getY(),width,height);
+    	Ellipse e = (Ellipse)super.copy();
+    	e.width = this.width;
+    	e.height = this.height;
+    	return e;
     }
 
 
@@ -74,7 +72,7 @@ public class Ellipse extends Drawable implements DrawableInterface {
 		appearance(e);
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
-		e.rotate(PApplet.radians((float)getRotation()));
+		e.rotate((float)Math.toRadians(getRotation()));
 		System.out.println("ellipse="+getOrigin().getX()+","+getOrigin().getY());
 		e.ellipse(0,0,(float)width,(float)height);
 		e.popMatrix();
@@ -83,7 +81,22 @@ public class Ellipse extends Drawable implements DrawableInterface {
 			this.drawOrigin(e);
 		}
 		
+		/*Polygon poly = (Polygon)this.toPolygon();
+		//poly.draw(e);
+		poly.setAbsolute();
+		ArrayList<Point> points = poly.getPoints();
+		
+		outlineAppearance(e);
+		e.beginShape();
+		for(int i=0;i<points.size();i++){
+			e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
+		}
+		e.endShape(PApplet.CLOSE);	*/
+
+		
     }
+	
+	
 
 	@Override
 	public void print(Embedded e) {
@@ -93,81 +106,9 @@ public class Ellipse extends Drawable implements DrawableInterface {
 		
 	}
 
-
-	@Override
-	public void moveBy(double x, double y) {
-		this.origin.setX(origin.getX()+x);
-		this.origin.setY(origin.getY()+y);
-		
-	}
-
-	@Override
-	public void scaleX(double x) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void scaleY(double y) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void scale(double s) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Drawable difference(Drawable d) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Drawable union(Drawable d) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Drawable clip(Drawable d) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
-	
-	@Override
-	public ArrayList<Line> getAllLines() {
-		ArrayList<Line>lines = new ArrayList<Line>();
-		double lastX=0;
-		double lastY=0;
-		double pR = (Math.PI*2)/resolution;
-		double wR = width/2.0;
-		double hR = height/2.0;
-		for (int i = 0; i <= resolution; i++) {
-			double t = pR*i;
-			double x = wR* Math.cos(t)+origin.getX();
-			double y = hR* Math.sin(t)+origin.getY();
-
-			if(i==0){
-				lastX=x;
-				lastY=y;
-			}
-			else{
-				Line line = new Line(lastX,lastY,x,y);
-				lines.add(line);
-				lastX=x;
-				lastY=y;
-			}
-		}
-		return lines;
-	}
-	
 	@Override
 	//converts ellipse to polygon
-	public Drawable toPolygon() {
+	public Polygon toPolygon() {
 		Polygon poly = new Polygon(this.origin.copy());
 		double pR = (Math.PI*2)/resolution;
 		double wR = width/2.0;
@@ -180,6 +121,7 @@ public class Ellipse extends Drawable implements DrawableInterface {
 			poly.addPoint(x,y);
 
 		}
+		poly.rotate(this.getRotation());
 		
 		return poly;
 	}

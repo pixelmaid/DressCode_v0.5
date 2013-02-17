@@ -24,7 +24,7 @@ import java.awt.geom.Point2D;
 
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.math.*;
-import com.pixelmaid.dresscode.drawing.primitive2d.DrawableInterface;
+import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
 
 
 public class Point extends Point2D implements Comparable<Point>{
