@@ -62,6 +62,7 @@ statement returns [DCNode node]
   |  ifStatement    {node = $ifStatement.node;}
   |  forStatement   {node = $forStatement.node;}
   |  whileStatement {node = $whileStatement.node;}
+  | repeatStatement {node = $repeatStatement.node;}
   ;
 
 assignment returns [DCNode node]

@@ -89,6 +89,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
 		}
 		e.endShape(PApplet.CLOSE);	
+		e.fill(Manager.canvas.DEFAULT_BG);
 		for(int i=0;i<holes.size();i++){
 			holes.get(i).draw(e);
 		}

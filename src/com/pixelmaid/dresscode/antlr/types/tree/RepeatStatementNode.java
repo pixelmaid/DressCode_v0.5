@@ -42,16 +42,16 @@ public class RepeatStatementNode implements DCNode {
         for(double i = start; i <= stop; i+=increment) {
             scope.assign(identifier, new VarType(i));
             VarType returnValue = block.evaluate();
-            if(returnValue != VarType.VOID && !returnValue.isDrawable()) {
+           if(returnValue != VarType.VOID ) {
                 return returnValue;
                 
             }
             else if (returnValue.isDrawable()){
-            	  Drawable d2 = returnValue.asDrawable();
-            	  d.addToGroup(d2);
-            	  d2.removeFromCanvas();
-            	  drawAdded=true;
-            	  System.out.println("added drawable in for loop at+"+i);
+            	Drawable d2 = returnValue.asDrawable();
+            	 d.addToGroup(d2);
+            	 d2.removeFromCanvas();
+            	 drawAdded=true;
+            	 // System.out.println("added drawable in for loop at+"+i);
           	  
             }
         }

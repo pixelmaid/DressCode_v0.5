@@ -1,0 +1,80 @@
+<project name="MyProject" default="dist" basedir=".">
+	<property file="build.properties" />
+	<description>
+       DressCode build file
+    </description>
+
+	<path id="classpath">
+		<fileset dir="${classpath.local.location}" includes="${classpath.local.include}" />
+	</path>
+
+
+	<!-- ========== Dist Target ===================================
+        The dist target compiles all the source code and creates
+        a jar file for distribution.
+    -->
+	<!-- <target name="dist" depends="clean, compile"
+        description="generate the distribution" >
+        Create the distribution directory 
+        <mkdir dir="${dist}/lib"/>
+
+        Put everything in ${build} into the MyProject-${DSTAMP}.jar
+            file 
+        <jar jarfile="${dist}/lib/MyProject-${DSTAMP}.jar"
+            basedir="${build}"/>
+    </target> -->
+
+	<target name="dist" depends="clean, compile" description="generate the distribution" >
+		<mkdir dir="${build.dir}/jar"/>
+		<jar destfile="${build.dir}/jar/${app.name}.jar" basedir="${classes.dir}">
+			<manifest>
+				<attribute name="Main-Class" value="${main.class}"/>
+			</manifest>
+			
+				 <zipgroupfileset dir ="${classpath.local.location}" includes = "${classpath.local.include}" />
+					
+	
+		</jar>
+	</target>
+
+	<!-- ========== Init Target ====================================
+        This target initializes the build by creating a time stamp
+        for use in the jar file name and creating the directory
+        to hold the compiled classes.
+    -->
+	<target name="-init">
+		<!-- Create the time stamp -->
+		<tstamp/>
+
+		<!-- Create the build directory structure used by compile -->
+		<mkdir dir="${classes.dir}"/>
+	</target>
+
+	<!-- ========== Compile Target =================================
+        The compile target compiles all files in the source directory
+        into the build directory.
+    -->
+	<target name="compile" depends="-init" 
+        description="compile the source " >
+
+		<!-- Compile the java code from ${src} into ${build} -->
+		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+			<src path="${src.dir}"/>
+			<src path="${src.generated.dir}"/>
+			<classpath>
+				<path refid="classpath"/>
+			</classpath>
+		</javac>
+
+	</target>
+
+	<!-- ========== Clean Target ====================================
+        The clean target deletes all files from the build directory
+        and the dist directory. 
+    -->
+	<target name="clean" description="clean up" >
+		<!-- Delete the ${build} and ${dist} directory trees -->
+		<delete dir="${build.dir}"/>
+		<delete dir="${dist.dir}"/>
+	</target>
+</project>
