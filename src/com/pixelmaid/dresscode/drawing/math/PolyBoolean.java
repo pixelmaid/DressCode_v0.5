@@ -37,30 +37,31 @@ public class PolyBoolean{
 	
 	//performs union of two polygons and returns the result
 	public static Drawable union(Drawable a, Drawable b){
-		
+		a = a.condense();
+		b = b.condense();
 		
 		Poly a_Poly =  drawableToBoolean(a);
 		Poly b_Poly =  drawableToBoolean(b);
-		Drawable a_P =  booleanToDrawable(a_Poly);
-		Drawable b_P =   booleanToDrawable(b_Poly);
+		//Drawable a_P =  booleanToDrawable(a_Poly);
+		//Drawable b_P =   booleanToDrawable(b_Poly);
 
 
-		//Poly o_Poly = a_Poly.union(b_Poly);
+		Poly o_Poly = a_Poly.union(b_Poly);
 
 		//System.out.println("oPoly.size="+o_Poly.getNumPoints());
 
-		//return booleanToDrawable(o_Poly);
+		return booleanToDrawable(o_Poly);
 		
 		//a = a.toPolygon();
 		//b = b.toPolygon();
 		
-		a_P = a_P.addToGroup(b_P);
+		//Drawable a_P = a.addToGroup(b);
 		//System.out.println("a_p="+a_P.numChildren());
-		a_P = a_P.removeFromGroup(b_P);
-		Manager.canvas.addDrawable("drawable",-1,b_P);
+		//a_P = a_P.removeFromGroup(b);
+		//Manager.canvas.addDrawable("drawable",-1,b);
 		//System.out.println("a_p2="+a_P.numChildren());
 
-		return a_P;
+		//return a_P.condense();
 	}
 	
 	/*public static Drawable CondenseDrawable(Drawable a){
@@ -76,6 +77,9 @@ public class PolyBoolean{
 
 	//performs difference of two polygons and returns the result
 	public static Drawable difference(Drawable a, Drawable b) {
+		a = a.condense();
+		b = b.condense();
+		
 		Poly a_Poly =  drawableToBoolean(a);
 		Poly b_Poly =  drawableToBoolean(b);
 		Poly o_Poly = a_Poly.difference(b_Poly);
@@ -83,6 +87,33 @@ public class PolyBoolean{
 
 		return booleanToDrawable(o_Poly);
 	}
+	
+	//performs difference of two polygons and returns the result
+	public static Drawable xor(Drawable a, Drawable b) {
+		a = a.condense();
+		b = b.condense();
+		
+		Poly a_Poly =  drawableToBoolean(a);
+		Poly b_Poly =  drawableToBoolean(b);
+		Poly o_Poly = a_Poly.xor(b_Poly);
+		//System.out.println("oPoly.size="+o_Poly.getNumPoints());
+
+		return booleanToDrawable(o_Poly);
+	}
+	
+	//performs difference of two polygons and returns the result
+	public static Drawable intersection(Drawable a, Drawable b) {
+		a = a.condense();
+		b = b.condense();
+		
+		Poly a_Poly =  drawableToBoolean(a);
+		Poly b_Poly =  drawableToBoolean(b);
+		Poly o_Poly = a_Poly.intersection(b_Poly);
+		//System.out.println("oPoly.size="+o_Poly.getNumPoints());
+
+		return booleanToDrawable(o_Poly);
+	}
+	
 
 	//converts drawable to collection of boolean operation polygons
 	private static Poly drawableToBoolean(Drawable d){
@@ -90,7 +121,6 @@ public class PolyBoolean{
 		d = d.toPolygon();
 
 		if(d.numChildren()==0){
-			System.out.println("number of children = 0");
 			return polygonToBoolean((Polygon)d);
 		}
 		else{
@@ -105,7 +135,7 @@ public class PolyBoolean{
 	
 	//converts single polygon to single boolean operation polygon
 	private static Poly polygonToBoolean(Polygon p){
-		p.setAbsolute();
+		p.setPointsAbsolute();
 		ArrayList<Point> pPoints = p.getPoints();
 
 		//temp polygon to be stored in master polygon
@@ -138,7 +168,7 @@ public class PolyBoolean{
 		Drawable master = new Drawable();
 		if(poly.getNumInnerPoly()==1){
 			master = booleanToPolygon(poly.getInnerPoly(0));
-			System.out.println("PolyBoolean has only one polygon result");
+			//System.out.println("PolyBoolean has only one polygon result");
 
 			//master.setRelativeTo(Geom.findCentroid((Polygon)master));
 		}
@@ -149,7 +179,7 @@ public class PolyBoolean{
 			{
 				Poly ip = poly.getInnerPoly(i);
 				Polygon p = booleanToPolygon(ip);
-				System.out.println(p.getPoints().size());
+				//System.out.println(p.getPoints().size());
 				origins.add(p.getOrigin());
 				master.addToGroup(p);
 			}
@@ -171,7 +201,7 @@ public class PolyBoolean{
 		
 		
 		
-		System.out.println("PolyBoolean has " + ip.getNumInnerPoly()+" holes");
+		//System.out.println("PolyBoolean has " + ip.getNumInnerPoly()+" holes");
 		for( int i = 0 ; i < ip.getNumInnerPoly() ; i++ )
 		{
 			
@@ -185,7 +215,7 @@ public class PolyBoolean{
 		}
 		//set all points relative to the centroid;
 		Point c = Geom.findCentroid(jp);
-		jp.setRelativeTo(c) ;
+		jp.setPointsRelativeTo(c) ;
 
 		return jp;
 	}
@@ -193,7 +223,7 @@ public class PolyBoolean{
 	private static Hole innerPolyToHole(Poly ip )
 	{
 		Hole jp = new Hole();
-		System.out.println("ip.numPoints="+ip.getNumPoints());
+		//System.out.println("ip.numPoints="+ip.getNumPoints());
 		for( int i = 0 ; i < ip.getNumPoints(); i++ )
 		{
 			jp.addPoint( ip.getX(i), ip.getY(i) );

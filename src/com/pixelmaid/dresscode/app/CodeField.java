@@ -61,7 +61,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
         	 }
          }*/
           
-          System.out.println("txt="+txt);
+      //System.out.println("txt="+txt);
           CharStream charStream = new ANTLRStringStream(txt);
   		
   	    // create an instance of the lexer

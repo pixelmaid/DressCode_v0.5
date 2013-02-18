@@ -44,7 +44,6 @@ public class Ellipse extends Polygon {
 	public Ellipse(double x, double y, double width, double height) {
 
 		this(new Point(x,y), width, height);
-		System.out.println("original ellipse1="+x+","+y);
 
     }
     
@@ -53,14 +52,14 @@ public class Ellipse extends Polygon {
     	this.width = width;
         this.height = height;
         this.origin = o;
-    	System.out.println("original ellipse2="+getOrigin().getX()+","+getOrigin().getY());
-    	System.out.println("original ellipse2="+origin.getX()+","+origin.getY());
+    	
 
     }
     
     @Override
     public Ellipse copy(){
-    	Ellipse e = (Ellipse)super.copy();
+    	Ellipse e = new Ellipse(0,0);
+    	copyParameters(this,e);
     	e.width = this.width;
     	e.height = this.height;
     	return e;
@@ -73,26 +72,12 @@ public class Ellipse extends Polygon {
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate((float)Math.toRadians(getRotation()));
-		System.out.println("ellipse="+getOrigin().getX()+","+getOrigin().getY());
 		e.ellipse(0,0,(float)width,(float)height);
 		e.popMatrix();
 		
 		if(this.getDrawOrigin()){
 			this.drawOrigin(e);
 		}
-		
-		/*Polygon poly = (Polygon)this.toPolygon();
-		//poly.draw(e);
-		poly.setAbsolute();
-		ArrayList<Point> points = poly.getPoints();
-		
-		outlineAppearance(e);
-		e.beginShape();
-		for(int i=0;i<points.size();i++){
-			e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
-		}
-		e.endShape(PApplet.CLOSE);	*/
-
 		
     }
 	
@@ -109,21 +94,21 @@ public class Ellipse extends Polygon {
 	@Override
 	//converts ellipse to polygon
 	public Polygon toPolygon() {
-		Polygon poly = new Polygon(this.origin.copy());
+		Polygon c =  new Polygon();
+		copyParameters(this,c);
 		double pR = (Math.PI*2)/resolution;
 		double wR = width/2.0;
 		double hR = height/2.0;
-		
 		for (int i = 0; i <= resolution; i++) {
 			double t = pR*i;
 			double x = wR* Math.cos(t);
 			double y = hR* Math.sin(t);
-			poly.addPoint(x,y);
+			c.addPoint(x,y);
 
 		}
-		poly.rotate(this.getRotation());
+	
 		
-		return poly;
+		return c;
 	}
 
 }

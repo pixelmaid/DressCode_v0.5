@@ -80,7 +80,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	@Override
 	public void draw(Embedded e){
 		appearance(e);
-		System.out.println("number of holes="+this.holes.size()+"number of points="+this.points.size());
+		//System.out.println("number of holes="+this.holes.size()+"number of points="+this.points.size());
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
@@ -105,8 +105,11 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	}
 	
 	@Override
-	public Drawable copy(){
-		Polygon c = (Polygon)super.copy();
+	public Polygon copy(){
+		Polygon c =  new Polygon();
+		copyParameters(this, c);
+		
+		this.setParent(this.getParent());
 		for(int i=0;i<points.size();i++){
 			c.addPoint(points.get(i).copy());
 		}
@@ -116,15 +119,17 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		return c;
 	}
 	
+	
+	
 	@Override
 	//sets the points and holes relative around a new origin
-	public void setRelativeTo(Point p) {
+	public void setPointsRelativeTo(Point p) {
 		for(int i=0;i<this.points.size();i++){
 			Point newPoint = this.points.get(i);
 			this.points.set(i,newPoint.difference(p));
 		}
 		for(int i=0;i<holes.size();i++){
-			holes.get(i).setRelativeTo(p);
+			holes.get(i).setPointsRelativeTo(p);
 		}
 		this.origin=p;
 	}
@@ -133,11 +138,9 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	
 	@Override
 	//sets all points to absolute position based on the origin of the object
-	public void setAbsolute() {
-		if(this.getParent()!=null){
-			this.origin= this.origin.add(this.getParent().getOrigin());
-			this.rotate(this.getRotation()+this.getParent().getRotation());
-		}
+	public void setPointsAbsolute() {
+		this.setAbsolute();
+		
 		for(int i=0;i<this.points.size();i++){
 		    Point pt = new Point(points.get(i).getX()+getOrigin().getX(),points.get(i).getY()+getOrigin().getY());
 			pt.rotate(getRotation(),getOrigin());
@@ -145,7 +148,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			
 		}
 		for(int i=0;i<holes.size();i++){
-			holes.get(i).setAbsolute();
+			holes.get(i).setPointsAbsolute();
 		}
 		
 	
@@ -154,7 +157,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	@Override
 	//returns itself (already is a polygon)
 	public Polygon toPolygon(){
-		System.out.println("polygon to polygon");
+		//System.out.println("polygon to polygon");
 		return this;
 	}
 	
@@ -177,14 +180,14 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	@Override
 	//overrides drawable remove from group method- returns a null value since a polygon cannot be a group by itself
 	public Drawable removeFromGroup(Drawable d){
-		System.out.println("cannot remove from group from a polygon group");
+		System.err.println("cannot remove from group from a polygon group");
 		return null;
 	}
 	
 	@Override
 	//overrides drawable remove all children method- returns a null value since a polygon does not have any children to remove
 	public ArrayList<Drawable> removeAllChildren(){
-		System.out.println("cannot remove all children from a polygon");
+		System.err.println("cannot remove all children from a polygon");
 		return null;
 	}
 	

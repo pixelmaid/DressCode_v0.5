@@ -10,7 +10,7 @@ import com.pixelmaid.dresscode.drawing.math.Geom;
 
 public class Drawable {
 
-	public  ArrayList<Drawable> children; //stores all children of a drawable
+	public  ArrayList<Drawable> children =new ArrayList<Drawable>(); //stores all children of a drawable
 	
 	
 	private double rotation=0;
@@ -63,7 +63,7 @@ public class Drawable {
 	}
 	
 	public Drawable(double x, double y){
-		children = new ArrayList<Drawable>();
+		
 		origin= new Point(0,0);
 		this.fillColor= new Color();
 		this.strokeColor= new Color();
@@ -269,7 +269,7 @@ public class Drawable {
 	//sets the rotation to a new angle (in degrees)
 	public void rotate(double theta) {
 		this.rotation=theta;
-		System.out.println("when set, rotation ="+this.rotation);
+		//System.out.println("when set, rotation ="+this.rotation);
 
 	}
 	
@@ -313,23 +313,31 @@ public class Drawable {
 	//copies drawable and returns copy. Must be overridden by subclasses
 	public Drawable copy() {
 		Drawable d = new Drawable();
-		d.setOrigin(this.origin.copy());
-		d.rotate(this.getRotation());
-		d.scaleX(this.getScaleX());
-		d.scaleY(this.getScaleY());
-		d.setFillColor(this.getFillColor());
-		d.setStrokeColor(this.getStrokeColor());
-		d.setStrokeWeight(this.getStrokeWeight());
-		d.doFill(this.doFill);
-		d.doStroke(this.doStroke);
-		d.setDrawOrigin(this.getDrawOrigin());
+		copyParameters(this,d);
 		for(int i=0;i<this.children.size();i++){
 			d.add(this.children.get(i).copy());
 		}
-		
+				
 		return d;
 		
 	}
+	
+	//copies over all parameters from original drawable to new drawable, MUST BE CALLED IN ALL COPY AND TOPOLYGON METHODS
+	public void copyParameters(Drawable o, Drawable c){
+		c.setOrigin(o.origin.copy());
+		c.rotate(o.getRotation());
+		c.scaleX(o.getScaleX());
+		c.scaleY(o.getScaleY());
+		c.setFillColor(o.getFillColor());
+		c.setStrokeColor(o.getStrokeColor());
+		c.setStrokeWeight(o.getStrokeWeight());
+		c.doFill(o.doFill);
+		c.doStroke(o.doStroke);
+		c.setDrawOrigin(o.getDrawOrigin());
+		c.rotate(o.getRotation());
+		c.setParent(o.getParent());
+	}
+	
 	
 	//----------------ORIGIN/CHILDREN/GROUPING MANIPULATION METHODS------------------//
 	
@@ -350,7 +358,7 @@ public class Drawable {
 	}
 	
 
-	//sets the drawable's origin relative to a new origin (must be overridden by subclasses)
+	//sets the drawable's origin relative to a new origin
 	private void setRelativeTo(Point p) {
 		this.origin= this.origin.difference(p);	
 	}
@@ -364,14 +372,19 @@ public class Drawable {
 			}
 	}
 	
-	//sets the drawable to its absolute position with respect to its parent (must be overridden by subclasses)
-	private void setAbsolute() {
+	//sets the drawable to its absolute position with respect to its parent
+	protected void setAbsolute() {
 			if(this.parent!=null){
 				this.origin= this.origin.add(this.parent.getOrigin()); //add parent's origin to its origin
 				this.rotate(this.getRotation()+this.getParent().getRotation()); //adds parent's rotation to its rotation
 			}
 	}
-		
+	
+	private Drawable returnAbsoluteAt(int i){
+		Drawable orphan = this.children.get(i).copy();
+		orphan.setAbsolute();
+		return orphan;
+	}
 	
 	//converts all children of the drawable to polygons. (must be overridden by subclasses)
 	public Drawable toPolygon(){
@@ -393,8 +406,7 @@ public class Drawable {
 			}
 		
 		
-		d.setAbsolute();
-		d.removeFromCanvas(); // remove drawable from canvas - it will be redrawn by its new parent (this)
+		
 		this.add(d);
 		ArrayList<Point> origins = new ArrayList<Point>();
 		
@@ -413,11 +425,11 @@ public class Drawable {
 
 	}
 
-	//removes child and resets origin of drawable to accomodate (must be overridden by subclasses)
+	//removes child and resets origin of drawable to accomodate (must be overridden by subclasses) returns removed child
 	public Drawable removeFromGroup(Drawable d) {
 		// TODO Auto-generated method stub
 		
-		this.setAbsolute();
+		
 		for(int i=0;i<this.children.size();i++){
 			this.children.get(i).setAbsolute();
 		}
@@ -426,12 +438,12 @@ public class Drawable {
 		
 		
 		ArrayList<Point> origins = new ArrayList<Point>();
-		System.out.println("num children after removal="+this.numChildren());
+		//System.out.println("num children after removal="+this.numChildren());
 		if(this.children.size()>1){
 			for(int i=0;i<this.children.size();i++){
 				origins.add(this.children.get(i).getOrigin());
 			}
-			//this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+			this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
 			//this.setOrigin(Geom.getAveragePoint(origins));
 		}
 		else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
@@ -441,9 +453,9 @@ public class Drawable {
 		}
 		else if(this.children.size()==0){
 			this.removeFromCanvas(); // if no children, remove empty group
-			return null; //return null because group no longer has any children
+			
 		}
-		return this.children.get(1);
+		return d;
 
 		
 
@@ -491,35 +503,35 @@ public class Drawable {
 				return dp;
 			}
 			else{
-				condenseRec(dp,dp);
-				System.out.println("numChildren in drawable after condense ="+dp.children.size());
+				Drawable parent =  new Drawable();
+				condenseRec(dp,parent);
+				dp = parent;
 				
-				Manager.canvas.finalPolys = dp.children;
-				return dp;
+				System.out.println("numChildren in drawable after condense ="+parent.children.size());
+		
+				return parent;
 			}
 		}
 		
 		//recursive condense function
-		public Drawable condenseRec(Drawable d,Drawable parent){
-			ArrayList<Drawable> currentChildren = d.children;
-			
+		public void condenseRec(Drawable d,Drawable parent){
+			ArrayList<Drawable> currentChildren = d.getChildren();
+			System.out.println("number of children = "+d.numChildren());
 			for(int i=currentChildren.size()-1;i>=0; i--){
-				if (currentChildren.get(i).numChildren()!=0){ //is not a polygon
-					if(d!=parent){
-						d.removeFromGroup(currentChildren.get(i));
-						parent.addToGroup(currentChildren.get(i));
-					}
-					condenseRec(currentChildren.get(i),parent);
-		
+				Drawable orphan = d.returnAbsoluteAt(i);
+				System.out.println("checking child at = "+i +":"+orphan);
+				if (orphan.numChildren()!=0){ //is not a polygon
+					System.out.println("orphan is not a polygon");
+					condenseRec(orphan,parent);
 				}
 				else{
-					if(d!=parent){
-						parent.addToGroup(currentChildren.get(i));
-					}
+					System.out.println("orphan is a polygon");
+					System.out.println("adding orphan to parent");
+					
+					parent.addToGroup(orphan);	
 				}
 			}
 			
-			return parent;
 			
 		}
 	

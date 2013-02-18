@@ -18,9 +18,9 @@ public interface PrimitiveInterface {
 	
 	public Drawable copy();
 	
-	void setRelativeTo(Point p);
+	void setPointsRelativeTo(Point p);
 	
-	public void setAbsolute();
+	public void setPointsAbsolute();
 	
 	Drawable toPolygon();	
 	

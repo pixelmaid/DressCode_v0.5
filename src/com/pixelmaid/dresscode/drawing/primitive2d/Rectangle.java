@@ -67,15 +67,14 @@ public class Rectangle extends Polygon{
 	@Override
 	//converts rectangle to polygon
 	public Polygon toPolygon() {
-		Polygon poly = new Polygon(this.origin.copy());
-		
+		Polygon poly =  new Polygon();
+		copyParameters(this,poly);
 		
 		poly.addPoint(-(width/2),-(height/2));
 		poly.addPoint(width/2,-(height/2));
 		poly.addPoint(width/2,height/2);
 		poly.addPoint(-(width/2),height/2);
 
-		poly.rotate(this.getRotation());
 		return poly;
 	}
 

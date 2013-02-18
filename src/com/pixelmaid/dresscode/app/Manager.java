@@ -186,7 +186,7 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
  
 			while ((sCurrentLine = br.readLine()) != null) {
 				fileString+=sCurrentLine+"\n";
-				System.out.println(sCurrentLine);
+				//System.out.println(sCurrentLine);
 			}
  
 		} catch (IOException e) {

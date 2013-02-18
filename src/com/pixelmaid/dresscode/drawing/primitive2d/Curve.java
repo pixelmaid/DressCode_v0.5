@@ -2,6 +2,9 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 
 
 import java.util.ArrayList;
+
+import processing.core.PApplet;
+
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.app.Manager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -44,11 +47,13 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 
 	@Override
 	public void draw(Embedded e){
+		//TODO: MAKE CURVE DRAW RELATIVE
 		appearance(e);
-		float originX = (float)this.getOrigin().getX();
-		float originY= (float)this.getOrigin().getY();
-		e.bezier((float)start.getX()+ originX, (float)start.getY()+ originY,(float)control1.getX()+ originX, (float)control1.getY()+ originY, (float)control2.getX()+ originX, (float)control2.getY()+ originY,(float)end.getX()+ originX, (float)end.getY()+ originY);
-
+		e.pushMatrix();
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.rotate(PApplet.radians((float)getRotation()));
+		e.bezier((float)start.getX(), (float)start.getY(),(float)control1.getX(), (float)control1.getY(), (float)control2.getX(), (float)control2.getY(),(float)end.getX(), (float)end.getY());
+		e.popMatrix();
 		if(this.getDrawOrigin()){
 			this.drawOrigin(e);
 		}
@@ -58,20 +63,23 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 
 	@Override
 	public Curve copy(){
-		return new Curve(start.copy(),control1.copy(),control2.copy(),end.copy());
+		Curve c = new Curve(start.copy(),control1.copy(),control2.copy(),end.copy());
+		copyParameters(this,c);
+		return c;
 	}
 	
 	@Override
 	//converts ellipse to polygon
 	public Polygon toPolygon() {
-			Polygon poly = new Polygon(this.origin.copy());
+		Polygon poly =  new Polygon();
+		copyParameters(this,poly);
+		
 			for (int i = 0; i <= resolution; i++) {
 				float t = (float)i / (float)resolution;
 				double x = Manager.canvas.bezierPoint((float)start.getX(), (float)control1.getX(), (float)control2.getX(), (float)end.getX(), t);
 				double y = Manager.canvas.bezierPoint((float)start.getY(), (float)control1.getY(), (float)control2.getY(), (float)end.getY(), t);
 				poly.addPoint(x,y);
 			}
-			poly.rotate(this.getRotation());
 			return poly;
 		}
 			

@@ -23,7 +23,7 @@ public class Hole extends Polygon {
 		}
 		
 		@Override
-		public Drawable copy(){
+		public Polygon copy(){
 			Polygon c = new Polygon();
 			for(int i=0;i<this.getPoints().size();i++){
 				c.addPoint(this.getPoints().get(i).copy());
@@ -33,7 +33,7 @@ public class Hole extends Polygon {
 		
 		@Override
 		//sets the points and holes relative around a new origin
-		public void setRelativeTo(Point p) {
+		public void setPointsRelativeTo(Point p) {
 			for(int i=0;i<this.getPoints().size();i++){
 				Point newPoint = this.getPoints().get(i);
 				this.getPoints().set(i,newPoint.difference(p));
@@ -43,7 +43,7 @@ public class Hole extends Polygon {
 		
 		@Override
 		//sets the points and holes relative around a new origin
-		public void setAbsolute() {
+		public void setPointsAbsolute() {
 			for(int i=0;i<this.getPoints().size();i++){
 				Point newPoint = this.getPoints().get(i);
 				this.getPoints().set(i,newPoint.add(this.getParent().origin));

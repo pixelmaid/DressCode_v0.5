@@ -1,11 +1,14 @@
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
 import java.util.ArrayList;
+
+import processing.core.PApplet;
+
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
-public class Line extends Drawable {
+public class Line extends Polygon {
 	private Point start;
 	private Point end;
 	
@@ -33,8 +36,12 @@ public class Line extends Drawable {
 	@Override
 	public void draw(Embedded e){
 		appearance(e);
+		e.pushMatrix();
+		//TODO: MAKE LINE DRAW RELATIVE BY SUBTRACTING ORIGIN
+		//e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.rotate(PApplet.radians((float)getRotation()));
 		e.line((float)start.getX(), (float)start.getY(), (float)end.getX(), (float)end.getY());
-		
+		e.popMatrix();
 		
 		if(this.getDrawOrigin()){
 			this.drawOrigin(e);
@@ -48,7 +55,9 @@ public class Line extends Drawable {
 	
 	@Override
 	 public Line copy(){
-	    return new Line(start.copy(),end.copy());
+	    Line l = new Line(start.copy(),end.copy());
+	    copyParameters(this,l);
+	    return l;
 	  }
 	 
 	public Point getStart(){
@@ -70,12 +79,11 @@ public class Line extends Drawable {
 	
 	@Override
 	//converts line to polygon (questionable...)
-	public Drawable toPolygon(){
-		Polygon poly = new Polygon(this.origin);
-		
+	public Polygon toPolygon(){
+		Polygon poly =  new Polygon();
+		copyParameters(this,poly);
 		poly.addPoint(start);
 		poly.addPoint(end);
-		poly.rotate(this.getRotation());
 		return poly;
 		
 	}
