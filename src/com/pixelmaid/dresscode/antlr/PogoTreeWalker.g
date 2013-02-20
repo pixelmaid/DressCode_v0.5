@@ -14,6 +14,7 @@ options {
    import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
   import java.util.Map;
   import java.util.HashMap;
+  import com.pixelmaid.dresscode.app.Manager;
 }
 
 @members {
@@ -62,7 +63,7 @@ statement returns [DCNode node]
   |  ifStatement    {node = $ifStatement.node;}
   |  forStatement   {node = $forStatement.node;}
   |  whileStatement {node = $whileStatement.node;}
-  | repeatStatement {node = $repeatStatement.node;}
+  | repeatStatement[false] {node = $repeatStatement.node;}
   ;
 
 assignment returns [DCNode node]
@@ -132,8 +133,8 @@ forStatement returns [DCNode node]
   :  ^(For Identifier a=expression b=expression block) {node = new ForStatementNode($Identifier.text, $a.node, $b.node, $block.node, currentScope);}
   ;
   
-repeatStatement returns [DCNode node]
-  : ^(Repeat Identifier a=expression b=expression (c=expression)? block) {node = new RepeatStatementNode($Identifier.text, $a.node, $b.node, $c.node, $block.node, currentScope);}
+repeatStatement[boolean lookup] returns [DCNode node]
+  : ^(Repeat Identifier a=expression b=expression (c=expression)? block) {node = new RepeatStatementNode($Identifier.text, $a.node, $b.node, $c.node, $block.node, currentScope, lookup);}
   ;
 
 
@@ -177,6 +178,8 @@ expression returns [DCNode node]
   |  lookup                                            {node = $lookup.node;}
   |  COLOR_CONSTANT									   {node = new AtomNode($COLOR_CONSTANT.text);}
   |	PI_CONSTANT                                        {node = new AtomNode(Math.PI);}
+  |WIDTH_CONSTANT                                       {node = new AtomNode(Manager.canvas.width);}
+  |HEIGHT_CONSTANT                                       {node = new AtomNode(Manager.canvas.height);}
   ;
 
 list returns [DCNode node]
@@ -191,7 +194,7 @@ lookup returns [DCNode node]
   |  ^(LOOKUP String i=indexes?)       {node = $i.e != null ? new LookupNode(new AtomNode($String.text), $indexes.e) : new AtomNode($String.text);}
   |  ^(LOOKUP forStatement i=indexes?)   {node = $i.e != null ? new LookupNode($forStatement.node, $indexes.e) : $forStatement.node;}
   |  ^(LOOKUP whileStatement i=indexes?)   {node = $i.e != null ? new LookupNode($whileStatement.node, $indexes.e) : $whileStatement.node;}
-  |  ^(LOOKUP repeatStatement i=indexes?)   {node = $i.e != null ? new LookupNode($repeatStatement.node, $indexes.e) : $repeatStatement.node;}
+  |  ^(LOOKUP repeatStatement[true] i=indexes?)   {node = $i.e != null ? new LookupNode($repeatStatement.node, $indexes.e) : $repeatStatement.node;}
   ;
   
   

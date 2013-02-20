@@ -27,7 +27,7 @@ public class LookupNode implements DCNode {
 
     for(VarType index : indexValues) {
 
-      if(!index.isNumber() || !(value.isList() || value.isString())) {
+      if(!index.isNumber() || !(value.isList() || value.isString()|| value.isDrawable())) {
         throw new RuntimeException("illegal expression: " + expression + "[" + index + "]");
       }
 
@@ -38,6 +38,9 @@ public class LookupNode implements DCNode {
       }
       else if(value.isString()) {
         value = new VarType(String.valueOf(value.asString().charAt(idx)));
+      }
+      else if(value.isDrawable()){
+    	  value =  new VarType(value.asDrawable().childAt(idx));
       }
     }
 

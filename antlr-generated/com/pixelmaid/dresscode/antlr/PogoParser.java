@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g 2013-02-18 16:24:22
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g 2013-02-20 09:28:37
 
   package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -21,21 +21,21 @@ public class PogoParser extends Parser {
 		"Assign", "BLOCK", "Bool", "CBrace", "CBracket", "COLOR_CONSTANT", "CParen", 
 		"Comma", "Comment", "Copy", "Cosine", "Curve", "Def", "Digit", "Divide", 
 		"Do", "EXP", "EXP_LIST", "Ellipse", "Else", "End", "Equals", "Excl", "FUNCTION", 
-		"FUNC_CALL", "Fill", "For", "GT", "GTEquals", "Group", "Hide", "ID_LIST", 
-		"IF", "INDEXES", "Identifier", "If", "In", "Int", "LIST", "LOOKUP", "LT", 
-		"LTEquals", "Line", "Modulus", "Move", "Multiply", "NEGATE", "NEquals", 
-		"NoFill", "NoStroke", "Null", "Number", "OBrace", "OBracket", "OParen", 
-		"Or", "PI_CONSTANT", "Point", "Polygon", "Pow", "Print", "Println", "QMark", 
-		"Quad", "RETURN", "Rect", "Repeat", "Return", "Rotate", "SPECIAL", "STATEMENTS", 
-		"Scale", "Sine", "Size", "Space", "String", "Stroke", "Subtract", "TERNARY", 
-		"To", "Triangle", "UNARY_MIN", "Weight", "While", "'&&'", "';'", "'|'", 
-		"'||'"
+		"FUNC_CALL", "Fill", "For", "GT", "GTEquals", "Group", "HEIGHT_CONSTANT", 
+		"Hide", "ID_LIST", "IF", "INDEXES", "Identifier", "If", "In", "Int", "LIST", 
+		"LOOKUP", "LT", "LTEquals", "Line", "Modulus", "Move", "Multiply", "NEGATE", 
+		"NEquals", "NoFill", "NoStroke", "Null", "Number", "OBrace", "OBracket", 
+		"OParen", "Or", "PI_CONSTANT", "Point", "Polygon", "Pow", "Print", "Println", 
+		"QMark", "Quad", "RETURN", "Rect", "Repeat", "Return", "Rotate", "SPECIAL", 
+		"STATEMENTS", "Scale", "Sine", "Size", "Space", "String", "Stroke", "Subtract", 
+		"TERNARY", "To", "Triangle", "UNARY_MIN", "WIDTH_CONSTANT", "Weight", 
+		"While", "'&&'", "';'", "'|'", "'||'"
 	};
 	public static final int EOF=-1;
-	public static final int T__92=92;
-	public static final int T__93=93;
 	public static final int T__94=94;
 	public static final int T__95=95;
+	public static final int T__96=96;
+	public static final int T__97=97;
 	public static final int ASSIGNMENT=4;
 	public static final int Add=5;
 	public static final int And=6;
@@ -70,60 +70,62 @@ public class PogoParser extends Parser {
 	public static final int GT=35;
 	public static final int GTEquals=36;
 	public static final int Group=37;
-	public static final int Hide=38;
-	public static final int ID_LIST=39;
-	public static final int IF=40;
-	public static final int INDEXES=41;
-	public static final int Identifier=42;
-	public static final int If=43;
-	public static final int In=44;
-	public static final int Int=45;
-	public static final int LIST=46;
-	public static final int LOOKUP=47;
-	public static final int LT=48;
-	public static final int LTEquals=49;
-	public static final int Line=50;
-	public static final int Modulus=51;
-	public static final int Move=52;
-	public static final int Multiply=53;
-	public static final int NEGATE=54;
-	public static final int NEquals=55;
-	public static final int NoFill=56;
-	public static final int NoStroke=57;
-	public static final int Null=58;
-	public static final int Number=59;
-	public static final int OBrace=60;
-	public static final int OBracket=61;
-	public static final int OParen=62;
-	public static final int Or=63;
-	public static final int PI_CONSTANT=64;
-	public static final int Point=65;
-	public static final int Polygon=66;
-	public static final int Pow=67;
-	public static final int Print=68;
-	public static final int Println=69;
-	public static final int QMark=70;
-	public static final int Quad=71;
-	public static final int RETURN=72;
-	public static final int Rect=73;
-	public static final int Repeat=74;
-	public static final int Return=75;
-	public static final int Rotate=76;
-	public static final int SPECIAL=77;
-	public static final int STATEMENTS=78;
-	public static final int Scale=79;
-	public static final int Sine=80;
-	public static final int Size=81;
-	public static final int Space=82;
-	public static final int String=83;
-	public static final int Stroke=84;
-	public static final int Subtract=85;
-	public static final int TERNARY=86;
-	public static final int To=87;
-	public static final int Triangle=88;
-	public static final int UNARY_MIN=89;
-	public static final int Weight=90;
-	public static final int While=91;
+	public static final int HEIGHT_CONSTANT=38;
+	public static final int Hide=39;
+	public static final int ID_LIST=40;
+	public static final int IF=41;
+	public static final int INDEXES=42;
+	public static final int Identifier=43;
+	public static final int If=44;
+	public static final int In=45;
+	public static final int Int=46;
+	public static final int LIST=47;
+	public static final int LOOKUP=48;
+	public static final int LT=49;
+	public static final int LTEquals=50;
+	public static final int Line=51;
+	public static final int Modulus=52;
+	public static final int Move=53;
+	public static final int Multiply=54;
+	public static final int NEGATE=55;
+	public static final int NEquals=56;
+	public static final int NoFill=57;
+	public static final int NoStroke=58;
+	public static final int Null=59;
+	public static final int Number=60;
+	public static final int OBrace=61;
+	public static final int OBracket=62;
+	public static final int OParen=63;
+	public static final int Or=64;
+	public static final int PI_CONSTANT=65;
+	public static final int Point=66;
+	public static final int Polygon=67;
+	public static final int Pow=68;
+	public static final int Print=69;
+	public static final int Println=70;
+	public static final int QMark=71;
+	public static final int Quad=72;
+	public static final int RETURN=73;
+	public static final int Rect=74;
+	public static final int Repeat=75;
+	public static final int Return=76;
+	public static final int Rotate=77;
+	public static final int SPECIAL=78;
+	public static final int STATEMENTS=79;
+	public static final int Scale=80;
+	public static final int Sine=81;
+	public static final int Size=82;
+	public static final int Space=83;
+	public static final int String=84;
+	public static final int Stroke=85;
+	public static final int Subtract=86;
+	public static final int TERNARY=87;
+	public static final int To=88;
+	public static final int Triangle=89;
+	public static final int UNARY_MIN=90;
+	public static final int WIDTH_CONSTANT=91;
+	public static final int Weight=92;
+	public static final int While=93;
 
 	// delegates
 	public Parser[] getDelegates() {
@@ -266,7 +268,7 @@ public class PogoParser extends Parser {
 
 		Object Return5_tree=null;
 		Object char_literal7_tree=null;
-		RewriteRuleTokenStream stream_93=new RewriteRuleTokenStream(adaptor,"token 93");
+		RewriteRuleTokenStream stream_95=new RewriteRuleTokenStream(adaptor,"token 95");
 		RewriteRuleTokenStream stream_Return=new RewriteRuleTokenStream(adaptor,"token Return");
 		RewriteRuleSubtreeStream stream_statement=new RewriteRuleSubtreeStream(adaptor,"rule statement");
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
@@ -281,7 +283,7 @@ public class PogoParser extends Parser {
 			while (true) {
 				int alt1=3;
 				int LA1_0 = input.LA(1);
-				if ( (LA1_0==Assert||(LA1_0 >= Copy && LA1_0 <= Curve)||LA1_0==Ellipse||(LA1_0 >= Fill && LA1_0 <= For)||(LA1_0 >= Group && LA1_0 <= Hide)||(LA1_0 >= Identifier && LA1_0 <= If)||LA1_0==Line||LA1_0==Move||(LA1_0 >= NoFill && LA1_0 <= NoStroke)||LA1_0==Polygon||(LA1_0 >= Print && LA1_0 <= Println)||(LA1_0 >= Rect && LA1_0 <= Repeat)||LA1_0==Rotate||(LA1_0 >= Sine && LA1_0 <= Size)||LA1_0==Stroke||(LA1_0 >= Weight && LA1_0 <= While)||LA1_0==93) ) {
+				if ( (LA1_0==Assert||(LA1_0 >= Copy && LA1_0 <= Curve)||LA1_0==Ellipse||(LA1_0 >= Fill && LA1_0 <= For)||LA1_0==Group||LA1_0==Hide||(LA1_0 >= Identifier && LA1_0 <= If)||LA1_0==Line||LA1_0==Move||(LA1_0 >= NoFill && LA1_0 <= NoStroke)||LA1_0==Polygon||(LA1_0 >= Print && LA1_0 <= Println)||(LA1_0 >= Rect && LA1_0 <= Repeat)||LA1_0==Rotate||(LA1_0 >= Sine && LA1_0 <= Size)||LA1_0==Stroke||(LA1_0 >= Weight && LA1_0 <= While)||LA1_0==95) ) {
 					alt1=1;
 				}
 				else if ( (LA1_0==Def) ) {
@@ -333,8 +335,8 @@ public class PogoParser extends Parser {
 					state._fsp--;
 
 					stream_expression.add(expression6.getTree());
-					char_literal7=(Token)match(input,93,FOLLOW_93_in_block184);  
-					stream_93.add(char_literal7);
+					char_literal7=(Token)match(input,95,FOLLOW_95_in_block184);  
+					stream_95.add(char_literal7);
 
 					}
 					break;
@@ -439,7 +441,7 @@ public class PogoParser extends Parser {
 
 		Object char_literal9_tree=null;
 		Object char_literal11_tree=null;
-		RewriteRuleTokenStream stream_93=new RewriteRuleTokenStream(adaptor,"token 93");
+		RewriteRuleTokenStream stream_95=new RewriteRuleTokenStream(adaptor,"token 95");
 		RewriteRuleSubtreeStream stream_functionCall=new RewriteRuleSubtreeStream(adaptor,"rule functionCall");
 		RewriteRuleSubtreeStream stream_assignment=new RewriteRuleSubtreeStream(adaptor,"rule assignment");
 
@@ -471,7 +473,7 @@ public class PogoParser extends Parser {
 
 				}
 				break;
-			case 93:
+			case 95:
 				{
 				alt3=1;
 				}
@@ -535,8 +537,8 @@ public class PogoParser extends Parser {
 					state._fsp--;
 
 					stream_assignment.add(assignment8.getTree());
-					char_literal9=(Token)match(input,93,FOLLOW_93_in_statement228);  
-					stream_93.add(char_literal9);
+					char_literal9=(Token)match(input,95,FOLLOW_95_in_statement228);  
+					stream_95.add(char_literal9);
 
 					// AST REWRITE
 					// elements: assignment
@@ -567,8 +569,8 @@ public class PogoParser extends Parser {
 					state._fsp--;
 
 					stream_functionCall.add(functionCall10.getTree());
-					char_literal11=(Token)match(input,93,FOLLOW_93_in_statement243);  
-					stream_93.add(char_literal11);
+					char_literal11=(Token)match(input,95,FOLLOW_95_in_statement243);  
+					stream_95.add(char_literal11);
 
 					// AST REWRITE
 					// elements: functionCall
@@ -702,7 +704,7 @@ public class PogoParser extends Parser {
 			if ( (LA5_0==Identifier) ) {
 				alt5=1;
 			}
-			else if ( (LA5_0==93) ) {
+			else if ( (LA5_0==95) ) {
 				alt5=2;
 			}
 
@@ -951,7 +953,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:85:21: ( exprList )?
 					int alt6=2;
 					int LA6_0 = input.LA(1);
-					if ( (LA6_0==Assert||LA6_0==Bool||LA6_0==COLOR_CONSTANT||(LA6_0 >= Copy && LA6_0 <= Curve)||LA6_0==Ellipse||LA6_0==Excl||(LA6_0 >= Fill && LA6_0 <= For)||(LA6_0 >= Group && LA6_0 <= Hide)||LA6_0==Identifier||LA6_0==Line||LA6_0==Move||(LA6_0 >= NoFill && LA6_0 <= Number)||(LA6_0 >= OBracket && LA6_0 <= OParen)||LA6_0==PI_CONSTANT||LA6_0==Polygon||(LA6_0 >= Print && LA6_0 <= Println)||(LA6_0 >= Rect && LA6_0 <= Repeat)||LA6_0==Rotate||(LA6_0 >= Sine && LA6_0 <= Size)||(LA6_0 >= String && LA6_0 <= Subtract)||(LA6_0 >= Weight && LA6_0 <= While)) ) {
+					if ( (LA6_0==Assert||LA6_0==Bool||LA6_0==COLOR_CONSTANT||(LA6_0 >= Copy && LA6_0 <= Curve)||LA6_0==Ellipse||LA6_0==Excl||(LA6_0 >= Fill && LA6_0 <= For)||(LA6_0 >= Group && LA6_0 <= Hide)||LA6_0==Identifier||LA6_0==Line||LA6_0==Move||(LA6_0 >= NoFill && LA6_0 <= Number)||(LA6_0 >= OBracket && LA6_0 <= OParen)||LA6_0==PI_CONSTANT||LA6_0==Polygon||(LA6_0 >= Print && LA6_0 <= Println)||(LA6_0 >= Rect && LA6_0 <= Repeat)||LA6_0==Rotate||(LA6_0 >= Sine && LA6_0 <= Size)||(LA6_0 >= String && LA6_0 <= Subtract)||(LA6_0 >= WIDTH_CONSTANT && LA6_0 <= While)) ) {
 						alt6=1;
 					}
 					switch (alt6) {
@@ -1017,7 +1019,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:86:18: ( expression )?
 					int alt7=2;
 					int LA7_0 = input.LA(1);
-					if ( (LA7_0==Assert||LA7_0==Bool||LA7_0==COLOR_CONSTANT||(LA7_0 >= Copy && LA7_0 <= Curve)||LA7_0==Ellipse||LA7_0==Excl||(LA7_0 >= Fill && LA7_0 <= For)||(LA7_0 >= Group && LA7_0 <= Hide)||LA7_0==Identifier||LA7_0==Line||LA7_0==Move||(LA7_0 >= NoFill && LA7_0 <= Number)||(LA7_0 >= OBracket && LA7_0 <= OParen)||LA7_0==PI_CONSTANT||LA7_0==Polygon||(LA7_0 >= Print && LA7_0 <= Println)||(LA7_0 >= Rect && LA7_0 <= Repeat)||LA7_0==Rotate||(LA7_0 >= Sine && LA7_0 <= Size)||(LA7_0 >= String && LA7_0 <= Subtract)||(LA7_0 >= Weight && LA7_0 <= While)) ) {
+					if ( (LA7_0==Assert||LA7_0==Bool||LA7_0==COLOR_CONSTANT||(LA7_0 >= Copy && LA7_0 <= Curve)||LA7_0==Ellipse||LA7_0==Excl||(LA7_0 >= Fill && LA7_0 <= For)||(LA7_0 >= Group && LA7_0 <= Hide)||LA7_0==Identifier||LA7_0==Line||LA7_0==Move||(LA7_0 >= NoFill && LA7_0 <= Number)||(LA7_0 >= OBracket && LA7_0 <= OParen)||LA7_0==PI_CONSTANT||LA7_0==Polygon||(LA7_0 >= Print && LA7_0 <= Println)||(LA7_0 >= Rect && LA7_0 <= Repeat)||LA7_0==Rotate||(LA7_0 >= Sine && LA7_0 <= Size)||(LA7_0 >= String && LA7_0 <= Subtract)||(LA7_0 >= WIDTH_CONSTANT && LA7_0 <= While)) ) {
 						alt7=1;
 					}
 					switch (alt7) {
@@ -1379,7 +1381,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:97:17: ( exprList )?
 					int alt9=2;
 					int LA9_0 = input.LA(1);
-					if ( (LA9_0==Assert||LA9_0==Bool||LA9_0==COLOR_CONSTANT||(LA9_0 >= Copy && LA9_0 <= Curve)||LA9_0==Ellipse||LA9_0==Excl||(LA9_0 >= Fill && LA9_0 <= For)||(LA9_0 >= Group && LA9_0 <= Hide)||LA9_0==Identifier||LA9_0==Line||LA9_0==Move||(LA9_0 >= NoFill && LA9_0 <= Number)||(LA9_0 >= OBracket && LA9_0 <= OParen)||LA9_0==PI_CONSTANT||LA9_0==Polygon||(LA9_0 >= Print && LA9_0 <= Println)||(LA9_0 >= Rect && LA9_0 <= Repeat)||LA9_0==Rotate||(LA9_0 >= Sine && LA9_0 <= Size)||(LA9_0 >= String && LA9_0 <= Subtract)||(LA9_0 >= Weight && LA9_0 <= While)) ) {
+					if ( (LA9_0==Assert||LA9_0==Bool||LA9_0==COLOR_CONSTANT||(LA9_0 >= Copy && LA9_0 <= Curve)||LA9_0==Ellipse||LA9_0==Excl||(LA9_0 >= Fill && LA9_0 <= For)||(LA9_0 >= Group && LA9_0 <= Hide)||LA9_0==Identifier||LA9_0==Line||LA9_0==Move||(LA9_0 >= NoFill && LA9_0 <= Number)||(LA9_0 >= OBracket && LA9_0 <= OParen)||LA9_0==PI_CONSTANT||LA9_0==Polygon||(LA9_0 >= Print && LA9_0 <= Println)||(LA9_0 >= Rect && LA9_0 <= Repeat)||LA9_0==Rotate||(LA9_0 >= Sine && LA9_0 <= Size)||(LA9_0 >= String && LA9_0 <= Subtract)||(LA9_0 >= WIDTH_CONSTANT && LA9_0 <= While)) ) {
 						alt9=1;
 					}
 					switch (alt9) {
@@ -1445,7 +1447,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:98:14: ( exprList )?
 					int alt10=2;
 					int LA10_0 = input.LA(1);
-					if ( (LA10_0==Assert||LA10_0==Bool||LA10_0==COLOR_CONSTANT||(LA10_0 >= Copy && LA10_0 <= Curve)||LA10_0==Ellipse||LA10_0==Excl||(LA10_0 >= Fill && LA10_0 <= For)||(LA10_0 >= Group && LA10_0 <= Hide)||LA10_0==Identifier||LA10_0==Line||LA10_0==Move||(LA10_0 >= NoFill && LA10_0 <= Number)||(LA10_0 >= OBracket && LA10_0 <= OParen)||LA10_0==PI_CONSTANT||LA10_0==Polygon||(LA10_0 >= Print && LA10_0 <= Println)||(LA10_0 >= Rect && LA10_0 <= Repeat)||LA10_0==Rotate||(LA10_0 >= Sine && LA10_0 <= Size)||(LA10_0 >= String && LA10_0 <= Subtract)||(LA10_0 >= Weight && LA10_0 <= While)) ) {
+					if ( (LA10_0==Assert||LA10_0==Bool||LA10_0==COLOR_CONSTANT||(LA10_0 >= Copy && LA10_0 <= Curve)||LA10_0==Ellipse||LA10_0==Excl||(LA10_0 >= Fill && LA10_0 <= For)||(LA10_0 >= Group && LA10_0 <= Hide)||LA10_0==Identifier||LA10_0==Line||LA10_0==Move||(LA10_0 >= NoFill && LA10_0 <= Number)||(LA10_0 >= OBracket && LA10_0 <= OParen)||LA10_0==PI_CONSTANT||LA10_0==Polygon||(LA10_0 >= Print && LA10_0 <= Println)||(LA10_0 >= Rect && LA10_0 <= Repeat)||LA10_0==Rotate||(LA10_0 >= Sine && LA10_0 <= Size)||(LA10_0 >= String && LA10_0 <= Subtract)||(LA10_0 >= WIDTH_CONSTANT && LA10_0 <= While)) ) {
 						alt10=1;
 					}
 					switch (alt10) {
@@ -1511,7 +1513,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:99:14: ( exprList )?
 					int alt11=2;
 					int LA11_0 = input.LA(1);
-					if ( (LA11_0==Assert||LA11_0==Bool||LA11_0==COLOR_CONSTANT||(LA11_0 >= Copy && LA11_0 <= Curve)||LA11_0==Ellipse||LA11_0==Excl||(LA11_0 >= Fill && LA11_0 <= For)||(LA11_0 >= Group && LA11_0 <= Hide)||LA11_0==Identifier||LA11_0==Line||LA11_0==Move||(LA11_0 >= NoFill && LA11_0 <= Number)||(LA11_0 >= OBracket && LA11_0 <= OParen)||LA11_0==PI_CONSTANT||LA11_0==Polygon||(LA11_0 >= Print && LA11_0 <= Println)||(LA11_0 >= Rect && LA11_0 <= Repeat)||LA11_0==Rotate||(LA11_0 >= Sine && LA11_0 <= Size)||(LA11_0 >= String && LA11_0 <= Subtract)||(LA11_0 >= Weight && LA11_0 <= While)) ) {
+					if ( (LA11_0==Assert||LA11_0==Bool||LA11_0==COLOR_CONSTANT||(LA11_0 >= Copy && LA11_0 <= Curve)||LA11_0==Ellipse||LA11_0==Excl||(LA11_0 >= Fill && LA11_0 <= For)||(LA11_0 >= Group && LA11_0 <= Hide)||LA11_0==Identifier||LA11_0==Line||LA11_0==Move||(LA11_0 >= NoFill && LA11_0 <= Number)||(LA11_0 >= OBracket && LA11_0 <= OParen)||LA11_0==PI_CONSTANT||LA11_0==Polygon||(LA11_0 >= Print && LA11_0 <= Println)||(LA11_0 >= Rect && LA11_0 <= Repeat)||LA11_0==Rotate||(LA11_0 >= Sine && LA11_0 <= Size)||(LA11_0 >= String && LA11_0 <= Subtract)||(LA11_0 >= WIDTH_CONSTANT && LA11_0 <= While)) ) {
 						alt11=1;
 					}
 					switch (alt11) {
@@ -1577,7 +1579,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:100:15: ( exprList )?
 					int alt12=2;
 					int LA12_0 = input.LA(1);
-					if ( (LA12_0==Assert||LA12_0==Bool||LA12_0==COLOR_CONSTANT||(LA12_0 >= Copy && LA12_0 <= Curve)||LA12_0==Ellipse||LA12_0==Excl||(LA12_0 >= Fill && LA12_0 <= For)||(LA12_0 >= Group && LA12_0 <= Hide)||LA12_0==Identifier||LA12_0==Line||LA12_0==Move||(LA12_0 >= NoFill && LA12_0 <= Number)||(LA12_0 >= OBracket && LA12_0 <= OParen)||LA12_0==PI_CONSTANT||LA12_0==Polygon||(LA12_0 >= Print && LA12_0 <= Println)||(LA12_0 >= Rect && LA12_0 <= Repeat)||LA12_0==Rotate||(LA12_0 >= Sine && LA12_0 <= Size)||(LA12_0 >= String && LA12_0 <= Subtract)||(LA12_0 >= Weight && LA12_0 <= While)) ) {
+					if ( (LA12_0==Assert||LA12_0==Bool||LA12_0==COLOR_CONSTANT||(LA12_0 >= Copy && LA12_0 <= Curve)||LA12_0==Ellipse||LA12_0==Excl||(LA12_0 >= Fill && LA12_0 <= For)||(LA12_0 >= Group && LA12_0 <= Hide)||LA12_0==Identifier||LA12_0==Line||LA12_0==Move||(LA12_0 >= NoFill && LA12_0 <= Number)||(LA12_0 >= OBracket && LA12_0 <= OParen)||LA12_0==PI_CONSTANT||LA12_0==Polygon||(LA12_0 >= Print && LA12_0 <= Println)||(LA12_0 >= Rect && LA12_0 <= Repeat)||LA12_0==Rotate||(LA12_0 >= Sine && LA12_0 <= Size)||(LA12_0 >= String && LA12_0 <= Subtract)||(LA12_0 >= WIDTH_CONSTANT && LA12_0 <= While)) ) {
 						alt12=1;
 					}
 					switch (alt12) {
@@ -1643,7 +1645,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:101:17: ( exprList )?
 					int alt13=2;
 					int LA13_0 = input.LA(1);
-					if ( (LA13_0==Assert||LA13_0==Bool||LA13_0==COLOR_CONSTANT||(LA13_0 >= Copy && LA13_0 <= Curve)||LA13_0==Ellipse||LA13_0==Excl||(LA13_0 >= Fill && LA13_0 <= For)||(LA13_0 >= Group && LA13_0 <= Hide)||LA13_0==Identifier||LA13_0==Line||LA13_0==Move||(LA13_0 >= NoFill && LA13_0 <= Number)||(LA13_0 >= OBracket && LA13_0 <= OParen)||LA13_0==PI_CONSTANT||LA13_0==Polygon||(LA13_0 >= Print && LA13_0 <= Println)||(LA13_0 >= Rect && LA13_0 <= Repeat)||LA13_0==Rotate||(LA13_0 >= Sine && LA13_0 <= Size)||(LA13_0 >= String && LA13_0 <= Subtract)||(LA13_0 >= Weight && LA13_0 <= While)) ) {
+					if ( (LA13_0==Assert||LA13_0==Bool||LA13_0==COLOR_CONSTANT||(LA13_0 >= Copy && LA13_0 <= Curve)||LA13_0==Ellipse||LA13_0==Excl||(LA13_0 >= Fill && LA13_0 <= For)||(LA13_0 >= Group && LA13_0 <= Hide)||LA13_0==Identifier||LA13_0==Line||LA13_0==Move||(LA13_0 >= NoFill && LA13_0 <= Number)||(LA13_0 >= OBracket && LA13_0 <= OParen)||LA13_0==PI_CONSTANT||LA13_0==Polygon||(LA13_0 >= Print && LA13_0 <= Println)||(LA13_0 >= Rect && LA13_0 <= Repeat)||LA13_0==Rotate||(LA13_0 >= Sine && LA13_0 <= Size)||(LA13_0 >= String && LA13_0 <= Subtract)||(LA13_0 >= WIDTH_CONSTANT && LA13_0 <= While)) ) {
 						alt13=1;
 					}
 					switch (alt13) {
@@ -1891,7 +1893,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:15: ( exprList )?
 					int alt15=2;
 					int LA15_0 = input.LA(1);
-					if ( (LA15_0==Assert||LA15_0==Bool||LA15_0==COLOR_CONSTANT||(LA15_0 >= Copy && LA15_0 <= Curve)||LA15_0==Ellipse||LA15_0==Excl||(LA15_0 >= Fill && LA15_0 <= For)||(LA15_0 >= Group && LA15_0 <= Hide)||LA15_0==Identifier||LA15_0==Line||LA15_0==Move||(LA15_0 >= NoFill && LA15_0 <= Number)||(LA15_0 >= OBracket && LA15_0 <= OParen)||LA15_0==PI_CONSTANT||LA15_0==Polygon||(LA15_0 >= Print && LA15_0 <= Println)||(LA15_0 >= Rect && LA15_0 <= Repeat)||LA15_0==Rotate||(LA15_0 >= Sine && LA15_0 <= Size)||(LA15_0 >= String && LA15_0 <= Subtract)||(LA15_0 >= Weight && LA15_0 <= While)) ) {
+					if ( (LA15_0==Assert||LA15_0==Bool||LA15_0==COLOR_CONSTANT||(LA15_0 >= Copy && LA15_0 <= Curve)||LA15_0==Ellipse||LA15_0==Excl||(LA15_0 >= Fill && LA15_0 <= For)||(LA15_0 >= Group && LA15_0 <= Hide)||LA15_0==Identifier||LA15_0==Line||LA15_0==Move||(LA15_0 >= NoFill && LA15_0 <= Number)||(LA15_0 >= OBracket && LA15_0 <= OParen)||LA15_0==PI_CONSTANT||LA15_0==Polygon||(LA15_0 >= Print && LA15_0 <= Println)||(LA15_0 >= Rect && LA15_0 <= Repeat)||LA15_0==Rotate||(LA15_0 >= Sine && LA15_0 <= Size)||(LA15_0 >= String && LA15_0 <= Subtract)||(LA15_0 >= WIDTH_CONSTANT && LA15_0 <= While)) ) {
 						alt15=1;
 					}
 					switch (alt15) {
@@ -2003,7 +2005,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:107:17: ( exprList )?
 					int alt16=2;
 					int LA16_0 = input.LA(1);
-					if ( (LA16_0==Assert||LA16_0==Bool||LA16_0==COLOR_CONSTANT||(LA16_0 >= Copy && LA16_0 <= Curve)||LA16_0==Ellipse||LA16_0==Excl||(LA16_0 >= Fill && LA16_0 <= For)||(LA16_0 >= Group && LA16_0 <= Hide)||LA16_0==Identifier||LA16_0==Line||LA16_0==Move||(LA16_0 >= NoFill && LA16_0 <= Number)||(LA16_0 >= OBracket && LA16_0 <= OParen)||LA16_0==PI_CONSTANT||LA16_0==Polygon||(LA16_0 >= Print && LA16_0 <= Println)||(LA16_0 >= Rect && LA16_0 <= Repeat)||LA16_0==Rotate||(LA16_0 >= Sine && LA16_0 <= Size)||(LA16_0 >= String && LA16_0 <= Subtract)||(LA16_0 >= Weight && LA16_0 <= While)) ) {
+					if ( (LA16_0==Assert||LA16_0==Bool||LA16_0==COLOR_CONSTANT||(LA16_0 >= Copy && LA16_0 <= Curve)||LA16_0==Ellipse||LA16_0==Excl||(LA16_0 >= Fill && LA16_0 <= For)||(LA16_0 >= Group && LA16_0 <= Hide)||LA16_0==Identifier||LA16_0==Line||LA16_0==Move||(LA16_0 >= NoFill && LA16_0 <= Number)||(LA16_0 >= OBracket && LA16_0 <= OParen)||LA16_0==PI_CONSTANT||LA16_0==Polygon||(LA16_0 >= Print && LA16_0 <= Println)||(LA16_0 >= Rect && LA16_0 <= Repeat)||LA16_0==Rotate||(LA16_0 >= Sine && LA16_0 <= Size)||(LA16_0 >= String && LA16_0 <= Subtract)||(LA16_0 >= WIDTH_CONSTANT && LA16_0 <= While)) ) {
 						alt16=1;
 					}
 					switch (alt16) {
@@ -2069,7 +2071,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:108:15: ( exprList )?
 					int alt17=2;
 					int LA17_0 = input.LA(1);
-					if ( (LA17_0==Assert||LA17_0==Bool||LA17_0==COLOR_CONSTANT||(LA17_0 >= Copy && LA17_0 <= Curve)||LA17_0==Ellipse||LA17_0==Excl||(LA17_0 >= Fill && LA17_0 <= For)||(LA17_0 >= Group && LA17_0 <= Hide)||LA17_0==Identifier||LA17_0==Line||LA17_0==Move||(LA17_0 >= NoFill && LA17_0 <= Number)||(LA17_0 >= OBracket && LA17_0 <= OParen)||LA17_0==PI_CONSTANT||LA17_0==Polygon||(LA17_0 >= Print && LA17_0 <= Println)||(LA17_0 >= Rect && LA17_0 <= Repeat)||LA17_0==Rotate||(LA17_0 >= Sine && LA17_0 <= Size)||(LA17_0 >= String && LA17_0 <= Subtract)||(LA17_0 >= Weight && LA17_0 <= While)) ) {
+					if ( (LA17_0==Assert||LA17_0==Bool||LA17_0==COLOR_CONSTANT||(LA17_0 >= Copy && LA17_0 <= Curve)||LA17_0==Ellipse||LA17_0==Excl||(LA17_0 >= Fill && LA17_0 <= For)||(LA17_0 >= Group && LA17_0 <= Hide)||LA17_0==Identifier||LA17_0==Line||LA17_0==Move||(LA17_0 >= NoFill && LA17_0 <= Number)||(LA17_0 >= OBracket && LA17_0 <= OParen)||LA17_0==PI_CONSTANT||LA17_0==Polygon||(LA17_0 >= Print && LA17_0 <= Println)||(LA17_0 >= Rect && LA17_0 <= Repeat)||LA17_0==Rotate||(LA17_0 >= Sine && LA17_0 <= Size)||(LA17_0 >= String && LA17_0 <= Subtract)||(LA17_0 >= WIDTH_CONSTANT && LA17_0 <= While)) ) {
 						alt17=1;
 					}
 					switch (alt17) {
@@ -2135,7 +2137,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:109:17: ( exprList )?
 					int alt18=2;
 					int LA18_0 = input.LA(1);
-					if ( (LA18_0==Assert||LA18_0==Bool||LA18_0==COLOR_CONSTANT||(LA18_0 >= Copy && LA18_0 <= Curve)||LA18_0==Ellipse||LA18_0==Excl||(LA18_0 >= Fill && LA18_0 <= For)||(LA18_0 >= Group && LA18_0 <= Hide)||LA18_0==Identifier||LA18_0==Line||LA18_0==Move||(LA18_0 >= NoFill && LA18_0 <= Number)||(LA18_0 >= OBracket && LA18_0 <= OParen)||LA18_0==PI_CONSTANT||LA18_0==Polygon||(LA18_0 >= Print && LA18_0 <= Println)||(LA18_0 >= Rect && LA18_0 <= Repeat)||LA18_0==Rotate||(LA18_0 >= Sine && LA18_0 <= Size)||(LA18_0 >= String && LA18_0 <= Subtract)||(LA18_0 >= Weight && LA18_0 <= While)) ) {
+					if ( (LA18_0==Assert||LA18_0==Bool||LA18_0==COLOR_CONSTANT||(LA18_0 >= Copy && LA18_0 <= Curve)||LA18_0==Ellipse||LA18_0==Excl||(LA18_0 >= Fill && LA18_0 <= For)||(LA18_0 >= Group && LA18_0 <= Hide)||LA18_0==Identifier||LA18_0==Line||LA18_0==Move||(LA18_0 >= NoFill && LA18_0 <= Number)||(LA18_0 >= OBracket && LA18_0 <= OParen)||LA18_0==PI_CONSTANT||LA18_0==Polygon||(LA18_0 >= Print && LA18_0 <= Println)||(LA18_0 >= Rect && LA18_0 <= Repeat)||LA18_0==Rotate||(LA18_0 >= Sine && LA18_0 <= Size)||(LA18_0 >= String && LA18_0 <= Subtract)||(LA18_0 >= WIDTH_CONSTANT && LA18_0 <= While)) ) {
 						alt18=1;
 					}
 					switch (alt18) {
@@ -2293,7 +2295,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:112:17: ( exprList )?
 					int alt19=2;
 					int LA19_0 = input.LA(1);
-					if ( (LA19_0==Assert||LA19_0==Bool||LA19_0==COLOR_CONSTANT||(LA19_0 >= Copy && LA19_0 <= Curve)||LA19_0==Ellipse||LA19_0==Excl||(LA19_0 >= Fill && LA19_0 <= For)||(LA19_0 >= Group && LA19_0 <= Hide)||LA19_0==Identifier||LA19_0==Line||LA19_0==Move||(LA19_0 >= NoFill && LA19_0 <= Number)||(LA19_0 >= OBracket && LA19_0 <= OParen)||LA19_0==PI_CONSTANT||LA19_0==Polygon||(LA19_0 >= Print && LA19_0 <= Println)||(LA19_0 >= Rect && LA19_0 <= Repeat)||LA19_0==Rotate||(LA19_0 >= Sine && LA19_0 <= Size)||(LA19_0 >= String && LA19_0 <= Subtract)||(LA19_0 >= Weight && LA19_0 <= While)) ) {
+					if ( (LA19_0==Assert||LA19_0==Bool||LA19_0==COLOR_CONSTANT||(LA19_0 >= Copy && LA19_0 <= Curve)||LA19_0==Ellipse||LA19_0==Excl||(LA19_0 >= Fill && LA19_0 <= For)||(LA19_0 >= Group && LA19_0 <= Hide)||LA19_0==Identifier||LA19_0==Line||LA19_0==Move||(LA19_0 >= NoFill && LA19_0 <= Number)||(LA19_0 >= OBracket && LA19_0 <= OParen)||LA19_0==PI_CONSTANT||LA19_0==Polygon||(LA19_0 >= Print && LA19_0 <= Println)||(LA19_0 >= Rect && LA19_0 <= Repeat)||LA19_0==Rotate||(LA19_0 >= Sine && LA19_0 <= Size)||(LA19_0 >= String && LA19_0 <= Subtract)||(LA19_0 >= WIDTH_CONSTANT && LA19_0 <= While)) ) {
 						alt19=1;
 					}
 					switch (alt19) {
@@ -2405,7 +2407,7 @@ public class PogoParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:114:16: ( exprList )?
 					int alt20=2;
 					int LA20_0 = input.LA(1);
-					if ( (LA20_0==Assert||LA20_0==Bool||LA20_0==COLOR_CONSTANT||(LA20_0 >= Copy && LA20_0 <= Curve)||LA20_0==Ellipse||LA20_0==Excl||(LA20_0 >= Fill && LA20_0 <= For)||(LA20_0 >= Group && LA20_0 <= Hide)||LA20_0==Identifier||LA20_0==Line||LA20_0==Move||(LA20_0 >= NoFill && LA20_0 <= Number)||(LA20_0 >= OBracket && LA20_0 <= OParen)||LA20_0==PI_CONSTANT||LA20_0==Polygon||(LA20_0 >= Print && LA20_0 <= Println)||(LA20_0 >= Rect && LA20_0 <= Repeat)||LA20_0==Rotate||(LA20_0 >= Sine && LA20_0 <= Size)||(LA20_0 >= String && LA20_0 <= Subtract)||(LA20_0 >= Weight && LA20_0 <= While)) ) {
+					if ( (LA20_0==Assert||LA20_0==Bool||LA20_0==COLOR_CONSTANT||(LA20_0 >= Copy && LA20_0 <= Curve)||LA20_0==Ellipse||LA20_0==Excl||(LA20_0 >= Fill && LA20_0 <= For)||(LA20_0 >= Group && LA20_0 <= Hide)||LA20_0==Identifier||LA20_0==Line||LA20_0==Move||(LA20_0 >= NoFill && LA20_0 <= Number)||(LA20_0 >= OBracket && LA20_0 <= OParen)||LA20_0==PI_CONSTANT||LA20_0==Polygon||(LA20_0 >= Print && LA20_0 <= Println)||(LA20_0 >= Rect && LA20_0 <= Repeat)||LA20_0==Rotate||(LA20_0 >= Sine && LA20_0 <= Size)||(LA20_0 >= String && LA20_0 <= Subtract)||(LA20_0 >= WIDTH_CONSTANT && LA20_0 <= While)) ) {
 						alt20=1;
 					}
 					switch (alt20) {
@@ -3350,8 +3352,8 @@ public class PogoParser extends Parser {
 		Object End154_tree=null;
 		RewriteRuleTokenStream stream_Do=new RewriteRuleTokenStream(adaptor,"token Do");
 		RewriteRuleTokenStream stream_End=new RewriteRuleTokenStream(adaptor,"token End");
+		RewriteRuleTokenStream stream_96=new RewriteRuleTokenStream(adaptor,"token 96");
 		RewriteRuleTokenStream stream_Assign=new RewriteRuleTokenStream(adaptor,"token Assign");
-		RewriteRuleTokenStream stream_94=new RewriteRuleTokenStream(adaptor,"token 94");
 		RewriteRuleTokenStream stream_Identifier=new RewriteRuleTokenStream(adaptor,"token Identifier");
 		RewriteRuleTokenStream stream_Repeat=new RewriteRuleTokenStream(adaptor,"token Repeat");
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
@@ -3388,7 +3390,7 @@ public class PogoParser extends Parser {
 			while (true) {
 				int alt26=2;
 				int LA26_0 = input.LA(1);
-				if ( (LA26_0==94) ) {
+				if ( (LA26_0==96) ) {
 					alt26=1;
 				}
 
@@ -3396,8 +3398,8 @@ public class PogoParser extends Parser {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:152:53: '|' expression
 					{
-					char_literal150=(Token)match(input,94,FOLLOW_94_in_repeatStatement1179);  
-					stream_94.add(char_literal150);
+					char_literal150=(Token)match(input,96,FOLLOW_96_in_repeatStatement1179);  
+					stream_96.add(char_literal150);
 
 					pushFollow(FOLLOW_expression_in_repeatStatement1181);
 					expression151=expression();
@@ -4083,7 +4085,7 @@ public class PogoParser extends Parser {
 			while (true) {
 				int alt30=2;
 				int LA30_0 = input.LA(1);
-				if ( (LA30_0==95) ) {
+				if ( (LA30_0==97) ) {
 					alt30=1;
 				}
 
@@ -4091,7 +4093,7 @@ public class PogoParser extends Parser {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:179:15: '||' ^ andExpr
 					{
-					string_literal173=(Token)match(input,95,FOLLOW_95_in_orExpr1429); 
+					string_literal173=(Token)match(input,97,FOLLOW_97_in_orExpr1429); 
 					string_literal173_tree = (Object)adaptor.create(string_literal173);
 					root_0 = (Object)adaptor.becomeRoot(string_literal173_tree, root_0);
 
@@ -4169,7 +4171,7 @@ public class PogoParser extends Parser {
 			while (true) {
 				int alt31=2;
 				int LA31_0 = input.LA(1);
-				if ( (LA31_0==92) ) {
+				if ( (LA31_0==94) ) {
 					alt31=1;
 				}
 
@@ -4177,7 +4179,7 @@ public class PogoParser extends Parser {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:183:15: '&&' ^ equExpr
 					{
-					string_literal176=(Token)match(input,92,FOLLOW_92_in_andExpr1451); 
+					string_literal176=(Token)match(input,94,FOLLOW_94_in_andExpr1451); 
 					string_literal176_tree = (Object)adaptor.create(string_literal176);
 					root_0 = (Object)adaptor.becomeRoot(string_literal176_tree, root_0);
 
@@ -4725,6 +4727,7 @@ public class PogoParser extends Parser {
 			case Fill:
 			case For:
 			case Group:
+			case HEIGHT_CONSTANT:
 			case Hide:
 			case Identifier:
 			case Line:
@@ -4746,6 +4749,7 @@ public class PogoParser extends Parser {
 			case Size:
 			case String:
 			case Stroke:
+			case WIDTH_CONSTANT:
 			case Weight:
 			case While:
 				{
@@ -4879,7 +4883,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "atom"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:212:1: atom : ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:212:1: atom : ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT );
 	public final PogoParser.atom_return atom() throws RecognitionException {
 		PogoParser.atom_return retval = new PogoParser.atom_return();
 		retval.start = input.LT(1);
@@ -4891,6 +4895,8 @@ public class PogoParser extends Parser {
 		Token Null200=null;
 		Token COLOR_CONSTANT202=null;
 		Token PI_CONSTANT203=null;
+		Token WIDTH_CONSTANT204=null;
+		Token HEIGHT_CONSTANT205=null;
 		ParserRuleReturnScope lookup201 =null;
 
 		Object Number198_tree=null;
@@ -4898,10 +4904,12 @@ public class PogoParser extends Parser {
 		Object Null200_tree=null;
 		Object COLOR_CONSTANT202_tree=null;
 		Object PI_CONSTANT203_tree=null;
+		Object WIDTH_CONSTANT204_tree=null;
+		Object HEIGHT_CONSTANT205_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:213:3: ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT )
-			int alt38=6;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:213:3: ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT )
+			int alt38=8;
 			switch ( input.LA(1) ) {
 			case Number:
 				{
@@ -4958,6 +4966,16 @@ public class PogoParser extends Parser {
 			case PI_CONSTANT:
 				{
 				alt38=6;
+				}
+				break;
+			case WIDTH_CONSTANT:
+				{
+				alt38=7;
+				}
+				break;
+			case HEIGHT_CONSTANT:
+				{
+				alt38=8;
 				}
 				break;
 			default:
@@ -5040,6 +5058,30 @@ public class PogoParser extends Parser {
 
 					}
 					break;
+				case 7 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:219:5: WIDTH_CONSTANT
+					{
+					root_0 = (Object)adaptor.nil();
+
+
+					WIDTH_CONSTANT204=(Token)match(input,WIDTH_CONSTANT,FOLLOW_WIDTH_CONSTANT_in_atom1705); 
+					WIDTH_CONSTANT204_tree = (Object)adaptor.create(WIDTH_CONSTANT204);
+					adaptor.addChild(root_0, WIDTH_CONSTANT204_tree);
+
+					}
+					break;
+				case 8 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:220:5: HEIGHT_CONSTANT
+					{
+					root_0 = (Object)adaptor.nil();
+
+
+					HEIGHT_CONSTANT205=(Token)match(input,HEIGHT_CONSTANT,FOLLOW_HEIGHT_CONSTANT_in_atom1711); 
+					HEIGHT_CONSTANT205_tree = (Object)adaptor.create(HEIGHT_CONSTANT205);
+					adaptor.addChild(root_0, HEIGHT_CONSTANT205_tree);
+
+					}
+					break;
 
 			}
 			retval.stop = input.LT(-1);
@@ -5069,52 +5111,52 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "list"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:221:1: list : '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:223:1: list : '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) ;
 	public final PogoParser.list_return list() throws RecognitionException {
 		PogoParser.list_return retval = new PogoParser.list_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token char_literal204=null;
 		Token char_literal206=null;
-		ParserRuleReturnScope exprList205 =null;
+		Token char_literal208=null;
+		ParserRuleReturnScope exprList207 =null;
 
-		Object char_literal204_tree=null;
 		Object char_literal206_tree=null;
+		Object char_literal208_tree=null;
 		RewriteRuleTokenStream stream_CBracket=new RewriteRuleTokenStream(adaptor,"token CBracket");
 		RewriteRuleTokenStream stream_OBracket=new RewriteRuleTokenStream(adaptor,"token OBracket");
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:222:3: ( '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:222:6: '[' ( exprList )? ']'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:224:3: ( '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:224:6: '[' ( exprList )? ']'
 			{
-			char_literal204=(Token)match(input,OBracket,FOLLOW_OBracket_in_list1713);  
-			stream_OBracket.add(char_literal204);
+			char_literal206=(Token)match(input,OBracket,FOLLOW_OBracket_in_list1725);  
+			stream_OBracket.add(char_literal206);
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:222:10: ( exprList )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:224:10: ( exprList )?
 			int alt39=2;
 			int LA39_0 = input.LA(1);
-			if ( (LA39_0==Assert||LA39_0==Bool||LA39_0==COLOR_CONSTANT||(LA39_0 >= Copy && LA39_0 <= Curve)||LA39_0==Ellipse||LA39_0==Excl||(LA39_0 >= Fill && LA39_0 <= For)||(LA39_0 >= Group && LA39_0 <= Hide)||LA39_0==Identifier||LA39_0==Line||LA39_0==Move||(LA39_0 >= NoFill && LA39_0 <= Number)||(LA39_0 >= OBracket && LA39_0 <= OParen)||LA39_0==PI_CONSTANT||LA39_0==Polygon||(LA39_0 >= Print && LA39_0 <= Println)||(LA39_0 >= Rect && LA39_0 <= Repeat)||LA39_0==Rotate||(LA39_0 >= Sine && LA39_0 <= Size)||(LA39_0 >= String && LA39_0 <= Subtract)||(LA39_0 >= Weight && LA39_0 <= While)) ) {
+			if ( (LA39_0==Assert||LA39_0==Bool||LA39_0==COLOR_CONSTANT||(LA39_0 >= Copy && LA39_0 <= Curve)||LA39_0==Ellipse||LA39_0==Excl||(LA39_0 >= Fill && LA39_0 <= For)||(LA39_0 >= Group && LA39_0 <= Hide)||LA39_0==Identifier||LA39_0==Line||LA39_0==Move||(LA39_0 >= NoFill && LA39_0 <= Number)||(LA39_0 >= OBracket && LA39_0 <= OParen)||LA39_0==PI_CONSTANT||LA39_0==Polygon||(LA39_0 >= Print && LA39_0 <= Println)||(LA39_0 >= Rect && LA39_0 <= Repeat)||LA39_0==Rotate||(LA39_0 >= Sine && LA39_0 <= Size)||(LA39_0 >= String && LA39_0 <= Subtract)||(LA39_0 >= WIDTH_CONSTANT && LA39_0 <= While)) ) {
 				alt39=1;
 			}
 			switch (alt39) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:222:10: exprList
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:224:10: exprList
 					{
-					pushFollow(FOLLOW_exprList_in_list1715);
-					exprList205=exprList();
+					pushFollow(FOLLOW_exprList_in_list1727);
+					exprList207=exprList();
 					state._fsp--;
 
-					stream_exprList.add(exprList205.getTree());
+					stream_exprList.add(exprList207.getTree());
 					}
 					break;
 
 			}
 
-			char_literal206=(Token)match(input,CBracket,FOLLOW_CBracket_in_list1718);  
-			stream_CBracket.add(char_literal206);
+			char_literal208=(Token)match(input,CBracket,FOLLOW_CBracket_in_list1730);  
+			stream_CBracket.add(char_literal208);
 
 			// AST REWRITE
 			// elements: exprList
@@ -5127,13 +5169,13 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 222:24: -> ^( LIST ( exprList )? )
+			// 224:24: -> ^( LIST ( exprList )? )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:222:27: ^( LIST ( exprList )? )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:224:27: ^( LIST ( exprList )? )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LIST, "LIST"), root_1);
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:222:34: ( exprList )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:224:34: ( exprList )?
 				if ( stream_exprList.hasNext() ) {
 					adaptor.addChild(root_1, stream_exprList.nextTree());
 				}
@@ -5176,36 +5218,36 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "lookup"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:225:1: lookup : ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) | forStatement ( indexes )? -> ^( LOOKUP forStatement ( indexes )? ) | repeatStatement ( indexes )? -> ^( LOOKUP repeatStatement ( indexes )? ) | whileStatement ( indexes )? -> ^( LOOKUP whileStatement ( indexes )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:1: lookup : ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) | forStatement ( indexes )? -> ^( LOOKUP forStatement ( indexes )? ) | repeatStatement ( indexes )? -> ^( LOOKUP repeatStatement ( indexes )? ) | whileStatement ( indexes )? -> ^( LOOKUP whileStatement ( indexes )? ) );
 	public final PogoParser.lookup_return lookup() throws RecognitionException {
 		PogoParser.lookup_return retval = new PogoParser.lookup_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token Identifier211=null;
-		Token String213=null;
-		Token char_literal215=null;
+		Token Identifier213=null;
+		Token String215=null;
 		Token char_literal217=null;
-		ParserRuleReturnScope functionCall207 =null;
-		ParserRuleReturnScope indexes208 =null;
-		ParserRuleReturnScope list209 =null;
+		Token char_literal219=null;
+		ParserRuleReturnScope functionCall209 =null;
 		ParserRuleReturnScope indexes210 =null;
+		ParserRuleReturnScope list211 =null;
 		ParserRuleReturnScope indexes212 =null;
 		ParserRuleReturnScope indexes214 =null;
-		ParserRuleReturnScope expression216 =null;
-		ParserRuleReturnScope indexes218 =null;
-		ParserRuleReturnScope forStatement219 =null;
+		ParserRuleReturnScope indexes216 =null;
+		ParserRuleReturnScope expression218 =null;
 		ParserRuleReturnScope indexes220 =null;
-		ParserRuleReturnScope repeatStatement221 =null;
+		ParserRuleReturnScope forStatement221 =null;
 		ParserRuleReturnScope indexes222 =null;
-		ParserRuleReturnScope whileStatement223 =null;
+		ParserRuleReturnScope repeatStatement223 =null;
 		ParserRuleReturnScope indexes224 =null;
+		ParserRuleReturnScope whileStatement225 =null;
+		ParserRuleReturnScope indexes226 =null;
 
-		Object Identifier211_tree=null;
-		Object String213_tree=null;
-		Object char_literal215_tree=null;
+		Object Identifier213_tree=null;
+		Object String215_tree=null;
 		Object char_literal217_tree=null;
+		Object char_literal219_tree=null;
 		RewriteRuleTokenStream stream_OParen=new RewriteRuleTokenStream(adaptor,"token OParen");
 		RewriteRuleTokenStream stream_CParen=new RewriteRuleTokenStream(adaptor,"token CParen");
 		RewriteRuleTokenStream stream_String=new RewriteRuleTokenStream(adaptor,"token String");
@@ -5219,7 +5261,7 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_list=new RewriteRuleSubtreeStream(adaptor,"rule list");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:3: ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) | forStatement ( indexes )? -> ^( LOOKUP forStatement ( indexes )? ) | repeatStatement ( indexes )? -> ^( LOOKUP repeatStatement ( indexes )? ) | whileStatement ( indexes )? -> ^( LOOKUP whileStatement ( indexes )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:3: ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) | forStatement ( indexes )? -> ^( LOOKUP forStatement ( indexes )? ) | repeatStatement ( indexes )? -> ^( LOOKUP repeatStatement ( indexes )? ) | whileStatement ( indexes )? -> ^( LOOKUP whileStatement ( indexes )? ) )
 			int alt48=8;
 			switch ( input.LA(1) ) {
 			case Identifier:
@@ -5228,7 +5270,7 @@ public class PogoParser extends Parser {
 				if ( (LA48_1==OParen) ) {
 					alt48=1;
 				}
-				else if ( (LA48_1==Add||LA48_1==CBracket||(LA48_1 >= CParen && LA48_1 <= Comma)||(LA48_1 >= Divide && LA48_1 <= Do)||LA48_1==Equals||(LA48_1 >= GT && LA48_1 <= GTEquals)||LA48_1==In||(LA48_1 >= LT && LA48_1 <= LTEquals)||LA48_1==Modulus||LA48_1==Multiply||LA48_1==NEquals||LA48_1==OBracket||LA48_1==Pow||LA48_1==QMark||LA48_1==Subtract||(LA48_1 >= 92 && LA48_1 <= 95)) ) {
+				else if ( (LA48_1==Add||LA48_1==CBracket||(LA48_1 >= CParen && LA48_1 <= Comma)||(LA48_1 >= Divide && LA48_1 <= Do)||LA48_1==Equals||(LA48_1 >= GT && LA48_1 <= GTEquals)||LA48_1==In||(LA48_1 >= LT && LA48_1 <= LTEquals)||LA48_1==Modulus||LA48_1==Multiply||LA48_1==NEquals||LA48_1==OBracket||LA48_1==Pow||LA48_1==QMark||LA48_1==Subtract||(LA48_1 >= 94 && LA48_1 <= 97)) ) {
 					alt48=3;
 				}
 
@@ -5308,14 +5350,14 @@ public class PogoParser extends Parser {
 			}
 			switch (alt48) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:6: functionCall ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:6: functionCall ( indexes )?
 					{
-					pushFollow(FOLLOW_functionCall_in_lookup1741);
-					functionCall207=functionCall();
+					pushFollow(FOLLOW_functionCall_in_lookup1753);
+					functionCall209=functionCall();
 					state._fsp--;
 
-					stream_functionCall.add(functionCall207.getTree());
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:19: ( indexes )?
+					stream_functionCall.add(functionCall209.getTree());
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:19: ( indexes )?
 					int alt40=2;
 					int LA40_0 = input.LA(1);
 					if ( (LA40_0==OBracket) ) {
@@ -5323,20 +5365,20 @@ public class PogoParser extends Parser {
 					}
 					switch (alt40) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:19: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:19: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1743);
-							indexes208=indexes();
+							pushFollow(FOLLOW_indexes_in_lookup1755);
+							indexes210=indexes();
 							state._fsp--;
 
-							stream_indexes.add(indexes208.getTree());
+							stream_indexes.add(indexes210.getTree());
 							}
 							break;
 
 					}
 
 					// AST REWRITE
-					// elements: indexes, functionCall
+					// elements: functionCall, indexes
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5346,14 +5388,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 226:34: -> ^( LOOKUP functionCall ( indexes )? )
+					// 228:34: -> ^( LOOKUP functionCall ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:37: ^( LOOKUP functionCall ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:37: ^( LOOKUP functionCall ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_functionCall.nextTree());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:59: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:59: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -5370,14 +5412,14 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:6: list ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:6: list ( indexes )?
 					{
-					pushFollow(FOLLOW_list_in_lookup1768);
-					list209=list();
+					pushFollow(FOLLOW_list_in_lookup1780);
+					list211=list();
 					state._fsp--;
 
-					stream_list.add(list209.getTree());
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:11: ( indexes )?
+					stream_list.add(list211.getTree());
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:11: ( indexes )?
 					int alt41=2;
 					int LA41_0 = input.LA(1);
 					if ( (LA41_0==OBracket) ) {
@@ -5385,13 +5427,13 @@ public class PogoParser extends Parser {
 					}
 					switch (alt41) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:11: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:11: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1770);
-							indexes210=indexes();
+							pushFollow(FOLLOW_indexes_in_lookup1782);
+							indexes212=indexes();
 							state._fsp--;
 
-							stream_indexes.add(indexes210.getTree());
+							stream_indexes.add(indexes212.getTree());
 							}
 							break;
 
@@ -5408,14 +5450,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 227:34: -> ^( LOOKUP list ( indexes )? )
+					// 229:34: -> ^( LOOKUP list ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:37: ^( LOOKUP list ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:37: ^( LOOKUP list ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_list.nextTree());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:51: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:51: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -5432,12 +5474,12 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:6: Identifier ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:6: Identifier ( indexes )?
 					{
-					Identifier211=(Token)match(input,Identifier,FOLLOW_Identifier_in_lookup1803);  
-					stream_Identifier.add(Identifier211);
+					Identifier213=(Token)match(input,Identifier,FOLLOW_Identifier_in_lookup1815);  
+					stream_Identifier.add(Identifier213);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:17: ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:17: ( indexes )?
 					int alt42=2;
 					int LA42_0 = input.LA(1);
 					if ( (LA42_0==OBracket) ) {
@@ -5445,69 +5487,9 @@ public class PogoParser extends Parser {
 					}
 					switch (alt42) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:17: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:17: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1805);
-							indexes212=indexes();
-							state._fsp--;
-
-							stream_indexes.add(indexes212.getTree());
-							}
-							break;
-
-					}
-
-					// AST REWRITE
-					// elements: indexes, Identifier
-					// token labels: 
-					// rule labels: retval
-					// token list labels: 
-					// rule list labels: 
-					// wildcard labels: 
-					retval.tree = root_0;
-					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
-
-					root_0 = (Object)adaptor.nil();
-					// 228:34: -> ^( LOOKUP Identifier ( indexes )? )
-					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:37: ^( LOOKUP Identifier ( indexes )? )
-						{
-						Object root_1 = (Object)adaptor.nil();
-						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
-						adaptor.addChild(root_1, stream_Identifier.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:57: ( indexes )?
-						if ( stream_indexes.hasNext() ) {
-							adaptor.addChild(root_1, stream_indexes.nextTree());
-						}
-						stream_indexes.reset();
-
-						adaptor.addChild(root_0, root_1);
-						}
-
-					}
-
-
-					retval.tree = root_0;
-
-					}
-					break;
-				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:6: String ( indexes )?
-					{
-					String213=(Token)match(input,String,FOLLOW_String_in_lookup1832);  
-					stream_String.add(String213);
-
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:13: ( indexes )?
-					int alt43=2;
-					int LA43_0 = input.LA(1);
-					if ( (LA43_0==OBracket) ) {
-						alt43=1;
-					}
-					switch (alt43) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:13: indexes
-							{
-							pushFollow(FOLLOW_indexes_in_lookup1834);
+							pushFollow(FOLLOW_indexes_in_lookup1817);
 							indexes214=indexes();
 							state._fsp--;
 
@@ -5518,7 +5500,7 @@ public class PogoParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: indexes, String
+					// elements: Identifier, indexes
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5528,81 +5510,13 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 229:34: -> ^( LOOKUP String ( indexes )? )
+					// 230:34: -> ^( LOOKUP Identifier ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:37: ^( LOOKUP String ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:37: ^( LOOKUP Identifier ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
-						adaptor.addChild(root_1, stream_String.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:53: ( indexes )?
-						if ( stream_indexes.hasNext() ) {
-							adaptor.addChild(root_1, stream_indexes.nextTree());
-						}
-						stream_indexes.reset();
-
-						adaptor.addChild(root_0, root_1);
-						}
-
-					}
-
-
-					retval.tree = root_0;
-
-					}
-					break;
-				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:6: '(' expression ')' ( indexes )?
-					{
-					char_literal215=(Token)match(input,OParen,FOLLOW_OParen_in_lookup1865);  
-					stream_OParen.add(char_literal215);
-
-					pushFollow(FOLLOW_expression_in_lookup1867);
-					expression216=expression();
-					state._fsp--;
-
-					stream_expression.add(expression216.getTree());
-					char_literal217=(Token)match(input,CParen,FOLLOW_CParen_in_lookup1869);  
-					stream_CParen.add(char_literal217);
-
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:25: ( indexes )?
-					int alt44=2;
-					int LA44_0 = input.LA(1);
-					if ( (LA44_0==OBracket) ) {
-						alt44=1;
-					}
-					switch (alt44) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:25: indexes
-							{
-							pushFollow(FOLLOW_indexes_in_lookup1871);
-							indexes218=indexes();
-							state._fsp--;
-
-							stream_indexes.add(indexes218.getTree());
-							}
-							break;
-
-					}
-
-					// AST REWRITE
-					// elements: expression, indexes
-					// token labels: 
-					// rule labels: retval
-					// token list labels: 
-					// rule list labels: 
-					// wildcard labels: 
-					retval.tree = root_0;
-					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
-
-					root_0 = (Object)adaptor.nil();
-					// 230:34: -> ^( LOOKUP expression ( indexes )? )
-					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:37: ^( LOOKUP expression ( indexes )? )
-						{
-						Object root_1 = (Object)adaptor.nil();
-						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
-						adaptor.addChild(root_1, stream_expression.nextTree());
+						adaptor.addChild(root_1, stream_Identifier.nextNode());
 						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:57: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
@@ -5619,25 +5533,91 @@ public class PogoParser extends Parser {
 
 					}
 					break;
-				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:6: forStatement ( indexes )?
+				case 4 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:6: String ( indexes )?
 					{
-					pushFollow(FOLLOW_forStatement_in_lookup1890);
-					forStatement219=forStatement();
+					String215=(Token)match(input,String,FOLLOW_String_in_lookup1844);  
+					stream_String.add(String215);
+
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:13: ( indexes )?
+					int alt43=2;
+					int LA43_0 = input.LA(1);
+					if ( (LA43_0==OBracket) ) {
+						alt43=1;
+					}
+					switch (alt43) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:13: indexes
+							{
+							pushFollow(FOLLOW_indexes_in_lookup1846);
+							indexes216=indexes();
+							state._fsp--;
+
+							stream_indexes.add(indexes216.getTree());
+							}
+							break;
+
+					}
+
+					// AST REWRITE
+					// elements: indexes, String
+					// token labels: 
+					// rule labels: retval
+					// token list labels: 
+					// rule list labels: 
+					// wildcard labels: 
+					retval.tree = root_0;
+					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+					root_0 = (Object)adaptor.nil();
+					// 231:34: -> ^( LOOKUP String ( indexes )? )
+					{
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:37: ^( LOOKUP String ( indexes )? )
+						{
+						Object root_1 = (Object)adaptor.nil();
+						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
+						adaptor.addChild(root_1, stream_String.nextNode());
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:53: ( indexes )?
+						if ( stream_indexes.hasNext() ) {
+							adaptor.addChild(root_1, stream_indexes.nextTree());
+						}
+						stream_indexes.reset();
+
+						adaptor.addChild(root_0, root_1);
+						}
+
+					}
+
+
+					retval.tree = root_0;
+
+					}
+					break;
+				case 5 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:6: '(' expression ')' ( indexes )?
+					{
+					char_literal217=(Token)match(input,OParen,FOLLOW_OParen_in_lookup1877);  
+					stream_OParen.add(char_literal217);
+
+					pushFollow(FOLLOW_expression_in_lookup1879);
+					expression218=expression();
 					state._fsp--;
 
-					stream_forStatement.add(forStatement219.getTree());
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:19: ( indexes )?
-					int alt45=2;
-					int LA45_0 = input.LA(1);
-					if ( (LA45_0==OBracket) ) {
-						alt45=1;
+					stream_expression.add(expression218.getTree());
+					char_literal219=(Token)match(input,CParen,FOLLOW_CParen_in_lookup1881);  
+					stream_CParen.add(char_literal219);
+
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:25: ( indexes )?
+					int alt44=2;
+					int LA44_0 = input.LA(1);
+					if ( (LA44_0==OBracket) ) {
+						alt44=1;
 					}
-					switch (alt45) {
+					switch (alt44) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:19: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:25: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1892);
+							pushFollow(FOLLOW_indexes_in_lookup1883);
 							indexes220=indexes();
 							state._fsp--;
 
@@ -5648,7 +5628,7 @@ public class PogoParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: forStatement, indexes
+					// elements: indexes, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5658,14 +5638,76 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 231:30: -> ^( LOOKUP forStatement ( indexes )? )
+					// 232:34: -> ^( LOOKUP expression ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:33: ^( LOOKUP forStatement ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:37: ^( LOOKUP expression ( indexes )? )
+						{
+						Object root_1 = (Object)adaptor.nil();
+						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
+						adaptor.addChild(root_1, stream_expression.nextTree());
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:57: ( indexes )?
+						if ( stream_indexes.hasNext() ) {
+							adaptor.addChild(root_1, stream_indexes.nextTree());
+						}
+						stream_indexes.reset();
+
+						adaptor.addChild(root_0, root_1);
+						}
+
+					}
+
+
+					retval.tree = root_0;
+
+					}
+					break;
+				case 6 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:6: forStatement ( indexes )?
+					{
+					pushFollow(FOLLOW_forStatement_in_lookup1902);
+					forStatement221=forStatement();
+					state._fsp--;
+
+					stream_forStatement.add(forStatement221.getTree());
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:19: ( indexes )?
+					int alt45=2;
+					int LA45_0 = input.LA(1);
+					if ( (LA45_0==OBracket) ) {
+						alt45=1;
+					}
+					switch (alt45) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:19: indexes
+							{
+							pushFollow(FOLLOW_indexes_in_lookup1904);
+							indexes222=indexes();
+							state._fsp--;
+
+							stream_indexes.add(indexes222.getTree());
+							}
+							break;
+
+					}
+
+					// AST REWRITE
+					// elements: indexes, forStatement
+					// token labels: 
+					// rule labels: retval
+					// token list labels: 
+					// rule list labels: 
+					// wildcard labels: 
+					retval.tree = root_0;
+					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+					root_0 = (Object)adaptor.nil();
+					// 233:30: -> ^( LOOKUP forStatement ( indexes )? )
+					{
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:33: ^( LOOKUP forStatement ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_forStatement.nextTree());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:55: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:55: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -5682,14 +5724,14 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:6: repeatStatement ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:6: repeatStatement ( indexes )?
 					{
-					pushFollow(FOLLOW_repeatStatement_in_lookup1913);
-					repeatStatement221=repeatStatement();
+					pushFollow(FOLLOW_repeatStatement_in_lookup1925);
+					repeatStatement223=repeatStatement();
 					state._fsp--;
 
-					stream_repeatStatement.add(repeatStatement221.getTree());
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:22: ( indexes )?
+					stream_repeatStatement.add(repeatStatement223.getTree());
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:22: ( indexes )?
 					int alt46=2;
 					int LA46_0 = input.LA(1);
 					if ( (LA46_0==OBracket) ) {
@@ -5697,13 +5739,13 @@ public class PogoParser extends Parser {
 					}
 					switch (alt46) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:22: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:22: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1915);
-							indexes222=indexes();
+							pushFollow(FOLLOW_indexes_in_lookup1927);
+							indexes224=indexes();
 							state._fsp--;
 
-							stream_indexes.add(indexes222.getTree());
+							stream_indexes.add(indexes224.getTree());
 							}
 							break;
 
@@ -5720,14 +5762,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 232:32: -> ^( LOOKUP repeatStatement ( indexes )? )
+					// 234:32: -> ^( LOOKUP repeatStatement ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:35: ^( LOOKUP repeatStatement ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:35: ^( LOOKUP repeatStatement ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_repeatStatement.nextTree());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:60: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:60: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -5744,14 +5786,14 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:6: whileStatement ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:235:6: whileStatement ( indexes )?
 					{
-					pushFollow(FOLLOW_whileStatement_in_lookup1935);
-					whileStatement223=whileStatement();
+					pushFollow(FOLLOW_whileStatement_in_lookup1947);
+					whileStatement225=whileStatement();
 					state._fsp--;
 
-					stream_whileStatement.add(whileStatement223.getTree());
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:21: ( indexes )?
+					stream_whileStatement.add(whileStatement225.getTree());
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:235:21: ( indexes )?
 					int alt47=2;
 					int LA47_0 = input.LA(1);
 					if ( (LA47_0==OBracket) ) {
@@ -5759,20 +5801,20 @@ public class PogoParser extends Parser {
 					}
 					switch (alt47) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:21: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:235:21: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup1937);
-							indexes224=indexes();
+							pushFollow(FOLLOW_indexes_in_lookup1949);
+							indexes226=indexes();
 							state._fsp--;
 
-							stream_indexes.add(indexes224.getTree());
+							stream_indexes.add(indexes226.getTree());
 							}
 							break;
 
 					}
 
 					// AST REWRITE
-					// elements: whileStatement, indexes
+					// elements: indexes, whileStatement
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5782,14 +5824,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 233:31: -> ^( LOOKUP whileStatement ( indexes )? )
+					// 235:31: -> ^( LOOKUP whileStatement ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:34: ^( LOOKUP whileStatement ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:235:34: ^( LOOKUP whileStatement ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_whileStatement.nextTree());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:58: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:235:58: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -5834,28 +5876,28 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "indexes"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:236:1: indexes : ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:238:1: indexes : ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) ;
 	public final PogoParser.indexes_return indexes() throws RecognitionException {
 		PogoParser.indexes_return retval = new PogoParser.indexes_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token char_literal225=null;
 		Token char_literal227=null;
-		ParserRuleReturnScope expression226 =null;
+		Token char_literal229=null;
+		ParserRuleReturnScope expression228 =null;
 
-		Object char_literal225_tree=null;
 		Object char_literal227_tree=null;
+		Object char_literal229_tree=null;
 		RewriteRuleTokenStream stream_CBracket=new RewriteRuleTokenStream(adaptor,"token CBracket");
 		RewriteRuleTokenStream stream_OBracket=new RewriteRuleTokenStream(adaptor,"token OBracket");
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:237:3: ( ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:237:6: ( '[' expression ']' )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:239:3: ( ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:239:6: ( '[' expression ']' )+
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:237:6: ( '[' expression ']' )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:239:6: ( '[' expression ']' )+
 			int cnt49=0;
 			loop49:
 			while (true) {
@@ -5867,18 +5909,18 @@ public class PogoParser extends Parser {
 
 				switch (alt49) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:237:7: '[' expression ']'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:239:7: '[' expression ']'
 					{
-					char_literal225=(Token)match(input,OBracket,FOLLOW_OBracket_in_indexes1965);  
-					stream_OBracket.add(char_literal225);
+					char_literal227=(Token)match(input,OBracket,FOLLOW_OBracket_in_indexes1977);  
+					stream_OBracket.add(char_literal227);
 
-					pushFollow(FOLLOW_expression_in_indexes1967);
-					expression226=expression();
+					pushFollow(FOLLOW_expression_in_indexes1979);
+					expression228=expression();
 					state._fsp--;
 
-					stream_expression.add(expression226.getTree());
-					char_literal227=(Token)match(input,CBracket,FOLLOW_CBracket_in_indexes1969);  
-					stream_CBracket.add(char_literal227);
+					stream_expression.add(expression228.getTree());
+					char_literal229=(Token)match(input,CBracket,FOLLOW_CBracket_in_indexes1981);  
+					stream_CBracket.add(char_literal229);
 
 					}
 					break;
@@ -5902,9 +5944,9 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 237:28: -> ^( INDEXES ( expression )+ )
+			// 239:28: -> ^( INDEXES ( expression )+ )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:237:31: ^( INDEXES ( expression )+ )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:239:31: ^( INDEXES ( expression )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(INDEXES, "INDEXES"), root_1);
@@ -5950,201 +5992,201 @@ public class PogoParser extends Parser {
 
 	public static final BitSet FOLLOW_block_in_parse151 = new BitSet(new long[]{0x0000000000000000L});
 	public static final BitSet FOLLOW_EOF_in_parse153 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_statement_in_block171 = new BitSet(new long[]{0x03140C66041E0082L,0x000000002C131E34L});
-	public static final BitSet FOLLOW_functionDecl_in_block175 = new BitSet(new long[]{0x03140C66041E0082L,0x000000002C131E34L});
-	public static final BitSet FOLLOW_Return_in_block180 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_expression_in_block182 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-	public static final BitSet FOLLOW_93_in_block184 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_assignment_in_statement226 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-	public static final BitSet FOLLOW_93_in_statement228 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_functionCall_in_statement241 = new BitSet(new long[]{0x0000000000000000L,0x0000000020000000L});
-	public static final BitSet FOLLOW_93_in_statement243 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_statement_in_block171 = new BitSet(new long[]{0x062818A6041E0082L,0x00000000B0263C68L});
+	public static final BitSet FOLLOW_functionDecl_in_block175 = new BitSet(new long[]{0x062818A6041E0082L,0x00000000B0263C68L});
+	public static final BitSet FOLLOW_Return_in_block180 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_expression_in_block182 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+	public static final BitSet FOLLOW_95_in_block184 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_assignment_in_statement226 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+	public static final BitSet FOLLOW_95_in_statement228 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionCall_in_statement241 = new BitSet(new long[]{0x0000000000000000L,0x0000000080000000L});
+	public static final BitSet FOLLOW_95_in_statement243 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_ifStatement_in_statement255 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_forStatement_in_statement262 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_whileStatement_in_statement269 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_repeatStatement_in_statement276 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_assignment290 = new BitSet(new long[]{0x2000000000000100L});
+	public static final BitSet FOLLOW_Identifier_in_assignment290 = new BitSet(new long[]{0x4000000000000100L});
 	public static final BitSet FOLLOW_indexes_in_assignment292 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_Assign_in_assignment295 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Assign_in_assignment295 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_assignment297 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_functionCall331 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall333 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Identifier_in_functionCall331 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall333 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_functionCall335 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall338 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Println_in_functionCall356 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall358 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Println_in_functionCall356 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall358 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_functionCall360 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall363 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Print_in_functionCall382 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall384 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Print_in_functionCall382 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall384 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_functionCall386 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall388 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Assert_in_functionCall409 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall411 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Assert_in_functionCall409 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall411 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_functionCall413 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall415 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Size_in_functionCall435 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall437 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Size_in_functionCall435 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall437 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_functionCall439 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall441 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_primitiveCall_in_functionCall463 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_transformCall_in_functionCall470 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_mathCall_in_functionCall477 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Ellipse_in_primitiveCall497 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall499 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Ellipse_in_primitiveCall497 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall499 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall501 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall504 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Line_in_primitiveCall524 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall526 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Line_in_primitiveCall524 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall526 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall528 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall531 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Rect_in_primitiveCall551 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall553 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Rect_in_primitiveCall551 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall553 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall555 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall558 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Curve_in_primitiveCall578 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall580 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Curve_in_primitiveCall578 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall580 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall582 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall585 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Polygon_in_primitiveCall603 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall605 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Polygon_in_primitiveCall603 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall605 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall607 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall610 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Move_in_transformCall641 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall643 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Move_in_transformCall641 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall643 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_transformCall645 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall648 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Copy_in_transformCall667 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall669 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Copy_in_transformCall667 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall669 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_transformCall671 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall673 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Rotate_in_transformCall690 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall692 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Rotate_in_transformCall690 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall692 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_transformCall694 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall697 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Fill_in_transformCall714 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall716 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Fill_in_transformCall714 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall716 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_transformCall718 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall721 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Stroke_in_transformCall738 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall740 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Stroke_in_transformCall738 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall740 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_transformCall742 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall745 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_NoFill_in_transformCall762 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall764 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_NoFill_in_transformCall762 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall764 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_transformCall766 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall768 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_NoStroke_in_transformCall784 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall786 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_NoStroke_in_transformCall784 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall786 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_transformCall788 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall790 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Weight_in_transformCall806 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall808 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Weight_in_transformCall806 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall808 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_transformCall810 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall813 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Hide_in_transformCall830 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall832 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Hide_in_transformCall830 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall832 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_transformCall834 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall836 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Group_in_transformCall852 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall854 = new BitSet(new long[]{0x6F140466440E6480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Group_in_transformCall852 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall854 = new BitSet(new long[]{0xDE2808E6440E6480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_exprList_in_transformCall856 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall859 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Cosine_in_mathCall890 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall892 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Cosine_in_mathCall890 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall892 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_mathCall894 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall896 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Sine_in_mathCall915 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall917 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Sine_in_mathCall915 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall917 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_mathCall919 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall921 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_ifStat_in_ifStatement955 = new BitSet(new long[]{0x0000000018000000L});
 	public static final BitSet FOLLOW_elseIfStat_in_ifStatement957 = new BitSet(new long[]{0x0000000018000000L});
 	public static final BitSet FOLLOW_elseStat_in_ifStatement960 = new BitSet(new long[]{0x0000000010000000L});
 	public static final BitSet FOLLOW_End_in_ifStatement963 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_If_in_ifStat992 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_If_in_ifStat992 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_ifStat994 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_Do_in_ifStat996 = new BitSet(new long[]{0x03140C66041E0080L,0x000000002C131E34L});
+	public static final BitSet FOLLOW_Do_in_ifStat996 = new BitSet(new long[]{0x062818A6041E0080L,0x00000000B0263C68L});
 	public static final BitSet FOLLOW_block_in_ifStat998 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Else_in_elseIfStat1022 = new BitSet(new long[]{0x0000080000000000L});
-	public static final BitSet FOLLOW_If_in_elseIfStat1024 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Else_in_elseIfStat1022 = new BitSet(new long[]{0x0000100000000000L});
+	public static final BitSet FOLLOW_If_in_elseIfStat1024 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_elseIfStat1026 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_Do_in_elseIfStat1028 = new BitSet(new long[]{0x03140C66041E0080L,0x000000002C131E34L});
+	public static final BitSet FOLLOW_Do_in_elseIfStat1028 = new BitSet(new long[]{0x062818A6041E0080L,0x00000000B0263C68L});
 	public static final BitSet FOLLOW_block_in_elseIfStat1030 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_Else_in_elseStat1054 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_Do_in_elseStat1056 = new BitSet(new long[]{0x03140C66041E0080L,0x000000002C131E34L});
+	public static final BitSet FOLLOW_Do_in_elseStat1056 = new BitSet(new long[]{0x062818A6041E0080L,0x00000000B0263C68L});
 	public static final BitSet FOLLOW_block_in_elseStat1058 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Def_in_functionDecl1080 = new BitSet(new long[]{0x0000040000000000L});
-	public static final BitSet FOLLOW_Identifier_in_functionDecl1082 = new BitSet(new long[]{0x4000000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionDecl1084 = new BitSet(new long[]{0x0000040000004000L});
+	public static final BitSet FOLLOW_Def_in_functionDecl1080 = new BitSet(new long[]{0x0000080000000000L});
+	public static final BitSet FOLLOW_Identifier_in_functionDecl1082 = new BitSet(new long[]{0x8000000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionDecl1084 = new BitSet(new long[]{0x0000080000004000L});
 	public static final BitSet FOLLOW_idList_in_functionDecl1086 = new BitSet(new long[]{0x0000000000004000L});
 	public static final BitSet FOLLOW_CParen_in_functionDecl1089 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_Do_in_functionDecl1091 = new BitSet(new long[]{0x03140C66141E0080L,0x000000002C131E34L});
+	public static final BitSet FOLLOW_Do_in_functionDecl1091 = new BitSet(new long[]{0x062818A6141E0080L,0x00000000B0263C68L});
 	public static final BitSet FOLLOW_block_in_functionDecl1093 = new BitSet(new long[]{0x0000000010000000L});
 	public static final BitSet FOLLOW_End_in_functionDecl1095 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_For_in_forStatement1117 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_For_in_forStatement1117 = new BitSet(new long[]{0x0000080000000000L});
 	public static final BitSet FOLLOW_Identifier_in_forStatement1119 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_Assign_in_forStatement1121 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Assign_in_forStatement1121 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_forStatement1123 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_Do_in_forStatement1125 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Do_in_forStatement1125 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_forStatement1127 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_Do_in_forStatement1129 = new BitSet(new long[]{0x03140C66141E0080L,0x000000002C131E34L});
+	public static final BitSet FOLLOW_Do_in_forStatement1129 = new BitSet(new long[]{0x062818A6141E0080L,0x00000000B0263C68L});
 	public static final BitSet FOLLOW_block_in_forStatement1131 = new BitSet(new long[]{0x0000000010000000L});
 	public static final BitSet FOLLOW_End_in_forStatement1133 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Repeat_in_repeatStatement1166 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_Repeat_in_repeatStatement1166 = new BitSet(new long[]{0x0000080000000000L});
 	public static final BitSet FOLLOW_Identifier_in_repeatStatement1168 = new BitSet(new long[]{0x0000000000000100L});
-	public static final BitSet FOLLOW_Assign_in_repeatStatement1170 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Assign_in_repeatStatement1170 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_repeatStatement1172 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_Do_in_repeatStatement1174 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement1176 = new BitSet(new long[]{0x0000000000800000L,0x0000000040000000L});
-	public static final BitSet FOLLOW_94_in_repeatStatement1179 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement1181 = new BitSet(new long[]{0x0000000000800000L,0x0000000040000000L});
-	public static final BitSet FOLLOW_Do_in_repeatStatement1185 = new BitSet(new long[]{0x03140C66141E0080L,0x000000002C131E34L});
+	public static final BitSet FOLLOW_Do_in_repeatStatement1174 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_expression_in_repeatStatement1176 = new BitSet(new long[]{0x0000000000800000L,0x0000000100000000L});
+	public static final BitSet FOLLOW_96_in_repeatStatement1179 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_expression_in_repeatStatement1181 = new BitSet(new long[]{0x0000000000800000L,0x0000000100000000L});
+	public static final BitSet FOLLOW_Do_in_repeatStatement1185 = new BitSet(new long[]{0x062818A6141E0080L,0x00000000B0263C68L});
 	public static final BitSet FOLLOW_block_in_repeatStatement1187 = new BitSet(new long[]{0x0000000010000000L});
 	public static final BitSet FOLLOW_End_in_repeatStatement1189 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_While_in_whileStatement1217 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_While_in_whileStatement1217 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_whileStatement1219 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_Do_in_whileStatement1221 = new BitSet(new long[]{0x03140C66141E0080L,0x000000002C131E34L});
+	public static final BitSet FOLLOW_Do_in_whileStatement1221 = new BitSet(new long[]{0x062818A6141E0080L,0x00000000B0263C68L});
 	public static final BitSet FOLLOW_block_in_whileStatement1223 = new BitSet(new long[]{0x0000000010000000L});
 	public static final BitSet FOLLOW_End_in_whileStatement1225 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_Identifier_in_idList1249 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_Comma_in_idList1252 = new BitSet(new long[]{0x0000040000000000L});
+	public static final BitSet FOLLOW_Comma_in_idList1252 = new BitSet(new long[]{0x0000080000000000L});
 	public static final BitSet FOLLOW_Identifier_in_idList1254 = new BitSet(new long[]{0x0000000000008002L});
 	public static final BitSet FOLLOW_expression_in_exprList1279 = new BitSet(new long[]{0x0000000000008002L});
-	public static final BitSet FOLLOW_Comma_in_exprList1282 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Comma_in_exprList1282 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_exprList1284 = new BitSet(new long[]{0x0000000000008002L});
 	public static final BitSet FOLLOW_condExpr_in_expression1309 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_orExpr_in_condExpr1324 = new BitSet(new long[]{0x0000100000000002L,0x0000000000000040L});
-	public static final BitSet FOLLOW_QMark_in_condExpr1339 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_orExpr_in_condExpr1324 = new BitSet(new long[]{0x0000200000000002L,0x0000000000000080L});
+	public static final BitSet FOLLOW_QMark_in_condExpr1339 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_condExpr1343 = new BitSet(new long[]{0x0000000000800000L});
-	public static final BitSet FOLLOW_Do_in_condExpr1345 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_Do_in_condExpr1345 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_condExpr1349 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_In_in_condExpr1372 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
+	public static final BitSet FOLLOW_In_in_condExpr1372 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
 	public static final BitSet FOLLOW_expression_in_condExpr1374 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_andExpr_in_orExpr1426 = new BitSet(new long[]{0x0000000000000002L,0x0000000080000000L});
-	public static final BitSet FOLLOW_95_in_orExpr1429 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_andExpr_in_orExpr1432 = new BitSet(new long[]{0x0000000000000002L,0x0000000080000000L});
-	public static final BitSet FOLLOW_equExpr_in_andExpr1448 = new BitSet(new long[]{0x0000000000000002L,0x0000000010000000L});
-	public static final BitSet FOLLOW_92_in_andExpr1451 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_equExpr_in_andExpr1454 = new BitSet(new long[]{0x0000000000000002L,0x0000000010000000L});
-	public static final BitSet FOLLOW_relExpr_in_equExpr1470 = new BitSet(new long[]{0x0080000020000002L});
-	public static final BitSet FOLLOW_set_in_equExpr1473 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_relExpr_in_equExpr1482 = new BitSet(new long[]{0x0080000020000002L});
-	public static final BitSet FOLLOW_addExpr_in_relExpr1498 = new BitSet(new long[]{0x0003001800000002L});
-	public static final BitSet FOLLOW_set_in_relExpr1501 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_addExpr_in_relExpr1518 = new BitSet(new long[]{0x0003001800000002L});
-	public static final BitSet FOLLOW_mulExpr_in_addExpr1534 = new BitSet(new long[]{0x0000000000000022L,0x0000000000200000L});
-	public static final BitSet FOLLOW_set_in_addExpr1537 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_mulExpr_in_addExpr1546 = new BitSet(new long[]{0x0000000000000022L,0x0000000000200000L});
-	public static final BitSet FOLLOW_powExpr_in_mulExpr1562 = new BitSet(new long[]{0x0028000000400002L});
-	public static final BitSet FOLLOW_set_in_mulExpr1565 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_powExpr_in_mulExpr1578 = new BitSet(new long[]{0x0028000000400002L});
-	public static final BitSet FOLLOW_unaryExpr_in_powExpr1594 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
-	public static final BitSet FOLLOW_Pow_in_powExpr1597 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_unaryExpr_in_powExpr1600 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000008L});
-	public static final BitSet FOLLOW_Subtract_in_unaryExpr1618 = new BitSet(new long[]{0x6F140466040E2480L,0x000000000C1B1635L});
+	public static final BitSet FOLLOW_andExpr_in_orExpr1426 = new BitSet(new long[]{0x0000000000000002L,0x0000000200000000L});
+	public static final BitSet FOLLOW_97_in_orExpr1429 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_andExpr_in_orExpr1432 = new BitSet(new long[]{0x0000000000000002L,0x0000000200000000L});
+	public static final BitSet FOLLOW_equExpr_in_andExpr1448 = new BitSet(new long[]{0x0000000000000002L,0x0000000040000000L});
+	public static final BitSet FOLLOW_94_in_andExpr1451 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_equExpr_in_andExpr1454 = new BitSet(new long[]{0x0000000000000002L,0x0000000040000000L});
+	public static final BitSet FOLLOW_relExpr_in_equExpr1470 = new BitSet(new long[]{0x0100000020000002L});
+	public static final BitSet FOLLOW_set_in_equExpr1473 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_relExpr_in_equExpr1482 = new BitSet(new long[]{0x0100000020000002L});
+	public static final BitSet FOLLOW_addExpr_in_relExpr1498 = new BitSet(new long[]{0x0006001800000002L});
+	public static final BitSet FOLLOW_set_in_relExpr1501 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_addExpr_in_relExpr1518 = new BitSet(new long[]{0x0006001800000002L});
+	public static final BitSet FOLLOW_mulExpr_in_addExpr1534 = new BitSet(new long[]{0x0000000000000022L,0x0000000000400000L});
+	public static final BitSet FOLLOW_set_in_addExpr1537 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_mulExpr_in_addExpr1546 = new BitSet(new long[]{0x0000000000000022L,0x0000000000400000L});
+	public static final BitSet FOLLOW_powExpr_in_mulExpr1562 = new BitSet(new long[]{0x0050000000400002L});
+	public static final BitSet FOLLOW_set_in_mulExpr1565 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_powExpr_in_mulExpr1578 = new BitSet(new long[]{0x0050000000400002L});
+	public static final BitSet FOLLOW_unaryExpr_in_powExpr1594 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+	public static final BitSet FOLLOW_Pow_in_powExpr1597 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_unaryExpr_in_powExpr1600 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000010L});
+	public static final BitSet FOLLOW_Subtract_in_unaryExpr1618 = new BitSet(new long[]{0xDE2808E6040E2480L,0x0000000038362C6AL});
 	public static final BitSet FOLLOW_atom_in_unaryExpr1620 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Excl_in_unaryExpr1635 = new BitSet(new long[]{0x6F140466040E2480L,0x000000000C1B1635L});
+	public static final BitSet FOLLOW_Excl_in_unaryExpr1635 = new BitSet(new long[]{0xDE2808E6040E2480L,0x0000000038362C6AL});
 	public static final BitSet FOLLOW_atom_in_unaryExpr1637 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_atom_in_unaryExpr1652 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_Number_in_atom1666 = new BitSet(new long[]{0x0000000000000002L});
@@ -6153,28 +6195,30 @@ public class PogoParser extends Parser {
 	public static final BitSet FOLLOW_lookup_in_atom1687 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_COLOR_CONSTANT_in_atom1693 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_PI_CONSTANT_in_atom1699 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OBracket_in_list1713 = new BitSet(new long[]{0x6F140466440E3480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_exprList_in_list1715 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CBracket_in_list1718 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_functionCall_in_lookup1741 = new BitSet(new long[]{0x2000000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1743 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_list_in_lookup1768 = new BitSet(new long[]{0x2000000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1770 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_lookup1803 = new BitSet(new long[]{0x2000000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1805 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_String_in_lookup1832 = new BitSet(new long[]{0x2000000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1834 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OParen_in_lookup1865 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_expression_in_lookup1867 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_CParen_in_lookup1869 = new BitSet(new long[]{0x2000000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1871 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_forStatement_in_lookup1890 = new BitSet(new long[]{0x2000000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1892 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_repeatStatement_in_lookup1913 = new BitSet(new long[]{0x2000000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1915 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_whileStatement_in_lookup1935 = new BitSet(new long[]{0x2000000000000002L});
-	public static final BitSet FOLLOW_indexes_in_lookup1937 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OBracket_in_indexes1965 = new BitSet(new long[]{0x6F140466440E2480L,0x000000000C3B1635L});
-	public static final BitSet FOLLOW_expression_in_indexes1967 = new BitSet(new long[]{0x0000000000001000L});
-	public static final BitSet FOLLOW_CBracket_in_indexes1969 = new BitSet(new long[]{0x2000000000000002L});
+	public static final BitSet FOLLOW_WIDTH_CONSTANT_in_atom1705 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_HEIGHT_CONSTANT_in_atom1711 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OBracket_in_list1725 = new BitSet(new long[]{0xDE2808E6440E3480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_exprList_in_list1727 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_CBracket_in_list1730 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionCall_in_lookup1753 = new BitSet(new long[]{0x4000000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1755 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_list_in_lookup1780 = new BitSet(new long[]{0x4000000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1782 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_lookup1815 = new BitSet(new long[]{0x4000000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1817 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_String_in_lookup1844 = new BitSet(new long[]{0x4000000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1846 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OParen_in_lookup1877 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_expression_in_lookup1879 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_CParen_in_lookup1881 = new BitSet(new long[]{0x4000000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1883 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_forStatement_in_lookup1902 = new BitSet(new long[]{0x4000000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1904 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_repeatStatement_in_lookup1925 = new BitSet(new long[]{0x4000000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1927 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_whileStatement_in_lookup1947 = new BitSet(new long[]{0x4000000000000002L});
+	public static final BitSet FOLLOW_indexes_in_lookup1949 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OBracket_in_indexes1977 = new BitSet(new long[]{0xDE2808E6440E2480L,0x0000000038762C6AL});
+	public static final BitSet FOLLOW_expression_in_indexes1979 = new BitSet(new long[]{0x0000000000001000L});
+	public static final BitSet FOLLOW_CBracket_in_indexes1981 = new BitSet(new long[]{0x4000000000000002L});
 }

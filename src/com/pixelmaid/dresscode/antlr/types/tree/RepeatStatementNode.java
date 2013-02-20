@@ -14,15 +14,18 @@ public class RepeatStatementNode implements DCNode {
     private DCNode block;
     protected Scope scope;
     private DCNode returnStatement;
+    private boolean lookup;
 
 
-    public RepeatStatementNode(String id, DCNode start, DCNode stop, DCNode increment, DCNode bl, Scope s) {
+    public RepeatStatementNode(String id, DCNode start, DCNode stop, DCNode increment, DCNode bl, Scope s, boolean l) {
         identifier = id;
         startExpr = start;
         stopExpr = stop;
         incrementExpr=increment;
         block = bl;
         scope = s;
+        lookup = l;
+        System.out.println("lookup for repeat node ="+l);
     }
     
     public void addReturn(DCNode stat) {
@@ -42,18 +45,20 @@ public class RepeatStatementNode implements DCNode {
         for(double i = start; i <= stop; i+=increment) {
             scope.assign(identifier, new VarType(i));
             VarType returnValue = block.evaluate();
-           if(returnValue != VarType.VOID ) {
-                return returnValue;
-                
-            }
-            else if (returnValue.isDrawable()){
-            	Drawable d2 = returnValue.asDrawable();
+           
+          if (returnValue.isDrawable()&&lookup){
+            	 Drawable d2 = returnValue.asDrawable();
             	 d.addToGroup(d2);
             	 d2.removeFromCanvas();
             	 drawAdded=true;
-            	 // System.out.println("added drawable in for loop at+"+i);
+            	 //System.out.println("added drawable in for loop at+"+i);
           	  
             }
+            /*
+            else if(returnValue != VarType.VOID ) {
+                return returnValue;
+                
+            }*/
         }
      // return VOID or returnStatement.evaluate() if it's not null
    	 if(returnStatement ==null){

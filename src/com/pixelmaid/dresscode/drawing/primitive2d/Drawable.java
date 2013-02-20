@@ -211,11 +211,17 @@ public class Drawable {
 	//sets whether or not the drawable has a fill
 	public void doFill(Boolean f){
 		doFill=f;
+		for(int i=0;i<this.children.size();i++){
+			this.childAt(i).doFill(f);
+		}
 	}
 	
 	//sets whether or not the drawable has a stroke
 	public void doStroke(Boolean f){
 		doStroke=f;
+		for(int i=0;i<this.children.size();i++){
+			this.childAt(i).doStroke(f);
+		}
 	}
 	
 	//returns if the object has a stroke
@@ -264,11 +270,17 @@ public class Drawable {
 	//resets origin to new point resulting in the moving of the object
 	public void moveTo(double x, double y) {
 		this.origin=new Point(x,y);
+		if(this.getParent()!=null){
+			this.parent.resetOrigin();
+		}
 	}
 	
 	//sets the rotation to a new angle (in degrees)
 	public void rotate(double theta) {
 		this.rotation=theta;
+		if(this.getParent()!=null){
+			this.parent.resetOrigin();
+		}
 		//System.out.println("when set, rotation ="+this.rotation);
 
 	}
@@ -282,12 +294,18 @@ public class Drawable {
 	//scales the object on the x axis
 	public void scaleX(double x) {
 		this.scaleX = x;
+		if(this.getParent()!=null){
+			this.parent.resetOrigin();
+		}
 
 	}
 
 	//scales the object on the x axis
 	public void scaleY(double y) {
 		this.scaleY = y;
+		if(this.getParent()!=null){
+			this.parent.resetOrigin();
+		}
 
 	}
 	
@@ -307,6 +325,9 @@ public class Drawable {
 	public void scale(double s) {
 		this.scaleX = s;
 		this.scaleY = s;
+		if(this.getParent()!=null){
+			//this.parent.resetOrigin();
+		}
 	}	
 	
 	// TODO TEST COPY
@@ -376,7 +397,7 @@ public class Drawable {
 	protected void setAbsolute() {
 			if(this.parent!=null){
 				this.origin= this.origin.add(this.parent.getOrigin()); //add parent's origin to its origin
-				this.rotate(this.getRotation()+this.getParent().getRotation()); //adds parent's rotation to its rotation
+				this.rotation = (this.getRotation()+this.getParent().getRotation()); //adds parent's rotation to its rotation
 			}
 	}
 	
@@ -408,8 +429,9 @@ public class Drawable {
 		
 		
 		this.add(d);
-		ArrayList<Point> origins = new ArrayList<Point>();
 		
+		
+		ArrayList<Point> origins = new ArrayList<Point>();
 		if(this.children.size()>1){
 			for(int i=0;i<this.children.size();i++){
 				origins.add(this.children.get(i).getOrigin());
@@ -423,6 +445,24 @@ public class Drawable {
 
 		return this;
 
+	}
+	
+	//resets the origin when a member of a group is moved, added, adjusted or removed
+	public void resetOrigin(){
+		for(int i=0;i<this.children.size();i++){
+			this.children.get(i).setAbsolute();
+		}
+		ArrayList<Point> origins = new ArrayList<Point>();
+		if(this.children.size()>1){
+			for(int i=0;i<this.children.size();i++){
+				origins.add(this.children.get(i).getOrigin());
+			}
+			this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+		}
+		
+		else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
+			this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
+		}
 	}
 
 	//removes child and resets origin of drawable to accomodate (must be overridden by subclasses) returns removed child
@@ -493,6 +533,10 @@ public class Drawable {
 		//returns the children of the drawable
 		public ArrayList<Drawable> getChildren(){
 			return this.children;
+		}
+		//returns child at a specific index- need to decide if should return a copy or child itself
+		public Drawable childAt(int i){
+			return this.children.get(i);
 		}
 		
 		

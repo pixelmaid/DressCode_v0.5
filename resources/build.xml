@@ -4,6 +4,8 @@
        DressCode build file
     </description>
 
+	 <fileset id="exampleFileSet" dir="${examples.dir}"/>
+	   
 	<path id="classpath">
 		<fileset dir="${classpath.local.location}" includes="${classpath.local.include}" />
 	</path>
@@ -24,9 +26,9 @@
             basedir="${build}"/>
     </target> -->
 
-	<target name="dist" depends="clean, compile" description="generate the distribution" >
+	<target name="dist" depends="clean, compile, example" description="generate the distribution" >
 		<mkdir dir="${build.dir}/jar"/>
-		<jar destfile="${build.dir}/jar/${app.name}.jar" basedir="${classes.dir}">
+		<jar destfile="${build.dir}/jar/${app.name}" basedir="${classes.dir}">
 			<manifest>
 				<attribute name="Main-Class" value="${main.class}"/>
 			</manifest>
@@ -35,6 +37,7 @@
 					
 	
 		</jar>
+		
 	</target>
 
 	<!-- ========== Init Target ====================================
@@ -67,6 +70,20 @@
 		</javac>
 
 	</target>
+	
+	<!-- ========== Example Target =================================
+	      copies all examples into example directory
+	    -->
+	<target name="example">
+	    
+		<mkdir dir="${build.dir}/examples"/>
+
+		<copy todir="${build.dir}/examples">
+	      <fileset refid="exampleFileSet"/>
+	    </copy>
+		
+	  </target>
+	 
 
 	<!-- ========== Clean Target ====================================
         The clean target deletes all files from the build directory

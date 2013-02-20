@@ -1,11 +1,14 @@
 package com.pixelmaid.dresscode.app;
 
 
+import java.awt.Font;
 import java.awt.event.*;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+
+import jsyntaxpane.DefaultSyntaxKit;
 
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
@@ -21,6 +24,7 @@ import com.pixelmaid.dresscode.antlr.PogoTreeWalker;
 import com.pixelmaid.dresscode.antlr.types.tree.BlockNode;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 
+
 public class CodeField extends JEditorPane implements DocumentListener, KeyListener{
 
     /**
@@ -30,11 +34,12 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
  
     public CodeField() {
         super();
+       
         this.setEditable(true);
         this.getDocument().addDocumentListener(this);
         JScrollPane scrollPane = new JScrollPane(this);
         this.addKeyListener(this);
-        
+   
        /* int condition = JComponent.WHEN_FOCUSED;
         InputMap iMap = this.getInputMap(condition);
         ActionMap aMap = this.getActionMap();
@@ -45,8 +50,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
            @Override
            public void actionPerformed(ActionEvent arg0) {*/
         	
-        
- 
+      
     }
     
     private void updateCanvas(){

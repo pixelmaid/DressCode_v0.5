@@ -1,0 +1,55 @@
+fill(rect(300,350,700),60,60,60);
+
+r1 = ring(300,350,20,150);
+rMaster = ellipse(300,350,300);
+
+
+r1 = rMaster+r1;
+r2 = ring(300,350,20,100);
+r3 = ring(300,350,10,50);
+
+fill(r1,BLUE);
+fill(r3,BLUE);
+weight(r1,4);
+weight(r3,2);
+weight(r2,1.5);
+
+def ring(x1,y1,n,dog)
+   e = ellipse(x1,y1,10);
+     repeat i=0:n:
+        a = flower(0,0,5);
+        r = 360/n*i;
+        x = cos(r)*dog;
+        y = sin(r)*dog;
+        move(a,x+x1,y+y1);
+        rotate(a,r);
+        e = e+a;
+    end
+    return e;
+    
+end
+
+def flower(x,y,n):
+ e = ellipse(x,y,10);
+ repeat i=0:n:
+   r = 360/n*i;
+   println("r="+r);
+   e = e+petal(x,y,r);
+ end
+ return e;
+end
+
+
+def petal(x,y,r):
+   a= ellipse(x,y,100,10);
+   rotate(a,r);
+   return a;
+end
+
+
+
+
+
+
+
+

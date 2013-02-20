@@ -3,6 +3,7 @@ package com.pixelmaid.dresscode.app;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedReader;
@@ -13,11 +14,14 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.JButton;
+import javax.swing.JEditorPane;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JTextPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -35,14 +39,17 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	  public static boolean RIGHT_TO_LEFT = false;
 	  public static JFileChooser fc;
 	  public static JButton openButton, saveButton;
-	  
+	  public static JTextPane output;
+	  public static File homeDir ;
 	  public Manager(String title) {
 		  super(title);
 	  }
 	  
 	  public static void setupFileChooser(Manager frame){
 		  fc = new JFileChooser();
-		  openButton = new JButton("Open");
+		  
+		  homeDir = new File("/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/snowflake.dc"); 
+		openButton = new JButton("Open");
                 //  createImageIcon("images/Open16.gif"));
 		  
 		  openButton.addActionListener(frame);
@@ -66,28 +73,44 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	                    java.awt.ComponentOrientation.RIGHT_TO_LEFT);
 	        }
 	         
+	        
+	        
 	       canvas.init();
 	       
 	       canvas.setPreferredSize(new Dimension(600,786));
 	        pane.add(canvas, BorderLayout.CENTER);
-	         
+	        
+	        
+	        JPanel code = new JPanel();
+	        code.setLayout(new BorderLayout());
+	        code.setPreferredSize(new Dimension(600,786));
+	        
 	        codeField= new CodeField();
-	        codeField.setPreferredSize(new Dimension(600,786));
+	        codeField.setPreferredSize(new Dimension(600,500));
+	        output  = new JTextPane();
+	        output.setPreferredSize(new Dimension(600,200));
+
+	       //DefaultSyntaxKit.initKit();
 	       
+
+	        
+	        
+	        JScrollPane scrPane1 = new JScrollPane(codeField);
+	        JScrollPane scrPane2 = new JScrollPane(output);
 	      
-
-	        DefaultSyntaxKit.initKit();
-
-	        JScrollPane scrPane = new JScrollPane(codeField);
-	      	pane.add(scrPane, BorderLayout.LINE_END);
+	        
+	        output.setVisible(true);
 	      	
+	        code.add(scrPane1, BorderLayout.CENTER);
+	        code.add(scrPane2, BorderLayout.PAGE_END);
+	        
 	      	JPanel buttonPanel = new JPanel(); //use FlowLayout
 	        buttonPanel.add(openButton);
 	        buttonPanel.add(saveButton);
 	 
 	        //Add the buttons and the log to this panel.
-	       pane.add(buttonPanel, BorderLayout.PAGE_START);
-	      	
+	       code.add(buttonPanel, BorderLayout.PAGE_START);
+	       pane.add(code, BorderLayout.LINE_END);
 	        pane.doLayout();
 	        codeField.setContentType("text/java");
 	        codeField.setText("a= ellipse(100,100);\n" + 
@@ -99,7 +122,8 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	        		"\n" + 
 	        		"//move(e,500,500);\n" + 
 	        		"");
-	    
+	       output.setContentType("text/java");
+	       // output.setText("hello world");
 	    }
 	  
 	  private static void createAndShowGUI() {
@@ -118,7 +142,11 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	        frame.setVisible(true);
 	    }
 	  public static void main(String[] args) {
-	        /* Use an appropriate Look and Feel */
+	       
+		 System.out.println("scale factor="+Toolkit.getDefaultToolkit().getDesktopProperty("apple.awt.contentScaleFactor"));
+
+
+		  /* Use an appropriate Look and Feel */
 	        try {
 	            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 	            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
@@ -149,8 +177,9 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 		 
         //Handle open button action.
         if (e.getSource() == openButton) {
-            int returnVal = fc.showOpenDialog(Manager.this);
- 
+            
+        	int returnVal = fc.showOpenDialog(Manager.this);
+        	
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File file = fc.getSelectedFile();
                 String filetxt= readFile(file);

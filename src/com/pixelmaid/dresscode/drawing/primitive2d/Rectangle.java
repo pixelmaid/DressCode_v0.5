@@ -58,7 +58,8 @@ public class Rectangle extends Polygon{
 	
 	@Override
     public Rectangle copy(){
-    	Rectangle e = (Rectangle)super.copy();
+		Rectangle e = new Rectangle(0,0);
+    	copyParameters(this,e);
     	e.width = this.width;
     	e.height = this.height;
     	return e;
