@@ -4,6 +4,7 @@ options {
   output=AST;
 }
 
+
 tokens {
   BLOCK;
   RETURN;
