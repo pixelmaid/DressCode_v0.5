@@ -76,7 +76,7 @@ public class Embedded extends PApplet {
 		try{
 			for (Drawable value : drawables.values()) {
 				
-					value.draw(this);
+					value.print(this);
 			}
 			
 			
