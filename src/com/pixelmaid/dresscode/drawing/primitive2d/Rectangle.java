@@ -57,6 +57,18 @@ public class Rectangle extends Polygon{
 	}
 	
 	@Override
+	public void print(Embedded e){
+		appearance(e);
+		e.pushMatrix();
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.rotate(PApplet.radians((float)getRotation()));
+		e.rectMode(PConstants.CENTER);
+		e.rect(0,0,(float)width,(float)height);
+		e.popMatrix();
+		
+	}
+	
+	@Override
     public Rectangle copy(){
 		Rectangle e = new Rectangle(0,0);
     	copyParameters(this,e);

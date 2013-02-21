@@ -23,5 +23,7 @@
 	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/antlr-3.5-complete.jar"/>
 	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/jsyntaxpane-0.9.5-b29.jar"/>
 	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/rsyntaxtextarea.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/pdf.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/itext.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

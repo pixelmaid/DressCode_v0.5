@@ -23,6 +23,17 @@ public class Hole extends Polygon {
 		}
 		
 		@Override
+		public void print(Embedded e){
+			
+		    ArrayList<Point> points = this.getPoints();
+			e.beginShape();
+			for(int i=0;i<points.size();i++){
+				e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
+			}
+			e.endShape(PApplet.CLOSE);
+		}
+		
+		@Override
 		public Polygon copy(){
 			Polygon c = new Polygon();
 			for(int i=0;i<this.getPoints().size();i++){

@@ -85,9 +85,12 @@ public class Ellipse extends Polygon {
 
 	@Override
 	public void print(Embedded e) {
-		// TODO Auto-generated method stub
-		//parent.strokeWeight(strokeWeight);
-		//parent.ellipse((float) origin.getX(), (float) origin.getY(), (float) radius * 2, (float) radius * 2);
+		appearance(e);
+		e.pushMatrix();
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.rotate((float)Math.toRadians(getRotation()));
+		e.ellipse(0,0,(float)width,(float)height);
+		e.popMatrix();
 		
 	}
 

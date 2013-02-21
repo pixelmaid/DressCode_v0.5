@@ -50,7 +50,12 @@ public class Line extends Polygon {
 	
 	@Override
 	public void print(Embedded e){
-		//TODO:implement print method
+		e.pushMatrix();
+		//TODO: MAKE LINE DRAW RELATIVE BY SUBTRACTING ORIGIN
+		//e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.rotate(PApplet.radians((float)getRotation()));
+		e.line((float)start.getX(), (float)start.getY(), (float)end.getX(), (float)end.getY());
+		e.popMatrix();
 	}
 	
 	@Override

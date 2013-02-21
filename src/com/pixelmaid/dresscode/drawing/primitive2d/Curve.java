@@ -59,6 +59,19 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		}
 	}
 
+	
+	@Override
+	public void print(Embedded e){
+		//TODO: MAKE CURVE DRAW RELATIVE
+		appearance(e);
+		e.pushMatrix();
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.rotate(PApplet.radians((float)getRotation()));
+		e.bezier((float)start.getX(), (float)start.getY(),(float)control1.getX(), (float)control1.getY(), (float)control2.getX(), (float)control2.getY(),(float)end.getX(), (float)end.getY());
+		e.popMatrix();
+		
+	}
+
 
 
 	@Override

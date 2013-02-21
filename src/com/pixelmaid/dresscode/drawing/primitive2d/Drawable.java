@@ -94,6 +94,24 @@ public class Drawable {
 		}
 	}
 
+	//draws each child of the drawable for a vector file version (must be overridden by subclass)
+	public void print(Embedded embedded) {
+		if(!this.getHide()){//only draws if child is not hidden
+			appearance(embedded);
+			embedded.pushMatrix();
+			embedded.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+			embedded.rotate((float)getRotation());
+			
+					for(int j =0;j<this.children.size();j++){
+							this.children.get(j).print(embedded);
+						
+					}
+					
+			embedded.popMatrix();
+		}
+
+	}
+	
 	//sets appearance to outline form
 	public void outlineAppearance(Embedded e){
 		
@@ -142,11 +160,7 @@ public class Drawable {
 		embedded.point((float)this.origin.getX(),(float)this.origin.getY());
 	}
 	
-	//draws each child of the drawable for a vector file version (must be overridden by subclass)
-	public void print(Embedded embedded) {
-		// TODO Auto-generated method stub
 
-	}
 	
 	
 	

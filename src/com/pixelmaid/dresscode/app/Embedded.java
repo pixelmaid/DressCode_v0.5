@@ -1,6 +1,7 @@
 package com.pixelmaid.dresscode.app;
 
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -11,6 +12,8 @@ import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
 import processing.core.PApplet;
+import processing.pdf.*;
+
 
 public class Embedded extends PApplet {
 	/**
@@ -50,7 +53,7 @@ public class Embedded extends PApplet {
 			this.draw();
 		}
 		
-		//debugging code
+		/*//debugging code
 		for(int j=0;j<finalPolys.size();j++){
         ArrayList<Point> points = ((Polygon)(finalPolys.get(j))).getPoints();
 		System.out.println("drawing final poly at "+j);
@@ -64,8 +67,25 @@ public class Embedded extends PApplet {
 		}
 		endShape(PApplet.CLOSE);
 		
-		}
+		}*/
 		noLoop();
+	}
+	
+	public void print(File file){
+		this.beginRecord(PDF, file.getAbsolutePath());
+		try{
+			for (Drawable value : drawables.values()) {
+				
+					value.draw(this);
+			}
+			
+			
+			}
+			catch( java.lang.RuntimeException e){
+				System.err.println("missed a pop matrix call, printing again");
+				this. print(file);
+			}
+		this.endRecord();
 	}
 
 	public void mousePressed() {

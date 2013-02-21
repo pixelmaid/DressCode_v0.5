@@ -101,8 +101,24 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	}
 	
 	@Override
-	public void print(Embedded embedded){
-		//TODO: implement print method
+	public void print(Embedded e){
+		appearance(e);
+		//System.out.println("number of holes="+this.holes.size()+"number of points="+this.points.size());
+		e.pushMatrix();
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.rotate(PApplet.radians((float)getRotation()));
+		e.beginShape();
+		for(int i=0;i<points.size();i++){
+			e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
+		}
+		e.endShape(PApplet.CLOSE);	
+		e.fill(Manager.canvas.DEFAULT_BG);
+		for(int i=0;i<holes.size();i++){
+			holes.get(i).print(e);
+		}
+		e.popMatrix();
+		
+	
 	}
 	
 	@Override

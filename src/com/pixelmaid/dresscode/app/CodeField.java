@@ -12,7 +12,6 @@ import javax.swing.event.DocumentListener;
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 
@@ -42,7 +41,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
       
     }
     
-    private void updateCanvas(){
+    public void updateCanvas(){
 
     	//TODO: more efficient method of clearing canvas / parsing code. Right now it just deletes everything and re-interprets/ redraws entire thing
     	canvas.clearAllDrawables(); //clear the canvas
@@ -119,9 +118,9 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 
 	@Override
 	public void keyPressed(KeyEvent e) {
-		if(e.getKeyCode()==10){
+		/*if(e.getKeyCode()==10){
 			updateCanvas();
-		}
+		}*/
 		//this.getParent().dispatchEvent(e);
 	}
 	

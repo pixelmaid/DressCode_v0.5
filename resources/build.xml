@@ -28,7 +28,7 @@
 
 	<target name="dist" depends="clean, compile, example" description="generate the distribution" >
 		<mkdir dir="${build.dir}/jar"/>
-		<jar destfile="${build.dir}/jar/${app.name}" basedir="${classes.dir}">
+		<jar destfile="${build.dir}/jar/${app.name}.jar" basedir="${classes.dir}">
 			<manifest>
 				<attribute name="Main-Class" value="${main.class}"/>
 			</manifest>

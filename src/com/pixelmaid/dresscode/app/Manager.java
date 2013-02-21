@@ -24,6 +24,8 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.text.StyledDocument;
 
+import processing.core.PApplet;
+
 import com.jogamp.newt.event.WindowEvent;
 import com.jogamp.newt.event.WindowListener;
 import com.jogamp.newt.event.WindowUpdateEvent;
@@ -37,7 +39,7 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	  public static final Embedded canvas = new Embedded();
 	  public static boolean RIGHT_TO_LEFT = false;
 	  public static JFileChooser fc;
-	  public static JButton openButton, saveButton;
+	  public static JButton openButton, saveButton, printButton, runButton;
 	  public static final JTextPane output = new JTextPane();
 	  public static StyledDocument doc;
 	  public static File homeDir ;
@@ -49,7 +51,7 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 		  fc = new JFileChooser();
 		  
 		  homeDir = new File("/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/snowflake.dc"); 
-		openButton = new JButton("Open");
+		  openButton = new JButton("Open");
                 //  createImageIcon("images/Open16.gif"));
 		  
 		  openButton.addActionListener(frame);
@@ -57,6 +59,14 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 		  saveButton = new JButton("Save");//,
                   //createImageIcon("images/Save16.gif"));
 		  saveButton.addActionListener(frame);
+		  
+		 printButton = new JButton("Print");//,
+          //createImageIcon("images/Save16.gif"));
+		 printButton.addActionListener(frame);
+		  
+		  runButton = new JButton("Run");//,
+          //createImageIcon("images/Save16.gif"));
+		  runButton.addActionListener(frame);
 		  
 	  }
 	  
@@ -114,8 +124,10 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	        code.add(scrPane2, BorderLayout.PAGE_END);
 	        
 	      	JPanel buttonPanel = new JPanel(); //use FlowLayout
-	        buttonPanel.add(openButton);
+	      	buttonPanel.add(runButton);
+	      	buttonPanel.add(openButton);
 	        buttonPanel.add(saveButton);
+	     	buttonPanel.add(printButton);
 	 
 	        //Add the buttons and the log to this panel.
 	       code.add(buttonPanel, BorderLayout.PAGE_START);
@@ -197,6 +209,21 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
             if (returnVal == JFileChooser.APPROVE_OPTION) {
                 File file = fc.getSelectedFile();
                 writeFile(codeField.getText(),file);
+            } else {
+               // log.append("Save command cancelled by user." + newline);
+            }
+            //log.setCaretPosition(log.getDocument().getLength());
+        }
+        else if (e.getSource() == runButton) {
+        	codeField.updateCanvas();
+        	
+        }
+        
+        else if (e.getSource() == printButton) {
+            int returnVal = fc.showSaveDialog(Manager.this);
+            if (returnVal == JFileChooser.APPROVE_OPTION) {
+                File file = fc.getSelectedFile();
+                canvas.print(file);
             } else {
                // log.append("Save command cancelled by user." + newline);
             }

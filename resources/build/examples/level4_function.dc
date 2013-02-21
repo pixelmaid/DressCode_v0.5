@@ -1,0 +1,55 @@
+//level 4: design with loop
+
+
+
+radius = 200;
+num = 5;
+
+
+
+repeat i=1:num:
+  degree = 360/num*i;
+  xPos = cos(degree)* radius + WIDTH/2;
+  yPos =  sin(degree)* radius +HEIGHT/2;
+  a = design1(xPos,yPos,degree);
+  if (i==1):
+  fill(a,PINK);
+  end
+  
+  
+  
+  //ellipse drawing methods
+  //e1 = ellipse(WIDTH/2,HEIGHT/2,100);
+
+ end
+
+
+def design1(x,y,degree):
+    //variables
+    ellipseWidth = 15;
+    ellipseHeight = 150;
+    thickness = 4;
+    color = BLUE;
+    
+
+  e2 = ellipse(WIDTH/2,HEIGHT/2-80,ellipseWidth,ellipseHeight);
+  e3 = ellipse(WIDTH/2-80,HEIGHT/2,ellipseHeight,ellipseWidth);
+  
+  e4 = ellipse(WIDTH/2,HEIGHT/2+80,ellipseWidth,ellipseHeight);
+  e5 = ellipse(WIDTH/2+80,HEIGHT/2,ellipseHeight,ellipseWidth);
+  
+  ellipseGroup = group(e2,e3,e4,e5);
+  noFill(ellipseGroup);
+  weight(ellipseGroup,thickness);
+  stroke(ellipseGroup,BLUE);
+  
+  move(ellipseGroup,x,y);
+  rotate(ellipseGroup,degree);
+  
+  return ellipseGroup;
+end
+
+  
+  
+  
+  
