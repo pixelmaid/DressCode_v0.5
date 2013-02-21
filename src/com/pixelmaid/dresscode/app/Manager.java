@@ -14,16 +14,15 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.JButton;
-import javax.swing.JEditorPane;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.text.StyledDocument;
 
 import com.jogamp.newt.event.WindowEvent;
 import com.jogamp.newt.event.WindowListener;
@@ -39,7 +38,8 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	  public static boolean RIGHT_TO_LEFT = false;
 	  public static JFileChooser fc;
 	  public static JButton openButton, saveButton;
-	  public static JTextPane output;
+	  public static final JTextPane output = new JTextPane();
+	  public static StyledDocument doc;
 	  public static File homeDir ;
 	  public Manager(String title) {
 		  super(title);
@@ -62,7 +62,11 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	  
 	  
 	  public static void addComponentsToPane(Container pane) {
-	         
+		   // DefaultSyntaxKit.initKit();
+		    // override default syntax values
+		   /* jsyntaxpane.util.Configuration config = DefaultSyntaxKit.getConfig(DefaultSyntaxKit.class);
+		    config.put("DefaultFont","monospaced 14");
+		    */
 	        if (!(pane.getLayout() instanceof BorderLayout)) {
 	            pane.add(new JLabel("Container doesn't use BorderLayout!"));
 	            return;
@@ -87,10 +91,11 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	        
 	        codeField= new CodeField();
 	        codeField.setPreferredSize(new Dimension(600,500));
-	        output  = new JTextPane();
+	        
+	        
 	        output.setPreferredSize(new Dimension(600,200));
-
-	       //DefaultSyntaxKit.initKit();
+	        doc = output.getStyledDocument();
+	       
 	       
 
 	        
@@ -122,7 +127,7 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	        		"\n" + 
 	        		"//move(e,500,500);\n" + 
 	        		"");
-	       output.setContentType("text/java");
+	       //output.setContentType("text/java");
 	       // output.setText("hello world");
 	    }
 	  

@@ -51,10 +51,14 @@ public class PolygonNode extends DrawableNode implements DCNode {
 
 				}
 				else{
+					Manager.output.setText("incorrect parameters for polygon call at line:"+line);
+
 					System.err.println("inccorect number of arguments for polygon at line:"+line);
 				}
 			}
 			else{
+				Manager.output.setText("incorrect parameters for polygon call at line:"+line);
+
 				System.err.println("inccorect arguments for polygon at line:"+line);
 			}
 
@@ -62,6 +66,7 @@ public class PolygonNode extends DrawableNode implements DCNode {
 			Manager.canvas.addDrawable("polygon",line,e);
 		}
 		catch (ClassCastException err){
+			Manager.output.setText("incorrect parameters for polygon call at line:"+line);
 
 			System.err.println("incorrect parameters for polygon at line:"+line);
 

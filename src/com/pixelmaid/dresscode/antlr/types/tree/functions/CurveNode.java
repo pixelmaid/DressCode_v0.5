@@ -34,7 +34,7 @@ public class CurveNode extends DrawableNode implements DCNode {
     		e = new Curve(values);
     	}
     	catch (ClassCastException err){
-    		
+    		Manager.output.setText("incorrect parameters for curve call at line:"+line);
     		System.err.println("incorrect parameters for curve call at line:"+line);
     		
     		}
@@ -63,6 +63,7 @@ public class CurveNode extends DrawableNode implements DCNode {
         	}
     	}*/
     	else{
+    		Manager.output.setText("incorrect parameters for curve call at line:"+line);
     		System.err.println("incorrect parameters for curve call at line:"+line);
     	}
     	Manager.canvas.addDrawable("curve",line,e);

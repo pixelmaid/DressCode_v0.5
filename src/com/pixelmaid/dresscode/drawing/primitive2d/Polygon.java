@@ -181,6 +181,8 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	@Override
 	//overrides drawable remove from group method- returns a null value since a polygon cannot be a group by itself
 	public Drawable removeFromGroup(Drawable d){
+		Manager.output.setText("cannot remove from group from a polygon group");
+
 		System.err.println("cannot remove from group from a polygon group");
 		return null;
 	}
@@ -188,6 +190,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	@Override
 	//overrides drawable remove all children method- returns a null value since a polygon does not have any children to remove
 	public ArrayList<Drawable> removeAllChildren(){
+		Manager.output.setText("cannot remove all children from a polygon");
 		System.err.println("cannot remove all children from a polygon");
 		return null;
 	}

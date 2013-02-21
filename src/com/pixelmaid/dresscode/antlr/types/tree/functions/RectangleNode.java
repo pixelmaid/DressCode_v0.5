@@ -41,10 +41,14 @@ public class RectangleNode extends DrawableNode implements DCNode {
 
 				}
 				else{
+					Manager.output.setText("incorrect parameters for rectangle call at line:"+line);
+
 					System.err.println("inccorect number of arguments for rectangle at line:"+line);
 				}
 			}
 			else{
+				Manager.output.setText("incorrect parameters for rectangle call at line:"+line);
+
 				System.err.println("inccorect arguments for rectangle at line:"+line);
 			}
 
@@ -52,8 +56,9 @@ public class RectangleNode extends DrawableNode implements DCNode {
 			Manager.canvas.addDrawable("ellipse",line,e);
 		}
 		catch (ClassCastException err){
+			Manager.output.setText("incorrect parameters for rectangle call at line:"+line);
 
-			System.err.println("incorrect parameters for ellipse at line:"+line);
+			System.err.println("incorrect parameters for rectangle at line:"+line);
 
 		}
 		return new VarType(e);	

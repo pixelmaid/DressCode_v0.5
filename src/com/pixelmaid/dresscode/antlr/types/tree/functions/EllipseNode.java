@@ -38,17 +38,21 @@ public class EllipseNode extends DrawableNode implements DCNode {
 
 				}
 				else{
-					System.err.println("inccorect number of arguments for ellipse at line:"+line);
+					Manager.output.setText("incorrect number of arguments for ellipse at line:"+line);
+					System.err.println("incorrect number of arguments for ellipse at line:"+line);
 				}
 			}
 			else{
-				System.err.println("inccorect arguments for ellipse at line:"+line);
+				Manager.output.setText("incorrect number of arguments for ellipse at line:"+line);
+
+				System.err.println("incorrect arguments for ellipse at line:"+line);
 			}
 
 
 			Manager.canvas.addDrawable("ellipse",line,e);
 		}
 		catch (ClassCastException err){
+			Manager.output.setText("incorrect parameters for ellipse at line:"+line);
 
 			System.err.println("incorrect parameters for ellipse at line:"+line);
 

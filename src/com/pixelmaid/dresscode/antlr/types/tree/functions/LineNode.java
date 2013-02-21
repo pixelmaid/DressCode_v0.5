@@ -33,7 +33,8 @@ public class LineNode extends DrawableNode implements DCNode {
     		e = new Line(values);
     	}
     	catch (ClassCastException err){
-    		
+			Manager.output.setText("incorrect parameters for line call at line:"+line);
+
     		System.err.println("incorrect parameters for line call at line:"+line);
     		
     		}
@@ -55,12 +56,15 @@ public class LineNode extends DrawableNode implements DCNode {
         		
         	}
         	catch (ClassCastException err){
-        		
+    			Manager.output.setText("incorrect parameters for line call at line:"+line);
+
         		System.err.println("incorrect parameters for line call at line:"+line);
         		
         	}
     	}
     	else{
+			Manager.output.setText("incorrect parameters for line call at line:"+line);
+
     		System.err.println("incorrect parameters for line call at line:"+line);
     	}
     	Manager.canvas.addDrawable("line",line,e);
