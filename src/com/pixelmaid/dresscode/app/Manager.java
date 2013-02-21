@@ -62,11 +62,15 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	  
 	  
 	  public static void addComponentsToPane(Container pane) {
-		   // DefaultSyntaxKit.initKit();
+		   
+		  //Comment out below lines to remove syntax highlighting
+		  DefaultSyntaxKit.initKit();
 		    // override default syntax values
-		   /* jsyntaxpane.util.Configuration config = DefaultSyntaxKit.getConfig(DefaultSyntaxKit.class);
+		    jsyntaxpane.util.Configuration config = DefaultSyntaxKit.getConfig(DefaultSyntaxKit.class);
 		    config.put("DefaultFont","monospaced 14");
-		    */
+		   //end syntax highlighting
+		    
+		    
 	        if (!(pane.getLayout() instanceof BorderLayout)) {
 	            pane.add(new JLabel("Container doesn't use BorderLayout!"));
 	            return;
@@ -118,15 +122,7 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	       pane.add(code, BorderLayout.LINE_END);
 	        pane.doLayout();
 	        codeField.setContentType("text/java");
-	        codeField.setText("a= ellipse(100,100);\n" + 
-	        		"b = ellipse(200,200,20,100);\n" + 
-	        		"d = ellipse(120,120,10,50);\n" + 
-	        		"e = group(a,b);\n" + 
-	        		"\n" + 
-	        		"c = e+b;\n" + 
-	        		"\n" + 
-	        		"//move(e,500,500);\n" + 
-	        		"");
+	        codeField.setText("");
 	       //output.setContentType("text/java");
 	       // output.setText("hello world");
 	    }
