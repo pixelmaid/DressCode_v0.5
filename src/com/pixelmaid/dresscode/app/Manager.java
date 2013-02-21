@@ -74,12 +74,12 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	  public static void addComponentsToPane(Container pane) {
 		   
 		  //Comment out below lines to remove syntax highlighting
-		  DefaultSyntaxKit.initKit();
+		/*  DefaultSyntaxKit.initKit();
 		    // override default syntax values
 		    jsyntaxpane.util.Configuration config = DefaultSyntaxKit.getConfig(DefaultSyntaxKit.class);
 		    config.put("DefaultFont","monospaced 14");
 		   //end syntax highlighting
-		    
+		    */
 		    
 	        if (!(pane.getLayout() instanceof BorderLayout)) {
 	            pane.add(new JLabel("Container doesn't use BorderLayout!"));

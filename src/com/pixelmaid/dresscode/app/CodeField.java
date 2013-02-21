@@ -12,6 +12,7 @@ import javax.swing.event.DocumentListener;
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 
@@ -81,7 +82,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
     		// TODO Auto-generated catch block
     		e.printStackTrace();
     		String error = e.getStackTrace().toString();
-    		output.setText(error);
+    		output.setText("error at" + error);
 
     	}
 
