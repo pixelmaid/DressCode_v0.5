@@ -14,25 +14,6 @@ import com.seisw.util.geom.PolyDefault ;
 
 public class PolyBoolean{
 
-	public static Drawable condense(Drawable d){
-		/*Polygon p = new Polygon();
-	
-		if(d.isPolygon()){
-			d.setAbsolute();
-			return d;
-		}
-		System.out.println("children are polygons = "+d.childrenArePolygons());
-		while(!d.childrenArePolygons()){
-			for(int i=0;i<d.children.size();i++){
-				if(!d.children.get(i).isPolygon()){
-					ArrayList<Drawable> orphans = d.children.get(i).removeAllChildren();
-					d.addAllChildren(orphans);
-					break;
-				}
-			}
-		}*/
-		return d;
-	}
 	
 	
 	//performs union of two polygons and returns the result

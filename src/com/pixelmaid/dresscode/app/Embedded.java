@@ -72,7 +72,14 @@ public class Embedded extends PApplet {
 	}
 	
 	public void print(File file){
-		this.beginRecord(PDF, file.getAbsolutePath());
+		String filename = file.getAbsolutePath();
+		String subStr = filename.substring(filename.length()-4, filename.length());
+		System.out.println(subStr);
+		if(!subStr.contentEquals(".pdf")){
+			System.out.println("substr!=pdf");
+			filename =filename.concat(".pdf");
+		}
+		this.beginRecord(PDF, filename);
 		try{
 			for (Drawable value : drawables.values()) {
 				

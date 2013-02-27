@@ -565,7 +565,7 @@ public class Drawable {
 				condenseRec(dp,parent);
 				dp = parent;
 				
-				System.out.println("numChildren in drawable after condense ="+parent.children.size());
+				//System.out.println("numChildren in drawable after condense ="+parent.children.size());
 		
 				return parent;
 			}
@@ -574,17 +574,17 @@ public class Drawable {
 		//recursive condense function
 		public void condenseRec(Drawable d,Drawable parent){
 			ArrayList<Drawable> currentChildren = d.getChildren();
-			System.out.println("number of children = "+d.numChildren());
+			//System.out.println("number of children = "+d.numChildren());
 			for(int i=currentChildren.size()-1;i>=0; i--){
 				Drawable orphan = d.returnAbsoluteAt(i);
-				System.out.println("checking child at = "+i +":"+orphan);
+				//System.out.println("checking child at = "+i +":"+orphan);
 				if (orphan.numChildren()!=0){ //is not a polygon
-					System.out.println("orphan is not a polygon");
+					//System.out.println("orphan is not a polygon");
 					condenseRec(orphan,parent);
 				}
 				else{
-					System.out.println("orphan is a polygon");
-					System.out.println("adding orphan to parent");
+					//System.out.println("orphan is a polygon");
+					//System.out.println("adding orphan to parent");
 					
 					parent.addToGroup(orphan);	
 				}

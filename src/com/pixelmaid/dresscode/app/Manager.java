@@ -74,12 +74,12 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	  public static void addComponentsToPane(Container pane) {
 		   
 		  //Comment out below lines to remove syntax highlighting
-		/*  DefaultSyntaxKit.initKit();
+		 DefaultSyntaxKit.initKit();
 		    // override default syntax values
 		    jsyntaxpane.util.Configuration config = DefaultSyntaxKit.getConfig(DefaultSyntaxKit.class);
 		    config.put("DefaultFont","monospaced 14");
 		   //end syntax highlighting
-		    */
+		   
 		    
 	        if (!(pane.getLayout() instanceof BorderLayout)) {
 	            pane.add(new JLabel("Container doesn't use BorderLayout!"));
@@ -106,7 +106,7 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	        codeField= new CodeField();
 	        codeField.setPreferredSize(new Dimension(600,500));
 	        
-	        
+	        		
 	        output.setPreferredSize(new Dimension(600,200));
 	        doc = output.getStyledDocument();
 	       
@@ -160,7 +160,7 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 
 
 		  /* Use an appropriate Look and Feel */
-	        try {
+	        /*try {
 	            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 	            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
 	        } catch (UnsupportedLookAndFeelException ex) {
@@ -173,7 +173,7 @@ public final class Manager extends JFrame implements WindowListener,ActionListen
 	            ex.printStackTrace();
 	        }
 	        /* Turn off metal's use bold fonts */
-	        UIManager.put("swing.boldMetal", Boolean.FALSE);
+	       // UIManager.put("swing.boldMetal", Boolean.FALSE);
 	         
 	        //Schedule a job for the event dispatch thread:
 	        //creating and showing this application's GUI.
