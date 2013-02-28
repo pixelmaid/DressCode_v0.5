@@ -14,7 +14,7 @@ options {
    import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
   import java.util.Map;
   import java.util.HashMap;
-  import com.pixelmaid.dresscode.app.Manager;
+  import com.pixelmaid.dresscode.app.Window;
 }
 
 @members {
@@ -181,8 +181,8 @@ expression returns [DCNode node]
   |  lookup                                            {node = $lookup.node;}
   |  COLOR_CONSTANT									   {node = new AtomNode($COLOR_CONSTANT.text);}
   |	PI_CONSTANT                                        {node = new AtomNode(Math.PI);}
-  |WIDTH_CONSTANT                                       {node = new AtomNode(Manager.canvas.width);}
-  |HEIGHT_CONSTANT                                       {node = new AtomNode(Manager.canvas.height);}
+  |WIDTH_CONSTANT                                       {node = new AtomNode(Window.canvas.width);}
+  |HEIGHT_CONSTANT                                       {node = new AtomNode(Window.canvas.height);}
   ;
 
 list returns [DCNode node]

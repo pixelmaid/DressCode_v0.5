@@ -45,6 +45,7 @@ public class LShape extends Polygon {
 	    //set current drawing canvas (needed to load the shape, TODO: should eventually work around this)
 	    public void setCanvas(Embedded e){
 	    	this.canvas = e;
+	    	
 	    }
 	    
 	    @Override
@@ -90,17 +91,7 @@ public class LShape extends Polygon {
 		public Polygon toPolygon() {
 			Polygon c =  new Polygon();
 			copyParameters(this,c);
-			/*double pR = (Math.PI*2)/resolution;
-			double wR = width/2.0;
-			double hR = height/2.0;
-			for (int i = 0; i <= resolution; i++) {
-				double t = pR*i;
-				double x = wR* Math.cos(t);
-				double y = hR* Math.sin(t);
-				c.addPoint(x,y);
-
-			}*/
-		
+			
 			
 			return c;
 		}

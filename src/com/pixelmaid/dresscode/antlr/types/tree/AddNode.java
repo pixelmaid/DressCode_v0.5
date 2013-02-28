@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
@@ -54,7 +55,7 @@ public class AddNode implements DCNode {
     	bP.removeFromCanvas();
     	Drawable d = PolyBoolean.union(aP,bP);
     	 //TODO: add actual line number instead of 0 here
-		Manager.canvas.addDrawable("drawable",-1,d);
+		Window.canvas.addDrawable("drawable",-1,d);
     	return new VarType(d);
       }
 

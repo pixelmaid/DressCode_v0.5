@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import processing.core.PApplet;
 
 import com.pixelmaid.dresscode.app.Embedded;
-import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.app.Window;
+import com.pixelmaid.dresscode.app.Window;
 
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
@@ -89,7 +90,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
 		}
 		e.endShape(PApplet.CLOSE);	
-		e.fill(Manager.canvas.DEFAULT_BG);
+		e.fill(Window.canvas.DEFAULT_BG);
 		for(int i=0;i<holes.size();i++){
 			holes.get(i).draw(e);
 		}
@@ -112,7 +113,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
 		}
 		e.endShape(PApplet.CLOSE);	
-		e.fill(Manager.canvas.DEFAULT_BG);
+		e.fill(Window.canvas.DEFAULT_BG);
 		for(int i=0;i<holes.size();i++){
 			holes.get(i).print(e);
 		}
@@ -187,7 +188,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	public Drawable addToGroup(Drawable d, int index){
 	 Drawable master = new Drawable();
 	//TODO: adjust indexing here to have new drawable added at same index as this
-	 Manager.canvas.addDrawable("drawable",-1,master);
+	 Window.canvas.addDrawable("drawable",-1,master);
     
     	this.removeFromCanvas();
     	d.removeFromCanvas();
@@ -201,7 +202,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	@Override
 	//overrides drawable remove from group method- returns a null value since a polygon cannot be a group by itself
 	public Drawable removeFromGroup(Drawable d){
-		Manager.output.setText("cannot remove from group from a polygon group");
+		Window.output.setText("cannot remove from group from a polygon group");
 
 		System.err.println("cannot remove from group from a polygon group");
 		return null;
@@ -210,7 +211,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	@Override
 	//overrides drawable remove all children method- returns a null value since a polygon does not have any children to remove
 	public ArrayList<Drawable> removeAllChildren(){
-		Manager.output.setText("cannot remove all children from a polygon");
+		Window.output.setText("cannot remove all children from a polygon");
 		System.err.println("cannot remove all children from a polygon");
 		return null;
 	}
@@ -220,7 +221,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	public Drawable addAllChildren(ArrayList<Drawable> orphans){
 		 Drawable master = new Drawable();
 		//TODO: adjust indexing here to have new drawable added at same index as this
-		 Manager.canvas.addDrawable("drawable",-1,master);
+		Window.canvas.addDrawable("drawable",-1,master);
 		    
 		  this.removeFromCanvas();
 				

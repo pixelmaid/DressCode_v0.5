@@ -40,10 +40,11 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
         this.addKeyListener(this);
    
         //set reference to main canvas and output console
-        canvas = Manager.canvas;
-        output = Manager.output;
+        canvas = Window.canvas;
+        output = Window.output;
       
     }
+ 
     
     public void updateCanvas(){
 
@@ -52,7 +53,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
     	output.setText(""); //clear the output console
 
     	userCode = 	this.getText()+"\n"; //set user code to text in codeField
-
+    	
     	CharStream charStream = new ANTLRStringStream(userCode);
 
     	// create an instance of the lexer
@@ -77,8 +78,8 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
     		BlockNode returned = walker.walk();
 
     		returned.evaluate();
-    		Manager.canvas.draw();
-    		Manager.canvas.init();
+    		Window.canvas.draw();
+    		Window.canvas.init();
     		//System.out.println("updated canvas");
 
     	} catch (Exception e) {
@@ -99,13 +100,22 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
     	 this.getDocument().insertString(caretPos, fileString, null);
     }
 
-	@Override
+	//clears out the code window and all stored variables
+    //TODO: code that clears out stored variables
+    public void clear(){
+    	this.setText("");
+    	userCode="";
+    }
+    
+    @Override
 	public void changedUpdate(DocumentEvent arg0) {
 		// TODO Auto-generated method stub
 		//System.out.println("changedUpdate");
 	
 		
 	}
+	
+	
 
 	@Override
 	public void insertUpdate(DocumentEvent arg0) {

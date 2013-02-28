@@ -5,6 +5,7 @@ import java.util.Collections;
 
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
@@ -285,7 +286,7 @@ public class Drawable {
 
 	//removes drawable from canvas
 	public void removeFromCanvas(){
-		Manager.canvas.removeDrawable(this);
+		Window.canvas.removeDrawable(this);
 	}
 
 	//resets origin to new point resulting in the moving of the object

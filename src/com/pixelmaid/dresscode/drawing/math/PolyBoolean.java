@@ -2,8 +2,8 @@ package com.pixelmaid.dresscode.drawing.math;
 
 import java.util.ArrayList;
 
-import com.pixelmaid.dresscode.antlr.types.VarType;
-import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.app.Window;
+
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Hole;
@@ -18,6 +18,10 @@ public class PolyBoolean{
 	
 	//performs union of two polygons and returns the result
 	public static Drawable union(Drawable a, Drawable b){
+		if(a.numChildren()==0){
+			
+		}
+		
 		a = a.condense();
 		b = b.condense();
 		
@@ -86,16 +90,59 @@ public class PolyBoolean{
 	public static Drawable intersection(Drawable a, Drawable b) {
 		a = a.condense();
 		b = b.condense();
-		
-		Poly a_Poly =  drawableToBoolean(a);
-		Poly b_Poly =  drawableToBoolean(b);
-		Poly o_Poly = a_Poly.intersection(b_Poly);
-		//System.out.println("oPoly.size="+o_Poly.getNumPoints());
+		if(a.numChildren()!=0){
+			Window.output.setText("first object must be a single object, not a group for intersection");
 
-		return booleanToDrawable(o_Poly);
+			System.err.println("first object must be a single object, not a group for intersection");
+			return null;
+		}
+		else{
+		System.out.println("first object is a single polygon");
+		Poly a_Poly =  polygonToBoolean((Polygon)a);
+			if(b.numChildren()==0){
+		
+		
+				Poly b_Poly =  polygonToBoolean((Polygon)b);
+				Poly o_Poly = a_Poly.intersection(b_Poly);
+				return booleanToDrawable(o_Poly);
+			}
+			else{
+				Poly b_Poly = drawableToBoolean(b);
+				return groupIntersection(a_Poly,b_Poly);
+			}
+		}
 	}
 	
+	
+	// performs intersection on a group of objects
+		private static Drawable groupIntersection(Poly clip, Poly group){
+			Drawable master = new Drawable();
+		
+			if(group.getNumInnerPoly()==1){
+				Poly i_Poly = clip.intersection(group.getInnerPoly(0));
+				master = booleanToPolygon(i_Poly);
+				//System.out.println("PolyBoolean has only one polygon result");
 
+				//master.setRelativeTo(Geom.findCentroid((Polygon)master));
+			}
+			else{
+				
+
+				for( int i = 0 ; i < group.getNumInnerPoly() ; i++ )
+				{
+					Poly ip = group.getInnerPoly(i);
+					Poly i_Poly = clip.intersection(ip);
+					if(!i_Poly.isEmpty()){
+						Polygon p = booleanToPolygon(i_Poly);
+					
+						master.addToGroup(p);
+					}
+				}
+			
+			}
+			return master;
+		}
+		
 	//converts drawable to collection of boolean operation polygons
 	private static Poly drawableToBoolean(Drawable d){
 		Poly m_Poly = new PolyDefault(); // master level polygon
@@ -154,14 +201,14 @@ public class PolyBoolean{
 			//master.setRelativeTo(Geom.findCentroid((Polygon)master));
 		}
 		else{
-			ArrayList<Point> origins = new ArrayList<Point>();
+			
 
 			for( int i = 0 ; i < poly.getNumInnerPoly() ; i++ )
 			{
 				Poly ip = poly.getInnerPoly(i);
 				Polygon p = booleanToPolygon(ip);
 				//System.out.println(p.getPoints().size());
-				origins.add(p.getOrigin());
+				
 				master.addToGroup(p);
 			}
 		

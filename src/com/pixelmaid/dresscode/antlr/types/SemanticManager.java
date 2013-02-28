@@ -6,7 +6,7 @@ import java.util.Map;
 
 import org.antlr.runtime.tree.CommonTree;
 
-import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.app.Window;
 
 public class SemanticManager { //data object to store variable declarations
 
@@ -46,7 +46,7 @@ public class SemanticManager { //data object to store variable declarations
 	public static boolean setPrimVar(String id, Object val){
 		boolean set = false;
 		if(!variables.containsKey(id)){
-			Manager.output.setText("variable " +id+" not yet defined");
+			Window.output.setText("variable " +id+" not yet defined");
 
 			System.err.println("variable not yet defined at line");
 		}
@@ -138,7 +138,7 @@ public class SemanticManager { //data object to store variable declarations
 		
 		
 		default:
-			Manager.output.setText("incompatable negation");
+			Window.output.setText("incompatable negation");
 			System.err.println("incompatable negation at line ");
 			
 		}
@@ -158,7 +158,7 @@ public class SemanticManager { //data object to store variable declarations
 		
 		
 		default:
-			Manager.output.setText("incompatable post increment");
+			Window.output.setText("incompatable post increment");
 			System.err.println("incompatable post increment at line ");
 			
 		}
@@ -180,7 +180,7 @@ public class SemanticManager { //data object to store variable declarations
 		
 		
 		default:
-			Manager.output.setText("incompatable post decrement");
+			Window.output.setText("incompatable post decrement");
 
 			System.err.println("incompatable post decrement at line ");
 			
@@ -205,7 +205,7 @@ public class SemanticManager { //data object to store variable declarations
 					pf.setType(FLOATNUM);
 				break;
 				default:
-					Manager.output.setText("incompatable multiplication expression");
+					Window.output.setText("incompatable multiplication expression");
 
 					System.err.println("incompatable multiplication expression at line ");
 				break;
@@ -223,14 +223,14 @@ public class SemanticManager { //data object to store variable declarations
 					pf.setType(FLOATNUM);
 				break;
 				default:
-					Manager.output.setText("incompatable multiplication expression");
+					Window.output.setText("incompatable multiplication expression");
 					System.err.println("incompatable multiplication expression at line ");
 				break;
 			}
 			break;
 		
 		default:
-			Manager.output.setText("incompatable multiplication expression");
+			Window.output.setText("incompatable multiplication expression");
 			System.err.println("incompatable multiplication expression at line ");
 			
 		}
@@ -253,7 +253,7 @@ public static PrimObject division(PrimObject p1,PrimObject p2 ){
 					pf.setType(FLOATNUM);
 				break;
 				default:
-					Manager.output.setText("incompatable division expression");
+					Window.output.setText("incompatable division expression");
 					System.err.println("incompatable division expression at line ");
 				break;
 			}
@@ -270,14 +270,14 @@ public static PrimObject division(PrimObject p1,PrimObject p2 ){
 					pf.setType(FLOATNUM);
 				break;
 				default:
-					Manager.output.setText("incompatable division expression");
+					Window.output.setText("incompatable division expression");
 					System.err.println("incompatable division expression at line ");
 				break;
 			}
 			break;
 		
 		default:
-			Manager.output.setText("incompatable division expression");
+			Window.output.setText("incompatable division expression");
 			System.err.println("incompatable division expression at line ");
 			
 		}
@@ -301,7 +301,7 @@ public static PrimObject modulo(PrimObject p1,PrimObject p2 ){
 				pf.setType(INTNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable modulo expression");
+				Window.output.setText("incompatable modulo expression");
 				System.err.println("incompatable modulo expression at line ");
 			break;
 		}
@@ -318,7 +318,7 @@ public static PrimObject modulo(PrimObject p1,PrimObject p2 ){
 				pf.setType(INTNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable modulo expression");
+				Window.output.setText("incompatable modulo expression");
 
 				System.err.println("incompatable modulo expression at line ");
 			break;
@@ -326,7 +326,7 @@ public static PrimObject modulo(PrimObject p1,PrimObject p2 ){
 		break;
 	
 	default:
-		Manager.output.setText("incompatable modulo expression");
+		Window.output.setText("incompatable modulo expression");
 
 		System.err.println("incompatable modulo expression at line ");
 		
@@ -352,7 +352,7 @@ public static PrimObject addition(PrimObject p1,PrimObject p2 ){
 				pf.setType(FLOATNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable addition expression");
+				Window.output.setText("incompatable addition expression");
 
 				System.err.println("incompatable addition expression at line ");
 			break;
@@ -370,7 +370,7 @@ public static PrimObject addition(PrimObject p1,PrimObject p2 ){
 				pf.setType(FLOATNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable addition expression");
+				Window.output.setText("incompatable addition expression");
 
 				System.err.println("incompatable addition expression at line ");
 			break;
@@ -378,7 +378,7 @@ public static PrimObject addition(PrimObject p1,PrimObject p2 ){
 		break;
 	
 	default:
-		Manager.output.setText("incompatable addition expression");
+		Window.output.setText("incompatable addition expression");
 
 		System.err.println("incompatable addition expression at line ");
 		
@@ -403,7 +403,7 @@ public static PrimObject subtraction(PrimObject p1,PrimObject p2 ){
 				pf.setType(FLOATNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable subtraction expression");
+				Window.output.setText("incompatable subtraction expression");
 
 				System.err.println("incompatable subtraction expression at line ");
 			break;
@@ -421,7 +421,7 @@ public static PrimObject subtraction(PrimObject p1,PrimObject p2 ){
 				pf.setType(FLOATNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable subtraction expression");
+				Window.output.setText("incompatable subtraction expression");
 
 				System.err.println("incompatable subtraction expression at line ");
 			break;
@@ -429,7 +429,7 @@ public static PrimObject subtraction(PrimObject p1,PrimObject p2 ){
 		break;
 	
 	default:
-		Manager.output.setText("incompatable subtraction expression");
+		Window.output.setText("incompatable subtraction expression");
 
 		System.err.println("incompatable subtraction expression at line ");
 		
@@ -454,7 +454,7 @@ public static PrimObject equality(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable equality relation");
+				Window.output.setText("incompatable equality relation");
 
 				System.err.println("incompatable equality relation expression at line ");
 			break;
@@ -472,7 +472,7 @@ public static PrimObject equality(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable equality relation");
+				Window.output.setText("incompatable equality relation");
 
 				System.err.println("incompatable equality relation expression at line ");
 			break;
@@ -485,7 +485,7 @@ public static PrimObject equality(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable equality relation");
+				Window.output.setText("incompatable equality relation");
 
 				System.err.println("incompatable equality relation expression at line ");
 			break;
@@ -499,7 +499,7 @@ public static PrimObject equality(PrimObject p1,PrimObject p2 ){
 					pf.setType(BOOLNUM);
 				break;
 				default:
-					Manager.output.setText("incompatable equality relation");
+					Window.output.setText("incompatable equality relation");
 
 					System.err.println("incompatable equality relation expression at line ");
 				break;
@@ -507,7 +507,7 @@ public static PrimObject equality(PrimObject p1,PrimObject p2 ){
 			break;	
 		
 	default:
-		Manager.output.setText("incompatable equality relation");
+		Window.output.setText("incompatable equality relation");
 
 		System.err.println("incompatable equality relation expression at line ");
 		
@@ -532,7 +532,7 @@ public static PrimObject nonEquality(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable non equality relation");
+				Window.output.setText("incompatable non equality relation");
 
 				System.err.println("incompatable non equality relation expression at line ");
 			break;
@@ -550,7 +550,7 @@ public static PrimObject nonEquality(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable non equality relation");
+				Window.output.setText("incompatable non equality relation");
 
 				System.err.println("incompatable non equality relation expression at line ");
 			break;
@@ -575,7 +575,7 @@ public static PrimObject nonEquality(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable non equality relation");
+				Window.output.setText("incompatable non equality relation");
 
 				System.err.println("incompatable non equality relation expression at line ");
 			break;
@@ -584,7 +584,7 @@ public static PrimObject nonEquality(PrimObject p1,PrimObject p2 ){
 	
 	
 	default:
-		Manager.output.setText("incompatable non equality relation");
+		Window.output.setText("incompatable non equality relation");
 
 		System.err.println("incompatable non equality relation expression at line ");
 		
@@ -609,7 +609,7 @@ public static PrimObject lessThan(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable less than relation");
+				Window.output.setText("incompatable less than relation");
 
 				System.err.println("incompatable less than relation expression at line ");
 			break;
@@ -627,7 +627,7 @@ public static PrimObject lessThan(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable less than relation");
+				Window.output.setText("incompatable less than relation");
 
 				System.err.println("incompatable less than relation expression at line ");
 			break;
@@ -635,7 +635,7 @@ public static PrimObject lessThan(PrimObject p1,PrimObject p2 ){
 		break;
 	
 	default:
-		Manager.output.setText("incompatable less than relation");
+		Window.output.setText("incompatable less than relation");
 
 		System.err.println("incompatable less than relation expression at line ");
 		
@@ -660,7 +660,7 @@ public static PrimObject lessThanEqual(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable less than or equal to relation");
+				Window.output.setText("incompatable less than or equal to relation");
 
 				System.err.println("incompatable less than or equal relation expression at line ");
 			break;
@@ -678,7 +678,7 @@ public static PrimObject lessThanEqual(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable less than or equal to relation");
+				Window.output.setText("incompatable less than or equal to relation");
 
 				System.err.println("incompatable less than or equal relation expression at line ");
 			break;
@@ -686,7 +686,7 @@ public static PrimObject lessThanEqual(PrimObject p1,PrimObject p2 ){
 		break;
 	
 	default:
-		Manager.output.setText("incompatable less than or equal to relation");
+		Window.output.setText("incompatable less than or equal to relation");
 
 		System.err.println("incompatable less than or equal relation expression at line ");
 		
@@ -711,7 +711,7 @@ public static PrimObject greaterThan(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable greater than relation");
+				Window.output.setText("incompatable greater than relation");
 
 				System.err.println("incompatable greater than relation expression at line ");
 			break;
@@ -729,7 +729,7 @@ public static PrimObject greaterThan(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable greater than relation");
+				Window.output.setText("incompatable greater than relation");
 
 				System.err.println("incompatable greater than relation expression at line ");
 			break;
@@ -737,7 +737,7 @@ public static PrimObject greaterThan(PrimObject p1,PrimObject p2 ){
 		break;
 	
 	default:
-		Manager.output.setText("incompatable greater than relation");
+		Window.output.setText("incompatable greater than relation");
 
 		System.err.println("incompatable greater than relation expression at line ");
 		
@@ -762,7 +762,7 @@ public static PrimObject greaterThanEqual(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable greater than or equal to relation");
+				Window.output.setText("incompatable greater than or equal to relation");
 				System.err.println("incompatable greater than or equal relation expression at line ");
 			break;
 		}
@@ -779,14 +779,14 @@ public static PrimObject greaterThanEqual(PrimObject p1,PrimObject p2 ){
 				pf.setType(BOOLNUM);
 			break;
 			default:
-				Manager.output.setText("incompatable greater than or equal to relation");
+				Window.output.setText("incompatable greater than or equal to relation");
 				System.err.println("incompatable greater than or equal relation expression at line ");
 			break;
 		}
 		break;
 	
 	default:
-		Manager.output.setText("incompatable greater than or equal to relation");
+		Window.output.setText("incompatable greater than or equal to relation");
 		System.err.println("incompatable greater than or equal relation expression at line ");
 		
 	}
@@ -806,13 +806,13 @@ public static PrimObject andCheck(PrimObject p1,PrimObject p2 ){
 			break;
 		
 			default:
-				Manager.output.setText("incompatable and expression");
+				Window.output.setText("incompatable and expression");
 				System.err.println("incompatable and expression at line ");
 			break;
 		}
 		break;	
 	default:
-		Manager.output.setText("incompatable and expression");
+		Window.output.setText("incompatable and expression");
 		System.err.println("incompatable and expression at line ");
 		
 	}
@@ -833,14 +833,14 @@ public static PrimObject orCheck(PrimObject p1,PrimObject p2 ){
 			break;
 		
 			default:
-				Manager.output.setText("incompatable and expression");
+				Window.output.setText("incompatable and expression");
 
 				System.err.println("incompatable and expression at line ");
 			break;
 		}
 		break;	
 	default:
-		Manager.output.setText("incompatable and expression");
+		Window.output.setText("incompatable and expression");
 
 		System.err.println("incompatable and expression at line ");
 		

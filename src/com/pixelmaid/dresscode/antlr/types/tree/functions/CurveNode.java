@@ -8,7 +8,8 @@ import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
-import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.app.Window;
+import com.pixelmaid.dresscode.app.Window;
 
 public class CurveNode extends DrawableNode implements DCNode {
 
@@ -34,7 +35,7 @@ public class CurveNode extends DrawableNode implements DCNode {
     		e = new Curve(values);
     	}
     	catch (ClassCastException err){
-    		Manager.output.setText("incorrect parameters for curve call at line:"+line);
+    		Window.output.setText("incorrect parameters for curve call at line:"+line);
     		System.err.println("incorrect parameters for curve call at line:"+line);
     		
     		}
@@ -63,10 +64,10 @@ public class CurveNode extends DrawableNode implements DCNode {
         	}
     	}*/
     	else{
-    		Manager.output.setText("incorrect parameters for curve call at line:"+line);
+    		Window.output.setText("incorrect parameters for curve call at line:"+line);
     		System.err.println("incorrect parameters for curve call at line:"+line);
     	}
-    	Manager.canvas.addDrawable("curve",line,e);
+    	Window.canvas.addDrawable("curve",line,e);
     	return new VarType(e);	
         //throw new RuntimeException("Illegal function call: " + this);
     }

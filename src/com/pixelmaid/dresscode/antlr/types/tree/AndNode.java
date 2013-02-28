@@ -1,6 +1,9 @@
 package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.*;
+import com.pixelmaid.dresscode.app.Window;
+import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 public class AndNode implements DCNode {
 
     private DCNode lhs;
@@ -17,11 +20,25 @@ public class AndNode implements DCNode {
         VarType a = lhs.evaluate();
         VarType b = rhs.evaluate();
 
-        if(!a.isBoolean() || !b.isBoolean()) {
-            throw new RuntimeException("illegal expression: " + this);
+        if(a.isBoolean() && b.isBoolean()) {
+        	return new VarType(a.asBoolean() && b.asBoolean());
+           
         }
+        if(a.isDrawable() && b.isDrawable()) {
+        	Drawable aP = a.asDrawable();
+        	Drawable bP = b.asDrawable();
+        	aP.removeFromCanvas();
+        	bP.removeFromCanvas();
+        	Drawable d = PolyBoolean.intersection(aP,bP);
+        	 //TODO: add actual line number instead of 0 here
+    		Window.canvas.addDrawable("drawable",-1,d);
+        	return new VarType(d);
+          }
 
-        return new VarType(a.asBoolean() && b.asBoolean());
+        else{
+        	 throw new RuntimeException("illegal expression: " + this);
+        }
+        
     }
 
     @Override

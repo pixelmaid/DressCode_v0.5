@@ -5,7 +5,8 @@ import java.util.List;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
-import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.app.Window;
+import com.pixelmaid.dresscode.app.Window;
 
 public class EllipseNode extends DrawableNode implements DCNode {
 
@@ -38,21 +39,21 @@ public class EllipseNode extends DrawableNode implements DCNode {
 
 				}
 				else{
-					Manager.output.setText("incorrect number of arguments for ellipse at line:"+line);
+					Window.output.setText("incorrect number of arguments for ellipse at line:"+line);
 					System.err.println("incorrect number of arguments for ellipse at line:"+line);
 				}
 			}
 			else{
-				Manager.output.setText("incorrect number of arguments for ellipse at line:"+line);
+				Window.output.setText("incorrect number of arguments for ellipse at line:"+line);
 
 				System.err.println("incorrect arguments for ellipse at line:"+line);
 			}
 
 
-			Manager.canvas.addDrawable("ellipse",line,e);
+			Window.canvas.addDrawable("ellipse",line,e);
 		}
 		catch (ClassCastException err){
-			Manager.output.setText("incorrect parameters for ellipse at line:"+line);
+			Window.output.setText("incorrect parameters for ellipse at line:"+line);
 
 			System.err.println("incorrect parameters for ellipse at line:"+line);
 

@@ -6,6 +6,7 @@ import java.util.List;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.primitive2d.Color;
@@ -46,7 +47,7 @@ public class GroupNode implements DCNode {
     	}
     	
     	//System.out.println("group children are polygons" + master.childrenArePolygons());
-    	Manager.canvas.addDrawable("drawable",-1,master);
+    	Window.canvas.addDrawable("drawable",-1,master);
     	return new VarType(master);
     	}
     	catch (ClassCastException e){

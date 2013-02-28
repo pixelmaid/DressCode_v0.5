@@ -37,9 +37,9 @@ public class Embedded extends PApplet {
 	public void draw() {
 
 		background(DEFAULT_BG,DEFAULT_BG,DEFAULT_BG);
-		System.out.println("draw");
+		//System.out.println("draw");
 		//this.ellipse(0, 0, 100, 100);
-		System.out.println("drawable count="+drawables.size());
+		//System.out.println("drawable count="+drawables.size());
 		try{
 		for (Drawable value : drawables.values()) {
 			
@@ -74,9 +74,9 @@ public class Embedded extends PApplet {
 	public void print(File file){
 		String filename = file.getAbsolutePath();
 		String subStr = filename.substring(filename.length()-4, filename.length());
-		System.out.println(subStr);
+		//System.out.println(subStr);
 		if(!subStr.contentEquals(".pdf")){
-			System.out.println("substr!=pdf");
+			//System.out.println("substr!=pdf");
 			filename =filename.concat(".pdf");
 		}
 		this.beginRecord(PDF, filename);
@@ -123,6 +123,12 @@ public class Embedded extends PApplet {
 	public void clearAllDrawables() {
 		drawables.clear();
 
+	}
+	
+	public void clear(){
+		this.clearAllDrawables();
+		this.draw();
+		this.init();
 	}
 	
 	public void grid(){

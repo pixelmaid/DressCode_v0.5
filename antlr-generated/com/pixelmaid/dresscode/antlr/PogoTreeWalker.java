@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g 2013-02-27 19:00:06
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g 2013-02-28 11:35:58
 
  package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -7,7 +7,7 @@
    import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
   import java.util.Map;
   import java.util.HashMap;
-  import com.pixelmaid.dresscode.app.Manager;
+  import com.pixelmaid.dresscode.app.Window;
 
 
 import org.antlr.runtime.*;
@@ -2615,14 +2615,14 @@ public class PogoTreeWalker extends TreeParser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:184:4: WIDTH_CONSTANT
 					{
 					match(input,WIDTH_CONSTANT,FOLLOW_WIDTH_CONSTANT_in_expression1944); 
-					node = new AtomNode(Manager.canvas.width);
+					node = new AtomNode(Window.canvas.width);
 					}
 					break;
 				case 26 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:185:4: HEIGHT_CONSTANT
 					{
 					match(input,HEIGHT_CONSTANT,FOLLOW_HEIGHT_CONSTANT_in_expression1989); 
-					node = new AtomNode(Manager.canvas.height);
+					node = new AtomNode(Window.canvas.height);
 					}
 					break;
 

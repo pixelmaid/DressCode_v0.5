@@ -6,7 +6,8 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
-import com.pixelmaid.dresscode.app.Manager;
+import com.pixelmaid.dresscode.app.Window;
+import com.pixelmaid.dresscode.app.Window;
 
 public class PolygonNode extends DrawableNode implements DCNode {
 
@@ -51,22 +52,22 @@ public class PolygonNode extends DrawableNode implements DCNode {
 
 				}
 				else{
-					Manager.output.setText("incorrect parameters for polygon call at line:"+line);
+					Window.output.setText("incorrect parameters for polygon call at line:"+line);
 
 					System.err.println("inccorect number of arguments for polygon at line:"+line);
 				}
 			}
 			else{
-				Manager.output.setText("incorrect parameters for polygon call at line:"+line);
+				Window.output.setText("incorrect parameters for polygon call at line:"+line);
 
 				System.err.println("inccorect arguments for polygon at line:"+line);
 			}
 
 
-			Manager.canvas.addDrawable("polygon",line,e);
+			Window.canvas.addDrawable("polygon",line,e);
 		}
 		catch (ClassCastException err){
-			Manager.output.setText("incorrect parameters for polygon call at line:"+line);
+			Window.output.setText("incorrect parameters for polygon call at line:"+line);
 
 			System.err.println("incorrect parameters for polygon at line:"+line);
 
