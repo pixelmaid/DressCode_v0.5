@@ -5,10 +5,13 @@ to update the canvas */
 
 import java.awt.Font;
 import java.awt.event.*;
+import java.io.File;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.text.BadLocationException;
+
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
@@ -89,7 +92,12 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 
     }
 
-    
+    //adds a line of code to import in a shape;
+    public void insertPath(File f) throws BadLocationException{
+    	 String fileString = "import(\""+f.getAbsolutePath()+"\");";
+    	 int caretPos = this.getCaretPosition();
+    	 this.getDocument().insertString(caretPos, fileString, null);
+    }
 
 	@Override
 	public void changedUpdate(DocumentEvent arg0) {

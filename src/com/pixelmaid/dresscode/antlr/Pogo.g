@@ -87,6 +87,8 @@ functionCall
   |  Print '(' expression ')'     -> ^(FUNC_CALL Print expression)
   |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
   |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)
+  |  LAdd '(' exprList? ')'   -> ^(FUNC_CALL LAdd exprList?) 
+  |  LRemove '(' exprList? ')'   -> ^(FUNC_CALL LRemove exprList?) 
   |	 primitiveCall
   |	 transformCall
   |	 mathCall
@@ -99,6 +101,7 @@ functionCall
   	|Rect '(' exprList? ')'   -> ^(FUNC_CALL Rect exprList?) 
   	|Curve '(' exprList? ')' ->  ^(FUNC_CALL Curve exprList?)
   	|Polygon '(' exprList? ')' ->  ^(FUNC_CALL Polygon exprList?)
+  	|LShape '(' exprList? ')' ->  ^(FUNC_CALL LShape exprList?)
   	;
   
   transformCall
@@ -249,6 +252,7 @@ Quad	: 'quad';
 Point	: 'point';
 Triangle: 'triangle';
 Polygon	: 'poly';
+LShape	: 'import';
 
 //math keywords
 Cosine	:'cos';
@@ -274,6 +278,10 @@ WIDTH_CONSTANT: 'WIDTH';
 HEIGHT_CONSTANT: 'HEIGHT';
 
 PI_CONSTANT: 'PI';
+
+//add and removal methods for list
+LAdd	: 'add';
+LRemove : 'remove';
 
 Println  : 'println';
 Print    : 'print';

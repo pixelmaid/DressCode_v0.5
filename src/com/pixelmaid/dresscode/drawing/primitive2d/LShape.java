@@ -3,6 +3,7 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 import processing.core.PShape;
 
 import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 //class used for importing in pre-defined svg vector objects
 
@@ -12,9 +13,10 @@ public class LShape extends Polygon {
 	private Embedded canvas; //
 	private double x=0; //x coordinate of shape
 	private double y= 0; //y coordinate of shape
+	private double width = 0;
+	private double height = 0;
 	    public LShape() {
-	    	
-	    	
+	    	this.setOrigin(new Point(0,0));
 	    }
 	    //sets shape path
 	    public void setPath(String p){
@@ -28,6 +30,11 @@ public class LShape extends Polygon {
 	    
 	    public void loadShape(){
 	    	this.shape = this.canvas.loadShape(this.shapePath);
+	    	System.out.println("loaded shape succesfully");
+	    	this.width = this.shape.width;
+	    	this.height = this.shape.height;
+	    	this.setOrigin(new Point(this.width/2,this.height/2));
+	    	
 	    }
 	    
 	    //returns current drawing canvas
@@ -43,10 +50,11 @@ public class LShape extends Polygon {
 	    @Override
 	    public LShape copy(){
 	    	LShape s = new LShape();
-	    	copyParameters(this,s);
+	    	
 	    	s.setPath(this.getPath());
 	    	s.setCanvas(this.getCanvas());
 	    	s.loadShape();
+	    	copyParameters(this,s);
 	    	return s;
 	    }
 
@@ -56,8 +64,12 @@ public class LShape extends Polygon {
 			e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate((float)Math.toRadians(getRotation()));
-			e.shape(shape,(float)x,(float)y);
+			e.shape(shape,(float)(x-this.width/2),(float)(y-this.height/2));
 			e.popMatrix();
+			
+			if(this.getDrawOrigin()){
+				this.drawOrigin(e);
+			}
 	    }
 		
 		

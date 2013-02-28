@@ -181,6 +181,10 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	@Override
 	// creates a new drawable and adds this polygon and d to it and returns new drawable
 	public Drawable addToGroup(Drawable d){
+		return this.addToGroup(d,1);
+	}
+	
+	public Drawable addToGroup(Drawable d, int index){
 	 Drawable master = new Drawable();
 	//TODO: adjust indexing here to have new drawable added at same index as this
 	 Manager.canvas.addDrawable("drawable",-1,master);
@@ -189,7 +193,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
     	d.removeFromCanvas();
     		
     		master.addToGroup(this);
-    		master.addToGroup(d);
+    		master.addToGroup(d,index);
     	
     	return master;
 	}

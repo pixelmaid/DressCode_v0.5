@@ -22,7 +22,10 @@ public class SizeNode implements DCNode {
         if(value.isList()) {
             return new VarType(value.asList().size());
         }
-
+        
+        if(value.isDrawable()){
+        	return new VarType(value.asDrawable().numChildren());
+    	}
         throw new RuntimeException("Illegal function call: " + this);
     }
 

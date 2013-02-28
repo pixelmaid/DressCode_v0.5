@@ -79,6 +79,8 @@ functionCall returns [DCNode node]
   |  ^(FUNC_CALL Print expression)     {node = new PrintNode($expression.node);}
   |  ^(FUNC_CALL Assert expression)    {node = new AssertNode($expression.node);}
   |  ^(FUNC_CALL Size expression)      {node = new SizeNode($expression.node);}
+  |  ^(FUNC_CALL LAdd exprList?) 	{node = new LAddNode($exprList.e,$FUNC_CALL.getLine());}
+  |  ^(FUNC_CALL LRemove exprList?) {node = new LRemoveNode($exprList.e,$FUNC_CALL.getLine());}
   |	 primitiveCall {node = $primitiveCall.node;}
   |	 transformCall {node = $transformCall.node;}
   |	 mathCall {node= $mathCall.node;}
@@ -91,6 +93,7 @@ functionCall returns [DCNode node]
   	|^(FUNC_CALL Rect exprList?) 	 {node = new RectangleNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL Curve exprList?)   {node = new CurveNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL Polygon exprList?) {node = new PolygonNode($exprList.e,$FUNC_CALL.getLine());}
+  	| ^(FUNC_CALL LShape exprList?) {node = new LShapeNode($exprList.e,$FUNC_CALL.getLine());}
   	;
   
   transformCall returns [DCNode node]
