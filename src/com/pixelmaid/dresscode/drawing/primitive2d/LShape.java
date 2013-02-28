@@ -85,16 +85,22 @@ public class LShape extends Polygon {
 			
 		}
 
-		@Override
-		//TODO: implement polygon conversion
+		
+		/*//TODO: implement polygon conversion
 		//converts shape to polygon
-		public Polygon toPolygon() {
-			Polygon c =  new Polygon();
-			copyParameters(this,c);
+		public Drawable toPolygon() {
+			SVGReader r = new SVGReader();
+			r.readSVGFile(this.getPath());
+			Drawable d = r.getDrawable();
+			copyParameters(this,d);
 			
 			
-			return c;
+			return d;
 		}
-
+		
+		public Polygon toPolygon() {
+			//return this.toPolygon()
+		}
+			*/
 	
 }

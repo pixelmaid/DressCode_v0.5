@@ -27,7 +27,7 @@ public class Embedded extends PApplet {
 	public void setup() {
 		//this.init();
 		// original setup code here ...
-		size(600,768,P2D);
+		size(600,768);
 		background(DEFAULT_BG,DEFAULT_BG,DEFAULT_BG);
 		grid();
 		// prevent thread from starving everything else
