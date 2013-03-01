@@ -1,0 +1,18 @@
+/*SVG Pattern example
+This example demonstrates how to import an svg and manipulate it with a loop 
+NOTE: only works for simple svgs.
+*/
+
+//path must be modified for your svg
+heart1 = import("/Users/jenniferjacobs/Desktop/examples/basics/svgs/heart_sm.svg"); 
+move(heart1,WIDTH/2,HEIGHT/2);//move imported svg to center of screen
+
+//loop that copies first heart
+repeat i=0:10:
+    theta = 360/10*i;
+    heartN = copy(heart1);
+    x = cos(theta)*200+WIDTH/2;
+    y = sin(theta)*200+HEIGHT/2;
+    rotate(heartN,theta+90);
+    move(heartN,x,y);
+end

@@ -62,6 +62,7 @@ public class LShape extends Polygon {
 
 		@Override
 	    public void draw(Embedded e) {
+			if(!this.getHide()){
 			e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate((float)Math.toRadians(getRotation()));
@@ -71,17 +72,20 @@ public class LShape extends Polygon {
 			if(this.getDrawOrigin()){
 				this.drawOrigin(e);
 			}
+			}
 	    }
 		
 		
 
 		@Override
 		public void print(Embedded e) {
+			if(!this.getHide()){
 			e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate((float)Math.toRadians(getRotation()));
-			e.shape(shape,(float)x,(float)y);
+			e.shape(shape,(float)(x-this.width/2),(float)(y-this.height/2));
 			e.popMatrix();
+			}
 			
 		}
 

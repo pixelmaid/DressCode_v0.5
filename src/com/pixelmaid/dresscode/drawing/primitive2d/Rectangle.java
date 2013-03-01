@@ -43,6 +43,7 @@ public class Rectangle extends Polygon{
 	
 	@Override
 	public void draw(Embedded e){
+		if(!this.getHide()){
 		appearance(e);
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
@@ -54,10 +55,12 @@ public class Rectangle extends Polygon{
 		if(this.getDrawOrigin()){
 			this.drawOrigin(e);
 		}
+		}
 	}
 	
 	@Override
 	public void print(Embedded e){
+		if(!this.getHide()){
 		appearance(e);
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
@@ -65,6 +68,7 @@ public class Rectangle extends Polygon{
 		e.rectMode(PConstants.CENTER);
 		e.rect(0,0,(float)width,(float)height);
 		e.popMatrix();
+		}
 		
 	}
 	

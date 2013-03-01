@@ -42,38 +42,51 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		this.control1=control1;
 		this.control2=control2;
 		this.end=end;
-		this.origin=Geom.findCentroid((Polygon)this.toPolygon());
+		this.origin= Geom.getMidpoint(start, end);
 
 	}
 
 	@Override
 	public void draw(Embedded e){
 		//TODO: MAKE CURVE DRAW ORIGIN CORRECTLY
+		if(!this.getHide()){
 		appearance(e);
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
 		e.bezier((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()),(float)(control1.getX()-getOrigin().getX()), (float)(control1.getY()-getOrigin().getY()), (float)(control2.getX()-origin.getX()), (float)(control2.getY()-origin.getY()),(float)(end.getX()-origin.getX()), (float)(end.getY()-origin.getY()));
+		e.stroke(255,0,0);
+		e.strokeWeight(5);
+		e.point((float)(control1.getX()-getOrigin().getX()), (float)(control1.getY()-getOrigin().getY()));
+		e.stroke(0,0,255);
+		e.point((float)(control2.getX()-getOrigin().getX()), (float)(control2.getY()-getOrigin().getY()));
 		e.popMatrix();
-		/*if(this.getDrawOrigin()){
+		if(this.getDrawOrigin()){
 			this.drawOrigin(e);
-		}*/
+		}
+		}
 	}
 
 	
 	@Override
 	public void print(Embedded e){
 		//TODO: MAKE CURVE DRAW RELATIVE
+		if(!this.getHide()){
 		appearance(e);
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
 		e.bezier((float)start.getX(), (float)start.getY(),(float)control1.getX(), (float)control1.getY(), (float)control2.getX(), (float)control2.getY(),(float)end.getX(), (float)end.getY());
 		e.popMatrix();
+		}
 		
 	}
 
 
+	/*@Override
+	public void setAbsolute(){
+		//do nothing;
+	}*/
 
 	@Override
 	public Curve copy(){

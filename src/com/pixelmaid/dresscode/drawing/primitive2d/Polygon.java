@@ -80,6 +80,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	
 	@Override
 	public void draw(Embedded e){
+		if(!this.getHide()){
 		appearance(e);
 		//System.out.println("number of holes="+this.holes.size()+"number of points="+this.points.size());
 		e.pushMatrix();
@@ -99,10 +100,12 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		if(this.getDrawOrigin()){
 			this.drawOrigin(e);
 		}
+		}
 	}
 	
 	@Override
 	public void print(Embedded e){
+		if(!this.getHide()){
 		appearance(e);
 		//System.out.println("number of holes="+this.holes.size()+"number of points="+this.points.size());
 		e.pushMatrix();
@@ -118,7 +121,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			holes.get(i).print(e);
 		}
 		e.popMatrix();
-		
+		}
 	
 	}
 	

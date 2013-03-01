@@ -2,8 +2,13 @@
 package com.pixelmaid.dresscode.app;
 
 import java.awt.BorderLayout;
+
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.awt.ScrollPane;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -21,18 +26,25 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import javax.swing.BorderFactory;
+import javax.swing.Box;
+import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
+import javax.swing.ScrollPaneConstants;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.StyledDocument;
 import java.awt.event.ComponentListener;
@@ -58,8 +70,20 @@ WindowStateListener, ComponentListener, ActionListener {
 	public static final JTextPane output = new JTextPane();
 	public static StyledDocument doc;
 	public static File homeDir ;
+	
 
+	private ScrollPane sketchScrollpane = new ScrollPane();
+	//dialogs
+	public static NewDialog newDialog;
+	
 
+	//canvas sizing options
+	private int sketchw = 1000; //width of the sketch
+	private int sketchh = 700; //height of the sketch
+	private int max_w = 600; // max width to create window
+	private int max_h =600; // max height to create window
+		    
+	
 	public Window(String title) {
 		super(title);
 	}
@@ -123,6 +147,8 @@ WindowStateListener, ComponentListener, ActionListener {
         pasteAction.addActionListener(this);
         cutAction.addActionListener(this);
         
+       
+        
     }
 
 	public void setupFileChooser(){
@@ -157,7 +183,7 @@ WindowStateListener, ComponentListener, ActionListener {
 	}
 
 
-	public static void addComponentsToPane(Container pane) {
+	public void addComponentsToPane(Container pane) {
 
 		
 		
@@ -179,18 +205,14 @@ WindowStateListener, ComponentListener, ActionListener {
 					java.awt.ComponentOrientation.RIGHT_TO_LEFT);
 		}
 
-
-		canvas = new Embedded();
-		canvas.init();
-
-		canvas.setPreferredSize(new Dimension(600,786));
-		pane.add(canvas, BorderLayout.CENTER);
-	
 		
 
+		
+		setupCanvas(pane);
+	
 		JPanel code = new JPanel();
 		code.setLayout(new BorderLayout());
-		code.setPreferredSize(new Dimension(600,786));
+		code.setPreferredSize(new Dimension(800,786));
 
 		codeField= new CodeField();
 		codeField.setPreferredSize(new Dimension(600,500));
@@ -228,11 +250,75 @@ WindowStateListener, ComponentListener, ActionListener {
 		codeField.setText("");
 		//output.setContentType("text/java");
 		// output.setText("hello world");
+	
+		
+		
 	}
+	
+	public void setupCanvas(Container pane){
+		pane.remove(sketchScrollpane);
+		Dimension dimension = new Dimension(sketchw, sketchh); //will act as size of sketch
+		
+		  
+		 JPanel sketchPanel = new JPanel(true); //holds JInternalFrame
+		 JInternalFrame sketch = new JInternalFrame(); //holds the actual sketch
+		 
+		 //sketchPanel size is the larger of either sketchWindow or canvas
+	     sketchPanel.setLayout(new BoxLayout(sketchPanel, BoxLayout.PAGE_AXIS)); //centers sketch - optional
+		 
+	     
+	     int width, height;
+	        if (sketchw <= max_w)
+	            width = sketchw;
+	        else
+	            width = max_w;
+	        if (sketchh <= max_h)
+	            height = sketchh;
+	        else
+	            height = max_h;
+	        
+	     canvas = new Embedded(); //Canvas is just a sketch which extends PApplet
+	     canvas.setSize(dimension);
+	     canvas.setMaximumSize(dimension);
+	     
+	     
+	     BasicInternalFrameUI ui = (BasicInternalFrameUI)sketch.getUI();
+        sketch.putClientProperty("titlePane", ui.getNorthPane());
+        sketch.putClientProperty("border", sketch.getBorder());
+        ui.setNorthPane(null);
+        sketch.setBorder(null);
+        
+        //just basic options to keep the sketch the right size
+        sketch.add(canvas); //adds canvas to JInternalFrame
+        sketch.setSize(sketchw, sketchh);
+           sketch.setPreferredSize(dimension);
+           sketch.setMaximumSize(dimension);
+           sketch.setResizable(false);
+           sketch.setVisible(true);
+           sketch.pack();
+           
+           
+           //centers the JInternalFrame using the BoxLayout
+           sketchPanel.add(Box.createVerticalGlue());
+           sketchPanel.add(Box.createHorizontalGlue());
+           sketchPanel.add(sketch); //adds JInternalFrame to JPanel
+           sketchPanel.add(Box.createHorizontalGlue());
+           sketchPanel.add(Box.createVerticalGlue());
+
+          // uses ScrollPane instead of JScrollPane to circumvent rendering issues
+          sketchScrollpane = new ScrollPane(ScrollPane.SCROLLBARS_ALWAYS); //follows Adobe's lead
+           sketchScrollpane.add(sketchPanel); //adds JPanel to ScrollPane
+         
+       	pane.add(sketchScrollpane);
+         canvas.init();
+	}
+	
 
 	public void createAndShowGUI() {
 
-		
+		this.setPreferredSize(new Dimension(1024,768));
+		max_w = this.getPreferredSize().width/2;
+		max_h =this.getPreferredSize().height/2;
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		//setup file chooser and buttons
@@ -241,10 +327,12 @@ WindowStateListener, ComponentListener, ActionListener {
 		addComponentsToPane(this.getContentPane());
 		createMenu();
 		//Display the window.
+		
 		this.pack();
 		this.setVisible(true);
 		this.addWindowListener(this);
 		this.addComponentListener(this);
+		
 
 		
 	}
@@ -257,8 +345,29 @@ WindowStateListener, ComponentListener, ActionListener {
 
 	//inits a new file
 	private void newFile(){
-		codeField.clear();
-		codeField.updateCanvas();
+		 newDialog = new NewDialog(this, true);
+         System.err.println("After opening dialog.");
+         if(newDialog.getAnswer()) {
+        	 codeField.clear();
+        	 codeField.updateCanvas();
+        	 int widthVal = newDialog.getCanvasWidth();
+        	 int heightVal = newDialog.getCanvasHeight();
+             System.out.println("width ="+widthVal+" height="+ heightVal);
+         	max_w = this.getWidth()/2;
+    		max_h =this.getHeight()/2;
+    		sketchw = widthVal;
+    		sketchh = heightVal;
+    		setupCanvas(this.getContentPane());
+    		this.getContentPane().doLayout();
+    		
+    		
+    	
+    		
+         }
+         else {
+             System.err.println("The answer stored in CustomDialog is 'false' (i.e. user clicked no button.)");
+         }
+		
 	}
 	
 	@Override

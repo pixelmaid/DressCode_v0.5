@@ -68,6 +68,7 @@ public class Ellipse extends Polygon {
 
 	@Override
     public void draw(Embedded e) {
+		if(!this.getHide()){
 		appearance(e);
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
@@ -78,6 +79,7 @@ public class Ellipse extends Polygon {
 		if(this.getDrawOrigin()){
 			this.drawOrigin(e);
 		}
+		}
 		
     }
 	
@@ -85,13 +87,14 @@ public class Ellipse extends Polygon {
 
 	@Override
 	public void print(Embedded e) {
+		if(!this.getHide()){
 		appearance(e);
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate((float)Math.toRadians(getRotation()));
 		e.ellipse(0,0,(float)width,(float)height);
 		e.popMatrix();
-		
+		}
 	}
 
 	@Override

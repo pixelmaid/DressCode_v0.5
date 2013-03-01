@@ -25,7 +25,7 @@ public class Line extends Polygon {
 	public Line(Point s, Point e) {
 		this.start = s;
 		this.end = e;
-		this.origin=Geom.getMidpoint(start, end);
+		this.origin=start;
 	}
 	
 	//initialize line from polar coordinates
@@ -35,27 +35,30 @@ public class Line extends Polygon {
 	
 	@Override
 	public void draw(Embedded e){
+		if(!this.getHide()){
 		appearance(e);
 		e.pushMatrix();
-		//TODO: MAKE LINE DRAW RELATIVE BY SUBTRACTING ORIGIN
-		//e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+	
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
-		e.line((float)start.getX(), (float)start.getY(), (float)end.getX(), (float)end.getY());
+		e.line((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()),(float)(end.getX()-getOrigin().getX()), (float)(end.getY()-getOrigin().getY()));
 		e.popMatrix();
 		
 		if(this.getDrawOrigin()){
 			this.drawOrigin(e);
 		}
+		}
 	}
 	
 	@Override
 	public void print(Embedded e){
+		if(!this.getHide()){
 		e.pushMatrix();
-		//TODO: MAKE LINE DRAW RELATIVE BY SUBTRACTING ORIGIN
-		//e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
-		e.line((float)start.getX(), (float)start.getY(), (float)end.getX(), (float)end.getY());
+		e.line((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()),(float)(end.getX()-origin.getX()), (float)(end.getY()-origin.getY()));
 		e.popMatrix();
+		}
 	}
 	
 	@Override
@@ -78,8 +81,18 @@ public class Line extends Polygon {
 	
 	@Override 
 	public Point getOrigin(){
-		return this.start;
+		this.origin = start;
+		return this.origin;
 	}
+	
+	
+	@Override
+	public void moveTo(double x, double y){
+		this.start.moveTo(x, y, this.start);
+	    this.end.moveTo(x, y, this.start);
+	    this.origin = start;
+	}
+
 
 	
 	@Override

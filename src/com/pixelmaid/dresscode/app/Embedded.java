@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+import javax.media.nativewindow.util.Dimension;
+
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
@@ -27,7 +29,9 @@ public class Embedded extends PApplet {
 	public void setup() {
 		//this.init();
 		// original setup code here ...
-		size(600,768);
+		size(700,700,P2D);
+		//this.setPreferredSize(preferredSize)
+		
 		background(DEFAULT_BG,DEFAULT_BG,DEFAULT_BG);
 		grid();
 		// prevent thread from starving everything else

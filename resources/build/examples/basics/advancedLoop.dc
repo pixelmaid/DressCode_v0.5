@@ -1,0 +1,34 @@
+//curve variables
+sX = 0; //starting x coordinate for curve
+sY = 0; //starting y coordinate for curve
+l = 200; //length of curve
+
+//loop variables
+num= 20 //number of times the loop will repeat
+radius = 0;
+
+
+//create two curves using different percentages of the curve variables
+c1 = curve(sX,sY,l,l*0.05,l*0.25,l*0.85,sX+l,sY+l);
+c2 = curve(sX,sY,l*0.05,l,l*0.85,l*0.25,sX+l,sY+l);
+
+cGroup = group(c1,c2); //group two curves
+
+stroke(cGroup,PURPLE);//set stroke to purple
+noFill(cGroup); //remove fill
+weight(cGroup,5); //set stroke weight to 5
+
+//loop that will begin at 1 and repeat up to and including the value of num
+repeat i=1:num:
+    cNew = copy(cGroup); //create a copy of the original group of curves
+    theta = 360/num*i; //calculate angle to rotate each curve group to
+    
+    x = cos(theta)*radius+WIDTH/2; // calculate x and y coordinates using cosine and sine
+    y = sin(theta)*radius+HEIGHT/2;
+    
+    rotate(cNew,theta);//rotate curve to value of theta
+    move(cNew,x,y);//move curve group copy to x and y coordinates
+end
+
+//hide the original curve group
+hide(cGroup);

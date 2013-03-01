@@ -1,0 +1,49 @@
+//simple loop example (drawn from left to right on canvas in order of examples)
+
+//create a vertical row of 5 ellipses
+repeat i=1:5:
+    ellipse(100,100*i,75); //set ellipse y position to 100 * current value of i
+end
+
+
+
+//create a stack of rotated rectangles
+repeat i=1:10:
+    r = rect(400,300,200+i*20,50); //set width to 200  10 * current value of i
+    theta = 10*i; //angle that is equal to 10 * current value of i
+    rotate(r,theta); //rotate r corresponding to angle
+end
+
+
+
+//create a spiral of ellipses in a clipping path (more complex)
+cX = 800; //x position for design
+cY = 300; //y position for design
+rad = 0; //starting radius of spiral
+theta=0; //starting angle of spiral
+radIncrease =1; //amout to increase radius each iteration
+thetaIncrease =8; //amout to increase angle each iteration
+num = 200; //number of iterations
+
+circleGroup = ellipse(0,0,0.5); //starting ellipse to begin the spiral
+
+//loop
+repeat i=0:num:
+    theta = theta+thetaIncrease; //increase theta by thetaIncrease
+    rad = rad+radIncrease; //increase rad by radIncrease
+    
+    x = cos(theta)*(rad); //calculate x and y positions for ellipse
+    y = sin(theta)*(rad);
+    e = ellipse(x,y,30); //create new ellipse with diameter 30
+
+    circleGroup=circleGroup+e; //add ellipse to starting ellipse with boolean operation, creating spiral
+end
+
+move(circleGroup,cX,cY); //move spiral to design x and y position
+
+clip = rect(cX,cY,300); //create rectangle to clip spiral
+c = clip && circleGroup; // clip
+
+fill(c,PINK);//set fill for spiral
+
+frame = weight(noFill(copy(clip)),5); //create frame as a copy of clip and set weight and fill

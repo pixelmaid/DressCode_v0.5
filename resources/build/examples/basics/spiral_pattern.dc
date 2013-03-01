@@ -1,0 +1,50 @@
+originX =0; 
+originY = 0;
+count = 150;
+r=15;
+offset=0;
+gap = 3;
+spacing = 150;
+
+//create two nested loops
+repeat j=1:10:
+    theta = 0; //reset theta each loop
+    if j%2==0: //if j is even then set theta to 20
+       theta=20;
+    end
+    
+    repeat i=1:10:
+        if (i+offset)%gap==0 :
+            createSpiral(originX,originY,0,r,count,PINK,PURPLE);
+        else:
+            createSpiral(originX,originY,0,r,count,BLUE, PINK);
+        end
+        originX=originX+spacing;
+    end
+    originY=originY+spacing;
+    offset= offset+1
+    originX=0; 
+end
+
+def createSpiral(oX, oY, theta, radius, count, col1, col2) :
+    spiral = group(); //empty group to store spiral in
+    cirRadius = radius; // variable to control radius of ellipses
+  
+    repeat i=1:count: //begin loop
+        
+        x = radius * cos(theta)+ oX; //calculate x and y position for each ellipse in spiral
+        y = radius * sin(theta)+ oY;
+        e = ellipse(x, y, cirRadius); //create ellipse
+        if i%2==0: //if i is even then fill with col1
+            fill(e,col1);
+        else: //else fill with col2
+            fill(e,col2);
+        end
+        add(spiral,e);
+        theta = theta+22; //increment theta by 42
+        radius= radius+0.4; //increment radius by 0.6
+        cirRadius= cirRadius-0.07; //decrement cirRadius by 0.1
+    end
+    noStroke(spiral);
+    return spiral; //return resulting group
+end

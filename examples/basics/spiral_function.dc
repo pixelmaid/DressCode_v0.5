@@ -1,0 +1,45 @@
+//function example
+//demonstrates creating and calling a function with parameters
+
+//define createSpiral function that will produce a spiral pattern of ellipses 
+
+/*createSpiral has 7 parameters 
+oX = x position of the spiral pattern
+oY = y position of the spiral pattern
+theta = starting angle to begin spiral at
+radius = starting radius of spiral
+count = number of ellipses in spiral pattern
+col1 = fillcolor for even numbered ellipses
+col2 = fill color for odd numbered ellipses
+*/
+
+def createSpiral(oX, oY, theta, radius, count, col1, col2) :
+    spiral = group(); //empty group to store spiral in
+    cirRadius = radius; // variable to control radius of ellipses
+  
+    repeat i=1:count: //begin loop
+        
+        x = radius * cos(theta)+ oX; //calculate x and y position for each ellipse in spiral
+        y = radius * sin(theta)+ oY;
+        e = ellipse(x, y, cirRadius); //create ellipse
+        if i%2==0:
+            fill(e,col1);
+        else:
+            fill(e,col2);
+        end
+        add(spiral,e);
+        theta = theta+42; //increment theta by 42
+        radius= radius+0.6; //increment radius by 0.6
+        cirRadius= cirRadius-0.1; //decrement cirRadius by 0.1
+    end
+    return spiral; //return resulting group
+end
+
+//call seperate instances of the function
+s1 = createSpiral(WIDTH/2,HEIGHT/2,0,20,150,RED,PURPLE);
+
+s2= createSpiral(WIDTH/2+250,HEIGHT/2,20,15,100,BLUE,PURPLE);
+
+s3 = createSpiral(WIDTH/2-250,HEIGHT/2,20,15,100,BLUE,PURPLE);
+
+//s1, s2, and s3 can now be manipulated like any other group

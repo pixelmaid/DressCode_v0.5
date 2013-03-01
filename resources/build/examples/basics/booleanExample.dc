@@ -1,0 +1,40 @@
+//This example demonstrates boolean operations between primitives
+
+//union between two shapes
+e1 = ellipse(130,160,50,300);
+p1 = poly(130,160,8,100);
+
+u = e1+p1;
+
+
+//difference between two shapes (try switching the order of subtraction)
+e2 = ellipse(330,160,50,300);
+p2 = poly(330,160,8,100);
+
+d = e2-p2;
+
+//intersection between two shapes
+e3 = ellipse(530,160,50,300);
+p3 = poly(530,160,8,100);
+
+i = e3&&p3;
+
+//you can also clip a group of objects within a larger shape
+g = group() // create an empty group
+eG = ellipse(500,500,300);
+rG = rect(600,500,20,300);
+pG = poly(750,500,3,200);
+add(g,eG);
+add(g,rG);
+add(g,pG);
+
+//primitive to serve as clipping path
+clipRect = rect(650,500,500,300); 
+//copy of clipping path to frame clipped objects
+frame = copy(clipRect);
+//remove fill of frame
+noFill(frame);
+
+//clip g within clipRect with intersection 
+//clipping path must always be the first argument when using intersection with a group
+gClipped = clipRect && g;
