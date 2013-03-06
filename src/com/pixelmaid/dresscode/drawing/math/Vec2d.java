@@ -74,7 +74,7 @@ public class Vec2d {
         return Math.sqrt(LengthSqrd(this));
     }
 
-    public Vec2d Normalize(Vec2d vec) {
+    public static Vec2d Normalize(Vec2d vec) {
         //Returns a new vector that has the same direction as vec, but has a length of one.
         if (vec.x == 0 && vec.y == 0) {
             return new Vec2d(0, 0);

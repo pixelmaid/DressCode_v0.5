@@ -444,6 +444,15 @@ public class Drawable {
 		return this;
 	}
 	
+	//expands all children of drawable;
+	public Drawable expand(){
+		for(int j =0;j<this.children.size();j++){
+			Drawable poly = this.children.get(j).expand();
+			this.children.set(j, poly);
+		}
+		return this;
+	}
+
 	
 	//adds new child and resets origin of drawable to accommodate child (must be overridden by subclasses)
 	public Drawable addToGroup(Drawable d) {

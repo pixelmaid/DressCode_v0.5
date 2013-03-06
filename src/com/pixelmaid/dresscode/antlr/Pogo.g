@@ -4,6 +4,7 @@ options {
   output=AST;
 }
 
+
 tokens {
   BLOCK;
   RETURN;
@@ -115,6 +116,7 @@ functionCall
    | Weight	'(' exprList? ')'-> ^(FUNC_CALL Weight exprList?)
    | Hide	'(' expression ')'-> ^(FUNC_CALL Hide expression)
    | Group	'(' exprList? ')'-> ^(FUNC_CALL Group exprList?)
+   | Expand	'(' expression ')'-> ^(FUNC_CALL Expand expression)
    ;
    
    mathCall
@@ -270,6 +272,7 @@ NoStroke : 'noStroke';
 Weight	: 'weight';
 Hide	: 'hide';
 Group	: 'group';
+Expand 	: 'expand';
 
 
 COLOR_CONSTANT: 'RED'|'BLUE'|'GREEN'|'PURPLE'|'YELLOW'|'ORANGE'|'PINK'|'BLACK'|'WHITE'|'GREY';

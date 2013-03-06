@@ -80,7 +80,7 @@ WindowStateListener, ComponentListener, ActionListener {
 	//canvas sizing options
 	private int sketchw = 1000; //width of the sketch
 	private int sketchh = 700; //height of the sketch
-	private int max_w = 600; // max width to create window
+	private int max_w = 1000; // max width to create window
 	private int max_h =600; // max height to create window
 		    
 	
@@ -188,10 +188,10 @@ WindowStateListener, ComponentListener, ActionListener {
 		
 		
 		//Comment out below lines to remove syntax highlighting
-		DefaultSyntaxKit.initKit();
+		//DefaultSyntaxKit.initKit();
 		// override default syntax values
-		jsyntaxpane.util.Configuration config = DefaultSyntaxKit.getConfig(DefaultSyntaxKit.class);
-		config.put("DefaultFont","monospaced 14");
+		//jsyntaxpane.util.Configuration config = DefaultSyntaxKit.getConfig(DefaultSyntaxKit.class);
+		//config.put("DefaultFont","monospaced 14");
 		//end syntax highlighting
 
 
@@ -212,13 +212,13 @@ WindowStateListener, ComponentListener, ActionListener {
 	
 		JPanel code = new JPanel();
 		code.setLayout(new BorderLayout());
-		code.setPreferredSize(new Dimension(800,786));
+		code.setPreferredSize(new Dimension(550,786));
 
 		codeField= new CodeField();
-		codeField.setPreferredSize(new Dimension(600,500));
+		codeField.setPreferredSize(new Dimension(550,500));
 
 
-		output.setPreferredSize(new Dimension(600,200));
+		output.setPreferredSize(new Dimension(550,200));
 		doc = output.getStyledDocument();
 
 
@@ -316,7 +316,7 @@ WindowStateListener, ComponentListener, ActionListener {
 
 	public void createAndShowGUI() {
 
-		this.setPreferredSize(new Dimension(1024,768));
+		this.setPreferredSize(new Dimension(1200,768));
 		max_w = this.getPreferredSize().width/2;
 		max_h =this.getPreferredSize().height/2;
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

@@ -1,6 +1,8 @@
 package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,7 +42,13 @@ public class LookupNode implements DCNode {
         value = new VarType(String.valueOf(value.asString().charAt(idx)));
       }
       else if(value.isDrawable()){
-    	  value =  new VarType(value.asDrawable().childAt(idx));
+    	  Drawable d = value.asDrawable();
+    	  if(d.numChildren()==0){
+    		  value =  new VarType(value.asPolygon().pointAt(idx));
+    	  }
+    	  else{
+    		  value =  new VarType(d.childAt(idx));
+    	  }
       }
     }
 

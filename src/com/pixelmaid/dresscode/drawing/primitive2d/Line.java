@@ -7,6 +7,8 @@ import processing.core.PApplet;
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
+import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
+import com.pixelmaid.dresscode.drawing.math.Vec2d;
 
 public class Line extends Polygon {
 	private Point start;
@@ -48,6 +50,7 @@ public class Line extends Polygon {
 			this.drawOrigin(e);
 		}
 		}
+		
 	}
 	
 	@Override
@@ -88,12 +91,14 @@ public class Line extends Polygon {
 	
 	@Override
 	public void moveTo(double x, double y){
-		this.start.moveTo(x, y, this.start);
-	    this.end.moveTo(x, y, this.start);
+		double dx = x - this.start.getX();
+		double dy = y-this.start.getY();
+		this.start.moveBy(dx,dy);
+		this.end.moveBy(dx,dy);
 	    this.origin = start;
 	}
 
-
+	
 	
 	@Override
 	//converts line to polygon (questionable...)
@@ -104,6 +109,47 @@ public class Line extends Polygon {
 		poly.addPoint(end);
 		return poly;
 		
+	}
+	
+	public Drawable expand(){
+		if(this.getStrokeWeight()<1){
+			this.setStrokeWeight(1);
+		}
+		this.end.rotate(this.getRotation(), this.start);
+		double dx = end.getX()-start.getX();
+		double dy = end.getY()-start.getY();
+		Vec2d n1 = Vec2d.Normalize(new Vec2d(-dy,dx)).mul(this.getStrokeWeight()/2);
+		Vec2d n2 = Vec2d.Normalize(new Vec2d(dy,-dx)).mul(this.getStrokeWeight()/2);
+		
+		
+		Polygon p = new Polygon();
+		p.addPoint(n1.x+start.getX(),n1.y+start.getY());
+		p.addPoint(n1.x+end.getX(),n1.y+end.getY());
+		p.addPoint(n2.x+end.getX(),n2.y+end.getY());
+		p.addPoint(n2.x+start.getX(),n2.y+start.getY());
+		
+		p.setPointsRelativeTo(this.getMidPoint());
+		Ellipse e1 = new Ellipse(this.start,this.getStrokeWeight(),this.getStrokeWeight());
+		Ellipse e2 = new Ellipse(this.end,this.getStrokeWeight(),this.getStrokeWeight());
+		Drawable d = PolyBoolean.union(e2,PolyBoolean.union(p,e1));
+		
+		d.setFillColor(this.getStrokeColor());
+		d.doStroke(false);
+		
+		return d;
+		
+
+	}
+	
+	@Override
+	public Point pointAt(int i){
+		if(i==0){
+			return this.start.copy();
+		}
+		else if (i==1){
+			return this.end.copy();
+		}
+		throw new RuntimeException("Illegal point index at line call");
 	}
 
 }

@@ -4,7 +4,7 @@ sY = 0; //starting y coordinate for curve
 l = 200; //length of curve
 
 //loop variables
-num= 20 //number of times the loop will repeat
+num= 20; //number of times the loop will repeat
 radius = 0;
 
 

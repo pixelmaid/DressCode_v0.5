@@ -31,4 +31,8 @@ public interface PrimitiveInterface {
 	public ArrayList<Drawable> removeAllChildren();
 	
 	public Drawable addAllChildren(ArrayList<Drawable> orphans);
+
+	public Drawable expand();
+	
+	public Point pointAt(int i);
 }

@@ -116,5 +116,21 @@ public class Ellipse extends Polygon {
 		
 		return c;
 	}
+	
+	@Override
+	public Drawable expand(){
+		Polygon ep = this.toPolygon();
+		return ep.expand();
+	}
+	
+	@Override
+	public Point pointAt(int i){
+		Polygon poly = this.toPolygon();
+		poly.setPointsAbsolute();
+		
+		Point p = poly.getPoints().get(i).copy();
+		
+		return p;
+	}
 
 }

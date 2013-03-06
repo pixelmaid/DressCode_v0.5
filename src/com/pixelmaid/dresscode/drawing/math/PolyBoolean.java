@@ -18,9 +18,7 @@ public class PolyBoolean{
 	
 	//performs union of two polygons and returns the result
 	public static Drawable union(Drawable a, Drawable b){
-		if(a.numChildren()==0){
-			
-		}
+		
 		
 		a = a.condense();
 		b = b.condense();
