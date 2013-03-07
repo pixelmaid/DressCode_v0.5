@@ -117,6 +117,15 @@ public class Ellipse extends Polygon {
 		return c;
 	}
 	
+	public double getWidth(){
+		return this.width;
+	}
+	
+	public double getHeight(){
+		return this.height;
+	
+	}
+	
 	@Override
 	public Drawable expand(){
 		Polygon ep = this.toPolygon();

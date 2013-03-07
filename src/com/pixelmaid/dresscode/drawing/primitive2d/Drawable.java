@@ -8,6 +8,8 @@ import processing.core.PApplet;
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.app.Manager;
 import com.pixelmaid.dresscode.app.Window;
+import com.pixelmaid.dresscode.drawing.datatype.CmpX;
+import com.pixelmaid.dresscode.drawing.datatype.CmpY;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
@@ -370,6 +372,81 @@ public class Drawable {
 		return d;
 		
 	}
+
+	
+	
+	 public double getWidth(){
+		 Rectangle bb = this.findBoundingBox();
+		   double width= bb.getWidth();
+		   return width;
+		   
+	 }
+	   
+	 public double getHeight(){
+		 Rectangle bb = this.findBoundingBox();
+		   double height= bb.getHeight();
+		   return height;
+	 }
+
+	   public Rectangle findBoundingBox(){
+			  ArrayList<Point> copyPoints =  this.copyAllPoints();
+			  Collections.sort(copyPoints, new CmpX());
+			  double leftX = copyPoints.get(0).getX();
+			  double rightX = copyPoints.get(copyPoints.size()-1).getX();
+			  
+			  Collections.sort(copyPoints, new CmpY());
+			  
+			  double leftY = copyPoints.get(0).getY();
+			  double rightY = copyPoints.get(copyPoints.size()-1).getY();
+			  
+			  return new Rectangle(leftX,leftY,rightX-leftX,rightY-leftY);
+			  
+		   }
+		   
+		   public Point getExtremeLeftPoint(){
+			   ArrayList<Point> copyPoints = this.copyAllPoints();
+				  Collections.sort(copyPoints, new CmpX());
+				  return copyPoints.get(0);
+				
+			   }
+		    
+		   public Point getExtremeRightPoint(){
+			   ArrayList<Point> copyPoints = this.copyAllPoints();
+				  Collections.sort(copyPoints, new CmpX());
+				  return copyPoints.get(copyPoints.size()-1);
+				
+			   }
+		   
+		   public Point getExtremeTopPoint(){
+			   ArrayList<Point> copyPoints = this.copyAllPoints();
+				  Collections.sort(copyPoints, new CmpY());
+				  return copyPoints.get(0);
+				
+			   }
+		   
+		   public Point getExtremeBottomPoint(){
+			   ArrayList<Point> copyPoints = this.copyAllPoints();
+				  Collections.sort(copyPoints, new CmpY());
+				  return copyPoints.get(copyPoints.size()-1);
+				
+			   }
+	
+		   //gets all points of all children
+		   public ArrayList<Point> copyAllPoints(){
+			   ArrayList<Point> copyPoints = new ArrayList<Point>();
+			   Drawable copy = this.condense();
+				for(int j=0;j<copy.numChildren();j++){
+				  Polygon c = (Polygon)copy.childAt(j);
+				  c.setAbsolute();
+					for(int i=0;i<c.getPoints().size();i++){
+					   copyPoints.add(c.getPoints().get(i).copy());  
+				   }
+			   }
+				   
+				   return copyPoints;
+			}
+
+	
 	
 	//copies over all parameters from original drawable to new drawable, MUST BE CALLED IN ALL COPY AND TOPOLYGON METHODS
 	public void copyParameters(Drawable o, Drawable c){
@@ -386,6 +463,10 @@ public class Drawable {
 		c.rotate(o.getRotation());
 		c.setParent(o.getParent());
 	}
+	
+	
+	
+	
 	
 	
 	//----------------ORIGIN/CHILDREN/GROUPING MANIPULATION METHODS------------------//

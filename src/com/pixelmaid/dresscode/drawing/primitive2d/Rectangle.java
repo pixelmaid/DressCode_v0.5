@@ -33,11 +33,11 @@ public class Rectangle extends Polygon{
 	}
 	
 	public double getWidth(){
-		return this.height;
+		return this.width;
 	}
 	
 	public double getHeight(){
-		return this.width;
+		return this.height;
 	
 	}
 	

@@ -22,7 +22,10 @@ tokens {
   INDEXES;
   LIST;
   LOOKUP;
+  DOTLOOKUP;
+  DOTPROPERTY;
   SPECIAL;
+  DOT;
 }
 
 @parser::header {
@@ -230,19 +233,56 @@ list
   ;
 
 lookup
-  :  functionCall indexes?       -> ^(LOOKUP functionCall indexes?)
+  :  functionCall (indexes?  -> ^(LOOKUP functionCall indexes?) | dotLookup  -> ^(DOTPROPERTY functionCall dotLookup))      
   |  list indexes?               -> ^(LOOKUP list indexes?)
-  |  Identifier indexes?         -> ^(LOOKUP Identifier indexes?)
+  |  Identifier (indexes?  -> ^(LOOKUP Identifier indexes?) | dotLookup  -> ^(DOTPROPERTY Identifier dotLookup)) 
   |  String indexes?             -> ^(LOOKUP String indexes?)
   |  '(' expression ')' indexes? -> ^(LOOKUP expression indexes?)
-  |	 forStatement indexes?		 -> ^(LOOKUP forStatement indexes?)
-  |  repeatStatement indexes?	 -> ^(LOOKUP repeatStatement indexes?)
-  |  whileStatement indexes?	 -> ^(LOOKUP whileStatement indexes?)
+  //|	 forStatement indexes?		 -> ^(LOOKUP forStatement indexes?)
+  //|  repeatStatement indexes?	 -> ^(LOOKUP repeatStatement indexes?)
+  //|  whileStatement indexes?	 -> ^(LOOKUP whileStatement indexes?)
+  
   ;
+  
+ dotLookup
+  : ('['  dotExpression ']')+ -> ^(DOTLOOKUP  dotExpression+)
+  ;
+  
+  dotExpression
+  : Dot X -> DOT X
+  |  Dot Y -> DOT Y
+  | Dot Start -> DOT Start
+  | Dot End -> DOT End 
+  | Dot Origin -> DOT Origin
+  | Dot Rotation -> DOT Rotation
+  | Dot Width -> DOT Width
+  | Dot Height -> DOT Height
+  | Dot Fill -> DOT Fill
+  |	Dot Stroke -> DOT Stroke
+  | Dot Weight -> DOT Weight
+  ;
+
+ 
 
 indexes
   :  ('[' expression ']')+ -> ^(INDEXES expression+)
   ;
+  
+/*  
+property
+  : X
+  | Y
+  | Start
+  | End
+  | Origin
+  | Rotation
+  | Width
+  | Height
+  | Fill
+  |	Stroke
+  | Weight
+  ;
+  */
   
  
  //shape primitives 
@@ -273,6 +313,17 @@ Weight	: 'weight';
 Hide	: 'hide';
 Group	: 'group';
 Expand 	: 'expand';
+ 
+
+//properties
+   X	: 'x';
+  Y		: 'y';
+  Start	: 'start';
+
+  Origin	: 'origin';
+  Rotation	: 'rotation';
+  Width : 'width';
+ Height : 'height';
 
 
 COLOR_CONSTANT: 'RED'|'BLUE'|'GREEN'|'PURPLE'|'YELLOW'|'ORANGE'|'PINK'|'BLACK'|'WHITE'|'GREY';
@@ -299,7 +350,7 @@ Repeat	 : 'repeat';
 While    : 'while';
 To       : 'to';
 Do       : ':';
-End      : 'end';
+End		:'end';
 In       : 'in';
 Null     : 'null';
 
@@ -329,6 +380,7 @@ Assign   : '=';
 Comma    : ',';
 QMark    : '?';
 //Colon    : ':';
+Dot	: '.';
 
 Bool
   :  'true' 
@@ -336,7 +388,7 @@ Bool
   ;
 
 Number
-  :  Int ('.' Digit*)?
+  :  Int (Dot Digit*)?
   ;
 
 Identifier

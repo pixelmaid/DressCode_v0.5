@@ -12,6 +12,7 @@ options {
   import com.pixelmaid.dresscode.antlr.types.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.functions.*; 
+  import com.pixelmaid.dresscode.antlr.types.tree.properties.*; 
    import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
   import java.util.Map;
   import java.util.HashMap;
@@ -191,20 +192,42 @@ list returns [DCNode node]
   :  ^(LIST exprList?) {node = new ListNode($exprList.e);}
   ;
 
+//START HERE TOMOROW FIXING DOT LOOKUP WITH MULTIPLE INDEXES
 lookup returns [DCNode node]
-  :  ^(LOOKUP functionCall i=indexes?) {node = $i.e != null ? new LookupNode($functionCall.node, $indexes.e) : $functionCall.node;}
+  :  ^(DOTPROPERTY functionCall d=dotLookup[$functionCall.node]) {node = $d.node;}
+  |  ^(DOTPROPERTY Identifier d=dotLookup[new IdentifierNode($Identifier.text, currentScope)]) {node = $d.node;}
+    
+  
+  | ^(LOOKUP functionCall i=indexes?) {node = $i.e != null ? new LookupNode($functionCall.node, $indexes.e) : $functionCall.node;}
   |  ^(LOOKUP list i=indexes?)         {node = $i.e != null ? new LookupNode($list.node, $indexes.e) : $list.node;}
   |  ^(LOOKUP expression i=indexes?)   {node = $i.e != null ? new LookupNode($expression.node, $indexes.e) : $expression.node;}
   |  ^(LOOKUP Identifier i=indexes?)   {node = $i.e != null ? new LookupNode(new IdentifierNode($Identifier.text, currentScope), $indexes.e) : new IdentifierNode($Identifier.text, currentScope);}
   |  ^(LOOKUP String i=indexes?)       {node = $i.e != null ? new LookupNode(new AtomNode($String.text), $indexes.e) : new AtomNode($String.text);}
-  |  ^(LOOKUP forStatement i=indexes?)   {node = $i.e != null ? new LookupNode($forStatement.node, $indexes.e) : $forStatement.node;}
-  |  ^(LOOKUP whileStatement i=indexes?)   {node = $i.e != null ? new LookupNode($whileStatement.node, $indexes.e) : $whileStatement.node;}
-  |  ^(LOOKUP repeatStatement[true] i=indexes?)   {node = $i.e != null ? new LookupNode($repeatStatement.node, $indexes.e) : $repeatStatement.node;}
+  
+ 
+ // |  ^(LOOKUP forStatement i=indexes?)   {node = $i.e != null ? new LookupNode($forStatement.node, $indexes.e) : $forStatement.node;}
+ // |  ^(LOOKUP whileStatement i=indexes?)   {node = $i.e != null ? new LookupNode($whileStatement.node, $indexes.e) : $whileStatement.node;}
+ // |  ^(LOOKUP repeatStatement[true] i=indexes?)   {node = $i.e != null ? new LookupNode($repeatStatement.node, $indexes.e) : $repeatStatement.node;}
   ;
   
-  
+ 
 
 indexes returns [java.util.List<DCNode> e]
 @init {e = new java.util.ArrayList<DCNode>();}
-  :  ^(INDEXES (expression {e.add($expression.node);})+)
+  :  ^(INDEXES (expression {e.add($expression.node);})+) 
+  ;
+  
+  
+  dotLookup[DCNode ref] returns [DCNode node]
+  : DOT X {node = new XPropertyNode(ref,$DOT.getLine());}
+  | DOT Y {node = new YPropertyNode(ref,$DOT.getLine());}
+  | DOT Start {node = new StartPropertyNode(ref,$DOT.getLine());}
+  | DOT End {node = new EndPropertyNode(ref,$DOT.getLine());}
+  | DOT Origin {node = new OriginPropertyNode(ref,$DOT.getLine());}
+  | DOT Rotation {node = new RotationPropertyNode(ref,$DOT.getLine());}
+  | DOT Width {node = new WidthPropertyNode(ref,$DOT.getLine());}
+  | DOT Height {node = new HeightPropertyNode(ref,$DOT.getLine());}
+  | DOT Fill //{node = new FillPropertyNode(ref,$DOT.getLine());}
+  |	DOT Stroke //{node = new StrokePropertyNode(ref,$DOT.getLine());}
+  | DOT Weight //{node = new WeightPropertyNode(ref,$DOT.getLine());}
   ;

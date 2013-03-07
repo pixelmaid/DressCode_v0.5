@@ -286,8 +286,20 @@ public Drawable expand(){
 		this.setPointsRelativeTo(this.origin);
 		return p;
 	}
-
 	
+	@Override
+	   //gets all points of all children
+	   public ArrayList<Point> copyAllPoints(){
+		   ArrayList<Point> copyPoints = new ArrayList<Point>();
+		  
+		
+				for(int i=0;i<this.getPoints().size();i++){
+				   copyPoints.add(this.getPoints().get(i).copy());  
+			   }
+		  
+			   
+			   return copyPoints;
+		}
 	
 	
 	//=============================TURTLE METHODS==================================//
