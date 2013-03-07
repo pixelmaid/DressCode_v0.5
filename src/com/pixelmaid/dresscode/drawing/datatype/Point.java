@@ -27,6 +27,7 @@ import com.pixelmaid.dresscode.drawing.math.*;
 import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
 
 
+
 public class Point extends Point2D implements Comparable<Point>{
 	private double x;
 	private double y;

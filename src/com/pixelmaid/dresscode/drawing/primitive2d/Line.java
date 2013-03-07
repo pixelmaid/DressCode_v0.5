@@ -27,7 +27,7 @@ public class Line extends Polygon {
 	public Line(Point s, Point e) {
 		this.start = s;
 		this.end = e;
-		this.origin=start;
+		this.origin=Geom.getMidpoint(start, end);
 	}
 	
 	//initialize line from polar coordinates
@@ -82,20 +82,20 @@ public class Line extends Polygon {
 		return Geom.getMidpoint(this.start, this.end);
 	}
 	
-	@Override 
+	/*@Override 
 	public Point getOrigin(){
 		this.origin = start;
 		return this.origin;
-	}
+	}*/
 	
 	
 	@Override
 	public void moveTo(double x, double y){
-		double dx = x - this.start.getX();
-		double dy = y-this.start.getY();
+		double dx = x - this.origin.getX();
+		double dy = y-this.origin.getY();
 		this.start.moveBy(dx,dy);
 		this.end.moveBy(dx,dy);
-	    this.origin = start;
+		this.origin= Geom.getMidpoint(start, end);
 	}
 
 	

@@ -315,6 +315,25 @@ public class Drawable {
 
 	}
 	
+	//rotates around a focus. does not change the rotation property
+		public void rotateWithFocus(double theta, Point focus){
+			ArrayList<Point> origins = new ArrayList<Point>();
+			for(int i=0;i<this.numChildren();i++){
+				this.childAt(i).setAbsolute();
+				this.childAt(i).rotateWithFocus(theta, focus);
+				origins.add(childAt(i).getOrigin());
+			}
+			if(this.children.size()>1){
+				
+				this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+			}
+			
+			else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
+				this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
+			}
+			
+		}
+	
 	//returns the rotation of an object
 	public double getRotation(){
 		return this.rotation;

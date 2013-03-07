@@ -6,6 +6,7 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.antlr.types.tree.PropertyNode;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 
@@ -13,41 +14,33 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 
 
 
-public class StartPropertyNode implements DCNode {
+public class StartPropertyNode extends PropertyNode {
 
-	protected DCNode param;
+    public StartPropertyNode() {
+        
+     }
 
-    protected int line;
-
-
-    
-    public StartPropertyNode(DCNode p, int l) {
-        param = p;
-        line = l;
-        //System.out.println("created new drawable node at line:"+line);
-    }
-
-    @Override
-    public VarType evaluate() {
-    	if(!(param.evaluate().isLine() || param.evaluate().isCurve())){
-    		  throw new RuntimeException("Illegal start property access: " + this);
-    	}
-    	Point s;
-    	if(param.evaluate().isLine()){
-    		
-    		Line d = param.evaluate().asLine();
-    		s = d.getStart().copy();
-    	}
-    	else{
-    		Curve d = (Curve)param.evaluate().asCurve();
-    		s = d.getStart();
-    	}
-    	
-    	return new VarType(s);	
-    	
-      
-      
-    }
+     @Override
+     public VarType evaluate() {
+     	if(!(value.isLine() ||value.isCurve())){
+     		  throw new RuntimeException("Illegal end property access: " + this);
+     	}
+     	Point s;
+     	if(value.isLine()){
+     		
+     		Line d = value.asLine();
+     		s = d.getEnd().copy();
+     	}
+     	else{
+     		Curve d = value.asCurve();
+     		s = d.getEnd();
+     	}
+     	
+     	return new VarType(s);	
+     	
+       
+       
+     }
 
    
 }

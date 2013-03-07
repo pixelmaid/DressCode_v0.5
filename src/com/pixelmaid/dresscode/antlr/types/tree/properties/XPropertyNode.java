@@ -4,37 +4,33 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.antlr.types.tree.PropertyNode;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 
 
-public class XPropertyNode implements DCNode {
+public class XPropertyNode extends PropertyNode{
 
-	protected DCNode param;
-
-    protected int line;
 
 
     
-    public XPropertyNode(DCNode p, int l) {
-        param = p;
-        line = l;
-        //System.out.println("created new drawable node at line:"+line);
+    public XPropertyNode() {
+     
     }
 
     @Override
     public VarType evaluate() {
-    	if(!(param.evaluate().isDrawable() || param.evaluate().isPoint())){
+    	if(!(value.isDrawable() || value.isPoint())){
     		  throw new RuntimeException("Illegal x property call: " + this);
     	}
-    	if(param.evaluate().isDrawable()){
-    	Drawable d = param.evaluate().asDrawable();
+    	if(value.isDrawable()){
+    	Drawable d = value.asDrawable();
     	Double x = d.getOrigin().getX();
     	return new VarType(x);	
     	}
     	else{
-    		Point d = param.evaluate().asPoint();
+    		Point d = value.asPoint();
         	Double x = d.getX();
         	return new VarType(x);	
     	}

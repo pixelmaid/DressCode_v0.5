@@ -106,6 +106,7 @@ functionCall
   	|Curve '(' exprList? ')' ->  ^(FUNC_CALL Curve exprList?)
   	|Polygon '(' exprList? ')' ->  ^(FUNC_CALL Polygon exprList?)
   	|LShape '(' exprList? ')' ->  ^(FUNC_CALL LShape exprList?)
+  	| Point '(' exprList? ')' ->  ^(FUNC_CALL Point exprList?)
   	;
   
   transformCall
@@ -233,9 +234,9 @@ list
   ;
 
 lookup
-  :  functionCall (indexes?  -> ^(LOOKUP functionCall indexes?) | dotLookup  -> ^(DOTPROPERTY functionCall dotLookup))      
+  :  functionCall (indexes?  -> ^(LOOKUP functionCall indexes?) | dotProperty  -> ^(DOTPROPERTY functionCall dotProperty))      
   |  list indexes?               -> ^(LOOKUP list indexes?)
-  |  Identifier (indexes?  -> ^(LOOKUP Identifier indexes?) | dotLookup  -> ^(DOTPROPERTY Identifier dotLookup)) 
+  |  Identifier (indexes?  -> ^(LOOKUP Identifier indexes?) | dotProperty  -> ^(DOTPROPERTY Identifier dotProperty)) 
   |  String indexes?             -> ^(LOOKUP String indexes?)
   |  '(' expression ')' indexes? -> ^(LOOKUP expression indexes?)
   //|	 forStatement indexes?		 -> ^(LOOKUP forStatement indexes?)
@@ -244,30 +245,33 @@ lookup
   
   ;
   
- dotLookup
-  : ('['  dotExpression ']')+ -> ^(DOTLOOKUP  dotExpression+)
+   indexes
+  :  ('[' expression ']')+ -> ^(INDEXES expression+)
   ;
+	  
+  dotProperty
+  :  (dotExpression)+ -> ^(DOT dotExpression+)
+  ;	 
+ 
   
   dotExpression
-  : Dot X -> DOT X
-  |  Dot Y -> DOT Y
-  | Dot Start -> DOT Start
-  | Dot End -> DOT End 
-  | Dot Origin -> DOT Origin
-  | Dot Rotation -> DOT Rotation
-  | Dot Width -> DOT Width
-  | Dot Height -> DOT Height
-  | Dot Fill -> DOT Fill
-  |	Dot Stroke -> DOT Stroke
-  | Dot Weight -> DOT Weight
+  : DotX
+  | DotY
+  | DotStart
+  | DotEnd
+  | DotOrigin
+  | DotRotation
+  | DotWidth
+  | DotHeight
+  | DotFill
+  |	DotStroke
+  | DotWeight
   ;
 
  
 
-indexes
-  :  ('[' expression ']')+ -> ^(INDEXES expression+)
-  ;
-  
+ 
+	  
 /*  
 property
   : X
@@ -316,14 +320,17 @@ Expand 	: 'expand';
  
 
 //properties
-   X	: 'x';
-  Y		: 'y';
-  Start	: 'start';
-
-  Origin	: 'origin';
-  Rotation	: 'rotation';
-  Width : 'width';
- Height : 'height';
+   DotX	: '.x';
+  DotY		: '.y';
+  DotStart	: '.start';
+  DotEnd	: '.end';
+  DotOrigin	: '.origin';
+  DotRotation	: '.rotation';
+ DotWidth : '.width';
+ DotHeight : '.height';
+ DotStroke	:	'.stroke';
+ DotFill	: '.fill';
+ DotWeight	: '.weight';
 
 
 COLOR_CONSTANT: 'RED'|'BLUE'|'GREEN'|'PURPLE'|'YELLOW'|'ORANGE'|'PINK'|'BLACK'|'WHITE'|'GREY';

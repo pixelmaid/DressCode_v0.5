@@ -13,7 +13,7 @@ options {
   import com.pixelmaid.dresscode.antlr.types.tree.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.functions.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.properties.*; 
-   import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
+  import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
   import java.util.Map;
   import java.util.HashMap;
   import com.pixelmaid.dresscode.app.Window;
@@ -96,6 +96,7 @@ functionCall returns [DCNode node]
   	| ^(FUNC_CALL Curve exprList?)   {node = new CurveNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL Polygon exprList?) {node = new PolygonNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL LShape exprList?) {node = new LShapeNode($exprList.e,$FUNC_CALL.getLine());}
+  	|  ^(FUNC_CALL Point exprList?) {node = new PointNode($exprList.e,$FUNC_CALL.getLine());}
   	;
   
   transformCall returns [DCNode node]
@@ -192,10 +193,14 @@ list returns [DCNode node]
   :  ^(LIST exprList?) {node = new ListNode($exprList.e);}
   ;
 
+
 //START HERE TOMOROW FIXING DOT LOOKUP WITH MULTIPLE INDEXES
 lookup returns [DCNode node]
-  :  ^(DOTPROPERTY functionCall d=dotLookup[$functionCall.node]) {node = $d.node;}
-  |  ^(DOTPROPERTY Identifier d=dotLookup[new IdentifierNode($Identifier.text, currentScope)]) {node = $d.node;}
+ 	:^(DOTPROPERTY functionCall dotProperty){node = new DotPropertyNode($functionCall.node, $dotProperty.e);}
+ 	|^(DOTPROPERTY Identifier dotProperty){node = new DotPropertyNode(new IdentifierNode($Identifier.text, currentScope), $dotProperty.e);}
+ 
+ // :  ^(DOTPROPERTY functionCall d=dotLookup[$functionCall.node]) {node = $d.node;}
+  //|  ^(DOTPROPERTY Identifier d=dotLookup[new IdentifierNode($Identifier.text, currentScope)]) {node = $d.node;}
     
   
   | ^(LOOKUP functionCall i=indexes?) {node = $i.e != null ? new LookupNode($functionCall.node, $indexes.e) : $functionCall.node;}
@@ -218,16 +223,22 @@ indexes returns [java.util.List<DCNode> e]
   ;
   
   
-  dotLookup[DCNode ref] returns [DCNode node]
-  : DOT X {node = new XPropertyNode(ref,$DOT.getLine());}
-  | DOT Y {node = new YPropertyNode(ref,$DOT.getLine());}
-  | DOT Start {node = new StartPropertyNode(ref,$DOT.getLine());}
-  | DOT End {node = new EndPropertyNode(ref,$DOT.getLine());}
-  | DOT Origin {node = new OriginPropertyNode(ref,$DOT.getLine());}
-  | DOT Rotation {node = new RotationPropertyNode(ref,$DOT.getLine());}
-  | DOT Width {node = new WidthPropertyNode(ref,$DOT.getLine());}
-  | DOT Height {node = new HeightPropertyNode(ref,$DOT.getLine());}
-  | DOT Fill //{node = new FillPropertyNode(ref,$DOT.getLine());}
-  |	DOT Stroke //{node = new StrokePropertyNode(ref,$DOT.getLine());}
-  | DOT Weight //{node = new WeightPropertyNode(ref,$DOT.getLine());}
+
+ dotProperty returns [java.util.List<PropertyNode> e]
+ @init {e = new java.util.ArrayList<PropertyNode>();}
+  :  ^(DOT (dotExpression {e.add($dotExpression.node);})+)
+  ;	 
+  
+  dotExpression returns [PropertyNode node]
+  : DotX {node = new XPropertyNode();}
+  | DotY {node = new YPropertyNode();}
+  | DotStart {node = new StartPropertyNode();}
+  | DotEnd {node = new EndPropertyNode();}
+  | DotOrigin {node = new OriginPropertyNode();}
+  | DotRotation {node = new RotationPropertyNode();}
+  | DotWidth {node = new WidthPropertyNode();}
+  | DotHeight {node = new HeightPropertyNode();}
+  | DotFill //{node = new FillPropertyNode(ref,$DOT.getLine());}
+  |	DotStroke //{node = new StrokePropertyNode(ref,$DOT.getLine());}
+  | DotWeight //{node = new WeightPropertyNode(ref,$DOT.getLine());}
   ;

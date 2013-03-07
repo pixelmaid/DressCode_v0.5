@@ -1,35 +1,25 @@
 package com.pixelmaid.dresscode.antlr.types.tree.properties;
 
-import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
-import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
-import com.pixelmaid.dresscode.drawing.datatype.Point;
+
+import com.pixelmaid.dresscode.antlr.types.tree.PropertyNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 
 
-public class WidthPropertyNode implements DCNode {
+public class WidthPropertyNode extends PropertyNode{
 
-	protected DCNode param;
-
-    protected int line;
-
-
-    
-    public WidthPropertyNode(DCNode p, int l) {
-        param = p;
-        line = l;
-        //System.out.println("created new drawable node at line:"+line);
+	
+    public WidthPropertyNode(){
     }
 
     @Override
     public VarType evaluate() {
-    	if(!(param.evaluate().isDrawable())){
+    	if(!(value.isDrawable())){
     		  throw new RuntimeException("Illegal width property access: " + this);
     	}
     	
-    	Drawable d = param.evaluate().asDrawable();
+    	Drawable d = value.asDrawable();
     	Double x = d.getWidth();
     	return new VarType(x);	
       

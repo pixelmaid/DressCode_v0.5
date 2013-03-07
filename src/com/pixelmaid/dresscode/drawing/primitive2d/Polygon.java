@@ -77,6 +77,21 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	}
 	
 	
+	@Override
+	//rotates around a focus. does not change the rotation property
+	public void rotateWithFocus(double theta, Point focus){
+		this.setPointsAbsolute();
+		for(int i=0;i<this.points.size();i++){
+			System.out.println(pointAt(i).getX()+","+pointAt(i).getY());
+			this.pointAt(i).rotate(theta, focus);
+			System.out.println(pointAt(i).getX()+","+pointAt(i).getY());
+
+		}
+		this.setOrigin(Geom.findCentroid(this));
+		this.setPointsRelativeTo(this.getOrigin());
+	}
+	
+	
 	//===================OVERRIDDEN METHODS==================
 	
 	@Override
