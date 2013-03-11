@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.app.Window;
@@ -63,13 +64,25 @@ public class LineNode extends DrawableNode implements DCNode {
         		
         	}
     	}
-    	else{
-			Window.output.setText("incorrect parameters for line call at line:"+line);
-
-    		System.err.println("incorrect parameters for line call at line:"+line);
-    	}
-    	Window.canvas.addDrawable("line",line,e);
-    	return new VarType(e);	
+    	else if(params.get(0).evaluate().isPoint()){
+    		if(params.get(1).evaluate().isPoint()){
+    			
+    			e = new Line(params.get(0).evaluate().asPoint(),params.get(1).evaluate().asPoint());
+    		}
+    		else{
+    			Point origin = params.get(0).evaluate().asPoint();
+    			double r = params.get(1).evaluate().asDouble();
+    			double t = params.get(2).evaluate().asDouble();
+    			e = new Line(origin,r,t);
+	    		}
+	    	}
+	    	else{
+				Window.output.setText("incorrect parameters for line call at line:"+line);
+	
+	    		System.err.println("incorrect parameters for line call at line:"+line);
+	    	}
+	    	Window.canvas.addDrawable("line",line,e);
+	    	return new VarType(e);	
         //throw new RuntimeException("Illegal function call: " + this);
     }
 

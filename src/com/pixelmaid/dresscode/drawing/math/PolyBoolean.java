@@ -2,6 +2,7 @@ package com.pixelmaid.dresscode.drawing.math;
 
 import java.util.ArrayList;
 
+import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.app.Window;
 
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -13,8 +14,32 @@ import com.seisw.util.geom.Poly ;
 import com.seisw.util.geom.PolyDefault ;
 
 public class PolyBoolean{
+	//merges a group of objects into one
+	public static Drawable merge(Drawable d) {
+		Drawable master;
+		 Poly group = drawableToBoolean(d.condense());
+		if(group.getNumInnerPoly()==1){
+			//Poly i_Poly = clip.intersection(group.getInnerPoly(0));
+			//master = booleanToPolygon(i_Poly);
+			//System.out.println("PolyBoolean has only one polygon result");
 
-	
+			//master.setRelativeTo(Geom.findCentroid((Polygon)master));
+			return d;
+		}
+		else{
+			Poly mP = new PolyDefault();
+
+			for( int i = 0 ; i < group.getNumInnerPoly() ; i++ )
+			{
+				Poly ip = group.getInnerPoly(i);
+				mP = mP.union(ip);
+			}
+			master = booleanToDrawable(mP);
+			return master;
+		}
+		
+	}
+
 	
 	//performs union of two polygons and returns the result
 	public static Drawable union(Drawable a, Drawable b){
@@ -257,6 +282,7 @@ public class PolyBoolean{
 
 		return jp;
 	}
+
 
 
 

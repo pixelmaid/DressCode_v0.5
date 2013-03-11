@@ -121,6 +121,7 @@ functionCall
    | Hide	'(' expression ')'-> ^(FUNC_CALL Hide expression)
    | Group	'(' exprList? ')'-> ^(FUNC_CALL Group exprList?)
    | Expand	'(' expression ')'-> ^(FUNC_CALL Expand expression)
+   | Merge	'(' expression ')'-> ^(FUNC_CALL Merge expression)
    ;
    
    mathCall
@@ -317,6 +318,7 @@ Weight	: 'weight';
 Hide	: 'hide';
 Group	: 'group';
 Expand 	: 'expand';
+Merge	: 'merge';
  
 
 //properties

@@ -1,0 +1,53 @@
+length=120;
+theta = 270;
+c= 7;
+line1 = weight(line(0,0,0,-length),c);
+tree = group();
+
+
+move(line1,WIDTH/2,HEIGHT/2+length);
+add(tree,expand(copy(line1));
+
+branch(length,line1,theta,c,tree);
+//move(tree,WIDTH/2,0);
+//expand(tree);
+fill(tree,RED);
+rotate(tree,0);
+def branch(h,l,theta,count,g):
+
+
+
+thetaChange = 25;
+//println("calling branch");
+ h = h*0.75;
+
+if count>0:
+rightTheta = theta+ thetaChange;
+lNew = weight(line(l.end,h,rightTheta),count);
+//println("making line");
+//move(lNew,l.end.x,l.end.y-h/2);
+//rotate(lNew, theta,l.start);
+
+
+
+leftTheta = theta- thetaChange;
+lNew2 = weight(line(l.end,h,leftTheta),count);
+//println("making line");
+
+//move(lNew2,l.end.x,l.end.y-h/2);
+//rotate(lNew2, -theta,l.start);
+
+
+count = count -1;
+add(g,expand(copy(lNew));
+add(g,expand(copy(lNew2));
+
+branch(h, lNew,rightTheta,count,g);
+
+branch(h, lNew2,leftTheta,count,g);
+hide(lNew2);
+hide(lNew);
+
+end	
+
+end

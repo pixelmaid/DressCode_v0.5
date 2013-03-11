@@ -88,6 +88,8 @@ public class LShape extends Polygon {
 			}
 			
 		}
+		
+		
 
 		
 		/*//TODO: implement polygon conversion

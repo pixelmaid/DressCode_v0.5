@@ -98,6 +98,16 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	}
 	
 	@Override
+	public Drawable rotateWithFocus(double theta, Point focus){
+		this.start = start.rotate(theta, focus);
+		this.end = end.rotate(theta, focus);
+		this.control1 = control1.rotate(theta,focus);
+		this.control2 = control2.rotate(theta,focus);
+		this.origin= Geom.getMidpoint(start, end);
+		return this;
+	}
+	
+	@Override
 	//converts ellipse to polygon
 	public Polygon toPolygon() {
 		Polygon poly =  new Polygon();

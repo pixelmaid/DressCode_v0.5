@@ -113,6 +113,11 @@ public class Embedded extends PApplet {
 		d.key=key;
 
 	}
+	
+	public void swapDrawable(Drawable a, Drawable b){
+		a = b;
+		
+	}
 
 	public boolean removeDrawable(Drawable d){
 		return drawables.remove

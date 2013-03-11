@@ -111,6 +111,7 @@ functionCall returns [DCNode node]
    |^(FUNC_CALL Hide expression) {node = new HideNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Group exprList?) {node = new GroupNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Expand expression){node = new ExpandNode($expression.node,$FUNC_CALL.getLine());}
+   | ^(FUNC_CALL Merge expression){node = new MergeNode($expression.node,$FUNC_CALL.getLine());}
    ;
    
    mathCall returns [DCNode node]

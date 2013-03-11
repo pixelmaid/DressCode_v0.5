@@ -216,7 +216,7 @@ public class Point extends Point2D implements Comparable<Point>{
 	}
 
 
-	public void rotate(double theta, Point _focus) {
+	public Point rotate(double theta, Point _focus) {
 
 		double[] pointRT = Geom.cartToPolar(this.getX() - _focus.getX(), this.getY() - _focus.getY());
 		double pointTheta = pointRT[1];
@@ -228,10 +228,10 @@ public class Point extends Point2D implements Comparable<Point>{
 
 
 		Point newPoint = Geom.polarToCart(pointR, newPointTheta);
-
+		
 		this.setX(newPoint.getX() + _focus.getX());
 		this.setY(newPoint.getY() + _focus.getY());
-
+		return this;
 
 	}
 
