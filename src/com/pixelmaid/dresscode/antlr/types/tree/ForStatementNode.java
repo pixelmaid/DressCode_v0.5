@@ -50,20 +50,8 @@ public class ForStatementNode implements DCNode {
           	  
             }
         }
-     // return VOID or returnStatement.evaluate() if it's not null
-   	 if(returnStatement ==null){
-   		 if(drawAdded){
-   			 //TODO: add actual line number instead of 0 here
-   			 Window.canvas.addDrawable("drawable",-1,d);
-   			 return new VarType(d);
-   		 }
-   		 else{
+    
    			 return VarType.VOID;
-   		 }
-   	 }
-   	 else{
-   		return returnStatement.evaluate();
-   	 }
-
+   	
     }
 }

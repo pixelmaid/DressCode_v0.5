@@ -6,6 +6,7 @@ import processing.core.PApplet;
 
 
 import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 //class for holes inside of polygons. cannot be called independently
@@ -13,52 +14,54 @@ public class Hole extends Polygon {
 	
 		@Override
 		public void draw(Embedded e){
-			
+			appearance(e);
+			e.fill(Window.canvas.DEFAULT_BG);
 		    ArrayList<Point> points = this.getPoints();
-			e.beginShape();
+		    e.pushMatrix();
+			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+			e.rotate(PApplet.radians((float)getRotation()));
+		    e.beginShape();
+			
 			for(int i=0;i<points.size();i++){
 				e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
 			}
 			e.endShape(PApplet.CLOSE);
+			e.popMatrix();
 		}
 		
 		@Override
 		public void print(Embedded e){
 			
+			appearance(e);
+			e.fill(Window.canvas.DEFAULT_BG);
 		    ArrayList<Point> points = this.getPoints();
-			e.beginShape();
+		    e.pushMatrix();
+			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+			e.rotate(PApplet.radians((float)getRotation()));
+		    e.beginShape();
+			
 			for(int i=0;i<points.size();i++){
 				e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
 			}
 			e.endShape(PApplet.CLOSE);
+			e.popMatrix();
 		}
 		
+		
 		@Override
-		public Polygon copy(){
-			Polygon c = new Polygon();
-			for(int i=0;i<this.getPoints().size();i++){
-				c.addPoint(this.getPoints().get(i).copy());
+		public Hole copy(){
+			Hole c =  new Hole();
+			copyParameters(this, c);
+			
+			this.setParent(this.getParent());
+			ArrayList<Point> points = this.getPoints();
+			for(int i=0;i<points.size();i++){
+				c.addPoint(points.get(i).copy());
 			}
+			
 			return c;
 		}
+	
 		
-		@Override
-		//sets the points and holes relative around a new origin
-		public void setPointsRelativeTo(Point p) {
-			for(int i=0;i<this.getPoints().size();i++){
-				Point newPoint = this.getPoints().get(i);
-				this.getPoints().set(i,newPoint.difference(p));
-			}
-			
-		}
 		
-		@Override
-		//sets the points and holes relative around a new origin
-		public void setPointsAbsolute() {
-			for(int i=0;i<this.getPoints().size();i++){
-				Point newPoint = this.getPoints().get(i);
-				this.getPoints().set(i,newPoint.add(this.getParent().origin));
-			}
-			
-		}
 }

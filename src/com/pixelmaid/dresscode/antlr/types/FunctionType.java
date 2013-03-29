@@ -11,18 +11,21 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 
 import com.pixelmaid.dresscode.antlr.PogoTreeWalker;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.data.DrawableManager;
 
 public class FunctionType {  //data object to store function declarations
 	private String id;
 	  private List<String> identifiers;
 	  private CommonTree code;
 	  private Scope scope;
+	  private DrawableManager drawableManager;
 
-	  public FunctionType(String i, CommonTree ids, CommonTree block) {
+	  public FunctionType(String i, CommonTree ids, CommonTree block, DrawableManager dm) {
 	    id = i;
 	    identifiers = toList(ids);
 	    code = block;
 	    scope = new Scope();
+	    drawableManager = dm;
 	  }
 
 	  public FunctionType(FunctionType original) {
@@ -48,7 +51,7 @@ public class FunctionType {  //data object to store function declarations
 	    try {
 	      // Create a tree walker to evaluate this function's code block
 	      CommonTreeNodeStream nodes = new CommonTreeNodeStream(code);
-	      PogoTreeWalker walker = new  PogoTreeWalker(nodes, scope, functions);
+	      PogoTreeWalker walker = new  PogoTreeWalker(nodes, scope, functions, drawableManager);
 	      return walker.walk().evaluate();
 	    } catch (RecognitionException e) {
 	      // do not recover from this

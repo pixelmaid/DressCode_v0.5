@@ -12,10 +12,11 @@ import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
+import com.pixelmaid.dresscode.events.CustomEvent;
 
 public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	private ArrayList<Point> points;
-	private ArrayList<Hole> holes;
+	//private ArrayList<Hole> holes;
 	private static double DEFAULT_LENGTH = 20;
 	
 	public Polygon(){
@@ -25,7 +26,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	public Polygon(Point o){
 		this.origin=o;
 		points= new ArrayList<Point>();
-		holes = new ArrayList<Hole>();
+	//	holes = new ArrayList<Hole>();
 	}
 	
 	public Polygon(int sides, double length){
@@ -47,10 +48,10 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		
 	}
 	
-	public void addHole(Hole h){
+	/*public void addHole(Hole h){
 		h.setParent(this);
 		holes.add(h);
-	}
+	}*/
 	
 	public void addPoint(Double x, Double y){
 		addPoint(new Point(x,y));
@@ -71,10 +72,13 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	public ArrayList<Point> getPoints(){
 		return this.points;
 	}
-	
-	public ArrayList<Hole> getHoles(){
-		return this.holes;
+	public void setPoints(ArrayList<Point> p){
+		this.points = p;
 	}
+	
+	/*public ArrayList<Hole> getHoles(){
+		return this.holes;
+	}*/
 	
 	/*public Point rotatePoint(Point pt, Point center, double angle)
 	{
@@ -118,7 +122,8 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
 		}
 		e.endShape(PApplet.CLOSE);	
-		e.fill(Window.canvas.DEFAULT_BG);
+		
+		ArrayList<Hole> holes = this.getHoles();
 		for(int i=0;i<holes.size();i++){
 			holes.get(i).draw(e);
 		}
@@ -144,6 +149,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		}
 		e.endShape(PApplet.CLOSE);	
 		e.fill(Window.canvas.DEFAULT_BG);
+		ArrayList<Hole> holes = this.getHoles();
 		for(int i=0;i<holes.size();i++){
 			holes.get(i).print(e);
 		}
@@ -161,10 +167,23 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		for(int i=0;i<points.size();i++){
 			c.addPoint(points.get(i).copy());
 		}
+		ArrayList<Hole> holes = this.getHoles();
 		for(int i=0;i<holes.size();i++){
-			c.addHole((Hole)holes.get(i).copy());
+			c.addHole(holes.get(i).copy());
 		}
 		return c;
+	}
+	
+	public Hole toHole(){
+		Hole h = new Hole();
+		copyParameters(this, h);
+		
+		h.setParent(this.getParent());
+		for(int i=0;i<points.size();i++){
+			h.addPoint(points.get(i).copy());
+		}
+		
+		return h;
 	}
 	
 	
@@ -176,6 +195,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			Point newPoint = this.points.get(i);
 			this.points.set(i,newPoint.difference(p));
 		}
+		ArrayList<Hole> holes = this.getHoles();
 		for(int i=0;i<holes.size();i++){
 			holes.get(i).setPointsRelativeTo(p);
 		}
@@ -235,8 +255,16 @@ public Drawable expand(){
 			this.points.set(i,pt);
 			
 		}
+		ArrayList<Hole> holes = this.getHoles();
 		for(int i=0;i<holes.size();i++){
-			holes.get(i).setPointsAbsolute();
+			ArrayList<Point> holepoints = holes.get(i).getPoints();
+			for(int j=0;j<holepoints.size();j++){
+			    Point pt = new Point(holepoints.get(j).getX()+getOrigin().getX(),holepoints.get(j).getY()+getOrigin().getY());
+				pt.rotate(getRotation(),getOrigin());
+				holepoints.set(j,pt);
+				
+			}
+			holes.get(i).setPoints(holepoints);
 		}
 		
 	
@@ -258,10 +286,10 @@ public Drawable expand(){
 	public Drawable addToGroup(Drawable d, int index){
 	 Drawable master = new Drawable();
 	//TODO: adjust indexing here to have new drawable added at same index as this
-	 Window.canvas.addDrawable("drawable",-1,master);
+	 this.drawableEvent(CustomEvent.DRAWABLE_CREATED, master);
     
-    	this.removeFromCanvas();
-    	d.removeFromCanvas();
+    	
+    	 this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, d);
     		
     		master.addToGroup(this);
     		master.addToGroup(d,index);
@@ -291,9 +319,10 @@ public Drawable expand(){
 	public Drawable addAllChildren(ArrayList<Drawable> orphans){
 		 Drawable master = new Drawable();
 		//TODO: adjust indexing here to have new drawable added at same index as this
-		Window.canvas.addDrawable("drawable",-1,master);
+		 this.drawableEvent(CustomEvent.DRAWABLE_CREATED, master);
 		    
-		  this.removeFromCanvas();
+	    	
+    	 this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, this);
 				
 		   master.addToGroup(this);
 		   

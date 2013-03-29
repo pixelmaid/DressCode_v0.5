@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.Manager;
 import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -12,9 +13,10 @@ import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.primitive2d.Color;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
+import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class GroupNode implements DCNode {
+public class GroupNode extends NodeEvent implements DCNode {
 
 	protected List<DCNode> params;
 
@@ -39,7 +41,7 @@ public class GroupNode implements DCNode {
     	for(int i=0;i<params.size();i++){
     		Drawable d= (params.get(i).evaluate().asDrawable());
     		
-    		d.removeFromCanvas();
+    		this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, d);
     		
     		master.addToGroup(d);
     	
@@ -47,7 +49,7 @@ public class GroupNode implements DCNode {
     	}
     	
     	//System.out.println("group children are polygons" + master.childrenArePolygons());
-    	Window.canvas.addDrawable("drawable",-1,master);
+    	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, master);
     	return new VarType(master);
     	}
     	catch (ClassCastException e){

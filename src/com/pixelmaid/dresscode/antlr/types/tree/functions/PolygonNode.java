@@ -6,6 +6,7 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
+import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.app.Window;
 
@@ -64,7 +65,7 @@ public class PolygonNode extends DrawableNode implements DCNode {
 			}
 
 
-			Window.canvas.addDrawable("polygon",line,e);
+			this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
 		}
 		catch (ClassCastException err){
 			Window.output.setText("incorrect parameters for polygon call at line:"+line);

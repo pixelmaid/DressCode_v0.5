@@ -5,10 +5,12 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.app.Window;
 
-public class DrawableNode implements DCNode {
+public class DrawableNode extends NodeEvent implements DCNode {
 
 	protected List<DCNode> params;
     protected int line;
@@ -30,9 +32,9 @@ public class DrawableNode implements DCNode {
                values.add(value.asDouble());
             }
     	}
-    	Drawable e = new Drawable(values);
-    	Window.canvas.addDrawable("drawable",line,e);
-    	return new VarType(e);	
+    	Drawable d = new Drawable(values);
+    	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
+    	return new VarType(d);	
         //throw new RuntimeException("Illegal function call: " + this);
     }
 

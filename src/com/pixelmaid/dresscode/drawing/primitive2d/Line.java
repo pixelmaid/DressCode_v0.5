@@ -59,7 +59,7 @@ public class Line extends Polygon {
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
-		e.line((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()),(float)(end.getX()-origin.getX()), (float)(end.getY()-origin.getY()));
+		e.line((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()),(float)(end.getX()-getOrigin().getX()), (float)(end.getY()-getOrigin().getY()));
 		e.popMatrix();
 		}
 	}
@@ -82,11 +82,11 @@ public class Line extends Polygon {
 		return Geom.getMidpoint(this.start, this.end);
 	}
 	
-	/*@Override 
+	@Override 
 	public Point getOrigin(){
-		this.origin = start;
+		this.origin= this.getMidPoint();
 		return this.origin;
-	}*/
+	}
 	
 	
 	@Override
@@ -98,13 +98,13 @@ public class Line extends Polygon {
 		this.origin= Geom.getMidpoint(start, end);
 	}
 	
-	@Override
-	public Drawable rotateWithFocus(double theta, Point focus){
-		this.start = start.rotate(theta, focus);
-		this.end = end.rotate(theta, focus);
-		this.origin= Geom.getMidpoint(start, end);
-		return this;
-	}
+		@Override
+		public Drawable rotateWithFocus(double theta, Point focus){
+			this.start = start.rotate(theta, focus);
+			this.end = end.rotate(theta, focus);
+			this.origin= Geom.getMidpoint(start, end);
+			return this;
+		}
 
 	
 	
@@ -147,6 +147,29 @@ public class Line extends Polygon {
 		return d;
 		
 
+	}
+	@Override 
+	protected void setRelativeTo(Point p) {
+
+		this.start = this.start.difference(p);
+		this.end = this.end.difference(p);
+
+		
+		
+	}
+	
+	@Override 
+	protected void setAbsolute() {
+		
+		if(this.getParent()!=null){
+			this.start= this.start.add(this.getParent().getOrigin()); //add parent's origin to its origin
+			this.end= this.end.add(this.getParent().getOrigin()); //add parent's origin to its origin
+
+			this.rotation = (this.getRotation()+this.getParent().getRotation()); //adds parent's rotation to its rotation
+		}
+
+		
+		
 	}
 	
 	@Override

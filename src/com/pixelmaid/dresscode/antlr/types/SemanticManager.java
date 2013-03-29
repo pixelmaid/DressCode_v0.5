@@ -7,6 +7,7 @@ import java.util.Map;
 import org.antlr.runtime.tree.CommonTree;
 
 import com.pixelmaid.dresscode.app.Window;
+import com.pixelmaid.dresscode.data.DrawableManager;
 
 public class SemanticManager { //data object to store variable declarations
 
@@ -24,7 +25,7 @@ public class SemanticManager { //data object to store variable declarations
 	
 	//function methods
 	//function definition
-	public static boolean defineFunction(String id, Object idList, Object block){
+	public static boolean defineFunction(String id, Object idList, Object block, DrawableManager dm){
 		boolean set = false;
 		 // `idList` is possibly null!  Create an empty tree in that case.  
 	    CommonTree idListTree = idList == null ? new CommonTree() : (CommonTree)idList; 
@@ -34,7 +35,7 @@ public class SemanticManager { //data object to store variable declarations
 	 
 	    // The function name with the number of parameters after it, is the unique key 
 	    String key = id + idListTree.getChildCount(); 
-	    functions.put(key, new FunctionType(id, idListTree, blockTree)); 
+	    functions.put(key, new FunctionType(id, idListTree, blockTree, dm)); 
 		return set;
 		
 	}

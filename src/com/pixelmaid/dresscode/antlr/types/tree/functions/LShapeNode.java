@@ -8,6 +8,7 @@ import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
+import com.pixelmaid.dresscode.events.CustomEvent;
 
 public class LShapeNode extends DrawableNode implements DCNode {
 
@@ -74,7 +75,7 @@ public class LShapeNode extends DrawableNode implements DCNode {
 			}
 
 
-			Window.canvas.addDrawable("lShape",line,e);
+			this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
 		}
 		catch (ClassCastException err){
 			Window.output.setText("incorrect parameters for LShape call at line:"+line);

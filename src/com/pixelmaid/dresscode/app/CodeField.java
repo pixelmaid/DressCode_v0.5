@@ -3,6 +3,7 @@ package com.pixelmaid.dresscode.app;
 /*manages the code entry interface, and intializes and runs the antlr lexer and parser classes
 to update the canvas */
 
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.*;
 import java.io.File;
@@ -26,72 +27,26 @@ import com.pixelmaid.dresscode.antlr.types.tree.BlockNode;
 
 
 public class CodeField extends JEditorPane implements DocumentListener, KeyListener{
-	private Embedded canvas; // reference to the canvas that will be updated by the parsed code
-	private JTextPane output; // reference to the output console
-	private String userCode = ""; //string for storing code input by user
 	private static final long serialVersionUID = 1L;
  
     public CodeField() {
         super();
-        
-        //setup code field
-        this.setEditable(true);
-        this.getDocument().addDocumentListener(this);
-        this.addKeyListener(this);
-   
-        //set reference to main canvas and output console
-        canvas = Window.canvas;
-        output = Window.output;
-      
+    }
+    
+    public void init(){
+    	 this.setEditable(true);
+    	this.setPreferredSize(new Dimension(550,500));
+		this.setContentType("text/java");
+		this.setText("");
+		 
     }
  
     
-    public void updateCanvas(){
-
-    	//TODO: more efficient method of clearing canvas / parsing code. Right now it just deletes everything and re-interprets/ redraws entire thing
-    	canvas.clearAllDrawables(); //clear the canvas
-    	output.setText(""); //clear the output console
-
-    	userCode = 	this.getText()+"\n"; //set user code to text in codeField
-    	
-    	CharStream charStream = new ANTLRStringStream(userCode);
-
-    	// create an instance of the lexer
-    	PogoLexer lexer = new PogoLexer(charStream);
-    	// wrap a token-stream around the lexer
-    	CommonTokenStream tokens = new CommonTokenStream(lexer);
-    	// create the parser
-    	PogoParser parser = new PogoParser(tokens);
-
-    	// walk the tree
-    	CommonTree tree;
-    	
-    	try {
-    		tree = (CommonTree)parser.parse().getTree();
-
-    		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
-
-    		// pass the reference to the Map of functions to the tree walker
-    		PogoTreeWalker walker = new PogoTreeWalker(nodes, parser.functions);
-
-    		// get the returned node 
-    		BlockNode returned = walker.walk();
-
-    		returned.evaluate();
-    		Window.canvas.draw();
-    		Window.canvas.init();
-    		//System.out.println("updated canvas");
-
-    	} catch (Exception e) {
-    		// TODO Auto-generated catch block
-    		e.printStackTrace();
-    		String error = e.getStackTrace().toString();
-    		output.setText("error at" + error);
-
-    	}
-
-
+    public String getCode(){
+    	return this.getText()+"\n";
     }
+    
+  
 
     //adds a line of code to import in a shape;
     public void insertPath(File f) throws BadLocationException{
@@ -104,7 +59,6 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
     //TODO: code that clears out stored variables
     public void clear(){
     	this.setText("");
-    	userCode="";
     }
     
     @Override
@@ -161,7 +115,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 	public void loadFile(String filetxt) {
 		System.out.println("load file="+filetxt);
 		this.setText(filetxt);
-		updateCanvas();
+		//updateCanvas();
 		
 	}
  

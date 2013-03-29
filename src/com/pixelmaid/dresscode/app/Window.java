@@ -3,18 +3,14 @@ package com.pixelmaid.dresscode.app;
 
 import java.awt.BorderLayout;
 
-import java.awt.Color;
+
 import java.awt.Container;
 import java.awt.Dimension;
-import java.awt.GridBagConstraints;
-import java.awt.GridBagLayout;
 import java.awt.ScrollPane;
-import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowListener;
@@ -26,10 +22,10 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-import javax.swing.BorderFactory;
+
 import javax.swing.Box;
 import javax.swing.BoxLayout;
-import javax.swing.JButton;
+
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
@@ -37,21 +33,20 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
+
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextPane;
-import javax.swing.ScrollPaneConstants;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.StyledDocument;
-import java.awt.event.ComponentListener;
+
+import com.pixelmaid.dresscode.app.ui.Button;
 
 
 
-import jsyntaxpane.DefaultSyntaxKit;
+
+//import jsyntaxpane.DefaultSyntaxKit;
 
 
 public class Window extends JFrame implements WindowListener,WindowFocusListener,
@@ -62,10 +57,10 @@ WindowStateListener, ComponentListener, ActionListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	private static CodeField codeField; //textField for code entry 
-	public static Embedded canvas;
+	public static Embedded canvas = new Embedded();
 	public static boolean RIGHT_TO_LEFT = false;
 	public static JFileChooser	 fc;
-	public static JButton openButton, saveButton, printButton, runButton, pathButton, targetButton;
+	public static Button openButton, saveButton, printButton, runButton, pathButton, targetButton;
 	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction;
 	public static final JTextPane output = new JTextPane();
 	public static StyledDocument doc;
@@ -148,6 +143,7 @@ WindowStateListener, ComponentListener, ActionListener {
         cutAction.addActionListener(this);
         
        
+
         
     }
 
@@ -155,30 +151,32 @@ WindowStateListener, ComponentListener, ActionListener {
 		fc = new JFileChooser();
 
 		homeDir = new File("/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/snowflake.dc"); 
-		openButton = new JButton("Open");
+		openButton = new Button(this);
+		openButton.init(0, 0, 75,34, false, false, "Open");
+		openButton.setTip("open a program");
 		//  createImageIcon("images/Open16.gif"));
 
-		openButton.addActionListener(this);
+		
 
-		saveButton = new JButton("Save");//,
+		saveButton = new Button(this);//,
 		//createImageIcon("images/Save16.gif"));
-		saveButton.addActionListener(this);
+		saveButton.init(0, 0, 75,34, false, false, "Save");
 
-		printButton = new JButton("Export to PDF");//,
+		printButton = new Button(this);//,
 		//createImageIcon("images/Save16.gif"));
-		printButton.addActionListener(this);
+		printButton.init(0, 0, 75,34, false, false, "Print");
 
-		runButton = new JButton("Run");//,
+		runButton = new Button(this);//,
 		//createImageIcon("images/Save16.gif"));
-		runButton.addActionListener(this);
+		runButton.init(0, 0, 75,34, false, false, "Run");
 
-		pathButton = new JButton("Path");//,
+		pathButton = new Button(this);//,
 		//createImageIcon("images/Save16.gif"));
-		pathButton.addActionListener(this);
+		pathButton.init(0, 0, 75,34, false, false, "Path");
 
-		targetButton = new JButton("target");//,
+		targetButton = new Button(this);//,
 		//createImageIcon("images/Save16.gif"));
-		targetButton.addActionListener(this);
+		targetButton.init(0, 0, 75,34, false, false, "Target");
 
 	}
 
@@ -216,7 +214,8 @@ WindowStateListener, ComponentListener, ActionListener {
 
 		codeField= new CodeField();
 		codeField.setPreferredSize(new Dimension(550,500));
-
+		codeField.setContentType("text/java");
+		codeField.setText("");
 
 		output.setPreferredSize(new Dimension(550,200));
 		doc = output.getStyledDocument();
@@ -246,8 +245,7 @@ WindowStateListener, ComponentListener, ActionListener {
 		code.add(buttonPanel, BorderLayout.PAGE_START);
 		pane.add(code, BorderLayout.LINE_END);
 		pane.doLayout();
-		codeField.setContentType("text/java");
-		codeField.setText("");
+		
 		//output.setContentType("text/java");
 		// output.setText("hello world");
 	
@@ -278,8 +276,8 @@ WindowStateListener, ComponentListener, ActionListener {
 	            height = max_h;
 	        
 	     canvas = new Embedded(); //Canvas is just a sketch which extends PApplet
-	     canvas.setSize(dimension);
-	     canvas.setMaximumSize(dimension);
+	    canvas.setSize(dimension);
+	    canvas.setMaximumSize(dimension);
 	     
 	     
 	     BasicInternalFrameUI ui = (BasicInternalFrameUI)sketch.getUI();
@@ -289,7 +287,7 @@ WindowStateListener, ComponentListener, ActionListener {
         sketch.setBorder(null);
         
         //just basic options to keep the sketch the right size
-        sketch.add(canvas); //adds canvas to JInternalFrame
+      sketch.add(canvas); //adds canvas to JInternalFrame
         sketch.setSize(sketchw, sketchh);
            sketch.setPreferredSize(dimension);
            sketch.setMaximumSize(dimension);
@@ -570,7 +568,9 @@ WindowStateListener, ComponentListener, ActionListener {
 	@Override
 	public void componentResized(ComponentEvent arg0) {
 		System.out.println("component is resized");
+		
 		codeField.updateCanvas();
+		
 		
 	}
 

@@ -10,14 +10,16 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Hole;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.seisw.util.geom.Point2D;
-import com.seisw.util.geom.Poly ;
-import com.seisw.util.geom.PolyDefault ;
+import com.seisw.util.geom.PolyDefault;
+import com.seisw.util.geom.Poly;
 
+import com.seisw.util.geom.Clip;
 public class PolyBoolean{
 	//merges a group of objects into one
 	public static Drawable merge(Drawable d) {
 		Drawable master;
-		 Poly group = drawableToBoolean(d.condense());
+		
+		Poly group = drawableToBoolean(d);
 		if(group.getNumInnerPoly()==1){
 			//Poly i_Poly = clip.intersection(group.getInnerPoly(0));
 			//master = booleanToPolygon(i_Poly);
@@ -45,65 +47,38 @@ public class PolyBoolean{
 	public static Drawable union(Drawable a, Drawable b){
 		
 		
-		a = a.condense();
-		b = b.condense();
-		
-		Poly a_Poly =  drawableToBoolean(a);
-		Poly b_Poly =  drawableToBoolean(b);
-		//Drawable a_P =  booleanToDrawable(a_Poly);
-		//Drawable b_P =   booleanToDrawable(b_Poly);
+		BooleanPoly a_Poly =  drawableToBoolean(a);
+		BooleanPoly b_Poly =  drawableToBoolean(b);
+	
+		BooleanPoly o_Poly = (BooleanPoly)a_Poly.union(b_Poly);
 
-
-		Poly o_Poly = a_Poly.union(b_Poly);
-
-		//System.out.println("oPoly.size="+o_Poly.getNumPoints());
 
 		return booleanToDrawable(o_Poly);
 		
-		//a = a.toPolygon();
-		//b = b.toPolygon();
 		
-		//Drawable a_P = a.addToGroup(b);
-		//System.out.println("a_p="+a_P.numChildren());
-		//a_P = a_P.removeFromGroup(b);
-		//Manager.canvas.addDrawable("drawable",-1,b);
-		//System.out.println("a_p2="+a_P.numChildren());
-
-		//return a_P.condense();
 	}
 	
-	/*public static Drawable CondenseDrawable(Drawable a){
-		
-		ArrayList<Drawable> children = a.getChildren();
-		for(int i=a.numChildren()-1;i>=0;i--){
-			if(children.get(i).numChildren()==0){ //is a polygon
-				
-			}
-			
-		}
-	}*/
+
 
 	//performs difference of two polygons and returns the result
 	public static Drawable difference(Drawable a, Drawable b) {
-		a = a.condense();
-		b = b.condense();
+				
+		BooleanPoly a_Poly =  drawableToBoolean(a);
+		BooleanPoly b_Poly =  drawableToBoolean(b);
+		Poly o_Poly = a_Poly.difference(b_Poly);	
 		
-		Poly a_Poly =  drawableToBoolean(a);
-		Poly b_Poly =  drawableToBoolean(b);
-		Poly o_Poly = a_Poly.difference(b_Poly);
-		//System.out.println("oPoly.size="+o_Poly.getNumPoints());
-
 		return booleanToDrawable(o_Poly);
+	
 	}
 	
 	//performs difference of two polygons and returns the result
 	public static Drawable xor(Drawable a, Drawable b) {
-		a = a.condense();
-		b = b.condense();
+	
 		
-		Poly a_Poly =  drawableToBoolean(a);
-		Poly b_Poly =  drawableToBoolean(b);
-		Poly o_Poly = a_Poly.xor(b_Poly);
+		
+		BooleanPoly a_Poly =  drawableToBoolean(a);
+		BooleanPoly b_Poly =  drawableToBoolean(b);
+	    Poly o_Poly = a_Poly.xor(b_Poly);
 		//System.out.println("oPoly.size="+o_Poly.getNumPoints());
 
 		return booleanToDrawable(o_Poly);
@@ -111,8 +86,8 @@ public class PolyBoolean{
 	
 	//performs difference of two polygons and returns the result
 	public static Drawable intersection(Drawable a, Drawable b) {
-		a = a.condense();
-		b = b.condense();
+		a  = a.toPolygon();
+		b = b.toPolygon();
 		if(a.numChildren()!=0){
 			Window.output.setText("first object must be a single object, not a group for intersection");
 
@@ -121,16 +96,24 @@ public class PolyBoolean{
 		}
 		else{
 		System.out.println("first object is a single polygon");
-		Poly a_Poly =  polygonToBoolean((Polygon)a);
+		BooleanPoly a_Poly =  polygonToBoolean((Polygon)a);
 			if(b.numChildren()==0){
 		
-		
-				Poly b_Poly =  polygonToBoolean((Polygon)b);
-				Poly o_Poly = a_Poly.intersection(b_Poly);
-				return booleanToDrawable(o_Poly);
+				System.out.println("only clipping with single poly");
+				System.out.println("holes for clipped poly="+((Polygon)b).getHoles().size());
+				BooleanPoly b_Poly =  polygonToBoolean((Polygon)b);
+				System.out.println("holes for converted poly="+ b_Poly.getNumInnerPoly());
+				
+				//Poly o_Poly = a_Poly.intersection(b_Poly);
+				Poly o_Poly = Clip.intersection(a_Poly,b_Poly);
+				System.out.println("holes for o poly="+ o_Poly.getNumInnerPoly());
+
+				Polygon returnPoly = booleanToPolygon(o_Poly);
+				System.out.println("holes for returned poly="+ returnPoly.getHoles().size());
+				return returnPoly;
 			}
 			else{
-				Poly b_Poly = drawableToBoolean(b);
+				BooleanPoly b_Poly = drawableToBoolean(b);
 				return groupIntersection(a_Poly,b_Poly);
 			}
 		}
@@ -138,7 +121,7 @@ public class PolyBoolean{
 	
 	
 	// performs intersection on a group of objects
-		private static Drawable groupIntersection(Poly clip, Poly group){
+		private static Drawable groupIntersection(BooleanPoly clip, BooleanPoly group){
 			Drawable master = new Drawable();
 		
 			if(group.getNumInnerPoly()==1){
@@ -167,30 +150,48 @@ public class PolyBoolean{
 		}
 		
 	//converts drawable to collection of boolean operation polygons
-	private static Poly drawableToBoolean(Drawable d){
-		Poly m_Poly = new PolyDefault(); // master level polygon
+	private static BooleanPoly drawableToBoolean(Drawable d){
+		d = d.condense();
+		
+		BooleanPoly m_Poly = new BooleanPoly(); // master level polygon
 		d = d.toPolygon();
 
 		if(d.numChildren()==0){
-			return polygonToBoolean((Polygon)d);
+			Poly p = polygonToBoolean((Polygon)d);
+			m_Poly.add(p);
 		}
 		else{
 			for(int j=0;j<d.children.size();j++){
 				Polygon p = (Polygon)d.children.get(j);
 				m_Poly.add(polygonToBoolean(p));
 			}
-			return m_Poly;
 		}
+		//System.out.println("master poly Bounds="+m_Poly.getX(0)+","+m_Poly.getBounds().getWidth());
+	
+		ArrayList<Hole> holes = d.getHoles();
+		//System.out.println("total number of holes="+holes.size());
+
+			for(int j=0;j<holes.size();j++){
+				Hole h = holes.get(j);
+				
+				Poly hP = polygonToBoolean(h);
+				hP.setIsHole(true);
+				m_Poly.add(hP);
+				//System.out.println("hole "+j+" Bounds="+hP.getX(0)+","+hP.getBounds().getWidth());
+
+			}
+		
+		return m_Poly;
 
 	}
 	
 	//converts single polygon to single boolean operation polygon
-	private static Poly polygonToBoolean(Polygon p){
+	private static BooleanPoly polygonToBoolean(Polygon p){
 		p.setPointsAbsolute();
 		ArrayList<Point> pPoints = p.getPoints();
 
 		//temp polygon to be stored in master polygon
-		Poly p_Poly = new PolyDefault();
+		BooleanPoly p_Poly = new BooleanPoly();
 
 		//add all polygon points to temp polygon
 		for(int i=0;i<pPoints.size();i++)
@@ -199,10 +200,9 @@ public class PolyBoolean{
 		}
 		//add all polygon holes to temp polygon
 		ArrayList<Hole> holes = p.getHoles();
-
 		for(int i=0;i<holes.size();i++)
 		{	
-			Poly h_Poly = new PolyDefault();
+			BooleanPoly h_Poly = new BooleanPoly();
 			h_Poly.setIsHole(true);
 			ArrayList<Point> holePoints = holes.get(i).getPoints();
 			for(int k=0;k<holePoints.size();k++)
@@ -210,12 +210,15 @@ public class PolyBoolean{
 				
 				h_Poly.add( new Point2D(holePoints.get(i).getX(),holePoints.get(i).getY()) );
 			}
+			p_Poly.add(h_Poly);
 		}
+		
+		
 		return p_Poly;
 	}
 	//converts boolean operation collection of polygons to drawable
 	private static Drawable booleanToDrawable(Poly poly){
-
+		
 		Drawable master = new Drawable();
 		if(poly.getNumInnerPoly()==1){
 			master = booleanToPolygon(poly.getInnerPoly(0));
@@ -225,17 +228,23 @@ public class PolyBoolean{
 		}
 		else{
 			
-
 			for( int i = 0 ; i < poly.getNumInnerPoly() ; i++ )
 			{
+				
 				Poly ip = poly.getInnerPoly(i);
 				Polygon p = booleanToPolygon(ip);
-				//System.out.println(p.getPoints().size());
+				if(ip.isHole()){
+					master.addHoleToGroup(p.toHole());
+				}
+				else{
+					master.addToGroup(p);
+				}
 				
-				master.addToGroup(p);
+				
 			}
 		
 		}
+		
 		return master;
 	}
 	
@@ -245,12 +254,9 @@ public class PolyBoolean{
 	private static Polygon booleanToPolygon(Poly ip)
 	{
 		Polygon jp = new Polygon();
-		for( int i = 0 ; i < ip.getNumPoints(); i++ )
-		{
-			jp.addPoint( ip.getX(i), ip.getY(i));
-		}
+	
 		
-		
+		int holeCount = 0;
 		
 		//System.out.println("PolyBoolean has " + ip.getNumInnerPoly()+" holes");
 		for( int i = 0 ; i < ip.getNumInnerPoly() ; i++ )
@@ -261,13 +267,21 @@ public class PolyBoolean{
 			if (ipp.isHole()){
 				Hole h = innerPolyToHole(ipp);
 
-				jp.addHole(h);
+				jp.addHoleToGroup(h);
+				holeCount ++;
+			}
+			else{
+				System.out.println("found a non hole");
+				for( int j = 0 ;j < ipp.getNumPoints(); j++ )
+				{
+					jp.addPoint( ipp.getX(j), ipp.getY(j));
+				}
 			}
 		}
 		//set all points relative to the centroid;
 		Point c = Geom.findCentroid(jp);
 		jp.setPointsRelativeTo(c) ;
-
+		System.out.println("holes for hole count="+holeCount);
 		return jp;
 	}
 

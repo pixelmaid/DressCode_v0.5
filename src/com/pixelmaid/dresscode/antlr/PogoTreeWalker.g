@@ -14,6 +14,8 @@ options {
   import com.pixelmaid.dresscode.antlr.types.tree.functions.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.properties.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
+  import com.pixelmaid.dresscode.data.*;
+  
   import java.util.Map;
   import java.util.HashMap;
   import com.pixelmaid.dresscode.app.Window;
@@ -21,17 +23,20 @@ options {
 
 @members {
  
+ DrawableManager drawableManager;
   Scope currentScope = null;
   public Map<String, FunctionType> functions = null;
   
-  public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns) {
-    this(nodes, null, fns);
+  public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns, DrawableManager dm) {
+    this(nodes, null, fns,dm);
+   
   }
   
-  public PogoTreeWalker(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns) {
+  public PogoTreeWalker(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns, DrawableManager dm) {
     super(nds);
     currentScope = sc;
     functions = fns;
+    this.drawableManager = dm;
   }
 }
 
@@ -69,7 +74,10 @@ statement returns [DCNode node]
   ;
 
 assignment returns [DCNode node]
-  :  ^(ASSIGNMENT Identifier indexes? expression) {node = new AssignmentNode($Identifier.text, $indexes.e, $expression.node, currentScope);}
+  :  ^(ASSIGNMENT Identifier indexes? expression) {
+  node = new AssignmentNode($Identifier.text, $indexes.e, $expression.node, currentScope);
+  ((AssignmentNode)node).addEventListener(drawableManager);
+  }
   ;
 
 functionCall returns [DCNode node]
@@ -90,7 +98,7 @@ functionCall returns [DCNode node]
   
   
   primitiveCall returns [DCNode node]
-  	:^(FUNC_CALL Ellipse exprList?)  {node = new EllipseNode($exprList.e,$FUNC_CALL.getLine());}
+  	:^(FUNC_CALL Ellipse exprList?)  {node = new EllipseNode($exprList.e,$FUNC_CALL.getLine());  ((DrawableNode)node).addEventListener(drawableManager);}
   	|^(FUNC_CALL Line exprList?) 	 {node = new LineNode($exprList.e,$FUNC_CALL.getLine());}
   	|^(FUNC_CALL Rect exprList?) 	 {node = new RectangleNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL Curve exprList?)   {node = new CurveNode($exprList.e,$FUNC_CALL.getLine());}

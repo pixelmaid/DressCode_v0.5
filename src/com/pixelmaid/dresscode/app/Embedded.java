@@ -3,53 +3,78 @@ package com.pixelmaid.dresscode.app;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
-import javax.media.nativewindow.util.Dimension;
 
-import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
-import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
+import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 
-import processing.core.PApplet;
-import processing.pdf.*;
+import processing.core.*;
 
 
 public class Embedded extends PApplet {
 	/**
 	 * 
 	 */
+	
 	private static final long serialVersionUID = 1L;
-	private Map<String, Drawable> drawables = new LinkedHashMap<String, Drawable>();
 	public final int DEFAULT_BG = 222;
 	private int gridUnits = 10;
-	public ArrayList<Drawable> finalPolys = new ArrayList<Drawable>();//for debugging
-	public void setup() {
-		//this.init();
-		// original setup code here ...
-		size(700,700,P2D);
-		//this.setPreferredSize(preferredSize)
+	 private int zoomAmount = 0;
+	  private int defaultCanvasWidth = 500;
+	  private int defaultCanvasHeight = 500;
+	  private ArrayList<Drawable> tempDrawables;
+	
+	public void init(int width, int height){
+		defaultCanvasWidth = width;
+		defaultCanvasHeight = height;
 		
-		background(DEFAULT_BG,DEFAULT_BG,DEFAULT_BG);
-		grid();
-		// prevent thread from starving everything else
-		noLoop();
+	}
+	
+	
+	
+	public void setup() {
+		
+		tempDrawables = new ArrayList<Drawable>();
+		//tempDrawables.add(new Ellipse(100,100));
+		
+		size(defaultCanvasWidth,defaultCanvasHeight,P3D);
+		
+		
+	}
+	
+	
+public void setDrawables(ArrayList<Drawable> d){
+	this.tempDrawables=d;
+}
+	
+public void draw() {
+	pushMatrix();
+	 background(DEFAULT_BG);
+	translate(0,0,zoomAmount);
+		
+	 
+			for (int i=0;i<tempDrawables.size();i++){
+			
+				tempDrawables.get(i).draw(this);
+			}
+	//grid();
+		
+	popMatrix();	
+
 	}
 
-	public void draw() {
+	/*public void showDrawables(ArrayList<Drawable> drawables) {
+		pushMatrix();
+		translate(0,0,zoomAmount);
+		background(210);
 
-		background(DEFAULT_BG,DEFAULT_BG,DEFAULT_BG);
-		//System.out.println("draw");
-		//this.ellipse(0, 0, 100, 100);
-		//System.out.println("drawable count="+drawables.size());
 		try{
-		for (Drawable value : drawables.values()) {
+			for (Drawable value : drawables) {
 			
 				value.draw(this);
 		}
-		
+		ellipse(100,100,100,100);
 		grid();
 		}
 		catch( java.lang.RuntimeException e){
@@ -57,25 +82,11 @@ public class Embedded extends PApplet {
 			this.draw();
 		}
 		
-		/*//debugging code
-		for(int j=0;j<finalPolys.size();j++){
-        ArrayList<Point> points = ((Polygon)(finalPolys.get(j))).getPoints();
-		System.out.println("drawing final poly at "+j);
-        strokeWeight(1f);
-		
-		
-		fill(255,0,0,25f);
-		beginShape();
-		for(int i=0;i<points.size();i++){
-			vertex((float)points.get(i).getX(),(float)points.get(i).getY());
-		}
-		endShape(PApplet.CLOSE);
-		
-		}*/
-		noLoop();
-	}
+		popMatrix();
+		//noLoop();
+	}*/
 	
-	public void print(File file){
+	public void print(ArrayList<Drawable> drawables, File file){
 		String filename = file.getAbsolutePath();
 		String subStr = filename.substring(filename.length()-4, filename.length());
 		//System.out.println(subStr);
@@ -85,7 +96,7 @@ public class Embedded extends PApplet {
 		}
 		this.beginRecord(PDF, filename);
 		try{
-			for (Drawable value : drawables.values()) {
+			for (Drawable value : drawables) {
 				
 					value.print(this);
 			}
@@ -94,7 +105,7 @@ public class Embedded extends PApplet {
 			}
 			catch( java.lang.RuntimeException e){
 				System.err.println("missed a pop matrix call, printing again");
-				this. print(file);
+				PApplet.print(file);
 			}
 		this.endRecord();
 	}
@@ -106,36 +117,9 @@ public class Embedded extends PApplet {
 		// redraw();
 	}
 
-	public void addDrawable(String id, int lineNumber, Drawable d) {
-		String key = id + Integer.toString(lineNumber)+Double.toString(Math.random()*1000);
-		// System.out.println("key="+key);
-		drawables.put(key, d);
-		d.key=key;
 
-	}
-	
-	public void swapDrawable(Drawable a, Drawable b){
-		a = b;
-		
-	}
-
-	public boolean removeDrawable(Drawable d){
-		return drawables.remove
-				(d.key)==null? false: true;
-	}
-
-	public void removeDrawable(String id, int lineNumber) {
-		String key = id + Integer.toString(lineNumber);
-		drawables.remove(key);
-	}
-
-	public void clearAllDrawables() {
-		drawables.clear();
-
-	}
-	
 	public void clear(){
-		this.clearAllDrawables();
+		
 		this.draw();
 		this.init();
 	}
@@ -171,4 +155,14 @@ public class Embedded extends PApplet {
 			widthGridPos+=gridUnits;
 		}
 	}
+	
+	  public void zoomIn(){
+		  zoomAmount+=20;
+		  System.out.println(zoomAmount);
+	  }
+	  
+	  public void zoomOut(){
+		  zoomAmount-=20;
+		  System.out.println(zoomAmount);
+	  }
 }

@@ -1,4 +1,4 @@
-grammar Pogo;
+					grammar Pogo;
 
 options {
   output=AST;
@@ -33,6 +33,7 @@ tokens {
   import com.pixelmaid.dresscode.antlr.types.*; 
   import java.util.Map;
   import java.util.HashMap;
+  import com.pixelmaid.dresscode.data.*;
 }
 
 @lexer::header {
@@ -41,7 +42,12 @@ tokens {
 
 @parser::members {
   public Map<String, FunctionType> functions = new HashMap<String, FunctionType>();
+  private DrawableManager drawableManager;
   
+  public PogoParser(CommonTokenStream tokens, DrawableManager dm){
+  	super(tokens);
+  	drawableManager = dm;
+  }
   private void defineFunction(String id, Object idList, Object block) {
 
     // `idList` is possibly null! Create an empty tree in that case. 
@@ -52,7 +58,7 @@ tokens {
 
     // The function name with the number of parameters after it the unique key
     String key = id + idListTree.getChildCount();
-    functions.put(key, new FunctionType(id, idListTree, blockTree));
+    functions.put(key, new FunctionType(id, idListTree, blockTree,drawableManager));
     System.out.println("defined function:"+id);
   }
 }

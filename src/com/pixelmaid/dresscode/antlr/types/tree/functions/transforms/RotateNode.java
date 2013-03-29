@@ -4,15 +4,17 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.app.Manager;
 import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
+import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class RotateNode implements DCNode {
+public class RotateNode extends NodeEvent implements DCNode {
 
 	protected List<DCNode> params;
 
@@ -47,7 +49,9 @@ public class RotateNode implements DCNode {
     		Point f = params.get(2).evaluate().asPoint();
     		
     		Drawable b = d.rotateWithFocus(r, f);
-    		Window.canvas.swapDrawable(d,b);
+    		//TODO: create swap event
+    		this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, d);
+    		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, b);
     		return new VarType(b);	
     		
     	}
@@ -55,7 +59,8 @@ public class RotateNode implements DCNode {
     		double fX = params.get(2).evaluate().asDouble();
     		double fY = params.get(3).evaluate().asDouble();
     		Drawable b=d.rotateWithFocus(r, new Point(fX,fY));
-    		Window.canvas.swapDrawable(d,b);
+    		this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, d);
+    		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, b);
     		return new VarType(b);	
     	}
     	return new VarType(d);	
