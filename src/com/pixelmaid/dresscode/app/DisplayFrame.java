@@ -48,12 +48,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private  Embedded canvas;
 	private Toolbar drawingToolbar;
 
-	private int defaultCanvasWidth = 800;
-	private int defaultCanvasHeight = 800;
+	private int defaultDrawingBoardWidth = 500;
+	private int defaultDrawingBoardHeight = 500;
 	private int defaultDrawingPaneWidth = 2000;
 	private int defaultDrawingPaneHeight = 1000;
 	private int defaultButtonWidth = 50;
 	private int defaultButtonHeight = 50;
+	
 	
 	private CodingFrame codingFrame;
 	private  CodeField codeField;
@@ -85,10 +86,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		//codingButtons = new ArrayList<ImageButton>();
 		//create data managers
 		
-		drawableManager = new DrawableManager();
-		instructionManager = new InstructionManager(drawableManager,defaultCanvasWidth, defaultCanvasHeight);
-		instructionManager.addEventListener(this);
-		drawableManager.addEventListener(this);
+	
 		
 
 		//setup custom events
@@ -130,10 +128,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		canvas = new Embedded();
 		canvas.setId(1);
 		canvas.addEventListener(this);
-		defaultCanvasHeight=defaultDrawingPaneHeight;
-		defaultCanvasWidth=defaultDrawingPaneWidth;
-		canvas.setDimensions(defaultCanvasWidth,defaultCanvasHeight);
 		
+		canvas.setDimensions(defaultDrawingPaneWidth-5,defaultDrawingPaneHeight-(defaultButtonHeight*2));
+		canvas.setDrawingBoardDimensions(defaultDrawingBoardWidth, defaultDrawingBoardHeight);
+		drawableManager = new DrawableManager();
+		instructionManager = new InstructionManager(drawableManager,defaultDrawingBoardWidth,defaultDrawingBoardHeight);
+		
+		instructionManager.addEventListener(this);
+		drawableManager.addEventListener(this);
 		
 		drawingToolbar = new Toolbar();
 		selectButton = new ImageButton("select","arrow.png", "selection tool", defaultButtonWidth,defaultButtonHeight);
@@ -331,7 +333,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public void componentResized(ComponentEvent arg0) {
 		//this.getContentPane().remove(drawingFrame);
 		System.out.println("canvas resized");
-		this.canvas.dispose();
+		/*this.canvas.dispose();
 		this.canvas = null;
 		
 		this.canvas= new Embedded();
@@ -355,7 +357,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		drawingPane.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight,canvas);
 		
 		this.getContentPane().add(drawingPane);*/
-		canvas.init();
+		//canvas.init();*/
 
 	}
 

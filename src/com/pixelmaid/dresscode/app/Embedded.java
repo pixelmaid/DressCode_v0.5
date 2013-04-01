@@ -33,6 +33,17 @@ public class Embedded extends PApplet {
 	private int translateXAmount = 0;
 	private int defaultCanvasWidth = 500;
 	private int defaultCanvasHeight = 500;
+	private int drawingBoardWidth = 500;
+	private int drawingBoardHeight = 500;
+	
+	private int gridHeight = 2000;
+	private int gridWidth = 2000;
+	private int gridX = -gridWidth/2;
+	private int gridY = -gridHeight/2;
+	
+	private float zeroX= 0;
+	private float zeroY=0;
+	
 	private ArrayList<Drawable> tempDrawables;
 	private String tempFilename;
 	private boolean print = false;
@@ -63,8 +74,26 @@ public class Embedded extends PApplet {
 	public void setDimensions(int width, int height){
 		defaultCanvasWidth = width;
 		defaultCanvasHeight = height;
+		
 
 	}
+	
+	public void setDrawingBoardDimensions(int width, int height){
+		drawingBoardWidth = width;
+		drawingBoardHeight = height;
+		zeroX = defaultCanvasWidth/2-drawingBoardWidth/2;
+		zeroY= defaultCanvasHeight/2-drawingBoardHeight/2;
+
+	}
+	
+	public float getZeroX(){
+		return this.zeroX;
+	}
+	
+	public float getZeroY(){
+		return this.zeroY;
+	}
+
 
 
 	public int getWidth(){
@@ -118,14 +147,17 @@ public class Embedded extends PApplet {
 			pushMatrix();
 			background(DEFAULT_BG);
 			translate(translateXAmount,translateYAmount,zoomAmount);
-
+			pushMatrix();
+			
+			translate(zeroX,zeroY,0);
 			for (int i=0;i<tempDrawables.size();i++){
 
 				tempDrawables.get(i).draw(this);
 				tempDrawables.get(i).drawOrigin(this);
 			}
+			
+			popMatrix();
 			PGraphicsOpenGL pG = (PGraphicsOpenGL)this.g;
-
 			modelview.get(mvmatrix1);
 			float x = modelX(0, 0, 0);
 			float y = modelY(0, 0, 0);
@@ -141,6 +173,7 @@ public class Embedded extends PApplet {
 			if(drawGrid){
 				grid();
 			}
+			dimensions();
 
 			/*System.out.println(x+","+y+","+z);
 	float screenx = screenX(x,y,z);
@@ -200,7 +233,7 @@ public class Embedded extends PApplet {
 			break;
 
 		case PAN_MODE:
-			cursor(MOVE);
+			cursor(HAND);
 			break;
 		default:
 			cursor(ARROW);
@@ -418,9 +451,9 @@ public class Embedded extends PApplet {
 	public void grid(){
 
 
-		int heightGridPos=0;
-		int widthGridPos=0;
-		while( heightGridPos<height){
+		int heightGridPos=gridY;
+		int widthGridPos=gridX;
+		while( heightGridPos<gridHeight){
 			if(((float)heightGridPos)%((float)(gridUnits*10)) == 0){
 				stroke(0,0,0,75f);
 				strokeWeight(1.5f);
@@ -429,10 +462,10 @@ public class Embedded extends PApplet {
 				stroke(0,0,0,50f);
 				strokeWeight(1);
 			}
-			this.line(0,heightGridPos,width,heightGridPos);
+			this.line(gridX,heightGridPos,gridWidth,heightGridPos);
 			heightGridPos+=gridUnits;
 		}
-		while( widthGridPos<width){
+		while( widthGridPos<gridWidth){
 			if(((float)widthGridPos)%((float)(gridUnits*10)) == 0){
 				stroke(0,0,0,75f);
 				strokeWeight(1.5f);
@@ -442,10 +475,20 @@ public class Embedded extends PApplet {
 				strokeWeight(1);
 			}
 
-			this.line(widthGridPos,0,widthGridPos,height);
+			this.line(widthGridPos,gridY,widthGridPos,gridHeight);
 			widthGridPos+=gridUnits;
 		}
 	}
+	
+	public void dimensions(){
+
+				stroke(0);
+				noFill();
+				rectMode(CENTER);
+				rect(width/2,height/2,drawingBoardWidth,drawingBoardHeight);
+	
+	}
+
 
 	public void zoomIn(){
 		zoomAmount+=10;

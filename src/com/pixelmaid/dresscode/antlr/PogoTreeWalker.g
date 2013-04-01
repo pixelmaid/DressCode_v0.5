@@ -23,18 +23,18 @@ options {
 
 @members {
  
- int widthParam;
- int heightParam;
+ double widthParam;
+ double heightParam;
  DrawableManager drawableManager;
   Scope currentScope = null;
   public Map<String, FunctionType> functions = null;
   
-  public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns, DrawableManager dm, int w, int h) {
+  public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns, DrawableManager dm, double w, double h) {
     this(nodes, null, fns,dm,w,h);
    
   }
   
-  public PogoTreeWalker(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns, DrawableManager dm,int w,int h) {
+  public PogoTreeWalker(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns, DrawableManager dm,double w,double h) {
     super(nds);
     currentScope = sc;
     functions = fns;

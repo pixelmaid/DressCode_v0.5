@@ -35,7 +35,7 @@ public class FunctionType {  //data object to store function declarations
 	    scope = original.scope.copy();
 	  }
 
-	  public VarType invoke(List<DCNode> params, Map<String, FunctionType> functions ,DrawableManager dm, int w, int h) {
+	  public VarType invoke(List<DCNode> params, Map<String, FunctionType> functions ,DrawableManager dm, double w, double h) {
 		  System.out.println("function drawable manager 2 ="+dm);
 
 		  

@@ -28,10 +28,10 @@ public class InstructionManager extends NodeEvent{
 	private String error = "";
 	public EventSource eventSource;
 	private DrawableManager drawableManager;
-	private int widthParam,heightParam;
+	private double widthParam,heightParam;
 	
 	
-	public InstructionManager(DrawableManager dm, int w, int h) {
+	public InstructionManager(DrawableManager dm, double w, double h) {
 		lexer = new PogoLexer();
 		drawableManager = dm;
 		widthParam = w;

@@ -13,9 +13,9 @@ public class FunctionCallNode  extends NodeEvent implements DCNode {
     private String identifier;
     private List<DCNode> params;
     private Map<String, FunctionType> functions;
-    private int width,height;
+    private double width,height;
 
-    public FunctionCallNode(String id, List<DCNode> ps, Map<String, FunctionType> fs, int w, int h) {
+    public FunctionCallNode(String id, List<DCNode> ps, Map<String, FunctionType> fs,double w, double h) {
         identifier = id;
         params = ps == null ? new ArrayList<DCNode>() : ps;
         functions = fs;
