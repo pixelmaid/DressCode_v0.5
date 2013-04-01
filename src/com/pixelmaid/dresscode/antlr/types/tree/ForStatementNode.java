@@ -2,18 +2,16 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.Scope;
 import com.pixelmaid.dresscode.antlr.types.VarType;
-import com.pixelmaid.dresscode.app.Manager;
-import com.pixelmaid.dresscode.app.Window;
+
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
-public class ForStatementNode implements DCNode {
+public class ForStatementNode extends NodeEvent implements DCNode {
 
     private String identifier;
     private DCNode startExpr;
     private DCNode stopExpr;
     private DCNode block;
     protected Scope scope;
-    private DCNode returnStatement;
 
     public ForStatementNode(String id, DCNode start, DCNode stop, DCNode bl, Scope s) {
         identifier = id;
@@ -23,14 +21,11 @@ public class ForStatementNode implements DCNode {
         scope = s;
     }
     
-    public void addReturn(DCNode stat) {
-        returnStatement = stat;
-      }
+   
 
     @Override
     public VarType evaluate() {
     	Drawable d = new Drawable();
-    	boolean drawAdded=false;
         int start = startExpr.evaluate().asDouble().intValue();
         int stop = stopExpr.evaluate().asDouble().intValue();
 
@@ -45,7 +40,6 @@ public class ForStatementNode implements DCNode {
             	  Drawable d2 = returnValue.asDrawable();
             	  d.addToGroup(d2);
             	  d2.removeFromCanvas();
-            	  drawAdded=true;
             	  System.out.println("added drawable in for loop at+"+i);
           	  
             }

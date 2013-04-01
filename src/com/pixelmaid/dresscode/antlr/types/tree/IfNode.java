@@ -5,7 +5,7 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 import java.util.ArrayList;
 import java.util.List;
 
-public class IfNode implements DCNode {
+public class IfNode extends NodeEvent implements DCNode {
 
   private List<Choice> choices;
 

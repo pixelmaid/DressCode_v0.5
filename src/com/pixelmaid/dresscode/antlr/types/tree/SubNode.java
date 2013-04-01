@@ -5,11 +5,8 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
-import com.pixelmaid.dresscode.app.Manager;
-import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 public class SubNode extends NodeEvent implements DCNode {
@@ -43,8 +40,8 @@ public class SubNode extends NodeEvent implements DCNode {
         if(a.isDrawable() && b.isDrawable()) {
         	Drawable aP = a.asDrawable();
         	Drawable bP = b.asDrawable();
-        	this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, aP);
-        	this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, bP);
+        	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, aP);
+        	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, bP);
         	
         	Drawable d = PolyBoolean.difference(aP,bP);
         	 //TODO: add actual line number instead of 0 here

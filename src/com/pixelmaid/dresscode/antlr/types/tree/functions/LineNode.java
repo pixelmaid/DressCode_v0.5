@@ -9,8 +9,7 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.events.CustomEvent;
-import com.pixelmaid.dresscode.app.Window;
-import com.pixelmaid.dresscode.app.Window;
+
 
 public class LineNode extends DrawableNode implements DCNode {
 
@@ -36,7 +35,7 @@ public class LineNode extends DrawableNode implements DCNode {
     		e = new Line(values);
     	}
     	catch (ClassCastException err){
-			Window.output.setText("incorrect parameters for line call at line:"+line);
+			//Window.output.setText("incorrect parameters for line call at line:"+line);
 
     		System.err.println("incorrect parameters for line call at line:"+line);
     		
@@ -59,7 +58,7 @@ public class LineNode extends DrawableNode implements DCNode {
         		
         	}
         	catch (ClassCastException err){
-    			Window.output.setText("incorrect parameters for line call at line:"+line);
+    			//Window.output.setText("incorrect parameters for line call at line:"+line);
 
         		System.err.println("incorrect parameters for line call at line:"+line);
         		
@@ -78,7 +77,7 @@ public class LineNode extends DrawableNode implements DCNode {
 	    		}
 	    	}
 	    	else{
-				Window.output.setText("incorrect parameters for line call at line:"+line);
+			//	Window.output.setText("incorrect parameters for line call at line:"+line);
 	
 	    		System.err.println("incorrect parameters for line call at line:"+line);
 	    	}

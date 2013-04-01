@@ -1,12 +1,9 @@
 package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
-import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-
-import java.util.ArrayList;
 import java.util.List;
 
-public class DotPropertyNode implements DCNode {
+public class DotPropertyNode extends NodeEvent implements DCNode {
 
   private DCNode expression;
   private List<PropertyNode> properties;

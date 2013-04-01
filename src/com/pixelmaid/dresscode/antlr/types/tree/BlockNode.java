@@ -1,13 +1,11 @@
 package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
-import com.pixelmaid.dresscode.app.Manager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlockNode implements DCNode {
+public class BlockNode extends NodeEvent implements DCNode {
 
   private List<DCNode> statements;
   private DCNode returnStatement;

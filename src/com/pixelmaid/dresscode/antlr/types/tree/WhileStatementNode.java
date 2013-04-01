@@ -1,9 +1,8 @@
 package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
-import com.pixelmaid.dresscode.antlr.types.Scope;
 
-public class WhileStatementNode implements DCNode {
+public class WhileStatementNode extends NodeEvent implements DCNode {
 
     private DCNode expression;
     private DCNode block;

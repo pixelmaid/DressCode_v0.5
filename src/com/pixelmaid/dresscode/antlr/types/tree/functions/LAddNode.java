@@ -5,8 +5,9 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 
-public class LAddNode implements DCNode {
+public class LAddNode extends NodeEvent implements DCNode {
 
 	protected List<DCNode> params;
 	protected int line;

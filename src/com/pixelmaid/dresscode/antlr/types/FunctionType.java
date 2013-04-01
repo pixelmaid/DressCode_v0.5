@@ -1,7 +1,6 @@
 package com.pixelmaid.dresscode.antlr.types;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 
@@ -18,14 +17,14 @@ public class FunctionType {  //data object to store function declarations
 	  private List<String> identifiers;
 	  private CommonTree code;
 	  private Scope scope;
-	  private DrawableManager drawableManager;
+	 
 
-	  public FunctionType(String i, CommonTree ids, CommonTree block, DrawableManager dm) {
+	  public FunctionType(String i, CommonTree ids, CommonTree block) {
 	    id = i;
 	    identifiers = toList(ids);
 	    code = block;
 	    scope = new Scope();
-	    drawableManager = dm;
+	   
 	  }
 
 	  public FunctionType(FunctionType original) {
@@ -36,8 +35,10 @@ public class FunctionType {  //data object to store function declarations
 	    scope = original.scope.copy();
 	  }
 
-	  public VarType invoke(List<DCNode> params, Map<String, FunctionType> functions) {
+	  public VarType invoke(List<DCNode> params, Map<String, FunctionType> functions ,DrawableManager dm, int w, int h) {
+		  System.out.println("function drawable manager 2 ="+dm);
 
+		  
 	    if(params.size() != identifiers.size()) {
 	      throw new RuntimeException("illegal function call: " + identifiers.size() +
 	          " parameters expected for function `" + id + "`");
@@ -51,7 +52,7 @@ public class FunctionType {  //data object to store function declarations
 	    try {
 	      // Create a tree walker to evaluate this function's code block
 	      CommonTreeNodeStream nodes = new CommonTreeNodeStream(code);
-	      PogoTreeWalker walker = new  PogoTreeWalker(nodes, scope, functions, drawableManager);
+	      PogoTreeWalker walker = new  PogoTreeWalker(nodes, scope, functions, dm, w, h);
 	      return walker.walk().evaluate();
 	    } catch (RecognitionException e) {
 	      // do not recover from this

@@ -31,6 +31,11 @@ public class NodeEvent {
 		this.es.addEventListener(listener);
 		
 	}
+	
+	public CustomEventListener getListenerAt(int index) {
+	return es.getListenerAt(index);
+		
+	}
 
 	public void removeEventListener(CustomEventListener listener) {
 		this.es.removeEventListener(listener);

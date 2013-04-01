@@ -5,9 +5,7 @@ import java.util.List;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
-import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
-import com.pixelmaid.dresscode.app.Window;
-import com.pixelmaid.dresscode.app.Window;
+
 
 public class PointNode extends DrawableNode implements DCNode {
 
@@ -35,12 +33,12 @@ public class PointNode extends DrawableNode implements DCNode {
 				}
 				
 				else{
-					Window.output.setText("incorrect number of arguments for point at line:"+line);
+					//Window.output.setText("incorrect number of arguments for point at line:"+line);
 					System.err.println("incorrect number of arguments for point at line:"+line);
 				}
 			}
 			else{
-				Window.output.setText("incorrect number of arguments for point at line:"+line);
+				//Window.output.setText("incorrect number of arguments for point at line:"+line);
 
 				System.err.println("incorrect arguments for point at line:"+line);
 			}
@@ -49,7 +47,7 @@ public class PointNode extends DrawableNode implements DCNode {
 			//Window.canvas.addDrawable("point",line,e);
 		}
 		catch (ClassCastException err){
-			Window.output.setText("incorrect parameters for point at line:"+line);
+			//Window.output.setText("incorrect parameters for point at line:"+line);
 
 			System.err.println("incorrect parameters for point at line:"+line);
 

@@ -18,26 +18,31 @@ options {
   
   import java.util.Map;
   import java.util.HashMap;
-  import com.pixelmaid.dresscode.app.Window;
+
 }
 
 @members {
  
+ int widthParam;
+ int heightParam;
  DrawableManager drawableManager;
   Scope currentScope = null;
   public Map<String, FunctionType> functions = null;
   
-  public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns, DrawableManager dm) {
-    this(nodes, null, fns,dm);
+  public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns, DrawableManager dm, int w, int h) {
+    this(nodes, null, fns,dm,w,h);
    
   }
   
-  public PogoTreeWalker(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns, DrawableManager dm) {
+  public PogoTreeWalker(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns, DrawableManager dm,int w,int h) {
     super(nds);
     currentScope = sc;
     functions = fns;
     this.drawableManager = dm;
+    widthParam = w;
+    heightParam = h;
   }
+  
 }
 
 walk returns [BlockNode node]
@@ -65,40 +70,38 @@ statement returns [DCNode node]
 @init{
 	//System.out.println(" statement called");
 }
-  :  assignment     {node = $assignment.node;}
+  :  assignment     {node = $assignment.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |  functionCall   {node = $functionCall.node;}
-  |  ifStatement    {node = $ifStatement.node;}
-  |  forStatement   {node = $forStatement.node;}
-  |  whileStatement {node = $whileStatement.node;}
-  | repeatStatement[false] {node = $repeatStatement.node;}
+  |  ifStatement    {node = $ifStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  |  forStatement   {node = $forStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  |  whileStatement {node = $whileStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  | repeatStatement[false] {node = $repeatStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   ;
 
 assignment returns [DCNode node]
-  :  ^(ASSIGNMENT Identifier indexes? expression) {
-  node = new AssignmentNode($Identifier.text, $indexes.e, $expression.node, currentScope);
-  ((AssignmentNode)node).addEventListener(drawableManager);
-  }
+  :  ^(ASSIGNMENT Identifier indexes? expression) {node = new AssignmentNode($Identifier.text, $indexes.e, $expression.node, currentScope);}
+
   ;
 
 functionCall returns [DCNode node]
 @init{
 	//System.out.println("function called");
 }
-  :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions);}
-  |  ^(FUNC_CALL Println expression?)  {node = new PrintlnNode($expression.node);}
-  |  ^(FUNC_CALL Print expression)     {node = new PrintNode($expression.node);}
-  |  ^(FUNC_CALL Assert expression)    {node = new AssertNode($expression.node);}
-  |  ^(FUNC_CALL Size expression)      {node = new SizeNode($expression.node);}
-  |  ^(FUNC_CALL LAdd exprList?) 	{node = new LAddNode($exprList.e,$FUNC_CALL.getLine());}
-  |  ^(FUNC_CALL LRemove exprList?) {node = new LRemoveNode($exprList.e,$FUNC_CALL.getLine());}
-  |	 primitiveCall {node = $primitiveCall.node;}
-  |	 transformCall {node = $transformCall.node;}
-  |	 mathCall {node= $mathCall.node;}
+  :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions, widthParam, heightParam); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL Println expression?)  {node = new PrintlnNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL Print expression)     {node = new PrintNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL Assert expression)    {node = new AssertNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL Size expression)      {node = new SizeNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL LAdd exprList?) 	{node = new LAddNode($exprList.e,$FUNC_CALL.getLine()); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL LRemove exprList?) {node = new LRemoveNode($exprList.e,$FUNC_CALL.getLine()); ((NodeEvent)node).addEventListener(drawableManager);}
+  |	 primitiveCall {node = $primitiveCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  |	 transformCall {node = $transformCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  |	 mathCall {node= $mathCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   ;
   
   
   primitiveCall returns [DCNode node]
-  	:^(FUNC_CALL Ellipse exprList?)  {node = new EllipseNode($exprList.e,$FUNC_CALL.getLine());  ((DrawableNode)node).addEventListener(drawableManager);}
+  	:^(FUNC_CALL Ellipse exprList?)  {node = new EllipseNode($exprList.e,$FUNC_CALL.getLine());}
   	|^(FUNC_CALL Line exprList?) 	 {node = new LineNode($exprList.e,$FUNC_CALL.getLine());}
   	|^(FUNC_CALL Rect exprList?) 	 {node = new RectangleNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL Curve exprList?)   {node = new CurveNode($exprList.e,$FUNC_CALL.getLine());}
@@ -170,18 +173,18 @@ exprList returns [java.util.List<DCNode> e]
 
 
 expression returns [DCNode node]
-  :  ^(TERNARY a=expression b=expression c=expression) {node = new TernaryNode($a.node, $b.node, $c.node);}
+  :  ^(TERNARY a=expression b=expression c=expression) {node = new TernaryNode($a.node, $b.node, $c.node); }
   |  ^(In a=expression b=expression)                   {node = new InNode($a.node, $b.node);}
   |  ^('||' a=expression b=expression)                 {node = new OrNode($a.node, $b.node);}
-  |  ^('&&' a=expression b=expression)                 {node = new AndNode($a.node, $b.node);}
+  |  ^('&&' a=expression b=expression)                 {node = new AndNode($a.node, $b.node); ((NodeEvent)node).addEventListener(drawableManager);}
   |  ^('==' a=expression b=expression)                 {node = new EqualsNode($a.node, $b.node);}
   |  ^('!=' a=expression b=expression)                 {node = new NotEqualsNode($a.node, $b.node);}
   |  ^('>=' a=expression b=expression)                 {node = new GTEqualsNode($a.node, $b.node);}
   |  ^('<=' a=expression b=expression)                 {node = new LTEqualsNode($a.node, $b.node);}
   |  ^('>' a=expression b=expression)                  {node = new GTNode($a.node, $b.node);}
   |  ^('<' a=expression b=expression)                  {node = new LTNode($a.node, $b.node);}
-  |  ^('+' a=expression b=expression)                  {node = new AddNode($a.node, $b.node);}
-  |  ^('-' a=expression b=expression)                  {node = new SubNode($a.node, $b.node);}
+  |  ^('+' a=expression b=expression)                  {node = new AddNode($a.node, $b.node); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^('-' a=expression b=expression)                  {node = new SubNode($a.node, $b.node); ((NodeEvent)node).addEventListener(drawableManager);}
   |  ^('*' a=expression b=expression)                  {node = new MulNode($a.node, $b.node);}
   |  ^('/' a=expression b=expression)                  {node = new DivNode($a.node, $b.node);}
   |  ^('%' a=expression b=expression)                  {node = new ModNode($a.node, $b.node);}
@@ -194,8 +197,8 @@ expression returns [DCNode node]
   |  lookup                                            {node = $lookup.node;}
   |  COLOR_CONSTANT									   {node = new AtomNode($COLOR_CONSTANT.text);}
   |	PI_CONSTANT                                        {node = new AtomNode(Math.PI);}
-  |WIDTH_CONSTANT                                       {node = new AtomNode(Window.canvas.width);}
-  |HEIGHT_CONSTANT                                       {node = new AtomNode(Window.canvas.height);}
+  |WIDTH_CONSTANT                                       {node = new AtomNode(widthParam);}
+  |HEIGHT_CONSTANT                                       {node = new AtomNode(heightParam);}
   ;
 
 list returns [DCNode node]

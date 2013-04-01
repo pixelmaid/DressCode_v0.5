@@ -4,9 +4,6 @@ package com.pixelmaid.dresscode.antlr.types.tree.functions;
 import java.util.List;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
-import com.pixelmaid.dresscode.app.Window;
-import com.pixelmaid.dresscode.app.Window;
-import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
@@ -25,8 +22,7 @@ public class LShapeNode extends DrawableNode implements DCNode {
 			if(params.get(0).evaluate().isString()){
 				String path = params.get(0).evaluate().asString();
 				e.setPath(path);
-				e.setCanvas(Window.canvas);
-				e.loadShape();
+				//e.loadShape();
 				
 				if(params.size()>1){
 					if(params.size()==3 && params.get(1).evaluate().isNumber()&& params.get(2).evaluate().isNumber()){
@@ -34,51 +30,20 @@ public class LShapeNode extends DrawableNode implements DCNode {
 						e.moveTo(params.get(1).evaluate().asDouble(),params.get(2).evaluate().asDouble());
 					}
 				}
-			/*else if(params.get(0).evaluate().isPoint()){
-				e= new Polygon(params.get(0).evaluate().asPoint());
-			}
-			else if(params.get(0).evaluate().isNumber()&&params.get(1).evaluate().isNumber()){
-				
-				if(params.size()==2){
-					int sides =params.get(0).evaluate().asDouble().intValue();
-					double length = params.get(1).evaluate().asDouble();
-					e = new Polygon(sides,length);
-
-				}
-				else if(params.size()==3){
-					double x = params.get(0).evaluate().asDouble();
-					double y = params.get(1).evaluate().asDouble();
-					int sides =params.get(2).evaluate().asDouble().intValue();
-					
-					e = new Polygon(x,y,sides);
-
-				}
-				else if(params.size()==4){
-					double x = params.get(0).evaluate().asDouble();
-					double y = params.get(1).evaluate().asDouble();
-					int sides =params.get(2).evaluate().asDouble().intValue();
-					double length = params.get(3).evaluate().asDouble();
-					e= new Polygon(x,y,sides,length);
-
-				}
-				else{
-					Window.output.setText("incorrect parameters for polygon call at line:"+line);
-
-					System.err.println("inccorect number of arguments for polygon at line:"+line);
-				}
-			}*/
+			
 			}
 			else{
-				Window.output.setText("incorrect parameters for LShape call at line:"+line);
+				//Window.output.setText("incorrect parameters for LShape call at line:"+line);
 
 				System.err.println("inccorect arguments for LShape at line:"+line);
 			}
 
 
 			this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+			this.drawableEvent(CustomEvent.SHAPE_LOAD_REQUESTED, e);
 		}
 		catch (ClassCastException err){
-			Window.output.setText("incorrect parameters for LShape call at line:"+line);
+			//Window.output.setText("incorrect parameters for LShape call at line:"+line);
 
 			System.err.println("inccorect arguments for LShape at line:"+line);
 		}

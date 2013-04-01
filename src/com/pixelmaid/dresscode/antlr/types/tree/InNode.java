@@ -4,7 +4,7 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 
 import java.util.List;
 
-public class InNode  implements DCNode {
+public class InNode extends NodeEvent implements DCNode {
 
     private DCNode lhs;
     private DCNode rhs;

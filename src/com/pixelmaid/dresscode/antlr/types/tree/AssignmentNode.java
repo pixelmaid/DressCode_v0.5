@@ -2,8 +2,6 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.Scope;
 import com.pixelmaid.dresscode.antlr.types.VarType;
-import com.pixelmaid.dresscode.app.Manager;
-import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
@@ -37,8 +35,8 @@ public class AssignmentNode extends NodeEvent implements DCNode {
       scope.assign(identifier, value);
       if(value.isDrawable()){
     	  Drawable d = value.asDrawable();
-    	  this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, d);
-    	  this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
+    	  //this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
+    	 // this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
       }
     }
     else { // a possible list-lookup and reassignment

@@ -4,7 +4,7 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.Scope;
 
 
-public class IdentifierNode implements DCNode {
+public class IdentifierNode extends NodeEvent implements DCNode {
 
   private String identifier;
   private Scope scope;

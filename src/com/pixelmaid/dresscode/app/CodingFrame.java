@@ -9,6 +9,10 @@ import javax.swing.JScrollPane;
 import com.pixelmaid.dresscode.app.ui.Toolbar;
 
 public class CodingFrame extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private CodeField codeField;
 	private Console output;
 	private int outputHeight = 200;

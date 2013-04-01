@@ -4,14 +4,9 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
-import com.pixelmaid.dresscode.app.Manager;
-import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.events.CustomEvent;
-import com.pixelmaid.dresscode.events.CustomEventListener;
-import com.pixelmaid.dresscode.events.EventSource;
 
 public class AddNode extends NodeEvent implements DCNode {
 
@@ -56,8 +51,8 @@ public class AddNode extends NodeEvent implements DCNode {
     if(a.isDrawable() && b.isDrawable()) {
     	Drawable aP = a.asDrawable();
     	Drawable bP = b.asDrawable();
-    	this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, aP);
-    	this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, bP);
+    	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, aP);
+    	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, bP);
     	
     	Drawable d = PolyBoolean.union(aP,bP);
     	

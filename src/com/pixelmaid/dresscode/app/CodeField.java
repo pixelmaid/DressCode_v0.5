@@ -4,7 +4,6 @@ package com.pixelmaid.dresscode.app;
 to update the canvas */
 
 import java.awt.Dimension;
-import java.awt.Font;
 import java.awt.event.*;
 import java.io.File;
 
@@ -13,17 +12,6 @@ import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.text.BadLocationException;
 
-import org.antlr.runtime.ANTLRStringStream;
-import org.antlr.runtime.CharStream;
-import org.antlr.runtime.CommonTokenStream;
-import org.antlr.runtime.RecognitionException;
-import org.antlr.runtime.tree.CommonTree;
-import org.antlr.runtime.tree.CommonTreeNodeStream;
-
-import com.pixelmaid.dresscode.antlr.PogoLexer;
-import com.pixelmaid.dresscode.antlr.PogoParser;
-import com.pixelmaid.dresscode.antlr.PogoTreeWalker;
-import com.pixelmaid.dresscode.antlr.types.tree.BlockNode;
 
 
 public class CodeField extends JEditorPane implements DocumentListener, KeyListener{
@@ -116,6 +104,19 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 		System.out.println("load file="+filetxt);
 		this.setText(filetxt);
 		//updateCanvas();
+		
+	}
+
+	public void insertCoordinate(double x, double y) {
+		String coordString = x+","+y;
+		insertText(this.getCaretPosition(),coordString);
+		
+	}
+	
+	public void insertText(int pos, String newText) {
+		String text = this.getText();
+		text = text.substring(0,pos)+ newText  +text.substring(pos);
+		this.setText(text);
 		
 	}
  

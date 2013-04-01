@@ -2,7 +2,7 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class AtomNode implements DCNode {
+public class AtomNode extends NodeEvent implements DCNode {
 
   private VarType value;
 

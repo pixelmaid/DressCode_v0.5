@@ -8,7 +8,6 @@ import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
-import com.pixelmaid.dresscode.app.Window;
 
 public class DrawableNode extends NodeEvent implements DCNode {
 

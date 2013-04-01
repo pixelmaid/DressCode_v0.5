@@ -6,8 +6,6 @@ import java.util.Collections;
 import processing.core.PApplet;
 
 import com.pixelmaid.dresscode.app.Embedded;
-import com.pixelmaid.dresscode.app.Manager;
-import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.datatype.CmpX;
 import com.pixelmaid.dresscode.drawing.datatype.CmpY;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -670,7 +668,7 @@ public class Drawable implements DrawableEvent {
 	}
 	
 	public Drawable addToGroup(Drawable d,int index) {
-		this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, d);
+		this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
 		
 			for(int i=0;i<this.children.size();i++){
 				this.children.get(i).setAbsolute();
@@ -742,7 +740,7 @@ public class Drawable implements DrawableEvent {
 			this.holes.get(i).setAbsolute();
 		}
 	    	
-    	this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, d);
+		this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
 		this.remove(d);
 		
 		
@@ -763,7 +761,7 @@ public class Drawable implements DrawableEvent {
 			//return this.children.get(0);
 		}
 		else if(this.children.size()==0){
-			this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, this); // if no children, remove empty group
+			this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, this); // if no children, remove empty group
 			
 		}
 		return d;

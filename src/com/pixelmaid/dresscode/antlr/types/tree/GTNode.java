@@ -3,7 +3,7 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
 
-public class GTNode implements DCNode {
+public class GTNode extends NodeEvent implements DCNode {
 
     private DCNode lhs;
     private DCNode rhs;

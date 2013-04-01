@@ -34,7 +34,9 @@
 			</manifest>
 			
 				 <zipgroupfileset dir ="${classpath.local.location}" includes = "${classpath.local.include}" />
-					
+			<fileset dir="${src.dir}">
+			            <include name="resources/**/*.png" />
+			        </fileset>		
 	
 		</jar>
 		
@@ -63,9 +65,10 @@
         description="compile the source " >
 
 		<!-- Compile the java code from ${src} into ${build} -->
-		<javac srcdir="${src.dir}" destdir="${classes.dir}">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}"  excludes="${excludes.dir}">
 			<src path="${src.dir}"/>
 			<src path="${src.generated.dir}"/>
+			
 			<classpath>
 				<path refid="classpath"/>
 			</classpath>

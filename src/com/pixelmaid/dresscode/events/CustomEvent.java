@@ -10,7 +10,8 @@ public class CustomEvent extends EventObject {
 	public static final int ADD_DRAWABLE = 3;
 	public static final int REMOVE_DRAWABLE = 4;
 	public static final int SWAP_DRAWABLE = 5;
-	public static final int DRAWABLE_REMOVED = 0;
+	public static final int SHAPE_LOAD_REQUESTED = 6;
+	public static final int TARGET_SELECTED = 7;
 	
 	public CustomEvent(Object source) {
 		super(source);

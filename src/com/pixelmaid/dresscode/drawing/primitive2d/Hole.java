@@ -6,7 +6,6 @@ import processing.core.PApplet;
 
 
 import com.pixelmaid.dresscode.app.Embedded;
-import com.pixelmaid.dresscode.app.Window;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 //class for holes inside of polygons. cannot be called independently
@@ -15,7 +14,7 @@ public class Hole extends Polygon {
 		@Override
 		public void draw(Embedded e){
 			appearance(e);
-			e.fill(Window.canvas.DEFAULT_BG);
+			e.fill(210);
 		    ArrayList<Point> points = this.getPoints();
 		    e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
@@ -33,7 +32,7 @@ public class Hole extends Polygon {
 		public void print(Embedded e){
 			
 			appearance(e);
-			e.fill(Window.canvas.DEFAULT_BG);
+			e.fill(210);
 		    ArrayList<Point> points = this.getPoints();
 		    e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));

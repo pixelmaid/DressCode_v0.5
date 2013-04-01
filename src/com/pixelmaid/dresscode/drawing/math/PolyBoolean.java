@@ -2,9 +2,6 @@ package com.pixelmaid.dresscode.drawing.math;
 
 import java.util.ArrayList;
 
-import com.pixelmaid.dresscode.antlr.types.VarType;
-import com.pixelmaid.dresscode.app.Window;
-
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Hole;
@@ -89,7 +86,7 @@ public class PolyBoolean{
 		a  = a.toPolygon();
 		b = b.toPolygon();
 		if(a.numChildren()!=0){
-			Window.output.setText("first object must be a single object, not a group for intersection");
+			//Window.output.setText("first object must be a single object, not a group for intersection");
 
 			System.err.println("first object must be a single object, not a group for intersection");
 			return null;

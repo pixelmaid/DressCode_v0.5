@@ -9,10 +9,15 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
 public class EventSource {
-	protected List _listeners = new ArrayList();
+	protected List _listeners = new ArrayList<CustomEventListener>();
 	  public synchronized void addEventListener(CustomEventListener listener)  {
 	    _listeners.add(listener);
 	  }
+	  
+	  public synchronized CustomEventListener getListenerAt(int index) {
+			return (CustomEventListener) _listeners.get(index);
+				
+			}
 	  
 	  public synchronized void removeEventListener(CustomEventListener listener)   {
 		    _listeners.remove(listener);
@@ -31,6 +36,7 @@ public class EventSource {
 		public void fireDrawableEvent(Object source, int event, Drawable d) {
 			  Iterator i = _listeners.iterator();
 			    while(i.hasNext())  {
+			    	
 			      ((CustomEventListener) i.next()).handleCustomDrawableEvent(source, event, d);
 			    }
 			

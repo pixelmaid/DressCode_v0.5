@@ -42,11 +42,12 @@ tokens {
 
 @parser::members {
   public Map<String, FunctionType> functions = new HashMap<String, FunctionType>();
-  private DrawableManager drawableManager;
+  public DrawableManager drawableManager;
+  private int widthParam, heightParam;
   
-  public PogoParser(CommonTokenStream tokens, DrawableManager dm){
+  public PogoParser(CommonTokenStream tokens){
   	super(tokens);
-  	drawableManager = dm;
+
   }
   private void defineFunction(String id, Object idList, Object block) {
 
@@ -58,7 +59,7 @@ tokens {
 
     // The function name with the number of parameters after it the unique key
     String key = id + idListTree.getChildCount();
-    functions.put(key, new FunctionType(id, idListTree, blockTree,drawableManager));
+    functions.put(key, new FunctionType(id, idListTree, blockTree));
     System.out.println("defined function:"+id);
   }
 }

@@ -4,7 +4,7 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class CosineNode implements DCNode {
+public class CosineNode  extends NodeEvent implements DCNode {
 
 	protected DCNode param;
 

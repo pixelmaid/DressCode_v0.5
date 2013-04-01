@@ -1,18 +1,12 @@
 package com.pixelmaid.dresscode.antlr.types.tree.functions.transforms;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
-import com.pixelmaid.dresscode.app.Manager;
-import com.pixelmaid.dresscode.app.Window;
-import com.pixelmaid.dresscode.drawing.datatype.Point;
-import com.pixelmaid.dresscode.drawing.math.Geom;
-import com.pixelmaid.dresscode.drawing.primitive2d.Color;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
@@ -41,7 +35,7 @@ public class GroupNode extends NodeEvent implements DCNode {
     	for(int i=0;i<params.size();i++){
     		Drawable d= (params.get(i).evaluate().asDrawable());
     		
-    		this.drawableEvent(CustomEvent.DRAWABLE_REMOVED, d);
+    		this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
     		
     		master.addToGroup(d);
     	

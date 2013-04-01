@@ -2,8 +2,9 @@ package com.pixelmaid.dresscode.antlr.types.tree.functions;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 
-public class AssertNode implements DCNode {
+public class AssertNode extends NodeEvent implements DCNode {
 
     private DCNode expression;
 

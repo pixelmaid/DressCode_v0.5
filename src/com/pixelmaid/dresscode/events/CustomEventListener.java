@@ -10,4 +10,7 @@ public interface CustomEventListener {
 
 	public void handleCustomDrawableEvent(Object source, int event, Drawable d);
 
+	public void handleCustomTargetEvent(Object source, int event, double x,
+			double y);
+
 }

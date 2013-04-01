@@ -4,13 +4,10 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
-import com.pixelmaid.dresscode.app.Manager;
-import com.pixelmaid.dresscode.drawing.primitive2d.Color;
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
 
-
-public class WeightNode implements DCNode {
+public class WeightNode extends NodeEvent implements DCNode {
 
 	protected List<DCNode> params;
 
@@ -27,7 +24,6 @@ public class WeightNode implements DCNode {
     @Override
     public VarType evaluate() {
     	Drawable d;
-    	Color c = null;
     	if(params.size()!=2){
     		
     		throw new RuntimeException("Incorrect number of parameters for weight at line " + line);

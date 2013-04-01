@@ -2,7 +2,7 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class NegateNode implements DCNode {
+public class NegateNode extends NodeEvent implements DCNode {
 
     private DCNode exp;
 
