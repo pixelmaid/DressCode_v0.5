@@ -15,7 +15,7 @@ import javax.swing.border.LineBorder;
 public class ImageButton  extends JButton {
 	 public ImageButton(String title,String img,String tip, int width, int height) {
 		 
-		 this(new ImageIcon(ClassLoader.getSystemResource("resource/"+img)),tip,width,height);
+		 this(new ImageIcon(ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/"+img)),tip,width,height);
 		  }
 
 		  public ImageButton(ImageIcon icon,String tip,int width, int height) {

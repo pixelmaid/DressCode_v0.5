@@ -49,18 +49,19 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 
 	@Override
 	public void handleCustomDrawableEvent(Object source, int eventType, Drawable d) {
-		System.out.println("drawable event called");
+		//System.out.println("drawable event called");
 		switch (eventType){
 		case CustomEvent.DRAWABLE_CREATED:
 			this.addDrawable(d);
 			d.addEventListener(this);
-			System.out.println("drawable created");
+			//System.out.println("drawable created");
 			break;
 			
 		case CustomEvent.REMOVE_DRAWABLE:
 			this.removeDrawable(d);
 			d.removeEventListener(this);
-			System.out.println("drawable removed");
+			//System.out.println("drawable removed");
+			//System.out.println("condensing holes");
 			break;
 		
 		case CustomEvent.SHAPE_LOAD_REQUESTED:

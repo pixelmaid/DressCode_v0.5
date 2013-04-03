@@ -133,6 +133,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 			for (int i = 0; i <= resolution; i++) {
 				float t = (float)i / (float)resolution;
 				PApplet a = new PApplet();
+				a.init();
 				double x = a.bezierPoint((float)start.getX(), (float)control1.getX(), (float)control2.getX(), (float)end.getX(), t);
 				double y = a.bezierPoint((float)start.getY(), (float)control1.getY(), (float)control2.getY(), (float)end.getY(), t);
 				if(i>0){
@@ -149,6 +150,8 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 				
 				xLast = x;
 				yLast = y;
+				a.dispose();
+				a = null;
 			}
 			
 			poly.setFillColor(this.getStrokeColor());

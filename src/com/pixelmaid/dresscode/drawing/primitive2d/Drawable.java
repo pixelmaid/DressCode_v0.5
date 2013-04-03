@@ -836,7 +836,7 @@ public class Drawable implements DrawableEvent {
 			ArrayList<Drawable> currentChildren = d.getChildren();
 			ArrayList<Hole> currentHoles = d.getHoles();
 			//System.out.println("number of children = "+d.numChildren());
-			System.out.println("condensing holes");
+			//System.out.println("condensing holes");
 			for(int i=0;i<currentHoles.size(); i++){
 				Hole h = d.returnAbsoluteHoleAt(i);
 				//Window.canvas.addDrawable("hole", 0, h);

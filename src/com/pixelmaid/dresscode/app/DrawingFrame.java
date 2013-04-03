@@ -1,6 +1,7 @@
 package com.pixelmaid.dresscode.app;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.ScrollPane;
@@ -67,7 +68,7 @@ public class DrawingFrame extends JPanel{
 	          sketchPanel.add(sketch); //adds JInternalFrame to JPanel
 	          sketchPanel.add(Box.createHorizontalGlue());
 	          sketchPanel.add(Box.createVerticalGlue());
-
+	          sketchPanel.setBackground(new Color(canvas.DEFAULT_BG) );
 	         // uses ScrollPane instead of JScrollPane to circumvent rendering issues
 	     //   sketchScroll = new ScrollPane(ScrollPane.SCROLLBARS_ALWAYS);
 	       

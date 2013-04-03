@@ -268,7 +268,7 @@ public class PolyBoolean{
 				holeCount ++;
 			}
 			else{
-				System.out.println("found a non hole");
+				//System.out.println("found a non hole");
 				for( int j = 0 ;j < ipp.getNumPoints(); j++ )
 				{
 					jp.addPoint( ipp.getX(j), ipp.getY(j));
@@ -278,7 +278,7 @@ public class PolyBoolean{
 		//set all points relative to the centroid;
 		Point c = Geom.findCentroid(jp);
 		jp.setPointsRelativeTo(c) ;
-		System.out.println("holes for hole count="+holeCount);
+		//System.out.println("holes for hole count="+holeCount);
 		return jp;
 	}
 

@@ -23,10 +23,14 @@ import java.util.ArrayList;
 
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import com.pixelmaid.dresscode.app.ui.Toolbar;
+import com.pixelmaid.dresscode.data.DCProject;
 import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.InstructionManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
@@ -58,19 +62,21 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 	private CodingFrame codingFrame;
 	private  CodeField codeField;
+	private  CodeField hiddenCodeField;
+
 	private  Console output;
 	private Toolbar codingToolbar;
 	
-	public static JFileChooser	 fc;
-	
+	private DCProject currentProject;
 	//coding panel buttons
 	private ImageButton openButton, saveButton, runButton, stopButton, newButton, importButton;
+	public static DimensionDialog dimensionDialog;
 
 	
 	//drawing panel buttons
-	private ImageButton selectButton, targetButton, printButton, zoomInButton, zoomOutButton, panButton, penButton, gridButton;
+	private ImageButton selectButton, targetButton, printButton, zoomInButton, zoomOutButton, panButton, penButton, gridButton, dimensionButton;
 	
-	
+	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction;
 	//private ArrayList<ImageButton> drawingButtons;
 	//private ArrayList<ImageButton> codingButtons;
 	private static InstructionManager instructionManager;
@@ -90,12 +96,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 
 		//setup custom events
+		currentProject = new DCProject(defaultDrawingBoardWidth,defaultDrawingBoardHeight);
 		eventSource = new EventSource();
 		
 	}
 
 	public void init(int width, int height){
-		fc = new JFileChooser();
+	
 
 		try {
 			 System.setProperty("apple.laf.useScreenMenuBar", "true");
@@ -130,7 +137,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		canvas.addEventListener(this);
 		
 		canvas.setDimensions(defaultDrawingPaneWidth-5,defaultDrawingPaneHeight-(defaultButtonHeight*2));
-		canvas.setDrawingBoardDimensions(defaultDrawingBoardWidth, defaultDrawingBoardHeight);
+		canvas.setDrawingBoardDimensions(currentProject.getWidth(), currentProject.getHeight());
+		
 		drawableManager = new DrawableManager();
 		instructionManager = new InstructionManager(drawableManager,defaultDrawingBoardWidth,defaultDrawingBoardHeight);
 		
@@ -148,12 +156,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		targetButton = new ImageButton("target","target.png", "get the coordinates from a given location", defaultButtonWidth,defaultButtonHeight);
 		gridButton = new ImageButton("grid","grid.png", "toggle grid", defaultButtonWidth,defaultButtonHeight);
 		
-		
+		dimensionButton = new ImageButton("dimension","dimensions.png", "change dimensions", defaultButtonWidth,defaultButtonHeight);
+
 		
 		
 		drawingToolbar.addButton(selectButton);
 		selectButton.addActionListener(this);
-		
+		selectButton.setEnabled(false);
+
 		drawingToolbar.addButton(panButton);
 		panButton.addActionListener(this);
 		
@@ -165,8 +175,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 		drawingToolbar.addButton(penButton);
 		penButton.addActionListener(this);
+		penButton.setEnabled(false);
 		
 		drawingToolbar.addButton(targetButton);
+		targetButton.setEnabled(false);
 		targetButton.addActionListener(this);
 		
 		drawingToolbar.addButton(gridButton);
@@ -174,6 +186,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		drawingToolbar.addButton(printButton);
 		printButton.addActionListener(this);
+		
+		drawingToolbar.addButton(dimensionButton);
+		dimensionButton.addActionListener(this);
 
 		drawingToolbar.init(defaultDrawingPaneWidth,defaultButtonHeight);
 
@@ -186,6 +201,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		//init code side
 		codeField= new CodeField();
 		codeField.init();
+		
+		hiddenCodeField= new CodeField();
+		hiddenCodeField.init();
+		
 		output = new Console();
 		output.init();
 		
@@ -215,7 +234,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 		codingFrame = new CodingFrame();
 		
-		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, output, codingToolbar);
+		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, output, codingToolbar);
 
 		
 		this.getContentPane().add(codingFrame,BorderLayout.LINE_END);
@@ -226,12 +245,72 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		this.addWindowListener(this);
 		this.addComponentListener(this);
 
-		this.setResizable(false);
-	
+		//this.setResizable(false);
+		createMenu();
 		canvas.init();
 	}
 	
-	
+	 public void createMenu() {
+	        
+	        //frame.setTitle("Menu Example");
+	        //frame.setSize(150, 150);
+	        
+	        // Creates a menubar for a JFrame
+	        JMenuBar menuBar = new JMenuBar();
+	        
+	        // Add the menubar to the frame
+	        this.setJMenuBar(menuBar);
+	        
+	        // Define and add two drop down menu to the menubar
+	        JMenu fileMenu = new JMenu("File");
+	        JMenu editMenu = new JMenu("Edit");
+	        JMenu exampleMenu = new JMenu("Examples");
+	        //TODO:setup example menu
+	      
+	        menuBar.add(fileMenu);
+	        menuBar.add(editMenu);
+	        menuBar.add(exampleMenu);
+	        
+	        // Create and add simple menu item to one of the drop down menu
+	        newAction = new JMenuItem("New");
+	        openAction = new JMenuItem("Open");
+	        saveAction = new JMenuItem("Save");
+	        exitAction = new JMenuItem("Exit");
+	        exportAction = new JMenuItem("Export to PDF");
+	        importAction = new JMenuItem("Import SVG");
+	        copyAction = new JMenuItem("Copy");
+	        pasteAction = new JMenuItem("Paste");
+	        cutAction = new JMenuItem("Cut");
+	        
+	     
+	        fileMenu.add(newAction);
+	        fileMenu.add(openAction);
+	        fileMenu.add(saveAction);
+	        fileMenu.addSeparator();
+	        fileMenu.add(exportAction);
+	        fileMenu.add(importAction);
+	        fileMenu.addSeparator();
+	        fileMenu.add(exitAction);
+	        editMenu.add(cutAction);
+	        editMenu.add(copyAction);
+	        editMenu.add(pasteAction);
+	        
+	        
+	        //action listeners
+	        newAction.addActionListener(this);
+	        openAction.addActionListener(this);
+	        saveAction.addActionListener(this);
+	        exitAction.addActionListener(this);
+	        exportAction.addActionListener(this);
+	        importAction.addActionListener(this);
+
+	        copyAction.addActionListener(this);
+	        pasteAction.addActionListener(this);
+	        cutAction.addActionListener(this);
+	        
+	       
+	        
+	    }
 
 
 	 //Event response methods
@@ -239,7 +318,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 //called when parse is succesful, gets drawables from the drawable manager and passes them to canvas to be drawn
 	 private void drawIntoCanvas(){
 		 System.out.println(drawableManager.getDrawables());
+		 //canvas.init();
 		canvas.setDrawables(drawableManager.getDrawables());
+				
 		// canvas.showDrawables(drawableManager.getDrawables());
 	 }
 	 
@@ -292,7 +373,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		// TODO Auto-generated method stub
 
 	}
-
+	
 
 	@Override
 	public void windowOpened(WindowEvent arg0) {
@@ -405,15 +486,21 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		canvas.clearMode();
 		if (e.getSource() == runButton ) {
 			drawableManager.clearAllDrawables();
-			instructionManager.parseText(codeField.getCode());
-
+			if(currentProject.hiddenCode()){
+				currentProject.run(codeField.getCode(),hiddenCodeField.getCode(),instructionManager);	
+			}
+			else{
+				currentProject.run(codeField.getCode(),instructionManager);	
+			}
 		}
+		
 		else if (e.getSource() == gridButton ) {
 			canvas.setGrid(!canvas.getGrid());
 
 		}
 		else if (e.getSource()==targetButton){
 			canvas.targetMode();
+			
 		}
 		
 		else if (e.getSource()==panButton){
@@ -429,34 +516,44 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		if (e.getSource() == openButton ) {
 
-			int returnVal = fc.showOpenDialog(this);
-
-			if (returnVal == JFileChooser.APPROVE_OPTION) {
-				File file = fc.getSelectedFile();
-				String filetxt= readFile(file);
-				codeField.loadFile(filetxt);
-				//log.append("Opening: " + file.getName() + "." + newline);
-			} 
-
+			currentProject.openFile(this,codingFrame,canvas,instructionManager);
 			//Handle save button action.
 		} else if (e.getSource() == saveButton ) {
-			int returnVal = fc.showSaveDialog(this);
-			if (returnVal == JFileChooser.APPROVE_OPTION) {
-				File file = fc.getSelectedFile();
-				writeFile(codeField.getText(),file);
-			} 
+			currentProject.saveFile(this,codeField.getCode(),codingFrame);
 		}
 		
 		else if (e.getSource() == printButton ) {
-			int returnVal = fc.showDialog(this, "Export");
-			if (returnVal == JFileChooser.APPROVE_OPTION) {
-				File file = fc.getSelectedFile();
-				canvas.print(file);
-			}
+			currentProject.printFile(this,canvas);
+
+		}
+		else if (e.getSource()==dimensionButton){
+			setDimensions();
+		}
+		canvas.redraw();
+
+	}
+	
+	//changes dimensions of file
+		private void setDimensions(){
+			 dimensionDialog = new DimensionDialog(this, true,currentProject.getWidth(),currentProject.getHeight());
+	         System.err.println("After opening dialog.");
+	         if(dimensionDialog.getAnswer()) {
+	        	 int widthVal = dimensionDialog.getCanvasWidth();
+	        	 int heightVal = dimensionDialog.getCanvasHeight();
+	        	 int unitsVal=dimensionDialog.getUnits();
+	             System.out.println("width ="+widthVal+" height="+ heightVal+" units="+ unitsVal);
+	         	currentProject.setDimensions(widthVal,heightVal, unitsVal, canvas, instructionManager);
+	    		
+	    		
+	    	
+	    		
+	         }
+	         else {
+	             System.err.println("The answer stored in CustomDialog is 'false' (i.e. user clicked no button.)");
+	         }
 
 		}
 
-	}
 
 	//handles custom events from Dress Code classes
 	@Override
@@ -495,55 +592,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 	}
 	
-	public static String readFile(File file) {
-
-		BufferedReader br = null;
-		String fileString="";
-		try {
-
-			String sCurrentLine;
-
-			br = new BufferedReader(new FileReader(file));
-
-			while ((sCurrentLine = br.readLine()) != null) {
-				fileString+=sCurrentLine+"\n";
-				//System.out.println(sCurrentLine);
-			}
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (br != null)br.close();
-			} catch (IOException ex) {
-				ex.printStackTrace();
-			}
-		}
-		return fileString;
-
-	}
-
-
-	public static void writeFile(String content, File file) {
-		try {
-
-
-			// if file doesnt exists, then create it
-			if (!file.exists()) {
-				file.createNewFile();
-			}
-
-			FileWriter fw = new FileWriter(file.getAbsoluteFile());
-			BufferedWriter bw = new BufferedWriter(fw);
-			bw.write(content);
-			bw.close();
-
-			System.out.println("wrote file");
-
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+	
 	
 	
 }

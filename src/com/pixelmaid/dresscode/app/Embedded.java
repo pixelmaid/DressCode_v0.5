@@ -28,7 +28,7 @@ public class Embedded extends PApplet {
 	private static final long serialVersionUID = 1L;
 	public int DEFAULT_BG = 222;
 	private int gridUnits = 10;
-	private int zoomAmount = 0;
+	private float zoomAmount = 1f;
 	private int translateYAmount = 0;
 	private int translateXAmount = 0;
 	private int defaultCanvasWidth = 500;
@@ -83,6 +83,7 @@ public class Embedded extends PApplet {
 		drawingBoardHeight = height;
 		zeroX = defaultCanvasWidth/2-drawingBoardWidth/2;
 		zeroY= defaultCanvasHeight/2-drawingBoardHeight/2;
+		System.out.println("drawing board="+drawingBoardWidth+","+drawingBoardHeight);
 
 	}
 	
@@ -118,11 +119,12 @@ public class Embedded extends PApplet {
 		tempDrawables = new ArrayList<Drawable>();
 		//tempDrawables.add(new Ellipse(100,100));
 
-		size(defaultCanvasWidth,defaultCanvasHeight,P3D);
-		pG =(PGraphicsOpenGL)this.g;
-		pProjectionView = pG.projection;
+		size(defaultCanvasWidth,defaultCanvasHeight);
+		//pG =(PGraphicsOpenGL)this.g;
+		//pProjectionView = pG.projection;
 
-		modelview= pG.modelview;
+		//modelview= pG.modelview;
+		 noLoop();
 
 	}
 
@@ -133,36 +135,29 @@ public class Embedded extends PApplet {
 	}
 
 	public void draw() {
-		if(print){
-			this.beginRecord(PDF, tempFilename);
-
-			for (int i=0;i<tempDrawables.size();i++){
-				tempDrawables.get(i).draw(this);
-			}
-
-			this.endRecord();
-			print = false;
-		}
-		else{
+		
 			pushMatrix();
 			background(DEFAULT_BG);
-			translate(translateXAmount,translateYAmount,zoomAmount);
+			//translate(translateXAmount,translateYAmount,zoomAmount);
+			translate(translateXAmount,translateYAmount);
+			scale(zoomAmount);
 			pushMatrix();
 			
-			translate(zeroX,zeroY,0);
+			//translate(zeroX,zeroY,0);
+			translate(zeroX,zeroY);
 			for (int i=0;i<tempDrawables.size();i++){
 
 				tempDrawables.get(i).draw(this);
-				tempDrawables.get(i).drawOrigin(this);
+				
 			}
 			
 			popMatrix();
-			PGraphicsOpenGL pG = (PGraphicsOpenGL)this.g;
+			/*PGraphicsOpenGL pG = (PGraphicsOpenGL)this.g;
 			modelview.get(mvmatrix1);
 			float x = modelX(0, 0, 0);
 			float y = modelY(0, 0, 0);
 			float z = modelZ(0, 0, 0);
-			pProjectionView.get(projmatrix1);  
+			pProjectionView.get(projmatrix1); */ 
 			/*PVector mousePos = new PVector(mouseX,mouseY);
 			PVector screenPos = screenToMatrixCoordinate(mousePos, getMatrix().get());
 			float xP = screenPos.x;
@@ -185,16 +180,15 @@ public class Embedded extends PApplet {
 	System.out.println("============\n\n");*/
 
 			popMatrix();	
-			relMouseX = screenX(100, 100, zoomAmount);
-			relMouseY = screenY(100, 100, zoomAmount);
+			//relMouseX = screenX(100, 100, zoomAmount);
+			//relMouseY = screenY(100, 100, zoomAmount);
 			//System.out.println(relMouseX+","+relMouseY);
 
-			modelview.get(mvmatrix2);
+			//modelview.get(mvmatrix2);
 
 
 			checkMode();
-		}
-
+	
 	}
 
 
@@ -206,9 +200,15 @@ public class Embedded extends PApplet {
 			//System.out.println("substr!=pdf");
 			filename =filename.concat(".pdf");
 		}
+		this.beginRecord(PDF, filename);
+		
+			for (int i=0;i<tempDrawables.size();i++){
 
-		this.tempFilename=filename;
-		this.print = true;
+				tempDrawables.get(i).print(this);
+			
+			}
+		
+		this.endRecord();
 	}
 
 	public void mousePressed() {
@@ -222,6 +222,7 @@ public class Embedded extends PApplet {
 
 	public void mouseDragged(){
 		checkModeMove();
+		redraw();
 
 
 	}
@@ -245,9 +246,9 @@ public class Embedded extends PApplet {
 		switch(currentMode){
 		case TARGET_MODE:
 
-			float[] f = GetOGLPos();
+			//float[] f = GetOGLPos();
 			//System.out.println(f);
-			this.fireTargetEvent(this,CustomEvent.TARGET_SELECTED,f[0],f[1]);
+			this.fireTargetEvent(this,CustomEvent.TARGET_SELECTED,mouseX,mouseY);
 
 			break;
 		default:
@@ -491,12 +492,18 @@ public class Embedded extends PApplet {
 
 
 	public void zoomIn(){
-		zoomAmount+=10;
+		zoomAmount+=0.05;
+		if(zoomAmount>1){
+			zoomAmount = 1;
+		}
 		//System.out.println(zoomAmount);
 	}
 
 	public void zoomOut(){
-		zoomAmount-=10;
+		zoomAmount-=0.05;
+		if(zoomAmount<0){
+			zoomAmount = 0;
+		}
 		//System.out.println(zoomAmount);
 	}
 
