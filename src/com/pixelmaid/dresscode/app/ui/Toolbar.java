@@ -8,6 +8,7 @@ import java.util.ArrayList;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
+import javax.swing.JProgressBar;
 import javax.swing.border.EmptyBorder;
 
 import com.pixelmaid.dresscode.events.EventSource;
@@ -51,6 +52,11 @@ public class Toolbar extends JPanel{
 	public void removeButton(Button b){
 		buttonList.remove(b);	
 		this.remove(b);
+		
+	}
+
+	public void addProgressBar(JProgressBar progressBar) {
+		this.add(progressBar);
 		
 	}
 	

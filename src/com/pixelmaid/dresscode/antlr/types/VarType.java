@@ -10,6 +10,7 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
+import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 
 public class VarType implements Comparable<VarType> {  
 	  
@@ -89,6 +90,10 @@ public class VarType implements Comparable<VarType> {
 	  
 	  public Point asPoint() {  
 		    return (Point)value;  
+		  }
+	  
+	  public DrawablePoint asDrawablePoint() {  
+		    return (DrawablePoint)value;  
 		  }
 	  
 	  public Polygon asPolygon() {  
@@ -188,6 +193,9 @@ public class VarType implements Comparable<VarType> {
 	  
 	  public boolean isPoint(){
 		  return value instanceof Point;
+	  }
+	  public boolean isDrawablePoint(){
+		  return value instanceof DrawablePoint;
 	  }
 	  
 	  public boolean isPolygon(){

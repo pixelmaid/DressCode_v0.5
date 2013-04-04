@@ -129,6 +129,8 @@ functionCall
    | Group	'(' exprList? ')'-> ^(FUNC_CALL Group exprList?)
    | Expand	'(' expression ')'-> ^(FUNC_CALL Expand expression)
    | Merge	'(' expression ')'-> ^(FUNC_CALL Merge expression)
+   | Scale '(' exprList? ')'-> ^(FUNC_CALL Scale exprList?)
+   //| Get	'('expression ')'->^(FUNC_CALL Get expression)
    ;
    
    mathCall

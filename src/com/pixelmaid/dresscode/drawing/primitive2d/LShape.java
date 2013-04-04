@@ -66,7 +66,9 @@ public class LShape extends Polygon {
 			e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate((float)Math.toRadians(getRotation()));
+			e.scale((float)getScaleX(),(float)getScaleY());
 			e.shape(shape,(float)(x-this.width/2),(float)(y-this.height/2));
+			
 			e.popMatrix();
 			
 			if(this.getDrawOrigin()){

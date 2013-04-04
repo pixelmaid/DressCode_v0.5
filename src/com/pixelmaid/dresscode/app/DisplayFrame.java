@@ -26,6 +26,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JProgressBar;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -60,6 +61,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private int defaultButtonHeight = 50;
 	
 	
+	
 	private CodingFrame codingFrame;
 	private  CodeField codeField;
 	private  CodeField hiddenCodeField;
@@ -72,6 +74,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private ImageButton openButton, saveButton, runButton, stopButton, newButton, importButton;
 	public static DimensionDialog dimensionDialog;
 
+	private JProgressBar progressBar;
+	
 	
 	//drawing panel buttons
 	private ImageButton selectButton, targetButton, printButton, zoomInButton, zoomOutButton, panButton, penButton, gridButton, dimensionButton;
@@ -223,12 +227,16 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		importButton = new ImageButton("import","import.png", "import an svg into your script", defaultButtonWidth,defaultButtonHeight);
 		importButton.addActionListener(this);
 		
+		progressBar = new JProgressBar(0,100);
+		//progressBar.setStringPainted(true);
+		
 		codingToolbar.addButton(runButton);
 		codingToolbar.addButton(stopButton);
 		codingToolbar.addButton(newButton);
 		codingToolbar.addButton(saveButton);
 		codingToolbar.addButton(openButton);
 		codingToolbar.addButton(importButton);
+		codingToolbar.addProgressBar(progressBar);
 
 		codingToolbar.init(defaultDrawingPaneWidth,defaultButtonHeight);
 	
@@ -319,8 +327,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void drawIntoCanvas(){
 		 System.out.println(drawableManager.getDrawables());
 		 //canvas.init();
+		 progressBar.setIndeterminate(false);
+		 progressBar.setValue(100);
 		canvas.setDrawables(drawableManager.getDrawables());
-				
+		canvas.redraw();		
 		// canvas.showDrawables(drawableManager.getDrawables());
 	 }
 	 
@@ -485,33 +495,45 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public void actionPerformed(ActionEvent e) {
 		canvas.clearMode();
 		if (e.getSource() == runButton ) {
+			progressBar.setIndeterminate(false);
+			progressBar.setValue(0);
+			progressBar.setIndeterminate(true);
+
 			drawableManager.clearAllDrawables();
 			if(currentProject.hiddenCode()){
-				currentProject.run(codeField.getCode(),hiddenCodeField.getCode(),instructionManager);	
+				
+				currentProject.run(codeField.getCode(),hiddenCodeField.getCode(),instructionManager);
+				
 			}
 			else{
 				currentProject.run(codeField.getCode(),instructionManager);	
 			}
+			
 		}
 		
 		else if (e.getSource() == gridButton ) {
 			canvas.setGrid(!canvas.getGrid());
+			canvas.redraw();
 
 		}
 		else if (e.getSource()==targetButton){
 			canvas.targetMode();
+			canvas.redraw();
 			
 		}
 		
 		else if (e.getSource()==panButton){
 			canvas.panMode();
+			canvas.redraw();
 		}
 		else if (e.getSource() == zoomInButton ) {
 			canvas.zoomIn();
+			canvas.redraw();
 
 		}
 		else if (e.getSource() == zoomOutButton ) {
 			canvas.zoomOut();
+			canvas.redraw();
 
 		}
 		if (e.getSource() == openButton ) {
@@ -528,8 +550,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		else if (e.getSource()==dimensionButton){
 			setDimensions();
+			canvas.redraw();
 		}
-		canvas.redraw();
+	
 
 	}
 	

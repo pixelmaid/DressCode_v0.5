@@ -4,6 +4,7 @@ package com.pixelmaid.dresscode.antlr.types.tree.functions;
 import java.util.List;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
@@ -19,13 +20,32 @@ public class EllipseNode extends DrawableNode implements DCNode {
 		Ellipse e = null;
 
 		try{
-			if(params.get(0).evaluate().isNumber()&&params.get(1).evaluate().isNumber()){
+			if(params.get(0).evaluate().isDrawablePoint()){
+				DrawablePoint p = params.get(0).evaluate().asDrawablePoint();
+				if(params.size()==1){
+				e = new Ellipse(p.getOrigin().getX(),p.getOrigin().getY());
+				}
+				else if(params.size()==2){
+					double width =  params.get(1).evaluate().asDouble();
+					e = new Ellipse(p.getOrigin().getX(),p.getOrigin().getY(),width,width);
+				}
+				else if(params.size()==3){
+					double width =  params.get(1).evaluate().asDouble();
+					double height = params.get(2).evaluate().asDouble();
+					e = new Ellipse(p.getOrigin().getX(),p.getOrigin().getY(),width,height);
+
+				}
+			}
+			
+				
+			else if(params.get(0).evaluate().isNumber()&&params.get(1).evaluate().isNumber()){
 				double x = params.get(0).evaluate().asDouble();
 				double y = params.get(1).evaluate().asDouble();
 				if(params.size()==2){
 					e = new Ellipse(x,y);
 
 				}
+			
 				else if(params.size()==3){
 					double width = params.get(2).evaluate().asDouble();
 					e = new Ellipse(x,y,width,width);
@@ -41,6 +61,7 @@ public class EllipseNode extends DrawableNode implements DCNode {
 					//Window.output.setText("incorrect number of arguments for ellipse at line:"+line);
 					System.err.println("incorrect number of arguments for ellipse at line:"+line);
 				}
+			
 			}
 			else{
 				//Window.output.setText("incorrect number of arguments for ellipse at line:"+line);

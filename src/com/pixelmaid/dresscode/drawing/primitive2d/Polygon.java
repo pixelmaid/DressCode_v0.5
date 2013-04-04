@@ -140,6 +140,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
+		e.scale((float)getScaleX(),(float)getScaleY());
 		e.beginShape();
 		for(int i=0;i<points.size();i++){
 			e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());

@@ -7,6 +7,7 @@ import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 
 
 public class MoveNode extends NodeEvent implements DCNode {
@@ -41,7 +42,7 @@ public class MoveNode extends NodeEvent implements DCNode {
         	y=params.get(2).evaluate().asDouble();
     	}
     	else{
-    		Point p=params.get(1).evaluate().asPoint();
+    		DrawablePoint p=params.get(1).evaluate().asDrawablePoint();
     		x= p.getX();
     		y= p.getY();
     	}

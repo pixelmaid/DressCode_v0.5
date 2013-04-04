@@ -49,6 +49,7 @@ public class Rectangle extends Polygon{
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
+		e.scale((float)getScaleX(),(float)getScaleY());
 		e.rectMode(PConstants.CENTER);
 		e.rect(0,0,(float)width,(float)height);
 		e.popMatrix();
@@ -66,6 +67,7 @@ public class Rectangle extends Polygon{
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
+		e.scale((float)getScaleX(),(float)getScaleY());
 		e.rectMode(PConstants.CENTER);
 		e.rect(0,0,(float)width,(float)height);
 		e.popMatrix();

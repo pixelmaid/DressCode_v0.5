@@ -43,6 +43,7 @@ public class Line extends Polygon {
 	
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
+		e.scale((float)getScaleX(),(float)getScaleY());
 		e.line((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()),(float)(end.getX()-getOrigin().getX()), (float)(end.getY()-getOrigin().getY()));
 		e.popMatrix();
 		

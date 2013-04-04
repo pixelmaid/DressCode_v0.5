@@ -14,11 +14,12 @@ public class Hole extends Polygon {
 		@Override
 		public void draw(Embedded e){
 			appearance(e);
-			e.fill(210);
+			e.fill(e.DEFAULT_BG);
 		    ArrayList<Point> points = this.getPoints();
 		    e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate(PApplet.radians((float)getRotation()));
+			e.scale((float)getScaleX(),(float)getScaleY());
 		    e.beginShape();
 			
 			for(int i=0;i<points.size();i++){
@@ -32,11 +33,12 @@ public class Hole extends Polygon {
 		public void print(Embedded e){
 			
 			appearance(e);
-			e.fill(210);
+			e.fill(e.DEFAULT_BG);
 		    ArrayList<Point> points = this.getPoints();
 		    e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate(PApplet.radians((float)getRotation()));
+			e.scale((float)getScaleX(),(float)getScaleY());
 		    e.beginShape();
 			
 			for(int i=0;i<points.size();i++){

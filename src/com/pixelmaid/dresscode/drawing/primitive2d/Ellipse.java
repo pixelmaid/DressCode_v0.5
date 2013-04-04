@@ -74,7 +74,7 @@ public class Ellipse extends Polygon {
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			 e.rotate((float)Math.toRadians(getRotation()));
 		
-			
+			 e.scale((float)getScaleX(),(float)getScaleY());	
 		e.ellipse(0,0,(float)width,(float)height);
 		e.popMatrix();
 		
@@ -94,6 +94,7 @@ public class Ellipse extends Polygon {
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate((float)Math.toRadians(getRotation()));
+		e.scale((float)getScaleX(),(float)getScaleY());
 		e.ellipse(0,0,(float)width,(float)height);
 		e.popMatrix();
 		}

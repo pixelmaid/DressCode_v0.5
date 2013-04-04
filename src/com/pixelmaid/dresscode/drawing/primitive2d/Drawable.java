@@ -118,7 +118,7 @@ public class Drawable implements DrawableEvent {
 		embedded.pushMatrix();
 		embedded.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		embedded.rotate(PApplet.radians((float)getRotation()));
-		
+		embedded.scale((float)getScaleX(),(float)getScaleY());
 				for(int j =0;j<this.children.size();j++){
 					if(!this.children.get(j).getHide()){
 						this.children.get(j).draw(embedded);
@@ -475,14 +475,14 @@ public class Drawable implements DrawableEvent {
 	
 	 public double getWidth(){
 		 Rectangle bb = this.findBoundingBox();
-		   double width= bb.getWidth();
+		   double width= bb.getWidth()*getScaleX();
 		   return width;
 		   
 	 }
 	   
 	 public double getHeight(){
 		 Rectangle bb = this.findBoundingBox();
-		   double height= bb.getHeight();
+		   double height= bb.getHeight()*getScaleX();
 		   return height;
 	 }
 
