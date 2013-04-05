@@ -2,6 +2,7 @@ package com.pixelmaid.dresscode.app;
 
 
 import java.io.File;
+import java.math.RoundingMode;
 import java.nio.IntBuffer;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -27,22 +28,28 @@ public class Embedded extends PApplet {
 	protected List _listeners = new ArrayList<CustomEventListener>();
 	private static final long serialVersionUID = 1L;
 	public int DEFAULT_BG = 222;
-	private int gridUnits = 10;
+	private double gridUnits = 10;
+	private double gridIncrement = 10;
+	private int unitType = 0;
+	private static int METRIC = 0;
+	private static int STANDARD = 1;
 	private float zoomAmount = 1f;
 	private int translateYAmount = 0;
 	private int translateXAmount = 0;
 	private int defaultCanvasWidth = 500;
 	private int defaultCanvasHeight = 500;
-	private int drawingBoardWidth = 500;
-	private int drawingBoardHeight = 500;
+	private double drawingBoardWidth = 500;
+	private double drawingBoardHeight = 500;
+	private static double PIX_IN_MM = 0.35278; //conversion from pixels to mm
+	private static double PIX_IN_INCH = 0.013888; //conversion from pixels to inches
 	
-	private int gridHeight = 2000;
-	private int gridWidth = 2000;
+	private int gridHeight = 7000;
+	private int gridWidth = 7000;
 	private int gridX = -gridWidth/2;
 	private int gridY = -gridHeight/2;
 	
-	private float zeroX= 0;
-	private float zeroY=0;
+	private double zeroX= 0;
+	private double zeroY=0;
 	
 	private ArrayList<Drawable> tempDrawables;
 	private String tempFilename;
@@ -73,34 +80,47 @@ public class Embedded extends PApplet {
 
 	public void setDimensions(int width, int height){
 		defaultCanvasWidth = width;
-		defaultCanvasHeight = height;
-		
-
+		defaultCanvasHeight = height;	
+		/*gridHeight = width;
+		gridWidth = height;
+		gridX = 0;
+		gridY = 0;*/
 	}
 	
-	public void setDrawingBoardDimensions(int width, int height){
+	public void setDrawingBoardDimensions(double width, double height,int units){
+		
 		drawingBoardWidth = width;
-		drawingBoardHeight = height;
+		drawingBoardHeight =height;
 		zeroX = defaultCanvasWidth/2-drawingBoardWidth/2;
 		zeroY= defaultCanvasHeight/2-drawingBoardHeight/2;
 		System.out.println("drawing board="+drawingBoardWidth+","+drawingBoardHeight);
+		unitType = units;
+		if(unitType==STANDARD){
+			gridUnits=72/8;
+			gridIncrement = 7;
+			System.out.println("grid units="+gridUnits);
+		}
+		if(unitType==METRIC){
+			gridUnits=2.834*5;
+			gridIncrement=1;
+		}
 
 	}
 	
 	public float getZeroX(){
-		return this.zeroX;
+		return (float)this.zeroX;
 	}
 	
 	public float getZeroY(){
-		return this.zeroY;
+		return (float)this.zeroY;
 	}
 
 
 
-	public int getWidth(){
+	public double getCanvasWidth(){
 		return defaultCanvasWidth;
 	}
-	public int getHeight(){
+	public double getCanvasHeight(){
 		return defaultCanvasHeight;
 	}
 
@@ -144,7 +164,7 @@ public class Embedded extends PApplet {
 			pushMatrix();
 			
 			//translate(zeroX,zeroY,0);
-			translate(zeroX,zeroY);
+			translate((float)zeroX,(float)zeroY);
 			for (int i=0;i<tempDrawables.size();i++){
 
 				tempDrawables.get(i).draw(this);
@@ -207,7 +227,7 @@ public class Embedded extends PApplet {
 				tempDrawables.get(i).print(this);
 			
 			}
-		
+			
 		this.endRecord();
 	}
 
@@ -248,7 +268,12 @@ public class Embedded extends PApplet {
 
 			//float[] f = GetOGLPos();
 			//System.out.println(f);
-			this.fireTargetEvent(this,CustomEvent.TARGET_SELECTED,mouseX,mouseY);
+			
+			double x1 = (mouseX - translateXAmount) / zoomAmount;
+			double y1 = (mouseY - translateYAmount)/ zoomAmount ;
+			double x = x1-(width/2-(drawingBoardWidth)/2);
+			double y = y1-(height/2-(drawingBoardHeight)/2);
+			this.fireTargetEvent(this,CustomEvent.TARGET_SELECTED,x,y);
 
 			break;
 		default:
@@ -454,26 +479,32 @@ public class Embedded extends PApplet {
 
 		int heightGridPos=gridY;
 		int widthGridPos=gridX;
+		int countX=0;
+		int countY=0;
 		while( heightGridPos<gridHeight){
-			if(((float)heightGridPos)%((float)(gridUnits*10)) == 0){
+			if(countX==gridIncrement){
 				stroke(0,0,0,75f);
 				strokeWeight(1.5f);
+				countX=0;
 			}
 			else{
 				stroke(0,0,0,50f);
 				strokeWeight(1);
+				countX++;
 			}
 			this.line(gridX,heightGridPos,gridWidth,heightGridPos);
 			heightGridPos+=gridUnits;
 		}
 		while( widthGridPos<gridWidth){
-			if(((float)widthGridPos)%((float)(gridUnits*10)) == 0){
+			if(countY==gridIncrement){
 				stroke(0,0,0,75f);
 				strokeWeight(1.5f);
+				countY=0;
 			}
 			else{
 				stroke(0,0,0,50f);
 				strokeWeight(1);
+				countY++;
 			}
 
 			this.line(widthGridPos,gridY,widthGridPos,gridHeight);
@@ -486,15 +517,15 @@ public class Embedded extends PApplet {
 				stroke(0);
 				noFill();
 				rectMode(CENTER);
-				rect(width/2,height/2,drawingBoardWidth,drawingBoardHeight);
+				rect(width/2,height/2,(float)drawingBoardWidth,(float)drawingBoardHeight);
 	
 	}
 
 
 	public void zoomIn(){
 		zoomAmount+=0.05;
-		if(zoomAmount>1){
-			zoomAmount = 1;
+		if(zoomAmount>10){
+			zoomAmount = 10;
 		}
 		//System.out.println(zoomAmount);
 	}

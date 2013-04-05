@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g 2013-04-04 14:31:34
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g 2013-04-04 22:21:07
 
   package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -374,7 +374,7 @@ public class PogoParser extends Parser {
 			}
 
 			// AST REWRITE
-			// elements: statement, expression
+			// elements: expression, statement
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -787,7 +787,7 @@ public class PogoParser extends Parser {
 
 					stream_expression.add(expression19.getTree());
 					// AST REWRITE
-					// elements: expression, Identifier, indexes
+					// elements: expression, indexes, Identifier
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1108,7 +1108,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal27);
 
 					// AST REWRITE
-					// elements: expression, Println
+					// elements: Println, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1205,7 +1205,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal35);
 
 					// AST REWRITE
-					// elements: expression, Assert
+					// elements: Assert, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1251,7 +1251,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal39);
 
 					// AST REWRITE
-					// elements: Size, expression
+					// elements: expression, Size
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1312,7 +1312,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal43);
 
 					// AST REWRITE
-					// elements: exprList, LAdd
+					// elements: LAdd, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1378,7 +1378,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal47);
 
 					// AST REWRITE
-					// elements: LRemove, exprList
+					// elements: exprList, LRemove
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1628,7 +1628,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal54);
 
 					// AST REWRITE
-					// elements: Ellipse, exprList
+					// elements: exprList, Ellipse
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2362,7 +2362,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal86);
 
 					// AST REWRITE
-					// elements: expression, Copy
+					// elements: Copy, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2423,7 +2423,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal90);
 
 					// AST REWRITE
-					// elements: exprList, Rotate
+					// elements: Rotate, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2489,7 +2489,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal94);
 
 					// AST REWRITE
-					// elements: exprList, Fill
+					// elements: Fill, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2606,7 +2606,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal102);
 
 					// AST REWRITE
-					// elements: NoFill, expression
+					// elements: expression, NoFill
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2713,7 +2713,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal110);
 
 					// AST REWRITE
-					// elements: exprList, Weight
+					// elements: Weight, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2764,7 +2764,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal114);
 
 					// AST REWRITE
-					// elements: expression, Hide
+					// elements: Hide, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2922,7 +2922,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal126);
 
 					// AST REWRITE
-					// elements: Merge, expression
+					// elements: expression, Merge
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2983,7 +2983,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal130);
 
 					// AST REWRITE
-					// elements: exprList, Scale
+					// elements: Scale, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3109,7 +3109,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal134);
 
 					// AST REWRITE
-					// elements: expression, Cosine
+					// elements: Cosine, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3293,7 +3293,7 @@ public class PogoParser extends Parser {
 			stream_End.add(End142);
 
 			// AST REWRITE
-			// elements: elseIfStat, elseStat, ifStat
+			// elements: ifStat, elseIfStat, elseStat
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -3399,7 +3399,7 @@ public class PogoParser extends Parser {
 
 			stream_block.add(block146.getTree());
 			// AST REWRITE
-			// elements: block, expression
+			// elements: expression, block
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -3500,7 +3500,7 @@ public class PogoParser extends Parser {
 
 			stream_block.add(block151.getTree());
 			// AST REWRITE
-			// elements: block, expression
+			// elements: expression, block
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -3822,7 +3822,7 @@ public class PogoParser extends Parser {
 			stream_End.add(End171);
 
 			// AST REWRITE
-			// elements: For, expression, Identifier, block, expression
+			// elements: expression, Identifier, block, expression, For
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -3981,7 +3981,7 @@ public class PogoParser extends Parser {
 			stream_End.add(End182);
 
 			// AST REWRITE
-			// elements: block, expression, Repeat, expression, Identifier
+			// elements: expression, expression, Identifier, Repeat, block
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -4506,7 +4506,7 @@ public class PogoParser extends Parser {
 
 					stream_expression.add(b.getTree());
 					// AST REWRITE
-					// elements: b, a, orExpr
+					// elements: a, b, orExpr
 					// token labels: 
 					// rule labels: retval, b, a
 					// token list labels: 
@@ -4549,7 +4549,7 @@ public class PogoParser extends Parser {
 
 					stream_expression.add(expression199.getTree());
 					// AST REWRITE
-					// elements: expression, orExpr, In
+					// elements: orExpr, expression, In
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5947,7 +5947,7 @@ public class PogoParser extends Parser {
 							}
 
 							// AST REWRITE
-							// elements: indexes, functionCall
+							// elements: functionCall, indexes
 							// token labels: 
 							// rule labels: retval
 							// token list labels: 
@@ -5989,7 +5989,7 @@ public class PogoParser extends Parser {
 
 							stream_dotProperty.add(dotProperty239.getTree());
 							// AST REWRITE
-							// elements: functionCall, dotProperty
+							// elements: dotProperty, functionCall
 							// token labels: 
 							// rule labels: retval
 							// token list labels: 
@@ -6131,7 +6131,7 @@ public class PogoParser extends Parser {
 							}
 
 							// AST REWRITE
-							// elements: indexes, Identifier
+							// elements: Identifier, indexes
 							// token labels: 
 							// rule labels: retval
 							// token list labels: 
@@ -6173,7 +6173,7 @@ public class PogoParser extends Parser {
 
 							stream_dotProperty.add(dotProperty244.getTree());
 							// AST REWRITE
-							// elements: Identifier, dotProperty
+							// elements: dotProperty, Identifier
 							// token labels: 
 							// rule labels: retval
 							// token list labels: 
@@ -6233,7 +6233,7 @@ public class PogoParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: String, indexes
+					// elements: indexes, String
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 

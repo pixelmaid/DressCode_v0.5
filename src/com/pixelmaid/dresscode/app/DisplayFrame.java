@@ -1,6 +1,8 @@
 package com.pixelmaid.dresscode.app;
 
 import java.awt.BorderLayout;
+import java.awt.Cursor;
+
 import com.pixelmaid.dresscode.app.ui.ImageButton;
 
 import java.awt.Dimension;
@@ -53,8 +55,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private  Embedded canvas;
 	private Toolbar drawingToolbar;
 
-	private int defaultDrawingBoardWidth = 500;
-	private int defaultDrawingBoardHeight = 500;
+	
 	private int defaultDrawingPaneWidth = 2000;
 	private int defaultDrawingPaneHeight = 1000;
 	private int defaultButtonWidth = 50;
@@ -100,7 +101,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 
 		//setup custom events
-		currentProject = new DCProject(defaultDrawingBoardWidth,defaultDrawingBoardHeight);
+		currentProject = new DCProject();
 		eventSource = new EventSource();
 		
 	}
@@ -141,10 +142,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		canvas.addEventListener(this);
 		
 		canvas.setDimensions(defaultDrawingPaneWidth-5,defaultDrawingPaneHeight-(defaultButtonHeight*2));
-		canvas.setDrawingBoardDimensions(currentProject.getWidth(), currentProject.getHeight());
+		canvas.setDrawingBoardDimensions(currentProject.getWidth(), currentProject.getHeight(),currentProject.getUnits());
 		
 		drawableManager = new DrawableManager();
-		instructionManager = new InstructionManager(drawableManager,defaultDrawingBoardWidth,defaultDrawingBoardHeight);
+		instructionManager = new InstructionManager(drawableManager,currentProject.getWidth(),currentProject.getHeight());
 		
 		instructionManager.addEventListener(this);
 		drawableManager.addEventListener(this);
@@ -182,7 +183,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		penButton.setEnabled(false);
 		
 		drawingToolbar.addButton(targetButton);
-		targetButton.setEnabled(false);
+		//targetButton.setEnabled(false);
 		targetButton.addActionListener(this);
 		
 		drawingToolbar.addButton(gridButton);
@@ -227,7 +228,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		importButton = new ImageButton("import","import.png", "import an svg into your script", defaultButtonWidth,defaultButtonHeight);
 		importButton.addActionListener(this);
 		
-		progressBar = new JProgressBar(0,100);
+		//progressBar = new JProgressBar(0,100);
 		//progressBar.setStringPainted(true);
 		
 		codingToolbar.addButton(runButton);
@@ -236,7 +237,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		codingToolbar.addButton(saveButton);
 		codingToolbar.addButton(openButton);
 		codingToolbar.addButton(importButton);
-		codingToolbar.addProgressBar(progressBar);
+		//codingToolbar.addProgressBar(progressBar);
 
 		codingToolbar.init(defaultDrawingPaneWidth,defaultButtonHeight);
 	
@@ -327,10 +328,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void drawIntoCanvas(){
 		 System.out.println(drawableManager.getDrawables());
 		 //canvas.init();
-		 progressBar.setIndeterminate(false);
-		 progressBar.setValue(100);
+		
 		canvas.setDrawables(drawableManager.getDrawables());
-		canvas.redraw();		
+		
+		//progressBar.setValue(100);
+		//progressBar.setIndeterminate(false);
+		System.out.println("drawn");
 		// canvas.showDrawables(drawableManager.getDrawables());
 	 }
 	 
@@ -495,11 +498,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public void actionPerformed(ActionEvent e) {
 		canvas.clearMode();
 		if (e.getSource() == runButton ) {
-			progressBar.setIndeterminate(false);
-			progressBar.setValue(0);
-			progressBar.setIndeterminate(true);
-
+			//progressBar.setIndeterminate(false);
+			//progressBar.setValue(0);
+			//progressBar.setIndeterminate(true);
+			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 			drawableManager.clearAllDrawables();
+			System.out.println("running");
 			if(currentProject.hiddenCode()){
 				
 				currentProject.run(codeField.getCode(),hiddenCodeField.getCode(),instructionManager);
@@ -513,27 +517,27 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		else if (e.getSource() == gridButton ) {
 			canvas.setGrid(!canvas.getGrid());
-			canvas.redraw();
+			
 
 		}
 		else if (e.getSource()==targetButton){
 			canvas.targetMode();
-			canvas.redraw();
+			
 			
 		}
 		
 		else if (e.getSource()==panButton){
 			canvas.panMode();
-			canvas.redraw();
+			
 		}
 		else if (e.getSource() == zoomInButton ) {
 			canvas.zoomIn();
-			canvas.redraw();
+			
 
 		}
 		else if (e.getSource() == zoomOutButton ) {
 			canvas.zoomOut();
-			canvas.redraw();
+			
 
 		}
 		if (e.getSource() == openButton ) {
@@ -543,6 +547,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		} else if (e.getSource() == saveButton ) {
 			currentProject.saveFile(this,codeField.getCode(),codingFrame);
 		}
+		else if (e.getSource()==newButton){
+			currentProject.newFile(codingFrame, canvas, drawableManager , instructionManager);
+		}
 		
 		else if (e.getSource() == printButton ) {
 			currentProject.printFile(this,canvas);
@@ -550,19 +557,21 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		else if (e.getSource()==dimensionButton){
 			setDimensions();
-			canvas.redraw();
+			
 		}
+		canvas.redraw();
 	
 
 	}
 	
 	//changes dimensions of file
 		private void setDimensions(){
-			 dimensionDialog = new DimensionDialog(this, true,currentProject.getWidth(),currentProject.getHeight());
+			
+			 dimensionDialog = new DimensionDialog(this, true,currentProject.getUnitWidth(),currentProject.getUnitHeight(), currentProject.getUnits());
 	         System.err.println("After opening dialog.");
 	         if(dimensionDialog.getAnswer()) {
-	        	 int widthVal = dimensionDialog.getCanvasWidth();
-	        	 int heightVal = dimensionDialog.getCanvasHeight();
+	        	 double widthVal = dimensionDialog.getCanvasWidth();
+	        	 double heightVal = dimensionDialog.getCanvasHeight();
 	        	 int unitsVal=dimensionDialog.getUnits();
 	             System.out.println("width ="+widthVal+" height="+ heightVal+" units="+ unitsVal);
 	         	currentProject.setDimensions(widthVal,heightVal, unitsVal, canvas, instructionManager);
@@ -592,6 +601,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			reportErrors(instructionManager.getError());
 			break;
 		}
+		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 	}
 
 	@Override

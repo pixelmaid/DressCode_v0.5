@@ -4,20 +4,33 @@ package com.pixelmaid.dresscode.app;
 to update the canvas */
 
 import java.awt.Dimension;
+import java.awt.Event;
 import java.awt.event.*;
 import java.io.File;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
+import javax.swing.event.UndoableEditEvent;
+import javax.swing.event.UndoableEditListener;
 import javax.swing.text.BadLocationException;
+import javax.swing.text.Document;
+import javax.swing.undo.CannotRedoException;
+import javax.swing.undo.CannotUndoException;
+import javax.swing.undo.UndoManager;
 
 
 
 public class CodeField extends JEditorPane implements DocumentListener, KeyListener{
 	private static final long serialVersionUID = 1L;
- 
-    public CodeField() {
+	private Document editorPaneDocument;
+	protected UndoHandler undoHandler = new UndoHandler();
+	protected UndoManager undoManager = new UndoManager();
+	protected UndoAction undoAction = null;
+	protected RedoAction redoAction = null;
+    
+	
+	public CodeField() {
         super();
     }
     
@@ -27,6 +40,21 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 		this.setContentType("text/java");
 		this.setText("");
 		 
+		editorPaneDocument = this.getDocument();
+		editorPaneDocument.addUndoableEditListener(undoHandler);
+		
+		KeyStroke undoKeystroke = KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK);
+		KeyStroke redoKeystroke = KeyStroke.getKeyStroke(KeyEvent.VK_Y, Event.META_MASK);
+
+		undoAction = new UndoAction();
+		this.getInputMap().put(undoKeystroke, "undoKeystroke");
+		this.getActionMap().put("undoKeystroke", undoAction);
+		redoAction = new RedoAction();
+		this.getInputMap().put(redoKeystroke, "redoKeystroke");
+		this.getActionMap().put("redoKeystroke", redoAction);
+		undoAction.setActions(undoManager,redoAction);
+		redoAction.setActions(undoManager,undoAction);
+		undoHandler.setActions(undoManager, undoAction, redoAction);
     }
  
     
@@ -108,7 +136,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 	}
 
 	public void insertCoordinate(double x, double y) {
-		String coordString = x+","+y;
+		String coordString =String.format("%.2f", x)+","+String.format("%.2f", y);
 		insertText(this.getCaretPosition(),coordString);
 		
 	}
@@ -130,4 +158,135 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
         textArea.setCaretPosition(textArea.getDocument().getLength());
     }*/
  
+}
+
+//java undo and redo action classes
+
+class UndoHandler implements UndoableEditListener
+{
+UndoManager undoManager;
+UndoAction undoAction;
+RedoAction	redoAction;
+/**
+ *
+* Messaged when the Document has created an edit, the edit is added to
+* <code>undoManager</code>, an instance of UndoManager.
+*/
+
+public void setActions(UndoManager uM, UndoAction uA, RedoAction rA){
+	 this.undoManager=uM;
+	 this.undoAction = uA;
+	 this.redoAction = rA;
+	 
+}
+
+public void undoableEditHappened(UndoableEditEvent e)
+{
+ undoManager.addEdit(e.getEdit());
+ undoAction.update();
+ redoAction.update();
+}
+}
+
+class UndoAction extends AbstractAction
+{
+/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	UndoManager undoManager;
+	RedoAction	redoAction;
+
+	public UndoAction()
+	{
+	 super("Undo");
+	
+	 setEnabled(false);
+	}
+	
+	public void setActions(UndoManager uM, RedoAction rA){
+		 this.undoManager=uM;
+		 this.redoAction = rA;
+		 
+	}
+
+public void actionPerformed(ActionEvent e)
+{
+ try
+ {
+   undoManager.undo();
+ }
+ catch (CannotUndoException ex)
+ {
+   // TODO deal with this
+   //ex.printStackTrace();
+ }
+ update();
+ redoAction.update();
+}
+
+protected void update()
+{
+ if (undoManager.canUndo())
+ {
+   setEnabled(true);
+   putValue(Action.NAME, undoManager.getUndoPresentationName());
+ }
+ else
+ {
+   setEnabled(false);
+   putValue(Action.NAME, "Undo");
+ }
+}
+}
+
+class RedoAction extends AbstractAction
+{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	UndoManager undoManager;
+	UndoAction undoAction;
+	
+public RedoAction()
+{
+ super("Redo");
+ setEnabled(false);
+}
+
+public void setActions(UndoManager uM, UndoAction uA){
+	 this.undoManager=uM;
+	 this.undoAction = uA;
+	 
+}
+
+public void actionPerformed(ActionEvent e)
+{
+ try
+ {
+   undoManager.redo();
+ }
+ catch (CannotRedoException ex)
+ {
+   // TODO deal with this
+   ex.printStackTrace();
+ }
+ update();
+ undoAction.update();
+}
+
+protected void update()
+{
+ if (undoManager.canRedo())
+ {
+   setEnabled(true);
+   putValue(Action.NAME, undoManager.getRedoPresentationName());
+ }
+ else
+ {
+   setEnabled(false);
+   putValue(Action.NAME, "Redo");
+ }
+}
 }

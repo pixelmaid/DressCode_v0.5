@@ -39,9 +39,9 @@ public class InstructionManager extends NodeEvent{
 		
 	}
 	
-	public void setDimensionParams(int w, int h){
-		widthParam = w;
-		heightParam = h;
+	public void setDimensionParams(double width, double height){
+		widthParam = width;
+		heightParam = height;
 	}
 		
 	

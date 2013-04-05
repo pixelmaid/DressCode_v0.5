@@ -39,7 +39,7 @@ public class DimensionDialog extends JDialog implements ActionListener{
 	    public boolean getAnswer() { return answer; }
 	    private String message = "Set the size of your canvas";
 	    
-	    public DimensionDialog(JFrame frame, boolean modal,Integer w, Integer h) {
+	    public DimensionDialog(JFrame frame, boolean modal,double d, double e, int u) {
 	        super(frame, modal);
 	        Dimension textFieldDimension = new Dimension(75,30);
 	        this.setPreferredSize(new Dimension(230,150));
@@ -69,21 +69,21 @@ public class DimensionDialog extends JDialog implements ActionListener{
 	        entryPanel.add(new JLabel("Width"), c);
 	        c.gridx = 1;
 	        c.gridy = 0;
-	        widthF = new JTextField(w.toString());
+	        widthF = new JTextField(String.format("%.2f", e));
 	        widthF.setPreferredSize(textFieldDimension);
 	        entryPanel.add(widthF,c);
 	        c.gridx = 0;
 	        c.gridy = 1;
-	        heightF = new JTextField(h.toString());
+	        heightF = new JTextField(String.format("%.2f", e));
 	        heightF.setPreferredSize(textFieldDimension);
 	        entryPanel.add(new JLabel("Height"), c);
 	        c.gridx = 1;
 	        c.gridy = 1;
 	        entryPanel.add( heightF, c);
-	        String[] unitStrings = { "inches","millimeters"};
+	        String[] unitStrings = { "millimeters","inches"};
 	        unitsMenu = new JComboBox(unitStrings);
 	        unitsMenu.setPrototypeDisplayValue("millimeters");        
-	        
+	        unitsMenu.setSelectedIndex(u);
 	        JPanel menPanel = new JPanel();
 	        menPanel.setLayout(new BorderLayout());
 	        menPanel.add(entryPanel,BorderLayout.PAGE_START);
@@ -110,14 +110,14 @@ public class DimensionDialog extends JDialog implements ActionListener{
 	        }
 	    }
 	    
-	    public int getCanvasWidth(){
+	    public double getCanvasWidth(){
 	    	Double val = Double.parseDouble(widthF.getText());
-	    	return val.intValue();
+	    	return val;
 	    }
 	    
-	    public int getCanvasHeight(){
+	    public double getCanvasHeight(){
 	    	Double val = Double.parseDouble(heightF.getText());
-	    	return val.intValue();
+	    	return val;
 	    }
 	    
 	    public int getUnits(){

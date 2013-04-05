@@ -96,8 +96,11 @@ public class CodingFrame extends JPanel {
 	 }
 	 
 	 public void hideHiddenTab(){
+		 
 		 codeTabs.remove(scrPane3);
-		codeTabs.setEnabledAt(1, false);
+		if(codeTabs.getTabCount()>1){
+			codeTabs.setEnabledAt(1, false);
+		}
 			
 	 }
 	 
