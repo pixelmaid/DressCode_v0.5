@@ -81,7 +81,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	//drawing panel buttons
 	private ImageButton selectButton, targetButton, printButton, zoomInButton, zoomOutButton, panButton, penButton, gridButton, dimensionButton;
 	
-	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction;
+	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction, saveAsAction;
 	//private ArrayList<ImageButton> drawingButtons;
 	//private ArrayList<ImageButton> codingButtons;
 	private static InstructionManager instructionManager;
@@ -280,10 +280,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        menuBar.add(editMenu);
 	        menuBar.add(exampleMenu);
 	        
+	        
 	        // Create and add simple menu item to one of the drop down menu
 	        newAction = new JMenuItem("New");
 	        openAction = new JMenuItem("Open");
 	        saveAction = new JMenuItem("Save");
+	        saveAsAction = new JMenuItem("Save As");
+
 	        exitAction = new JMenuItem("Exit");
 	        exportAction = new JMenuItem("Export to PDF");
 	        importAction = new JMenuItem("Import SVG");
@@ -295,27 +298,33 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        fileMenu.add(newAction);
 	        fileMenu.add(openAction);
 	        fileMenu.add(saveAction);
+	        fileMenu.add(saveAsAction);
 	        fileMenu.addSeparator();
 	        fileMenu.add(exportAction);
 	        fileMenu.add(importAction);
 	        fileMenu.addSeparator();
 	        fileMenu.add(exitAction);
-	        editMenu.add(cutAction);
-	        editMenu.add(copyAction);
-	        editMenu.add(pasteAction);
+	        
+	        //editMenu.add(cutAction);
+	        //editMenu.add(copyAction);
+	        //editMenu.add(pasteAction);
+	        editMenu.add(codeField.getUndoMenu());
+	        editMenu.add(codeField.getRedoMenu());
+
 	        
 	        
 	        //action listeners
 	        newAction.addActionListener(this);
 	        openAction.addActionListener(this);
 	        saveAction.addActionListener(this);
+	        saveAsAction.addActionListener(this);
 	        exitAction.addActionListener(this);
 	        exportAction.addActionListener(this);
 	        importAction.addActionListener(this);
 
-	        copyAction.addActionListener(this);
-	        pasteAction.addActionListener(this);
-	        cutAction.addActionListener(this);
+	       // copyAction.addActionListener(this);
+	        //pasteAction.addActionListener(this);
+	        //cutAction.addActionListener(this);
 	        
 	       
 	        
@@ -530,7 +539,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			canvas.panMode();
 			
 		}
-		else if (e.getSource() == zoomInButton ) {
+		else if (		e.getSource() == zoomInButton ) {
 			canvas.zoomIn();
 			
 
@@ -540,24 +549,36 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			
 
 		}
-		if (e.getSource() == openButton ) {
+		if (e.getSource() == openButton || e.getSource() == openAction) {
 
 			currentProject.openFile(this,codingFrame,canvas,instructionManager);
 			//Handle save button action.
-		} else if (e.getSource() == saveButton ) {
+		} else if (e.getSource() == saveButton || e.getSource() == saveAction ) {
+			
 			currentProject.saveFile(this,codeField.getCode(),codingFrame);
 		}
-		else if (e.getSource()==newButton){
-			currentProject.newFile(codingFrame, canvas, drawableManager , instructionManager);
+		else if (e.getSource() == saveButton || e.getSource() == saveAsAction ) {
+			currentProject.setSaved(false);
+			currentProject.saveFile(this,codeField.getCode(),codingFrame);
+		}
+		else if (e.getSource()==newButton ||e.getSource() == newAction){
+			currentProject.newFile(codingFrame, codeField,canvas, drawableManager , instructionManager);
 		}
 		
-		else if (e.getSource() == printButton ) {
+		else if (e.getSource() == printButton|| e.getSource() == exportAction) {
 			currentProject.printFile(this,canvas);
 
 		}
 		else if (e.getSource()==dimensionButton){
 			setDimensions();
 			
+		}else if (e.getSource() == importButton || e.getSource() == importAction ) {
+			currentProject.importFile(this,codeField);
+
+		}
+		else if (e.getSource() == exitAction) {
+			System.exit(DISPOSE_ON_CLOSE);
+
 		}
 		canvas.redraw();
 	

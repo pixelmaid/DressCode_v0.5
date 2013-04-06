@@ -9,6 +9,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import javax.swing.JFileChooser;
+import javax.swing.text.BadLocationException;
 
 import org.antlr.gunit.gUnitParser.file_return;
 
@@ -107,8 +108,10 @@ public class DCProject {
 	}
 
 
-	public void newFile(CodingFrame cf, Embedded canvas, DrawableManager dm, InstructionManager im){
+	public void newFile(CodingFrame cf, CodeField codeField, Embedded canvas, DrawableManager dm, InstructionManager im){
+		
 		cf.hideHiddenTab();
+		codeField.clear();
 		dm.clearAllDrawables();
 		canvas.clear();
 		saved= false;
@@ -321,6 +324,24 @@ public class DCProject {
 	}
 	public int getUnits() {
 		return this.units;
+	}
+	public void setSaved(boolean b) {
+		saved = b;
+		
+	}
+	public void importFile(Component component, CodeField codeField) {
+		int returnVal = fc.showDialog(component, "Select");
+		if (returnVal == JFileChooser.APPROVE_OPTION) {
+			File file = fc.getSelectedFile();
+			try {
+				codeField.insertPath(file);
+			} catch (BadLocationException e1) {
+				
+				e1.printStackTrace();
+			}
+		}
+
+		
 	}
 
 

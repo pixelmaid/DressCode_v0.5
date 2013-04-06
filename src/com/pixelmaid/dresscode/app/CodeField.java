@@ -58,6 +58,20 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
     }
  
     
+    public JMenuItem getRedoMenu(){
+    	
+    	JMenuItem redoMenuItem = new JMenuItem(redoAction);
+    	redoMenuItem.setText("Redo");
+    	return redoMenuItem;
+    }
+    
+public JMenuItem getUndoMenu(){
+    	
+    	JMenuItem undoMenuItem = new JMenuItem(undoAction);
+    	undoMenuItem.setText("Undo");
+    	return undoMenuItem;
+    }
+    
     public String getCode(){
     	return this.getText()+"\n";
     }

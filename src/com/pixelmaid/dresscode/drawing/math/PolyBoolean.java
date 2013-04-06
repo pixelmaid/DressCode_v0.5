@@ -42,14 +42,17 @@ public class PolyBoolean{
 	
 	//performs union of two polygons and returns the result
 	public static Drawable union(Drawable a, Drawable b){
-		
-		
+		/*//BooleanPoly a_Poly = polygonToBoolean(((Polygon)a.toPolygon().childAt(0)));
+	//	Polygon a_P = booleanToPolygon(a_Poly);
+		return a.toPolygon().childAt(0);*/
 		BooleanPoly a_Poly =  drawableToBoolean(a);
 		BooleanPoly b_Poly =  drawableToBoolean(b);
 	
 		BooleanPoly o_Poly = (BooleanPoly)a_Poly.union(b_Poly);
 
-
+		//Drawable a_d =  booleanToDrawable(a_Poly);
+		//Drawable  b_d =  booleanToDrawable(b_Poly);
+		//return a_d;
 		return booleanToDrawable(o_Poly);
 		
 		
