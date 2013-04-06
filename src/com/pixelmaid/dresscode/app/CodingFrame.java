@@ -16,7 +16,7 @@ public class CodingFrame extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private CodeField codeField;
-	private CodeField hiddenCodeField;
+	public CodeField hiddenCodeField;
 	private JPanel codeHolder;
 	private JPanel hiddenCodeHolder;
 

@@ -76,6 +76,7 @@ public class DrawablePoint extends Polygon {
 	public void print(Embedded e) {
 		if(!this.getHide()){
 			appearance(e);
+			e.noFill();
 			e.pushMatrix();
 			e.translate((float)(x),(float)(y));
 				 e.rotate((float)Math.toRadians(getRotation()));

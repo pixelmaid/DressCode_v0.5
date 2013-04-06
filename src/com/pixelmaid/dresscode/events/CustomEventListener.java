@@ -13,4 +13,11 @@ public interface CustomEventListener {
 	public void handleCustomTargetEvent(Object source, int event, double x,
 			double y);
 
+	public void handleCustomRuntimeErrorEventDrawableEvent(Object source,
+			int event, String message);
+
+
+	public void handleCustomPrintEvent(Object source, int event, String value);
+
+	
 }

@@ -22,7 +22,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-
+import java.util.LinkedList;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
@@ -512,6 +512,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			//progressBar.setIndeterminate(true);
 			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
 			drawableManager.clearAllDrawables();
+			output.setText("");
 			System.out.println("running");
 			if(currentProject.hiddenCode()){
 				
@@ -643,6 +644,20 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			this.codeField.insertCoordinate(x,y);
 		break;
 	}
+		
+	}
+
+	@Override
+	public void handleCustomRuntimeErrorEventDrawableEvent(Object source,
+			int event, String message) {
+		System.out.println("error event ="+message);
+		
+	}
+
+	@Override
+	public void handleCustomPrintEvent(Object source, int event, String value) {
+		System.out.println("print event ="+value);
+		this.output.setText(this.output.getText()+value);
 		
 	}
 	

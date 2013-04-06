@@ -83,6 +83,20 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 		// TODO Auto-generated method stub
 		
 	}
+
+	@Override
+	public void handleCustomRuntimeErrorEventDrawableEvent(Object source,
+			int event, String message) {
+		System.out.println("error event d ="+message);
+		
+	}
+
+	@Override
+	public void handleCustomPrintEvent(Object source, int event, String value) {
+		System.out.println("print event d ="+value);
+		this.printEvent(CustomEvent.PRINT_STATEMENT, value);
+		
+	}
 	
 	
 	

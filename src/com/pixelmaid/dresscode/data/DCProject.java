@@ -19,7 +19,7 @@ import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 public class DCProject {
-	private double width, height; // default width and height of project
+	private double width, height, unitWidth, unitHeight; // default width and height of project
 	private static int METRIC = 0;
 	private static int STANDARD = 1;
 	private int units; //units
@@ -42,12 +42,16 @@ public class DCProject {
 		fc = new JFileChooser();
 		this.width=DEFAULT_WIDTH;
 		this.height=DEFAULT_HEIGHT;
+		this.unitHeight= 6.94;
+		this.unitWidth = 6.94;
 		this.units = STANDARD;
 
 	}
 	public void setDimensions(double w, double h, int u,Embedded canvas, InstructionManager im){
 		this.units = u;
 		convertDimensions(w,h);
+		this.unitWidth = w;
+		this.unitHeight = h;
 		canvas.setDrawingBoardDimensions(width, height,getUnits());
 		im.setDimensionParams(width, height);
 	}
@@ -66,27 +70,13 @@ public class DCProject {
 	}
 	public double getUnitHeight(){
 
-		if(units==METRIC){
-
-			return height*PIX_IN_MM;
-		}
-		else{
-
-			return height*PIX_IN_INCH;
-		}
+		return this.unitHeight;
 	}
 
 
 	public double getUnitWidth(){
 
-		if(units==METRIC){
-
-			return width*PIX_IN_MM;
-		}
-		else{
-
-			return width*PIX_IN_INCH;
-		}
+		return this.unitWidth;
 	}
 
 	public void setCode(String c){
@@ -137,10 +127,11 @@ public class DCProject {
 			double [] vars = convertParams(paramFile);
 			units = ((Double)(vars[2])).intValue();
 
-			double w = ((Double)(vars[0])).intValue();
-			double h = ((Double)(vars[1])).intValue();
+			double w = ((Double)(vars[0]));
+			double h = ((Double)(vars[1]));
+			
 
-			convertDimensions(w,h);
+			setDimensions(w, h, units,canvas,  im);
 
 			template =((Double)(vars[3])).intValue();
 			cf.setCode(name,getCode());
@@ -193,6 +184,8 @@ public class DCProject {
 				if(hasHiddenCode){
 					vars[4]=1;
 					cf.setTabTitle(1,name+"_hidden");
+					File hiddenFile = new File(path+name+"/"+data+"/"+name+"_hidden"+extension);
+					writeFile(cf.hiddenCodeField.getCode(),hiddenFile);
 				}
 				else{
 					vars[4]=0;
@@ -227,12 +220,12 @@ public class DCProject {
 
 	public void convertDimensions(double w,double h){
 		if(units==METRIC){
-			width = w/PIX_IN_MM;
-			height = h/PIX_IN_MM;
+			this.width = w/PIX_IN_MM;
+			this.height = h/PIX_IN_MM;
 		}
 		else if(units==STANDARD){
-			width = w/PIX_IN_INCH;
-			height = h/PIX_IN_INCH;
+			this.width = w/PIX_IN_INCH;
+			this.height = h/PIX_IN_INCH;
 		}
 	}
 

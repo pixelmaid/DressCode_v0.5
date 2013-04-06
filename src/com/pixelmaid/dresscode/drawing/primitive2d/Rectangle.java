@@ -64,6 +64,7 @@ public class Rectangle extends Polygon{
 	public void print(Embedded e){
 		if(!this.getHide()){
 		appearance(e);
+		e.noFill();
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));

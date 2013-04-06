@@ -76,6 +76,8 @@ public class EllipseNode extends DrawableNode implements DCNode {
 			//Window.output.setText("incorrect parameters for ellipse at line:"+line);
 
 			System.err.println("incorrect parameters for ellipse at line:"+line);
+			
+			this.errorEvent(CustomEvent.RUNTIME_ERROR, "incorrect parameters for ellipse");
 
 		}
 		return new VarType(e);	

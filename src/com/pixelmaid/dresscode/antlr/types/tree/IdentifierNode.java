@@ -18,7 +18,10 @@ public class IdentifierNode extends NodeEvent implements DCNode {
   public VarType evaluate() {
     VarType value = scope.resolve(identifier);
     if(value == null) {
-      throw new RuntimeException("no such variable: " + this);
+     RuntimeException exception = new RuntimeException("no such variable: " + this);
+     String message = exception.getMessage();
+     System.out.println("message="+message);
+     throw exception;
     }
     return value;
   }

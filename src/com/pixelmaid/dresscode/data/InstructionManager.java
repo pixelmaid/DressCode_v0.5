@@ -2,6 +2,7 @@ package com.pixelmaid.dresscode.data;
 
 import java.util.EventObject;
 import java.util.Iterator;
+import java.util.List;
 
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
@@ -62,7 +63,7 @@ public class InstructionManager extends NodeEvent{
 	    	// create the parser
 	    	parser = new PogoParser(tokens);
 
-	    	
+	    	//System.out.println("running");
 	    	// walk the tree
 	    	
 	    	try {
@@ -78,11 +79,21 @@ public class InstructionManager extends NodeEvent{
 
 	    		returned.evaluate();
 	    		//registers a completed parse event
+	    		List<String> errors = walker.getErrors();
+	    		System.out.println("errors="+errors);
+	    		if(errors.size()!=0){
+	    			error = "";
+	    			for(int i=0;i<errors.size();i++){
+	    				error = error+errors.get(i)+"\n";
+	    			}
+	    			this.fireEvent(CustomEvent.PARSE_ERROR);
+	    		}
 	    		this.fireEvent(CustomEvent.PARSE_COMPLETE);
 
 	    	} catch (Exception e) {
-	    		e.printStackTrace();
-	    		error = e.getStackTrace().toString();
+	    		//e.printStackTrace();
+	    		error = e.getMessage();
+	    		
 	    		//registers a parse error event
 	    		this.fireEvent(CustomEvent.PARSE_ERROR);
 	    		//output.setText("error at" + error);

@@ -1,6 +1,7 @@
 package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 import com.pixelmaid.dresscode.events.EventSource;
 
@@ -25,6 +26,13 @@ public class NodeEvent {
 	protected void drawableEvent(int event, Drawable d) {
 		this.es.fireDrawableEvent(this,event,d);
 		
+	}
+	protected void printEvent(int event, String value){
+		this.es.firePrintEvent(this,event,value);
+	}
+	
+	protected void errorEvent(int event, String error){
+		this.es.fireRuntimeErrorEvent(this, event, error);
 	}
 	
 	public void addEventListener(CustomEventListener listener) {

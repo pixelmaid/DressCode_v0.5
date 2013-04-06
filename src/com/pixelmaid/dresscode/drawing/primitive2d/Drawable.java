@@ -145,6 +145,7 @@ public class Drawable implements DrawableEvent {
 	public void print(Embedded embedded) {
 		if(!this.getHide()){//only draws if child is not hidden
 			appearance(embedded);
+			embedded.noFill();
 			embedded.pushMatrix();
 			embedded.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			embedded.rotate(PApplet.radians((float)getRotation()));

@@ -69,7 +69,7 @@ public class DimensionDialog extends JDialog implements ActionListener{
 	        entryPanel.add(new JLabel("Width"), c);
 	        c.gridx = 1;
 	        c.gridy = 0;
-	        widthF = new JTextField(String.format("%.2f", e));
+	        widthF = new JTextField(String.format("%.2f", d));
 	        widthF.setPreferredSize(textFieldDimension);
 	        entryPanel.add(widthF,c);
 	        c.gridx = 0;

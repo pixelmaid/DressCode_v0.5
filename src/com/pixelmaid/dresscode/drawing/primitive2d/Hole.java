@@ -34,6 +34,8 @@ public class Hole extends Polygon {
 			
 			appearance(e);
 			e.fill(e.DEFAULT_BG);
+			e.noFill();
+			
 		    ArrayList<Point> points = this.getPoints();
 		    e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));

@@ -41,4 +41,22 @@ public class EventSource {
 			    }
 			
 		}
+		
+		public void fireRuntimeErrorEvent(Object source, int event, String message) {
+			  Iterator i = _listeners.iterator();
+			    while(i.hasNext())  {
+			    	
+			      ((CustomEventListener) i.next()).handleCustomRuntimeErrorEventDrawableEvent(source, event, message);
+			    }
+			
+		}
+
+		public void firePrintEvent(Object source, int event, String value) {
+			 Iterator i = _listeners.iterator();
+			    while(i.hasNext())  {
+			    	
+			      ((CustomEventListener) i.next()).handleCustomPrintEvent(source, event, value);
+			    }
+			
+		}
 }

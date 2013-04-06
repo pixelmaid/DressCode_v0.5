@@ -18,6 +18,7 @@ options {
   
   import java.util.Map;
   import java.util.HashMap;
+  import java.util.LinkedList;
 
 }
 
@@ -27,6 +28,18 @@ options {
  double heightParam;
  DrawableManager drawableManager;
   Scope currentScope = null;
+  
+  
+  private List<String> errors = new LinkedList<String>();
+    public void displayRecognitionError(String[] tokenNames,
+                                        RecognitionException e) {
+        String hdr = getErrorHeader(e);
+        String msg = getErrorMessage(e, tokenNames);
+        errors.add(hdr + " " + msg);
+    }
+    public List<String> getErrors() {
+        return errors;
+    }
   public Map<String, FunctionType> functions = null;
   
   public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns, DrawableManager dm, double w, double h) {
