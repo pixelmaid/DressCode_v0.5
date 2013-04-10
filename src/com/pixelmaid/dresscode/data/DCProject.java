@@ -158,6 +158,8 @@ public class DCProject {
 	public void saveFile(Component component,String code,CodingFrame cf){
 		setCode(code);
 		if(!saved){
+			File blank = new File(this.name);
+			fc.setSelectedFile(blank);
 			int returnVal = fc.showSaveDialog(component);
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
 				File file = fc.getSelectedFile();
@@ -209,7 +211,8 @@ public class DCProject {
 
 
 	public void printFile(Component component, Embedded canvas){
-
+		File blank = new File(this.name);
+		fc.setSelectedFile(blank);
 		int returnVal = fc.showDialog(component, "Export");
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = fc.getSelectedFile();

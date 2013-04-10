@@ -5,6 +5,7 @@ to update the canvas */
 
 import java.awt.Dimension;
 import java.awt.Event;
+import java.awt.Font;
 import java.awt.event.*;
 import java.io.File;
 
@@ -39,10 +40,10 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
     	this.setPreferredSize(new Dimension(550,500));
 		this.setContentType("text/java");
 		this.setText("");
-		 
+		
+		this.setFont(new Font("Courier", 0, 20));
 		editorPaneDocument = this.getDocument();
 		editorPaneDocument.addUndoableEditListener(undoHandler);
-		
 		KeyStroke undoKeystroke = KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK);
 		KeyStroke redoKeystroke = KeyStroke.getKeyStroke(KeyEvent.VK_Y, Event.META_MASK);
 
