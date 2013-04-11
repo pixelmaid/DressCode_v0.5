@@ -1,15 +1,15 @@
 package com.pixelmaid.dresscode.antlr.types.tree.functions;
 
-import java.util.ArrayList;
+
 import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+
 import com.pixelmaid.dresscode.drawing.datatype.Point;
-import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.events.CustomEvent;
+import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 
 
 public class LineNode extends DrawableNode implements DCNode {
@@ -34,8 +34,8 @@ public class LineNode extends DrawableNode implements DCNode {
     		return new VarType(e);	
     	}
     	else if(params.size()==2 && params.get(0).evaluate().isDrawablePoint()&&params.get(1).evaluate().isDrawablePoint()){
-    		DrawablePoint start = params.get(0).evaluate().asDrawablePoint();
-    		DrawablePoint end = params.get(1).evaluate().asDrawablePoint();
+    		Point start = params.get(0).evaluate().asDrawablePoint().getOrigin();
+    		Point end = params.get(1).evaluate().asDrawablePoint().getOrigin();
     		e = new Line(start.getX(),start.getY(),end.getX(),end.getY());
     		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
     		return new VarType(e);	
@@ -44,10 +44,10 @@ public class LineNode extends DrawableNode implements DCNode {
     	}
     	
     	else if(params.size()==3 && params.get(0).evaluate().isDrawablePoint()&&params.get(1).evaluate().isNumber()&&params.get(2).evaluate().isNumber()){
-    		DrawablePoint start = params.get(0).evaluate().asDrawablePoint();
+    		Point start = params.get(0).evaluate().asDrawablePoint().getOrigin();
     		double r = params.get(1).evaluate().asDouble();
     		double theta = params.get(2).evaluate().asDouble();
-    		e = new Line(new Point(start.getX(),start.getY()),r,theta);
+    		e = new Line(start,r,theta);
     		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
     		return new VarType(e);	
     	}

@@ -91,7 +91,7 @@ public class InstructionManager extends NodeEvent{
 	    		this.fireEvent(CustomEvent.PARSE_COMPLETE);
 
 	    	} catch (Exception e) {
-	    		//e.printStackTrace();
+	    		e.printStackTrace();
 	    		error = e.getMessage();
 	    		
 	    		//registers a parse error event

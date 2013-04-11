@@ -21,20 +21,17 @@ public class XPropertyNode extends PropertyNode{
 
     @Override
     public VarType evaluate() {
-    	if(!(value.isDrawable() || value.isPoint())){
-    		  throw new RuntimeException("Illegal x property call: " + this);
-    	}
-    	if(value.isDrawable()){
-    	Drawable d = value.asDrawable();
-    	Double x = d.getOrigin().getX();
-    	return new VarType(x);	
-    	}
-    	else{
-    		Point d = value.asPoint();
-        	Double x = d.getX();
-        	return new VarType(x);	
-    	}
-      
+       	if(!value.isDrawable()){
+  		  throw new RuntimeException("Illegal y property call: " + this);
+  	}
+       	else {
+  	Drawable d = value.asDrawable();
+  	double x = d.getOrigin().getX();
+  	return new VarType(x);	
+  	
+  
+    }
+    
       
     }
 

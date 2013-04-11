@@ -2,15 +2,15 @@ package com.pixelmaid.dresscode.antlr.types;
 
 import java.util.List;
 
-import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Color;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
+import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
+import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
-import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 
 public class VarType implements Comparable<VarType> {  
 	  

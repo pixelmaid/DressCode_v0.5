@@ -130,14 +130,18 @@ functionCall
    | Expand	'(' expression ')'-> ^(FUNC_CALL Expand expression)
    | Merge	'(' expression ')'-> ^(FUNC_CALL Merge expression)
    | Scale '(' exprList? ')'-> ^(FUNC_CALL Scale exprList?)
+   | MirrorX	'(' expression ')'-> ^(FUNC_CALL MirrorX expression)
    //| Get	'('expression ')'->^(FUNC_CALL Get expression)
    ;
    
    mathCall
    	:Cosine '(' expression ')'   -> ^(FUNC_CALL Cosine expression)
    	|Sine '(' expression ')'   -> ^(FUNC_CALL Sine expression)
+   	|Tan '(' expression ')'   -> ^(FUNC_CALL Tan expression)
+   	|ATan '(' expression ')'   -> ^(FUNC_CALL ATan expression)
    	|Random '(' exprList? ')'   -> ^(FUNC_CALL Random exprList?)
    	|Round'(' expression ')'   -> ^(FUNC_CALL Round expression)
+   	|Map'(' exprList? ')'   -> ^(FUNC_CALL Map exprList?)
    	;
   
   
@@ -315,8 +319,11 @@ LShape	: 'import';
 //math keywords
 Cosine	:'cos';
 Sine	: 'sin';
+Tan		: 'tan';
+ATan	: 'atan';
 Random 	: 'random';
 Round	: 'round';
+Map		: 'map';
 
 //transforms
 Move	: 'move';
@@ -332,6 +339,8 @@ Hide	: 'hide';
 Group	: 'group';
 Expand 	: 'expand';
 Merge	: 'merge';
+MirrorX	: 'mirrorX';
+MirrorY: 'mirrorY';
  
 
 //properties

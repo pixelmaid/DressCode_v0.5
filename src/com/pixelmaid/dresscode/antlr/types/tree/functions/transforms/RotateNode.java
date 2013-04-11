@@ -7,7 +7,6 @@ import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
@@ -43,9 +42,9 @@ public class RotateNode extends NodeEvent implements DCNode {
 	    	}
 	    	
     	else if(params.size()==3){
-    		DrawablePoint f = params.get(2).evaluate().asDrawablePoint();
+    		Point f = params.get(2).evaluate().asDrawablePoint().getOrigin();
     		
-    		Drawable b = d.rotateWithFocus(r, f.getOrigin());
+    		Drawable b = d.rotateWithFocus(r, f);
     		//TODO: create swap event
     		this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
     		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, b);

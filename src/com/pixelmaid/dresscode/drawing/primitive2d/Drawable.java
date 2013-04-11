@@ -410,6 +410,52 @@ public class Drawable implements DrawableEvent {
 			return this;
 			
 		}
+		
+		public Drawable mirrorX() {
+			this.setAbsolute();
+			ArrayList<Point> origins = new ArrayList<Point>();
+			
+			for(int i=0;i<this.children.size();i++){
+				this.children.get(i).mirrorX();
+				origins.add(this.children.get(i).getOrigin());
+			}
+			
+			if(this.children.size()>1){
+				this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+			}
+			
+			else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
+				this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
+			}
+			
+			if(this.getParent()!=null){
+				this.parent.resetOrigin();
+			}
+			return this;
+		}
+		
+		public Drawable mirrorY() {
+			this.setAbsolute();
+			ArrayList<Point> origins = new ArrayList<Point>();
+			
+			for(int i=0;i<this.children.size();i++){
+				this.children.get(i).mirrorY();
+				origins.add(this.children.get(i).getOrigin());
+			}
+			
+			if(this.children.size()>1){
+				this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+			}
+			
+			else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
+				this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
+			}
+			
+			if(this.getParent()!=null){
+				this.parent.resetOrigin();
+			}
+			return this;
+		}
 	
 	//returns the rotation of an object
 	public double getRotation(){
@@ -896,6 +942,8 @@ public class Drawable implements DrawableEvent {
 		public void removeEventListener(CustomEventListener listener) {
 			this.es.removeEventListener(listener);
 		}
+
+		
 
 	//boolean returns to check type of drawables
 	/*public boolean isDrawable(){

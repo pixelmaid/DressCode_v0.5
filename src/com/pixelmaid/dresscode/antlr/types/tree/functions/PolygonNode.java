@@ -23,8 +23,8 @@ public class PolygonNode extends DrawableNode implements DCNode {
 			if(params.size()==0){
 				e= new Polygon();
 			}
-			else if(params.get(0).evaluate().isPoint()){
-				e= new Polygon(params.get(0).evaluate().asPoint());
+			else if(params.get(0).evaluate().isDrawablePoint()){
+				e= new Polygon(params.get(0).evaluate().asDrawablePoint().getOrigin());
 			}
 			else if(params.get(0).evaluate().isNumber()&&params.get(1).evaluate().isNumber()){
 				

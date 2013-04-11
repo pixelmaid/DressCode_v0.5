@@ -6,11 +6,10 @@ import java.util.ArrayList;
 import processing.core.PApplet;
 
 import com.pixelmaid.dresscode.app.Embedded;
-import com.pixelmaid.dresscode.app.Manager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
-import com.pixelmaid.dresscode.drawing.math.Vec2d;
+
 
 public class Curve extends Polygon { //series of symmetrical curved lines grouped together in a single line
 	private int resolution = 20; // resolution of each curve
@@ -28,8 +27,9 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	//}
 	
 	//initialize curve from 4 x/y coordinates values
-	public Curve(ArrayList<Double> values) {
-		this(values.get(0),values.get(1),values.get(2),values.get(3),values.get(4),values.get(5),values.get(6),values.get(7));
+	public Curve(double[] values) {
+		
+		this(values[0],values[1],values[2],values[3],values[4],values[5],values[6],values[7]);
 	}
 
 	public Curve(double sX, double sY, double c1X, double c1Y, double c2X, double c2Y, double eX, double eY ){

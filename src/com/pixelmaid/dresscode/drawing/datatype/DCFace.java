@@ -28,7 +28,6 @@ import java.util.Comparator;
 import java.util.Random;
 import java.util.Vector;
 
-import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
 public class DCFace extends DoublyConnectedEdgeList {

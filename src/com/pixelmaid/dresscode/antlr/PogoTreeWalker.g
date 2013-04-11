@@ -137,13 +137,18 @@ functionCall returns [DCNode node]
    |^(FUNC_CALL Expand expression){node = new ExpandNode($expression.node,$FUNC_CALL.getLine());}
    | ^(FUNC_CALL Merge expression){node = new MergeNode($expression.node,$FUNC_CALL.getLine());}
    | ^(FUNC_CALL Scale exprList?){node = new ScaleNode($exprList.e,$FUNC_CALL.getLine());}
+   | ^(FUNC_CALL MirrorX expression){node = new MirrorXNode($expression.node,$FUNC_CALL.getLine());}
    ;
    
    mathCall returns [DCNode node]
    :^(FUNC_CALL Cosine expression) {node = new CosineNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Sine expression) {node = new SineNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Tan expression) {node = new TanNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL ATan expression) {node = new ATanNode($expression.node,$FUNC_CALL.getLine());}
+   
    |^(FUNC_CALL Random exprList?) {node = new RandomNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Round expression) {node = new RoundNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Map exprList?) {node = new MapNode($exprList.e,$FUNC_CALL.getLine());}
    
    ;
 

@@ -1,5 +1,4 @@
 package com.pixelmaid.dresscode.drawing.primitive2d;
-import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 
 interface Turtle {

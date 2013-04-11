@@ -15,8 +15,8 @@ public class Line extends Polygon {
 	private Point end;
 	
 	//initialize line from 4 x/y coordinates values
-		public Line(ArrayList<Double> values) {
-			this(values.get(0),values.get(1),values.get(2),values.get(3));
+		public Line(double[] values) {
+			this(values[0],values[1],values[2],values[3]);
 		}
 	//initialize line from 4 x/y coordinates values
 	public Line(double startX, double startY, double endX, double endY) {

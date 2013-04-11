@@ -5,6 +5,7 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.events.CustomEvent;
@@ -20,7 +21,7 @@ public class CurveNode extends DrawableNode implements DCNode {
 	public VarType evaluate() {
 		Curve e = null;
 		try{
-			ArrayList<Double> values = new ArrayList<Double>();
+			double[] values = new double[7];
 
 			if(params.get(0).evaluate().isNumber()&&params.size()==8){
 
@@ -29,7 +30,7 @@ public class CurveNode extends DrawableNode implements DCNode {
 				for(int i=0;i<params.size();i++){
 					VarType value = params.get(i).evaluate();
 					if(value.isNumber()){
-						values.add(value.asDouble());
+						values[i]=value.asDouble();
 					}
 				}
 			}
@@ -43,8 +44,9 @@ public class CurveNode extends DrawableNode implements DCNode {
 					VarType value = params.get(i).evaluate();
 					if(value.isDrawablePoint()){
 						DrawablePoint p = value.asDrawablePoint();
-						values.add(p.getOrigin().getX());
-						values.add(p.getOrigin().getY());
+						values[i*2]=p.getOrigin().getX();
+						values[(i*2)+1]=p.getOrigin().getY();
+
 					}
 				}
 			}

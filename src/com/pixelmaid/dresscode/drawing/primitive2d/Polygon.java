@@ -156,6 +156,34 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		}
 	
 	}
+	@Override
+	public Drawable mirrorX(){
+		this.setPointsAbsolute();
+		for(int i=0;i<points.size();i++){
+			Point p = points.get(i);
+			double delta = getOrigin().getX()-p.getX();
+			double xNew = origin.getX()+delta;
+			points.set(i, new Point(xNew,p.getY()));
+		}
+		
+		this.setPointsRelativeTo(this.origin);
+		
+		return this;
+	}
+	@Override
+	public Drawable mirrorY(){
+		this.setPointsAbsolute();
+		for(int i=0;i<points.size();i++){
+			Point p = points.get(i);
+			double delta = getOrigin().getY()-p.getY();
+			double yNew = origin.getX()+delta;
+			points.set(i, new Point(p.getX(),yNew));
+		}
+		
+		this.setPointsRelativeTo(this.origin);
+		
+		return this;
+	}
 	
 	@Override
 	public Polygon copy(){
@@ -434,11 +462,10 @@ public Drawable expand(){
 
 			
 			
-
+		
 
 
 }
-
 
 
 

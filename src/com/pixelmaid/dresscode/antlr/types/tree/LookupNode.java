@@ -44,7 +44,7 @@ public class LookupNode extends NodeEvent implements DCNode {
       else if(value.isDrawable()){
     	  Drawable d = value.asDrawable();
     	  if(d.numChildren()==0){
-    		  value =  new VarType(value.asPolygon().pointAt(idx));
+    		  value =  new VarType(value.asPolygon().pointAt(idx).toDrawable());
     	  }
     	  else{
     		  value =  new VarType(d.childAt(idx));
