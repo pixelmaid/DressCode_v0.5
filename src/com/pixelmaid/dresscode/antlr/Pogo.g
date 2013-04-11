@@ -136,6 +136,8 @@ functionCall
    mathCall
    	:Cosine '(' expression ')'   -> ^(FUNC_CALL Cosine expression)
    	|Sine '(' expression ')'   -> ^(FUNC_CALL Sine expression)
+   	|Random '(' exprList? ')'   -> ^(FUNC_CALL Random exprList?)
+   	|Round'(' expression ')'   -> ^(FUNC_CALL Round expression)
    	;
   
   
@@ -313,6 +315,8 @@ LShape	: 'import';
 //math keywords
 Cosine	:'cos';
 Sine	: 'sin';
+Random 	: 'random';
+Round	: 'round';
 
 //transforms
 Move	: 'move';

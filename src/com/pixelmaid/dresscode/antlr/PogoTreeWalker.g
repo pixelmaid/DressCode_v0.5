@@ -142,6 +142,9 @@ functionCall returns [DCNode node]
    mathCall returns [DCNode node]
    :^(FUNC_CALL Cosine expression) {node = new CosineNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Sine expression) {node = new SineNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Random exprList?) {node = new RandomNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Round expression) {node = new RoundNode($expression.node,$FUNC_CALL.getLine());}
+   
    ;
 
 ifStatement returns [DCNode node]

@@ -24,6 +24,7 @@ public class OriginPropertyNode extends PropertyNode{
     	}
     	
     	Drawable d = value.asDrawable();
+    	Point origin = d.getOrigin();
     	return new VarType(d.getOrigin().copy());	
     	
       
