@@ -244,7 +244,13 @@ public class PolyBoolean{
 			}
 		
 		}
-		
+		/*if(master.numChildren()==1){
+			Polygon p = (Polygon)(master.removeFromGroup(0).toPolygon());
+			for(int i=0;i<master.getHoles().size();i++){
+				p.addHole(master.getHoles().get(i));
+			}
+			return p;
+		}*/
 		return master;
 	}
 	

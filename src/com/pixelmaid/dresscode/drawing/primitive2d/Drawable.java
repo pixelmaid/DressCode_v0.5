@@ -32,7 +32,7 @@ public class Drawable implements DrawableEvent {
 	private boolean doFill = true;
 	private boolean doStroke=true;
 	private boolean drawOrigin=true;
-	private ArrayList<Hole> holes = new ArrayList<Hole>();
+	protected ArrayList<Hole> holes = new ArrayList<Hole>();
 
 	protected final static int DEFAULT_WIDTH= 50;
 
@@ -391,7 +391,7 @@ public class Drawable implements DrawableEvent {
 				this.children.get(i).rotateWithFocus(theta, focus);
 				origins.add(this.children.get(i).getOrigin());
 			}
-			for(int i=0;i<this.children.size();i++){
+			for(int i=0;i<this.holes.size();i++){
 				this.holes.get(i).rotateWithFocus(theta, focus);
 			}
 			
@@ -419,6 +419,10 @@ public class Drawable implements DrawableEvent {
 				this.children.get(i).mirrorX();
 				origins.add(this.children.get(i).getOrigin());
 			}
+			
+			/*for(int i=0;i<this.holes.size();i++){
+				this.holes.get(i).mirrorX();
+			}*/
 			
 			if(this.children.size()>1){
 				this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins

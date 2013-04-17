@@ -12,7 +12,7 @@ import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
-	private ArrayList<Point> points;
+	protected ArrayList<Point> points;
 	//private ArrayList<Hole> holes;
 	private static double DEFAULT_LENGTH = 20;
 	
@@ -97,6 +97,9 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			Point newPoint = this.points.get(i).rotate(theta, focus);
 			this.points.set(i,newPoint);
 		}
+		for(int i=0;i<getHoles().size();i++){
+			getHoles().get(i).rotateWithFocus(theta, focus);
+		}
 		this.setOrigin(Geom.findCentroid(this));
 		this.setPointsRelativeTo(this.getOrigin());
 		return this;
@@ -136,7 +139,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	public void print(Embedded e){
 		if(!this.getHide()){
 		appearance(e);
-		e.noFill();
+		//e.noFill();
 		//System.out.println("number of holes="+this.holes.size()+"number of points="+this.points.size());
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
@@ -158,12 +161,17 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	}
 	@Override
 	public Drawable mirrorX(){
-		this.setPointsAbsolute();
+	this.setPointsAbsolute();
 		for(int i=0;i<points.size();i++){
 			Point p = points.get(i);
 			double delta = getOrigin().getX()-p.getX();
 			double xNew = origin.getX()+delta;
 			points.set(i, new Point(xNew,p.getY()));
+		}
+		for(int i=0;i<getHoles().size();i++){
+			System.out.println("mirroring hole "+i);
+			Hole newHole = this.getHoles().get(i).mirrorX(this.getOrigin());
+			holes.set(i,newHole);
 		}
 		
 		this.setPointsRelativeTo(this.origin);
@@ -178,6 +186,9 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			double delta = getOrigin().getY()-p.getY();
 			double yNew = origin.getX()+delta;
 			points.set(i, new Point(p.getX(),yNew));
+		}
+		for(int i=0;i<getHoles().size();i++){
+			getHoles().get(i).mirrorY();
 		}
 		
 		this.setPointsRelativeTo(this.origin);

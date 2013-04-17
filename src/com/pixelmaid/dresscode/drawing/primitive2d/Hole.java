@@ -34,7 +34,7 @@ public class Hole extends Polygon {
 			
 			appearance(e);
 			e.fill(e.DEFAULT_BG);
-			e.noFill();
+			//e.noFill();
 			
 		    ArrayList<Point> points = this.getPoints();
 		    e.pushMatrix();
@@ -63,6 +63,23 @@ public class Hole extends Polygon {
 			}
 			
 			return c;
+		}
+		
+		public Hole mirrorX(Point o){
+			this.setPointsAbsolute();
+			for(int i=0;i<points.size();i++){
+				Point p = points.get(i);
+				System.out.println("original point="+p.getX());
+
+				double delta = o.getX()-p.getX();
+				double xNew = o.getX()+delta;
+				points.set(i, new Point(xNew,p.getY()));
+				System.out.println("new point="+xNew);
+			}
+			
+			this.setPointsRelativeTo(o);
+			
+			return this;
 		}
 	
 		
