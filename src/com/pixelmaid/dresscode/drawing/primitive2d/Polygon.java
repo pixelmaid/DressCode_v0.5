@@ -36,12 +36,24 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	
 	public Polygon(double x, double y,int sides, double length){
 		this(new Point(x,y));
-		double angle = 360/(double)sides;
+		if(sides!=0){
+		double a = length/(2*Math.sin(Math.toRadians(180/sides)));
+		for(int i=0;i<sides;i++){
+			double theta = 360/sides*i;
+			Point p = new Point(0,0,Math.toRadians(theta)+Math.PI/2 - Math.PI/sides,a);
+			this.addPoint(p);
+		}
+		this.setOrigin(Geom.findCentroid(this));
+		//this.setPointsAbsolute();
+		//this.setPointsRelativeTo(new Point(0,0));
+		}
+		
+		/*double angle = 360/(double)sides;
 		resetTurtle();
 		for(int i=0;i<sides;i++){
 			  this.forward(length);
 			  this.right(angle);
-			}
+			}*/
 		
 	}
 	

@@ -110,6 +110,8 @@ functionCall returns [DCNode node]
   |	 primitiveCall {node = $primitiveCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |	 transformCall {node = $transformCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |	 mathCall {node= $mathCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  |	 getCall {node= $getCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  
   ;
   
   
@@ -125,6 +127,7 @@ functionCall returns [DCNode node]
   
   transformCall returns [DCNode node]
    :^(FUNC_CALL Move exprList?)   {node = new MoveNode($exprList.e,$FUNC_CALL.getLine());}
+   | ^(FUNC_CALL MoveBy exprList?)   {node = new MoveByNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Copy expression)  {node = new CopyNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Rotate exprList?) {node = new RotateNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Fill exprList?)   {node = new FillNode($exprList.e,$FUNC_CALL.getLine());}
@@ -151,6 +154,22 @@ functionCall returns [DCNode node]
    |^(FUNC_CALL Map exprList?) {node = new MapNode($exprList.e,$FUNC_CALL.getLine());}
    
    ;
+   
+   
+   getCall returns [DCNode node]
+  : ^(FUNC_CALL GetWidth expression) {node = new GetWidthNode($expression.node);}
+  | ^(FUNC_CALL GetHeight expression){node = new GetHeightNode($expression.node);}
+  | ^(FUNC_CALL GetX expression){node = new GetXNode($expression.node);}
+  | ^(FUNC_CALL GetY expression){node = new GetYNode($expression.node);}
+  | ^(FUNC_CALL GetOrigin expression){node = new GetOriginNode($expression.node);}
+  | ^(FUNC_CALL GetRotation expression){node = new GetRotationNode($expression.node);}
+  | ^(FUNC_CALL GetFill expression)
+  | ^(FUNC_CALL GetStroke expression)
+  | ^(FUNC_CALL GetStart expression)
+  |^(FUNC_CALL GetEnd expression) 
+  |^(FUNC_CALL GetDistance exprList?) {node = new DistanceNode($exprList.e);}
+  
+  ;
 
 ifStatement returns [DCNode node]
 @init  {IfNode ifNode = new IfNode();}

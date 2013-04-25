@@ -21,7 +21,7 @@ public class CurveNode extends DrawableNode implements DCNode {
 	public VarType evaluate() {
 		Curve e = null;
 		try{
-			double[] values = new double[7];
+			double[] values = new double[8];
 
 			if(params.get(0).evaluate().isNumber()&&params.size()==8){
 

@@ -41,7 +41,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 		this.setContentType("text/java");
 		this.setText("");
 		
-		this.setFont(new Font("Courier", 0, 20));
+		this.setFont(new Font("Courier", 0, 12));
 		editorPaneDocument = this.getDocument();
 		editorPaneDocument.addUndoableEditListener(undoHandler);
 		KeyStroke undoKeystroke = KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK);

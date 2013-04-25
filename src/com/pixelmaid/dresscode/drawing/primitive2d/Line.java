@@ -101,6 +101,14 @@ public class Line extends Polygon {
 		this.origin= Geom.getMidpoint(start, end);
 	}
 	
+	@Override
+	public void moveBy(double x, double y){
+		
+		this.start.moveBy(x,y);
+		this.end.moveBy(x,y);
+		this.origin= Geom.getMidpoint(start, end);
+	}
+	
 		@Override
 		public Drawable rotateWithFocus(double theta, Point focus){
 			this.start = start.rotate(theta, focus);

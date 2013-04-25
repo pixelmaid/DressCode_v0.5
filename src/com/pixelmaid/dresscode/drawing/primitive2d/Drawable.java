@@ -372,6 +372,14 @@ public class Drawable implements DrawableEvent {
 		}
 	}
 	
+	//resets origin to new point resulting in the moving of the object
+	public void moveBy(double x, double y) {
+		this.origin.moveBy(x, y);
+		if(this.getParent()!=null){
+			this.parent.resetOrigin();
+		}
+	}
+	
 	//sets the rotation to a new angle (in degrees)
 	public void rotate(double theta) {
 		this.rotation=theta;
