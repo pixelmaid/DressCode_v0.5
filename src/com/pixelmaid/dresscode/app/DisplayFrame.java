@@ -36,6 +36,7 @@ import com.pixelmaid.dresscode.app.ui.Toolbar;
 import com.pixelmaid.dresscode.data.DCProject;
 import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.InstructionManager;
+import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
 import com.pixelmaid.dresscode.events.CustomEvent;
@@ -167,8 +168,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		drawingToolbar.addButton(selectButton);
 		selectButton.addActionListener(this);
-		selectButton.setEnabled(false);
+		selectButton.setEnabled(true);
 
+		
 		drawingToolbar.addButton(panButton);
 		panButton.addActionListener(this);
 		
@@ -550,6 +552,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			
 
 		}
+		else if (e.getSource()==selectButton){
+			canvas.selectMode();
+		}
 		if (e.getSource() == openButton || e.getSource() == openAction) {
 
 			currentProject.openFile(this,codingFrame,canvas,instructionManager);
@@ -636,6 +641,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		
 	}
+	
+	@Override
+	public void handleCustomDrawableEvent(Object source, int event,
+			Drawable d1, Drawable d2) {
+		// TODO Auto-generated method stub
+		
+	}
+	
 
 	@Override
 	public void handleCustomTargetEvent(Object source, int eventType, double x,double y) {
@@ -644,6 +657,27 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			this.codeField.insertCoordinate(x,y);
 		break;
 	}
+	}
+		
+	@Override
+	public void handleCustomMoveEvent(Object source, int eventType,Drawable selectedObject) {
+		switch (eventType){
+		case CustomEvent.DRAWABLE_MOVED:	
+			int lineNum  = selectedObject.getLine();
+			
+			Point origin = selectedObject.getOrigin();
+			
+			
+			String identifier = selectedObject.getIdentifier();
+
+			this.codeField.insertMoveStatement(identifier,lineNum,selectedObject,origin.getX(),origin.getY());
+			
+			
+			
+			break;
+		}
+			
+	
 		
 	}
 
@@ -660,6 +694,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		this.output.setText(this.output.getText()+value);
 		
 	}
+
+	
+
 	
 	
 	

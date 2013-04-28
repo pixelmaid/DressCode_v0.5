@@ -71,6 +71,7 @@ public class PolygonNode extends DrawableNode implements DCNode {
 			System.err.println("incorrect parameters for polygon at line:"+line);
 
 		}
+		e.setLine(line);
 		return new VarType(e);	
 		//throw new RuntimeException("Illegal function call: " + this);
 	}

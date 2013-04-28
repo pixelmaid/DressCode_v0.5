@@ -12,12 +12,13 @@ public class AddNode extends NodeEvent implements DCNode {
 
   private DCNode lhs;
   private DCNode rhs;
-  
+  //protected int line;
 
 
   public AddNode(DCNode lhs, DCNode rhs) {
     this.lhs = lhs;
     this.rhs = rhs;
+   // line = l;
   }
 
   @Override
@@ -57,7 +58,7 @@ public class AddNode extends NodeEvent implements DCNode {
     	Drawable d = PolyBoolean.union(aP,bP);
     	
     	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
-		
+		//d.setLine(line);
     	return new VarType(d);
       }
     error = "illegal expression: " + this.toString();

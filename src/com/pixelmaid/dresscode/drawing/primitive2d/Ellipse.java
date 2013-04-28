@@ -78,9 +78,9 @@ public class Ellipse extends Polygon {
 		e.ellipse(0,0,(float)width,(float)height);
 		e.popMatrix();
 		
-		if(this.getDrawOrigin()){
+		/*if(this.getDrawOrigin()){
 			this.drawOrigin(e);
-		}
+		}*/
 		}
 		
     }

@@ -47,6 +47,7 @@ public class LShapeNode extends DrawableNode implements DCNode {
 
 			System.err.println("inccorect arguments for LShape at line:"+line);
 		}
+		e.setLine(line);
 		return new VarType(e);	
 		//throw new RuntimeException("Illegal function call: " + this);
 	}

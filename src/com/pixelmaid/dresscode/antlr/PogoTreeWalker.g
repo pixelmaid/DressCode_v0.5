@@ -129,18 +129,23 @@ functionCall returns [DCNode node]
    :^(FUNC_CALL Move exprList?)   {node = new MoveNode($exprList.e,$FUNC_CALL.getLine());}
    | ^(FUNC_CALL MoveBy exprList?)   {node = new MoveByNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Copy expression)  {node = new CopyNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Rotate exprList?) {node = new RotateNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Rotate exprList?) {node = new RotateNode($exprList.e,currentScope,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Fill exprList?)   {node = new FillNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Stroke exprList?) {node = new StrokeNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL NoFill expression) {node = new NoFillNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL NoFill expression) {node = new NoFillNode($expression.node ,$FUNC_CALL.getLine());}
    |^(FUNC_CALL NoStroke expression) {node = new NoStrokeNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Weight exprList?) {node = new WeightNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Hide expression) {node = new HideNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Group exprList?) {node = new GroupNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Expand expression){node = new ExpandNode($expression.node,$FUNC_CALL.getLine());}
-   | ^(FUNC_CALL Merge expression){node = new MergeNode($expression.node,$FUNC_CALL.getLine());}
-   | ^(FUNC_CALL Scale exprList?){node = new ScaleNode($exprList.e,$FUNC_CALL.getLine());}
-   | ^(FUNC_CALL MirrorX expression){node = new MirrorXNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Expand expression){node = new ExpandNode($expression.node, currentScope, $FUNC_CALL.getLine());}
+   |^(FUNC_CALL Merge expression){node = new MergeNode($expression.node,currentScope,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Scale exprList?){node = new ScaleNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL MirrorX expression){node = new MirrorXNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL MirrorY expression){node = new MirrorYNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Union exprList?){node = new UnionNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
+   |^(FUNC_CALL Difference exprList?){node = new DifferenceNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
+   |^(FUNC_CALL Clip exprList?){node = new ClipNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
+   |^(FUNC_CALL Xor exprList?){node = new XorNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
    ;
    
    mathCall returns [DCNode node]

@@ -55,6 +55,7 @@ public class PointNode extends DrawableNode implements DCNode {
 		}	
 		
 		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+		e.setLine(line);
 		return new VarType(e);	
 		//throw new RuntimeException("Illegal function call: " + this);
 	}

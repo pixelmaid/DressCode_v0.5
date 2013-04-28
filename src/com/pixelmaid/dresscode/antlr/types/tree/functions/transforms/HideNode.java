@@ -28,6 +28,8 @@ public class HideNode extends NodeEvent implements DCNode {
     		
     	d= (param.evaluate().asDrawable());
     	d.hide();
+    	d.setLine(line);
+
     	return new VarType(d);
     	}
     	catch (ClassCastException e){

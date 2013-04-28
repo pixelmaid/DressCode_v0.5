@@ -1,5 +1,6 @@
 package com.pixelmaid.dresscode.antlr.types.tree.functions.transforms;
 
+import com.pixelmaid.dresscode.antlr.types.Scope;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
@@ -13,12 +14,13 @@ public class MergeNode extends NodeEvent implements DCNode {
 	protected DCNode param;
 
     protected int line;
-
+    protected Scope scope;
 
     
-    public MergeNode(DCNode p, int l) {
+    public MergeNode(DCNode p, Scope s, int l) {
         param = p;
         line = l;
+        scope = s;
        
     }
 
@@ -26,6 +28,7 @@ public class MergeNode extends NodeEvent implements DCNode {
     public VarType evaluate() {
     	
     	Drawable dNew= null;
+    	VarType v = null;
     	try{
     		
     	VarType d= param.evaluate();
@@ -33,19 +36,26 @@ public class MergeNode extends NodeEvent implements DCNode {
     		
     		Drawable draw = d.asDrawable();
     		dNew = PolyBoolean.merge(draw);
-    		this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, draw);
-    		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
-    		return new VarType(dNew);
+    		this.drawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
+    		v=  new VarType(dNew);
+    		if(draw.getIdentifier()!=null){
+    		
+    		scope.assign(draw.getIdentifier(), v);
     		}
+        	dNew.setLine(line);
+
+    		return v;	
+    	}
     	}
     	
     	catch (ClassCastException e){
-    		throw new RuntimeException("Illegal expand function call at line:"+ line+" : " + this);
+    		throw new RuntimeException("Illegal merge function call at line:"+ line+" : " + this);
     	}
-    	
-    	return new VarType(dNew);
+    	 return v;
     }
-    
+   
+   
+   }
 
    
-}
+

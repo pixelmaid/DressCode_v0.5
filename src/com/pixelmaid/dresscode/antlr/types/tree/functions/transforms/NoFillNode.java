@@ -28,6 +28,8 @@ public class NoFillNode extends NodeEvent implements DCNode {
     	try{
     		
     	d= (param.evaluate().asDrawable());
+    	d.setLine(line);
+
     	d.doFill(false);
     	return new VarType(d);
     	}

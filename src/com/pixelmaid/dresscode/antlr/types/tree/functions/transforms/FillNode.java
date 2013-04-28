@@ -54,6 +54,7 @@ public class FillNode extends NodeEvent implements DCNode {
     	}
     	d.setFillColor(c);
     	d.doFill(true);
+    	d.setLine(line);
     	return new VarType(d);
     	}
     	catch (ClassCastException e){

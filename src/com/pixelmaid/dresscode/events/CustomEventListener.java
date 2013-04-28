@@ -10,6 +10,9 @@ public interface CustomEventListener {
 
 	public void handleCustomDrawableEvent(Object source, int event, Drawable d);
 
+	public void handleCustomDrawableEvent(Object source, int event, Drawable d1,Drawable d2);
+
+	
 	public void handleCustomTargetEvent(Object source, int event, double x,
 			double y);
 
@@ -18,6 +21,8 @@ public interface CustomEventListener {
 
 
 	public void handleCustomPrintEvent(Object source, int event, String value);
+
+	public void handleCustomMoveEvent(Object source, int event, Drawable selectedObject);
 
 	
 }

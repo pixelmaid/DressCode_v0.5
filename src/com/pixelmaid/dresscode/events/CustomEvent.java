@@ -15,6 +15,7 @@ public class CustomEvent extends EventObject {
 	public static final int RUNTIME_ERROR=8;
 	public static final int PRINT_STATEMENT = 9;
 	public static final int PRINT_LN_STATEMENT = 10;
+	public static final int DRAWABLE_MOVED = 11;
 	public CustomEvent(Object source) {
 		super(source);
 		// TODO Auto-generated constructor stub

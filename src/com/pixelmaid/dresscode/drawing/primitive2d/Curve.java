@@ -63,9 +63,9 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		e.stroke(0,0,255);
 		e.point((float)(control2.getX()-getOrigin().getX()), (float)(control2.getY()-getOrigin().getY()));
 		e.popMatrix();
-		if(this.getDrawOrigin()){
+		/*if(this.getDrawOrigin()){
 			this.drawOrigin(e);
-		}
+		}*/
 		}
 	}
 

@@ -70,6 +70,23 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 		}
 		
 	}
+	
+	@Override
+	public void handleCustomDrawableEvent(Object source, int eventType, Drawable d1, Drawable d2) {
+		//System.out.println("drawable event called");
+		switch (eventType){
+		case CustomEvent.SWAP_DRAWABLE:
+			int i = this.drawables.indexOf(d1);
+			drawables.set(i, d2);
+			d2.addEventListener(this);
+			System.out.println("drawable swapped");
+			
+			break;
+		}
+			
+		
+		
+	}
 
 	@Override
 	public void handleCustomEvent(Object source, int eventType) {
@@ -95,6 +112,13 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 	public void handleCustomPrintEvent(Object source, int event, String value) {
 		System.out.println("print event d ="+value);
 		this.printEvent(CustomEvent.PRINT_STATEMENT, value);
+		
+	}
+
+	@Override
+	public void handleCustomMoveEvent(Object source, int event,
+			Drawable selectedObject) {
+		// TODO Auto-generated method stub
 		
 	}
 	

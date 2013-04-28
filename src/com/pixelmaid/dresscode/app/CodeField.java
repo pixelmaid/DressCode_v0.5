@@ -20,6 +20,8 @@ import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
 
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+
 
 
 public class CodeField extends JEditorPane implements DocumentListener, KeyListener{
@@ -161,6 +163,31 @@ public JMenuItem getUndoMenu(){
 		text = text.substring(0,pos)+ newText  +text.substring(pos);
 		this.setText(text);
 		
+	}
+
+	public void insertMoveStatement(String identifier, int lineNum,Drawable selectedObject, double x, double y) {
+		
+		
+		
+		
+		System.out.println("identifer="+identifier);
+		System.out.println("lineNum="+lineNum);
+		String text = this.getText();
+		String[] lines = text.split("\r\n|\r|\n");
+		System.out.println("num of lines="+lines.length);
+		System.out.println("lineNum="+lineNum);
+		int pos =0;
+		for(int i=0;i<lineNum; i++){
+			pos+=lines[i].length();
+			if(i!=0){
+				pos++;
+			}
+			
+			//System.out.println("line "+i+"="+lines[i]);
+		}
+		
+		
+		insertText(pos,"\nmove("+identifier+","+x+","+y+");");
 	}
  
   /*  public void actionPerformed(ActionEvent evt) {

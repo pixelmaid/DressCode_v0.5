@@ -63,9 +63,9 @@ public class DrawablePoint extends Polygon {
 		e.point(0,0);
 		e.popMatrix();
 		
-		if(this.getDrawOrigin()){
+		/*if(this.getDrawOrigin()){
 			this.drawOrigin(e);
-		}
+		}*/
 		}
 		
     }

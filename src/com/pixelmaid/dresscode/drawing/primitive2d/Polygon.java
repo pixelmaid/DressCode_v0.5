@@ -43,7 +43,6 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			Point p = new Point(0,0,Math.toRadians(theta)+Math.PI/2 - Math.PI/sides,a);
 			this.addPoint(p);
 		}
-		this.setOrigin(Geom.findCentroid(this));
 		//this.setPointsAbsolute();
 		//this.setPointsRelativeTo(new Point(0,0));
 		}
@@ -141,9 +140,9 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		}
 		e.popMatrix();
 		
-		if(this.getDrawOrigin()){
+		/*if(this.getDrawOrigin()){
 			this.drawOrigin(e);
-		}
+		}*/
 		}
 	}
 	

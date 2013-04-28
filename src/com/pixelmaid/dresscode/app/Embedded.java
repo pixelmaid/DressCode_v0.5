@@ -43,6 +43,11 @@ public class Embedded extends PApplet {
 	private static double PIX_IN_MM = 0.35278; //conversion from pixels to mm
 	private static double PIX_IN_INCH = 0.013888; //conversion from pixels to inches
 	
+	private boolean showOrigin = false; // determines whether or not to show origin;
+	private Drawable selectedObject = null;
+	private double selectDist = 5;
+	private boolean objectMoved = false;
+	
 	private int gridHeight = 7000;
 	private int gridWidth = 7000;
 	private int gridX = -gridWidth/2;
@@ -60,8 +65,10 @@ public class Embedded extends PApplet {
 	private float relMouseX,relMouseY;
 	private static final int NO_MODE = -1;
 	private static final int TARGET_MODE = 0;
-	private static final int PAN_MODE = 2;
-
+	private static final int PAN_MODE = 1;
+	private static final int SELECT_MODE = 2;
+	
+	
 	float mvmatrix1[] = new float[16];
 	float mvmatrix2[] = new float[16];
 	float mvmatrix3[] = new float[16];
@@ -161,6 +168,7 @@ public class Embedded extends PApplet {
 			//translate(translateXAmount,translateYAmount,zoomAmount);
 			translate(translateXAmount,translateYAmount);
 			scale(zoomAmount);
+			
 			pushMatrix();
 			
 			//translate(zeroX,zeroY,0);
@@ -168,6 +176,9 @@ public class Embedded extends PApplet {
 			for (int i=0;i<tempDrawables.size();i++){
 
 				tempDrawables.get(i).draw(this);
+				if(showOrigin){
+					tempDrawables.get(i).drawOrigin(this);
+				}
 				
 			}
 			
@@ -232,12 +243,19 @@ public class Embedded extends PApplet {
 	}
 
 	public void mousePressed() {
-		//checkModeMouse();
+		//System.out.println(mousePressed);
+		
+		if(currentMode == SELECT_MODE){
+			checkSelect();
+		}
 	}
 
 
 	public void mouseReleased() {
 		checkModeMouse();
+		
+		
+		
 	}
 
 	public void mouseDragged(){
@@ -256,6 +274,9 @@ public class Embedded extends PApplet {
 		case PAN_MODE:
 			cursor(HAND);
 			break;
+			
+		case SELECT_MODE:
+			cursor(MOVE);
 		default:
 			cursor(ARROW);
 			break;
@@ -269,18 +290,28 @@ public class Embedded extends PApplet {
 			//float[] f = GetOGLPos();
 			//System.out.println(f);
 			
-			double x1 = (mouseX - translateXAmount) / zoomAmount;
-			double y1 = (mouseY - translateYAmount)/ zoomAmount ;
-			double x = x1-(width/2-(drawingBoardWidth)/2);
-			double y = y1-(height/2-(drawingBoardHeight)/2);
-			this.fireTargetEvent(this,CustomEvent.TARGET_SELECTED,x,y);
+			
+			this.fireTargetEvent(this,CustomEvent.TARGET_SELECTED,relativeMouseX(),relativeMouseY());
 
+			break;
+			
+		case SELECT_MODE:
+
+			//float[] f = GetOGLPos();
+			//System.out.println(f);
+			if(objectMoved==true){
+			objectMoved = false;
+			this.fireMoveEvent(this,CustomEvent.DRAWABLE_MOVED,selectedObject);
+			}
+			selectedObject = null;
 			break;
 		default:
 
 			break;
 		}
 	}
+
+	
 
 	public void checkModeMove(){
 		switch(currentMode){
@@ -297,10 +328,31 @@ public class Embedded extends PApplet {
 			lastMouseX= parent.mouseX;
 			lastMouseY = parent.mouseY;*/
 			break;
+		
+		
+		case SELECT_MODE:
+			if(selectedObject!=null){
+				selectedObject.moveTo(relativeMouseX(),relativeMouseY());
+				objectMoved=true;
+			}
 		}
-
 	}
-
+	
+	private double relativeMouseX(){
+		double x1 = (mouseX - translateXAmount) / zoomAmount;
+		double x = x1-(width/2-(drawingBoardWidth)/2);
+		return x;
+	}
+	
+	private double relativeMouseY(){
+		double y1 = (mouseY - translateYAmount)/ zoomAmount ;
+		double y = y1-(height/2-(drawingBoardHeight)/2);
+		return y;
+	
+	}
+	
+	
+	
 
 
 	PVector screenToMatrixCoordinate(PVector screenPos, PMatrix mat){
@@ -524,6 +576,7 @@ public class Embedded extends PApplet {
 
 	public void zoomIn(){
 		zoomAmount+=0.05;
+		//selectDist-=5;
 		if(zoomAmount>10){
 			zoomAmount = 10;
 		}
@@ -532,6 +585,7 @@ public class Embedded extends PApplet {
 
 	public void zoomOut(){
 		zoomAmount-=0.05;
+		selectDist= selectDist*5;
 		if(zoomAmount<0){
 			zoomAmount = 0;
 		}
@@ -541,6 +595,7 @@ public class Embedded extends PApplet {
 
 	public void clearMode() {
 		currentMode = NO_MODE;
+		showOrigin=false;
 
 	}
 
@@ -549,6 +604,38 @@ public class Embedded extends PApplet {
 		currentMode = TARGET_MODE;
 
 	}
+
+	public void selectMode() {
+		currentMode = SELECT_MODE;
+		this.showOrigin=true;
+		
+		
+	}
+	
+	
+	public void checkSelect(){
+		//System.out.println("checkSelect");
+		System.out.println("num of drawables="+tempDrawables.size());
+		double x= relativeMouseX();
+		double y = relativeMouseY();
+	
+		System.out.println("rel x,y="+x+","+y);
+		for(int i=tempDrawables.size()-1;i>=0;i--){
+			Point origin = tempDrawables.get(i).getOrigin();
+			System.out.println("obj x,y="+origin.getX()+","+origin.getY());
+			System.out.println("selectDist ="+selectDist);
+			System.out.println("xy dist="+Math.abs(x-origin.getX())+","+Math.abs(y-origin.getY()));
+			if((Math.abs(x-origin.getX())<selectDist)&&(Math.abs(y-origin.getY())<selectDist)){
+				selectedObject = tempDrawables.get(i);
+			
+				System.out.println("selected object at"+i);
+				
+				break;
+			}
+		}
+	}
+	
+	
 
 	public void panMode() {
 		currentMode = PAN_MODE;
@@ -587,4 +674,17 @@ public class Embedded extends PApplet {
 		}
 
 	}
+	
+	
+	private void fireMoveEvent(Object source, int event,Drawable selectedObject) {
+		Iterator i = _listeners.iterator();
+		while(i.hasNext())  {
+
+			((CustomEventListener) i.next()).handleCustomMoveEvent(source, event,selectedObject);
+		}
+	}
+
+	
+	
+	
 }

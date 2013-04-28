@@ -47,9 +47,9 @@ public class Line extends Polygon {
 		e.line((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()),(float)(end.getX()-getOrigin().getX()), (float)(end.getY()-getOrigin().getY()));
 		e.popMatrix();
 		
-		if(this.getDrawOrigin()){
+		/*if(this.getDrawOrigin()){
 			this.drawOrigin(e);
-		}
+		}*/
 		}
 		
 	}

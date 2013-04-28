@@ -71,9 +71,9 @@ public class LShape extends Polygon {
 			
 			e.popMatrix();
 			
-			if(this.getDrawOrigin()){
+		/*	if(this.getDrawOrigin()){
 				this.drawOrigin(e);
-			}
+			}*/
 			}
 	    }
 		

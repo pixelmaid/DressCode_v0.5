@@ -54,9 +54,9 @@ public class Rectangle extends Polygon{
 		e.rect(0,0,(float)width,(float)height);
 		e.popMatrix();
 		
-		if(this.getDrawOrigin()){
+		/*if(this.getDrawOrigin()){
 			this.drawOrigin(e);
-		}
+		}*/	
 		}
 	}
 	

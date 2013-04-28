@@ -44,6 +44,8 @@ public class GroupNode extends NodeEvent implements DCNode {
     	
     	//System.out.println("group children are polygons" + master.childrenArePolygons());
     	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, master);
+    	master.setLine(line);
+
     	return new VarType(master);
     	}
     	catch (ClassCastException e){

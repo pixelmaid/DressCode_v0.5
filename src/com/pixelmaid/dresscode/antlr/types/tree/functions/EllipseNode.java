@@ -80,6 +80,7 @@ public class EllipseNode extends DrawableNode implements DCNode {
 			this.errorEvent(CustomEvent.RUNTIME_ERROR, "incorrect parameters for ellipse");
 
 		}
+		e.setLine(line);
 		return new VarType(e);	
 		//throw new RuntimeException("Illegal function call: " + this);
 	}

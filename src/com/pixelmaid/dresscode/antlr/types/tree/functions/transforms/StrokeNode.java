@@ -53,6 +53,8 @@ public class StrokeNode extends NodeEvent implements DCNode {
     	}
     	d.setStrokeColor(c);
     	d.doStroke(true);
+    	d.setLine(line);
+
     	return new VarType(d);
     	}
     	catch (ClassCastException e){

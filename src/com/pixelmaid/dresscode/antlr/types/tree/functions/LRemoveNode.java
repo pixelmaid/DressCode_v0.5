@@ -6,6 +6,7 @@ import java.util.List;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 public class LRemoveNode extends NodeEvent implements DCNode {
 
@@ -29,10 +30,18 @@ public class LRemoveNode extends NodeEvent implements DCNode {
 			// number + number
 			
 				if(a.isDrawable() && b.isDrawable()) {
-					return new VarType(a.asDrawable().removeFromGroup(b.asDrawable()));
+					Drawable d1 = a.asDrawable();
+					Drawable d2 = b.asDrawable();
+					d1.removeFromGroup(d2);
+					d1.setLine(line);
+					return new VarType(d1);
 				}
 				if(a.isDrawable() && b.isNumber()) {
-					return new VarType(a.asDrawable().removeFromGroup(b.asDouble().intValue()));
+					Drawable d1 = a.asDrawable();
+					int i = b.asDouble().intValue();
+					d1.removeFromGroup(i);
+					d1.setLine(line);
+					return new VarType(d1);
 				}
 
 				// list + any

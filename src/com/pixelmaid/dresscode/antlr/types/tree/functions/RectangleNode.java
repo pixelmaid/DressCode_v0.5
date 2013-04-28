@@ -60,6 +60,7 @@ public class RectangleNode extends DrawableNode implements DCNode {
 			System.err.println("incorrect parameters for rectangle at line:"+line);
 
 		}
+		e.setLine(line);
 		return new VarType(e);	
 		//throw new RuntimeException("Illegal function call: " + this);
 	}

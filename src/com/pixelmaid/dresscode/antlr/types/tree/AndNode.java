@@ -8,10 +8,12 @@ public class AndNode extends NodeEvent implements DCNode {
 
     private DCNode lhs;
     private DCNode rhs;
-
+    //protected int line;
+    
     public AndNode(DCNode lhs, DCNode rhs) {
         this.lhs = lhs;
         this.rhs = rhs;
+        //line = l;
     }
 
     @Override
@@ -19,7 +21,7 @@ public class AndNode extends NodeEvent implements DCNode {
 
         VarType a = lhs.evaluate();
         VarType b = rhs.evaluate();
-
+        
         if(a.isBoolean() && b.isBoolean()) {
         	return new VarType(a.asBoolean() && b.asBoolean());
            
@@ -32,6 +34,7 @@ public class AndNode extends NodeEvent implements DCNode {
         	Drawable d = PolyBoolean.intersection(aP,bP);
         	 //TODO: add actual line number instead of 0 here
         	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
+        	//d.setLine(line);
         	return new VarType(d);
           }
 

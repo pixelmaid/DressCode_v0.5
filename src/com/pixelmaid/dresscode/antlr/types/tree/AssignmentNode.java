@@ -35,8 +35,7 @@ public class AssignmentNode extends NodeEvent implements DCNode {
       scope.assign(identifier, value);
       if(value.isDrawable()){
     	  Drawable d = value.asDrawable();
-    	  //this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
-    	 // this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
+    	d.setIdentifier(identifier);
       }
     }
     else { // a possible list-lookup and reassignment

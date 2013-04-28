@@ -27,6 +27,11 @@ public class NodeEvent {
 		this.es.fireDrawableEvent(this,event,d);
 		
 	}
+	
+	protected void drawableEvent(int event, Drawable d1 , Drawable d2) {
+		this.es.fireDrawableEvent(this,event,d1,d2);
+		
+	}
 	protected void printEvent(int event, String value){
 		this.es.firePrintEvent(this,event,value);
 	}

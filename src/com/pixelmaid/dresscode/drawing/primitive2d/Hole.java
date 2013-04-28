@@ -33,8 +33,8 @@ public class Hole extends Polygon {
 		public void print(Embedded e){
 			
 			appearance(e);
-			e.fill(e.DEFAULT_BG);
-			//e.noFill();
+			//e.fill(e.DEFAULT_BG);
+			e.noFill();
 			
 		    ArrayList<Point> points = this.getPoints();
 		    e.pushMatrix();

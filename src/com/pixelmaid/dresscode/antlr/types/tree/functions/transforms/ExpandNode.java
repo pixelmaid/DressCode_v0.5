@@ -1,5 +1,6 @@
 package com.pixelmaid.dresscode.antlr.types.tree.functions.transforms;
 
+import com.pixelmaid.dresscode.antlr.types.Scope;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
@@ -12,12 +13,14 @@ public class ExpandNode extends NodeEvent implements DCNode {
 	protected DCNode param;
 
     protected int line;
+    protected Scope scope;
 
 
     
-    public ExpandNode(DCNode p, int l) {
+    public ExpandNode(DCNode p, Scope s, int l) {
         param = p;
         line = l;
+        scope = s;
        
     }
 
@@ -32,9 +35,17 @@ public class ExpandNode extends NodeEvent implements DCNode {
     		
     		Drawable draw = d.asDrawable();
     		dNew = draw .expand();
-    		this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, draw);
-    		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
-    		return new VarType(dNew);
+    		//this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, draw);
+    		//this.drawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
+    		this.drawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
+    		VarType v=  new VarType(dNew);
+    		dNew.setLine(line);
+    		if(draw.getIdentifier()!=null){
+    		
+    		scope.assign(draw.getIdentifier(), v);
+    		}
+
+    		return v;
     		}
     	}
     	

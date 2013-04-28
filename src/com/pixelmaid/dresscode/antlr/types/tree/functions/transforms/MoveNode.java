@@ -45,7 +45,8 @@ public class MoveNode extends NodeEvent implements DCNode {
     		x= p.getX();
     		y= p.getY();
     	}
-    	
+    	d.setLine(line);
+
     	d.moveTo(x, y);
     	return new VarType(d);	
         //throw new RuntimeException("Illegal function call: " + this);

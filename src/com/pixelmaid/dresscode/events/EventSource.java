@@ -42,6 +42,15 @@ public class EventSource {
 			
 		}
 		
+		public void fireDrawableEvent(Object source, int event, Drawable d1,Drawable d2) {
+			  Iterator i = _listeners.iterator();
+			    while(i.hasNext())  {
+			    	
+			      ((CustomEventListener) i.next()).handleCustomDrawableEvent(source, event, d1,d2);
+			    }
+			
+		}
+		
 		public void fireRuntimeErrorEvent(Object source, int event, String message) {
 			  Iterator i = _listeners.iterator();
 			    while(i.hasNext())  {

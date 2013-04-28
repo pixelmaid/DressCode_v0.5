@@ -32,6 +32,7 @@ public class DrawableNode extends NodeEvent implements DCNode {
             }
     	}
     	Drawable d = new Drawable(values);
+    	d.setLine(line);
     	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
     	return new VarType(d);	
         //throw new RuntimeException("Illegal function call: " + this);

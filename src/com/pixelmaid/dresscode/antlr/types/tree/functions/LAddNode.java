@@ -6,6 +6,7 @@ import java.util.List;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 public class LAddNode extends NodeEvent implements DCNode {
 
@@ -29,7 +30,11 @@ public class LAddNode extends NodeEvent implements DCNode {
 			// number + number
 			if(params.size()==2){
 				if(a.isDrawable() && b.isDrawable()) {
-					return new VarType(a.asDrawable().addToGroup(b.asDrawable()));
+					Drawable d1 = a.asDrawable();
+					Drawable d2 = b.asDrawable();
+					d1.addToGroup(d2);
+					d1.setLine(line);
+					return new VarType(d1);
 				}
 
 				// list + any
@@ -49,7 +54,11 @@ public class LAddNode extends NodeEvent implements DCNode {
 			else if(params.size()==3&&params.get(2).evaluate().isNumber()){
 				int index = params.get(2).evaluate().asDouble().intValue();
 				if(a.isDrawable() && b.isDrawable()) {
-					return new VarType(a.asDrawable().addToGroup(b.asDrawable(),index));
+					Drawable d1 = a.asDrawable();
+					Drawable d2 = b.asDrawable();
+					d1.addToGroup(d2,index);
+					d1.setLine(line);
+					return new VarType(d1);
 				}
 
 				// list + any

@@ -13,10 +13,12 @@ public class SubNode extends NodeEvent implements DCNode {
 
     private DCNode lhs;
     private DCNode rhs;
-
+    //protected int line;
+    
     public SubNode(DCNode lhs, DCNode rhs) {
         this.lhs = lhs;
         this.rhs = rhs;
+        //line = l;
     }
 
     @Override
@@ -46,7 +48,7 @@ public class SubNode extends NodeEvent implements DCNode {
         	Drawable d = PolyBoolean.difference(aP,bP);
         	 //TODO: add actual line number instead of 0 here
         	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
-        	
+        	//d.setLine(line);
         	return new VarType(d);
           }
 

@@ -32,8 +32,9 @@ public class Drawable implements DrawableEvent {
 	private boolean doFill = true;
 	private boolean doStroke=true;
 	private boolean drawOrigin=true;
+	private String identifier = "";
+	private int line= 0;
 	protected ArrayList<Hole> holes = new ArrayList<Hole>();
-
 	protected final static int DEFAULT_WIDTH= 50;
 
 	private EventSource es;
@@ -81,7 +82,7 @@ public class Drawable implements DrawableEvent {
 		return d;
 	}
 	
-	//sets the parent of the drawable
+	//returns the parent of the drawable
 	protected void setParent(Drawable p){
 		this.parent = p;
 	}
@@ -135,9 +136,9 @@ public class Drawable implements DrawableEvent {
 				
 		embedded.popMatrix();
 		
-		if(this.getDrawOrigin()){
-			this.drawOrigin(embedded);
-		}
+		//if(this.getDrawOrigin()){
+			//this.drawOrigin(embedded);
+		//}
 		}
 	}
 
@@ -209,16 +210,39 @@ public class Drawable implements DrawableEvent {
 	//draws the origin of the drawable
 	public void drawOrigin(Embedded embedded){
 		embedded.stroke(0,0,0);
-		embedded.strokeWeight(3);
+		embedded.strokeWeight(8);
 		embedded.point((float)this.origin.getX(),(float)this.origin.getY());
 		
 		embedded.stroke(255,255,255);
-		embedded.strokeWeight(2);
+		embedded.strokeWeight(4);
 		embedded.point((float)this.origin.getX(),(float)this.origin.getY());
 	}
 	
 
 	
+	//---identifier reference methods----------------//
+	
+	public void setIdentifier(String identifier){
+		this.identifier= identifier;
+	}
+	
+	public String getIdentifier(){
+	if (this.identifier!=""){
+		return this.identifier;
+	}
+	else{
+		return null;
+	}
+	}
+	
+	public int getLine() {
+		return this.line;
+	}
+	
+	public void setLine(int l){
+		this.line = l;
+	}
+
 	
 	
 	//------------COLOR AND STROKE GET AND SET METHODS-----------------//
@@ -955,6 +979,7 @@ public class Drawable implements DrawableEvent {
 			this.es.removeEventListener(listener);
 		}
 
+	
 		
 
 	//boolean returns to check type of drawables

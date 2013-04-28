@@ -29,6 +29,8 @@ public class NoStrokeNode extends NodeEvent implements DCNode {
     		
     	d= (param.evaluate().asDrawable());
     	d.doStroke(false);
+    	d.setLine(line);
+
     	return new VarType(d);
     	}
     	catch (ClassCastException e){

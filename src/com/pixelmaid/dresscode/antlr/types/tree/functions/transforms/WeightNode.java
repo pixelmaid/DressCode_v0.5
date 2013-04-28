@@ -34,6 +34,8 @@ public class WeightNode extends NodeEvent implements DCNode {
     	d= (params.get(0).evaluate().asDrawable());
     	double w = params.get(1).evaluate().asDouble();
     	d.setStrokeWeight(w);
+    	d.setLine(line);
+
     	return new VarType(d);
     	}
     	catch (ClassCastException e){

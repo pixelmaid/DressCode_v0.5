@@ -31,6 +31,7 @@ public class LineNode extends DrawableNode implements DCNode {
 
     		e = new Line(x1,y1,x2,y2);
     		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+    		e.setLine(line);
     		return new VarType(e);	
     	}
     	else if(params.size()==2 && params.get(0).evaluate().isDrawablePoint()&&params.get(1).evaluate().isDrawablePoint()){
@@ -38,6 +39,7 @@ public class LineNode extends DrawableNode implements DCNode {
     		Point end = params.get(1).evaluate().asDrawablePoint().getOrigin();
     		e = new Line(start.getX(),start.getY(),end.getX(),end.getY());
     		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+    		e.setLine(line);
     		return new VarType(e);	
     		
     		
@@ -49,6 +51,7 @@ public class LineNode extends DrawableNode implements DCNode {
     		double theta = params.get(2).evaluate().asDouble();
     		e = new Line(start,r,theta);
     		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+    		e.setLine(line);
     		return new VarType(e);	
     	}
     	

@@ -28,6 +28,7 @@ public class MirrorXNode extends NodeEvent implements DCNode {
     	
     	
     	d= param.evaluate().asDrawable();
+    	d.setLine(line);
     	d.mirrorX();
     
     	return new VarType(d);	
