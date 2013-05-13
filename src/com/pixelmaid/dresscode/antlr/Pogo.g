@@ -116,8 +116,10 @@ functionCall
   	|Rect '(' exprList? ')'   -> ^(FUNC_CALL Rect exprList?) 
   	|Curve '(' exprList? ')' ->  ^(FUNC_CALL Curve exprList?)
   	|Polygon '(' exprList? ')' ->  ^(FUNC_CALL Polygon exprList?)
-  	|LShape '(' exprList? ')' ->  ^(FUNC_CALL LShape exprList?)
-  	| Point '(' exprList? ')' ->  ^(FUNC_CALL Point exprList?)
+  	|Skirt '(' exprList? ')' ->  ^(FUNC_CALL Skirt exprList?)
+  	|SkirtBack '(' exprList? ')' ->  ^(FUNC_CALL SkirtBack exprList?)
+    |LShape '(' exprList? ')' ->  ^(FUNC_CALL LShape exprList?)
+    | Point '(' exprList? ')' ->  ^(FUNC_CALL Point exprList?)
   	;
   
   transformCall
@@ -339,6 +341,8 @@ Quad	: 'quad';
 Point	: 'point';
 Triangle: 'triangle';
 Polygon	: 'poly';
+Skirt : 'skirt'; 
+SkirtBack : 'skirtback';
 LShape	: 'import';
 
 //math keywords
@@ -349,6 +353,7 @@ ATan	: 'atan';
 Random 	: 'random';
 Round	: 'round';
 Map		: 'map';
+
 
 //transforms
 Move	: 'move';

@@ -121,7 +121,9 @@ functionCall returns [DCNode node]
   	|^(FUNC_CALL Rect exprList?) 	 {node = new RectangleNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL Curve exprList?)   {node = new CurveNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL Polygon exprList?) {node = new PolygonNode($exprList.e,$FUNC_CALL.getLine());}
-  	| ^(FUNC_CALL LShape exprList?) {node = new LShapeNode($exprList.e,$FUNC_CALL.getLine());}
+  	| ^(FUNC_CALL Skirt exprList?) {node = new SkirtNode($exprList.e,$FUNC_CALL.getLine());}
+    | ^(FUNC_CALL SkirtBack exprList?) {node = new SkirtBackNode($exprList.e,$FUNC_CALL.getLine());}
+    | ^(FUNC_CALL LShape exprList?) {node = new LShapeNode($exprList.e,$FUNC_CALL.getLine());}
   	|  ^(FUNC_CALL Point exprList?) {node = new PointNode($exprList.e,$FUNC_CALL.getLine());}
   	;
   
