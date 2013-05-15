@@ -71,6 +71,7 @@ public class EllipseNode extends DrawableNode implements DCNode {
 
 
 			this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+			
 		}
 		catch (ClassCastException err){
 			//Window.output.setText("incorrect parameters for ellipse at line:"+line);
