@@ -29,7 +29,7 @@ public class MergeNode extends NodeEvent implements DCNode {
     	
     	Drawable dNew= null;
     	VarType v = null;
-    	try{
+    	//try{
     		
     	VarType d= param.evaluate();
     	if(d.isDrawable()){
@@ -46,11 +46,11 @@ public class MergeNode extends NodeEvent implements DCNode {
 
     		return v;	
     	}
-    	}
+    	//}
     	
-    	catch (ClassCastException e){
-    		throw new RuntimeException("Illegal merge function call at line:"+ line+" : " + this);
-    	}
+    	//catch (ClassCastException e){
+    	//	throw new RuntimeException("Illegal merge function call at line:"+ line+" : " + this);
+    	//}
     	 return v;
     }
    

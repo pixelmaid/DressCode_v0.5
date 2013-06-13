@@ -17,18 +17,14 @@ import com.pixelmaid.dresscode.app.CodeField;
 import com.pixelmaid.dresscode.app.CodingFrame;
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.math.UnitManager;
 
 public class DCProject {
 	private double width, height, unitWidth, unitHeight; // default width and height of project
-	private static int METRIC = 0;
-	private static int STANDARD = 1;
 	private int units; //units
-	private static double PIX_IN_MM = 0.35278; //conversion from pixels to mm
-	private static double PIX_IN_INCH = 0.013888; //conversion from pixels to inches
-	public int DEFAULT_WIDTH = 500;
-	public int DEFAULT_HEIGHT = 500;
+	
 	private String code = "";
-	private String path;
+	private String path="";
 	private String name = "untitled";
 	private String extension = ".dc";
 	private String params = "params.txt";
@@ -40,20 +36,21 @@ public class DCProject {
 
 	public DCProject(){
 		fc = new JFileChooser();
-		this.width=DEFAULT_WIDTH;
-		this.height=DEFAULT_HEIGHT;
+		
 		this.unitHeight= 6.94;
 		this.unitWidth = 6.94;
-		this.units = STANDARD;
+		this.units = UnitManager.STANDARD;
 
 	}
 	public void setDimensions(double w, double h, int u,Embedded canvas, InstructionManager im){
 		this.units = u;
-		convertDimensions(w,h);
+		this.width= UnitManager.toPixels(w, units);
+		this.height= UnitManager.toPixels(h, units);
+
 		this.unitWidth = w;
 		this.unitHeight = h;
-		canvas.setDrawingBoardDimensions(width, height,getUnits());
-		im.setDimensionParams(width, height);
+		canvas.setDrawingBoardDimensions(width, height, this.getUnits());
+		im.setDimensionParams(width, height,getUnits());
 	}
 
 
@@ -89,12 +86,12 @@ public class DCProject {
 	public void run(String code, InstructionManager instructionManager){
 		setCode(code);
 
-		instructionManager.parseText(getCode());
+		instructionManager.parseText(getCode(),this.getUnits());
 	}
 
 	public void run(String code, String hc, InstructionManager instructionManager){
 		setCode(hc+"\n"+code);
-		instructionManager.parseText(getCode());
+		instructionManager.parseText(getCode(),this.getUnits());
 	}
 
 
@@ -136,7 +133,7 @@ public class DCProject {
 			template =((Double)(vars[3])).intValue();
 			cf.setCode(name,getCode());
 			canvas.setDrawingBoardDimensions(width, height,getUnits());
-			im.setDimensionParams(width, height);
+			im.setDimensionParams(width, height,getUnits());
 
 			if(vars[4]==1){
 				hasHiddenCode=true;
@@ -158,8 +155,13 @@ public class DCProject {
 	public void saveFile(Component component,String code,CodingFrame cf){
 		setCode(code);
 		if(!saved){
+			if(this.path!=""){
+			fc.changeToParentDirectory();
+			}
+
 			File blank = new File(this.name);
 			fc.setSelectedFile(blank);
+			
 			int returnVal = fc.showSaveDialog(component);
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
 				File file = fc.getSelectedFile();
@@ -221,16 +223,7 @@ public class DCProject {
 	}
 
 
-	public void convertDimensions(double w,double h){
-		if(units==METRIC){
-			this.width = w/PIX_IN_MM;
-			this.height = h/PIX_IN_MM;
-		}
-		else if(units==STANDARD){
-			this.width = w/PIX_IN_INCH;
-			this.height = h/PIX_IN_INCH;
-		}
-	}
+	
 
 
 	public String readFile(File file) {

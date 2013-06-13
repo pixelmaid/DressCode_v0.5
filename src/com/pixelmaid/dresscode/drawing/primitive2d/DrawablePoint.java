@@ -23,6 +23,7 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.core.PGraphics;
 
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -54,7 +55,7 @@ public class DrawablePoint extends Polygon {
 	@Override
     public void draw(Embedded e) {
 		if(!this.getHide()){
-			appearance(e);
+			appearance(e.g);
 		e.pushMatrix();
 		e.translate((float)(x),(float)(y));
 			 e.rotate((float)Math.toRadians(getRotation()));
@@ -73,7 +74,7 @@ public class DrawablePoint extends Polygon {
 	
 
 	@Override
-	public void print(Embedded e) {
+	public void print(PGraphics e) {
 		if(!this.getHide()){
 			appearance(e);
 			e.noFill();

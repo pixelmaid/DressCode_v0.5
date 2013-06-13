@@ -186,8 +186,8 @@ public JMenuItem getUndoMenu(){
 			//System.out.println("line "+i+"="+lines[i]);
 		}
 		
-		
-		insertText(pos,"\nmove("+identifier+","+x+","+y+");");
+		System.out.println("x and y on move= "+x+","+y);
+		insertText(pos,"\nmove("+identifier+","+String.format("%.1f", x)+","+String.format("%.1f", y)+");");
 	}
  
   /*  public void actionPerformed(ActionEvent evt) {

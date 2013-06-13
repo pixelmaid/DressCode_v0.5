@@ -9,16 +9,18 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.math.UnitManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 
 import processing.core.*;
+import processing.dxf.RawDXF;
 import processing.opengl.PGL;
 import processing.opengl.PGraphicsOpenGL;
 import javax.media.opengl.*;
 import javax.media.opengl.glu.*;
-
+import processing.pdf.PGraphicsPDF;
 
 
 public class Embedded extends PApplet {
@@ -30,18 +32,16 @@ public class Embedded extends PApplet {
 	public int DEFAULT_BG = 222;
 	private double gridUnits = 10;
 	private double gridIncrement = 10;
+	private double counterIncrement = 100;
 	private int unitType = 0;
-	private static int METRIC = 0;
-	private static int STANDARD = 1;
 	private float zoomAmount = 1f;
 	private int translateYAmount = 0;
 	private int translateXAmount = 0;
-	private int defaultCanvasWidth = 500;
-	private int defaultCanvasHeight = 500;
+	protected int defaultCanvasWidth = 500;
+	protected int defaultCanvasHeight = 500;
 	private double drawingBoardWidth = 500;
 	private double drawingBoardHeight = 500;
-	private static double PIX_IN_MM = 0.35278; //conversion from pixels to mm
-	private static double PIX_IN_INCH = 0.013888; //conversion from pixels to inches
+	
 	
 	private boolean showOrigin = false; // determines whether or not to show origin;
 	private Drawable selectedObject = null;
@@ -52,6 +52,7 @@ public class Embedded extends PApplet {
 	private int gridWidth = 7000;
 	private int gridX = -gridWidth/2;
 	private int gridY = -gridHeight/2;
+	private int gridNum = 0; //toggles state of grid
 	
 	private double zeroX= 0;
 	private double zeroY=0;
@@ -79,6 +80,9 @@ public class Embedded extends PApplet {
 	PMatrix3D pProjectionView;	
 	PMatrix3D modelview;
 	PGraphicsOpenGL pG;
+	
+	RawDXF dxf;
+	PGraphicsPDF pdf;
 
 	public void setId(int i){
 		
@@ -102,16 +106,36 @@ public class Embedded extends PApplet {
 		zeroY= defaultCanvasHeight/2-drawingBoardHeight/2;
 		System.out.println("drawing board="+drawingBoardWidth+","+drawingBoardHeight);
 		unitType = units;
-		if(unitType==STANDARD){
-			gridUnits=72/8;
-			gridIncrement = 7;
-			System.out.println("grid units="+gridUnits);
+		if(gridNum!=1){
+		if(unitType==UnitManager.STANDARD){
+			setGridtoIn();
 		}
-		if(unitType==METRIC){
-			gridUnits=2.834*5;
-			gridIncrement=1;
+		if(unitType==UnitManager.METRIC){
+			setGridtoMm();
+		}
 		}
 
+	}
+	
+	public void setGridtoPix(){
+		gridUnits=10;
+		gridIncrement = 10;
+		counterIncrement = 100;
+		System.out.println("grid units="+gridUnits);
+	}
+	
+	public void setGridtoIn(){
+		gridUnits=UnitManager.PIX_IN_INCH/8;
+		gridIncrement = 7;
+		counterIncrement = 1;
+		System.out.println("grid units="+gridUnits);
+	}
+	
+	public void setGridtoMm(){
+		
+		gridUnits=UnitManager.PIX_IN_MM;
+		counterIncrement =10;
+		gridIncrement=9;
 	}
 	
 	public float getZeroX(){
@@ -131,8 +155,35 @@ public class Embedded extends PApplet {
 		return defaultCanvasHeight;
 	}
 
-	public void setGrid(boolean t){
-		drawGrid = t;
+	public void setGrid(){
+		gridNum=gridNum+1;
+		if(gridNum>2){
+			gridNum=0;
+		}
+		if(gridNum==0){
+			drawGrid = true;
+			if(unitType==UnitManager.STANDARD){
+				setGridtoIn();
+			}
+			if(unitType==UnitManager.METRIC){
+				setGridtoMm();
+			}
+		}
+		else if(gridNum==1){
+			drawGrid = true;
+			
+			setGridtoPix();
+			
+		}
+		else{
+			drawGrid = false;
+			if(unitType==UnitManager.STANDARD){
+				setGridtoIn();
+			}
+			if(unitType==UnitManager.METRIC){
+				setGridtoMm();
+			}
+		}
 	}
 
 	public boolean getGrid(){
@@ -142,16 +193,30 @@ public class Embedded extends PApplet {
 
 
 	public void setup() {
-
+		System.out.println("setting up canvas");
 		tempDrawables = new	 ArrayList<Drawable>();
 		//tempDrawables.add(new Ellipse(100,100));
+		PFont f; 
+		f = createFont("Monospaced", 11);
+		  textFont(f);
 
 		size(defaultCanvasWidth,defaultCanvasHeight);
+		noLoop();
+		//
 		//pG =(PGraphicsOpenGL)this.g;
 		//pProjectionView = pG.projection;
 
 		//modelview= pG.modelview;
-		 noLoop();
+		/*dxf = (RawDXF) createGraphics(width, height, DXF, "outputDC.dxf");
+		 
+		 beginRaw(dxf);
+		 dxf.ellipse(0,0,100,100);
+
+		 endRaw();
+		 noLoop();*/
+		
+		
+		
 
 	}
 
@@ -160,6 +225,7 @@ public class Embedded extends PApplet {
 		this.tempDrawables=d;
 		System.out.println("drawables set:"+id);
 	}
+
 
 	public void draw() {
 		
@@ -178,6 +244,7 @@ public class Embedded extends PApplet {
 				tempDrawables.get(i).draw(this);
 				if(showOrigin){
 					tempDrawables.get(i).drawOrigin(this);
+					//tempDrawables.get(i).drawBoundingBox(this);
 				}
 				
 			}
@@ -216,30 +283,53 @@ public class Embedded extends PApplet {
 			//System.out.println(relMouseX+","+relMouseY);
 
 			//modelview.get(mvmatrix2);
-
+			rulers();
+			
 
 			checkMode();
-	
+			
 	}
 
 
 	public void print(File file){
-		String filename = file.getAbsolutePath();
-		String subStr = filename.substring(filename.length()-4, filename.length());
+		String pdfFilename = file.getAbsolutePath();
+		String dxfFilename = file.getAbsolutePath();
+		String subStr = pdfFilename.substring(pdfFilename.length()-4, pdfFilename.length());
 		//System.out.println(subStr);
 		if(!subStr.contentEquals(".pdf")){
 			//System.out.println("substr!=pdf");
-			filename =filename.concat(".pdf");
+			pdfFilename =pdfFilename.concat(".pdf");
 		}
-		this.beginRecord(PDF, filename);
 		
+		pdf = (PGraphicsPDF) createGraphics(((Double)drawingBoardWidth).intValue(), ((Double)drawingBoardHeight).intValue(), PDF, pdfFilename);
+		pdf.beginDraw();
+		
+		
+		
+		for (int i=0;i<tempDrawables.size();i++){
+
+			tempDrawables.get(i).print(pdf);
+		
+		}
+		
+
+
+		pdf.dispose();
+		pdf.endDraw();
+		/*
+		dxf = (RawDXF) createGraphics(width, height, DXF, dxfFilename+".dxf");
+		 
+		 beginRaw(dxf);
+
 			for (int i=0;i<tempDrawables.size();i++){
 
-				tempDrawables.get(i).print(this);
+				tempDrawables.get(i).print(dxf);
 			
 			}
-			
-		this.endRecord();
+
+		 endRaw();
+		 dxf.dispose();
+		 dxf = null;*/
 	}
 
 	public void mousePressed() {
@@ -525,12 +615,113 @@ public class Embedded extends PApplet {
 		return new Point(0,0);
 	}
 
+	
+	public void rulers(){
+		noStroke();
+		fill(255,255,255);
+		rect(0,0,gridWidth,40);
+		rect(0,0,40,gridHeight);
+		stroke(0,0,0);
+		strokeWeight(1.5f);
+		
+		double heightGridPos=gridY;
+		double widthGridPos=gridX;
+		int countX=0;
+		int countY=0;
+		float shortener = 10;
+		int counter=0;
+		if(gridNum==1){
+			counter = 0-gridHeight/2;
+
+		}
+		else{
+			 counter =0-((Double)(UnitManager.toUnits(gridHeight, this.unitType)/2)).intValue();
+
+		}
+		while( heightGridPos<gridHeight){
+			if(countX==gridIncrement){
+				fill(0,0,0);
+				text(counter,20,(float)((heightGridPos*zoomAmount)+translateYAmount));
+				
+				stroke(0,0,0);
+				strokeWeight(1f);
+				countX=0;
+				
+
+				shortener=5;
+				counter+=counterIncrement;
+				
+			}
+			else{
+				
+				stroke(0,0,0);
+				strokeWeight(0.5f);
+				countX++;
+				shortener=10;
+				
+			}
+			this.line(0,(float)((heightGridPos*zoomAmount)+translateYAmount),20-shortener,(float)((heightGridPos*zoomAmount)+translateYAmount));
+			heightGridPos+=gridUnits;
+		}
+		
+		if(gridNum==1){
+			counter = 0-gridWidth/2;
+
+		}
+		else{
+			 counter =0-((Double)(UnitManager.toUnits(gridWidth, this.unitType)/2)).intValue();
+			 if(this.unitType==UnitManager.METRIC){
+				 counter+=4;
+			 }
+		}
+		while( widthGridPos<gridWidth){
+			if(countY==gridIncrement){
+				fill(0,0,0);
+				text(counter,(float)((widthGridPos*zoomAmount)+translateXAmount),20);
+				
+				stroke(0,0,0);
+				strokeWeight(1f);
+				countY=0;
+				
+
+				shortener=5;
+				counter+=counterIncrement;
+				
+			}
+			else{
+				
+				stroke(0,0,0);
+				strokeWeight(0.5f);
+				countY++;
+				shortener=10;
+				
+			}
+			this.line((float)((widthGridPos*zoomAmount)+translateXAmount),0,(float)((widthGridPos*zoomAmount)+translateXAmount),20-shortener);
+			widthGridPos+=gridUnits;
+		}
+		
+		/*while( widthGridPos<gridWidth){
+			if(countY==gridIncrement){
+				stroke(0,0,0,75f);
+				strokeWeight(1.5f);
+				countY=0;
+			}
+			else{
+				stroke(0,0,0,50f);
+				strokeWeight(1);
+				countY++;
+			}
+
+			this.line(widthGridPos,gridY,widthGridPos,gridHeight);
+			widthGridPos+=gridUnits;
+		}*/
+	}
 
 	public void grid(){
 
 
-		int heightGridPos=gridY;
-		int widthGridPos=gridX;
+		double heightGridPos=gridY;
+		double widthGridPos=gridX;
 		int countX=0;
 		int countY=0;
 		while( heightGridPos<gridHeight){
@@ -544,13 +735,13 @@ public class Embedded extends PApplet {
 				strokeWeight(1);
 				countX++;
 			}
-			this.line(gridX,heightGridPos,gridWidth,heightGridPos);
+			this.line(gridX,(float)heightGridPos,gridWidth,(float)heightGridPos);
 			heightGridPos+=gridUnits;
 		}
 		while( widthGridPos<gridWidth){
 			if(countY==gridIncrement){
 				stroke(0,0,0,75f);
-				strokeWeight(1.5f);
+				strokeWeight(1f);
 				countY=0;
 			}
 			else{
@@ -559,7 +750,7 @@ public class Embedded extends PApplet {
 				countY++;
 			}
 
-			this.line(widthGridPos,gridY,widthGridPos,gridHeight);
+			this.line((float)widthGridPos,gridY,(float)widthGridPos,gridHeight);
 			widthGridPos+=gridUnits;
 		}
 	}

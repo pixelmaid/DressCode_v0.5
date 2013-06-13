@@ -1,0 +1,22 @@
+outlineWeight=8;
+braceletOutline = weight(rect(WIDTH/2,HEIGHT/2,WIDTH-outlineWeight,HEIGHT-outlineWeight),outlineWeight);
+tabWeight = 60;
+braceletOutline= expand(braceletOutline);
+tab1 = rect(tabWeight/2,HEIGHT/2,tabWeight,HEIGHT)-ellipse(tabWeight/2,HEIGHT/2,5);
+tab2 = copy(tab1);
+move(tab2,WIDTH-tabWeight/2,HEIGHT/2);
+braceletOutline= braceletOutline+tab1+tab2;
+
+
+def flower(x,y,petalNum,diameter,thickness):
+g = ellipse(x,y,10);
+repeat i=1:petalNum:
+e = ellipse(x,y-diameter/2,thickness,diameter);
+weight(e,4);
+e= expand(e);
+theta = 360/petalNum*i;
+rotate(e,theta,point(x,y));
+g=g+e;
+end
+return g;
+end

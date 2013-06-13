@@ -30,6 +30,7 @@ public class InstructionManager extends NodeEvent{
 	public EventSource eventSource;
 	private DrawableManager drawableManager;
 	private double widthParam,heightParam;
+	private int unitParam;
 	
 	
 	public InstructionManager(DrawableManager dm, double w, double h) {
@@ -40,13 +41,14 @@ public class InstructionManager extends NodeEvent{
 		
 	}
 	
-	public void setDimensionParams(double width, double height){
+	public void setDimensionParams(double width, double height, int units){
 		widthParam = width;
 		heightParam = height;
+		unitParam = units;
 	}
 		
 	
-	  public void parseText(String userCode){
+	  public void parseText(String userCode, int unitParam){
 
 	    	//TODO: more efficient method of clearing canvas / parsing code. Right now it just deletes everything and re-interprets/ redraws entire thing
 	    	//canvas.clearAllDrawables(); //clear the canvas
@@ -72,7 +74,7 @@ public class InstructionManager extends NodeEvent{
 	    		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
 
 	    		// pass the reference to the Map of functions to the tree walker
-	    		PogoTreeWalker walker = new PogoTreeWalker(nodes, parser.functions,drawableManager,widthParam, heightParam);
+	    		PogoTreeWalker walker = new PogoTreeWalker(nodes, parser.functions,drawableManager,widthParam, heightParam, unitParam);
 
 	    		// get the returned node 
 	    		BlockNode returned = walker.walk();

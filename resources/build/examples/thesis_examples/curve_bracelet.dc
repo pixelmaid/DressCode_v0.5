@@ -1,0 +1,57 @@
+cGroup = group(); //empty group
+
+repeat i=0:20:
+c = curve(-100,0,50,-190,150,190,300,0);
+if i%2==0:
+weight(c,8);
+else:
+weight(c,5);
+end
+expand(c);
+moveBy(c,i*50,0);
+add(cGroup,c);//add each curve to group
+end
+
+//modify group
+//noFill(cGroup);
+//weight(cGroup,10);
+rotate(cGroup,35);
+
+merge(cGroup);
+cGroup2 = copy(cGroup);
+moveBy(cGroup2,100,100);
+f = union(cGroup,cGroup2);
+
+rotate(f,-35);
+
+//scale(f,0.25);
+
+move(f,293.5,73);
+
+//f = clip(clipRect,f);
+s1 = rect(mm(10),HEIGHT/2,mm(20),HEIGHT);
+
+
+s2=copy(s1);
+move(s2,WIDTH-mm(9),HEIGHT/2);
+f =union(union(f,s1),s2);
+clipRect = rect(WIDTH/2,HEIGHT/2,WIDTH,HEIGHT);
+move(clipRect,920.1,72.8);
+f = diff(f,copy(clipRect));
+move(clipRect,-304.8,71.8);
+
+f = diff(f,clipRect);
+
+
+hole = ellipse(0,0,mm(4));
+move(hole,27.6,35.1);
+hole2 = copy(hole);
+move(hole2,28.8,110.4);
+
+lHoles = group(hole,hole2);
+rHoles = copy(lHoles);
+
+move(rHoles,586.0,HEIGHT/2);
+
+fill(f,PURPLE);
+

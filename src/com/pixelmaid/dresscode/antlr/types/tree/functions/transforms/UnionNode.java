@@ -34,19 +34,24 @@ public class UnionNode extends NodeEvent implements DCNode {
     	try{
     	Drawable aP = params.get(0).evaluate().asDrawable();
     	Drawable bP =  params.get(1).evaluate().asDrawable();
-    	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, aP);
-    	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, bP);
+    	//this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, aP);
+    	//this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, bP);
     	
-    	d = PolyBoolean.union(aP,bP);
-        d.setIdentifier(aP.getIdentifier());
+    	d = PolyBoolean.union(aP.copy(),bP.copy());
+    	aP.hide();
+    	bP.hide();
+    	aP.setLine(line);
+    	bP.setLine(line);
+
+       // d.setIdentifier(aP.getIdentifier());
 
     	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
     	
     	v=  new VarType(d);
-		if(aP.getIdentifier()!=null){
+		/*if(aP.getIdentifier()!=null){
 		
 		scope.assign(aP.getIdentifier(), v);
-		}
+		}*/
     	d.setLine(line);
 
     	}

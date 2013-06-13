@@ -13,7 +13,7 @@ import com.seisw.util.geom.Poly;
 import com.seisw.util.geom.Clip;
 public class PolyBoolean{
 	//merges a group of objects into one
-	public static Drawable merge(Drawable d) {
+	/*public static Drawable merge(Drawable d) {
 		Drawable master;
 		
 		Poly group = drawableToBoolean(d);
@@ -37,8 +37,35 @@ public class PolyBoolean{
 			return master;
 		}
 		
-	}
+	}*/
 
+	
+	public static Drawable merge(Drawable d) {
+		
+		
+		Drawable group = d;
+		if(group.numChildren()==1){
+			//Poly i_Poly = clip.intersection(group.getInnerPoly(0));
+			//master = booleanToPolygon(i_Poly);
+			//System.out.println("PolyBoolean has only one polygon result");
+
+			//master.setRelativeTo(Geom.findCentroid((Polygon)master));
+			return group.removeFromGroup(0);
+		}
+		else{
+			
+			Drawable master = group.childAt(0);
+			
+			for( int i = 1 ; i < group.numChildren() ; i++ )
+			{
+				Drawable m1 = group.childAt(i);
+				master = union(master,m1);
+			}
+			master.moveTo(group.getOrigin().getX(), group.getOrigin().getY());
+			return master;
+		}
+		
+	}
 	
 	//performs union of two polygons and returns the result
 	public static Drawable union(Drawable a, Drawable b){

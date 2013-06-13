@@ -1,0 +1,28 @@
+//using unions for more complex shapes
+
+x = 200;
+y = 200;
+
+shape1 = ellipse(x,y,100,20);
+shape2 = rect(x,y,50,300);
+
+//create a group of shapes
+g1 = group(shape1,shape2);
+
+//pass the group to the radial function for a different effect
+r1 = radialPattern(g1,10);
+
+
+//same example as above but with different shapes
+shape3 = ellipse(x,y,200,80);
+shape4 = ellipse(x,y,10,200);
+
+//create a group of shapes
+g2 = group(shape3,shape4);
+
+r2 = radialPattern(g2,3);
+
+//combine the two radial patterns into one with a union
+u = union(r1,r2);
+
+

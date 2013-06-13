@@ -7,6 +7,7 @@ options {
 }
 
 
+
 @header {
  package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -26,6 +27,7 @@ options {
  
  double widthParam;
  double heightParam;
+ int unitParam;
  DrawableManager drawableManager;
   Scope currentScope = null;
   
@@ -42,18 +44,19 @@ options {
     }
   public Map<String, FunctionType> functions = null;
   
-  public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns, DrawableManager dm, double w, double h) {
-    this(nodes, null, fns,dm,w,h);
+  public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns, DrawableManager dm, double w, double h,int u) {
+    this(nodes, null, fns,dm,w,h,u);
    
   }
   
-  public PogoTreeWalker(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns, DrawableManager dm,double w,double h) {
+  public PogoTreeWalker(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns, DrawableManager dm,double w,double h, int u) {
     super(nds);
     currentScope = sc;
     functions = fns;
     this.drawableManager = dm;
     widthParam = w;
     heightParam = h;
+    unitParam = u;
   }
   
 }
@@ -88,11 +91,11 @@ statement returns [DCNode node]
   |  ifStatement    {node = $ifStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |  forStatement   {node = $forStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |  whileStatement {node = $whileStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
-  | repeatStatement[false] {node = $repeatStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  | repeatStatement {node = $repeatStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   ;
 
 assignment returns [DCNode node]
-  :  ^(ASSIGNMENT Identifier indexes? expression) {node = new AssignmentNode($Identifier.text, $indexes.e, $expression.node, currentScope);}
+  :  ^(ASSIGNMENT Identifier indexes? expression?) {node = new AssignmentNode($Identifier.text, $indexes.e, $expression.node, currentScope);}
 
   ;
 
@@ -100,7 +103,7 @@ functionCall returns [DCNode node]
 @init{
 	//System.out.println("function called");
 }
-  :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions, widthParam, heightParam); ((NodeEvent)node).addEventListener(drawableManager);}
+  :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions, widthParam, heightParam, unitParam	); ((NodeEvent)node).addEventListener(drawableManager);}
   |  ^(FUNC_CALL Println expression?)  {node = new PrintlnNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
   |  ^(FUNC_CALL Print expression)     {node = new PrintNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
   |  ^(FUNC_CALL Assert expression)    {node = new AssertNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
@@ -109,6 +112,7 @@ functionCall returns [DCNode node]
   |  ^(FUNC_CALL LRemove exprList?) {node = new LRemoveNode($exprList.e,$FUNC_CALL.getLine()); ((NodeEvent)node).addEventListener(drawableManager);}
   |	 primitiveCall {node = $primitiveCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |	 transformCall {node = $transformCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  |	 patternCall {node = $patternCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |	 mathCall {node= $mathCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |	 getCall {node= $getCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   
@@ -121,13 +125,16 @@ functionCall returns [DCNode node]
   	|^(FUNC_CALL Rect exprList?) 	 {node = new RectangleNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL Curve exprList?)   {node = new CurveNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL Polygon exprList?) {node = new PolygonNode($exprList.e,$FUNC_CALL.getLine());}
-  	| ^(FUNC_CALL LShape exprList?) {node = new LShapeNode($exprList.e,$FUNC_CALL.getLine());}
+  	| ^(FUNC_CALL Skirt exprList?) //{node = new SkirtNode($exprList.e,$FUNC_CALL.getLine());}
+    | ^(FUNC_CALL SkirtBack exprList?) //{node = new SkirtBackNode($exprList.e,$FUNC_CALL.getLine());}
+    | ^(FUNC_CALL LShape exprList?) {node = new LShapeNode($exprList.e,$FUNC_CALL.getLine());}
   	|  ^(FUNC_CALL Point exprList?) {node = new PointNode($exprList.e,$FUNC_CALL.getLine());}
   	;
   
   transformCall returns [DCNode node]
    :^(FUNC_CALL Move exprList?)   {node = new MoveNode($exprList.e,$FUNC_CALL.getLine());}
    | ^(FUNC_CALL MoveBy exprList?)   {node = new MoveByNode($exprList.e,$FUNC_CALL.getLine());}
+   | ^(FUNC_CALL Heading exprList?)   {node = new HeadingNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Copy expression)  {node = new CopyNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Rotate exprList?) {node = new RotateNode($exprList.e,currentScope,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Fill exprList?)   {node = new FillNode($exprList.e,$FUNC_CALL.getLine());}
@@ -136,6 +143,7 @@ functionCall returns [DCNode node]
    |^(FUNC_CALL NoStroke expression) {node = new NoStrokeNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Weight exprList?) {node = new WeightNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Hide expression) {node = new HideNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Show expression) {node = new ShowNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Group exprList?) {node = new GroupNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Expand expression){node = new ExpandNode($expression.node, currentScope, $FUNC_CALL.getLine());}
    |^(FUNC_CALL Merge expression){node = new MergeNode($expression.node,currentScope,$FUNC_CALL.getLine());}
@@ -148,6 +156,12 @@ functionCall returns [DCNode node]
    |^(FUNC_CALL Xor exprList?){node = new XorNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
    ;
    
+    patternCall returns [DCNode node]
+   : ^(FUNC_CALL Grid exprList?) {node = new GridNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
+   | ^(FUNC_CALL Wave exprList?) {node = new WaveNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
+   | ^(FUNC_CALL Arc exprList?) {node = new ArcNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
+   ;
+   
    mathCall returns [DCNode node]
    :^(FUNC_CALL Cosine expression) {node = new CosineNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Sine expression) {node = new SineNode($expression.node,$FUNC_CALL.getLine());}
@@ -157,6 +171,10 @@ functionCall returns [DCNode node]
    |^(FUNC_CALL Random exprList?) {node = new RandomNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Round expression) {node = new RoundNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Map exprList?) {node = new MapNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Inch expression){node = new ConversionNode($expression.node,"inch",unitParam,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Mm expression){node = new ConversionNode($expression.node,"mm",unitParam,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Cm expression){node = new ConversionNode($expression.node,"cm",unitParam,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Units expression){node = new ConversionNode($expression.node,"units",unitParam,$FUNC_CALL.getLine());}
    
    ;
    
@@ -198,8 +216,8 @@ forStatement returns [DCNode node]
   :  ^(For Identifier a=expression b=expression block) {node = new ForStatementNode($Identifier.text, $a.node, $b.node, $block.node, currentScope);}
   ;
   
-repeatStatement[boolean lookup] returns [DCNode node]
-  : ^(Repeat Identifier a=expression b=expression (c=expression)? block) {node = new RepeatStatementNode($Identifier.text, $a.node, $b.node, $c.node, $block.node, currentScope, lookup);}
+repeatStatement returns [DCNode node]
+  : ^(Repeat Identifier a=expression b=expression (c=expression)? block) {node = new RepeatStatementNode($Identifier.text, $a.node, $b.node, $c.node, $block.node, currentScope);}
   ;
 
 
@@ -261,11 +279,11 @@ lookup returns [DCNode node]
   //|  ^(DOTPROPERTY Identifier d=dotLookup[new IdentifierNode($Identifier.text, currentScope)]) {node = $d.node;}
     
   
-  | ^(LOOKUP functionCall i=indexes?) {node = $i.e != null ? new LookupNode($functionCall.node, $indexes.e) : $functionCall.node;}
-  |  ^(LOOKUP list i=indexes?)         {node = $i.e != null ? new LookupNode($list.node, $indexes.e) : $list.node;}
-  |  ^(LOOKUP expression i=indexes?)   {node = $i.e != null ? new LookupNode($expression.node, $indexes.e) : $expression.node;}
-  |  ^(LOOKUP Identifier i=indexes?)   {node = $i.e != null ? new LookupNode(new IdentifierNode($Identifier.text, currentScope), $indexes.e) : new IdentifierNode($Identifier.text, currentScope);}
-  |  ^(LOOKUP String i=indexes?)       {node = $i.e != null ? new LookupNode(new AtomNode($String.text), $indexes.e) : new AtomNode($String.text);}
+  | ^(LOOKUP functionCall i=indexes?) {node = $i.e != null ? new LookupNode($functionCall.node, $indexes.e,$LOOKUP.getLine()) : $functionCall.node;}
+  |  ^(LOOKUP list i=indexes?)         {node = $i.e != null ? new LookupNode($list.node, $indexes.e, $LOOKUP.getLine()) : $list.node;}
+  |  ^(LOOKUP expression i=indexes?)   {node = $i.e != null ? new LookupNode($expression.node, $indexes.e,$LOOKUP.getLine()) : $expression.node;}
+  |  ^(LOOKUP Identifier i=indexes?)   {node = $i.e != null ? new LookupNode(new IdentifierNode($Identifier.text, currentScope), $indexes.e,$LOOKUP.getLine()) : new IdentifierNode($Identifier.text, currentScope);}
+  |  ^(LOOKUP String i=indexes?)       {node = $i.e != null ? new LookupNode(new AtomNode($String.text), $indexes.e,$LOOKUP.getLine()) : new AtomNode($String.text);}
   
  
  // |  ^(LOOKUP forStatement i=indexes?)   {node = $i.e != null ? new LookupNode($forStatement.node, $indexes.e) : $forStatement.node;}

@@ -18,19 +18,26 @@ public class AssignmentNode extends NodeEvent implements DCNode {
   public AssignmentNode(String i, List<DCNode> e, DCNode n, Scope s) {
     identifier = i;
     indexNodes = (e == null) ? new ArrayList<DCNode>() : e;
-    rhs = n;
+    rhs = (n == null) ? null : n;
     scope = s;
   }
 
   @Override
   public VarType evaluate() {
+	 VarType value;
+	 if(rhs!=null){
+		value = rhs.evaluate();
+	 }
+	 else{
+		 value=new VarType(null);
+	 }
+	 
 
-    VarType value = rhs.evaluate();
-
-    if (value == VarType.VOID) {
-      throw new RuntimeException("can't assign VOID to " + identifier);
-    }
-
+		/* if (value == VarType.VOID) {
+			 throw new RuntimeException("can't assign VOID to " + identifier);
+		 }*/
+	
+	
     if (indexNodes.isEmpty()) { // a simple assignment
       scope.assign(identifier, value);
       if(value.isDrawable()){

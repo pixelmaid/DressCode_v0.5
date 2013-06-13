@@ -6,6 +6,7 @@ import java.awt.Dimension;
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSplitPane;
 import javax.swing.JTabbedPane;
 
 import com.pixelmaid.dresscode.app.ui.Toolbar;
@@ -16,6 +17,7 @@ public class CodingFrame extends JPanel {
 	 */
 	private static final long serialVersionUID = 1L;
 	private CodeField codeField;
+	private DrawingTree drawingTree;
 	public CodeField hiddenCodeField;
 	private JPanel codeHolder;
 	private JPanel hiddenCodeHolder;
@@ -24,6 +26,7 @@ public class CodingFrame extends JPanel {
 	private int outputHeight = 200;
 	private JScrollPane scrPane1,scrPane2,scrPane3;
 	private JTabbedPane codeTabs;
+	private JSplitPane splitPane;
 
 	private int width;
 	private int height;
@@ -32,7 +35,7 @@ public class CodingFrame extends JPanel {
 		
 	}
 	
-	 public void init(int w, int he, CodeField c, CodeField h, Console o, Toolbar t){
+	 public void init(int w, int he, CodeField c, CodeField h, Console o, Toolbar t, DrawingTree d){
 		this.setLayout(new BorderLayout());
 		this.width=w;
 		this.height=he;
@@ -70,10 +73,21 @@ public class CodingFrame extends JPanel {
 		
 		 //codeTabs.setEnabledAt(1, false);
 		//Add the toolbar and the log to this panel.
+		splitPane = new JSplitPane();
+		splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT );
+		this.add(splitPane);
+		splitPane.setRightComponent(codeTabs);
+		//Create the scroll pane and add the tree to it. 
+		JScrollPane treeView = new JScrollPane(drawingTree);
+		splitPane.setLeftComponent(treeView);
+		treeView.setMinimumSize(new Dimension(0,0));
+		
 			this.add(t, BorderLayout.PAGE_START);
-		this.add(codeTabs,BorderLayout.CENTER);
-	
+		this.add(splitPane,BorderLayout.CENTER);
+		
 		this.doLayout();
+		splitPane.setDividerLocation(0);
+		splitPane.setEnabled( false );
 
 		
 		 

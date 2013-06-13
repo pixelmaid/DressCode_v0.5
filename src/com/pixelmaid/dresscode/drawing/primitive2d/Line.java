@@ -3,6 +3,7 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.core.PGraphics;
 
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -38,7 +39,7 @@ public class Line extends Polygon {
 	@Override
 	public void draw(Embedded e){
 		if(!this.getHide()){
-		appearance(e);
+		appearance(e.g);
 		e.pushMatrix();
 	
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
@@ -55,7 +56,7 @@ public class Line extends Polygon {
 	}
 	
 	@Override
-	public void print(Embedded e){
+	public void print(PGraphics e){
 		if(!this.getHide()){
 			appearance(e);
 			e.noFill();
@@ -170,7 +171,7 @@ public class Line extends Polygon {
 	}
 	
 	@Override 
-	protected void setAbsolute() {
+	public void setAbsolute() {
 		
 		if(this.getParent()!=null){
 			this.start= this.start.add(this.getParent().getOrigin()); //add parent's origin to its origin

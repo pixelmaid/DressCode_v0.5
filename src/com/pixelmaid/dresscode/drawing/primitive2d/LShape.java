@@ -1,5 +1,6 @@
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
+import processing.core.PGraphics;
 import processing.core.PShape;
 
 import com.pixelmaid.dresscode.app.Embedded;
@@ -80,7 +81,7 @@ public class LShape extends Polygon {
 		
 
 		@Override
-		public void print(Embedded e) {
+		public void print(PGraphics e) {
 			if(!this.getHide()){
 			e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));

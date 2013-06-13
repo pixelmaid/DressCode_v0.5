@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 
 import processing.core.PApplet;
+import processing.core.PConstants;
+import processing.core.PGraphics;
 
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.CmpX;
@@ -115,7 +117,7 @@ public class Drawable implements DrawableEvent {
 	//draws each child in the drawable. Must be overridden by subclasses
 	public void draw(Embedded embedded) {
 		if(!this.getHide()){//only draws if child is not hidden
-		appearance(embedded);
+		appearance(embedded.g);
 		embedded.pushMatrix();
 		embedded.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		embedded.rotate(PApplet.radians((float)getRotation()));
@@ -143,7 +145,7 @@ public class Drawable implements DrawableEvent {
 	}
 
 	//draws each child of the drawable for a vector file version (must be overridden by subclass)
-	public void print(Embedded embedded) {
+	public void print(PGraphics embedded) {
 		if(!this.getHide()){//only draws if child is not hidden
 			appearance(embedded);
 			embedded.noFill();
@@ -181,7 +183,7 @@ public class Drawable implements DrawableEvent {
 	}
 	
 	//sets up proper fill and stroke settings
-	public void appearance(Embedded e){
+	public void appearance(PGraphics e){
 		int rf=this.getFillColor().r();
 		int gf=this.getFillColor().g();
 		int bf=this.getFillColor().b();
@@ -216,6 +218,19 @@ public class Drawable implements DrawableEvent {
 		embedded.stroke(255,255,255);
 		embedded.strokeWeight(4);
 		embedded.point((float)this.origin.getX(),(float)this.origin.getY());
+	}
+	
+	public void drawBoundingBox(Embedded e){
+		e.stroke(0,0,0);
+		e.noFill();
+		e.strokeWeight(1);
+		e.pushMatrix();
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.rotate(PApplet.radians((float)getRotation()));
+		e.scale((float)getScaleX(),(float)getScaleY());
+		e.rectMode(PConstants.LEFT);
+		e.rect(0,0,(float)this.getWidth(),(float)this.getHeight());
+		e.popMatrix();
 	}
 	
 
@@ -390,10 +405,21 @@ public class Drawable implements DrawableEvent {
 
 	//resets origin to new point resulting in the moving of the object
 	public void moveTo(double x, double y) {
+		this.setAbsolute();
 		this.origin=new Point(x,y);
+		
 		if(this.getParent()!=null){
+			this.setRelativeTo(parent.getOrigin());
+
 			this.parent.resetOrigin();
 		}
+		
+	}
+	
+	public void heading(double theta, double radius){
+		double distX = Math.cos(Math.toRadians(theta))*radius+this.getOrigin().getX();
+		double distY = Math.sin(Math.toRadians(theta))*radius+this.getOrigin().getY();
+		moveTo(distX,distY);
 	}
 	
 	//resets origin to new point resulting in the moving of the object
@@ -416,16 +442,18 @@ public class Drawable implements DrawableEvent {
 	
 	//rotates around a focus. does not change the rotation property
 		public Drawable rotateWithFocus(double theta, Point focus){
+			System.out.println("rotate with focus");
 			this.setAbsolute();
 			ArrayList<Point> origins = new ArrayList<Point>();
 			
 			for(int i=0;i<this.children.size();i++){
-				this.children.get(i).rotateWithFocus(theta, focus);
+				Drawable d = this.children.get(i).rotateWithFocus(theta, focus);
+				this.children.set(i, d);
 				origins.add(this.children.get(i).getOrigin());
 			}
-			for(int i=0;i<this.holes.size();i++){
+			/*for(int i=0;i<this.holes.size();i++){
 				this.holes.get(i).rotateWithFocus(theta, focus);
-			}
+			}*/
 			
 			
 			if(this.children.size()>1){
@@ -619,6 +647,7 @@ public class Drawable implements DrawableEvent {
 				for(int j=0;j<copy.numChildren();j++){
 				  Polygon c = (Polygon)copy.childAt(j);
 				  c.setAbsolute();
+				  c.setPointsAbsolute();
 					for(int i=0;i<c.getPoints().size();i++){
 					   copyPoints.add(c.getPoints().get(i).copy());  
 				   }
@@ -688,7 +717,7 @@ public class Drawable implements DrawableEvent {
 	}
 	
 	//sets the drawable to its absolute position with respect to its parent
-	protected void setAbsolute() {
+	public void setAbsolute() {
 			if(this.parent!=null){
 				this.origin= this.origin.add(this.parent.getOrigin()); //add parent's origin to its origin
 				this.rotation = (this.getRotation()+this.getParent().getRotation()); //adds parent's rotation to its rotation
@@ -945,6 +974,38 @@ public class Drawable implements DrawableEvent {
 			
 			
 		}
+		
+		
+		/*public void condenseRec(Drawable d,Drawable parent){
+			ArrayList<Drawable> currentChildren = d.getChildren();
+			ArrayList<Hole> currentHoles = d.getHoles();
+			//System.out.println("number of children = "+d.numChildren());
+			//System.out.println("condensing holes");
+			for(int i=0;i<currentHoles.size(); i++){
+				Hole h = d.returnAbsoluteHoleAt(i);
+				//Window.canvas.addDrawable("hole", 0, h);
+				parent.addHoleToGroup(h);
+			}
+		
+			for(int i=currentChildren.size()-1;i>=0; i--){
+				Drawable orphan = d.returnAbsoluteAt(i);
+		
+				//System.out.println("checking child at = "+i +":"+orphan);
+				if (orphan.numChildren()!=0){ //is not a polygon
+					//System.out.println("orphan is not a polygon");
+					condenseRec(orphan,parent);
+				}
+				else{
+					//System.out.println("orphan is a polygon");
+					//System.out.println("adding orphan to parent");
+					
+					parent.addToGroup(orphan);	
+				}
+				
+			}
+			
+			
+		}*/
 
 		
 		

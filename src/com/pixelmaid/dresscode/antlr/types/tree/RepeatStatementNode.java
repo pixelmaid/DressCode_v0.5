@@ -16,15 +16,15 @@ public class RepeatStatementNode extends NodeEvent implements DCNode {
     private boolean lookup;
 
 
-    public RepeatStatementNode(String id, DCNode start, DCNode stop, DCNode increment, DCNode bl, Scope s, boolean l) {
+    public RepeatStatementNode(String id, DCNode start, DCNode stop, DCNode increment, DCNode bl, Scope s) {
         identifier = id;
         startExpr = start;
         stopExpr = stop;
         incrementExpr=increment;
         block = bl;
         scope = s;
-        lookup = l;
-        System.out.println("lookup for repeat node ="+l);
+        
+        //System.out.println("lookup for repeat node ="+l);
     }
     
  
@@ -36,9 +36,9 @@ public class RepeatStatementNode extends NodeEvent implements DCNode {
         double stop = stopExpr.evaluate().asDouble().intValue();
         double increment = 1.0;
         if(incrementExpr!=null){
-        	increment=startExpr.evaluate().asDouble();
+        	increment=incrementExpr.evaluate().asDouble();
         }
-        for(double i = start; i <= stop; i+=increment) {
+        for(double i = start; i < stop; i+=increment) {
             scope.assign(identifier, new VarType(i));
             VarType returnValue = block.evaluate();
            

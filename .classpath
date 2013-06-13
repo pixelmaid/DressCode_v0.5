@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="com/pixelmaid/dresscode/drawing/datatype/Matrix.java|com/pixelmaid/dresscode/drawing/math/LUdcmp.java|com/pixelmaid/dresscode/drawing/math/Matrix.java" kind="src" path="src"/>
+	<classpathentry excluding="com/pixelmaid/dresscode/drawing/datatype/Matrix.java|com/pixelmaid/dresscode/drawing/math/LUdcmp.java|com/pixelmaid/dresscode/drawing/math/Matrix.java|com/pixelmaid/dresscode/app/DXFExport.java|com/pixelmaid/dresscode/app/CopyOfEmbedded.java|com/pixelmaid/dresscode/app/CopyOfDisplayFrame.java" kind="src" path="src"/>
 	<classpathentry kind="src" path="antlr-generated"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/rsyntaxtextarea.jar"/>
 	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/gpcj-2.2.0-full.jar"/>
 	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/antlr-3.5-complete.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/jsyntaxpane-0.9.5-b29.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/rsyntaxtextarea.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/pdf.jar"/>
 	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/itext.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/core.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/gluegen-rt-natives-linux-amd64.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/gluegen-rt-natives-linux-armv6hf.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/gluegen-rt-natives-linux-i586.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/gluegen-rt-natives-macosx-universal.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/gluegen-rt-natives-windows-amd64.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/gluegen-rt-natives-windows-i586.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/gluegen-rt.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/jogl-all-natives-linux-amd64.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/jogl-all-natives-linux-armv6hf.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/jogl-all-natives-linux-i586.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/jogl-all-natives-macosx-universal.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/jogl-all-natives-windows-amd64.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/jogl-all-natives-windows-i586.jar"/>
-	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/testLibs3/jogl-all.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/pdf.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/core.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/jogl-all.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/dxf.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/gluegen-rt-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/gluegen-rt-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/gluegen-rt-natives-linux-i586.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/gluegen-rt-natives-macosx-universal.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/gluegen-rt-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/gluegen-rt-natives-windows-i586.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/jogl-all-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/jogl-all-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/jogl-all-natives-linux-i586.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/jogl-all-natives-macosx-universal.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/jogl-all-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/jogl-all-natives-windows-i586.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

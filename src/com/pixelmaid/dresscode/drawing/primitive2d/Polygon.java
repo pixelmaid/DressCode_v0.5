@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 
 import processing.core.PApplet;
+import processing.core.PGraphics;
 
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -103,13 +104,17 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	@Override
 	//rotates around a focus. does not change the rotation property
 	public Drawable rotateWithFocus(double theta, Point focus){
+		System.out.println("polygon rotate w/ focus");
+		System.out.println("theta ="+theta);
+		System.out.println("point ="+focus.getX()+","+focus.getY());
+
 		this.setPointsAbsolute();
 		for(int i=0;i<this.points.size();i++){
 			Point newPoint = this.points.get(i).rotate(theta, focus);
 			this.points.set(i,newPoint);
 		}
 		for(int i=0;i<getHoles().size();i++){
-			getHoles().get(i).rotateWithFocus(theta, focus);
+			holes.set(i,(Hole)(getHoles().get(i).rotateWithFocus(theta, focus)));
 		}
 		this.setOrigin(Geom.findCentroid(this));
 		this.setPointsRelativeTo(this.getOrigin());
@@ -123,7 +128,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	@Override
 	public void draw(Embedded e){
 		if(!this.getHide()){
-		appearance(e);
+		appearance(e.g);
 		//System.out.println("number of holes="+this.holes.size()+"number of points="+this.points.size());
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
@@ -147,7 +152,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	}
 	
 	@Override
-	public void print(Embedded e){
+	public void print(PGraphics e){
 		if(!this.getHide()){
 		appearance(e);
 		//e.noFill();
@@ -286,8 +291,8 @@ public Drawable expand(){
 				yLast = y;
 			}
 			
-			poly.setFillColor(this.getStrokeColor());
-			poly.doStroke(false);
+			//poly.setFillColor(this.getStrokeColor());
+			//poly.doStroke(false);
 			return poly;
 
 	}

@@ -25,14 +25,14 @@ public class VarType implements Comparable<VarType> {
 	  }  
 	  
 	  public VarType(Object v) {  
-	    if(v == null) {  
+	    /*if(v == null) {  
 	      throw new RuntimeException("v == null");  
-	    }  
+	    }  */
 	    value = v;  
-	    // only accept boolean, list, number or string types  
-	    if(!(isBoolean() || isList() || isNumber() || isString() || isDrawable()|| isPoint())) {  
+	 /*   // only accept boolean, list, number or string types  
+	 if(!(isBoolean() || isList() || isNumber() || isString() || isDrawable()|| isPoint())) {  
 	      throw new RuntimeException("invalid type: " + v + " (" + v.getClass() + ")");  
-	    } 
+	    }*/ 
 	    
 	  }  
 	  

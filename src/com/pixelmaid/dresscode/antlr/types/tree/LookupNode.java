@@ -10,10 +10,12 @@ public class LookupNode extends NodeEvent implements DCNode {
 
   private DCNode expression;
   private List<DCNode> indexes;
+  private int line;
 
-  public LookupNode(DCNode e, List<DCNode> i) {
+  public LookupNode(DCNode e, List<DCNode> i,int l) {
     expression = e;
     indexes = i;
+    line = l;
   }
 
   @Override
@@ -43,6 +45,7 @@ public class LookupNode extends NodeEvent implements DCNode {
       }
       else if(value.isDrawable()){
     	  Drawable d = value.asDrawable();
+    	  d.setLine(line);
     	  if(d.numChildren()==0){
     		  value =  new VarType(value.asPolygon().pointAt(idx).toDrawable());
     	  }

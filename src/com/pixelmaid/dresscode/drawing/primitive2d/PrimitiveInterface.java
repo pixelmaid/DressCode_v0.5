@@ -3,6 +3,8 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 
 import java.util.ArrayList;
 
+import processing.core.PGraphics;
+
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 
@@ -14,7 +16,7 @@ public interface PrimitiveInterface {
 
 	public void draw(Embedded embedded);
 	
-	public void print(Embedded embedded);
+	public void print(PGraphics embedded);
 	
 	public Drawable copy();
 	

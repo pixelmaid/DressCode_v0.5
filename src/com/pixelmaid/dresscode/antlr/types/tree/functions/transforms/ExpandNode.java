@@ -34,7 +34,10 @@ public class ExpandNode extends NodeEvent implements DCNode {
     	if(d.isDrawable()){
     		
     		Drawable draw = d.asDrawable();
-    		dNew = draw .expand();
+    		if(draw.getStrokeWeight()<4){
+    			draw.setStrokeWeight(4);
+    		}
+    		dNew = draw.expand();
     		//this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, draw);
     		//this.drawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
     		this.drawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);

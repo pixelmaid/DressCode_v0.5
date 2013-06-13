@@ -1,9 +1,8 @@
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
 
-import java.util.ArrayList;
-
 import processing.core.PApplet;
+import processing.core.PGraphics;
 
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -43,7 +42,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		this.control1=control1;
 		this.control2=control2;
 		this.end=end;
-		this.origin= Geom.getMidpoint(start, end);
+		this.origin= this.getOrigin();
 
 	}
 
@@ -51,7 +50,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	public void draw(Embedded e){
 		//TODO: MAKE CURVE DRAW ORIGIN CORRECTLY
 		if(!this.getHide()){
-		appearance(e);
+		appearance(e.g);
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
@@ -71,7 +70,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 
 	
 	@Override
-	public void print(Embedded e){
+	public void print(PGraphics e){
 		//TODO: MAKE CURVE DRAW RELATIVE
 		if(!this.getHide()){
 		appearance(e);
@@ -105,7 +104,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		this.end = end.rotate(theta, focus);
 		this.control1 = control1.rotate(theta,focus);
 		this.control2 = control2.rotate(theta,focus);
-		this.origin= Geom.getMidpoint(start, end);
+		this.origin= this.getOrigin();
 		return this;
 	}
 	
@@ -122,7 +121,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 				double y = p.bezierPoint((float)start.getY(), (float)control1.getY(), (float)control2.getY(), (float)end.getY(), t);
 				poly.addPoint(x,y);
 			}
-			poly.setPointsRelativeTo(this.origin);
+			poly.setPointsRelativeTo(this.getOrigin());
 			return poly;
 		}
 	
@@ -165,6 +164,38 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	
 
 	}
+	
+	@Override 
+	public Point getOrigin(){
+		this.origin= this.getMidPoint();
+		return this.origin;
+	}
+	
+	public Point getMidPoint(){
+		return Geom.getMidpoint(this.start, this.end);
+	}
+	
+	@Override
+	public void moveTo(double x, double y){
+		double dx = x - this.origin.getX();
+		double dy = y-this.origin.getY();
+		this.start.moveBy(dx,dy);
+		this.end.moveBy(dx,dy);
+		this.control1.moveBy(dx, dy);
+		this.control2.moveBy(dx, dy);
+		this.origin= this.getOrigin();
+	}
+	
+	@Override
+	public void moveBy(double x, double y){
+		
+		this.start.moveBy(x,y);
+		this.end.moveBy(x,y);
+		this.control1.moveBy(x, y);
+		this.control2.moveBy(x, y);
+		this.origin= this.getOrigin();
+	}
+	
 	
 	@Override
 	public Point pointAt(int i){

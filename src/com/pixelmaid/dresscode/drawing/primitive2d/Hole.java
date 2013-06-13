@@ -3,6 +3,7 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 import java.util.ArrayList;
 
 import processing.core.PApplet;
+import processing.core.PGraphics;
 
 
 import com.pixelmaid.dresscode.app.Embedded;
@@ -13,7 +14,7 @@ public class Hole extends Polygon {
 	
 		@Override
 		public void draw(Embedded e){
-			appearance(e);
+			appearance(e.g);
 			e.fill(e.DEFAULT_BG);
 		    ArrayList<Point> points = this.getPoints();
 		    e.pushMatrix();
@@ -30,7 +31,7 @@ public class Hole extends Polygon {
 		}
 		
 		@Override
-		public void print(Embedded e){
+		public void print(PGraphics e){
 			
 			appearance(e);
 			//e.fill(e.DEFAULT_BG);
@@ -81,6 +82,8 @@ public class Hole extends Polygon {
 			
 			return this;
 		}
+		
+		
 	
 		
 		

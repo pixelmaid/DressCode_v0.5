@@ -35,7 +35,7 @@ public class FunctionType {  //data object to store function declarations
 	    scope = original.scope.copy();
 	  }
 
-	  public VarType invoke(List<DCNode> params, Map<String, FunctionType> functions ,DrawableManager dm, double w, double h) {
+	  public VarType invoke(List<DCNode> params, Map<String, FunctionType> functions ,DrawableManager dm, double w, double h, int u) {
 		  System.out.println("function drawable manager 2 ="+dm);
 
 		  
@@ -52,7 +52,7 @@ public class FunctionType {  //data object to store function declarations
 	    try {
 	      // Create a tree walker to evaluate this function's code block
 	      CommonTreeNodeStream nodes = new CommonTreeNodeStream(code);
-	      PogoTreeWalker walker = new  PogoTreeWalker(nodes, scope, functions, dm, w, h);
+	      PogoTreeWalker walker = new  PogoTreeWalker(nodes, scope, functions, dm, w, h, u);
 	      return walker.walk().evaluate();
 	    } catch (RecognitionException e) {
 	      // do not recover from this

@@ -5,6 +5,7 @@ options {
 }
 
 
+
 tokens {
   BLOCK;
   RETURN;
@@ -91,8 +92,8 @@ statement
   ;
 
 assignment
-  :  Identifier indexes? '=' expression  -> ^(ASSIGNMENT Identifier indexes? expression)
-  |  
+  :  Identifier indexes? ('=' expression)?  -> ^(ASSIGNMENT Identifier indexes? expression?)
+  | 
   ;
 
 functionCall
@@ -105,6 +106,7 @@ functionCall
   |  LRemove '(' exprList? ')'   -> ^(FUNC_CALL LRemove exprList?) 
   |	 primitiveCall
   |	 transformCall
+  |	 patternCall
   |	 mathCall
   | getCall
   ;
@@ -116,14 +118,16 @@ functionCall
   	|Rect '(' exprList? ')'   -> ^(FUNC_CALL Rect exprList?) 
   	|Curve '(' exprList? ')' ->  ^(FUNC_CALL Curve exprList?)
   	|Polygon '(' exprList? ')' ->  ^(FUNC_CALL Polygon exprList?)
-  	|LShape '(' exprList? ')' ->  ^(FUNC_CALL LShape exprList?)
-  	| Point '(' exprList? ')' ->  ^(FUNC_CALL Point exprList?)
+  	|Skirt '(' exprList? ')' ->  ^(FUNC_CALL Skirt exprList?)
+  	|SkirtBack '(' exprList? ')' ->  ^(FUNC_CALL SkirtBack exprList?)
+    |LShape '(' exprList? ')' ->  ^(FUNC_CALL LShape exprList?)
+    | Point '(' exprList? ')' ->  ^(FUNC_CALL Point exprList?)
   	;
   
   transformCall
    : Move '(' exprList? ')' -> ^(FUNC_CALL Move exprList?)
    | MoveBy '(' exprList? ')' -> ^(FUNC_CALL MoveBy exprList?) 
-    
+   | Heading '(' exprList? ')' -> ^(FUNC_CALL Heading exprList?) 
    | Copy '(' expression ')' -> ^(FUNC_CALL Copy expression)
    | Rotate '(' exprList? ')'-> ^(FUNC_CALL Rotate exprList?)
    | Fill '(' exprList? ')'-> ^(FUNC_CALL Fill exprList?)
@@ -132,6 +136,7 @@ functionCall
    | NoStroke '(' expression ')'-> ^(FUNC_CALL NoStroke expression)
    | Weight	'(' exprList? ')'-> ^(FUNC_CALL Weight exprList?)
    | Hide	'(' expression ')'-> ^(FUNC_CALL Hide expression)
+   | Show	'(' expression ')'-> ^(FUNC_CALL Show expression)
    | Group	'(' exprList? ')'-> ^(FUNC_CALL Group exprList?)
    | Expand	'(' expression ')'-> ^(FUNC_CALL Expand expression)
    | Merge	'(' expression ')'-> ^(FUNC_CALL Merge expression)
@@ -142,7 +147,12 @@ functionCall
    | Difference	'(' exprList? ')'-> ^(FUNC_CALL Difference exprList?)
    | Clip	'(' exprList? ')'-> ^(FUNC_CALL Clip exprList?)
    | Xor	'(' exprList? ')'-> ^(FUNC_CALL Xor exprList?)
+   ;
    
+   patternCall
+   : Grid '(' exprList? ')' -> ^(FUNC_CALL Grid exprList?)
+   | Wave '(' exprList? ')' -> ^(FUNC_CALL Wave exprList?)
+   | Arc '(' exprList? ')' -> ^(FUNC_CALL Arc exprList?)
    ;
    
    getCall
@@ -167,6 +177,10 @@ functionCall
    	|Random '(' exprList? ')'   -> ^(FUNC_CALL Random exprList?)
    	|Round'(' expression ')'   -> ^(FUNC_CALL Round expression)
    	|Map'(' exprList? ')'   -> ^(FUNC_CALL Map exprList?)
+   	|Inch '(' expression ')'   -> ^(FUNC_CALL Inch expression)
+   	|Mm '(' expression ')'   -> ^(FUNC_CALL Mm expression)
+   	|Cm '(' expression ')'   -> ^(FUNC_CALL Cm expression)
+   	|Units'(' expression ')'   -> ^(FUNC_CALL Units expression)
    	;
   
   
@@ -199,7 +213,7 @@ forStatement
   ;
 
 repeatStatement
-  : Repeat Identifier '=' expression Do expression ('|' expression)* Do block End -> ^(Repeat Identifier expression expression block)
+  : Repeat Identifier '=' expression Do expression ('add' expression)* Do block End -> ^(Repeat Identifier expression expression (expression)? block)
   ;
 
 whileStatement
@@ -339,6 +353,8 @@ Quad	: 'quad';
 Point	: 'point';
 Triangle: 'triangle';
 Polygon	: 'poly';
+Skirt : 'skirt'; 
+SkirtBack : 'skirtback';
 LShape	: 'import';
 
 //math keywords
@@ -349,10 +365,16 @@ ATan	: 'atan';
 Random 	: 'random';
 Round	: 'round';
 Map		: 'map';
+Inch      : 'inch';
+Mm	    : 'mm';
+Cm	    : 'cm';
+Units	: 'units';
+
 
 //transforms
 Move	: 'move';
 MoveBy	: 'moveBy';
+Heading	: 'headingBy';
 Copy	: 'copy';
 Rotate	: 'rotate';
 Scale	: 'scale';
@@ -362,6 +384,7 @@ NoFill	: 'noFill';
 NoStroke : 'noStroke';
 Weight	: 'weight';
 Hide	: 'hide';
+Show	: 'show';
 Group	: 'group';
 Expand 	: 'expand';
 Merge	: 'merge';
@@ -371,6 +394,12 @@ Union: 'union';
 Difference: 'diff';
 Clip	: 'clip';
 Xor	:'xor';
+
+//patterns
+Grid	: 'grid';
+Wave	: 'wave';
+Spiral	: 'spiral';
+Arc	: 'arc';
  
 //getMethods
 GetWidth: 'getWidth';

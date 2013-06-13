@@ -17,11 +17,11 @@ public class WhileStatementNode extends NodeEvent implements DCNode {
 
         while(expression.evaluate().asBoolean()) {
 
-            VarType returnValue = block.evaluate();
+            block.evaluate();
 
-            if(returnValue != VarType.VOID) {
+           /* if(returnValue != VarType.VOID) {
                 return returnValue;
-            }
+            }*/
         }
 
         return VarType.VOID;

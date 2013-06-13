@@ -2,6 +2,7 @@ package com.pixelmaid.dresscode.app;
 
 import java.awt.BorderLayout;
 import java.awt.Cursor;
+import java.awt.Insets;
 
 import com.pixelmaid.dresscode.app.ui.ImageButton;
 
@@ -29,6 +30,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JProgressBar;
+import javax.swing.JSplitPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -37,6 +39,7 @@ import com.pixelmaid.dresscode.data.DCProject;
 import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.InstructionManager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.math.UnitManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
 import com.pixelmaid.dresscode.events.CustomEvent;
@@ -54,6 +57,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 	private DrawingFrame drawingFrame;
 	private  Embedded canvas;
+	//private DXFExport dxfExport;
 	private Toolbar drawingToolbar;
 
 	
@@ -67,6 +71,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private CodingFrame codingFrame;
 	private  CodeField codeField;
 	private  CodeField hiddenCodeField;
+	private DrawingTree	drawingTree;
 
 	private  Console output;
 	private Toolbar codingToolbar;
@@ -90,6 +95,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 	
 	public EventSource eventSource;
+	private JSplitPane splitFrame;
 	
 
 	public DisplayFrame(){
@@ -136,6 +142,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		this.defaultDrawingPaneHeight = height;
 		
 		
+		splitFrame = new JSplitPane();
+		
 		//initialize children panes
 		//init drawing side
 		canvas = new Embedded();
@@ -144,6 +152,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		canvas.setDimensions(defaultDrawingPaneWidth-5,defaultDrawingPaneHeight-(defaultButtonHeight*2));
 		canvas.setDrawingBoardDimensions(currentProject.getWidth(), currentProject.getHeight(),currentProject.getUnits());
+		
+		//dxfExport = new DXFExport();
+		//dxfExport.setDimensions(defaultDrawingPaneWidth,defaultDrawingPaneHeight);
+		
+		
 		
 		drawableManager = new DrawableManager();
 		instructionManager = new InstructionManager(drawableManager,currentProject.getWidth(),currentProject.getHeight());
@@ -203,7 +216,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		drawingFrame = new DrawingFrame();
 		drawingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight,canvas,drawingToolbar);
 		drawingFrame.addComponentListener(this);
-		this.getContentPane().add(drawingFrame);
+		
+		splitFrame.setOrientation(JSplitPane.HORIZONTAL_SPLIT );
+		splitFrame.setDividerLocation(width/2); 
+		this.getContentPane().add(splitFrame);
+		splitFrame.setLeftComponent(drawingFrame);
 		
 		//init code side
 		codeField= new CodeField();
@@ -242,13 +259,18 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		//codingToolbar.addProgressBar(progressBar);
 
 		codingToolbar.init(defaultDrawingPaneWidth,defaultButtonHeight);
+		
+		drawingTree = new DrawingTree();
 	
 		codingFrame = new CodingFrame();
 		
-		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, output, codingToolbar);
+		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, output, codingToolbar, drawingTree);
 
 		
-		this.getContentPane().add(codingFrame,BorderLayout.LINE_END);
+		//this.getContentPane().add(codingFrame,BorderLayout.LINE_END);
+		splitFrame.setRightComponent(codingFrame);
+		splitFrame.addComponentListener(this);
+		//splitFrame.doLayout();
 		this.getContentPane().doLayout();
 
 		this.pack();
@@ -256,9 +278,16 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		this.addWindowListener(this);
 		this.addComponentListener(this);
 
-		//this.setResizable(false);
+		this.setResizable(false);
 		createMenu();
+		//dxfExport.init();
+		//dxfExport.redraw();
+		
 		canvas.init();
+     	currentProject.setDimensions(UnitManager.DEFAULT_WIDTH,UnitManager.DEFAULT_HEIGHT, UnitManager.STANDARD, canvas, instructionManager);
+
+		canvas.frame = this;
+		
 	}
 	
 	 public void createMenu() {
@@ -346,6 +375,24 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		//progressBar.setIndeterminate(false);
 		System.out.println("drawn");
 		// canvas.showDrawables(drawableManager.getDrawables());
+	 }
+	 
+	 private void run(){
+		//progressBar.setIndeterminate(false);
+			//progressBar.setValue(0);
+			//progressBar.setIndeterminate(true);
+			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+			drawableManager.clearAllDrawables();
+			output.setText("");
+			System.out.println("running");
+			if(currentProject.hiddenCode()){
+				
+				currentProject.run(codeField.getCode(),hiddenCodeField.getCode(),instructionManager);
+				
+			}
+			else{
+				currentProject.run(codeField.getCode(),instructionManager);	
+			}
 	 }
 	 
 	 private void reportErrors(String errorTxt){
@@ -436,8 +483,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	@Override
 	public void componentResized(ComponentEvent arg0) {
+		
 		//this.getContentPane().remove(drawingFrame);
 		System.out.println("canvas resized");
+	canvas.setDimensions(drawingFrame.getWidth()-5,drawingFrame.getHeight()-(defaultButtonHeight));
+	canvas.setDrawingBoardDimensions(currentProject.getWidth(), currentProject.getHeight(),currentProject.getUnits());
+	canvas.redraw();
+	//Insets insets =canvas.frame.getInsets();
+		//canvas.frame.setSize(400 + (insets.left + insets.right), 400 + (insets.top + insets.bottom));
 		/*this.canvas.dispose();
 		this.canvas = null;
 		
@@ -509,26 +562,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public void actionPerformed(ActionEvent e) {
 		canvas.clearMode();
 		if (e.getSource() == runButton ) {
-			//progressBar.setIndeterminate(false);
-			//progressBar.setValue(0);
-			//progressBar.setIndeterminate(true);
-			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-			drawableManager.clearAllDrawables();
-			output.setText("");
-			System.out.println("running");
-			if(currentProject.hiddenCode()){
-				
-				currentProject.run(codeField.getCode(),hiddenCodeField.getCode(),instructionManager);
-				
-			}
-			else{
-				currentProject.run(codeField.getCode(),instructionManager);	
-			}
+			run();
 			
 		}
 		
 		else if (e.getSource() == gridButton ) {
-			canvas.setGrid(!canvas.getGrid());
+			canvas.setGrid();
 			
 
 		}
@@ -672,7 +711,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 			this.codeField.insertMoveStatement(identifier,lineNum,selectedObject,origin.getX(),origin.getY());
 			
-			
+			this.run();
 			
 			break;
 		}
