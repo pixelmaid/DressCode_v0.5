@@ -71,7 +71,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private CodingFrame codingFrame;
 	private  CodeField codeField;
 	private  CodeField hiddenCodeField;
-	private DrawingTree	drawingTree;
+	private TreeManager	treeManager;
 
 	private  Console output;
 	private Toolbar codingToolbar;
@@ -260,11 +260,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 		codingToolbar.init(defaultDrawingPaneWidth,defaultButtonHeight);
 		
-		drawingTree = new DrawingTree();
+		treeManager = new TreeManager();
+		
 	
 		codingFrame = new CodingFrame();
 		
-		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, output, codingToolbar, drawingTree);
+		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, output, codingToolbar, treeManager.getTree());
 
 		
 		//this.getContentPane().add(codingFrame,BorderLayout.LINE_END);
@@ -368,7 +369,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void drawIntoCanvas(){
 		 System.out.println(drawableManager.getDrawables());
 		 //canvas.init();
-		
+		treeManager.getNodes(drawableManager.getDrawables());
 		canvas.setDrawables(drawableManager.getDrawables());
 		
 		//progressBar.setValue(100);

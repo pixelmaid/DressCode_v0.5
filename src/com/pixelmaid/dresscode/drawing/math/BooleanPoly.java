@@ -3,5 +3,5 @@ import com.seisw.util.geom.PolyDefault ;
 
 public class BooleanPoly extends PolyDefault {
 	public boolean setAsHole = false;
-	
+
 }

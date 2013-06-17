@@ -8,6 +8,7 @@ import processing.core.PGraphics;
 
 import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.math.Geom;
 
 //class for holes inside of polygons. cannot be called independently
 public class Hole extends Polygon {
@@ -83,8 +84,50 @@ public class Hole extends Polygon {
 			return this;
 		}
 		
+		@Override
+		public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
+			System.out.println("hole rotate w/ focus");
+			System.out.println("hole parent origin="+getParent().getOrigin().getX()+","+getParent().getOrigin().getY());
+			System.out.println("hole origin="+this.getOrigin().getX()+","+this.getOrigin().getY());
+
+			this.setPointsAbsolute();
+			for(int i=0;i<this.points.size();i++){
+				Point newPoint = this.points.get(i).rotate(theta, focus);
+				this.points.set(i,newPoint);
+			}
+			
+			return this;
+
+			
+		}
 		
-	
+		public void setPointsAbsolute() {
+			this.setAbsolute();
+			
+			for(int i=0;i<this.points.size();i++){
+			    Point pt = new Point(points.get(i).getX()+getOrigin().getX(),points.get(i).getY()+getOrigin().getY());
+				pt.rotate(getRotation(),getOrigin());
+				this.points.set(i,pt);
+				
+			}
+			ArrayList<Hole> holes = this.getHoles();
+			for(int i=0;i<holes.size();i++){
+				ArrayList<Point> holepoints = holes.get(i).getPoints();
+				for(int j=0;j<holepoints.size();j++){
+				    Point pt2 = new Point(holepoints.get(j).getX()+getOrigin().getX(),holepoints.get(j).getY()+getOrigin().getY());
+					pt2.rotate(getRotation(),getOrigin());
+					holepoints.set(j,pt2);
+					
+				}
+				holes.get(i).setPoints(holepoints);
+			}
+			
+		
+		}
+		public void resetOriginRecur(){
+			this.setOrigin(this.getParent().getOrigin());
+			this.setPointsRelativeTo(this.getOrigin());
+		}
 		
 		
 }

@@ -30,7 +30,7 @@ public class Pattern {
 				Drawable t = target.copy();
 				t.moveTo(pX,pY);
 				if(rotate){
-					t= t.rotateWithFocus(theta*i+offset,t.getOrigin());
+					t= t.rotateWithFocus(theta*i+offset,t.getOrigin(),true);
 				}
 				gridD.addToGroup(t);
 	

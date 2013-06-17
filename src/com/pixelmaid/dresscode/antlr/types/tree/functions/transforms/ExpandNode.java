@@ -33,16 +33,24 @@ public class ExpandNode extends NodeEvent implements DCNode {
     	VarType d= param.evaluate();
     	if(d.isDrawable()){
     		
-    		Drawable draw = d.asDrawable();
+    		Drawable d1 = d.asDrawable();
+    		d1.hide();
+    		Drawable draw = d1.copy();
     		if(draw.getStrokeWeight()<4){
     			draw.setStrokeWeight(4);
     		}
     		dNew = draw.expand();
     		//this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, draw);
     		//this.drawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
-    		this.drawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
+    		
+        	d1.setLine(line);
+        	dNew.setLine(line);
+
+           // d.setIdentifier(aP.getIdentifier());
+
+        	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
     		VarType v=  new VarType(dNew);
-    		dNew.setLine(line);
+    		
     		if(draw.getIdentifier()!=null){
     		
     		scope.assign(draw.getIdentifier(), v);

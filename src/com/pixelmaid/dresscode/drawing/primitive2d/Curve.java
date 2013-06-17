@@ -99,7 +99,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	}
 	
 	@Override
-	public Drawable rotateWithFocus(double theta, Point focus){
+	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
 		this.start = start.rotate(theta, focus);
 		this.end = end.rotate(theta, focus);
 		this.control1 = control1.rotate(theta,focus);

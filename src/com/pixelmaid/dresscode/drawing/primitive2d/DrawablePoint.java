@@ -90,7 +90,7 @@ public class DrawablePoint extends Polygon {
 	
 	@Override
 	//rotates around a focus. does not change the rotation property
-	public Drawable rotateWithFocus(double theta, Point focus){
+	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
 		this.origin = this.origin.rotate(theta, focus);
 		this.x = origin.getX();
 		this.y=origin.getY();

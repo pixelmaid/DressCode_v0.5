@@ -74,7 +74,7 @@ public class Drawable implements DrawableEvent {
 	public ArrayList<Hole> getHoles(){
 		return this.holes;
 	}
-	
+	/*
 	public Drawable holesToDrawable(){
 		Drawable d = new Drawable();
 		for(int i=0;i<holes.size();i++){
@@ -83,7 +83,7 @@ public class Drawable implements DrawableEvent {
 		}
 		return d;
 	}
-	
+	*/
 	//returns the parent of the drawable
 	protected void setParent(Drawable p){
 		this.parent = p;
@@ -441,20 +441,58 @@ public class Drawable implements DrawableEvent {
 	}
 	
 	//rotates around a focus. does not change the rotation property
-		public Drawable rotateWithFocus(double theta, Point focus){
+		public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
 			System.out.println("rotate with focus");
 			this.setAbsolute();
-			ArrayList<Point> origins = new ArrayList<Point>();
+			//ArrayList<Point> origins = new ArrayList<Point>();
+			
+			
 			
 			for(int i=0;i<this.children.size();i++){
-				Drawable d = this.children.get(i).rotateWithFocus(theta, focus);
+				Drawable d = this.children.get(i);
+				System.out.println("Drawable origin="+d.getOrigin().getX()+","+d.getOrigin().getY());
+				d = d.rotateWithFocus(theta, focus, false);
 				this.children.set(i, d);
+				//origins.add(this.children.get(i).getOrigin());
+			}
+			
+			for(int i=0;i<this.holes.size();i++){
+				Hole h = (Hole)this.holes.get(i);
+				System.out.println("hole origin="+h.getOrigin().getX()+","+h.getOrigin().getY());
+				h =(Hole)h.rotateWithFocus(theta, focus,false);
+				this.holes.set(i, h);
+				
+			}
+			
+			if(top){
+			
+				
+				resetOriginRecur();
+			}
+			/*if(this.children.size()>1){
+				this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+			}
+			
+			else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
+				this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
+			}
+			
+			
+			if(this.getParent()!=null){
+				this.parent.resetOrigin();
+			}*/
+			return this;
+			
+		}
+			
+			
+		public void resetOriginRecur(){
+			ArrayList<Point> origins = new ArrayList<Point>();
+		
+			for(int i=0;i<this.children.size();i++){
+				this.children.get(i).resetOriginRecur();
 				origins.add(this.children.get(i).getOrigin());
 			}
-			/*for(int i=0;i<this.holes.size();i++){
-				this.holes.get(i).rotateWithFocus(theta, focus);
-			}*/
-			
 			
 			if(this.children.size()>1){
 				this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
@@ -464,12 +502,10 @@ public class Drawable implements DrawableEvent {
 				this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
 			}
 			
-			if(this.getParent()!=null){
-				this.parent.resetOrigin();
-			}
-			return this;
-			
 		}
+			
+			
+			
 		
 		public Drawable mirrorX() {
 			this.setAbsolute();
@@ -701,11 +737,13 @@ public class Drawable implements DrawableEvent {
 	//sets the drawable's origin relative to a new origin
 	protected void setRelativeTo(Point p) {
 		this.origin= this.origin.difference(p);	
+		this.rotation = (this.getRotation()-this.getParent().getRotation()); //adds parent's rotation to its rotation
 	}
 	
 	//sets the drawable at a new origin, and moves all children relative to that new origin //should only be used when a new child is added to the group
 	private void moveOrigin(Point p){
 			this.setOrigin(p);
+			
 			for(int i=0;i<this.children.size();i++){
 				
 					children.get(i).setRelativeTo(p);	
@@ -739,10 +777,22 @@ public class Drawable implements DrawableEvent {
 	
 	//converts all children of the drawable to polygons. (must be overridden by subclasses)
 	public Drawable toPolygon(){
+	
+		
+		
 		for(int j =0;j<this.children.size();j++){
 			Drawable poly = this.children.get(j).toPolygon();
 			this.children.set(j, poly);
 		}
+		/*
+		if(this.numChildren()==1){
+			Polygon p = (Polygon)this.childAt(0);
+			for(int i=0;i<this.holes.size();i++){
+				p.addHole(this.holes.get(i));
+			}
+			p.setOrigin(this.getOrigin());
+			return p;
+		}*/
 		
 		
 		return this;
@@ -814,7 +864,7 @@ public class Drawable implements DrawableEvent {
 		
 		
 		this.addHole(h);
-	
+		
 		h.setRelativeTo(this.origin);
 	return this;
 	}
@@ -925,6 +975,10 @@ public class Drawable implements DrawableEvent {
 			return this.children.get(i);
 		}
 		
+		public void reverseOrder(){
+			 Collections.reverse(children);
+		}
+		
 		
 		//condenses all drawable children into one dimensional list
 		public Drawable condense(){
@@ -938,7 +992,7 @@ public class Drawable implements DrawableEvent {
 				dp = parent;
 				
 				//System.out.println("numChildren in drawable after condense ="+parent.children.size());
-		
+				parent.reverseOrder();
 				return parent;
 			}
 		}

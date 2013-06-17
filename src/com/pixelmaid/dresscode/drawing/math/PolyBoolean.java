@@ -13,8 +13,10 @@ import com.seisw.util.geom.Poly;
 import com.seisw.util.geom.Clip;
 public class PolyBoolean{
 	//merges a group of objects into one
-	/*public static Drawable merge(Drawable d) {
-		Drawable master;
+	public static Drawable merge(Drawable d) {
+		
+		return d.condense();
+		/*Drawable master;
 		
 		Poly group = drawableToBoolean(d);
 		if(group.getNumInnerPoly()==1){
@@ -35,11 +37,11 @@ public class PolyBoolean{
 			}
 			master = booleanToDrawable(mP);
 			return master;
-		}
+		}*/
 		
-	}*/
+	}
 
-	
+	/*
 	public static Drawable merge(Drawable d) {
 		
 		
@@ -65,7 +67,7 @@ public class PolyBoolean{
 			return master;
 		}
 		
-	}
+	}*/
 	
 	//performs union of two polygons and returns the result
 	public static Drawable union(Drawable a, Drawable b){
@@ -247,14 +249,24 @@ public class PolyBoolean{
 	private static Drawable booleanToDrawable(Poly poly){
 		
 		Drawable master = new Drawable();
-		if(poly.getNumInnerPoly()==1){
+	if(poly.getNumInnerPoly()==1){
 			master = booleanToPolygon(poly.getInnerPoly(0));
 			//System.out.println("PolyBoolean has only one polygon result");
 
 			//master.setRelativeTo(Geom.findCentroid((Polygon)master));
 		}
 		else{
+			/*int polyCount=0;
+			Poly mp = null;
+			for(int i = 0 ; i < poly.getNumInnerPoly() ; i++){
+				Poly ip = poly.getInnerPoly(i);
+				if(!ip.isHole()){
+					polyCount++;
+					mp = ip;
+				}
+			}
 			
+			if(polyCount>1){*/
 			for( int i = 0 ; i < poly.getNumInnerPoly() ; i++ )
 			{
 				
@@ -268,17 +280,46 @@ public class PolyBoolean{
 				}
 				
 				
+				}
 			}
-		
-		}
-		/*if(master.numChildren()==1){
-			Polygon p = (Polygon)(master.removeFromGroup(0).toPolygon());
-			for(int i=0;i<master.getHoles().size();i++){
-				p.addHole(master.getHoles().get(i));
+			/*else{
+				Polygon pS  = booleanToPolygon(mp);
+				
+				for( int i = 0 ; i < poly.getNumInnerPoly() ; i++ )
+				{
+					
+					Poly ip = poly.getInnerPoly(i);
+					Polygon p = booleanToPolygon(ip);
+					if(ip.isHole()){
+						Hole h = p.toHole();
+						
+						pS.addHoleToGroup(h);
+					}
 			}
-			return p;
+				return pS;
 		}*/
-		return master;
+		
+		/*if(master.numChildren()==1){
+			Polygon pNew = new Polygon();
+			Polygon p = (Polygon)(master.removeFromGroup(0).toPolygon());
+			ArrayList<Point> points = p.getPoints();
+			
+			for(int i=0;i<points.size();i++){
+				pNew.addPoint(points.get(i));
+			}
+			//pNew.setPointsRelativeTo(master.getOrigin());
+			/*System.out.println("p is polygon="+ (p instanceof Polygon));
+			ArrayList<Hole> holes = master.getHoles();
+			for(int i=0;i<holes.size();i++){
+				p.addHole(holes.get(i).copy());
+				
+			}
+			System.out.println("number of holes for polygon="+p.getHoles().size());
+			System.out.println("p is polygon="+ (p instanceof Polygon));
+			return p;
+			return pNew;
+		}*/
+		return master.toPolygon();
 	}
 	
 	

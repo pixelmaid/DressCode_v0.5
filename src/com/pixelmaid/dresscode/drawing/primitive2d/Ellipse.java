@@ -104,9 +104,9 @@ public class Ellipse extends Polygon {
 	
 	@Override
 	//rotates around a focus. does not change the rotation property
-	public Drawable rotateWithFocus(double theta, Point focus){
+	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
 		Polygon p = this.toPolygon();
-		return p.rotateWithFocus(theta, focus);	
+		return p.rotateWithFocus(theta, focus,top);	
 	}	
 
 	@Override

@@ -103,10 +103,10 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	
 	@Override
 	//rotates around a focus. does not change the rotation property
-	public Drawable rotateWithFocus(double theta, Point focus){
+	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
 		System.out.println("polygon rotate w/ focus");
-		System.out.println("theta ="+theta);
-		System.out.println("point ="+focus.getX()+","+focus.getY());
+		System.out.println("polygon parent origin="+getParent().getOrigin().getX()+","+getParent().getOrigin().getY());
+		System.out.println("polygon origin="+this.getOrigin().getX()+","+this.getOrigin().getY());
 
 		this.setPointsAbsolute();
 		for(int i=0;i<this.points.size();i++){
@@ -114,14 +114,22 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			this.points.set(i,newPoint);
 		}
 		for(int i=0;i<getHoles().size();i++){
-			holes.set(i,(Hole)(getHoles().get(i).rotateWithFocus(theta, focus)));
+			holes.set(i,(Hole)(getHoles().get(i).rotateWithFocus(theta, focus,false)));
 		}
-		this.setOrigin(Geom.findCentroid(this));
-		this.setPointsRelativeTo(this.getOrigin());
 		return this;
+
 		
 	}
 	
+	
+	public void resetOriginRecur(){
+		this.setOrigin(Geom.findCentroid(this));
+		this.setPointsRelativeTo(this.getOrigin());
+		for(int i=0;i<getHoles().size();i++){
+			Hole h = getHoles().get(i);
+			h.setPointsRelativeTo(this.getOrigin());
+		}
+	}
 	
 	//===================OVERRIDDEN METHODS==================
 	
@@ -349,6 +357,15 @@ public Drawable expand(){
     		master.addToGroup(d,index);
     	
     	return master;
+	}
+	
+	public Polygon addHoleToGroup(Hole h) {
+			System.out.println("added hole in polygon");
+		
+			this.addHole(h);
+	
+			//h.setRelativeTo(this.origin);
+			return this;
 	}
 	
 	@Override
