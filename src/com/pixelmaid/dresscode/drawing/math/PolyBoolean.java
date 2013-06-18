@@ -3,8 +3,8 @@ package com.pixelmaid.dresscode.drawing.math;
 import java.util.ArrayList;
 
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.primitive2d.ComplexPolygon;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.drawing.primitive2d.Hole;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.seisw.util.geom.Point2D;
 import com.seisw.util.geom.PolyDefault;
@@ -13,12 +13,15 @@ import com.seisw.util.geom.Poly;
 import com.seisw.util.geom.Clip;
 public class PolyBoolean{
 	//merges a group of objects into one
-	public static Drawable merge(Drawable d) {
+/*	public static Drawable merge(Drawable d) {
 		
-		return d.condense();
-		/*Drawable master;
+		
+		//Point origin = d.getOrigin();
+		
+		Drawable master;
 		
 		Poly group = drawableToBoolean(d);
+		
 		if(group.getNumInnerPoly()==1){
 			//Poly i_Poly = clip.intersection(group.getInnerPoly(0));
 			//master = booleanToPolygon(i_Poly);
@@ -36,53 +39,82 @@ public class PolyBoolean{
 				mP = mP.union(ip);
 			}
 			master = booleanToDrawable(mP);
+			//master.moveTo(origin.getX(), origin.getY());
 			return master;
-		}*/
+		}
 		
-	}
+	}*/
 
-	/*
+	
 	public static Drawable merge(Drawable d) {
 		
 		
 		Drawable group = d;
 		if(group.numChildren()==1){
-			//Poly i_Poly = clip.intersection(group.getInnerPoly(0));
-			//master = booleanToPolygon(i_Poly);
-			//System.out.println("PolyBoolean has only one polygon result");
-
-			//master.setRelativeTo(Geom.findCentroid((Polygon)master));
 			return group.removeFromGroup(0);
 		}
 		else{
 			
-			Drawable master = group.childAt(0);
-			
-			for( int i = 1 ; i < group.numChildren() ; i++ )
-			{
-				Drawable m1 = group.childAt(i);
+			Drawable master = group.removeFromGroup(0);
+			int count =0;
+			while(group.numChildren()!=0){
+				System.out.println("current merge count="+count);
+				count++;
+				Drawable m1 = group.removeFromGroup(0);
 				master = union(master,m1);
+			
 			}
-			master.moveTo(group.getOrigin().getX(), group.getOrigin().getY());
 			return master;
 		}
 		
-	}*/
+	}
 	
 	//performs union of two polygons and returns the result
-	public static Drawable union(Drawable a, Drawable b){
-		/*//BooleanPoly a_Poly = polygonToBoolean(((Polygon)a.toPolygon().childAt(0)));
-	//	Polygon a_P = booleanToPolygon(a_Poly);
-		return a.toPolygon().childAt(0);*/
-		BooleanPoly a_Poly =  drawableToBoolean(a);
-		BooleanPoly b_Poly =  drawableToBoolean(b);
 	
+	public static Drawable union(Drawable a, Drawable b){
+		return unionRecur(a,b);
+		
+	}
+	
+	private static Drawable unionRecur(Drawable d1, Drawable d2){
+		if(d1.numChildren()!=0 && !(d1 instanceof ComplexPolygon)){
+			Drawable child1 = d1.removeFromGroup(0);
+			d1 = unionRecur(d1,child1);
+		}
+		if(d2.numChildren()!=0&& !(d2 instanceof ComplexPolygon)){
+			Drawable child1 = d2.removeFromGroup(0);
+			d2 = unionRecur(d2,child1);
+		}
+		
+		return unionSimple(d1,d2);
+	}
+	
+	
+	
+	public static Drawable unionSimple(Drawable a, Drawable b){
+		
+		
+		
+		BooleanPoly a_Poly =  drawableToBoolean(a.copy());
+		BooleanPoly b_Poly =  drawableToBoolean(b.copy());
+	
+		
 		BooleanPoly o_Poly = (BooleanPoly)a_Poly.union(b_Poly);
-
+		Drawable unionPoly = booleanToDrawable(o_Poly);
+		if(unionPoly.numChildren()>1&&!(unionPoly instanceof ComplexPolygon)){
+			Drawable d = new Drawable();
+			d.addToGroup(a);
+			d.addToGroup(b);
+			return(d);
+		}
+		else{
+			return unionPoly;
+		}
+		
 		//Drawable a_d =  booleanToDrawable(a_Poly);
 		//Drawable  b_d =  booleanToDrawable(b_Poly);
 		//return a_d;
-		return booleanToDrawable(o_Poly);
+		//return booleanToDrawable(o_Poly);
 		
 		
 	}
@@ -126,23 +158,33 @@ public class PolyBoolean{
 		else{
 		System.out.println("first object is a single polygon");
 		BooleanPoly a_Poly =  polygonToBoolean((Polygon)a);
-			if(b.numChildren()==0){
+			
 		
 				System.out.println("only clipping with single poly");
-				System.out.println("holes for clipped poly="+((Polygon)b).getHoles().size());
-				BooleanPoly b_Poly =  polygonToBoolean((Polygon)b);
-				System.out.println("holes for converted poly="+ b_Poly.getNumInnerPoly());
-				
-				//Poly o_Poly = a_Poly.intersection(b_Poly);
+				BooleanPoly b_Poly;
+				if(b instanceof ComplexPolygon){
+					 b_Poly = complexPolygonToBoolean((ComplexPolygon)b);
+					 Poly o_Poly = Clip.intersection(a_Poly,b_Poly);
+						System.out.println("holes for o poly="+ o_Poly.getNumInnerPoly());
+
+						Polygon returnPoly = booleanToPolygon(o_Poly);
+						return returnPoly;
+				}
+				else if(b.numChildren()==0){
+				b_Poly =  polygonToBoolean((Polygon)b);
 				Poly o_Poly = Clip.intersection(a_Poly,b_Poly);
 				System.out.println("holes for o poly="+ o_Poly.getNumInnerPoly());
 
 				Polygon returnPoly = booleanToPolygon(o_Poly);
-				System.out.println("holes for returned poly="+ returnPoly.getHoles().size());
 				return returnPoly;
-			}
+				}
+				//System.out.println("holes for converted poly="+ b_Poly.getNumInnerPoly());
+				
+				//Poly o_Poly = a_Poly.intersection(b_Poly);
+				
+			//}
 			else{
-				BooleanPoly b_Poly = drawableToBoolean(b);
+				b_Poly = drawableToBoolean(b);
 				return groupIntersection(a_Poly,b_Poly);
 			}
 		}
@@ -169,7 +211,7 @@ public class PolyBoolean{
 					Poly i_Poly = clip.intersection(ip);
 					if(!i_Poly.isEmpty()){
 						Polygon p = booleanToPolygon(i_Poly);
-					
+						
 						master.addToGroup(p);
 					}
 				}
@@ -180,39 +222,63 @@ public class PolyBoolean{
 		
 	//converts drawable to collection of boolean operation polygons
 	private static BooleanPoly drawableToBoolean(Drawable d){
-		d = d.condense();
+		//d = d.condense();
 		
 		BooleanPoly m_Poly = new BooleanPoly(); // master level polygon
 		d = d.toPolygon();
 
-		if(d.numChildren()==0){
+		if(d.numChildren()==0 && (d instanceof Polygon)){
 			Poly p = polygonToBoolean((Polygon)d);
 			m_Poly.add(p);
 		}
 		else{
 			for(int j=0;j<d.children.size();j++){
+				Poly bP;
+				if(d.children.get(j) instanceof ComplexPolygon){
+					ComplexPolygon p = (ComplexPolygon)d.children.get(j);
+					bP = complexPolygonToBoolean(p);
+				}
+				else{
 				Polygon p = (Polygon)d.children.get(j);
-				m_Poly.add(polygonToBoolean(p));
+				bP = polygonToBoolean(p);
+				if(p.isHole()){
+					bP.setIsHole(true);
+				}
+				//}
+				
+				}
+				m_Poly.add(bP);
+
 			}
 		}
 		//System.out.println("master poly Bounds="+m_Poly.getX(0)+","+m_Poly.getBounds().getWidth());
-	
-		ArrayList<Hole> holes = d.getHoles();
-		//System.out.println("total number of holes="+holes.size());
-
-			for(int j=0;j<holes.size();j++){
-				Hole h = holes.get(j);
-				
-				Poly hP = polygonToBoolean(h);
-				hP.setIsHole(true);
-				m_Poly.add(hP);
-				//System.out.println("hole "+j+" Bounds="+hP.getX(0)+","+hP.getBounds().getWidth());
-
-			}
 		
 		return m_Poly;
 
 	}
+	/*
+	//converts single polygon to single boolean operation polygon
+		private static BooleanPoly complexPolygonToBoolean(ComplexPolygon cp){
+			BooleanPoly
+			
+			for(int j=0;j<cp.numChildren();j++){
+			
+				Polygon p = (Polygon)cp.removeFromGroup(j);
+				p.setPointsAbsolute();
+			ArrayList<Point> pPoints = p.getPoints();
+
+			//temp polygon to be stored in master polygon
+			BooleanPoly p_Poly = new BooleanPoly();
+
+			//add all polygon points to temp polygon
+			for(int i=0;i<pPoints.size();i++)
+			{
+				p_Poly.add( new Point2D(pPoints.get(i).getX(),pPoints.get(i).getY()) );
+			}
+			//add all polygon holes to temp polygon
+			}
+			return p_Poly;
+		}*/
 	
 	//converts single polygon to single boolean operation polygon
 	private static BooleanPoly polygonToBoolean(Polygon p){
@@ -228,22 +294,34 @@ public class PolyBoolean{
 			p_Poly.add( new Point2D(pPoints.get(i).getX(),pPoints.get(i).getY()) );
 		}
 		//add all polygon holes to temp polygon
-		ArrayList<Hole> holes = p.getHoles();
-		for(int i=0;i<holes.size();i++)
-		{	
-			BooleanPoly h_Poly = new BooleanPoly();
-			h_Poly.setIsHole(true);
-			ArrayList<Point> holePoints = holes.get(i).getPoints();
-			for(int k=0;k<holePoints.size();k++)
-			{
-				
-				h_Poly.add( new Point2D(holePoints.get(i).getX(),holePoints.get(i).getY()) );
-			}
-			p_Poly.add(h_Poly);
-		}
-		
 		
 		return p_Poly;
+	}
+	
+	private static BooleanPoly complexPolygonToBoolean(ComplexPolygon cp){
+		BooleanPoly masterPoly = new BooleanPoly();
+		for(int j=0;j<cp.numChildren();j++){
+			Polygon p = (Polygon)cp.removeFromGroup(j);
+			p.setPointsAbsolute();
+			
+		
+			ArrayList<Point> pPoints = p.getPoints();
+
+		//temp polygon to be stored in master polygon
+		BooleanPoly p_Poly = new BooleanPoly();
+
+		//add all polygon points to temp polygon
+		for(int i=0;i<pPoints.size();i++)
+		{
+			p_Poly.add( new Point2D(pPoints.get(i).getX(),pPoints.get(i).getY()) );
+		}
+		if (p.isHole()){
+			p_Poly.isHole();
+		}
+		//add all polygon holes to temp polygon
+		masterPoly.add(p_Poly);
+		}
+		return masterPoly;
 	}
 	//converts boolean operation collection of polygons to drawable
 	private static Drawable booleanToDrawable(Poly poly){
@@ -251,75 +329,41 @@ public class PolyBoolean{
 		Drawable master = new Drawable();
 	if(poly.getNumInnerPoly()==1){
 			master = booleanToPolygon(poly.getInnerPoly(0));
-			//System.out.println("PolyBoolean has only one polygon result");
-
-			//master.setRelativeTo(Geom.findCentroid((Polygon)master));
+	
 		}
 		else{
-			/*int polyCount=0;
-			Poly mp = null;
-			for(int i = 0 ; i < poly.getNumInnerPoly() ; i++){
-				Poly ip = poly.getInnerPoly(i);
-				if(!ip.isHole()){
-					polyCount++;
-					mp = ip;
-				}
-			}
-			
-			if(polyCount>1){*/
+			int polyCount =0;
+			int polyIndex;
+			ComplexPolygon cp = new ComplexPolygon();
+			System.out.println("Number of inner poly="+poly.getNumInnerPoly());
 			for( int i = 0 ; i < poly.getNumInnerPoly() ; i++ )
 			{
 				
 				Poly ip = poly.getInnerPoly(i);
 				Polygon p = booleanToPolygon(ip);
 				if(ip.isHole()){
-					master.addHoleToGroup(p.toHole());
+					p.toHole();
 				}
 				else{
-					master.addToGroup(p);
+					polyCount++;
+					polyIndex=i;
 				}
+					master.addToGroup(p.copy());
+					cp.addToGroup(p);
+				
+				
 				
 				
 				}
-			}
-			/*else{
-				Polygon pS  = booleanToPolygon(mp);
-				
-				for( int i = 0 ; i < poly.getNumInnerPoly() ; i++ )
-				{
-					
-					Poly ip = poly.getInnerPoly(i);
-					Polygon p = booleanToPolygon(ip);
-					if(ip.isHole()){
-						Hole h = p.toHole();
-						
-						pS.addHoleToGroup(h);
-					}
-			}
-				return pS;
-		}*/
-		
-		/*if(master.numChildren()==1){
-			Polygon pNew = new Polygon();
-			Polygon p = (Polygon)(master.removeFromGroup(0).toPolygon());
-			ArrayList<Point> points = p.getPoints();
 			
-			for(int i=0;i<points.size();i++){
-				pNew.addPoint(points.get(i));
+			if(polyCount ==1){
+				return cp;
 			}
-			//pNew.setPointsRelativeTo(master.getOrigin());
-			/*System.out.println("p is polygon="+ (p instanceof Polygon));
-			ArrayList<Hole> holes = master.getHoles();
-			for(int i=0;i<holes.size();i++){
-				p.addHole(holes.get(i).copy());
-				
-			}
-			System.out.println("number of holes for polygon="+p.getHoles().size());
-			System.out.println("p is polygon="+ (p instanceof Polygon));
-			return p;
-			return pNew;
-		}*/
-		return master.toPolygon();
+		}
+			
+			
+	
+		return master;
 	}
 	
 	
@@ -329,8 +373,7 @@ public class PolyBoolean{
 	{
 		Polygon jp = new Polygon();
 	
-		
-		int holeCount = 0;
+		//System.out.println("NUM OF INNER POLY="+ip.getNumInnerPoly());
 		
 		//System.out.println("PolyBoolean has " + ip.getNumInnerPoly()+" holes");
 		for( int i = 0 ; i < ip.getNumInnerPoly() ; i++ )
@@ -338,38 +381,31 @@ public class PolyBoolean{
 			
 			
 			Poly ipp = ip.getInnerPoly(i);
-			if (ipp.isHole()){
-				Hole h = innerPolyToHole(ipp);
-
-				jp.addHoleToGroup(h);
-				holeCount ++;
-			}
-			else{
+			
 				//System.out.println("found a non hole");
 				for( int j = 0 ;j < ipp.getNumPoints(); j++ )
 				{
 					jp.addPoint( ipp.getX(j), ipp.getY(j));
 				}
-			}
+			
 		}
 		//set all points relative to the centroid;
-		Point c = Geom.findCentroid(jp);
+		Point c;
+		if(ip.isHole()){
+			jp.reversePoints();
+		}
+		
+		c = Geom.findCentroid(jp);
+		if(ip.isHole()){
+			jp.reversePoints();
+		}
+		//System.out.println("centroid of polygon="+c.getX()+","+c.getY());
 		jp.setPointsRelativeTo(c) ;
 		//System.out.println("holes for hole count="+holeCount);
 		return jp;
 	}
 
-	private static Hole innerPolyToHole(Poly ip )
-	{
-		Hole jp = new Hole();
-		//System.out.println("ip.numPoints="+ip.getNumPoints());
-		for( int i = 0 ; i < ip.getNumPoints(); i++ )
-		{
-			jp.addPoint( ip.getX(i), ip.getY(i) );
-		}
-
-		return jp;
-	}
+	
 
 
 

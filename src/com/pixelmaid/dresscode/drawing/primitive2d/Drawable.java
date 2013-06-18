@@ -36,8 +36,8 @@ public class Drawable implements DrawableEvent {
 	private boolean drawOrigin=true;
 	private String identifier = "";
 	private int line= 0;
-	protected ArrayList<Hole> holes = new ArrayList<Hole>();
 	protected final static int DEFAULT_WIDTH= 50;
+	protected boolean isHole = false;
 
 	private EventSource es;
 
@@ -48,7 +48,7 @@ public class Drawable implements DrawableEvent {
 	//===============PRIVATE METHODS=================//
 	
 	//adds a child to list of children and sets its parent
-	private void add(Drawable d){
+	public void add(Drawable d){
 		children.add(d);
 		d.setParent(this);
 	}
@@ -64,16 +64,7 @@ public class Drawable implements DrawableEvent {
 		d.setParent(null);
 	}
 	
-	//adds a hole
-	public void addHole(Hole h){
-		holes.add(h);
-		h.setParent(this);
 
-	}
-	//returns all holes
-	public ArrayList<Hole> getHoles(){
-		return this.holes;
-	}
 	/*
 	public Drawable holesToDrawable(){
 		Drawable d = new Drawable();
@@ -108,7 +99,6 @@ public class Drawable implements DrawableEvent {
 		setFillColor(255,255,255);
 		setStrokeColor(0,0,0);
 		strokeWeight = 1;
-		holes = new ArrayList<Hole>();
 		es= new EventSource();
 	}
 
@@ -129,12 +119,7 @@ public class Drawable implements DrawableEvent {
 					
 				}
 				
-				for(int j =0;j<this.holes.size();j++){
-					if(!this.holes.get(j).getHide()){
-						this.holes.get(j).draw(embedded);
-					}
-					
-				}
+				
 				
 		embedded.popMatrix();
 		
@@ -160,12 +145,6 @@ public class Drawable implements DrawableEvent {
 						
 					}
 					
-					for(int j =0;j<this.holes.size();j++){
-						if(!this.holes.get(j).getHide()){
-							this.holes.get(j).print(embedded);
-						}
-						
-					}
 					
 			embedded.popMatrix();
 		}
@@ -268,9 +247,6 @@ public class Drawable implements DrawableEvent {
 			for(int i=0;i<this.children.size();i++){
 				this.children.get(i).setStrokeWeight(w);
 			}
-			for(int i=0;i<this.holes.size();i++){
-				this.holes.get(i).setStrokeWeight(w);
-			}
 		}
 	
 	//returns the stroke weight value
@@ -295,9 +271,7 @@ public class Drawable implements DrawableEvent {
 		for(int i=0;i<this.children.size();i++){
 			this.children.get(i).setFillColor(c);
 		}
-		for(int i=0;i<this.holes.size();i++){
-			this.holes.get(i).setFillColor(c);
-		}
+		
 	}
 	
 	//returns the current fill color
@@ -311,9 +285,7 @@ public class Drawable implements DrawableEvent {
 		for(int i=0;i<this.children.size();i++){
 			this.children.get(i).setStrokeColor(r,g,b);
 		}
-		for(int i=0;i<this.holes.size();i++){
-			this.holes.get(i).setStrokeColor(r,g,b);
-		}
+		
 	}
 		
 	//sets the stroke color with a color constant
@@ -322,9 +294,7 @@ public class Drawable implements DrawableEvent {
 		for(int i=0;i<this.children.size();i++){
 			this.children.get(i).setStrokeColor(c);
 		}
-		for(int i=0;i<this.holes.size();i++){
-			this.holes.get(i).setStrokeColor(c);
-		}
+		
 	}
 	
 	//returns the current stroke color
@@ -339,9 +309,7 @@ public class Drawable implements DrawableEvent {
 		for(int i=0;i<this.children.size();i++){
 			this.childAt(i).doFill(f);
 		}
-		for(int i=0;i<this.holes.size();i++){
-			this.holes.get(i).doFill(f);
-		}
+		
 		
 	}
 	
@@ -351,9 +319,7 @@ public class Drawable implements DrawableEvent {
 		for(int i=0;i<this.children.size();i++){
 			this.childAt(i).doStroke(f);
 		}
-		for(int i=0;i<this.holes.size();i++){
-			this.holes.get(i).doStroke(f);
-		}
+		
 	}
 	
 	//returns if the object has a stroke
@@ -456,13 +422,6 @@ public class Drawable implements DrawableEvent {
 				//origins.add(this.children.get(i).getOrigin());
 			}
 			
-			for(int i=0;i<this.holes.size();i++){
-				Hole h = (Hole)this.holes.get(i);
-				System.out.println("hole origin="+h.getOrigin().getX()+","+h.getOrigin().getY());
-				h =(Hole)h.rotateWithFocus(theta, focus,false);
-				this.holes.set(i, h);
-				
-			}
 			
 			if(top){
 			
@@ -610,10 +569,7 @@ public class Drawable implements DrawableEvent {
 		for(int i=0;i<this.children.size();i++){
 			d.add(this.children.get(i).copy());
 		}
-		for(int i=0;i<this.holes.size();i++){
-			d.addHole(this.holes.get(i).copy());
-		}
-				
+			
 		return d;
 		
 	}
@@ -748,10 +704,7 @@ public class Drawable implements DrawableEvent {
 				
 					children.get(i).setRelativeTo(p);	
 			}
-			for(int i=0;i<this.holes.size();i++){
-				
-				holes.get(i).setRelativeTo(p);	
-		}
+		
 	}
 	
 	//sets the drawable to its absolute position with respect to its parent
@@ -768,12 +721,7 @@ public class Drawable implements DrawableEvent {
 		return orphan;
 	}
 	
-	private Hole returnAbsoluteHoleAt(int i){
-		Hole orphan = this.holes.get(i).copy();
-		orphan.setAbsolute();
-		
-		return orphan;
-	}
+	
 	
 	//converts all children of the drawable to polygons. (must be overridden by subclasses)
 	public Drawable toPolygon(){
@@ -803,9 +751,7 @@ public class Drawable implements DrawableEvent {
 		Polygon p = (Polygon)this.childAt(0).toPolygon();
 		p.setParent(null);
 		p.setOrigin(this.getOrigin());
-		for(int j =0;j<this.holes.size();j++){
-			p.addHole(holes.get(j));
-		}
+		
 		return p;
 	}
 	
@@ -815,11 +761,7 @@ public class Drawable implements DrawableEvent {
 			Drawable poly = this.children.get(j).expand();
 			this.children.set(j, poly);
 		}
-		for(int j =0;j<this.holes.size();j++){
-			Drawable poly = this.holes.get(j).expand();
-			this.addToGroup(poly);
-		}
-		this. holes = new ArrayList<Hole> ();
+	
 		return this;
 	}
 
@@ -835,20 +777,21 @@ public class Drawable implements DrawableEvent {
 			for(int i=0;i<this.children.size();i++){
 				this.children.get(i).setAbsolute();
 			}
-			for(int i=0;i<this.holes.size();i++){
-				this.holes.get(i).setAbsolute();
-			}
-		
-		
-		
+			d.setAbsolute();
+
 		this.add(d,index);
 		
 		
 		ArrayList<Point> origins = new ArrayList<Point>();
 		if(this.children.size()>1){
 			for(int i=0;i<this.children.size();i++){
-				origins.add(this.children.get(i).getOrigin());
+				if(!this.children.get(i).isHole()){
+					origins.add(this.children.get(i).getOrigin());
+					//System.out.println("origin "+i+" ="+children.get(i).getOrigin().getX()+","+children.get(i).getOrigin().getY());
+
+				}
 			}
+			//System.out.println("average point ="+Geom.getAveragePoint(origins).getX()+","+Geom.getAveragePoint(origins).getY());
 			this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
 		}
 		
@@ -860,23 +803,14 @@ public class Drawable implements DrawableEvent {
 
 	}
 	
-	public Drawable addHoleToGroup(Hole h) {
-		
-		
-		this.addHole(h);
-		
-		h.setRelativeTo(this.origin);
-	return this;
-	}
+	
 	
 	//resets the origin when a member of a group is moved, added, adjusted or removed
 	public void resetOrigin(){
 		for(int i=0;i<this.children.size();i++){
 			this.children.get(i).setAbsolute();
 		}
-		for(int i=0;i<this.holes.size();i++){
-			this.holes.get(i).setAbsolute();
-		}
+		
 		ArrayList<Point> origins = new ArrayList<Point>();
 		if(this.children.size()>1){
 			for(int i=0;i<this.children.size();i++){
@@ -898,9 +832,7 @@ public class Drawable implements DrawableEvent {
 		for(int i=0;i<this.children.size();i++){
 			this.children.get(i).setAbsolute();
 		}
-		for(int i=0;i<this.holes.size();i++){
-			this.holes.get(i).setAbsolute();
-		}
+		
 	    	
 		this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
 		this.remove(d);
@@ -978,12 +910,14 @@ public class Drawable implements DrawableEvent {
 		public void reverseOrder(){
 			 Collections.reverse(children);
 		}
-		
+		public boolean isHole(){
+			return isHole;
+		}
 		
 		//condenses all drawable children into one dimensional list
 		public Drawable condense(){
 			Drawable dp = this.toPolygon(); //first convert all children primitves to polygons
-			if(dp.numChildren()==0){
+			/*if(dp.numChildren()==0){
 				return dp;
 			}
 			else{
@@ -994,20 +928,16 @@ public class Drawable implements DrawableEvent {
 				//System.out.println("numChildren in drawable after condense ="+parent.children.size());
 				parent.reverseOrder();
 				return parent;
-			}
+			}*/
+			return dp;
 		}
 		
 		//recursive condense function
 		public void condenseRec(Drawable d,Drawable parent){
 			ArrayList<Drawable> currentChildren = d.getChildren();
-			ArrayList<Hole> currentHoles = d.getHoles();
 			//System.out.println("number of children = "+d.numChildren());
 			//System.out.println("condensing holes");
-			for(int i=0;i<currentHoles.size(); i++){
-				Hole h = d.returnAbsoluteHoleAt(i);
-				//Window.canvas.addDrawable("hole", 0, h);
-				parent.addHoleToGroup(h);
-			}
+			
 		
 			for(int i=currentChildren.size()-1;i>=0; i--){
 				Drawable orphan = d.returnAbsoluteAt(i);

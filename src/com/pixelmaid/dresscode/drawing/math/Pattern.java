@@ -24,6 +24,7 @@ public class Pattern {
 		Drawable gridD = new Drawable();
 		double theta = degree/(dNum-1);
 		
+		
 		for(int i=0;i<dNum;i++){
 			double pX = Math.cos(Math.toRadians(theta*i+offset))*width/2;
 			double pY = Math.sin(Math.toRadians(theta*i+offset))*height/2;
@@ -39,30 +40,81 @@ public class Pattern {
 		return gridD;
 		
 	}
-	
+	public static Drawable wave(Drawable target, int dNum, double amp,double freq, double width, double posX,double posY,double phase){
+		Drawable waveD = new Drawable();	
+
+
+		double vDUpdate = (360.0/dNum)*freq;
+
+		double dist = width/dNum;
+		Point [] points = new Point[dNum];
+		for(int i=0;i<dNum;i++){
+			double dY = Math.sin(Math.toRadians(vDUpdate*i))*amp;
+			double dX = dist*i;
+			//hD = hD+dDistStep;
+			//vD = vD+vDUpdate;
+			points[i] = new Point(dX,dY);
+
+		}
+
+		//points = optimize(points,amp,freq);
+
+		for(int i=0;i<points.length;i++){
+			Drawable t2 = target.copy();
+			t2.moveTo(points[i].getX(), points[i].getY());
+			t2.setFillColor(255,255,255);
+			waveD.addToGroup(t2);
+
+		}
+
+		waveD.moveTo(posX, posY);
+		return waveD;
+	}
+
 	//returns a wave pattern of drawables
-		public static Drawable wave(Drawable target, int dNum, double amp,double freq, double width, double posX,double posY,double phase){
+	/*	public static Drawable wave(Drawable target, int dNum, double amp,double freq, double width, double posX,double posY,double phase){
 			Drawable waveD = new Drawable();	
-	
-			
-			double vDUpdate = (360.0/dNum)*freq;
-			
-			double dist = width/dNum;
-			Point [] points = new Point[dNum];
-			for(int i=0;i<dNum;i++){
+			double dist = width/100;
+			double vDUpdate = (360.0/100)*freq;
+			double waveLength=0;
+			Point [] points = new Point[100];
+			for(int i=0;i<100;i++){
 				double dY = Math.sin(Math.toRadians(vDUpdate*i))*amp;
 				double dX = dist*i;
 				//hD = hD+dDistStep;
 				//vD = vD+vDUpdate;
 				points[i] = new Point(dX,dY);
+				if(i!=0){
+				waveLength+=points[i].distance(points[i-1]);
+				}
 				
 			}
 			
+			double w;
+			if(target.getWidth()<target.getHeight()){
+			
+			w= target.getWidth()/2;
+			}
+			else{
+				w= target.getHeight()/2;
+			}
+			double n = Math.round(waveLength/w);
+			//dNum = ((Double)(n)).intValue();
+			
+			 dist = width/dNum;
+			 vDUpdate = (360.0/dNum)*freq;
+			
+			
 			//points = optimize(points,amp,freq);
 			
-			for(int i=0;i<points.length;i++){
+			for(int i=0;i<dNum;i++){
+				double dY = Math.sin(Math.toRadians(vDUpdate*i))*amp;
+				double dX = dist*i;
+				//hD = hD+dDistStep;
+				//vD = vD+vDUpdate;
+				
 				Drawable t2 = target.copy();
-				t2.moveTo(points[i].getX(), points[i].getY());
+				t2.moveTo(dX, dY);
 				t2.setFillColor(255,255,255);
 				waveD.addToGroup(t2);
 			
@@ -71,7 +123,7 @@ public class Pattern {
 			waveD.moveTo(posX, posY);
 			return waveD;
 		}
-		
+		*/
 		public static Point[] optimize(Point[] points, double amp, double freq){
 			int iterLimit = 10000;
 			int iterNum = 0;

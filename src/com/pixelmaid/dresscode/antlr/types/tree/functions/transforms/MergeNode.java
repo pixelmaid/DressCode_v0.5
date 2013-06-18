@@ -35,13 +35,11 @@ public class MergeNode extends NodeEvent implements DCNode {
     	if(d.isDrawable()){
     		
     		Drawable draw = d.asDrawable();
-    		dNew = PolyBoolean.merge(draw);
-    		this.drawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
+    		dNew = PolyBoolean.merge(draw.copy());
+    		draw.hide();
+    		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
     		v=  new VarType(dNew);
-    		if(draw.getIdentifier()!=null){
     		
-    		scope.assign(draw.getIdentifier(), v);
-    		}
         	dNew.setLine(line);
 
     		return v;	

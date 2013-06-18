@@ -33,7 +33,7 @@ public class Ellipse extends Polygon {
 
     protected double width;
     protected double height;
-    private double resolution = 100;
+    private double resolution =100;
    
     
 

@@ -1,4 +1,4 @@
-package com.pixelmaid.dresscode.antlr.types.tree.functions.transforms;
+package com.pixelmaid.dresscode.antlr.types.tree.functions;
 
 import java.util.List;
 
@@ -6,12 +6,14 @@ import com.pixelmaid.dresscode.antlr.types.Scope;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
+import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class DifferenceNode extends NodeEvent implements DCNode {
+public class IntersectNode extends NodeEvent implements DCNode {
 
 	protected List<DCNode> params;
 
@@ -19,34 +21,39 @@ public class DifferenceNode extends NodeEvent implements DCNode {
     protected Scope scope;
 
     
-    public DifferenceNode(List<DCNode> ps, Scope s, int l) {
+    public IntersectNode(List<DCNode> ps) {
         params = ps;
-        line = l;
-        scope = s;
+       // line = l;
+        //scope = s;
         //System.out.println("created new drawable node at line:"+line);
     }
 
     @Override
     public VarType evaluate() {
-    	Drawable d= null;
+    	Boolean d= null;
     	VarType v = null;
     
-    	try{
+    	//try{
     	Drawable aP = params.get(0).evaluate().asDrawable();
     	Drawable bP =  params.get(1).evaluate().asDrawable();
+    	//this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, aP);
+    	//this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, bP);
     	
-        d = PolyBoolean.difference(aP.copy(),bP.copy());
-        this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
-        aP.hide();
-    	bP.hide();
-    	v=  new VarType(d);
-		
-    	d.setLine(line);
+    	d = Geom.polygonIntersect((Polygon)aP.copy().toPolygon(),(Polygon)bP.copy().toPolygon());
+    	
+    	
+       // d.setIdentifier(aP.getIdentifier());
 
-    	}
-    	catch (ClassCastException e){
-    		throw new RuntimeException("Illegal expand function call at line:"+ line+" : " + this);
-    	}
+    	
+    	
+    	v=  new VarType(d);
+	
+    	
+
+    	//}
+    	/*catch (ClassCastException e){
+    		throw new RuntimeException("Illegal union function call at line:"+ line+" : " + this);
+    	}*/
     	return v;
     	
     }

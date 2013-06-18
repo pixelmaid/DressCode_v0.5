@@ -1,6 +1,7 @@
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 import processing.core.PApplet;
@@ -70,6 +71,9 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	public void addPoint(Point point){
 		this.points.add(point);
 	}
+	public void reversePoints(){
+		Collections.reverse(this.points);
+	}
 	public void clearPoints(){
 		this.points.clear();
 	}
@@ -105,7 +109,9 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	//rotates around a focus. does not change the rotation property
 	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
 		System.out.println("polygon rotate w/ focus");
+		if(getParent()!=null){
 		System.out.println("polygon parent origin="+getParent().getOrigin().getX()+","+getParent().getOrigin().getY());
+		}
 		System.out.println("polygon origin="+this.getOrigin().getX()+","+this.getOrigin().getY());
 
 		this.setPointsAbsolute();
@@ -113,8 +119,8 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			Point newPoint = this.points.get(i).rotate(theta, focus);
 			this.points.set(i,newPoint);
 		}
-		for(int i=0;i<getHoles().size();i++){
-			holes.set(i,(Hole)(getHoles().get(i).rotateWithFocus(theta, focus,false)));
+		if(top){
+			resetOriginRecur();
 		}
 		return this;
 
@@ -123,12 +129,14 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	
 	
 	public void resetOriginRecur(){
-		this.setOrigin(Geom.findCentroid(this));
-		this.setPointsRelativeTo(this.getOrigin());
-		for(int i=0;i<getHoles().size();i++){
-			Hole h = getHoles().get(i);
-			h.setPointsRelativeTo(this.getOrigin());
+		if(this.isHole()){
+			this.reversePoints();
 		}
+		this.setOrigin(Geom.findCentroid(this));
+		if(this.isHole()){
+			this.reversePoints();
+		}
+		this.setPointsRelativeTo(this.getOrigin());
 	}
 	
 	//===================OVERRIDDEN METHODS==================
@@ -137,6 +145,9 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	public void draw(Embedded e){
 		if(!this.getHide()){
 		appearance(e.g);
+		if(isHole()){
+			e.fill(e.DEFAULT_BG);
+		}
 		//System.out.println("number of holes="+this.holes.size()+"number of points="+this.points.size());
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
@@ -147,10 +158,6 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		}
 		e.endShape(PApplet.CLOSE);	
 		
-		ArrayList<Hole> holes = this.getHoles();
-		for(int i=0;i<holes.size();i++){
-			holes.get(i).draw(e);
-		}
 		e.popMatrix();
 		
 		/*if(this.getDrawOrigin()){
@@ -175,10 +182,6 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		}
 		e.endShape(PApplet.CLOSE);	
 		
-		ArrayList<Hole> holes = this.getHoles();
-		for(int i=0;i<holes.size();i++){
-			holes.get(i).print(e);
-		}
 		e.popMatrix();
 		}
 	
@@ -191,11 +194,6 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			double delta = getOrigin().getX()-p.getX();
 			double xNew = origin.getX()+delta;
 			points.set(i, new Point(xNew,p.getY()));
-		}
-		for(int i=0;i<getHoles().size();i++){
-			System.out.println("mirroring hole "+i);
-			Hole newHole = this.getHoles().get(i).mirrorX(this.getOrigin());
-			holes.set(i,newHole);
 		}
 		
 		this.setPointsRelativeTo(this.origin);
@@ -210,9 +208,6 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			double delta = getOrigin().getY()-p.getY();
 			double yNew = origin.getX()+delta;
 			points.set(i, new Point(p.getX(),yNew));
-		}
-		for(int i=0;i<getHoles().size();i++){
-			getHoles().get(i).mirrorY();
 		}
 		
 		this.setPointsRelativeTo(this.origin);
@@ -229,23 +224,21 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		for(int i=0;i<points.size();i++){
 			c.addPoint(points.get(i).copy());
 		}
-		ArrayList<Hole> holes = this.getHoles();
-		for(int i=0;i<holes.size();i++){
-			c.addHole(holes.get(i).copy());
+		if (this.isHole()){
+			c.toHole();
 		}
+		
 		return c;
 	}
+	//converts polygon to hole
+	public void toHole(){
+		this.isHole = true;
+	}
 	
-	public Hole toHole(){
-		Hole h = new Hole();
-		copyParameters(this, h);
-		
-		h.setParent(this.getParent());
-		for(int i=0;i<points.size();i++){
-			h.addPoint(points.get(i).copy());
-		}
-		
-		return h;
+	
+	//converts hole to poly
+	public void toPoly(){
+		this.isHole = false;
 	}
 	
 	
@@ -257,10 +250,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			Point newPoint = this.points.get(i);
 			this.points.set(i,newPoint.difference(p));
 		}
-		ArrayList<Hole> holes = this.getHoles();
-		for(int i=0;i<holes.size();i++){
-			holes.get(i).setPointsRelativeTo(p);
-		}
+		
 		this.origin=p;
 	}
 	
@@ -287,12 +277,10 @@ public Drawable expand(){
 					Line l = new Line(xLast,yLast,x,y);
 					l.setStrokeWeight(this.getStrokeWeight());
 					Polygon p = (Polygon)l.expand();
-					if(i==1){
-						poly = p;
-					}
-					else{
-						poly = PolyBoolean.union(poly, p);
-					}
+					
+				
+						poly.addToGroup(p);
+					
 				
 				
 				xLast = x;
@@ -301,7 +289,8 @@ public Drawable expand(){
 			
 			//poly.setFillColor(this.getStrokeColor());
 			//poly.doStroke(false);
-			return poly;
+			//return poly;
+			return PolyBoolean.merge(poly);
 
 	}
 	
@@ -317,18 +306,6 @@ public Drawable expand(){
 			this.points.set(i,pt);
 			
 		}
-		ArrayList<Hole> holes = this.getHoles();
-		for(int i=0;i<holes.size();i++){
-			ArrayList<Point> holepoints = holes.get(i).getPoints();
-			for(int j=0;j<holepoints.size();j++){
-			    Point pt2 = new Point(holepoints.get(j).getX()+getOrigin().getX(),holepoints.get(j).getY()+getOrigin().getY());
-				pt2.rotate(getRotation(),getOrigin());
-				holepoints.set(j,pt2);
-				
-			}
-			holes.get(i).setPoints(holepoints);
-		}
-		
 	
 	}
 	
@@ -359,14 +336,6 @@ public Drawable expand(){
     	return master;
 	}
 	
-	public Polygon addHoleToGroup(Hole h) {
-			System.out.println("added hole in polygon");
-		
-			this.addHole(h);
-	
-			//h.setRelativeTo(this.origin);
-			return this;
-	}
 	
 	@Override
 	//overrides drawable remove from group method- returns a null value since a polygon cannot be a group by itself

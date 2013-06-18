@@ -10,10 +10,10 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreeSelectionModel;
 
+import com.pixelmaid.dresscode.drawing.primitive2d.ComplexPolygon;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
-import com.pixelmaid.dresscode.drawing.primitive2d.Hole;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
@@ -59,13 +59,21 @@ public class TreeManager {
 		else if(d instanceof LShape){
 			name = "import";
 		}
-		else if (d instanceof Hole){
-			name = "hole";
-		}
+		
 		else if(d instanceof Polygon){
+			if(((Polygon) d).isHole()){
+				name = "hole";
+			}
+			else{
 			name = "polygon";
+			}
 		}
-		name = name+":"+d.getIdentifier()+":"+d.getRotation();
+		
+		else if(d instanceof ComplexPolygon){
+			name = "complex polygon";
+		}
+		
+		name = name+":"+d.getIdentifier();
 		if(d.getHide()){
 			name = name+" (hidden)";
 		}
@@ -75,10 +83,7 @@ public class TreeManager {
 		n.add(child);
 		
 
-		ArrayList<Hole> holes = d.getHoles();
-		for(int i=0;i<holes.size();i++){
-			addChild(holes.get(i),child);
-		}
+		
 		
 		if(d.numChildren()!=0){
 			for(int i=0;i<d.numChildren();i++){

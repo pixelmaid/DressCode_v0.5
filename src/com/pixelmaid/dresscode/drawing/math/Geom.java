@@ -27,6 +27,7 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.drawing.datatype.DCHalfEdge;
 import com.pixelmaid.dresscode.drawing.datatype.DoublyConnectedEdgeList;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.seisw.util.geom.Point2D;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -303,7 +304,7 @@ public class Geom {
     //ray determined point in polygon (returns type)
     
     public static char rayTypePointInPolygon(Point q, DoublyConnectedEdgeList p){
-    	double width = 5000;
+    	double width = 500000;
     	int i,i1; //point index; i1 = 1-1 mod n;
     	int n = p.edges.size();
     	int d=2; //dimension index
@@ -368,6 +369,46 @@ public class Geom {
     	
     }
     
+    
+    public static boolean polygonIntersect(Polygon a, Polygon b){
+    	DoublyConnectedEdgeList dA = polyToEdgeList(a);
+    	b.setPointsAbsolute();
+    	ArrayList<Point> p = b.getPoints();
+    	boolean intersect = false;
+    	for(int i=0;i<p.size();i++){
+    		
+    		intersect = rayPointInPolygon(p.get(i), dA);
+    		System.out.println("Intersect ="+intersect);
+    	}
+    	return intersect;
+    }
+    
+    private static DoublyConnectedEdgeList  polyToEdgeList(Polygon p){
+		p.setPointsAbsolute();
+		ArrayList<Point> pPoints = p.getPoints();
+
+		//temp polygon to be stored in master polygon
+		DoublyConnectedEdgeList p_Poly = new DoublyConnectedEdgeList();
+
+		//add all polygon points to temp polygon
+		for(int i=0;i<pPoints.size();i++)
+		{
+			int next;
+			if(i<pPoints.size()-2){
+				next = i+1;
+			}
+			else{
+				next = 0;
+			}
+			Point start = pPoints.get(i);
+			Point end = pPoints.get(next);
+			DCHalfEdge e = new DCHalfEdge(start,end);
+			p_Poly.addHalfEdge(e);
+		}
+		//add all polygon holes to temp polygon
+		
+		return p_Poly;
+	}
     
 
     //uses winding number algorithim, works for irregular convex polygons

@@ -31,28 +31,26 @@ public class ClipNode extends NodeEvent implements DCNode {
     	Drawable d= null;
     	VarType v = null;
     
-    	try{
+    	//try{
     	Drawable aP = params.get(0).evaluate().asDrawable();
     	Drawable bP =  params.get(1).evaluate().asDrawable();
-    	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, aP);
-    	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, bP);
+    
     	
-    	d = PolyBoolean.intersection(aP,bP);
+    	d = PolyBoolean.intersection(aP.copy(),bP.copy());
         d.setIdentifier(aP.getIdentifier());
+        aP.hide();
+    	bP.hide();
 
     	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
     	
     	v=  new VarType(d);
-		if(aP.getIdentifier()!=null){
 		
-		scope.assign(aP.getIdentifier(), v);
-		}
     	d.setLine(line);
 
-    	}
-    	catch (ClassCastException e){
-    		throw new RuntimeException("Illegal expand function call at line:"+ line+" : " + this);
-    	}
+//    	}
+    	/*catch (ClassCastException e){
+    		throw new RuntimeException("Illegal clip function call at line:"+ line+" : " + this);
+    	}*/
     	return v;
     	
     }

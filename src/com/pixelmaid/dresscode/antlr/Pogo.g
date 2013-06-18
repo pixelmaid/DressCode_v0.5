@@ -166,7 +166,8 @@ functionCall
   |GetStroke '(' expression ')'-> ^(FUNC_CALL GetStroke expression)
   |GetStart '(' expression ')'-> ^(FUNC_CALL GetStart expression)
   |GetEnd '(' expression ')'-> ^(FUNC_CALL GetEnd expression) 
-   |GetDistance '(' exprList?  ')'-> ^(FUNC_CALL GetDistance exprList? ) 
+  |GetDistance '(' exprList?  ')'-> ^(FUNC_CALL GetDistance exprList? ) 
+  |GetIntersect'(' exprList?  ')'-> ^(FUNC_CALL GetIntersect exprList? ) 
   ;
    
    mathCall
@@ -413,6 +414,7 @@ GetStroke: 'getStroke';
 GetStart: 'getStart';
 GetEnd: 'getEnd';
 GetDistance: 'dist';
+GetIntersect: 'intersects';
 
 
 

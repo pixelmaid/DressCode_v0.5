@@ -31,7 +31,7 @@ public class UnionNode extends NodeEvent implements DCNode {
     	Drawable d= null;
     	VarType v = null;
     
-    	try{
+    	//try{
     	Drawable aP = params.get(0).evaluate().asDrawable();
     	Drawable bP =  params.get(1).evaluate().asDrawable();
     	//this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, aP);
@@ -40,24 +40,19 @@ public class UnionNode extends NodeEvent implements DCNode {
     	d = PolyBoolean.union(aP.copy(),bP.copy());
     	aP.hide();
     	bP.hide();
-    	aP.setLine(line);
-    	bP.setLine(line);
-
+    	
        // d.setIdentifier(aP.getIdentifier());
 
     	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
     	
     	v=  new VarType(d);
-		/*if(aP.getIdentifier()!=null){
-		
-		scope.assign(aP.getIdentifier(), v);
-		}*/
+	
     	d.setLine(line);
 
-    	}
-    	catch (ClassCastException e){
-    		throw new RuntimeException("Illegal expand function call at line:"+ line+" : " + this);
-    	}
+    	//}
+    	/*catch (ClassCastException e){
+    		throw new RuntimeException("Illegal union function call at line:"+ line+" : " + this);
+    	}*/
     	return v;
     	
     }

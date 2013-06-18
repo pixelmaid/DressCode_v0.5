@@ -37,15 +37,12 @@ public class XorNode extends NodeEvent implements DCNode {
     	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, aP);
     	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, bP);
     	
-    	d = PolyBoolean.xor(aP, bP);
-    	d.setIdentifier(aP.getIdentifier());
+    	d = PolyBoolean.xor(aP.copy(), bP.copy());
+    	aP.hide();
     	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
     	
     	v=  new VarType(d);
-		if(aP.getIdentifier()!=null){
 		
-		scope.assign(aP.getIdentifier(), v);
-		}
     	d.setLine(line);
 
     	}

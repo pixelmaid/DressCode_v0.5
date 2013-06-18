@@ -191,7 +191,7 @@ functionCall returns [DCNode node]
   | ^(FUNC_CALL GetStart expression)
   |^(FUNC_CALL GetEnd expression) 
   |^(FUNC_CALL GetDistance exprList?) {node = new DistanceNode($exprList.e);}
-  
+  |^(FUNC_CALL GetIntersect exprList?) {node = new IntersectNode($exprList.e);}
   ;
 
 ifStatement returns [DCNode node]
