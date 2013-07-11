@@ -79,19 +79,19 @@ public class CodingFrame extends JPanel {
 		splitPane = new JSplitPane();
 		splitPane.setOrientation(JSplitPane.HORIZONTAL_SPLIT );
 		this.add(splitPane);
-		splitPane.setRightComponent(codeTabs);
+		splitPane.setLeftComponent(codeTabs);
 		//Create the scroll pane and add the tree to it. 
 		
 		
 		JScrollPane treeView = new JScrollPane(d);
-		splitPane.setLeftComponent(treeView);
+		splitPane.setRightComponent(treeView);
 		treeView.setMinimumSize(new Dimension(0,0));
 		
 			this.add(t, BorderLayout.PAGE_START);
 		this.add(splitPane,BorderLayout.CENTER);
 		
 		this.doLayout();
-		splitPane.setDividerLocation(100);
+		splitPane.setDividerLocation(800);
 		//splitPane.setEnabled( false );
 
 		

@@ -1,0 +1,24 @@
+//ellipse(x, y, width, height);
+//x: x coordinate of shape center
+//y: y coordinate of shape center
+//width: width of the ellipse 
+//height: height of the ellipse 
+
+//modify these variables to change the pattern
+x = 10;
+y=10;
+width = 10;
+height = 120;
+num = 5;
+
+//this method draws a single shape based on the variables
+shape1 = ellipse(x,y,width,height);
+
+//this is a function that creates a pattern with the shape above
+//click the hidden tab to see how the function works
+radialPattern(shape1, num);
+
+
+
+
+

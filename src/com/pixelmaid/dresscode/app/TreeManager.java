@@ -73,7 +73,9 @@ public class TreeManager {
 			name = "complex polygon";
 		}
 		
+		if(d.getIdentifier()!=null){
 		name = name+":"+d.getIdentifier();
+		}
 		if(d.getHide()){
 			name = name+" (hidden)";
 		}

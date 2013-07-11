@@ -1,0 +1,47 @@
+
+/*-----------------Your code from the last level goes here--------------------*/
+
+
+
+/*-----------------Your code from the last level goes here --------------------*/
+
+//you can pattern your designs from the last level 
+//in different ways using the grid, arc and wave methods
+
+//grid(drawable, colNum, rowNum, gapX, gapY);
+//drawable: the target shape to be copied
+//colNum: the number of columns in the grid
+//rowNum: the number of rows in the grid 
+//gapX: the amount of spacing between the columns
+//gapY: the amount of spacing between the rows 
+
+//arc(drawable, num, width,height,degrees);
+//drawable: the target shape to be copied
+//num: the number of shapes in the arc
+//width: the width of the arc
+//height: the height of the arc
+//degrees: the number of degrees of the arc (180 is a half circle, 360 is a full circle)
+ 
+
+//wave(drawable, num, amp,freq, width);
+//drawable: the target shape to be copied
+//num: the number of shapes in the wave
+//amp: the height(amplitude) of the wave
+//frequency: the number of cycles(crests) in the wave
+//width: the width of the entire wave
+
+//example grid method using the design from above
+
+w = grid(u,6,1,90);
+
+
+//w = wave(u,5,50,1,WIDTH-100);
+//w = arc(u,10,WIDTH,HEIGHT);
+
+
+//clips the wave within the bracelet template
+clipToBracelet(w);
+
+
+
+

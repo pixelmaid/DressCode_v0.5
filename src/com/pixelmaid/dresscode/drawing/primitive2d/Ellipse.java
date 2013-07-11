@@ -139,6 +139,16 @@ public class Ellipse extends Polygon {
 	}
 	
 	@Override
+	public void scaleX(double x){
+		this.width = this.width*x;
+	}
+	
+	@Override
+	public void scaleY(double y){
+		this.height = this.height*y;
+	}
+	
+	@Override
 	public Drawable expand(){
 		Polygon ep = this.toPolygon();
 		return ep.expand();

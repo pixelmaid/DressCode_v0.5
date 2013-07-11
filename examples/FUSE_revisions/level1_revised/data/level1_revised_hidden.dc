@@ -1,0 +1,33 @@
+def radialPattern(e,num):
+
+	g=group(); //creates a group to store the pattern
+
+	repeat i=0:num: // a repeat statement
+		
+		//calculates the angle based on the number 
+		//of shapes in the pattern
+		theta = (360/num/2)*i; 
+
+		//creates a copy of the original shape
+		e2 = copy(e); 
+		
+		//rotates the shape to the angle
+		rotate(e2,theta);
+		
+		//sets the shape to an outline
+		e2 = expand(e2);
+		
+		//adds the shape to the group
+		add(g,e2);
+	end
+
+	//hides the original shape
+	hide(e);
+
+	//combines the group into one complete shape
+	g = merge(g);
+	//returns the group
+	return g;
+end
+
+

@@ -11,6 +11,7 @@ import com.pixelmaid.dresscode.app.Embedded;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
+import com.pixelmaid.dresscode.drawing.math.Vec2d;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
@@ -160,9 +161,9 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		
 		e.popMatrix();
 		
-		/*if(this.getDrawOrigin()){
+		//if(this.getDrawOrigin()){
 			this.drawOrigin(e);
-		}*/
+		//}
 		}
 	}
 	
@@ -242,6 +243,64 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	}
 	
 	
+	
+	@Override
+/*	public void scaleX(double x){
+		scaleX(x, this.getOrigin());
+	}
+	*/
+	//scales the object on the x axis
+		public void scaleX(double x ) {
+		double oldX = this.getOrigin().getX();
+		double oldY = this.getOrigin().getY();
+		for(int i=0;i<points.size();i++){
+			Point p = points.get(i);
+			System.out.println("startX ="+p.getX());
+			Vec2d v = new Vec2d(p.getX()-origin.getX(),p.getY()-origin.getY());
+			v = v.mul(x);
+			p.setX(v.x+origin.getX());
+			//p.setY(v.y+this.getOrigin().getY());
+			System.out.println("endX ="+p.getX());
+			points.set(i,p);
+			
+			
+		}
+	
+		this.setPointsRelativeTo(Geom.findCentroid(this));
+	
+		this.setOrigin(new Point(oldX, oldY));
+		
+	
+		}
+
+	@Override
+	
+	
+	//scales the object on the x axis
+		public void scaleY(double y) {
+		double oldX = this.getOrigin().getX();
+		double oldY = this.getOrigin().getY();
+		for(int i=0;i<points.size();i++){
+			Point p = points.get(i);
+			System.out.println("startX ="+p.getX());
+			Vec2d v = new Vec2d(p.getX()-this.getOrigin().getX(),p.getY()-this.getOrigin().getY());
+			v = v.mul(y);
+			//p.setX(v.x+this.getOrigin().getX());
+			p.setY(v.y+origin.getY());
+			System.out.println("endX ="+p.getX());
+			points.set(i,p);
+			
+			
+		}
+		
+		this.setPointsRelativeTo(Geom.findCentroid(this));
+		
+	
+		this.setOrigin(new Point(oldX, oldY));
+		
+		
+
+		}
 	
 	@Override
 	//sets the points and holes relative around a new origin

@@ -41,9 +41,7 @@ public class ScaleNode extends NodeEvent implements DCNode {
     		d.scaleX(x);
     		d.scaleY(y);
     	}
-    	else{
-    		d.scale(x);
-    	}
+    	
     
     	d.setLine(line);
 

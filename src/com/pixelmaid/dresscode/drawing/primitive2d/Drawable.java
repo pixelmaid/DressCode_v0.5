@@ -12,6 +12,7 @@ import com.pixelmaid.dresscode.drawing.datatype.CmpX;
 import com.pixelmaid.dresscode.drawing.datatype.CmpY;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
+import com.pixelmaid.dresscode.drawing.math.Vec2d;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 import com.pixelmaid.dresscode.events.EventSource;
@@ -22,8 +23,8 @@ public class Drawable implements DrawableEvent {
 	
 	
 	protected double rotation=0;
-	private double scaleX = 1;
-	private double scaleY = 1;
+	private double scaleXP = 1;
+	private double scaleYP = 1;
 	private boolean hide= false;
 	public String key;
 	protected Point origin;
@@ -111,7 +112,7 @@ public class Drawable implements DrawableEvent {
 		embedded.pushMatrix();
 		embedded.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		embedded.rotate(PApplet.radians((float)getRotation()));
-		embedded.scale((float)getScaleX(),(float)getScaleY());
+		//embedded.scale((float)getScaleX(),(float)getScaleY());
 				for(int j =0;j<this.children.size();j++){
 					if(!this.children.get(j).getHide()){
 						this.children.get(j).draw(embedded);
@@ -524,42 +525,80 @@ public class Drawable implements DrawableEvent {
 	// TODO IMPLEMENT SCALING
 	//scales the object on the x axis
 	public void scaleX(double x) {
-		this.scaleX = x;
-		if(this.getParent()!=null){
-			this.parent.resetOrigin();
+		Point oldOrigin = this.origin.copy();
+		for(int i=0;i<this.numChildren();i++){
+			Drawable child = this.children.get(i);
+			if(child.numChildren()==0){
+			((Polygon)(child)).scaleX(x);
+			}
 		}
+		
+		ArrayList<Point> origins = new ArrayList<Point>();
+		
+		for(int i=0;i<this.numChildren();i++){
+			Drawable child = this.children.get(i);
+			if(child.numChildren()==0){
+				Vec2d v = new Vec2d(child.getOrigin().getX()-this.getOrigin().getX(),child.getOrigin().getY()-this.getOrigin().getY());
+				v = v.mul(x);
+				double newX = v.x+this.getOrigin().getX();
+				
+			((Polygon)(child)).setOrigin(new Point(newX, child.getOrigin().getY()));
+			origins.add(this.children.get(i).getOrigin());
+
+			}
+		}
+		this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+
+		this.moveTo(oldOrigin.getX(), oldOrigin.getY());
 
 	}
 
 	//scales the object on the x axis
 	public void scaleY(double y) {
-		this.scaleY = y;
-		if(this.getParent()!=null){
-			this.parent.resetOrigin();
+		Point oldOrigin = this.origin.copy();
+
+		for(int i=0;i<this.numChildren();i++){
+			Drawable child = this.children.get(i);
+			if(child.numChildren()==0){
+			((Polygon)(child)).scaleY(y);
+			}
 		}
+		
+		ArrayList<Point> origins = new ArrayList<Point>();
+		for(int i=0;i<this.numChildren();i++){
+			Drawable child = this.children.get(i);
+			if(child.numChildren()==0){
+				Vec2d v = new Vec2d(child.getOrigin().getX()-this.getOrigin().getX(),child.getOrigin().getY()-this.getOrigin().getY());
+				v = v.mul(y);
+				double newY = v.y+this.getOrigin().getY();
+				
+			((Polygon)(child)).setOrigin(new Point(child.getOrigin().getX(),newY));
+			origins.add(this.children.get(i).getOrigin());
+
+			
+			}
+		}
+		this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+
+		this.moveTo(oldOrigin.getX(), oldOrigin.getY());
+
+
 
 	}
 	
 	//scales the object on the x axis
 	public double getScaleX() {
-		return this.scaleX;
+		return this.scaleXP;
 
 	}
 
 	//scales the object on the x axis
 	public double getScaleY() {
-		return this.scaleY;
+		return this.scaleYP;
 
 	}
 
-	//scales the object on the x and y axis by the same amount
-	public void scale(double s) {
-		this.scaleX = s;
-		this.scaleY = s;
-		if(this.getParent()!=null){
-			//this.parent.resetOrigin();
-		}
-	}	
+	
 	
 	// TODO TEST COPY
 	//copies drawable and returns copy. Must be overridden by subclasses
@@ -654,8 +693,8 @@ public class Drawable implements DrawableEvent {
 	public void copyParameters(Drawable o, Drawable c){
 		c.setOrigin(o.origin.copy());
 		c.rotate(o.getRotation());
-		c.scaleX(o.getScaleX());
-		c.scaleY(o.getScaleY());
+		//c.scaleX(o.getScaleX());
+		//c.scaleY(o.getScaleY());
 		c.setFillColor(o.getFillColor());
 		c.setStrokeColor(o.getStrokeColor());
 		c.setStrokeWeight(o.getStrokeWeight());

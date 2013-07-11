@@ -131,6 +131,16 @@ public class Line extends Polygon {
 		
 	}
 	
+	@Override
+	public void scaleX(double x){
+		//this.width = this.width*x;
+	}
+	
+	@Override
+	public void scaleY(double y){
+		//this.height = this.height*y;
+	}
+	
 	public Drawable expand(){
 		if(this.getStrokeWeight()<1){
 			this.setStrokeWeight(1);
