@@ -68,7 +68,7 @@
         description="compile the source " >
 
 		<!-- Compile the java code from ${src} into ${build} -->
-		<javac srcdir="${src.dir}" destdir="${classes.dir}"  excludes="${excludes.dir}">
+		<javac srcdir="${src.dir}" destdir="${classes.dir}"  excludes="${excludes.dir}" target="1.6">
 			<src path="${src.dir}"/>
 			<src path="${src.generated.dir}"/>
 			

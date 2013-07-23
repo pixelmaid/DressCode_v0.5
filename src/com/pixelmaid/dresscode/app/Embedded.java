@@ -1,6 +1,7 @@
 package com.pixelmaid.dresscode.app;
 
 
+import java.awt.Color;
 import java.io.File;
 import java.math.RoundingMode;
 import java.nio.IntBuffer;
@@ -20,6 +21,8 @@ import processing.opengl.PGL;
 import processing.opengl.PGraphicsOpenGL;
 import javax.media.opengl.*;
 import javax.media.opengl.glu.*;
+import javax.swing.JFrame;
+
 import processing.pdf.PGraphicsPDF;
 
 
@@ -29,7 +32,8 @@ public class Embedded extends PApplet {
 	 */
 	protected List _listeners = new ArrayList<CustomEventListener>();
 	private static final long serialVersionUID = 1L;
-	public int DEFAULT_BG = 222;
+	public int DEFAULT_BG = 242;
+	public Color backgroundColor;
 	private double gridUnits = 10;
 	private double gridIncrement = 10;
 	private double counterIncrement = 100;
@@ -69,6 +73,7 @@ public class Embedded extends PApplet {
 	private static final int PAN_MODE = 1;
 	private static final int SELECT_MODE = 2;
 	
+	public JFrame parent;
 	
 	float mvmatrix1[] = new float[16];
 	float mvmatrix2[] = new float[16];
@@ -214,6 +219,8 @@ public class Embedded extends PApplet {
 
 		 endRaw();
 		 noLoop();*/
+		System.out.println("setup_called");
+		parent.setSize(parent.getPreferredSize());
 		
 		
 		
@@ -230,7 +237,7 @@ public class Embedded extends PApplet {
 	public void draw() {
 		
 			pushMatrix();
-			background(DEFAULT_BG);
+			background(backgroundColor.getRed(),backgroundColor.getGreen(),backgroundColor.getBlue());
 			//translate(translateXAmount,translateYAmount,zoomAmount);
 			translate(translateXAmount,translateYAmount);
 			scale(zoomAmount);
@@ -244,7 +251,7 @@ public class Embedded extends PApplet {
 				tempDrawables.get(i).draw(this);
 				if(showOrigin){
 					tempDrawables.get(i).drawOrigin(this);
-					//tempDrawables.get(i).drawBoundingBox(this);
+					//	tempDrawables.get(i).drawBoundingBox(this);
 				}
 				
 			}
@@ -262,11 +269,11 @@ public class Embedded extends PApplet {
 			float yP = screenPos.y;*/
 
 			//System.out.println(xP+","+yP);
-
+			dimensions();
 			if(drawGrid){
 				grid();
 			}
-			dimensions();
+			
 
 			/*System.out.println(x+","+y+","+z);
 	float screenx = screenX(x,y,z);
@@ -758,9 +765,10 @@ public class Embedded extends PApplet {
 	public void dimensions(){
 
 				stroke(0);
-				noFill();
+				this.fill(DEFAULT_BG);
 				rectMode(CENTER);
 				rect(width/2,height/2,(float)drawingBoardWidth,(float)drawingBoardHeight);
+				
 	
 	}
 

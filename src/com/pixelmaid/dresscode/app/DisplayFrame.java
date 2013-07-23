@@ -1,9 +1,13 @@
 package com.pixelmaid.dresscode.app;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Insets;
+import java.awt.LayoutManager;
 
+import com.pixelmaid.dresscode.app.ui.CodeToolbar;
+import com.pixelmaid.dresscode.app.ui.DrawingToolbar;
 import com.pixelmaid.dresscode.app.ui.ImageButton;
 
 import java.awt.Dimension;
@@ -58,14 +62,15 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private DrawingFrame drawingFrame;
 	private  Embedded canvas;
 	//private DXFExport dxfExport;
-	private Toolbar drawingToolbar;
+	private DrawingToolbar drawingToolbar;
 
 	
 	private int defaultDrawingPaneWidth = 2000;
 	private int defaultDrawingPaneHeight = 1000;
-	private int defaultButtonWidth = 50;
-	private int defaultButtonHeight = 50;
+	private int defaultButtonWidth = 24;
+	private int defaultButtonHeight = 24;
 	
+	private int defaultToolbarHeight = 30;
 	
 	
 	private CodingFrame codingFrame;
@@ -74,7 +79,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private TreeManager	treeManager;
 
 	private  Console output;
-	private Toolbar codingToolbar;
+	private CodeToolbar codingToolbar;
 	
 	private DCProject currentProject;
 	//coding panel buttons
@@ -82,8 +87,17 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public static DimensionDialog dimensionDialog;
 
 	private JProgressBar progressBar;
+	private Color brown = new Color(90,68,60);
+	private Color pink = new Color(217,65,78);
+	private Color grey = new Color(140,130,129);
 	
-	
+	private Color lightGrey = new Color(191,184,184);
+
+	private Color offWhite= new Color(242,242,242);
+	private Color white= new Color(255,255,255);
+
+	private int fontSize = 12;
+
 	//drawing panel buttons
 	private ImageButton selectButton, targetButton, printButton, zoomInButton, zoomOutButton, panButton, penButton, gridButton, dimensionButton;
 	
@@ -139,7 +153,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		this.defaultDrawingPaneWidth = width/2;
-		this.defaultDrawingPaneHeight = height;
+		this.defaultDrawingPaneHeight = height+40;
 		
 		
 		splitFrame = new JSplitPane();
@@ -150,12 +164,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		canvas.setId(1);
 		canvas.addEventListener(this);
 		
-		canvas.setDimensions(defaultDrawingPaneWidth-5,defaultDrawingPaneHeight-(defaultButtonHeight*2));
+		canvas.setDimensions(defaultDrawingPaneWidth,defaultDrawingPaneHeight);
 		canvas.setDrawingBoardDimensions(currentProject.getWidth(), currentProject.getHeight(),currentProject.getUnits());
 		
 		//dxfExport = new DXFExport();
 		//dxfExport.setDimensions(defaultDrawingPaneWidth,defaultDrawingPaneHeight);
-		
+	
 		
 		
 		drawableManager = new DrawableManager();
@@ -164,7 +178,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		instructionManager.addEventListener(this);
 		drawableManager.addEventListener(this);
 		
-		drawingToolbar = new Toolbar();
+		drawingToolbar = new DrawingToolbar();
 		selectButton = new ImageButton("select","arrow.png", "selection tool", defaultButtonWidth,defaultButtonHeight);
 		panButton = new ImageButton("pan","pan.png", "hand tool", defaultButtonWidth,defaultButtonHeight );
 		zoomInButton = new ImageButton("zoom in","zoomin.png", "zoom in", defaultButtonWidth,defaultButtonHeight );
@@ -174,7 +188,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		printButton = new ImageButton("print","print.png", "export your design to pdf", defaultButtonWidth,defaultButtonHeight);
 		targetButton = new ImageButton("target","target.png", "get the coordinates from a given location", defaultButtonWidth,defaultButtonHeight);
 		gridButton = new ImageButton("grid","grid.png", "toggle grid", defaultButtonWidth,defaultButtonHeight);
-		
+		importButton = new ImageButton("import","import.png", "import an svg into your script", defaultButtonWidth,defaultButtonHeight);
 		dimensionButton = new ImageButton("dimension","dimensions.png", "change dimensions", defaultButtonWidth,defaultButtonHeight);
 
 		
@@ -210,8 +224,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		drawingToolbar.addButton(dimensionButton);
 		dimensionButton.addActionListener(this);
 
-		drawingToolbar.init(defaultDrawingPaneWidth,defaultButtonHeight);
-
+		drawingToolbar.addButton(importButton);
+		importButton.addActionListener(this);
+		
+		drawingToolbar.init(defaultToolbarHeight,defaultDrawingPaneWidth,brown);
+		
 		
 		drawingFrame = new DrawingFrame();
 		drawingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight,canvas,drawingToolbar);
@@ -220,19 +237,19 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		splitFrame.setOrientation(JSplitPane.HORIZONTAL_SPLIT );
 		splitFrame.setDividerLocation(width/2); 
 		this.getContentPane().add(splitFrame);
-		splitFrame.setLeftComponent(drawingFrame);
+		splitFrame.setRightComponent(drawingFrame);
 		
 		//init code side
 		codeField= new CodeField();
-		codeField.init();
+		codeField.init(fontSize);
 		
 		hiddenCodeField= new CodeField();
-		hiddenCodeField.init();
+		hiddenCodeField.init(fontSize);
 		
 		output = new Console();
-		output.init();
+		output.init(lightGrey,white,fontSize);
 		
-		codingToolbar = new Toolbar();
+		codingToolbar = new CodeToolbar();
        
 		runButton = new ImageButton("run","run.png", "run your script", defaultButtonWidth,defaultButtonHeight);
 		runButton.addActionListener(this);
@@ -244,8 +261,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		saveButton.addActionListener(this);
 		openButton = new ImageButton("open","open.png", "open an existing script", defaultButtonWidth,defaultButtonHeight);
 		openButton.addActionListener(this);
-		importButton = new ImageButton("import","import.png", "import an svg into your script", defaultButtonWidth,defaultButtonHeight);
-		importButton.addActionListener(this);
+		
 		
 		//progressBar = new JProgressBar(0,100);
 		//progressBar.setStringPainted(true);
@@ -255,21 +271,24 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		codingToolbar.addButton(newButton);
 		codingToolbar.addButton(saveButton);
 		codingToolbar.addButton(openButton);
-		codingToolbar.addButton(importButton);
+		
 		//codingToolbar.addProgressBar(progressBar);
 
-		codingToolbar.init(defaultDrawingPaneWidth,defaultButtonHeight);
-		
-		treeManager = new TreeManager();
+		codingToolbar.init(defaultDrawingPaneWidth,defaultToolbarHeight,brown);
+		//codingToolbar.setBorder(border);
+		treeManager = new TreeManager(offWhite);
 		
 	
 		codingFrame = new CodingFrame();
 		
-		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, output, codingToolbar, treeManager.getTree());
+		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, output, codingToolbar, treeManager.getTree(),brown,grey,pink);
 
 		
 		//this.getContentPane().add(codingFrame,BorderLayout.LINE_END);
-		splitFrame.setRightComponent(codingFrame);
+		splitFrame.setLeftComponent(codingFrame);
+		splitFrame.setBorder(null);
+		splitFrame.setDividerSize(5);
+		splitFrame.setBackground(grey);
 		splitFrame.addComponentListener(this);
 		//splitFrame.doLayout();
 		this.getContentPane().doLayout();
@@ -279,15 +298,18 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		this.addWindowListener(this);
 		this.addComponentListener(this);
 
-		this.setResizable(false);
+		this.setResizable(true);
 		createMenu();
 		//dxfExport.init();
 		//dxfExport.redraw();
-		
+		canvas.parent = this;
+		canvas.backgroundColor = lightGrey;
 		canvas.init();
      	currentProject.setDimensions(UnitManager.DEFAULT_WIDTH,UnitManager.DEFAULT_HEIGHT, UnitManager.STANDARD, canvas, instructionManager);
 
 		canvas.frame = this;
+		System.out.println("setting size");
+		
 		
 	}
 	
@@ -407,6 +429,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	@Override
 	public void windowActivated(WindowEvent arg0) {
 		System.out.println("window activated");
+	
+		
 
 
 	}
@@ -456,7 +480,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	@Override
 	public void windowGainedFocus(WindowEvent arg0) {
-		System.out.println("window gained focus");
+		
 
 	}
 
@@ -489,6 +513,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		System.out.println("canvas resized");
 	canvas.setDimensions(drawingFrame.getWidth()-5,drawingFrame.getHeight()-(defaultButtonHeight));
 	canvas.setDrawingBoardDimensions(currentProject.getWidth(), currentProject.getHeight(),currentProject.getUnits());
+	this.doLayout();
+	
 	canvas.redraw();
 	//Insets insets =canvas.frame.getInsets();
 		//canvas.frame.setSize(400 + (insets.left + insets.right), 400 + (insets.top + insets.bottom));
@@ -524,7 +550,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	@Override
 	public void componentShown(ComponentEvent arg0) {
 
-
+		
 
 	}
 
@@ -561,6 +587,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		
 		canvas.clearMode();
 		if (e.getSource() == runButton ) {
 			run();
@@ -627,6 +654,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 		}
 		canvas.redraw();
+		
 	
 
 	}

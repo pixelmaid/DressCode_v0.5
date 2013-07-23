@@ -522,77 +522,94 @@ public class Drawable implements DrawableEvent {
 		return this.rotation;
 	}
 	
-	// TODO IMPLEMENT SCALING
-	//scales the object on the x axis
-	public void scaleX(double x) {
-		Point oldOrigin = this.origin.copy();
-		for(int i=0;i<this.numChildren();i++){
-			Drawable child = this.children.get(i);
-			if(child.numChildren()==0){
-			((Polygon)(child)).scaleX(x);
-			}
-		}
-		
-		ArrayList<Point> origins = new ArrayList<Point>();
-		
-		for(int i=0;i<this.numChildren();i++){
-			Drawable child = this.children.get(i);
-			if(child.numChildren()==0){
-				Vec2d v = new Vec2d(child.getOrigin().getX()-this.getOrigin().getX(),child.getOrigin().getY()-this.getOrigin().getY());
-				v = v.mul(x);
-				double newX = v.x+this.getOrigin().getX();
-				
-			((Polygon)(child)).setOrigin(new Point(newX, child.getOrigin().getY()));
-			origins.add(this.children.get(i).getOrigin());
-
-			}
-		}
-		this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
-
-		this.moveTo(oldOrigin.getX(), oldOrigin.getY());
-
-	}
-
-	//scales the object on the x axis
-	public void scaleY(double y) {
-		Point oldOrigin = this.origin.copy();
-
-		for(int i=0;i<this.numChildren();i++){
-			Drawable child = this.children.get(i);
-			if(child.numChildren()==0){
-			((Polygon)(child)).scaleY(y);
-			}
-		}
-		
-		ArrayList<Point> origins = new ArrayList<Point>();
-		for(int i=0;i<this.numChildren();i++){
-			Drawable child = this.children.get(i);
-			if(child.numChildren()==0){
-				Vec2d v = new Vec2d(child.getOrigin().getX()-this.getOrigin().getX(),child.getOrigin().getY()-this.getOrigin().getY());
-				v = v.mul(y);
-				double newY = v.y+this.getOrigin().getY();
-				
-			((Polygon)(child)).setOrigin(new Point(child.getOrigin().getX(),newY));
-			origins.add(this.children.get(i).getOrigin());
-
+	/*
+	//scales the object 
+		public void scale(double x, double y, boolean top) {
+			
+	
+			
+			for(int i=0;i<this.numChildren();i++){
+				Drawable child = this.children.get(i);
+				child.scale(x,y,false);
 			
 			}
+			
+		
+			if(top){
+				resetScaleOriginRecur();
+
+				this.moveTo(oldOrigin.getX(), oldOrigin.getY());
+			}
+
 		}
+		
+		public void resetScaleOriginRecur(){
+			Point oldOrigin = this.origin.copy();
+			
+			ArrayList<Point> origins = new ArrayList<Point>();
+			
+			for(int i=0;i<this.children.size();i++){
+				this.children.get(i).resetOriginRecur();
+				origins.add(this.children.get(i).getOrigin());
+			}
+			
+			if(this.children.size()>1){
+				this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+			}
+			
+			else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
+				this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
+			}
+			
+			Vec2d vx = new Vec2d(child.getOrigin().getX()-this.getOrigin().getX(),child.getOrigin().getY()-this.getOrigin().getY());
+			vx = vx.mul(x);
+			double newX = vx.x+this.getOrigin().getX();
+			Vec2d vy = new Vec2d(child.getOrigin().getX()-this.getOrigin().getX(),child.getOrigin().getY()-this.getOrigin().getY());
+			vy = vy.mul(y);
+			double newY = vy.y+this.getOrigin().getY();
+			
+			child.setOrigin(new Point(newX, newY));
+			this.moveTo(oldOrigin.getX(), oldOrigin.getY());
+		}*/
+	
+
+	//scales the object 
+	public void scale(double x, double y) {
+		Point oldOrigin = this.origin.copy();
+		ArrayList<Point> origins = new ArrayList<Point>();
+		
+		for(int i=0;i<this.numChildren();i++){
+			Drawable child = this.children.get(i);
+			if(child.numChildren()==0){
+			((Polygon)(child)).scale(x,y);
+			Vec2d vx = new Vec2d(child.getOrigin().getX()-this.getOrigin().getX(),child.getOrigin().getY()-this.getOrigin().getY());
+			vx = vx.mul(x);
+			double newX = vx.x+this.getOrigin().getX();
+			Vec2d vy = new Vec2d(child.getOrigin().getX()-this.getOrigin().getX(),child.getOrigin().getY()-this.getOrigin().getY());
+			vy = vy.mul(y);
+			double newY = vy.y+this.getOrigin().getY();
+			
+		((Polygon)(child)).setOrigin(new Point(newX, newY));
+		origins.add(this.children.get(i).getOrigin());
+			}
+		}
+		
+	
+		
 		this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
 
 		this.moveTo(oldOrigin.getX(), oldOrigin.getY());
 
-
-
 	}
+
 	
-	//scales the object on the x axis
+	
+	
 	public double getScaleX() {
 		return this.scaleXP;
 
 	}
 
-	//scales the object on the x axis
 	public double getScaleY() {
 		return this.scaleYP;
 

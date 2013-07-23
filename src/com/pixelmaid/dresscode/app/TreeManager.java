@@ -24,10 +24,11 @@ public class TreeManager {
 	private JTree tree;
 	private DefaultMutableTreeNode top;
 	
-	public TreeManager(){
+	public TreeManager(Color bg){
 		top = new DefaultMutableTreeNode("Scene");
 		   // createNodes(top);
 		tree = new JTree(top);
+		this.tree.setBackground(bg);
 			  
 		
 		

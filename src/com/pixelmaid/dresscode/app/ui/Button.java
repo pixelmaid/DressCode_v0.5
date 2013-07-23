@@ -41,7 +41,7 @@ public class Button extends JButton {
 
     private boolean on;
     private boolean toggle = false;
-
+   
     public Button() {
        super("test");
         //on = false;
@@ -55,6 +55,7 @@ public class Button extends JButton {
         //this.on = on;
         //this.toggle = toggle;
         this.setText(name);
+        
         
        
     }

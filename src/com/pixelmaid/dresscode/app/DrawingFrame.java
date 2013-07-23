@@ -75,8 +75,9 @@ public class DrawingFrame extends JPanel{
 	       // sketchScroll.add(sketchPanel); //adds JPanel to ScrollPane
 	       
 	        //canvas.init();
-	    	this.add(t, BorderLayout.PAGE_START);
+	         
 	        this.add(sketch, BorderLayout.CENTER); 
+	        this.add(t,BorderLayout.LINE_END);
 	       //Add the toolbar and the log to this panel.
 	 	
 	 		this.doLayout();

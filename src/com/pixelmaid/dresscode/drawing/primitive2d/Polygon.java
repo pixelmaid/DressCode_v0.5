@@ -161,9 +161,9 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		
 		e.popMatrix();
 		
-		//if(this.getDrawOrigin()){
+		if(this.getDrawOrigin()){
 			this.drawOrigin(e);
-		//}
+		}
 		}
 	}
 	
@@ -250,57 +250,33 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	}
 	*/
 	//scales the object on the x axis
-		public void scaleX(double x ) {
+		public void scale(double x,double y ) {
 		double oldX = this.getOrigin().getX();
 		double oldY = this.getOrigin().getY();
 		for(int i=0;i<points.size();i++){
 			Point p = points.get(i);
 			System.out.println("startX ="+p.getX());
-			Vec2d v = new Vec2d(p.getX()-origin.getX(),p.getY()-origin.getY());
-			v = v.mul(x);
-			p.setX(v.x+origin.getX());
+			Vec2d vX = new Vec2d(p.getX()-origin.getX(),p.getY()-origin.getY());
+			vX = vX.mul(x);
+			p.setX(vX.x+origin.getX());
+			
+			Vec2d vY = new Vec2d(p.getX()-origin.getX(),p.getY()-origin.getY());
+			vY = vY.mul(y);
+			p.setY(vY.y+origin.getY());
 			//p.setY(v.y+this.getOrigin().getY());
-			System.out.println("endX ="+p.getX());
 			points.set(i,p);
 			
 			
 		}
 	
-		this.setPointsRelativeTo(Geom.findCentroid(this));
+		resetOriginRecur();
 	
 		this.setOrigin(new Point(oldX, oldY));
 		
 	
 		}
 
-	@Override
-	
-	
-	//scales the object on the x axis
-		public void scaleY(double y) {
-		double oldX = this.getOrigin().getX();
-		double oldY = this.getOrigin().getY();
-		for(int i=0;i<points.size();i++){
-			Point p = points.get(i);
-			System.out.println("startX ="+p.getX());
-			Vec2d v = new Vec2d(p.getX()-this.getOrigin().getX(),p.getY()-this.getOrigin().getY());
-			v = v.mul(y);
-			//p.setX(v.x+this.getOrigin().getX());
-			p.setY(v.y+origin.getY());
-			System.out.println("endX ="+p.getX());
-			points.set(i,p);
-			
-			
-		}
-		
-		this.setPointsRelativeTo(Geom.findCentroid(this));
-		
-	
-		this.setOrigin(new Point(oldX, oldY));
-		
-		
 
-		}
 	
 	@Override
 	//sets the points and holes relative around a new origin

@@ -10,6 +10,7 @@ import java.awt.event.*;
 import java.io.File;
 
 import javax.swing.*;
+import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.UndoableEditEvent;
@@ -37,13 +38,13 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
         super();
     }
     
-    public void init(){
+    public void init(int size){
     	 this.setEditable(true);
     	this.setPreferredSize(new Dimension(550,500));
 		this.setContentType("text/java");
 		this.setText("");
-		
-		this.setFont(new Font("Courier", 0, 15));
+		this.setBorder(new EmptyBorder(10,10,10,10));
+		this.setFont(new Font("Courier", 0, size));
 		editorPaneDocument = this.getDocument();
 		editorPaneDocument.addUndoableEditListener(undoHandler);
 		KeyStroke undoKeystroke = KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK);
@@ -58,6 +59,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 		undoAction.setActions(undoManager,redoAction);
 		redoAction.setActions(undoManager,undoAction);
 		undoHandler.setActions(undoManager, undoAction, redoAction);
+		
     }
  
     

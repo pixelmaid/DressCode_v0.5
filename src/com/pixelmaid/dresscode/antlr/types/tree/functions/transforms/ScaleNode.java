@@ -38,8 +38,8 @@ public class ScaleNode extends NodeEvent implements DCNode {
     	if(params.size()==3){
     	y=params.get(2).evaluate().asDouble();
     	
-    		d.scaleX(x);
-    		d.scaleY(y);
+    		d.scale(x,y);
+    		
     	}
     	
     

@@ -108,14 +108,12 @@ public class Rectangle extends Polygon{
 	}
 	
 	@Override
-	public void scaleX(double x){
+	public void scale(double x,double y){
 		this.width = this.width*x;
-	}
-	
-	@Override
-	public void scaleY(double y){
 		this.height = this.height*y;
 	}
+	
+
 	
 	@Override
 	public Drawable expand(){
