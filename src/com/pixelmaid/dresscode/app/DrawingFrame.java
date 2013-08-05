@@ -45,7 +45,6 @@ public class DrawingFrame extends JPanel{
 			toolbar = t;
 			 //sketchPanel size is the larger of either sketchWindow or canvas
 		     sketchPanel.setLayout(new BoxLayout(sketchPanel, BoxLayout.PAGE_AXIS)); //centers sketch - optional
-
 		     
 		     BasicInternalFrameUI ui = (BasicInternalFrameUI)sketch.getUI();
 		     sketch.putClientProperty("titlePane", ui.getNorthPane());

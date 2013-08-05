@@ -15,6 +15,7 @@ import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
 
 import com.pixelmaid.dresscode.app.ui.ConsoleToolbar;
+import com.pixelmaid.dresscode.app.ui.ImageButton;
 import com.pixelmaid.dresscode.app.ui.Toolbar;
 import com.pixelmaid.dresscode.app.ui.TreeToolbar;
 
@@ -47,7 +48,7 @@ public class CodingFrame extends JPanel {
 		
 	}
 	
-	 public void init(int w, int he, CodeField c, CodeField h, Console o, Toolbar t, JTree d, Color bg,Color sb, Color brdr){
+	 public void init(int w, int he, CodeField c, CodeField h, Console o, Toolbar t, JTree d, Color bg,Color sb, Color brdr, ImageButton clearButton){
 		this.setBorder(null);
 		BorderLayout layout = new BorderLayout();
 		layout.setHgap(0);
@@ -82,7 +83,7 @@ public class CodingFrame extends JPanel {
 
 		output.setPreferredSize(new Dimension(width,outputHeight));
 		consoleToolbar = new ConsoleToolbar();
-		consoleToolbar.init(width,25,bg,brdr);
+		consoleToolbar.init(width,25,bg,brdr,clearButton);
 
 		scrPane1 = new JScrollPane(codeField);
 		

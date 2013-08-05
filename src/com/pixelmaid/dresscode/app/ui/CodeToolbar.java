@@ -44,9 +44,16 @@ public class CodeToolbar extends Toolbar {
 	    this.add(textField);
 	    */
 		
+		FlowLayout panelLayout = new FlowLayout();
+		//panelLayout.setVgap(1);
+		panelLayout.setHgap(1);
+		panelLayout.setAlignment(FlowLayout.LEFT);
+		
 		buttonPanel.setSize(new Dimension(121,10));
 		buttonPanel.setBackground(null);
 		buttonPanel.setBorder(new EmptyBorder(0,0,0,0));
+		buttonPanel.setLayout(panelLayout);
+		buttonPanel.doLayout();
 		this.add(buttonPanel);
 		
 	    EmptyBorder b = new EmptyBorder(0,0,0,0);
@@ -60,7 +67,7 @@ public class CodeToolbar extends Toolbar {
 		
 		//Adjust constraints for the text field so it's at
 		//(<label's right edge> + 5, 5).
-		layout.putConstraint(SpringLayout.EAST, buttonPanel,-20,SpringLayout.EAST,this);
+		layout.putConstraint(SpringLayout.EAST, buttonPanel,-15,SpringLayout.EAST,this);
 		layout.putConstraint(SpringLayout.NORTH, buttonPanel,-2,SpringLayout.NORTH, this);
 		 try {
 			 URL url = ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/flower.png");

@@ -17,6 +17,7 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	protected ArrayList<Point> points;
 	//private ArrayList<Hole> holes;
+	boolean closed = false;
 	private static double DEFAULT_LENGTH = 20;
 	
 	public Polygon(){
@@ -90,6 +91,10 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		this.points = p;
 	}
 	
+	//determines if polygon is closed or not
+	public void setClosed(boolean c){
+		closed = c;
+	}
 	/*public ArrayList<Hole> getHoles(){
 		return this.holes;
 	}*/
@@ -157,7 +162,13 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		for(int i=0;i<points.size();i++){
 			e.vertex((float)points.get(i).getX(),(float)points.get(i).getY());
 		}
-		e.endShape(PApplet.CLOSE);	
+		if(!closed){
+			e.endShape(PApplet.OPEN);	
+		}
+		else{
+			e.endShape(PApplet.CLOSE);	
+
+		}
 		
 		e.popMatrix();
 		

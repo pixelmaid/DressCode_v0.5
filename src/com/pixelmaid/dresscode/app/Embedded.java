@@ -2,13 +2,17 @@ package com.pixelmaid.dresscode.app;
 
 
 import java.awt.Color;
+import java.awt.Image;
 import java.io.File;
-import java.math.RoundingMode;
-import java.nio.IntBuffer;
+import java.io.IOException;
+import java.net.URL;
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+import com.pixelmaid.dresscode.app.ui.tools.PenTool;
+import com.pixelmaid.dresscode.app.ui.tools.Tool;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
@@ -17,10 +21,7 @@ import com.pixelmaid.dresscode.events.CustomEventListener;
 
 import processing.core.*;
 import processing.dxf.RawDXF;
-import processing.opengl.PGL;
 import processing.opengl.PGraphicsOpenGL;
-import javax.media.opengl.*;
-import javax.media.opengl.glu.*;
 import javax.swing.JFrame;
 
 import processing.pdf.PGraphicsPDF;
@@ -30,7 +31,7 @@ public class Embedded extends PApplet {
 	/**
 	 * 
 	 */
-	protected List _listeners = new ArrayList<CustomEventListener>();
+	protected List<CustomEventListener> _listeners = new ArrayList<CustomEventListener>();
 	private static final long serialVersionUID = 1L;
 	public int DEFAULT_BG = 242;
 	public Color backgroundColor;
@@ -62,28 +63,32 @@ public class Embedded extends PApplet {
 	private double zeroY=0;
 	
 	private ArrayList<Drawable> tempDrawables;
-	private String tempFilename;
-	private boolean print = false;
 	private boolean drawGrid = true;
 
+
+	
+	private Tool currentTool;
+	private PenTool penTool;
+	private Tool defaultTool;
+	
 	private int currentMode = -1;
-	private float relMouseX,relMouseY;
 	private static final int NO_MODE = -1;
 	private static final int TARGET_MODE = 0;
 	private static final int PAN_MODE = 1;
 	private static final int SELECT_MODE = 2;
+	private static final int PEN_MODE = 3;
+	private static final int RECT_MODE = 4;
+	private static final int ELLIPSE_MODE = 5;
+	private static final int POLY_MODE = 6;
+	private static final int LINE_MODE = 7;
+	private static final int CURVE_MODE = 8;
+	private static final int ZOOM_MODE = 9;
 	
+	public Console console;
 	public JFrame parent;
-	
-	float mvmatrix1[] = new float[16];
-	float mvmatrix2[] = new float[16];
-	float mvmatrix3[] = new float[16];
 
-	float projmatrix1[] = new float[16];
-	int id=0;
+	private int id=0;
 
-	PMatrix3D pProjectionView;	
-	PMatrix3D modelview;
 	PGraphicsOpenGL pG;
 	
 	RawDXF dxf;
@@ -101,14 +106,15 @@ public class Embedded extends PApplet {
 		gridWidth = height;
 		gridX = 0;
 		gridY = 0;*/
+		
 	}
 	
 	public void setDrawingBoardDimensions(double width, double height,int units){
 		
 		drawingBoardWidth = width;
 		drawingBoardHeight =height;
-		zeroX = defaultCanvasWidth/2-drawingBoardWidth/2;
-		zeroY= defaultCanvasHeight/2-drawingBoardHeight/2;
+		zeroX = defaultCanvasWidth/2-drawingBoardWidth/2-13; //magic numbers here... not sure why these values are needed
+		zeroY= defaultCanvasHeight/2-drawingBoardHeight/2+12;
 		System.out.println("drawing board="+drawingBoardWidth+","+drawingBoardHeight);
 		unitType = units;
 		if(gridNum!=1){
@@ -223,8 +229,14 @@ public class Embedded extends PApplet {
 		parent.setSize(parent.getPreferredSize());
 		
 		
+		defaultTool = new Tool();
 		
-
+		currentTool = defaultTool;
+	}
+	
+	//gets tools from parent
+	public void setTools(PenTool pt){
+		this.penTool = pt;
 	}
 
 
@@ -241,13 +253,13 @@ public class Embedded extends PApplet {
 			//translate(translateXAmount,translateYAmount,zoomAmount);
 			translate(translateXAmount,translateYAmount);
 			scale(zoomAmount);
-			
+			dimensions(false);
+
 			pushMatrix();
 			
 			//translate(zeroX,zeroY,0);
 			translate((float)zeroX,(float)zeroY);
 			for (int i=0;i<tempDrawables.size();i++){
-
 				tempDrawables.get(i).draw(this);
 				if(showOrigin){
 					tempDrawables.get(i).drawOrigin(this);
@@ -269,11 +281,10 @@ public class Embedded extends PApplet {
 			float yP = screenPos.y;*/
 
 			//System.out.println(xP+","+yP);
-			dimensions();
 			if(drawGrid){
 				grid();
 			}
-			
+			dimensions(true);
 
 			/*System.out.println(x+","+y+","+z);
 	float screenx = screenX(x,y,z);
@@ -293,7 +304,12 @@ public class Embedded extends PApplet {
 			rulers();
 			
 
-			checkMode();
+			try {
+				setCursor();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 			
 	}
 
@@ -342,6 +358,8 @@ public class Embedded extends PApplet {
 	public void mousePressed() {
 		//System.out.println(mousePressed);
 		
+		currentTool.mousePressed(mouseX,mouseY);
+		
 		if(currentMode == SELECT_MODE){
 			checkSelect();
 		}
@@ -349,21 +367,61 @@ public class Embedded extends PApplet {
 
 
 	public void mouseReleased() {
-		checkModeMouse();
+		currentTool.mouseReleased(mouseX,mouseY);
 		
-		
+		this.redraw();
 		
 	}
 
 	public void mouseDragged(){
 		checkModeMove();
 		redraw();
+		currentTool.mouseDragged(mouseX,mouseY);
 
 
 	}
+	
+	//===========================MODE AND TOOL FUNCTIONS===========================//
+	
+	//begin functions that set tool and mode
+	public void clearMode() {
+		currentMode = NO_MODE;
+		showOrigin=false;
+		currentTool = defaultTool;
+	}
 
-	public void checkMode(){
-		switch(currentMode){
+	public void targetMode() {
+		currentMode = TARGET_MODE;
+	}
+	public void selectMode() {
+		currentMode = SELECT_MODE;
+		this.showOrigin=true;	
+	}
+	
+	public void penMode() {
+		currentMode = PEN_MODE;
+		currentTool=penTool;
+		penTool.setActive(true);
+	}
+	//end functions that set tool and mode
+	
+	//sets cursor according to mode
+	public void setCursor() throws IOException{
+		if(currentMode == NO_MODE){
+			cursor(ARROW);
+			
+		}
+		else{
+			System.out.println(currentTool);
+			//TODO: get image loader to work in jar
+			//URL u = ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/"+currentTool.getImage()+".png");
+			//System.out.println(u.getContent().toString());
+			//console.setText(u.getContent().toString());
+			//PImage cursorImage = loadImage(u.getPath());
+			
+			//cursor(cursorImage);
+		}
+		/*switch(currentMode){
 		case TARGET_MODE:
 			cursor(CROSS);
 			break;
@@ -374,10 +432,11 @@ public class Embedded extends PApplet {
 			
 		case SELECT_MODE:
 			cursor(MOVE);
+			
 		default:
 			cursor(ARROW);
 			break;
-		}
+		}*/
 	}
 
 	public void checkModeMouse(){
@@ -447,182 +506,7 @@ public class Embedded extends PApplet {
 		return y;
 	
 	}
-	
-	
-	
 
-
-	PVector screenToMatrixCoordinate(PVector screenPos, PMatrix mat){
-		// processing.js WARNING: the following code relies on 
-		// patching processing.js core to add the getMatrix function.
-		// Note that if we could read out
-		// matrixInv we might be even faster!
-		//PGraphicsOpenGL pG = (PGraphicsOpenGL)this.g;
-		PMatrix pm =mat.get();
-		/* if (this.getRerenderMode == P2D) {
-		    PVector adjustedScreenPos = screenPos.get();
-		    adjustedScreenPos.sub(width/2, height/2, 0);
-		    PVector modelPos = new PVector();
-		    pm.invert();
-		    pm.mult(adjustedScreenPos,modelPos);
-		    return modelPos;
-		} else {*/
-		PVector modelPos = new PVector();
-		pm.invert();
-		pm.mult(screenPos,modelPos);
-		return modelPos;    
-		// }
-	}
-
-	@Override
-	public float screenX(float x, float y, float z) {
-
-		PMatrix3D modelview = pG.modelview;
-
-		float ax =
-				modelview.m00*x + modelview.m01*y + modelview.m02*z + modelview.m03;
-		float ay =
-				modelview.m10*x + modelview.m11*y + modelview.m12*z + modelview.m13;
-		float az =
-				modelview.m20*x + modelview.m21*y + modelview.m22*z + modelview.m23;
-		float aw =
-				modelview.m30*x + modelview.m31*y + modelview.m32*z + modelview.m33;
-
-
-
-		PMatrix3D projection = pG.projection;
-		float ox =
-				projection.m00*ax + projection.m01*ay + projection.m02*az + projection.m03*aw;
-		float ow =
-				projection.m30*ax + projection.m31*ay + projection.m32*az + projection.m33*aw;
-
-		if (nonZero(ow)) {
-			ox /= ow;
-		}
-		float sx = width * (1 + ox) / 2.0f;
-		return sx;
-	}
-
-	public float projX(float x, float y, float z) {
-		PGraphicsOpenGL pG = (PGraphicsOpenGL)this.g;
-
-		PMatrix3D modelview = pG.modelview;
-
-		float ax =
-				modelview.m00*x + modelview.m01*y + modelview.m02*z + modelview.m03;
-		float ay =
-				modelview.m10*x + modelview.m11*y + modelview.m12*z + modelview.m13;
-		float az =
-				modelview.m20*x + modelview.m21*y + modelview.m22*z + modelview.m23;
-		float aw =
-				modelview.m30*x + modelview.m31*y + modelview.m32*z + modelview.m33;
-
-
-
-		PMatrix3D projection = pG.projection;
-		float ox =
-				projection.m00*ax + projection.m01*ay + projection.m02*az + projection.m03*aw;
-		float ow =
-				projection.m30*ax + projection.m31*ay + projection.m32*az + projection.m33*aw;
-
-		if (nonZero(ow)) {
-			ox /= ow;
-		}
-		float sx = width * (1 + ox) / 2.0f;
-		return sx;
-	}
-
-
-
-	protected static boolean nonZero(float a) {
-		return Float.MIN_VALUE <= Math.abs(a);
-	}
-
-
-	float[] GetOGLPos()
-	{
-		int x = mouseX, y = mouseY;
-
-		int viewport[] = new int[4];
-		float mvmatrix[] = new float[16];
-		//float projmatrix[] = new float[16];
-		int realy = 0;// GL y coord pos
-		float wcoord[] = new float[4];// wx, wy, wz;// returned xyz coords
-
-		viewport[0]=0;
-		viewport[1]=0;
-		viewport[2]=width;
-		viewport[3]=height;
-
-
-		modelview.get(mvmatrix);
-
-
-		println(projmatrix1);
-		println(mvmatrix1);
-		println(mvmatrix2);
-		println(mvmatrix);
-		System.out.println(viewport);
-
-
-		GLU glu = new GLU();
-		realy = viewport[3] - (int) y - 1;
-
-		System.out.println("Coordinates at cursor are (" + x + ", " + y);
-		glu.gluUnProject((float) x, (float) realy, 0.0f,mvmatrix1, 0,projmatrix1, 0, viewport, 0, wcoord, 0);
-		System.out.println("World coords at z=0.0 are ( " + wcoord[0] + ", " + wcoord[1] + ", " + wcoord[2]+ ")");
-
-
-
-		// glu.gluUnProject( winX, winY, winZ, modelview,0, projection,0, viewport,0,pos,0);
-
-		return wcoord;
-	}
-
-
-	public Point get2dPoint(float tX, float tY,PMatrix3D projectionMatrix,PMatrix3D viewMatrix){
-		PGraphicsOpenGL pG = (PGraphicsOpenGL)this.g;
-		PMatrix3D projection = pG.projection;
-		PMatrix3D view = pG.camera;
-		PMatrix3D modelView = pG.modelview;
-		float[] viewport = new float[4];
-		viewport[0]=0;
-		viewport[1]=0;
-		viewport[2]=this.width;
-		viewport[3]=this.height;
-		float winX = (float)mouseX;                  // Holds The Mouse X Coordinate
-		float winY = (float)mouseX; 
-		winY = (float)viewport[3] - winY;
-
-		/*
-		 System.out.println("mouse coord ="+mouseX+","+mouseY);
-	     System.out.println("dimensions ="+width+","+height);
-
-		 System.out.print("projection matrix=");
-		 projectionMatrix.print();
-		 System.out.print("view matrix=");
-		 viewMatrix.print();
-
-		 System.out.print("projection matrix2=");
-		 projection2.print();
-		 System.out.print("view matrix2=");
-		 view2.print();
-		 /*  
-		 float x = 2.0f * tX / width - 1;
-	        float y = - 2.0f * tY / height + 1;
-
-	        System.out.print("cal x,y="+x+","+y);
-	       projectionMatrix.apply(viewMatrix);
-	       System.out.print("projection matrix mult=");
-			 projectionMatrix.print();
-	       System.out.println(projectionMatrix.invert());
-	       System.out.print("projection matrix inverse=");
-			 projectionMatrix.print();
-	        PVector v = projectionMatrix.mult(new PVector(x,y,0),null);*/
-		return new Point(0,0);
-	}
-
-	
 	public void rulers(){
 		noStroke();
 		fill(255,255,255);
@@ -706,22 +590,6 @@ public class Embedded extends PApplet {
 			this.line((float)((widthGridPos*zoomAmount)+translateXAmount),0,(float)((widthGridPos*zoomAmount)+translateXAmount),20-shortener);
 			widthGridPos+=gridUnits;
 		}
-		
-		/*while( widthGridPos<gridWidth){
-			if(countY==gridIncrement){
-				stroke(0,0,0,75f);
-				strokeWeight(1.5f);
-				countY=0;
-			}
-			else{
-				stroke(0,0,0,50f);
-				strokeWeight(1);
-				countY++;
-			}
-
-			this.line(widthGridPos,gridY,widthGridPos,gridHeight);
-			widthGridPos+=gridUnits;
-		}*/
 	}
 
 	public void grid(){
@@ -762,11 +630,18 @@ public class Embedded extends PApplet {
 		}
 	}
 	
-	public void dimensions(){
+	public void dimensions(boolean frame){
 
 				stroke(0);
+				strokeWeight(0.5f);
 				this.fill(DEFAULT_BG);
 				rectMode(CENTER);
+				if(frame){
+					noFill();
+				}
+				else{
+					noStroke();
+				}
 				rect(width/2,height/2,(float)drawingBoardWidth,(float)drawingBoardHeight);
 				
 	
@@ -792,24 +667,7 @@ public class Embedded extends PApplet {
 	}
 
 
-	public void clearMode() {
-		currentMode = NO_MODE;
-		showOrigin=false;
 
-	}
-
-
-	public void targetMode() {
-		currentMode = TARGET_MODE;
-
-	}
-
-	public void selectMode() {
-		currentMode = SELECT_MODE;
-		this.showOrigin=true;
-		
-		
-	}
 	
 	
 	public void checkSelect(){
@@ -859,14 +717,14 @@ public class Embedded extends PApplet {
 	//the event listeners of the particular event
 	public synchronized void fireEvent( Object source, int eventType) {
 
-		Iterator i = _listeners.iterator();
+		Iterator<CustomEventListener> i = _listeners.iterator();
 		while(i.hasNext())  {
 			((CustomEventListener) i.next()).handleCustomEvent(source, eventType);
 		}
 	}
 
 	public void fireTargetEvent(Object source, int event, double x, double y) {
-		Iterator i = _listeners.iterator();
+		Iterator<CustomEventListener> i = _listeners.iterator();
 		while(i.hasNext())  {
 
 			((CustomEventListener) i.next()).handleCustomTargetEvent(source, event, x, y);
@@ -876,7 +734,7 @@ public class Embedded extends PApplet {
 	
 	
 	private void fireMoveEvent(Object source, int event,Drawable selectedObject) {
-		Iterator i = _listeners.iterator();
+		Iterator<CustomEventListener> i = _listeners.iterator();
 		while(i.hasNext())  {
 
 			((CustomEventListener) i.next()).handleCustomMoveEvent(source, event,selectedObject);

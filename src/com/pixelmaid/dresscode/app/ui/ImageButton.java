@@ -1,30 +1,28 @@
 package com.pixelmaid.dresscode.app.ui;
 
 import java.awt.Color;
-import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.Graphics;
-import java.awt.Insets;
-import java.awt.event.ActionEvent;
-import java.net.URL;
 
-import javax.swing.BorderFactory;
+import java.awt.Insets;
+
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
-import javax.swing.border.BevelBorder;
-import javax.swing.border.Border;
-import javax.swing.border.LineBorder;
+
 
 
 public class ImageButton  extends JButton {
+	ImageIcon oIcon;
+	ImageIcon sIcon;
 	 private Color background = new Color(140,130,129);
 	 public ImageButton(String title,String img,String tip, int width, int height) {
 		 
-		 this(new ImageIcon(ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/"+img)),tip,width,height);
+		 this(new ImageIcon(ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/"+img+".png")),new ImageIcon(ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/"+img+"_s.png")),tip,width,height);
 		  }
 
-		  public ImageButton(ImageIcon icon,String tip,int width, int height) {
-		    setIcon(icon);
+		  public ImageButton(ImageIcon icon,ImageIcon rolloverIcon, String tip,int width, int height) {
+		    oIcon = icon;
+		    sIcon = rolloverIcon;
+			setIcon(oIcon);
 		   //this.setBorder(new RoundedBorder(5,background));
 		    this.setPreferredSize(new Dimension(width,height));
 		    setMargin(new Insets(0, 0, 0, 0));
@@ -38,5 +36,16 @@ public class ImageButton  extends JButton {
 		    this.setToolTipText(tip);
 		    //this.setBackground(background);
 		  }
+		  
+		  public void setActive(){
+			  this.setIcon(sIcon);
+		  }
+		  
+		  public void setInactive(){
+			  this.setIcon(oIcon);
+		  }
+
+		
+		  
 		  
 }

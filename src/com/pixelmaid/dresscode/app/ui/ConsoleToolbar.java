@@ -31,7 +31,7 @@ public class ConsoleToolbar extends Toolbar {
 	   private BufferedImage image = new BufferedImage(IMG_WIDTH, IMG_HEIGHT,
 	            BufferedImage.TYPE_INT_ARGB);
 	
-	public void init(int width, int height, Color background, Color border){
+	public void init(int width, int height, Color background, Color border, ImageButton clearButton){
 		Dimension masterDimension = new Dimension(width,height);
 		this.setPreferredSize(masterDimension);
 		
@@ -45,10 +45,11 @@ public class ConsoleToolbar extends Toolbar {
 	    this.add(textField);
 	    */
 		
-		buttonPanel.setSize(new Dimension(121,10));
+		buttonPanel.setSize(new Dimension(clearButton.getWidth(),clearButton.getHeight()));
 		buttonPanel.setBackground(null);
 		buttonPanel.setBorder(new EmptyBorder(0,0,0,0));
 		this.add(buttonPanel);
+		buttonPanel.add(clearButton);
 		
 	    MatteBorder b = new MatteBorder(0,0,3,0,border);
         this.setBorder(b);       
@@ -61,8 +62,8 @@ public class ConsoleToolbar extends Toolbar {
 		
 		//Adjust constraints for the text field so it's at
 		//(<label's right edge> + 5, 5).
-		layout.putConstraint(SpringLayout.EAST, buttonPanel,-20,SpringLayout.EAST,this);
-		layout.putConstraint(SpringLayout.NORTH, buttonPanel,-2,SpringLayout.NORTH, this);
+		layout.putConstraint(SpringLayout.EAST, buttonPanel,-15,SpringLayout.EAST,this);
+		layout.putConstraint(SpringLayout.NORTH, buttonPanel,-1,SpringLayout.NORTH, this);
 		
 		
 		 this.doLayout();

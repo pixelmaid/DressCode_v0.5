@@ -39,6 +39,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import com.pixelmaid.dresscode.app.ui.Toolbar;
+import com.pixelmaid.dresscode.app.ui.tools.PenTool;
 import com.pixelmaid.dresscode.data.DCProject;
 import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.InstructionManager;
@@ -69,6 +70,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private int defaultDrawingPaneHeight = 1000;
 	private int defaultButtonWidth = 24;
 	private int defaultButtonHeight = 24;
+	private int clearButtonWidth = 36;
+	private int clearButtonHeight = 19;
 	
 	private int defaultToolbarHeight = 30;
 	
@@ -88,6 +91,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	private JProgressBar progressBar;
 	private Color brown = new Color(90,68,60);
+	private Color darkBrown = new Color(61,40,35);
+
 	private Color pink = new Color(217,65,78);
 	private Color grey = new Color(140,130,129);
 	
@@ -97,9 +102,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private Color white= new Color(255,255,255);
 
 	private int fontSize = 12;
+	private boolean altKey = false; //boolean for detecting alt key press
 
 	//drawing panel buttons
-	private ImageButton selectButton, targetButton, printButton, zoomInButton, zoomOutButton, panButton, penButton, gridButton, dimensionButton;
+	private ImageButton selectButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton;
+	
+	//drawing tools
+	private PenTool penTool;
+	
 	
 	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction, saveAsAction;
 	//private ArrayList<ImageButton> drawingButtons;
@@ -107,6 +117,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private static InstructionManager instructionManager;
 	private static DrawableManager drawableManager;
 	
+	private ArrayList<ImageButton> buttonList =  new ArrayList<ImageButton>();
+
 	
 	public EventSource eventSource;
 	private JSplitPane splitFrame;
@@ -149,7 +161,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        }
 		
 		
-		this.setPreferredSize(new Dimension(width,height));
+		this.setPreferredSize(new Dimension(width,height	));
+		this.setSize(new Dimension(1500,200));
 		this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		this.defaultDrawingPaneWidth = width/2;
@@ -178,54 +191,98 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		instructionManager.addEventListener(this);
 		drawableManager.addEventListener(this);
 		
+		//setup tools
+		penTool = new PenTool();
+		penTool.addEventListener(drawableManager);
+		canvas.setTools(penTool);
+		
+		
 		drawingToolbar = new DrawingToolbar();
-		selectButton = new ImageButton("select","arrow.png", "selection tool", defaultButtonWidth,defaultButtonHeight);
-		panButton = new ImageButton("pan","pan.png", "hand tool", defaultButtonWidth,defaultButtonHeight );
-		zoomInButton = new ImageButton("zoom in","zoomin.png", "zoom in", defaultButtonWidth,defaultButtonHeight );
-		zoomOutButton = new ImageButton("zoom out","zoomout.png", "zoom out", defaultButtonWidth,defaultButtonHeight );
+		selectButton = new ImageButton("select","arrow", "selection tool", defaultButtonWidth,defaultButtonHeight);
+		panButton = new ImageButton("pan","pan", "hand tool", defaultButtonWidth,defaultButtonHeight );
+		zoomButton = new ImageButton("zoom","zoom", "zoom", defaultButtonWidth,defaultButtonHeight );
+		targetButton = new ImageButton("target","target", "get the coordinates from a given location", defaultButtonWidth,defaultButtonHeight);	
+		gridButton = new ImageButton("grid","grid", "toggle grid", defaultButtonWidth,defaultButtonHeight);
+		dimensionButton = new ImageButton("dimension","dimensions", "change dimensions", defaultButtonWidth,defaultButtonHeight);
 
-		penButton = new ImageButton("pen","pen.png","pen tool",defaultButtonWidth,defaultButtonHeight);
-		printButton = new ImageButton("print","print.png", "export your design to pdf", defaultButtonWidth,defaultButtonHeight);
-		targetButton = new ImageButton("target","target.png", "get the coordinates from a given location", defaultButtonWidth,defaultButtonHeight);
-		gridButton = new ImageButton("grid","grid.png", "toggle grid", defaultButtonWidth,defaultButtonHeight);
-		importButton = new ImageButton("import","import.png", "import an svg into your script", defaultButtonWidth,defaultButtonHeight);
-		dimensionButton = new ImageButton("dimension","dimensions.png", "change dimensions", defaultButtonWidth,defaultButtonHeight);
+		rectButton = new ImageButton("rect","rect","rectangle tool",defaultButtonWidth,defaultButtonHeight);
+		ellipseButton = new ImageButton("ellipse","ellipse","ellipse tool",defaultButtonWidth,defaultButtonHeight);
+		polyButton = new ImageButton("poly","poly","polygon tool",defaultButtonWidth,defaultButtonHeight);
+		lineButton = new ImageButton("line","line","line tool",defaultButtonWidth,defaultButtonHeight);
+		curveButton = new ImageButton("curve","curve","curve tool",defaultButtonWidth,defaultButtonHeight);
+		importButton = new ImageButton("import","import", "import an svg into your script", defaultButtonWidth,defaultButtonHeight);
+		penButton = new ImageButton("pen","pen","pen tool",defaultButtonWidth,defaultButtonHeight);
+		
+		printButton = new ImageButton("print","print", "export your design to pdf", defaultButtonWidth,defaultButtonHeight);
 
+		buttonList.add(selectButton);
+		buttonList.add(panButton);
+		buttonList.add(zoomButton);
+		buttonList.add(printButton);
+		buttonList.add(targetButton);
+		buttonList.add(gridButton);
+		buttonList.add(importButton);
+		buttonList.add(dimensionButton);
+		buttonList.add(rectButton);
+		buttonList.add(ellipseButton);
+		buttonList.add(polyButton);
+		buttonList.add(lineButton);
+		buttonList.add(curveButton);
+		buttonList.add(importButton);
+		buttonList.add(penButton);
+
+
+	
 		
 		
-		drawingToolbar.addButton(selectButton);
+		drawingToolbar.addButtonTo1(selectButton);
 		selectButton.addActionListener(this);
 		selectButton.setEnabled(true);
 
 		
-		drawingToolbar.addButton(panButton);
+		drawingToolbar.addButtonTo1(panButton);
 		panButton.addActionListener(this);
 		
-		drawingToolbar.addButton(zoomInButton);
-		zoomInButton.addActionListener(this);
+		drawingToolbar.addButtonTo1(zoomButton);
+		zoomButton.addActionListener(this);
 		
-		drawingToolbar.addButton(zoomOutButton);
-		zoomOutButton.addActionListener(this);
-
-		drawingToolbar.addButton(penButton);
-		penButton.addActionListener(this);
-		penButton.setEnabled(false);
-		
-		drawingToolbar.addButton(targetButton);
-		//targetButton.setEnabled(false);
+		drawingToolbar.addButtonTo1(targetButton);
 		targetButton.addActionListener(this);
 		
-		drawingToolbar.addButton(gridButton);
+		drawingToolbar.addButtonTo1(gridButton);
 		gridButton.addActionListener(this);
 		
-		drawingToolbar.addButton(printButton);
-		printButton.addActionListener(this);
-		
-		drawingToolbar.addButton(dimensionButton);
+		drawingToolbar.addButtonTo1(dimensionButton);
 		dimensionButton.addActionListener(this);
 
-		drawingToolbar.addButton(importButton);
+		
+		drawingToolbar.addButtonTo2(rectButton);
+		penButton.addActionListener(this);
+		
+		drawingToolbar.addButtonTo2(ellipseButton);
+		penButton.addActionListener(this);
+		
+		drawingToolbar.addButtonTo2(polyButton);
+		penButton.addActionListener(this);
+		
+		drawingToolbar.addButtonTo2(lineButton);
+		penButton.addActionListener(this);
+		
+		drawingToolbar.addButtonTo2(curveButton);
+		penButton.addActionListener(this);
+		
+		drawingToolbar.addButtonTo2(importButton);
 		importButton.addActionListener(this);
+		
+		drawingToolbar.addButtonTo2(penButton);
+		penButton.addActionListener(this);
+		
+		
+		drawingToolbar.addButtonTo3(printButton);
+		printButton.addActionListener(this);
+		
+	
+
 		
 		drawingToolbar.init(defaultToolbarHeight,defaultDrawingPaneWidth,brown);
 		
@@ -247,20 +304,31 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		hiddenCodeField.init(fontSize);
 		
 		output = new Console();
-		output.init(lightGrey,white,fontSize);
+		clearButton = new ImageButton("clear","clear", "clear the console", clearButtonWidth,clearButtonHeight);
+		clearButton.addActionListener(this);
+		
+		output.init(lightGrey,darkBrown,fontSize);
+		
 		
 		codingToolbar = new CodeToolbar();
        
-		runButton = new ImageButton("run","run.png", "run your script", defaultButtonWidth,defaultButtonHeight);
+		runButton = new ImageButton("run","run", "run your script", defaultButtonWidth,defaultButtonHeight);
 		runButton.addActionListener(this);
-		stopButton = new ImageButton("stop","stop.png", "stop your script", defaultButtonWidth,defaultButtonHeight);
+		stopButton = new ImageButton("stop","stop", "stop your script", defaultButtonWidth,defaultButtonHeight);
 		stopButton.addActionListener(this);
-		newButton = new ImageButton("new","new.png", "create a new script", defaultButtonWidth,defaultButtonHeight);
+		newButton = new ImageButton("new","new", "create a new script", defaultButtonWidth,defaultButtonHeight);
 		newButton.addActionListener(this);
-		saveButton = new ImageButton("save","save.png", "save your script", defaultButtonWidth,defaultButtonHeight);
+		saveButton = new ImageButton("save","save", "save your script", defaultButtonWidth,defaultButtonHeight);
 		saveButton.addActionListener(this);
-		openButton = new ImageButton("open","open.png", "open an existing script", defaultButtonWidth,defaultButtonHeight);
+		openButton = new ImageButton("open","open", "open an existing script", defaultButtonWidth,defaultButtonHeight);
 		openButton.addActionListener(this);
+		
+		buttonList.add(runButton);
+		buttonList.add(stopButton);
+		buttonList.add(newButton);
+		buttonList.add(saveButton);
+		buttonList.add(openButton);
+
 		
 		
 		//progressBar = new JProgressBar(0,100);
@@ -281,7 +349,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 		codingFrame = new CodingFrame();
 		
-		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, output, codingToolbar, treeManager.getTree(),brown,grey,pink);
+		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, output, codingToolbar, treeManager.getTree(),brown,grey,pink,clearButton);
 
 		
 		//this.getContentPane().add(codingFrame,BorderLayout.LINE_END);
@@ -308,6 +376,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
      	currentProject.setDimensions(UnitManager.DEFAULT_WIDTH,UnitManager.DEFAULT_HEIGHT, UnitManager.STANDARD, canvas, instructionManager);
 
 		canvas.frame = this;
+		canvas.console=output;//for debug purposes only
 		System.out.println("setting size");
 		
 		
@@ -397,14 +466,18 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		//progressBar.setValue(100);
 		//progressBar.setIndeterminate(false);
 		System.out.println("drawn");
+		
 		// canvas.showDrawables(drawableManager.getDrawables());
 	 }
 	 
 	 private void run(){
+		 
 		//progressBar.setIndeterminate(false);
 			//progressBar.setValue(0);
 			//progressBar.setIndeterminate(true);
 			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+			runButton.setActive();
+
 			drawableManager.clearAllDrawables();
 			output.setText("");
 			System.out.println("running");
@@ -557,6 +630,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	@Override
 	public void keyPressed(KeyEvent e) {
+		System.out.println(e.getKeyCode());
 		System.out.println("key pressed");	
 		if(e.getKeyCode()==61){
 			canvas.zoomIn();
@@ -589,38 +663,52 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public void actionPerformed(ActionEvent e) {
 		
 		canvas.clearMode();
+		resetButtons();
 		if (e.getSource() == runButton ) {
+
 			run();
 			
 		}
 		
 		else if (e.getSource() == gridButton ) {
 			canvas.setGrid();
+			//gridButton.setActive();
 			
 
 		}
 		else if (e.getSource()==targetButton){
 			canvas.targetMode();
+			targetButton.setActive();
 			
 			
 		}
 		
 		else if (e.getSource()==panButton){
 			canvas.panMode();
+			panButton.setActive();
 			
 		}
-		else if (		e.getSource() == zoomInButton ) {
+		else if (		e.getSource() == zoomButton ) {
 			canvas.zoomIn();
+			zoomButton.setActive();
 			
 
 		}
-		else if (e.getSource() == zoomOutButton ) {
+		else if (e.getSource() == zoomButton && altKey==true) {
 			canvas.zoomOut();
+			zoomButton.setActive();
+
 			
 
 		}
 		else if (e.getSource()==selectButton){
 			canvas.selectMode();
+			selectButton.setActive();
+		}
+		
+		else if (e.getSource()==penButton){
+			canvas.penMode();
+			penButton.setActive();
 		}
 		if (e.getSource() == openButton || e.getSource() == openAction) {
 
@@ -644,9 +732,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		else if (e.getSource()==dimensionButton){
 			setDimensions();
+			//dimensionButton.setActive();
 			
 		}else if (e.getSource() == importButton || e.getSource() == importAction ) {
 			currentProject.importFile(this,codeField);
+			//importButton.setActive();
 
 		}
 		else if (e.getSource() == exitAction) {
@@ -657,6 +747,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 	
 
+	}
+	
+	//resets buttons to non-active states
+	private void resetButtons(){
+		for(int i=0;i<buttonList.size();i++){
+			buttonList.get(i).setInactive();
+		}
 	}
 	
 	//changes dimensions of file
@@ -696,6 +793,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			reportErrors(instructionManager.getError());
 			break;
 		}
+		runButton.setInactive();
+
 		setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
 	}
 
