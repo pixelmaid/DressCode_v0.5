@@ -27,8 +27,6 @@ public class PenTool extends Tool  {
 	public void setActive(boolean a){
 		this.reset();
 		active = a;
-		
-		
 	}
 	
 	@Override

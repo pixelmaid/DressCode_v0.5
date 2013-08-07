@@ -90,15 +90,12 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 	}
 
 	@Override
-	public void handleCustomEvent(Object source, int eventType) {
-		// TODO Auto-generated method stub
+	public void handleCustomInstructionEvent(Object source, int eventType) {
 		
 	}
 
 	@Override
-	public void handleCustomTargetEvent(Object source, int event, double x,
-			double y) {
-		// TODO Auto-generated method stub
+	public void handleCustomToolEvent(Object source, int event) {
 		
 	}
 
@@ -116,12 +113,6 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 		
 	}
 
-	@Override
-	public void handleCustomMoveEvent(Object source, int event,
-			Drawable selectedObject) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	
 	

@@ -4,7 +4,7 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 
-import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
@@ -47,7 +47,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	}
 
 	@Override
-	public void draw(Embedded e){
+	public void draw(Canvas e){
 		//TODO: MAKE CURVE DRAW ORIGIN CORRECTLY
 		if(!this.getHide()){
 		appearance(e.g);

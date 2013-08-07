@@ -3,7 +3,7 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 import processing.core.PGraphics;
 import processing.core.PShape;
 
-import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 //class used for importing in pre-defined svg vector objects
@@ -11,7 +11,7 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 public class LShape extends Polygon {
 	private String shapePath; //path to svg to be loaded
 	private PShape shape; //processing PShape
-	private Embedded canvas; //
+	private Canvas canvas; //
 	private double x=0; //x coordinate of shape
 	private double y= 0; //y coordinate of shape
 	private double width = 0;
@@ -39,12 +39,12 @@ public class LShape extends Polygon {
 	    }
 	    
 	    //returns current drawing canvas
-	    public Embedded getCanvas(){
+	    public Canvas getCanvas(){
 	    	return this.canvas;
 	    }
 	    
 	    //set current drawing canvas (needed to load the shape, TODO: should eventually work around this)
-	    public void setCanvas(Embedded e){
+	    public void setCanvas(Canvas e){
 	    	this.canvas = e;
 	    	
 	    }
@@ -62,7 +62,7 @@ public class LShape extends Polygon {
 
 
 		@Override
-	    public void draw(Embedded e) {
+	    public void draw(Canvas e) {
 			if(!this.getHide()){
 			e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));

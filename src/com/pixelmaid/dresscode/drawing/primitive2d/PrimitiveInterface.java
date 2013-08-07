@@ -5,7 +5,7 @@ import java.util.ArrayList;
 
 import processing.core.PGraphics;
 
-import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 
@@ -14,7 +14,7 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 
 public interface PrimitiveInterface {
 
-	public void draw(Embedded embedded);
+	public void draw(Canvas embedded);
 	
 	public void print(PGraphics embedded);
 	

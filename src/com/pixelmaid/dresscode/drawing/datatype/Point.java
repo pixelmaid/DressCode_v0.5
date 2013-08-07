@@ -23,7 +23,7 @@ package com.pixelmaid.dresscode.drawing.datatype;
 import java.awt.geom.Point2D;
 
 import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
-import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.math.*;
 import com.pixelmaid.dresscode.drawing.primitive2d.PrimitiveInterface;
 
@@ -257,7 +257,7 @@ public class Point extends Point2D implements Comparable<Point>{
 	}
 
 
-	public void draw(Embedded embedded) {
+	public void draw(Canvas embedded) {
 		// TODO Auto-generated method stub
 		
 	}

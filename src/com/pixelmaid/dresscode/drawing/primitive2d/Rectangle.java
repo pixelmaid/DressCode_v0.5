@@ -4,7 +4,7 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PGraphics;
 
-import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
@@ -44,7 +44,7 @@ public class Rectangle extends Polygon{
 	}
 	
 	@Override
-	public void draw(Embedded e){
+	public void draw(Canvas e){
 		if(!this.getHide()){
 		appearance(e.g);
 		e.pushMatrix();

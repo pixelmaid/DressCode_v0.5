@@ -25,4 +25,9 @@ public class Console extends JTextPane{
 		
 	}
 
+	public void clearText() {
+		this.setText("");
+		
+	}
+
 }

@@ -11,9 +11,13 @@ import javax.swing.JButton;
 
 
 public class ImageButton  extends JButton {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	ImageIcon oIcon;
 	ImageIcon sIcon;
-	 private Color background = new Color(140,130,129);
+	 private boolean active = false;
 	 public ImageButton(String title,String img,String tip, int width, int height) {
 		 
 		 this(new ImageIcon(ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/"+img+".png")),new ImageIcon(ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/"+img+"_s.png")),tip,width,height);
@@ -39,11 +43,17 @@ public class ImageButton  extends JButton {
 		  
 		  public void setActive(){
 			  this.setIcon(sIcon);
+			  active = true;
 		  }
 		  
 		  public void setInactive(){
 			  this.setIcon(oIcon);
+			  active = false;
 		  }
+
+		public boolean isActive() {
+			return this.active;
+		}
 
 		
 		  

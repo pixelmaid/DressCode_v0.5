@@ -15,7 +15,7 @@ import org.antlr.gunit.gUnitParser.file_return;
 
 import com.pixelmaid.dresscode.app.CodeField;
 import com.pixelmaid.dresscode.app.CodingFrame;
-import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 
@@ -42,7 +42,7 @@ public class DCProject {
 		this.units = UnitManager.STANDARD;
 
 	}
-	public void setDimensions(double w, double h, int u,Embedded canvas, InstructionManager im){
+	public void setDimensions(double w, double h, int u,Canvas canvas, InstructionManager im){
 		this.units = u;
 		this.width= UnitManager.toPixels(w, units);
 		this.height= UnitManager.toPixels(h, units);
@@ -95,7 +95,7 @@ public class DCProject {
 	}
 
 
-	public void newFile(CodingFrame cf, CodeField codeField, Embedded canvas, DrawableManager dm, InstructionManager im){
+	public void newFile(CodingFrame cf, CodeField codeField, Canvas canvas, DrawableManager dm, InstructionManager im){
 		
 		cf.hideHiddenTab();
 		codeField.clear();
@@ -106,7 +106,7 @@ public class DCProject {
 	}
 
 
-	public void openFile(Component component, CodingFrame cf, Embedded canvas, InstructionManager im){
+	public void openFile(Component component, CodingFrame cf, Canvas canvas, InstructionManager im){
 		int returnVal = fc.showOpenDialog(component);
 
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -212,7 +212,7 @@ public class DCProject {
 
 
 
-	public void printFile(Component component, Embedded canvas){
+	public void printFile(Component component, Canvas canvas){
 		File blank = new File(this.name);
 		fc.setSelectedFile(blank);
 		int returnVal = fc.showDialog(component, "Export");

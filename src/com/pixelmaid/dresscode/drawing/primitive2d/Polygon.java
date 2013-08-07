@@ -7,7 +7,7 @@ import java.util.Collections;
 import processing.core.PApplet;
 import processing.core.PGraphics;
 
-import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
@@ -148,7 +148,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	//===================OVERRIDDEN METHODS==================
 	
 	@Override
-	public void draw(Embedded e){
+	public void draw(Canvas e){
 		if(!this.getHide()){
 		appearance(e.g);
 		if(isHole()){

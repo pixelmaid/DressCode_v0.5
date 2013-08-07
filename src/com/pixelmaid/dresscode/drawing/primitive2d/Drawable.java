@@ -7,7 +7,7 @@ import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PGraphics;
 
-import com.pixelmaid.dresscode.app.Embedded;
+import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.CmpX;
 import com.pixelmaid.dresscode.drawing.datatype.CmpY;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -106,7 +106,7 @@ public class Drawable implements DrawableEvent {
 	//-------------DRAW AND PRINT METHODS-----------------//
 	
 	//draws each child in the drawable. Must be overridden by subclasses
-	public void draw(Embedded embedded) {
+	public void draw(Canvas embedded) {
 		if(!this.getHide()){//only draws if child is not hidden
 		appearance(embedded.g);
 		embedded.pushMatrix();
@@ -153,7 +153,7 @@ public class Drawable implements DrawableEvent {
 	}
 	
 	//sets appearance to outline form
-	public void outlineAppearance(Embedded e){
+	public void outlineAppearance(Canvas e){
 		
 		e.strokeWeight((float)this.getStrokeWeight());
 		
@@ -190,7 +190,7 @@ public class Drawable implements DrawableEvent {
 	}
 	
 	//draws the origin of the drawable
-	public void drawOrigin(Embedded embedded){
+	public void drawOrigin(Canvas embedded){
 		embedded.stroke(0,0,0);
 		embedded.strokeWeight(8);
 		embedded.point((float)this.origin.getX(),(float)this.origin.getY());
@@ -200,7 +200,7 @@ public class Drawable implements DrawableEvent {
 		embedded.point((float)this.origin.getX(),(float)this.origin.getY());
 	}
 	
-	public void drawBoundingBox(Embedded e){
+	public void drawBoundingBox(Canvas e){
 		e.stroke(0,0,0);
 		e.noFill();
 		e.strokeWeight(1);

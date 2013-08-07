@@ -29,7 +29,7 @@ public class EventSource {
 		   
 		    Iterator i = _listeners.iterator();
 		    while(i.hasNext())  {
-		      ((CustomEventListener) i.next()).handleCustomEvent(source, eventType);
+		      ((CustomEventListener) i.next()).handleCustomInstructionEvent(source, eventType);
 		    }
 		  }
 

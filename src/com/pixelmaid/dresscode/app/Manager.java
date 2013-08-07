@@ -30,7 +30,9 @@ public final class Manager{
 		Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 	    Double width = screenSize.getWidth();
 	    Double height = screenSize.getHeight();
-		displayFrame.init(width.intValue(),height.intValue());
+		displayFrame.initLook(width.intValue(),height.intValue());
+		displayFrame.initData();
+
 				//Window manager = new Window("DressCode");
 				//manager.createAndShowGUI();
 		

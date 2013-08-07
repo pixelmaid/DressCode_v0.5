@@ -20,7 +20,7 @@ public class DrawingFrame extends JPanel{
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	private Embedded canvas;
+	private Canvas canvas;
 	private Dimension masterDimension;
 	private JPanel sketchPanel; //holds JInternalFrame
 	private JInternalFrame sketch; //holds the actual sketch
@@ -32,7 +32,7 @@ public class DrawingFrame extends JPanel{
 	
 	
 
-	 public void init(int width, int height, Embedded c, Toolbar t){
+	 public void init(int width, int height, Canvas c, Toolbar t){
 			masterDimension = new Dimension(width,height); //will act as size of sketch
 			//this.setPreferredSize(masterDimension);
 	 		//this.setMaximumSize(masterDimension);
@@ -86,7 +86,7 @@ public class DrawingFrame extends JPanel{
 	     }
 
 
-	public void resetSize(Embedded c) {
+	public void resetSize(Canvas c) {
 		sketch.remove(canvas);
 		canvas = c;
 		 sketch.add(canvas); //adds canvas to JInternalFrame
