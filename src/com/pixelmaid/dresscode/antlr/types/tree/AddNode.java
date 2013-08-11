@@ -52,12 +52,12 @@ public class AddNode extends NodeEvent implements DCNode {
     if(a.isDrawable() && b.isDrawable()) {
     	Drawable aP = a.asDrawable();
     	Drawable bP = b.asDrawable();
-    	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, aP);
-    	this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, bP);
+    	this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE, aP);
+    	this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE, bP);
     	
     	Drawable d = PolyBoolean.union(aP,bP);
     	
-    	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
+    	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d);
 		//d.setLine(line);
     	return new VarType(d);
       }

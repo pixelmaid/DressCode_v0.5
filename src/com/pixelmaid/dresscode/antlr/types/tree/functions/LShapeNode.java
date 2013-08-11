@@ -39,8 +39,8 @@ public class LShapeNode extends DrawableNode implements DCNode {
 			}
 
 
-			this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
-			this.drawableEvent(CustomEvent.SHAPE_LOAD_REQUESTED, e);
+			this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+			this.fireDrawableEvent(CustomEvent.SHAPE_LOAD_REQUESTED, e);
 		}
 		catch (ClassCastException err){
 			//Window.output.setText("incorrect parameters for LShape call at line:"+line);

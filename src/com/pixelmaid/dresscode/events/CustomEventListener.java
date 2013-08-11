@@ -12,7 +12,6 @@ public interface CustomEventListener {
 
 	public void handleCustomDrawableEvent(Object source, int event, Drawable d1,Drawable d2);
 
-	
 	public void handleCustomToolEvent(Object source, int event);
 
 	public void handleCustomRuntimeErrorEventDrawableEvent(Object source,

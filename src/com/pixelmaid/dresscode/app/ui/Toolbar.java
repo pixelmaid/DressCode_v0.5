@@ -11,14 +11,12 @@ import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.border.EmptyBorder;
 
-import com.pixelmaid.dresscode.events.EventSource;
 
 public class Toolbar extends JPanel{
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
-	public EventSource eventSource;
 	protected ArrayList<JButton> buttonList;
 	
 	

@@ -4,6 +4,10 @@ import java.util.EventObject;
 
 public class CustomEvent extends EventObject {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	public static final int PARSE_COMPLETE = 0;
 	public static final int PARSE_ERROR = 1;
 	public  static final int DRAWABLE_CREATED = 2;
@@ -16,6 +20,14 @@ public class CustomEvent extends EventObject {
 	public static final int PRINT_STATEMENT = 9;
 	public static final int PRINT_LN_STATEMENT = 10;
 	public static final int DRAWABLE_MOVED = 11;
+	public static final int CANVAS_MOUSE_PRESSED = 12;
+	public static final int CANVAS_MOUSE_RELEASED = 13;
+	public static final int CANVAS_MOUSE_DRAGGED = 14;
+	public static final int REDRAW_REQUEST = 15;
+	public static final int PAN_ACTIVE = 16;
+	public static final int RECT_ADDED = 17;
+	public static final int ELLIPSE_ADDED = 18;
+
 	public CustomEvent(Object source) {
 		super(source);
 		// TODO Auto-generated constructor stub

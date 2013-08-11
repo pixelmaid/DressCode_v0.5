@@ -25,7 +25,7 @@ public class PrintNode extends NodeEvent implements DCNode {
     public VarType evaluate() {
         VarType value = expression.evaluate();
         out.print(value == VarType.NULL ? "" : value);
-        this.printEvent(CustomEvent.PRINT_STATEMENT, value.toString());
+        this.firePrintEvent(CustomEvent.PRINT_STATEMENT, value.toString());
        // Window.output.setText(Window.output.getText()+value.toString());
         return VarType.VOID;
     }

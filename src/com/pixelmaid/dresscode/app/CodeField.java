@@ -21,6 +21,7 @@ import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
 
+import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
@@ -166,11 +167,22 @@ public JMenuItem getUndoMenu(){
 		this.setText(text);
 		
 	}
+	
+	public void removeText(int pos, int endPos) {
+		String text = this.getText();
+		text = text.substring(0,pos)+text.substring(endPos);
+		this.setText(text);
+		
+	}
 
-	public void insertMoveStatement(String identifier, int lineNum,Drawable selectedObject, double x, double y) {
-		
-		
-		
+	public void insertMoveStatement(Drawable sD ) {
+	
+		String identifier = sD.getIdentifier();
+		int lineNum = sD.getLine();
+		int endPos = sD.getEndPos();
+		double x = sD.getOrigin().getX();
+		double y = sD.getOrigin().getY();
+		boolean over = sD.getGModified();
 		
 		System.out.println("identifer="+identifier);
 		System.out.println("lineNum="+lineNum);
@@ -187,9 +199,71 @@ public JMenuItem getUndoMenu(){
 			
 			//System.out.println("line "+i+"="+lines[i]);
 		}
-		
+		System.out.println("pos="+pos);
+		System.out.println("endPos="+endPos);
 		System.out.println("x and y on move= "+x+","+y);
-		insertText(pos,"\nmove("+identifier+","+String.format("%.1f", x)+","+String.format("%.1f", y)+");");
+		if(identifier!=null){
+			String moveText = "\nmove("+identifier+","+String.format("%.1f", x)+","+String.format("%.1f", y)+");";
+
+		if(!over){
+			insertText(pos,moveText);
+		
+		}
+		else{
+			
+			removeText(pos,endPos);
+			insertText(pos,moveText);
+		}
+		sD.setEndPos(pos+moveText.length());
+	}
+		else{
+			String moveText1 = "move(";
+			String moveText2 = ","+String.format("%.1f", x)+","+String.format("%.1f", y)+");";
+			if(!over){
+				removeText(pos-1,pos); //remove semicolon
+				insertText(pos-lines[lineNum-1].length(),moveText1);	
+				insertText(pos-1+moveText1.length(),moveText2);
+				sD.setEndPos(pos-1+moveText1.length()+moveText2.length());
+
+			}
+			else{
+				
+				//removeText(pos-lines[lineNum-1].length(),pos-lines[lineNum-1].length()+moveText1.length());
+				String snip = this.getText().substring(pos-lines[lineNum-1].length(), pos);
+				System.out.println("snip="+snip);
+				int index = snip.lastIndexOf("),");
+				System.out.println("index="+index);
+				int toRemove = lines[lineNum-1].length()-index-1;
+				removeText(pos-toRemove,pos);
+				insertText(pos-toRemove,moveText2);
+				sD.setEndPos(pos-toRemove+moveText2.length());
+
+
+			}
+				
+
+		}
+		sD.setGModified(true);
+
+	}
+
+	public void insertShapeStatement(Drawable created, String shape) {
+		int point = this.getText().length();
+		String rectStart;
+		if(point==0){
+			rectStart=shape+"(";
+		}
+		else{
+			rectStart= "\n"+shape+"(";
+		}
+		String rectEnd =");";
+		Point origin = created.getOrigin();
+		String rectStatement = rectStart+origin.getX()+","+origin.getY()+","+created.getWidth()+","+created.getHeight()+rectEnd;
+		
+		
+		
+		insertText(point,rectStatement);
+		
 	}
  
   /*  public void actionPerformed(ActionEvent evt) {

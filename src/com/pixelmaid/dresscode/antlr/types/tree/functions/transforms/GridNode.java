@@ -70,7 +70,7 @@ public class GridNode extends NodeEvent implements DCNode {
 
        // d.setIdentifier(aP.getIdentifier());
 
-    	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
+    	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d);
     	
     	v=  new VarType(d);
 		/*if(aP.getIdentifier()!=null){

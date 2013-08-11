@@ -10,7 +10,6 @@ public class PenTool extends Tool  {
 	
 	
 	public PenTool(){
-	this.cursorImage="pen";	
 	}
 	
 	public void init(){
@@ -30,7 +29,7 @@ public class PenTool extends Tool  {
 	}
 	
 	@Override
-	public void mouseReleased(int mouseX, int mouseY) {
+	public void mouseReleased(double mouseX, double mouseY) {
 		addPoint(mouseX,mouseY);
 	}
 	
@@ -46,7 +45,7 @@ public class PenTool extends Tool  {
 			currentPoly.addPoint(x,y);
 			if(startPoint==null){
 				startPoint = new Point(x,y);
-				this.drawableEvent(CustomEvent.DRAWABLE_CREATED,currentPoly);
+				this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED,currentPoly);
 				
 				
 			}

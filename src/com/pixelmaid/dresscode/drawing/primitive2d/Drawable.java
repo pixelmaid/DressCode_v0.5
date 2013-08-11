@@ -2,11 +2,14 @@ package com.pixelmaid.dresscode.drawing.primitive2d;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
+import java.util.List;
 
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PGraphics;
 
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.CmpX;
 import com.pixelmaid.dresscode.drawing.datatype.CmpY;
@@ -14,10 +17,9 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.Vec2d;
 import com.pixelmaid.dresscode.events.CustomEvent;
-import com.pixelmaid.dresscode.events.CustomEventListener;
-import com.pixelmaid.dresscode.events.EventSource;
 
-public class Drawable implements DrawableEvent {
+
+public class Drawable extends NodeEvent  {
 
 	public  ArrayList<Drawable> children =new ArrayList<Drawable>(); //stores all children of a drawable
 	
@@ -36,15 +38,14 @@ public class Drawable implements DrawableEvent {
 	private boolean doStroke=true;
 	private boolean drawOrigin=true;
 	private String identifier = "";
-	private int line= 0;
+	private int line= 0; //last line of modification
+	private int endPos = -1;//if modified graphically, position where modification code ends
+	private boolean codeCreated = true; //flag for if drawable was created with code or with graphic tool
+	private boolean gModified = false; //flag for if last line was modified in code or with graphic tool
 	protected final static int DEFAULT_WIDTH= 50;
 	protected boolean isHole = false;
 
-	private EventSource es;
-
-
 	private String error; 
-	
 	
 	//===============PRIVATE METHODS=================//
 	
@@ -100,7 +101,7 @@ public class Drawable implements DrawableEvent {
 		setFillColor(255,255,255);
 		setStrokeColor(0,0,0);
 		strokeWeight = 1;
-		es= new EventSource();
+		
 	}
 
 	//-------------DRAW AND PRINT METHODS-----------------//
@@ -237,6 +238,30 @@ public class Drawable implements DrawableEvent {
 	public void setLine(int l){
 		this.line = l;
 	}
+	
+	public void setCodeCreated(boolean cC){
+		codeCreated = cC;
+	}
+	
+	public boolean getCodeCreated(){
+		return codeCreated;
+	}
+	
+	public void setGModified(boolean gM){
+		gModified = gM;
+	}
+	
+	public boolean getGModified(){
+		return gModified;
+	}
+	
+	public void setEndPos(int eP){
+		this.endPos = eP;
+	}
+	
+	public int getEndPos(){
+		return endPos;
+	}
 
 	
 	
@@ -362,12 +387,12 @@ public class Drawable implements DrawableEvent {
 	}
 
 	public void addToCanvas(){
-		this.fireEvent(CustomEvent.ADD_DRAWABLE);
+		this.fireDrawableEvent(CustomEvent.ADD_DRAWABLE,this);
 	}
 	
 	//removes drawable from canvas
 	public void removeFromCanvas(){
-		this.fireEvent(CustomEvent.REMOVE_DRAWABLE);
+		this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE,this);
 	}
 
 	//resets origin to new point resulting in the moving of the object
@@ -828,7 +853,7 @@ public class Drawable implements DrawableEvent {
 	}
 	
 	public Drawable addToGroup(Drawable d,int index) {
-		this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
+		this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
 		
 			for(int i=0;i<this.children.size();i++){
 				this.children.get(i).setAbsolute();
@@ -890,7 +915,7 @@ public class Drawable implements DrawableEvent {
 		}
 		
 	    	
-		this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
+		this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
 		this.remove(d);
 		
 		
@@ -911,7 +936,7 @@ public class Drawable implements DrawableEvent {
 			//return this.children.get(0);
 		}
 		else if(this.children.size()==0){
-			this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, this); // if no children, remove empty group
+			this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE, this); // if no children, remove empty group
 			
 		}
 		return d;
@@ -1049,38 +1074,14 @@ public class Drawable implements DrawableEvent {
 
 		
 		
-///==================EVENT SOURCE METHODS================
-		@Override
-		public Drawable getDrawable() {
-			return this;
-		}
 
-		@Override
+	
+		
 		public String getError() {
 			return this.error;
 		}
 
-		@Override
-		public void fireEvent(int event) {
-			this.es.fireEvent(this,event);
-			
-		}
-		@Override
-		public void drawableEvent(int event, Drawable d) {
-			this.es.fireDrawableEvent(this,event,d);
-			
-		}
-		@Override
-		public void addEventListener(CustomEventListener listener) {
-			this.es.addEventListener(listener);
-			
-		}
-		@Override
-		public void removeEventListener(CustomEventListener listener) {
-			this.es.removeEventListener(listener);
-		}
 
-	
 		
 
 	//boolean returns to check type of drawables

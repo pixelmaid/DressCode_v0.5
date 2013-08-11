@@ -57,6 +57,8 @@ public class Ellipse extends Polygon {
 
     }
     
+  
+    
     @Override
     public Ellipse copy(){
     	Ellipse e = new Ellipse(0,0);
@@ -135,6 +137,15 @@ public class Ellipse extends Polygon {
 	
 	public double getHeight(){
 		return this.height;
+	
+	}
+	
+	public void setWidth(double w){
+		this.width=w;
+	}
+	
+	public void setHeight(double h){
+		this.height=h;
 	
 	}
 	

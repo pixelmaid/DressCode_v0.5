@@ -41,7 +41,7 @@ public class RotateNode extends NodeEvent implements DCNode {
     	if(params.size()==2){
     	
     	Drawable dNew = draw.rotateWithFocus(r,draw.getOrigin(),true);
-    	this.drawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
+    	this.fireDrawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
     	dNew.setLine(line);
 
     	VarType v=  new VarType(dNew);
@@ -60,7 +60,7 @@ public class RotateNode extends NodeEvent implements DCNode {
     		
     		Drawable dNew = draw.rotateWithFocus(r, f, true);
     		//TODO: create swap event
-    		this.drawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
+    		this.fireDrawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
         	dNew.setLine(line);
 
     		VarType v=  new VarType(dNew);
@@ -76,7 +76,7 @@ public class RotateNode extends NodeEvent implements DCNode {
     		double fX = params.get(2).evaluate().asDouble();
     		double fY = params.get(3).evaluate().asDouble();
     		Drawable dNew=draw.rotateWithFocus(r, new Point(fX,fY),true);
-    		this.drawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
+    		this.fireDrawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
         	dNew.setLine(line);
 
     		VarType v=  new VarType(dNew);

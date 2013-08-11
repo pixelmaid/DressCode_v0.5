@@ -26,10 +26,12 @@ import javax.swing.JSplitPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-import com.pixelmaid.dresscode.app.ui.tools.PenTool;
+import com.pixelmaid.dresscode.app.ui.tools.*;
+
 import com.pixelmaid.dresscode.data.DCProject;
 import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.InstructionManager;
+import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
@@ -92,6 +94,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 	//drawing tools
 	private PenTool penTool;
+	private TargetTool targetTool;
+	private SelectTool selectTool;
+	private PanTool panTool;
+	private RectTool rectTool;
+	private EllipseTool ellipseTool;
+	private Tool defaultTool;
+	private Tool currentTool;
 	
 	private static InstructionManager instructionManager; //data manager for program data
 	private static DrawableManager drawableManager; //data manager for drawing data
@@ -284,13 +293,30 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 		//setup tools
 		penTool = new PenTool();
-		canvas.setTools(penTool);
+		penTool.setImage("pen_t");
+		targetTool = new TargetTool();
+		targetTool.setImage("target_t");
+		selectTool = new SelectTool();
+		panTool = new PanTool();
+		panTool.setImage("pan_t");
+		rectTool = new RectTool();
+		rectTool.setImage("cross_t");
+		ellipseTool = new EllipseTool();
+		ellipseTool.setImage("cross_t");
+		defaultTool = new Tool();
+		
+		currentTool= defaultTool;
 		
 		//setup event listeners
 		instructionManager.addEventListener(this);
 		drawableManager.addEventListener(this);
 		canvas.addEventListener(this);
 		penTool.addEventListener(this);
+		targetTool.addEventListener(this);
+		selectTool.addEventListener(this);
+		panTool.addEventListener(this);
+		rectTool.addEventListener(this);
+		ellipseTool.addEventListener(this);
 		
 		//setup action listeners
 		selectButton.addActionListener(this);
@@ -496,20 +522,51 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		@Override
 		public void handleCustomToolEvent(Object source, int eventType) {
 			switch (eventType){
-				case CustomEvent.TARGET_SELECTED:	
-					//TODO: setup target tool class
-					//this.codeField.insertCoordinate(targetTool.getX(), targetTool.getY());
+				case CustomEvent.CANVAS_MOUSE_PRESSED:	
+					currentTool.mousePressed(canvas.relativeMouseX(), canvas.relativeMouseY());
 				break;
 			
-				case CustomEvent.DRAWABLE_MOVED:
-					//TODO: setup select tool class
-					/*Drawable selectedObject = selectTool.getSelected();
-					int lineNum  = selectedObject.getLine();
-					Point origin = selectedObject.getOrigin();
-					String identifier = selectedObject.getIdentifier();
-					this.codeField.insertMoveStatement(identifier,lineNum,selectedObject,origin.getX(),origin.getY());
-					this.run();	*/
+				case CustomEvent.CANVAS_MOUSE_RELEASED:
+					currentTool.mouseReleased(canvas.relativeMouseX(), canvas.relativeMouseY());
+					
 					break;
+				case CustomEvent.CANVAS_MOUSE_DRAGGED:
+					currentTool.mouseDragged(canvas.relativeMouseX(), canvas.relativeMouseY());
+				break;
+				case CustomEvent.TARGET_SELECTED:
+					Point p = targetTool.getTarget();
+					this.codeField.insertCoordinate(p.getX(), p.getY());
+				break;
+				case CustomEvent.DRAWABLE_MOVED:
+					Drawable d = selectTool.getSelected();
+					this.codeField.insertMoveStatement(d);
+					selectTool.reset();
+				break;
+				case CustomEvent.PAN_ACTIVE:
+					canvas.pan();
+					canvas.redraw();
+				break;
+				case CustomEvent.DRAWABLE_CREATED:
+					Drawable r = currentTool.getCreated();
+					drawableManager.addDrawable(r);
+					System.out.println(drawableManager.getDrawables().size());
+					canvas.redraw();
+					break;
+				case CustomEvent.RECT_ADDED:
+					codeField.insertShapeStatement(currentTool.getCreated(),"rect");
+					break;
+				case CustomEvent.ELLIPSE_ADDED:
+					codeField.insertShapeStatement(currentTool.getCreated(),"ellipse");
+					break;	
+				case CustomEvent.REDRAW_REQUEST:
+					System.out.println("redraw recieved");
+					System.out.println(drawableManager.getDrawables().size());
+					 canvas.setDrawables(drawableManager.getDrawables());
+
+					canvas.redraw();
+					
+					
+				break;
 				
 			}
 		}
@@ -631,13 +688,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		if(e.getKeyCode() ==32){
 			canvas.panMode();
 			panButton.setActive();
+			currentTool=panTool;
+			canvas.changeCursor(panTool.getImage());
 		}
 	}
 
 
 	@Override
 	public void keyReleased(KeyEvent e) {
-		System.out.println("key code ="+e.getKeyCode());
 		if(e.getKeyCode()==18){
 			altKey=false;
 		}
@@ -649,6 +707,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			if(panButton.isActive()){
 				canvas.clearMode();
 				panButton.setInactive();
+				currentTool=defaultTool;
+				canvas.changeCursor(null);
 			}
 		}
 
@@ -664,7 +724,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		canvas.clearMode();
 		resetButtons();
-		
+		currentTool = defaultTool;
+		canvas.changeCursor(null);
 		if (e.getSource() == runButton ) {
 			run();	
 		}
@@ -674,13 +735,17 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		
 		else if (e.getSource()==targetButton){
-			canvas.targetMode();
-			targetButton.setActive();	
+			currentTool = targetTool;
+			targetButton.setActive();
+			canvas.changeCursor(targetTool.getImage());
 		}
 		
 		else if (e.getSource()==panButton){
-			canvas.panMode();
+			//canvas.panMode();
 			panButton.setActive();
+			currentTool=panTool;
+			canvas.changeCursor(panTool.getImage());
+
 		}
 		
 		else if (e.getSource() == zoomButton){
@@ -694,13 +759,28 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		
 		else if (e.getSource()==selectButton){
-			canvas.selectMode();
 			selectButton.setActive();
+			canvas.showOrigins();
+			currentTool = selectTool;
+			selectTool.setDrawables(drawableManager.getDrawables());
+			
+			
 		}
 		
+		else if (e.getSource()==rectButton){
+			currentTool = rectTool;
+			rectButton.setActive();
+			canvas.changeCursor(rectTool.getImage());
+		}
+		else if (e.getSource()==ellipseButton){
+			currentTool = ellipseTool;
+			ellipseButton.setActive();
+			canvas.changeCursor(ellipseTool.getImage());
+		}
 		else if (e.getSource()==penButton){
-			canvas.penMode();
+			currentTool = penTool;
 			penButton.setActive();
+			canvas.changeCursor(penTool.getImage());
 		}
 		
 		else if (e.getSource() == openButton || e.getSource() == openAction) {

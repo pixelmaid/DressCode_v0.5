@@ -43,6 +43,15 @@ public class Rectangle extends Polygon{
 	
 	}
 	
+	public void setWidth(double w){
+		this.width=w;
+	}
+	
+	public void setHeight(double h){
+		this.height=h;
+	
+	}
+	
 	@Override
 	public void draw(Canvas e){
 		if(!this.getHide()){

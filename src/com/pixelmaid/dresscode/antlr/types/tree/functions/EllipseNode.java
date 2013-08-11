@@ -70,7 +70,7 @@ public class EllipseNode extends DrawableNode implements DCNode {
 			}
 
 
-			this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+			this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, e);
 			
 		}
 		catch (ClassCastException err){
@@ -78,7 +78,7 @@ public class EllipseNode extends DrawableNode implements DCNode {
 
 			System.err.println("incorrect parameters for ellipse at line:"+line);
 			
-			this.errorEvent(CustomEvent.RUNTIME_ERROR, "incorrect parameters for ellipse");
+			this.fireRuntimeErrorEvent(CustomEvent.RUNTIME_ERROR, "incorrect parameters for ellipse");
 
 		}
 		e.setLine(line);

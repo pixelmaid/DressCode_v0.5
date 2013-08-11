@@ -47,7 +47,7 @@ public class ExpandNode extends NodeEvent implements DCNode {
 
            // d.setIdentifier(aP.getIdentifier());
 
-        	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
+        	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
     		VarType v=  new VarType(dNew);
     		
     		return v;

@@ -37,7 +37,7 @@ public class MergeNode extends NodeEvent implements DCNode {
     		Drawable draw = d.asDrawable();
     		dNew = PolyBoolean.merge(draw.copy());
     		draw.hide();
-    		this.drawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
+    		this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
     		v=  new VarType(dNew);
     		
         	dNew.setLine(line);

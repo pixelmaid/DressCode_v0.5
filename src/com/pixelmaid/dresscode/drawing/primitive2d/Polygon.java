@@ -371,10 +371,10 @@ public Drawable expand(){
 	public Drawable addToGroup(Drawable d, int index){
 	 Drawable master = new Drawable();
 	//TODO: adjust indexing here to have new drawable added at same index as this
-	 this.drawableEvent(CustomEvent.DRAWABLE_CREATED, master);
+	 this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, master);
     
     	
-    	 this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
+    	 this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
     		
     		master.addToGroup(this);
     		master.addToGroup(d,index);
@@ -405,10 +405,10 @@ public Drawable expand(){
 	public Drawable addAllChildren(ArrayList<Drawable> orphans){
 		 Drawable master = new Drawable();
 		//TODO: adjust indexing here to have new drawable added at same index as this
-		 this.drawableEvent(CustomEvent.DRAWABLE_CREATED, master);
+		 this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, master);
 		    
 	    	
-    	 this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, this);
+    	 this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE, this);
 				
 		   master.addToGroup(this);
 		   

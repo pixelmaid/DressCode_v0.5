@@ -28,7 +28,7 @@ public class CopyNode extends NodeEvent implements DCNode {
     	
     	d= param.evaluate().asDrawable();
     	Drawable d2= d.copy();
-    	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d2);
+    	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d2);
     	d.setLine(line);
     	d2.setLine(line);
     	return new VarType(d2);	

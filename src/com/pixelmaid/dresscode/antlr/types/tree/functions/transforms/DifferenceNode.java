@@ -36,7 +36,7 @@ public class DifferenceNode extends NodeEvent implements DCNode {
     	Drawable bP =  params.get(1).evaluate().asDrawable();
     	
         d = PolyBoolean.difference(aP.copy(),bP.copy());
-        this.drawableEvent(CustomEvent.DRAWABLE_CREATED, d);
+        this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d);
         aP.hide();
     	bP.hide();
     	v=  new VarType(d);

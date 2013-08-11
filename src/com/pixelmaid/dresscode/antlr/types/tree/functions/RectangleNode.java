@@ -52,7 +52,7 @@ public class RectangleNode extends DrawableNode implements DCNode {
 			}
 
 
-			this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+			this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, e);
 		}
 		catch (ClassCastException err){
 			//Window.output.setText("incorrect parameters for rectangle call at line:"+line);

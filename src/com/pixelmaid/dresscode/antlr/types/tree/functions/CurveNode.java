@@ -86,7 +86,7 @@ public class CurveNode extends DrawableNode implements DCNode {
     	}*/
 	
 	e.setLine(line);
-	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, e);
 	
 	return new VarType(e);	
 	//throw new RuntimeException("Illegal function call: " + this);

@@ -63,7 +63,7 @@ public class PolygonNode extends DrawableNode implements DCNode {
 			}
 
 
-			this.drawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+			this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, e);
 		}
 		catch (ClassCastException err){
 			//Window.output.setText("incorrect parameters for polygon call at line:"+line);

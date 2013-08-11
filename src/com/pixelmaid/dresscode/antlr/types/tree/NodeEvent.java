@@ -1,16 +1,17 @@
 package com.pixelmaid.dresscode.antlr.types.tree;
 
-import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
-import com.pixelmaid.dresscode.events.CustomEvent;
-import com.pixelmaid.dresscode.events.CustomEventListener;
-import com.pixelmaid.dresscode.events.EventSource;
+import java.util.ArrayList;
+import java.util.Iterator;
 
-public class NodeEvent {
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.events.CustomEventListener;
+import com.pixelmaid.dresscode.events.EventInterface;
+
+public class NodeEvent implements EventInterface{
 	  protected String error;
-	  private EventSource es;
-	 
+	private ArrayList<CustomEventListener> _listeners = new ArrayList<CustomEventListener>();
+
 	public NodeEvent(){
-		es = new EventSource();
 		error = "default error";
 	}
 	  
@@ -18,41 +19,71 @@ public class NodeEvent {
 		return this.error;
 	}
 
-	protected void fireEvent(int event) {
-		this.es.fireEvent(this,event);
-		
-	}
-
-	protected void drawableEvent(int event, Drawable d) {
-		this.es.fireDrawableEvent(this,event,d);
-		
-	}
-	
-	protected void drawableEvent(int event, Drawable d1 , Drawable d2) {
-		this.es.fireDrawableEvent(this,event,d1,d2);
-		
-	}
-	protected void printEvent(int event, String value){
-		this.es.firePrintEvent(this,event,value);
-	}
-	
-	protected void errorEvent(int event, String error){
-		this.es.fireRuntimeErrorEvent(this, event, error);
-	}
-	
-	public void addEventListener(CustomEventListener listener) {
-		this.es.addEventListener(listener);
+	 public synchronized void fireEvent(int eventType) {
+		   
+		    Iterator<CustomEventListener> i = _listeners.iterator();
+		    while(i.hasNext())  {
+		      ((CustomEventListener) i.next()).handleCustomInstructionEvent(this, eventType);
+		    }
+	 }
+	 
+	 public void fireDrawableEvent(int event, Drawable d) {
+		  Iterator<CustomEventListener> i = _listeners.iterator();
+		    while(i.hasNext())  {
+		    	
+		      ((CustomEventListener) i.next()).handleCustomDrawableEvent(this, event, d);
+		    }
 		
 	}
 	
-	public CustomEventListener getListenerAt(int index) {
-	return es.getListenerAt(index);
+	 public void fireDrawableEvent(int event, Drawable d1,Drawable d2) {
+		  Iterator<CustomEventListener> i = _listeners.iterator();
+		    while(i.hasNext())  {
+		    	
+		      ((CustomEventListener) i.next()).handleCustomDrawableEvent(this, event, d1,d2);
+		    }
 		
 	}
-
-	public void removeEventListener(CustomEventListener listener) {
-		this.es.removeEventListener(listener);
+	 
+	 public void fireToolEvent(int event) {
+		  Iterator<CustomEventListener> i = _listeners.iterator();
+		    while(i.hasNext())  {
+		    	
+		      ((CustomEventListener) i.next()).handleCustomToolEvent(this, event);
+		    }
+		
 	}
+	 public void firePrintEvent(int event, String value) {
+		 Iterator<CustomEventListener> i = _listeners.iterator();
+		    while(i.hasNext())  {
+		    	
+		      ((CustomEventListener) i.next()).handleCustomPrintEvent(this, event, value);
+		    }
+		
+	}
+	 public void fireRuntimeErrorEvent(int event, String message) {
+		  Iterator<CustomEventListener> i = _listeners.iterator();
+		    while(i.hasNext())  {
+		    	
+		      ((CustomEventListener) i.next()).handleCustomRuntimeErrorEventDrawableEvent(this, event, message);
+		    }
+		
+	}
+	 
+	 @Override
+	 public synchronized void addEventListener(CustomEventListener listener)  {
+		    _listeners.add(listener);
+		  }
+	 @Override	  
+	 public synchronized CustomEventListener getListenerAt(int index) {
+				return (CustomEventListener) _listeners.get(index);
+					
+				}
+		  
+	 @Override
+	 public synchronized void removeEventListener(CustomEventListener listener)   {
+			    _listeners.remove(listener);
+			  }
 	
 	
 		

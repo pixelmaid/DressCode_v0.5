@@ -35,7 +35,7 @@ public class GroupNode extends NodeEvent implements DCNode {
     	for(int i=0;i<params.size();i++){
     		Drawable d= (params.get(i).evaluate().asDrawable());
     		
-    		this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
+    		this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
     		
     		master.addToGroup(d);
     	
@@ -43,7 +43,7 @@ public class GroupNode extends NodeEvent implements DCNode {
     	}
     	
     	//System.out.println("group children are polygons" + master.childrenArePolygons());
-    	this.drawableEvent(CustomEvent.DRAWABLE_CREATED, master);
+    	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, master);
     	master.setLine(line);
 
     	return new VarType(master);

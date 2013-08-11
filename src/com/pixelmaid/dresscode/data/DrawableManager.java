@@ -65,7 +65,7 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 			break;
 		
 		case CustomEvent.SHAPE_LOAD_REQUESTED:
-			this.drawableEvent(CustomEvent.SHAPE_LOAD_REQUESTED, d);
+			this.fireDrawableEvent(CustomEvent.SHAPE_LOAD_REQUESTED, d);
 			break;
 		}
 		System.out.println("num drawables="+this.drawables.size());
@@ -109,7 +109,7 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 	@Override
 	public void handleCustomPrintEvent(Object source, int event, String value) {
 		System.out.println("print event d ="+value);
-		this.printEvent(CustomEvent.PRINT_STATEMENT, value);
+		this.firePrintEvent(CustomEvent.PRINT_STATEMENT, value);
 		
 	}
 

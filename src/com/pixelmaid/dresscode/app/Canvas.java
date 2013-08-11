@@ -2,7 +2,9 @@ package com.pixelmaid.dresscode.app;
 
 
 import java.awt.Color;
+import java.awt.Cursor;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
@@ -12,12 +14,14 @@ import java.util.Iterator;
 import java.util.List;
 
 import com.pixelmaid.dresscode.app.ui.tools.PenTool;
+import com.pixelmaid.dresscode.app.ui.tools.TargetTool;
 import com.pixelmaid.dresscode.app.ui.tools.Tool;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
+import com.pixelmaid.dresscode.events.EventInterface;
 
 import processing.core.*;
 import processing.dxf.RawDXF;
@@ -27,7 +31,7 @@ import javax.swing.JFrame;
 import processing.pdf.PGraphicsPDF;
 
 
-public class Canvas extends PApplet {
+public class Canvas extends PApplet implements EventInterface{
 	/**
 	 * 
 	 */
@@ -65,12 +69,6 @@ public class Canvas extends PApplet {
 	private ArrayList<Drawable> tempDrawables;
 	private boolean drawGrid = true;
 
-
-	
-	private Tool currentTool;
-	private PenTool penTool;
-	private Tool defaultTool;
-	
 	private int currentMode = -1;
 	private static final int NO_MODE = -1;
 	private static final int TARGET_MODE = 0;
@@ -228,17 +226,10 @@ public class Canvas extends PApplet {
 		System.out.println("setup_called");
 		parent.setSize(parent.getPreferredSize());
 		
-		
-		defaultTool = new Tool();
-		
-		currentTool = defaultTool;
+
 	}
 	
-	//gets tools from parent
-	public void setTools(PenTool pt){
-		this.penTool = pt;
-	}
-
+	
 
 	public void setDrawables(ArrayList<Drawable> d){
 		this.tempDrawables=d;
@@ -247,12 +238,13 @@ public class Canvas extends PApplet {
 
 
 	public void draw() {
-		
+			System.out.println("drawing");
 			pushMatrix();
 			background(backgroundColor.getRed(),backgroundColor.getGreen(),backgroundColor.getBlue());
 			//translate(translateXAmount,translateYAmount,zoomAmount);
 			translate(translateXAmount,translateYAmount);
 			scale(zoomAmount);
+			
 			dimensions(false);
 
 			pushMatrix();
@@ -269,47 +261,16 @@ public class Canvas extends PApplet {
 			}
 			
 			popMatrix();
-			/*PGraphicsOpenGL pG = (PGraphicsOpenGL)this.g;
-			modelview.get(mvmatrix1);
-			float x = modelX(0, 0, 0);
-			float y = modelY(0, 0, 0);
-			float z = modelZ(0, 0, 0);
-			pProjectionView.get(projmatrix1); */ 
-			/*PVector mousePos = new PVector(mouseX,mouseY);
-			PVector screenPos = screenToMatrixCoordinate(mousePos, getMatrix().get());
-			float xP = screenPos.x;
-			float yP = screenPos.y;*/
-
-			//System.out.println(xP+","+yP);
+		
 			if(drawGrid){
 				grid();
 			}
 			dimensions(true);
 
-			/*System.out.println(x+","+y+","+z);
-	float screenx = screenX(x,y,z);
-	float screeny = screenY(x,y,z);
-
-	System.out.println(screenx+","+screeny);
-
-	System.out.println(mouseX+","+mouseY);
-	System.out.println("============\n\n");*/
 
 			popMatrix();	
-			//relMouseX = screenX(100, 100, zoomAmount);
-			//relMouseY = screenY(100, 100, zoomAmount);
-			//System.out.println(relMouseX+","+relMouseY);
-
-			//modelview.get(mvmatrix2);
+		
 			rulers();
-			
-
-			try {
-				setCursor();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
 			
 	}
 
@@ -358,103 +319,85 @@ public class Canvas extends PApplet {
 	public void mousePressed() {
 		//System.out.println(mousePressed);
 		
-		currentTool.mousePressed(mouseX,mouseY);
-		
-		if(currentMode == SELECT_MODE){
+		this.fireMousePressedEvent(this, CustomEvent.CANVAS_MOUSE_PRESSED);
+		/*if(currentMode == SELECT_MODE){
 			checkSelect();
 		}
+		Toolkit toolkit = Toolkit.getDefaultToolkit();
+		Image cursorImage = toolkit.getImage(ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/pen.png"));//toolkit.getImage("cursor.gif");
+	    java.awt.Point cursorHotSpot = new java.awt.Point(0,0);
+	    Cursor customCursor = toolkit.createCustomCursor(cursorImage, cursorHotSpot, "Cursor");
+	    setCursor(customCursor);*/
 	}
 
 
 	public void mouseReleased() {
-		currentTool.mouseReleased(mouseX,mouseY);
+		this.fireMousePressedEvent(this, CustomEvent.CANVAS_MOUSE_RELEASED);
+
+		//currentTool.mouseReleased(relativeMouseX(),relativeMouseY());
 		
 		
 		
 	}
 
 	public void mouseDragged(){
-		checkModeMove();
-		redraw();
-		currentTool.mouseDragged(mouseX,mouseY);
+		this.fireMousePressedEvent(this, CustomEvent.CANVAS_MOUSE_DRAGGED);
+		//checkModeMove();
+		//redraw();
+		//currentTool.mouseDragged(mouseX,mouseY);
 
 
 	}
 	
 	//===========================MODE AND TOOL FUNCTIONS===========================//
 	
-	//begin functions that set tool and mode
+	
 	public void clearMode() {
 		currentMode = NO_MODE;
 		showOrigin=false;
-		currentTool = defaultTool;
-	}
-
-	public void targetMode() {
-		currentMode = TARGET_MODE;
-	}
-	public void selectMode() {
-		currentMode = SELECT_MODE;
-		this.showOrigin=true;	
+		cursor(ARROW);
 	}
 	
-	public void penMode() {
-		currentMode = PEN_MODE;
-		currentTool=penTool;
-		penTool.setActive(true);
+	public void showOrigins() {
+		
+		showOrigin=true;
+		
 	}
-	//end functions that set tool and mode
+
+		
+	public void pan(){
+		translateXAmount+= mouseX-pmouseX;
+		translateYAmount+=  mouseY-pmouseY;
+		
+	}
+	
+	public void selectMove(){
+		if(selectedObject!=null){
+			selectedObject.moveTo(relativeMouseX(),relativeMouseY());
+			objectMoved=true;
+		}
+	}
 	
 	//sets cursor according to mode
-	public void setCursor() throws IOException{
-		if(currentMode == NO_MODE){
-			cursor(ARROW);
-			
+	public void changeCursor(Cursor cursorImage){
+		if(cursorImage!=null){
+			setCursor(cursorImage);
 		}
 		else{
-			System.out.println(currentTool);
-			//TODO: get image loader to work in jar
-			//URL u = ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/"+currentTool.getImage()+".png");
-			//System.out.println(u.getContent().toString());
-			//console.setText(u.getContent().toString());
-			//PImage cursorImage = loadImage(u.getPath());
-			
-			//cursor(cursorImage);
-		}
-		/*switch(currentMode){
-		case TARGET_MODE:
-			cursor(CROSS);
-			break;
-
-		case PAN_MODE:
-			cursor(HAND);
-			break;
-			
-		case SELECT_MODE:
-			cursor(MOVE);
-			
-		default:
 			cursor(ARROW);
-			break;
-		}*/
+		}
 	}
 
-	public void checkModeMouse(){
+	/*public void checkModeMouse(){
 		switch(currentMode){
 		case TARGET_MODE:
 
-			//float[] f = GetOGLPos();
-			//System.out.println(f);
-			
-			
 			this.fireToolEvent(this,CustomEvent.TARGET_SELECTED);
 
 			break;
 			
 		case SELECT_MODE:
 
-			//float[] f = GetOGLPos();
-			//System.out.println(f);
 			if(objectMoved==true){
 			objectMoved = false;
 			this.fireToolEvent(this,CustomEvent.DRAWABLE_MOVED);
@@ -466,9 +409,9 @@ public class Canvas extends PApplet {
 			break;
 		}
 	}
-
+*/
 	
-
+/*
 	public void checkModeMove(){
 		switch(currentMode){
 
@@ -478,11 +421,7 @@ public class Canvas extends PApplet {
 			translateYAmount+=  mouseY-pmouseY;
 
 
-			/*if(zoom){
-				posZ+=parent.mouseY-lastMouseY;
-			}
-			lastMouseX= parent.mouseX;
-			lastMouseY = parent.mouseY;*/
+			
 			break;
 		
 		
@@ -492,15 +431,15 @@ public class Canvas extends PApplet {
 				objectMoved=true;
 			}
 		}
-	}
+	}*/
 	
-	private double relativeMouseX(){
+	public double relativeMouseX(){
 		double x1 = (mouseX - translateXAmount) / zoomAmount;
 		double x = x1-(width/2-(drawingBoardWidth)/2);
 		return x;
 	}
 	
-	private double relativeMouseY(){
+	public double relativeMouseY(){
 		double y1 = (mouseY - translateYAmount)/ zoomAmount ;
 		double y = y1-(height/2-(drawingBoardHeight)/2);
 		return y;
@@ -659,7 +598,6 @@ public class Canvas extends PApplet {
 
 	public void zoomOut(){
 		zoomAmount-=0.05;
-		selectDist= selectDist*5;
 		if(zoomAmount<0){
 			zoomAmount = 0;
 		}
@@ -670,9 +608,7 @@ public class Canvas extends PApplet {
 
 	
 	
-	public void checkSelect(){
-		//System.out.println("checkSelect");
-		System.out.println("num of drawables="+tempDrawables.size());
+	public Drawable checkSelect(){
 		double x= relativeMouseX();
 		double y = relativeMouseY();
 	
@@ -686,10 +622,12 @@ public class Canvas extends PApplet {
 				selectedObject = tempDrawables.get(i);
 			
 				System.out.println("selected object at"+i);
-				
-				break;
+				return tempDrawables.get(i);
+			
 			}
 		}
+		return null;
+		
 	}
 	
 	
@@ -699,22 +637,32 @@ public class Canvas extends PApplet {
 
 	}
 
-
+	@Override
 	public synchronized void addEventListener(CustomEventListener listener)  {
 		_listeners.add(listener);
 	}
-
+	
+	@Override
 	public synchronized CustomEventListener getListenerAt(int index) {
 		return (CustomEventListener) _listeners.get(index);
 
 	}
-
+	
+	@Override
 	public synchronized void removeEventListener(CustomEventListener listener)   {
 		_listeners.remove(listener);
 	}
 
 	//  fires tool events to listeners
 	private void fireToolEvent(Object source, int event) {
+		Iterator<CustomEventListener> i = _listeners.iterator();
+		while(i.hasNext())  {
+			((CustomEventListener) i.next()).handleCustomToolEvent(source, event);
+		}
+	}
+	
+//  fires tool events to listeners
+	private void fireMousePressedEvent(Object source, int event) {
 		Iterator<CustomEventListener> i = _listeners.iterator();
 		while(i.hasNext())  {
 			((CustomEventListener) i.next()).handleCustomToolEvent(source, event);
