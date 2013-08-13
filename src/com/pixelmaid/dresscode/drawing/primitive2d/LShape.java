@@ -93,6 +93,16 @@ public class LShape extends Polygon {
 		}
 		
 		
+		@Override
+		//rotates around a focus. does not change the rotation property
+		public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
+			Point newOrigin = this.getOrigin().rotate(theta, focus);
+			this.setOrigin(newOrigin);
+			this.rotation=theta;
+			
+			return this;
+		
+		}
 
 		
 		//TODO: implement polygon conversion

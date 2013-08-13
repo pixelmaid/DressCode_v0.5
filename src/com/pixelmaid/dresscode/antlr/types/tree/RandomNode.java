@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Random;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
+import com.pixelmaid.dresscode.app.DisplayFrame;
 
 public class RandomNode  extends NodeEvent implements DCNode {
 	protected List<DCNode> params;
@@ -24,14 +25,14 @@ public class RandomNode  extends NodeEvent implements DCNode {
   		
   	double n1= params.get(0).evaluate().asDouble();
   	double n2= params.get(1).evaluate().asDouble();
-  	Random r = new Random();
+  	Random r = DisplayFrame.mainRandom;
 
   	double num = n1 + (n2 -n1) *r.nextDouble();
   	
   	return new VarType(num);
   	}
   	catch (ClassCastException e){
-  		throw new RuntimeException("Illegal cosine function call at line:"+ line+" : " + this);
+  		throw new RuntimeException("Illegal random function call at line:"+ line+" : " + this);
   	}
   }
 

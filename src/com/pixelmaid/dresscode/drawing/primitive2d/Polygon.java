@@ -172,9 +172,9 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		
 		e.popMatrix();
 		
-		if(this.getDrawOrigin()){
+		/*if(this.getDrawOrigin()){
 			this.drawOrigin(e);
-		}
+		}*/
 		}
 	}
 	

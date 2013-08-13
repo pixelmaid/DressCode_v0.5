@@ -176,6 +176,8 @@ functionCall
    	|Tan '(' expression ')'   -> ^(FUNC_CALL Tan expression)
    	|ATan '(' expression ')'   -> ^(FUNC_CALL ATan expression)
    	|Random '(' exprList? ')'   -> ^(FUNC_CALL Random exprList?)
+   	|Gaussian '(' exprList? ')'   -> ^(FUNC_CALL Gaussian exprList?)
+   	|Noise '(' exprList? ')'   -> ^(FUNC_CALL Noise exprList?)
    	|Round'(' expression ')'   -> ^(FUNC_CALL Round expression)
    	|Map'(' exprList? ')'   -> ^(FUNC_CALL Map exprList?)
    	|Inch '(' expression ')'   -> ^(FUNC_CALL Inch expression)
@@ -183,6 +185,7 @@ functionCall
    	|Cm '(' expression ')'   -> ^(FUNC_CALL Cm expression)
    	|Units'(' expression ')'   -> ^(FUNC_CALL Units expression)
    	;
+  
   
   
 
@@ -365,6 +368,8 @@ Tan		: 'tan';
 ATan	: 'atan';
 Random 	: 'random';
 Round	: 'round';
+Gaussian: 'gaussianNoise';
+Noise	: 'noise';
 Map		: 'map';
 Inch      : 'inch';
 Mm	    : 'mm';

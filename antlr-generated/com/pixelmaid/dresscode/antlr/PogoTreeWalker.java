@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g 2013-08-05 15:09:44
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g 2013-08-13 18:53:18
 
  package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -30,25 +30,25 @@ public class PogoTreeWalker extends TreeParser {
 		"Digit", "Divide", "Do", "Dot", "DotEnd", "DotFill", "DotHeight", "DotOrigin", 
 		"DotRotation", "DotStart", "DotStroke", "DotWeight", "DotWidth", "DotX", 
 		"DotY", "EXP", "EXP_LIST", "Ellipse", "Else", "End", "Equals", "Excl", 
-		"Expand", "FUNCTION", "FUNC_CALL", "Fill", "For", "GT", "GTEquals", "GetDistance", 
-		"GetEnd", "GetFill", "GetHeight", "GetIntersect", "GetOrigin", "GetRotation", 
-		"GetStart", "GetStroke", "GetWidth", "GetX", "GetY", "Grid", "Group", 
-		"HEIGHT_CONSTANT", "Heading", "Hide", "ID_LIST", "IF", "INDEXES", "Identifier", 
-		"If", "In", "Inch", "Int", "LAdd", "LIST", "LOOKUP", "LRemove", "LShape", 
-		"LT", "LTEquals", "Line", "Map", "Merge", "MirrorX", "MirrorY", "Mm", 
-		"Modulus", "Move", "MoveBy", "Multiply", "NEGATE", "NEquals", "NoFill", 
-		"NoStroke", "Null", "Number", "OBrace", "OBracket", "OParen", "Or", "PI_CONSTANT", 
-		"Point", "Polygon", "Pow", "Print", "Println", "QMark", "Quad", "RETURN", 
-		"Random", "Rect", "Repeat", "Return", "Rotate", "Round", "SPECIAL", "STATEMENTS", 
-		"SUB_CALL", "Scale", "Show", "Sine", "Size", "Skirt", "SkirtBack", "Space", 
-		"Spiral", "String", "Stroke", "Subtract", "TERNARY", "Tan", "To", "Triangle", 
-		"UNARY_MIN", "Union", "Units", "WIDTH_CONSTANT", "Wave", "Weight", "While", 
-		"Xor", "'&&'", "';'", "'||'"
+		"Expand", "FUNCTION", "FUNC_CALL", "Fill", "For", "GT", "GTEquals", "Gaussian", 
+		"GetDistance", "GetEnd", "GetFill", "GetHeight", "GetIntersect", "GetOrigin", 
+		"GetRotation", "GetStart", "GetStroke", "GetWidth", "GetX", "GetY", "Grid", 
+		"Group", "HEIGHT_CONSTANT", "Heading", "Hide", "ID_LIST", "IF", "INDEXES", 
+		"Identifier", "If", "In", "Inch", "Int", "LAdd", "LIST", "LOOKUP", "LRemove", 
+		"LShape", "LT", "LTEquals", "Line", "Map", "Merge", "MirrorX", "MirrorY", 
+		"Mm", "Modulus", "Move", "MoveBy", "Multiply", "NEGATE", "NEquals", "NoFill", 
+		"NoStroke", "Noise", "Null", "Number", "OBrace", "OBracket", "OParen", 
+		"Or", "PI_CONSTANT", "Point", "Polygon", "Pow", "Print", "Println", "QMark", 
+		"Quad", "RETURN", "Random", "Rect", "Repeat", "Return", "Rotate", "Round", 
+		"SPECIAL", "STATEMENTS", "SUB_CALL", "Scale", "Show", "Sine", "Size", 
+		"Skirt", "SkirtBack", "Space", "Spiral", "String", "Stroke", "Subtract", 
+		"TERNARY", "Tan", "To", "Triangle", "UNARY_MIN", "Union", "Units", "WIDTH_CONSTANT", 
+		"Wave", "Weight", "While", "Xor", "'&&'", "';'", "'||'"
 	};
 	public static final int EOF=-1;
-	public static final int T__153=153;
-	public static final int T__154=154;
 	public static final int T__155=155;
+	public static final int T__156=156;
+	public static final int T__157=157;
 	public static final int ADD_CALL=4;
 	public static final int AND_CALL=5;
 	public static final int ASSIGNMENT=6;
@@ -105,99 +105,101 @@ public class PogoTreeWalker extends TreeParser {
 	public static final int For=57;
 	public static final int GT=58;
 	public static final int GTEquals=59;
-	public static final int GetDistance=60;
-	public static final int GetEnd=61;
-	public static final int GetFill=62;
-	public static final int GetHeight=63;
-	public static final int GetIntersect=64;
-	public static final int GetOrigin=65;
-	public static final int GetRotation=66;
-	public static final int GetStart=67;
-	public static final int GetStroke=68;
-	public static final int GetWidth=69;
-	public static final int GetX=70;
-	public static final int GetY=71;
-	public static final int Grid=72;
-	public static final int Group=73;
-	public static final int HEIGHT_CONSTANT=74;
-	public static final int Heading=75;
-	public static final int Hide=76;
-	public static final int ID_LIST=77;
-	public static final int IF=78;
-	public static final int INDEXES=79;
-	public static final int Identifier=80;
-	public static final int If=81;
-	public static final int In=82;
-	public static final int Inch=83;
-	public static final int Int=84;
-	public static final int LAdd=85;
-	public static final int LIST=86;
-	public static final int LOOKUP=87;
-	public static final int LRemove=88;
-	public static final int LShape=89;
-	public static final int LT=90;
-	public static final int LTEquals=91;
-	public static final int Line=92;
-	public static final int Map=93;
-	public static final int Merge=94;
-	public static final int MirrorX=95;
-	public static final int MirrorY=96;
-	public static final int Mm=97;
-	public static final int Modulus=98;
-	public static final int Move=99;
-	public static final int MoveBy=100;
-	public static final int Multiply=101;
-	public static final int NEGATE=102;
-	public static final int NEquals=103;
-	public static final int NoFill=104;
-	public static final int NoStroke=105;
-	public static final int Null=106;
-	public static final int Number=107;
-	public static final int OBrace=108;
-	public static final int OBracket=109;
-	public static final int OParen=110;
-	public static final int Or=111;
-	public static final int PI_CONSTANT=112;
-	public static final int Point=113;
-	public static final int Polygon=114;
-	public static final int Pow=115;
-	public static final int Print=116;
-	public static final int Println=117;
-	public static final int QMark=118;
-	public static final int Quad=119;
-	public static final int RETURN=120;
-	public static final int Random=121;
-	public static final int Rect=122;
-	public static final int Repeat=123;
-	public static final int Return=124;
-	public static final int Rotate=125;
-	public static final int Round=126;
-	public static final int SPECIAL=127;
-	public static final int STATEMENTS=128;
-	public static final int SUB_CALL=129;
-	public static final int Scale=130;
-	public static final int Show=131;
-	public static final int Sine=132;
-	public static final int Size=133;
-	public static final int Skirt=134;
-	public static final int SkirtBack=135;
-	public static final int Space=136;
-	public static final int Spiral=137;
-	public static final int String=138;
-	public static final int Stroke=139;
-	public static final int Subtract=140;
-	public static final int TERNARY=141;
-	public static final int Tan=142;
-	public static final int To=143;
-	public static final int Triangle=144;
-	public static final int UNARY_MIN=145;
-	public static final int Union=146;
-	public static final int Units=147;
-	public static final int WIDTH_CONSTANT=148;
-	public static final int Wave=149;
-	public static final int Weight=150;
-	public static final int While=151;
-	public static final int Xor=152;
+	public static final int Gaussian=60;
+	public static final int GetDistance=61;
+	public static final int GetEnd=62;
+	public static final int GetFill=63;
+	public static final int GetHeight=64;
+	public static final int GetIntersect=65;
+	public static final int GetOrigin=66;
+	public static final int GetRotation=67;
+	public static final int GetStart=68;
+	public static final int GetStroke=69;
+	public static final int GetWidth=70;
+	public static final int GetX=71;
+	public static final int GetY=72;
+	public static final int Grid=73;
+	public static final int Group=74;
+	public static final int HEIGHT_CONSTANT=75;
+	public static final int Heading=76;
+	public static final int Hide=77;
+	public static final int ID_LIST=78;
+	public static final int IF=79;
+	public static final int INDEXES=80;
+	public static final int Identifier=81;
+	public static final int If=82;
+	public static final int In=83;
+	public static final int Inch=84;
+	public static final int Int=85;
+	public static final int LAdd=86;
+	public static final int LIST=87;
+	public static final int LOOKUP=88;
+	public static final int LRemove=89;
+	public static final int LShape=90;
+	public static final int LT=91;
+	public static final int LTEquals=92;
+	public static final int Line=93;
+	public static final int Map=94;
+	public static final int Merge=95;
+	public static final int MirrorX=96;
+	public static final int MirrorY=97;
+	public static final int Mm=98;
+	public static final int Modulus=99;
+	public static final int Move=100;
+	public static final int MoveBy=101;
+	public static final int Multiply=102;
+	public static final int NEGATE=103;
+	public static final int NEquals=104;
+	public static final int NoFill=105;
+	public static final int NoStroke=106;
+	public static final int Noise=107;
+	public static final int Null=108;
+	public static final int Number=109;
+	public static final int OBrace=110;
+	public static final int OBracket=111;
+	public static final int OParen=112;
+	public static final int Or=113;
+	public static final int PI_CONSTANT=114;
+	public static final int Point=115;
+	public static final int Polygon=116;
+	public static final int Pow=117;
+	public static final int Print=118;
+	public static final int Println=119;
+	public static final int QMark=120;
+	public static final int Quad=121;
+	public static final int RETURN=122;
+	public static final int Random=123;
+	public static final int Rect=124;
+	public static final int Repeat=125;
+	public static final int Return=126;
+	public static final int Rotate=127;
+	public static final int Round=128;
+	public static final int SPECIAL=129;
+	public static final int STATEMENTS=130;
+	public static final int SUB_CALL=131;
+	public static final int Scale=132;
+	public static final int Show=133;
+	public static final int Sine=134;
+	public static final int Size=135;
+	public static final int Skirt=136;
+	public static final int SkirtBack=137;
+	public static final int Space=138;
+	public static final int Spiral=139;
+	public static final int String=140;
+	public static final int Stroke=141;
+	public static final int Subtract=142;
+	public static final int TERNARY=143;
+	public static final int Tan=144;
+	public static final int To=145;
+	public static final int Triangle=146;
+	public static final int UNARY_MIN=147;
+	public static final int Union=148;
+	public static final int Units=149;
+	public static final int WIDTH_CONSTANT=150;
+	public static final int Wave=151;
+	public static final int Weight=152;
+	public static final int While=153;
+	public static final int Xor=154;
 
 	// delegates
 	public TreeParser[] getDelegates() {
@@ -350,7 +352,7 @@ public class PogoTreeWalker extends TreeParser {
 				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:81:86: ( expression )?
 				int alt2=2;
 				int LA2_0 = input.LA(1);
-				if ( (LA2_0==Add||LA2_0==Bool||LA2_0==COLOR_CONSTANT||LA2_0==DOTPROPERTY||LA2_0==Divide||LA2_0==Equals||(LA2_0 >= GT && LA2_0 <= GTEquals)||LA2_0==HEIGHT_CONSTANT||LA2_0==In||LA2_0==LOOKUP||(LA2_0 >= LT && LA2_0 <= LTEquals)||LA2_0==Modulus||(LA2_0 >= Multiply && LA2_0 <= NEquals)||(LA2_0 >= Null && LA2_0 <= Number)||LA2_0==PI_CONSTANT||LA2_0==Pow||(LA2_0 >= Subtract && LA2_0 <= TERNARY)||LA2_0==UNARY_MIN||LA2_0==WIDTH_CONSTANT||LA2_0==153||LA2_0==155) ) {
+				if ( (LA2_0==Add||LA2_0==Bool||LA2_0==COLOR_CONSTANT||LA2_0==DOTPROPERTY||LA2_0==Divide||LA2_0==Equals||(LA2_0 >= GT && LA2_0 <= GTEquals)||LA2_0==HEIGHT_CONSTANT||LA2_0==In||LA2_0==LOOKUP||(LA2_0 >= LT && LA2_0 <= LTEquals)||LA2_0==Modulus||(LA2_0 >= Multiply && LA2_0 <= NEquals)||(LA2_0 >= Null && LA2_0 <= Number)||LA2_0==PI_CONSTANT||LA2_0==Pow||(LA2_0 >= Subtract && LA2_0 <= TERNARY)||LA2_0==UNARY_MIN||LA2_0==WIDTH_CONSTANT||LA2_0==155||LA2_0==157) ) {
 					alt2=1;
 				}
 				switch (alt2) {
@@ -562,7 +564,7 @@ public class PogoTreeWalker extends TreeParser {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:98:39: ( expression )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
-			if ( (LA5_0==Add||LA5_0==Bool||LA5_0==COLOR_CONSTANT||LA5_0==DOTPROPERTY||LA5_0==Divide||LA5_0==Equals||(LA5_0 >= GT && LA5_0 <= GTEquals)||LA5_0==HEIGHT_CONSTANT||LA5_0==In||LA5_0==LOOKUP||(LA5_0 >= LT && LA5_0 <= LTEquals)||LA5_0==Modulus||(LA5_0 >= Multiply && LA5_0 <= NEquals)||(LA5_0 >= Null && LA5_0 <= Number)||LA5_0==PI_CONSTANT||LA5_0==Pow||(LA5_0 >= Subtract && LA5_0 <= TERNARY)||LA5_0==UNARY_MIN||LA5_0==WIDTH_CONSTANT||LA5_0==153||LA5_0==155) ) {
+			if ( (LA5_0==Add||LA5_0==Bool||LA5_0==COLOR_CONSTANT||LA5_0==DOTPROPERTY||LA5_0==Divide||LA5_0==Equals||(LA5_0 >= GT && LA5_0 <= GTEquals)||LA5_0==HEIGHT_CONSTANT||LA5_0==In||LA5_0==LOOKUP||(LA5_0 >= LT && LA5_0 <= LTEquals)||LA5_0==Modulus||(LA5_0 >= Multiply && LA5_0 <= NEquals)||(LA5_0 >= Null && LA5_0 <= Number)||LA5_0==PI_CONSTANT||LA5_0==Pow||(LA5_0 >= Subtract && LA5_0 <= TERNARY)||LA5_0==UNARY_MIN||LA5_0==WIDTH_CONSTANT||LA5_0==155||LA5_0==157) ) {
 				alt5=1;
 			}
 			switch (alt5) {
@@ -714,9 +716,11 @@ public class PogoTreeWalker extends TreeParser {
 					case ATan:
 					case Cm:
 					case Cosine:
+					case Gaussian:
 					case Inch:
 					case Map:
 					case Mm:
+					case Noise:
 					case Random:
 					case Round:
 					case Sine:
@@ -817,7 +821,7 @@ public class PogoTreeWalker extends TreeParser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:107:26: ( expression )?
 					int alt7=2;
 					int LA7_0 = input.LA(1);
-					if ( (LA7_0==Add||LA7_0==Bool||LA7_0==COLOR_CONSTANT||LA7_0==DOTPROPERTY||LA7_0==Divide||LA7_0==Equals||(LA7_0 >= GT && LA7_0 <= GTEquals)||LA7_0==HEIGHT_CONSTANT||LA7_0==In||LA7_0==LOOKUP||(LA7_0 >= LT && LA7_0 <= LTEquals)||LA7_0==Modulus||(LA7_0 >= Multiply && LA7_0 <= NEquals)||(LA7_0 >= Null && LA7_0 <= Number)||LA7_0==PI_CONSTANT||LA7_0==Pow||(LA7_0 >= Subtract && LA7_0 <= TERNARY)||LA7_0==UNARY_MIN||LA7_0==WIDTH_CONSTANT||LA7_0==153||LA7_0==155) ) {
+					if ( (LA7_0==Add||LA7_0==Bool||LA7_0==COLOR_CONSTANT||LA7_0==DOTPROPERTY||LA7_0==Divide||LA7_0==Equals||(LA7_0 >= GT && LA7_0 <= GTEquals)||LA7_0==HEIGHT_CONSTANT||LA7_0==In||LA7_0==LOOKUP||(LA7_0 >= LT && LA7_0 <= LTEquals)||LA7_0==Modulus||(LA7_0 >= Multiply && LA7_0 <= NEquals)||(LA7_0 >= Null && LA7_0 <= Number)||LA7_0==PI_CONSTANT||LA7_0==Pow||(LA7_0 >= Subtract && LA7_0 <= TERNARY)||LA7_0==UNARY_MIN||LA7_0==WIDTH_CONSTANT||LA7_0==155||LA7_0==157) ) {
 						alt7=1;
 					}
 					switch (alt7) {
@@ -2328,7 +2332,7 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "mathCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:165:4: mathCall returns [DCNode node] : ( ^( FUNC_CALL Cosine expression ) | ^( FUNC_CALL Sine expression ) | ^( FUNC_CALL Tan expression ) | ^( FUNC_CALL ATan expression ) | ^( FUNC_CALL Random ( exprList )? ) | ^( FUNC_CALL Round expression ) | ^( FUNC_CALL Map ( exprList )? ) | ^( FUNC_CALL Inch expression ) | ^( FUNC_CALL Mm expression ) | ^( FUNC_CALL Cm expression ) | ^( FUNC_CALL Units expression ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:165:4: mathCall returns [DCNode node] : ( ^( FUNC_CALL Cosine expression ) | ^( FUNC_CALL Sine expression ) | ^( FUNC_CALL Tan expression ) | ^( FUNC_CALL ATan expression ) | ^( FUNC_CALL Random ( exprList )? ) | ^( FUNC_CALL Gaussian ( exprList )? ) | ^( FUNC_CALL Noise ( exprList )? ) | ^( FUNC_CALL Round expression ) | ^( FUNC_CALL Map ( exprList )? ) | ^( FUNC_CALL Inch expression ) | ^( FUNC_CALL Mm expression ) | ^( FUNC_CALL Cm expression ) | ^( FUNC_CALL Units expression ) );
 	public final DCNode mathCall() throws RecognitionException {
 		DCNode node = null;
 
@@ -2344,79 +2348,93 @@ public class PogoTreeWalker extends TreeParser {
 		CommonTree FUNC_CALL109=null;
 		CommonTree FUNC_CALL111=null;
 		CommonTree FUNC_CALL113=null;
+		CommonTree FUNC_CALL115=null;
+		CommonTree FUNC_CALL117=null;
 		DCNode expression92 =null;
 		DCNode expression94 =null;
 		DCNode expression96 =null;
 		DCNode expression98 =null;
 		java.util.List<DCNode> exprList100 =null;
-		DCNode expression102 =null;
+		java.util.List<DCNode> exprList102 =null;
 		java.util.List<DCNode> exprList104 =null;
 		DCNode expression106 =null;
-		DCNode expression108 =null;
+		java.util.List<DCNode> exprList108 =null;
 		DCNode expression110 =null;
 		DCNode expression112 =null;
+		DCNode expression114 =null;
+		DCNode expression116 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:166:4: ( ^( FUNC_CALL Cosine expression ) | ^( FUNC_CALL Sine expression ) | ^( FUNC_CALL Tan expression ) | ^( FUNC_CALL ATan expression ) | ^( FUNC_CALL Random ( exprList )? ) | ^( FUNC_CALL Round expression ) | ^( FUNC_CALL Map ( exprList )? ) | ^( FUNC_CALL Inch expression ) | ^( FUNC_CALL Mm expression ) | ^( FUNC_CALL Cm expression ) | ^( FUNC_CALL Units expression ) )
-			int alt41=11;
-			int LA41_0 = input.LA(1);
-			if ( (LA41_0==FUNC_CALL) ) {
-				int LA41_1 = input.LA(2);
-				if ( (LA41_1==DOWN) ) {
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:166:4: ( ^( FUNC_CALL Cosine expression ) | ^( FUNC_CALL Sine expression ) | ^( FUNC_CALL Tan expression ) | ^( FUNC_CALL ATan expression ) | ^( FUNC_CALL Random ( exprList )? ) | ^( FUNC_CALL Gaussian ( exprList )? ) | ^( FUNC_CALL Noise ( exprList )? ) | ^( FUNC_CALL Round expression ) | ^( FUNC_CALL Map ( exprList )? ) | ^( FUNC_CALL Inch expression ) | ^( FUNC_CALL Mm expression ) | ^( FUNC_CALL Cm expression ) | ^( FUNC_CALL Units expression ) )
+			int alt43=13;
+			int LA43_0 = input.LA(1);
+			if ( (LA43_0==FUNC_CALL) ) {
+				int LA43_1 = input.LA(2);
+				if ( (LA43_1==DOWN) ) {
 					switch ( input.LA(3) ) {
 					case Cosine:
 						{
-						alt41=1;
+						alt43=1;
 						}
 						break;
 					case Sine:
 						{
-						alt41=2;
+						alt43=2;
 						}
 						break;
 					case Tan:
 						{
-						alt41=3;
+						alt43=3;
 						}
 						break;
 					case ATan:
 						{
-						alt41=4;
+						alt43=4;
 						}
 						break;
 					case Random:
 						{
-						alt41=5;
+						alt43=5;
+						}
+						break;
+					case Gaussian:
+						{
+						alt43=6;
+						}
+						break;
+					case Noise:
+						{
+						alt43=7;
 						}
 						break;
 					case Round:
 						{
-						alt41=6;
+						alt43=8;
 						}
 						break;
 					case Map:
 						{
-						alt41=7;
+						alt43=9;
 						}
 						break;
 					case Inch:
 						{
-						alt41=8;
+						alt43=10;
 						}
 						break;
 					case Mm:
 						{
-						alt41=9;
+						alt43=11;
 						}
 						break;
 					case Cm:
 						{
-						alt41=10;
+						alt43=12;
 						}
 						break;
 					case Units:
 						{
-						alt41=11;
+						alt43=13;
 						}
 						break;
 					default:
@@ -2426,7 +2444,7 @@ public class PogoTreeWalker extends TreeParser {
 								input.consume();
 							}
 							NoViableAltException nvae =
-								new NoViableAltException("", 41, 2, input);
+								new NoViableAltException("", 43, 2, input);
 							throw nvae;
 						} finally {
 							input.rewind(nvaeMark);
@@ -2439,7 +2457,7 @@ public class PogoTreeWalker extends TreeParser {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 41, 1, input);
+							new NoViableAltException("", 43, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -2450,11 +2468,11 @@ public class PogoTreeWalker extends TreeParser {
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 41, 0, input);
+					new NoViableAltException("", 43, 0, input);
 				throw nvae;
 			}
 
-			switch (alt41) {
+			switch (alt43) {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:166:5: ^( FUNC_CALL Cosine expression )
 					{
@@ -2516,12 +2534,12 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:171:5: ^( FUNC_CALL Random ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:170:5: ^( FUNC_CALL Random ( exprList )? )
 					{
-					FUNC_CALL101=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1074); 
+					FUNC_CALL101=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1070); 
 					match(input, Token.DOWN, null); 
-					match(input,Random,FOLLOW_Random_in_mathCall1076); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:171:24: ( exprList )?
+					match(input,Random,FOLLOW_Random_in_mathCall1072); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:170:24: ( exprList )?
 					int alt39=2;
 					int LA39_0 = input.LA(1);
 					if ( (LA39_0==EXP_LIST) ) {
@@ -2529,9 +2547,9 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					switch (alt39) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:171:24: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:170:24: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall1078);
+							pushFollow(FOLLOW_exprList_in_mathCall1074);
 							exprList100=exprList();
 							state._fsp--;
 
@@ -2546,27 +2564,12 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:172:5: ^( FUNC_CALL Round expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:171:5: ^( FUNC_CALL Gaussian ( exprList )? )
 					{
-					FUNC_CALL103=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1089); 
+					FUNC_CALL103=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1085); 
 					match(input, Token.DOWN, null); 
-					match(input,Round,FOLLOW_Round_in_mathCall1091); 
-					pushFollow(FOLLOW_expression_in_mathCall1093);
-					expression102=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new RoundNode(expression102,FUNC_CALL103.getLine());
-					}
-					break;
-				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:173:5: ^( FUNC_CALL Map ( exprList )? )
-					{
-					FUNC_CALL105=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1103); 
-					match(input, Token.DOWN, null); 
-					match(input,Map,FOLLOW_Map_in_mathCall1105); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:173:21: ( exprList )?
+					match(input,Gaussian,FOLLOW_Gaussian_in_mathCall1087); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:171:26: ( exprList )?
 					int alt40=2;
 					int LA40_0 = input.LA(1);
 					if ( (LA40_0==EXP_LIST) ) {
@@ -2574,9 +2577,39 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					switch (alt40) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:173:21: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:171:26: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall1107);
+							pushFollow(FOLLOW_exprList_in_mathCall1089);
+							exprList102=exprList();
+							state._fsp--;
+
+							}
+							break;
+
+					}
+
+					match(input, Token.UP, null); 
+
+					node = new GaussianNode(exprList102,FUNC_CALL103.getLine());
+					}
+					break;
+				case 7 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:172:5: ^( FUNC_CALL Noise ( exprList )? )
+					{
+					FUNC_CALL105=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1100); 
+					match(input, Token.DOWN, null); 
+					match(input,Noise,FOLLOW_Noise_in_mathCall1102); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:172:23: ( exprList )?
+					int alt41=2;
+					int LA41_0 = input.LA(1);
+					if ( (LA41_0==EXP_LIST) ) {
+						alt41=1;
+					}
+					switch (alt41) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:172:23: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_mathCall1104);
 							exprList104=exprList();
 							state._fsp--;
 
@@ -2587,67 +2620,112 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new MapNode(exprList104,FUNC_CALL105.getLine());
+					node = new NoiseNode(exprList104,FUNC_CALL105.getLine());
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:174:5: ^( FUNC_CALL Inch expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:173:5: ^( FUNC_CALL Round expression )
 					{
-					FUNC_CALL107=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1118); 
+					FUNC_CALL107=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1115); 
 					match(input, Token.DOWN, null); 
-					match(input,Inch,FOLLOW_Inch_in_mathCall1120); 
-					pushFollow(FOLLOW_expression_in_mathCall1122);
+					match(input,Round,FOLLOW_Round_in_mathCall1117); 
+					pushFollow(FOLLOW_expression_in_mathCall1119);
 					expression106=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression106,"inch",unitParam,FUNC_CALL107.getLine());
+					node = new RoundNode(expression106,FUNC_CALL107.getLine());
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:175:5: ^( FUNC_CALL Mm expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:174:5: ^( FUNC_CALL Map ( exprList )? )
 					{
-					FUNC_CALL109=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1131); 
+					FUNC_CALL109=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1129); 
 					match(input, Token.DOWN, null); 
-					match(input,Mm,FOLLOW_Mm_in_mathCall1133); 
-					pushFollow(FOLLOW_expression_in_mathCall1135);
-					expression108=expression();
-					state._fsp--;
+					match(input,Map,FOLLOW_Map_in_mathCall1131); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:174:21: ( exprList )?
+					int alt42=2;
+					int LA42_0 = input.LA(1);
+					if ( (LA42_0==EXP_LIST) ) {
+						alt42=1;
+					}
+					switch (alt42) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:174:21: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_mathCall1133);
+							exprList108=exprList();
+							state._fsp--;
+
+							}
+							break;
+
+					}
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression108,"mm",unitParam,FUNC_CALL109.getLine());
+					node = new MapNode(exprList108,FUNC_CALL109.getLine());
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:176:5: ^( FUNC_CALL Cm expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:175:5: ^( FUNC_CALL Inch expression )
 					{
 					FUNC_CALL111=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1144); 
 					match(input, Token.DOWN, null); 
-					match(input,Cm,FOLLOW_Cm_in_mathCall1146); 
+					match(input,Inch,FOLLOW_Inch_in_mathCall1146); 
 					pushFollow(FOLLOW_expression_in_mathCall1148);
 					expression110=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression110,"cm",unitParam,FUNC_CALL111.getLine());
+					node = new ConversionNode(expression110,"inch",unitParam,FUNC_CALL111.getLine());
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:177:5: ^( FUNC_CALL Units expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:176:5: ^( FUNC_CALL Mm expression )
 					{
 					FUNC_CALL113=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1157); 
 					match(input, Token.DOWN, null); 
-					match(input,Units,FOLLOW_Units_in_mathCall1159); 
+					match(input,Mm,FOLLOW_Mm_in_mathCall1159); 
 					pushFollow(FOLLOW_expression_in_mathCall1161);
 					expression112=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression112,"units",unitParam,FUNC_CALL113.getLine());
+					node = new ConversionNode(expression112,"mm",unitParam,FUNC_CALL113.getLine());
+					}
+					break;
+				case 12 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:177:5: ^( FUNC_CALL Cm expression )
+					{
+					FUNC_CALL115=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1170); 
+					match(input, Token.DOWN, null); 
+					match(input,Cm,FOLLOW_Cm_in_mathCall1172); 
+					pushFollow(FOLLOW_expression_in_mathCall1174);
+					expression114=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new ConversionNode(expression114,"cm",unitParam,FUNC_CALL115.getLine());
+					}
+					break;
+				case 13 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:178:5: ^( FUNC_CALL Units expression )
+					{
+					FUNC_CALL117=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1183); 
+					match(input, Token.DOWN, null); 
+					match(input,Units,FOLLOW_Units_in_mathCall1185); 
+					pushFollow(FOLLOW_expression_in_mathCall1187);
+					expression116=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new ConversionNode(expression116,"units",unitParam,FUNC_CALL117.getLine());
 					}
 					break;
 
@@ -2667,86 +2745,86 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "getCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:182:4: getCall returns [DCNode node] : ( ^( FUNC_CALL GetWidth expression ) | ^( FUNC_CALL GetHeight expression ) | ^( FUNC_CALL GetX expression ) | ^( FUNC_CALL GetY expression ) | ^( FUNC_CALL GetOrigin expression ) | ^( FUNC_CALL GetRotation expression ) | ^( FUNC_CALL GetFill expression ) | ^( FUNC_CALL GetStroke expression ) | ^( FUNC_CALL GetStart expression ) | ^( FUNC_CALL GetEnd expression ) | ^( FUNC_CALL GetDistance ( exprList )? ) | ^( FUNC_CALL GetIntersect ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:183:4: getCall returns [DCNode node] : ( ^( FUNC_CALL GetWidth expression ) | ^( FUNC_CALL GetHeight expression ) | ^( FUNC_CALL GetX expression ) | ^( FUNC_CALL GetY expression ) | ^( FUNC_CALL GetOrigin expression ) | ^( FUNC_CALL GetRotation expression ) | ^( FUNC_CALL GetFill expression ) | ^( FUNC_CALL GetStroke expression ) | ^( FUNC_CALL GetStart expression ) | ^( FUNC_CALL GetEnd expression ) | ^( FUNC_CALL GetDistance ( exprList )? ) | ^( FUNC_CALL GetIntersect ( exprList )? ) );
 	public final DCNode getCall() throws RecognitionException {
 		DCNode node = null;
 
 
-		DCNode expression114 =null;
-		DCNode expression115 =null;
-		DCNode expression116 =null;
-		DCNode expression117 =null;
 		DCNode expression118 =null;
 		DCNode expression119 =null;
-		java.util.List<DCNode> exprList120 =null;
-		java.util.List<DCNode> exprList121 =null;
+		DCNode expression120 =null;
+		DCNode expression121 =null;
+		DCNode expression122 =null;
+		DCNode expression123 =null;
+		java.util.List<DCNode> exprList124 =null;
+		java.util.List<DCNode> exprList125 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:183:3: ( ^( FUNC_CALL GetWidth expression ) | ^( FUNC_CALL GetHeight expression ) | ^( FUNC_CALL GetX expression ) | ^( FUNC_CALL GetY expression ) | ^( FUNC_CALL GetOrigin expression ) | ^( FUNC_CALL GetRotation expression ) | ^( FUNC_CALL GetFill expression ) | ^( FUNC_CALL GetStroke expression ) | ^( FUNC_CALL GetStart expression ) | ^( FUNC_CALL GetEnd expression ) | ^( FUNC_CALL GetDistance ( exprList )? ) | ^( FUNC_CALL GetIntersect ( exprList )? ) )
-			int alt44=12;
-			int LA44_0 = input.LA(1);
-			if ( (LA44_0==FUNC_CALL) ) {
-				int LA44_1 = input.LA(2);
-				if ( (LA44_1==DOWN) ) {
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:184:3: ( ^( FUNC_CALL GetWidth expression ) | ^( FUNC_CALL GetHeight expression ) | ^( FUNC_CALL GetX expression ) | ^( FUNC_CALL GetY expression ) | ^( FUNC_CALL GetOrigin expression ) | ^( FUNC_CALL GetRotation expression ) | ^( FUNC_CALL GetFill expression ) | ^( FUNC_CALL GetStroke expression ) | ^( FUNC_CALL GetStart expression ) | ^( FUNC_CALL GetEnd expression ) | ^( FUNC_CALL GetDistance ( exprList )? ) | ^( FUNC_CALL GetIntersect ( exprList )? ) )
+			int alt46=12;
+			int LA46_0 = input.LA(1);
+			if ( (LA46_0==FUNC_CALL) ) {
+				int LA46_1 = input.LA(2);
+				if ( (LA46_1==DOWN) ) {
 					switch ( input.LA(3) ) {
 					case GetWidth:
 						{
-						alt44=1;
+						alt46=1;
 						}
 						break;
 					case GetHeight:
 						{
-						alt44=2;
+						alt46=2;
 						}
 						break;
 					case GetX:
 						{
-						alt44=3;
+						alt46=3;
 						}
 						break;
 					case GetY:
 						{
-						alt44=4;
+						alt46=4;
 						}
 						break;
 					case GetOrigin:
 						{
-						alt44=5;
+						alt46=5;
 						}
 						break;
 					case GetRotation:
 						{
-						alt44=6;
+						alt46=6;
 						}
 						break;
 					case GetFill:
 						{
-						alt44=7;
+						alt46=7;
 						}
 						break;
 					case GetStroke:
 						{
-						alt44=8;
+						alt46=8;
 						}
 						break;
 					case GetStart:
 						{
-						alt44=9;
+						alt46=9;
 						}
 						break;
 					case GetEnd:
 						{
-						alt44=10;
+						alt46=10;
 						}
 						break;
 					case GetDistance:
 						{
-						alt44=11;
+						alt46=11;
 						}
 						break;
 					case GetIntersect:
 						{
-						alt44=12;
+						alt46=12;
 						}
 						break;
 					default:
@@ -2756,7 +2834,7 @@ public class PogoTreeWalker extends TreeParser {
 								input.consume();
 							}
 							NoViableAltException nvae =
-								new NoViableAltException("", 44, 2, input);
+								new NoViableAltException("", 46, 2, input);
 							throw nvae;
 						} finally {
 							input.rewind(nvaeMark);
@@ -2769,7 +2847,7 @@ public class PogoTreeWalker extends TreeParser {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 44, 1, input);
+							new NoViableAltException("", 46, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -2780,108 +2858,108 @@ public class PogoTreeWalker extends TreeParser {
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 44, 0, input);
+					new NoViableAltException("", 46, 0, input);
 				throw nvae;
 			}
 
-			switch (alt44) {
+			switch (alt46) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:183:5: ^( FUNC_CALL GetWidth expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:184:5: ^( FUNC_CALL GetWidth expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1196); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1222); 
 					match(input, Token.DOWN, null); 
-					match(input,GetWidth,FOLLOW_GetWidth_in_getCall1198); 
-					pushFollow(FOLLOW_expression_in_getCall1200);
-					expression114=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new GetWidthNode(expression114);
-					}
-					break;
-				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:184:5: ^( FUNC_CALL GetHeight expression )
-					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1210); 
-					match(input, Token.DOWN, null); 
-					match(input,GetHeight,FOLLOW_GetHeight_in_getCall1212); 
-					pushFollow(FOLLOW_expression_in_getCall1214);
-					expression115=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new GetHeightNode(expression115);
-					}
-					break;
-				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:185:5: ^( FUNC_CALL GetX expression )
-					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1223); 
-					match(input, Token.DOWN, null); 
-					match(input,GetX,FOLLOW_GetX_in_getCall1225); 
-					pushFollow(FOLLOW_expression_in_getCall1227);
-					expression116=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new GetXNode(expression116);
-					}
-					break;
-				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:186:5: ^( FUNC_CALL GetY expression )
-					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1236); 
-					match(input, Token.DOWN, null); 
-					match(input,GetY,FOLLOW_GetY_in_getCall1238); 
-					pushFollow(FOLLOW_expression_in_getCall1240);
-					expression117=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new GetYNode(expression117);
-					}
-					break;
-				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:187:5: ^( FUNC_CALL GetOrigin expression )
-					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1249); 
-					match(input, Token.DOWN, null); 
-					match(input,GetOrigin,FOLLOW_GetOrigin_in_getCall1251); 
-					pushFollow(FOLLOW_expression_in_getCall1253);
+					match(input,GetWidth,FOLLOW_GetWidth_in_getCall1224); 
+					pushFollow(FOLLOW_expression_in_getCall1226);
 					expression118=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetOriginNode(expression118);
+					node = new GetWidthNode(expression118);
 					}
 					break;
-				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:188:5: ^( FUNC_CALL GetRotation expression )
+				case 2 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:185:5: ^( FUNC_CALL GetHeight expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1262); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1236); 
 					match(input, Token.DOWN, null); 
-					match(input,GetRotation,FOLLOW_GetRotation_in_getCall1264); 
-					pushFollow(FOLLOW_expression_in_getCall1266);
+					match(input,GetHeight,FOLLOW_GetHeight_in_getCall1238); 
+					pushFollow(FOLLOW_expression_in_getCall1240);
 					expression119=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetRotationNode(expression119);
+					node = new GetHeightNode(expression119);
 					}
 					break;
-				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:189:5: ^( FUNC_CALL GetFill expression )
+				case 3 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:186:5: ^( FUNC_CALL GetX expression )
+					{
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1249); 
+					match(input, Token.DOWN, null); 
+					match(input,GetX,FOLLOW_GetX_in_getCall1251); 
+					pushFollow(FOLLOW_expression_in_getCall1253);
+					expression120=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new GetXNode(expression120);
+					}
+					break;
+				case 4 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:187:5: ^( FUNC_CALL GetY expression )
+					{
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1262); 
+					match(input, Token.DOWN, null); 
+					match(input,GetY,FOLLOW_GetY_in_getCall1264); 
+					pushFollow(FOLLOW_expression_in_getCall1266);
+					expression121=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new GetYNode(expression121);
+					}
+					break;
+				case 5 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:188:5: ^( FUNC_CALL GetOrigin expression )
 					{
 					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1275); 
 					match(input, Token.DOWN, null); 
-					match(input,GetFill,FOLLOW_GetFill_in_getCall1277); 
+					match(input,GetOrigin,FOLLOW_GetOrigin_in_getCall1277); 
 					pushFollow(FOLLOW_expression_in_getCall1279);
+					expression122=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new GetOriginNode(expression122);
+					}
+					break;
+				case 6 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:189:5: ^( FUNC_CALL GetRotation expression )
+					{
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1288); 
+					match(input, Token.DOWN, null); 
+					match(input,GetRotation,FOLLOW_GetRotation_in_getCall1290); 
+					pushFollow(FOLLOW_expression_in_getCall1292);
+					expression123=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new GetRotationNode(expression123);
+					}
+					break;
+				case 7 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:190:5: ^( FUNC_CALL GetFill expression )
+					{
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1301); 
+					match(input, Token.DOWN, null); 
+					match(input,GetFill,FOLLOW_GetFill_in_getCall1303); 
+					pushFollow(FOLLOW_expression_in_getCall1305);
 					expression();
 					state._fsp--;
 
@@ -2890,12 +2968,12 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:190:5: ^( FUNC_CALL GetStroke expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:191:5: ^( FUNC_CALL GetStroke expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1287); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1313); 
 					match(input, Token.DOWN, null); 
-					match(input,GetStroke,FOLLOW_GetStroke_in_getCall1289); 
-					pushFollow(FOLLOW_expression_in_getCall1291);
+					match(input,GetStroke,FOLLOW_GetStroke_in_getCall1315); 
+					pushFollow(FOLLOW_expression_in_getCall1317);
 					expression();
 					state._fsp--;
 
@@ -2904,12 +2982,12 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:191:5: ^( FUNC_CALL GetStart expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:192:5: ^( FUNC_CALL GetStart expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1299); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1325); 
 					match(input, Token.DOWN, null); 
-					match(input,GetStart,FOLLOW_GetStart_in_getCall1301); 
-					pushFollow(FOLLOW_expression_in_getCall1303);
+					match(input,GetStart,FOLLOW_GetStart_in_getCall1327); 
+					pushFollow(FOLLOW_expression_in_getCall1329);
 					expression();
 					state._fsp--;
 
@@ -2918,12 +2996,12 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:192:4: ^( FUNC_CALL GetEnd expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:193:4: ^( FUNC_CALL GetEnd expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1310); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1336); 
 					match(input, Token.DOWN, null); 
-					match(input,GetEnd,FOLLOW_GetEnd_in_getCall1312); 
-					pushFollow(FOLLOW_expression_in_getCall1314);
+					match(input,GetEnd,FOLLOW_GetEnd_in_getCall1338); 
+					pushFollow(FOLLOW_expression_in_getCall1340);
 					expression();
 					state._fsp--;
 
@@ -2932,23 +3010,23 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:193:4: ^( FUNC_CALL GetDistance ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:194:4: ^( FUNC_CALL GetDistance ( exprList )? )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1322); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1348); 
 					match(input, Token.DOWN, null); 
-					match(input,GetDistance,FOLLOW_GetDistance_in_getCall1324); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:193:28: ( exprList )?
-					int alt42=2;
-					int LA42_0 = input.LA(1);
-					if ( (LA42_0==EXP_LIST) ) {
-						alt42=1;
+					match(input,GetDistance,FOLLOW_GetDistance_in_getCall1350); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:194:28: ( exprList )?
+					int alt44=2;
+					int LA44_0 = input.LA(1);
+					if ( (LA44_0==EXP_LIST) ) {
+						alt44=1;
 					}
-					switch (alt42) {
+					switch (alt44) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:193:28: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:194:28: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_getCall1326);
-							exprList120=exprList();
+							pushFollow(FOLLOW_exprList_in_getCall1352);
+							exprList124=exprList();
 							state._fsp--;
 
 							}
@@ -2958,27 +3036,27 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new DistanceNode(exprList120);
+					node = new DistanceNode(exprList124);
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:194:4: ^( FUNC_CALL GetIntersect ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:195:4: ^( FUNC_CALL GetIntersect ( exprList )? )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1336); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1362); 
 					match(input, Token.DOWN, null); 
-					match(input,GetIntersect,FOLLOW_GetIntersect_in_getCall1338); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:194:29: ( exprList )?
-					int alt43=2;
-					int LA43_0 = input.LA(1);
-					if ( (LA43_0==EXP_LIST) ) {
-						alt43=1;
+					match(input,GetIntersect,FOLLOW_GetIntersect_in_getCall1364); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:195:29: ( exprList )?
+					int alt45=2;
+					int LA45_0 = input.LA(1);
+					if ( (LA45_0==EXP_LIST) ) {
+						alt45=1;
 					}
-					switch (alt43) {
+					switch (alt45) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:194:29: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:195:29: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_getCall1340);
-							exprList121=exprList();
+							pushFollow(FOLLOW_exprList_in_getCall1366);
+							exprList125=exprList();
 							state._fsp--;
 
 							}
@@ -2988,7 +3066,7 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new IntersectNode(exprList121);
+					node = new IntersectNode(exprList125);
 					}
 					break;
 
@@ -3008,44 +3086,44 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "ifStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:197:1: ifStatement returns [DCNode node] : ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:198:1: ifStatement returns [DCNode node] : ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? ) ;
 	public final DCNode ifStatement() throws RecognitionException {
 		DCNode node = null;
 
 
 		IfNode ifNode = new IfNode();
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:200:3: ( ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:200:6: ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:201:3: ( ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:201:6: ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? )
 			{
-			match(input,IF,FOLLOW_IF_in_ifStatement1374); 
+			match(input,IF,FOLLOW_IF_in_ifStatement1400); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_ifStat_in_ifStatement1376);
+			pushFollow(FOLLOW_ifStat_in_ifStatement1402);
 			ifStat(ifNode);
 			state._fsp--;
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:200:26: ( elseIfStat[ifNode] )*
-			loop45:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:201:26: ( elseIfStat[ifNode] )*
+			loop47:
 			while (true) {
-				int alt45=2;
-				int LA45_0 = input.LA(1);
-				if ( (LA45_0==EXP) ) {
-					int LA45_1 = input.LA(2);
-					if ( (LA45_1==DOWN) ) {
-						int LA45_3 = input.LA(3);
-						if ( (LA45_3==Add||LA45_3==Bool||LA45_3==COLOR_CONSTANT||LA45_3==DOTPROPERTY||LA45_3==Divide||LA45_3==Equals||(LA45_3 >= GT && LA45_3 <= GTEquals)||LA45_3==HEIGHT_CONSTANT||LA45_3==In||LA45_3==LOOKUP||(LA45_3 >= LT && LA45_3 <= LTEquals)||LA45_3==Modulus||(LA45_3 >= Multiply && LA45_3 <= NEquals)||(LA45_3 >= Null && LA45_3 <= Number)||LA45_3==PI_CONSTANT||LA45_3==Pow||(LA45_3 >= Subtract && LA45_3 <= TERNARY)||LA45_3==UNARY_MIN||LA45_3==WIDTH_CONSTANT||LA45_3==153||LA45_3==155) ) {
-							alt45=1;
+				int alt47=2;
+				int LA47_0 = input.LA(1);
+				if ( (LA47_0==EXP) ) {
+					int LA47_1 = input.LA(2);
+					if ( (LA47_1==DOWN) ) {
+						int LA47_3 = input.LA(3);
+						if ( (LA47_3==Add||LA47_3==Bool||LA47_3==COLOR_CONSTANT||LA47_3==DOTPROPERTY||LA47_3==Divide||LA47_3==Equals||(LA47_3 >= GT && LA47_3 <= GTEquals)||LA47_3==HEIGHT_CONSTANT||LA47_3==In||LA47_3==LOOKUP||(LA47_3 >= LT && LA47_3 <= LTEquals)||LA47_3==Modulus||(LA47_3 >= Multiply && LA47_3 <= NEquals)||(LA47_3 >= Null && LA47_3 <= Number)||LA47_3==PI_CONSTANT||LA47_3==Pow||(LA47_3 >= Subtract && LA47_3 <= TERNARY)||LA47_3==UNARY_MIN||LA47_3==WIDTH_CONSTANT||LA47_3==155||LA47_3==157) ) {
+							alt47=1;
 						}
 
 					}
 
 				}
 
-				switch (alt45) {
+				switch (alt47) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:200:27: elseIfStat[ifNode]
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:201:27: elseIfStat[ifNode]
 					{
-					pushFollow(FOLLOW_elseIfStat_in_ifStatement1380);
+					pushFollow(FOLLOW_elseIfStat_in_ifStatement1406);
 					elseIfStat(ifNode);
 					state._fsp--;
 
@@ -3053,21 +3131,21 @@ public class PogoTreeWalker extends TreeParser {
 					break;
 
 				default :
-					break loop45;
+					break loop47;
 				}
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:200:48: ( elseStat[ifNode] )?
-			int alt46=2;
-			int LA46_0 = input.LA(1);
-			if ( (LA46_0==EXP) ) {
-				alt46=1;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:201:48: ( elseStat[ifNode] )?
+			int alt48=2;
+			int LA48_0 = input.LA(1);
+			if ( (LA48_0==EXP) ) {
+				alt48=1;
 			}
-			switch (alt46) {
+			switch (alt48) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:200:49: elseStat[ifNode]
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:201:49: elseStat[ifNode]
 					{
-					pushFollow(FOLLOW_elseStat_in_ifStatement1386);
+					pushFollow(FOLLOW_elseStat_in_ifStatement1412);
 					elseStat(ifNode);
 					state._fsp--;
 
@@ -3096,28 +3174,28 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "ifStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:203:1: ifStat[IfNode parent] : ^( EXP expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:204:1: ifStat[IfNode parent] : ^( EXP expression block ) ;
 	public final void ifStat(IfNode parent) throws RecognitionException {
-		DCNode expression122 =null;
-		BlockNode block123 =null;
+		DCNode expression126 =null;
+		BlockNode block127 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:204:3: ( ^( EXP expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:204:6: ^( EXP expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:205:3: ( ^( EXP expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:205:6: ^( EXP expression block )
 			{
-			match(input,EXP,FOLLOW_EXP_in_ifStat1406); 
+			match(input,EXP,FOLLOW_EXP_in_ifStat1432); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_expression_in_ifStat1408);
-			expression122=expression();
+			pushFollow(FOLLOW_expression_in_ifStat1434);
+			expression126=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_ifStat1410);
-			block123=block();
+			pushFollow(FOLLOW_block_in_ifStat1436);
+			block127=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			parent.addChoice(expression122, block123);
+			parent.addChoice(expression126, block127);
 			}
 
 		}
@@ -3134,28 +3212,28 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "elseIfStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:207:1: elseIfStat[IfNode parent] : ^( EXP expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:208:1: elseIfStat[IfNode parent] : ^( EXP expression block ) ;
 	public final void elseIfStat(IfNode parent) throws RecognitionException {
-		DCNode expression124 =null;
-		BlockNode block125 =null;
+		DCNode expression128 =null;
+		BlockNode block129 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:208:3: ( ^( EXP expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:208:6: ^( EXP expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:209:3: ( ^( EXP expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:209:6: ^( EXP expression block )
 			{
-			match(input,EXP,FOLLOW_EXP_in_elseIfStat1429); 
+			match(input,EXP,FOLLOW_EXP_in_elseIfStat1455); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_expression_in_elseIfStat1431);
-			expression124=expression();
+			pushFollow(FOLLOW_expression_in_elseIfStat1457);
+			expression128=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_elseIfStat1433);
-			block125=block();
+			pushFollow(FOLLOW_block_in_elseIfStat1459);
+			block129=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			parent.addChoice(expression124, block125);
+			parent.addChoice(expression128, block129);
 			}
 
 		}
@@ -3172,23 +3250,23 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "elseStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:211:1: elseStat[IfNode parent] : ^( EXP block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:212:1: elseStat[IfNode parent] : ^( EXP block ) ;
 	public final void elseStat(IfNode parent) throws RecognitionException {
-		BlockNode block126 =null;
+		BlockNode block130 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:212:3: ( ^( EXP block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:212:6: ^( EXP block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:213:3: ( ^( EXP block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:213:6: ^( EXP block )
 			{
-			match(input,EXP,FOLLOW_EXP_in_elseStat1452); 
+			match(input,EXP,FOLLOW_EXP_in_elseStat1478); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_block_in_elseStat1454);
-			block126=block();
+			pushFollow(FOLLOW_block_in_elseStat1480);
+			block130=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			parent.addChoice(new AtomNode(true), block126);
+			parent.addChoice(new AtomNode(true), block130);
 			}
 
 		}
@@ -3205,38 +3283,38 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "forStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:215:1: forStatement returns [DCNode node] : ^( For Identifier a= expression b= expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:216:1: forStatement returns [DCNode node] : ^( For Identifier a= expression b= expression block ) ;
 	public final DCNode forStatement() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree Identifier127=null;
+		CommonTree Identifier131=null;
 		DCNode a =null;
 		DCNode b =null;
-		BlockNode block128 =null;
+		BlockNode block132 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:216:3: ( ^( For Identifier a= expression b= expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:216:6: ^( For Identifier a= expression b= expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:217:3: ( ^( For Identifier a= expression b= expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:217:6: ^( For Identifier a= expression b= expression block )
 			{
-			match(input,For,FOLLOW_For_in_forStatement1479); 
+			match(input,For,FOLLOW_For_in_forStatement1505); 
 			match(input, Token.DOWN, null); 
-			Identifier127=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_forStatement1481); 
-			pushFollow(FOLLOW_expression_in_forStatement1485);
+			Identifier131=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_forStatement1507); 
+			pushFollow(FOLLOW_expression_in_forStatement1511);
 			a=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_expression_in_forStatement1489);
+			pushFollow(FOLLOW_expression_in_forStatement1515);
 			b=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_forStatement1491);
-			block128=block();
+			pushFollow(FOLLOW_block_in_forStatement1517);
+			block132=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new ForStatementNode((Identifier127!=null?Identifier127.getText():null), a, b, block128, currentScope);
+			node = new ForStatementNode((Identifier131!=null?Identifier131.getText():null), a, b, block132, currentScope);
 			}
 
 		}
@@ -3254,43 +3332,43 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "repeatStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:219:1: repeatStatement returns [DCNode node] : ^( Repeat Identifier a= expression b= expression (c= expression )? block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:220:1: repeatStatement returns [DCNode node] : ^( Repeat Identifier a= expression b= expression (c= expression )? block ) ;
 	public final DCNode repeatStatement() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree Identifier129=null;
+		CommonTree Identifier133=null;
 		DCNode a =null;
 		DCNode b =null;
 		DCNode c =null;
-		BlockNode block130 =null;
+		BlockNode block134 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:220:3: ( ^( Repeat Identifier a= expression b= expression (c= expression )? block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:220:5: ^( Repeat Identifier a= expression b= expression (c= expression )? block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:221:3: ( ^( Repeat Identifier a= expression b= expression (c= expression )? block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:221:5: ^( Repeat Identifier a= expression b= expression (c= expression )? block )
 			{
-			match(input,Repeat,FOLLOW_Repeat_in_repeatStatement1514); 
+			match(input,Repeat,FOLLOW_Repeat_in_repeatStatement1540); 
 			match(input, Token.DOWN, null); 
-			Identifier129=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_repeatStatement1516); 
-			pushFollow(FOLLOW_expression_in_repeatStatement1520);
+			Identifier133=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_repeatStatement1542); 
+			pushFollow(FOLLOW_expression_in_repeatStatement1546);
 			a=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_expression_in_repeatStatement1524);
+			pushFollow(FOLLOW_expression_in_repeatStatement1550);
 			b=expression();
 			state._fsp--;
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:220:51: (c= expression )?
-			int alt47=2;
-			int LA47_0 = input.LA(1);
-			if ( (LA47_0==Add||LA47_0==Bool||LA47_0==COLOR_CONSTANT||LA47_0==DOTPROPERTY||LA47_0==Divide||LA47_0==Equals||(LA47_0 >= GT && LA47_0 <= GTEquals)||LA47_0==HEIGHT_CONSTANT||LA47_0==In||LA47_0==LOOKUP||(LA47_0 >= LT && LA47_0 <= LTEquals)||LA47_0==Modulus||(LA47_0 >= Multiply && LA47_0 <= NEquals)||(LA47_0 >= Null && LA47_0 <= Number)||LA47_0==PI_CONSTANT||LA47_0==Pow||(LA47_0 >= Subtract && LA47_0 <= TERNARY)||LA47_0==UNARY_MIN||LA47_0==WIDTH_CONSTANT||LA47_0==153||LA47_0==155) ) {
-				alt47=1;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:221:51: (c= expression )?
+			int alt49=2;
+			int LA49_0 = input.LA(1);
+			if ( (LA49_0==Add||LA49_0==Bool||LA49_0==COLOR_CONSTANT||LA49_0==DOTPROPERTY||LA49_0==Divide||LA49_0==Equals||(LA49_0 >= GT && LA49_0 <= GTEquals)||LA49_0==HEIGHT_CONSTANT||LA49_0==In||LA49_0==LOOKUP||(LA49_0 >= LT && LA49_0 <= LTEquals)||LA49_0==Modulus||(LA49_0 >= Multiply && LA49_0 <= NEquals)||(LA49_0 >= Null && LA49_0 <= Number)||LA49_0==PI_CONSTANT||LA49_0==Pow||(LA49_0 >= Subtract && LA49_0 <= TERNARY)||LA49_0==UNARY_MIN||LA49_0==WIDTH_CONSTANT||LA49_0==155||LA49_0==157) ) {
+				alt49=1;
 			}
-			switch (alt47) {
+			switch (alt49) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:220:52: c= expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:221:52: c= expression
 					{
-					pushFollow(FOLLOW_expression_in_repeatStatement1529);
+					pushFollow(FOLLOW_expression_in_repeatStatement1555);
 					c=expression();
 					state._fsp--;
 
@@ -3299,13 +3377,13 @@ public class PogoTreeWalker extends TreeParser {
 
 			}
 
-			pushFollow(FOLLOW_block_in_repeatStatement1533);
-			block130=block();
+			pushFollow(FOLLOW_block_in_repeatStatement1559);
+			block134=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new RepeatStatementNode((Identifier129!=null?Identifier129.getText():null), a, b, c, block130, currentScope);
+			node = new RepeatStatementNode((Identifier133!=null?Identifier133.getText():null), a, b, c, block134, currentScope);
 			}
 
 		}
@@ -3323,31 +3401,31 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "whileStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:224:1: whileStatement returns [DCNode node] : ^( While expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:225:1: whileStatement returns [DCNode node] : ^( While expression block ) ;
 	public final DCNode whileStatement() throws RecognitionException {
 		DCNode node = null;
 
 
-		DCNode expression131 =null;
-		BlockNode block132 =null;
+		DCNode expression135 =null;
+		BlockNode block136 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:225:3: ( ^( While expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:225:6: ^( While expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:226:3: ( ^( While expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:226:6: ^( While expression block )
 			{
-			match(input,While,FOLLOW_While_in_whileStatement1556); 
+			match(input,While,FOLLOW_While_in_whileStatement1582); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_expression_in_whileStatement1558);
-			expression131=expression();
+			pushFollow(FOLLOW_expression_in_whileStatement1584);
+			expression135=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_whileStatement1560);
-			block132=block();
+			pushFollow(FOLLOW_block_in_whileStatement1586);
+			block136=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new WhileStatementNode(expression131, block132);
+			node = new WhileStatementNode(expression135, block136);
 			}
 
 		}
@@ -3365,45 +3443,45 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "idList"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:228:1: idList returns [java.util.List<String> i] : ^( ID_LIST ( Identifier )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:229:1: idList returns [java.util.List<String> i] : ^( ID_LIST ( Identifier )+ ) ;
 	public final java.util.List<String> idList() throws RecognitionException {
 		java.util.List<String> i = null;
 
 
-		CommonTree Identifier133=null;
+		CommonTree Identifier137=null;
 
 		i = new java.util.ArrayList<String>();
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:230:3: ( ^( ID_LIST ( Identifier )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:230:6: ^( ID_LIST ( Identifier )+ )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:231:3: ( ^( ID_LIST ( Identifier )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:231:6: ^( ID_LIST ( Identifier )+ )
 			{
-			match(input,ID_LIST,FOLLOW_ID_LIST_in_idList1587); 
+			match(input,ID_LIST,FOLLOW_ID_LIST_in_idList1613); 
 			match(input, Token.DOWN, null); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:230:16: ( Identifier )+
-			int cnt48=0;
-			loop48:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:231:16: ( Identifier )+
+			int cnt50=0;
+			loop50:
 			while (true) {
-				int alt48=2;
-				int LA48_0 = input.LA(1);
-				if ( (LA48_0==Identifier) ) {
-					alt48=1;
+				int alt50=2;
+				int LA50_0 = input.LA(1);
+				if ( (LA50_0==Identifier) ) {
+					alt50=1;
 				}
 
-				switch (alt48) {
+				switch (alt50) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:230:17: Identifier
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:231:17: Identifier
 					{
-					Identifier133=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_idList1590); 
-					i.add((Identifier133!=null?Identifier133.getText():null));
+					Identifier137=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_idList1616); 
+					i.add((Identifier137!=null?Identifier137.getText():null));
 					}
 					break;
 
 				default :
-					if ( cnt48 >= 1 ) break loop48;
-					EarlyExitException eee = new EarlyExitException(48, input);
+					if ( cnt50 >= 1 ) break loop50;
+					EarlyExitException eee = new EarlyExitException(50, input);
 					throw eee;
 				}
-				cnt48++;
+				cnt50++;
 			}
 
 			match(input, Token.UP, null); 
@@ -3425,48 +3503,48 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "exprList"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:233:1: exprList returns [java.util.List<DCNode> e] : ^( EXP_LIST ( expression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:234:1: exprList returns [java.util.List<DCNode> e] : ^( EXP_LIST ( expression )+ ) ;
 	public final java.util.List<DCNode> exprList() throws RecognitionException {
 		java.util.List<DCNode> e = null;
 
 
-		DCNode expression134 =null;
+		DCNode expression138 =null;
 
 		e = new java.util.ArrayList<DCNode>();
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:235:3: ( ^( EXP_LIST ( expression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:235:6: ^( EXP_LIST ( expression )+ )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:236:3: ( ^( EXP_LIST ( expression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:236:6: ^( EXP_LIST ( expression )+ )
 			{
-			match(input,EXP_LIST,FOLLOW_EXP_LIST_in_exprList1620); 
+			match(input,EXP_LIST,FOLLOW_EXP_LIST_in_exprList1646); 
 			match(input, Token.DOWN, null); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:235:17: ( expression )+
-			int cnt49=0;
-			loop49:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:236:17: ( expression )+
+			int cnt51=0;
+			loop51:
 			while (true) {
-				int alt49=2;
-				int LA49_0 = input.LA(1);
-				if ( (LA49_0==Add||LA49_0==Bool||LA49_0==COLOR_CONSTANT||LA49_0==DOTPROPERTY||LA49_0==Divide||LA49_0==Equals||(LA49_0 >= GT && LA49_0 <= GTEquals)||LA49_0==HEIGHT_CONSTANT||LA49_0==In||LA49_0==LOOKUP||(LA49_0 >= LT && LA49_0 <= LTEquals)||LA49_0==Modulus||(LA49_0 >= Multiply && LA49_0 <= NEquals)||(LA49_0 >= Null && LA49_0 <= Number)||LA49_0==PI_CONSTANT||LA49_0==Pow||(LA49_0 >= Subtract && LA49_0 <= TERNARY)||LA49_0==UNARY_MIN||LA49_0==WIDTH_CONSTANT||LA49_0==153||LA49_0==155) ) {
-					alt49=1;
+				int alt51=2;
+				int LA51_0 = input.LA(1);
+				if ( (LA51_0==Add||LA51_0==Bool||LA51_0==COLOR_CONSTANT||LA51_0==DOTPROPERTY||LA51_0==Divide||LA51_0==Equals||(LA51_0 >= GT && LA51_0 <= GTEquals)||LA51_0==HEIGHT_CONSTANT||LA51_0==In||LA51_0==LOOKUP||(LA51_0 >= LT && LA51_0 <= LTEquals)||LA51_0==Modulus||(LA51_0 >= Multiply && LA51_0 <= NEquals)||(LA51_0 >= Null && LA51_0 <= Number)||LA51_0==PI_CONSTANT||LA51_0==Pow||(LA51_0 >= Subtract && LA51_0 <= TERNARY)||LA51_0==UNARY_MIN||LA51_0==WIDTH_CONSTANT||LA51_0==155||LA51_0==157) ) {
+					alt51=1;
 				}
 
-				switch (alt49) {
+				switch (alt51) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:235:18: expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:236:18: expression
 					{
-					pushFollow(FOLLOW_expression_in_exprList1623);
-					expression134=expression();
+					pushFollow(FOLLOW_expression_in_exprList1649);
+					expression138=expression();
 					state._fsp--;
 
-					e.add(expression134);
+					e.add(expression138);
 					}
 					break;
 
 				default :
-					if ( cnt49 >= 1 ) break loop49;
-					EarlyExitException eee = new EarlyExitException(49, input);
+					if ( cnt51 >= 1 ) break loop51;
+					EarlyExitException eee = new EarlyExitException(51, input);
 					throw eee;
 				}
-				cnt49++;
+				cnt51++;
 			}
 
 			match(input, Token.UP, null); 
@@ -3488,174 +3566,174 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "expression"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:239:1: expression returns [DCNode node] : ( ^( TERNARY a= expression b= expression c= expression ) | ^( In a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:240:1: expression returns [DCNode node] : ( ^( TERNARY a= expression b= expression c= expression ) | ^( In a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT );
 	public final DCNode expression() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree Number135=null;
-		CommonTree Bool136=null;
-		CommonTree COLOR_CONSTANT138=null;
+		CommonTree Number139=null;
+		CommonTree Bool140=null;
+		CommonTree COLOR_CONSTANT142=null;
 		DCNode a =null;
 		DCNode b =null;
 		DCNode c =null;
-		DCNode lookup137 =null;
+		DCNode lookup141 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:240:3: ( ^( TERNARY a= expression b= expression c= expression ) | ^( In a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT )
-			int alt50=26;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:241:3: ( ^( TERNARY a= expression b= expression c= expression ) | ^( In a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT )
+			int alt52=26;
 			switch ( input.LA(1) ) {
 			case TERNARY:
 				{
-				alt50=1;
+				alt52=1;
 				}
 				break;
 			case In:
 				{
-				alt50=2;
+				alt52=2;
+				}
+				break;
+			case 157:
+				{
+				alt52=3;
 				}
 				break;
 			case 155:
 				{
-				alt50=3;
-				}
-				break;
-			case 153:
-				{
-				alt50=4;
+				alt52=4;
 				}
 				break;
 			case Equals:
 				{
-				alt50=5;
+				alt52=5;
 				}
 				break;
 			case NEquals:
 				{
-				alt50=6;
+				alt52=6;
 				}
 				break;
 			case GTEquals:
 				{
-				alt50=7;
+				alt52=7;
 				}
 				break;
 			case LTEquals:
 				{
-				alt50=8;
+				alt52=8;
 				}
 				break;
 			case GT:
 				{
-				alt50=9;
+				alt52=9;
 				}
 				break;
 			case LT:
 				{
-				alt50=10;
+				alt52=10;
 				}
 				break;
 			case Add:
 				{
-				alt50=11;
+				alt52=11;
 				}
 				break;
 			case Subtract:
 				{
-				alt50=12;
+				alt52=12;
 				}
 				break;
 			case Multiply:
 				{
-				alt50=13;
+				alt52=13;
 				}
 				break;
 			case Divide:
 				{
-				alt50=14;
+				alt52=14;
 				}
 				break;
 			case Modulus:
 				{
-				alt50=15;
+				alt52=15;
 				}
 				break;
 			case Pow:
 				{
-				alt50=16;
+				alt52=16;
 				}
 				break;
 			case UNARY_MIN:
 				{
-				alt50=17;
+				alt52=17;
 				}
 				break;
 			case NEGATE:
 				{
-				alt50=18;
+				alt52=18;
 				}
 				break;
 			case Number:
 				{
-				alt50=19;
+				alt52=19;
 				}
 				break;
 			case Bool:
 				{
-				alt50=20;
+				alt52=20;
 				}
 				break;
 			case Null:
 				{
-				alt50=21;
+				alt52=21;
 				}
 				break;
 			case DOTPROPERTY:
 			case LOOKUP:
 				{
-				alt50=22;
+				alt52=22;
 				}
 				break;
 			case COLOR_CONSTANT:
 				{
-				alt50=23;
+				alt52=23;
 				}
 				break;
 			case PI_CONSTANT:
 				{
-				alt50=24;
+				alt52=24;
 				}
 				break;
 			case WIDTH_CONSTANT:
 				{
-				alt50=25;
+				alt52=25;
 				}
 				break;
 			case HEIGHT_CONSTANT:
 				{
-				alt50=26;
+				alt52=26;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 50, 0, input);
+					new NoViableAltException("", 52, 0, input);
 				throw nvae;
 			}
-			switch (alt50) {
+			switch (alt52) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:240:6: ^( TERNARY a= expression b= expression c= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:241:6: ^( TERNARY a= expression b= expression c= expression )
 					{
-					match(input,TERNARY,FOLLOW_TERNARY_in_expression1648); 
+					match(input,TERNARY,FOLLOW_TERNARY_in_expression1674); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1652);
+					pushFollow(FOLLOW_expression_in_expression1678);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1656);
+					pushFollow(FOLLOW_expression_in_expression1682);
 					b=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1660);
+					pushFollow(FOLLOW_expression_in_expression1686);
 					c=expression();
 					state._fsp--;
 
@@ -3665,15 +3743,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:241:6: ^( In a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:242:6: ^( In a= expression b= expression )
 					{
-					match(input,In,FOLLOW_In_in_expression1671); 
+					match(input,In,FOLLOW_In_in_expression1697); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1675);
+					pushFollow(FOLLOW_expression_in_expression1701);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1679);
+					pushFollow(FOLLOW_expression_in_expression1705);
 					b=expression();
 					state._fsp--;
 
@@ -3683,15 +3761,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:242:6: ^( '||' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:243:6: ^( '||' a= expression b= expression )
 					{
-					match(input,155,FOLLOW_155_in_expression1708); 
+					match(input,157,FOLLOW_157_in_expression1734); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1712);
+					pushFollow(FOLLOW_expression_in_expression1738);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1716);
+					pushFollow(FOLLOW_expression_in_expression1742);
 					b=expression();
 					state._fsp--;
 
@@ -3701,15 +3779,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:243:6: ^( '&&' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:244:6: ^( '&&' a= expression b= expression )
 					{
-					match(input,153,FOLLOW_153_in_expression1743); 
+					match(input,155,FOLLOW_155_in_expression1769); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1747);
+					pushFollow(FOLLOW_expression_in_expression1773);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1751);
+					pushFollow(FOLLOW_expression_in_expression1777);
 					b=expression();
 					state._fsp--;
 
@@ -3719,15 +3797,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:244:6: ^( '==' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:245:6: ^( '==' a= expression b= expression )
 					{
-					match(input,Equals,FOLLOW_Equals_in_expression1778); 
+					match(input,Equals,FOLLOW_Equals_in_expression1804); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1782);
+					pushFollow(FOLLOW_expression_in_expression1808);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1786);
+					pushFollow(FOLLOW_expression_in_expression1812);
 					b=expression();
 					state._fsp--;
 
@@ -3737,15 +3815,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:245:6: ^( '!=' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:246:6: ^( '!=' a= expression b= expression )
 					{
-					match(input,NEquals,FOLLOW_NEquals_in_expression1813); 
+					match(input,NEquals,FOLLOW_NEquals_in_expression1839); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1817);
+					pushFollow(FOLLOW_expression_in_expression1843);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1821);
+					pushFollow(FOLLOW_expression_in_expression1847);
 					b=expression();
 					state._fsp--;
 
@@ -3755,15 +3833,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:246:6: ^( '>=' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:247:6: ^( '>=' a= expression b= expression )
 					{
-					match(input,GTEquals,FOLLOW_GTEquals_in_expression1848); 
+					match(input,GTEquals,FOLLOW_GTEquals_in_expression1874); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1852);
+					pushFollow(FOLLOW_expression_in_expression1878);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1856);
+					pushFollow(FOLLOW_expression_in_expression1882);
 					b=expression();
 					state._fsp--;
 
@@ -3773,15 +3851,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:247:6: ^( '<=' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:248:6: ^( '<=' a= expression b= expression )
 					{
-					match(input,LTEquals,FOLLOW_LTEquals_in_expression1883); 
+					match(input,LTEquals,FOLLOW_LTEquals_in_expression1909); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1887);
+					pushFollow(FOLLOW_expression_in_expression1913);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1891);
+					pushFollow(FOLLOW_expression_in_expression1917);
 					b=expression();
 					state._fsp--;
 
@@ -3791,15 +3869,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:248:6: ^( '>' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:249:6: ^( '>' a= expression b= expression )
 					{
-					match(input,GT,FOLLOW_GT_in_expression1918); 
+					match(input,GT,FOLLOW_GT_in_expression1944); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1922);
+					pushFollow(FOLLOW_expression_in_expression1948);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1926);
+					pushFollow(FOLLOW_expression_in_expression1952);
 					b=expression();
 					state._fsp--;
 
@@ -3809,15 +3887,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:249:6: ^( '<' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:250:6: ^( '<' a= expression b= expression )
 					{
-					match(input,LT,FOLLOW_LT_in_expression1954); 
+					match(input,LT,FOLLOW_LT_in_expression1980); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1958);
+					pushFollow(FOLLOW_expression_in_expression1984);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1962);
+					pushFollow(FOLLOW_expression_in_expression1988);
 					b=expression();
 					state._fsp--;
 
@@ -3827,15 +3905,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:250:6: ^( '+' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:251:6: ^( '+' a= expression b= expression )
 					{
-					match(input,Add,FOLLOW_Add_in_expression1990); 
+					match(input,Add,FOLLOW_Add_in_expression2016); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression1994);
+					pushFollow(FOLLOW_expression_in_expression2020);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression1998);
+					pushFollow(FOLLOW_expression_in_expression2024);
 					b=expression();
 					state._fsp--;
 
@@ -3845,15 +3923,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:251:6: ^( '-' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:252:6: ^( '-' a= expression b= expression )
 					{
-					match(input,Subtract,FOLLOW_Subtract_in_expression2026); 
+					match(input,Subtract,FOLLOW_Subtract_in_expression2052); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2030);
+					pushFollow(FOLLOW_expression_in_expression2056);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2034);
+					pushFollow(FOLLOW_expression_in_expression2060);
 					b=expression();
 					state._fsp--;
 
@@ -3863,15 +3941,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:252:6: ^( '*' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:253:6: ^( '*' a= expression b= expression )
 					{
-					match(input,Multiply,FOLLOW_Multiply_in_expression2062); 
+					match(input,Multiply,FOLLOW_Multiply_in_expression2088); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2066);
+					pushFollow(FOLLOW_expression_in_expression2092);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2070);
+					pushFollow(FOLLOW_expression_in_expression2096);
 					b=expression();
 					state._fsp--;
 
@@ -3881,15 +3959,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:253:6: ^( '/' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:254:6: ^( '/' a= expression b= expression )
 					{
-					match(input,Divide,FOLLOW_Divide_in_expression2098); 
+					match(input,Divide,FOLLOW_Divide_in_expression2124); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2102);
+					pushFollow(FOLLOW_expression_in_expression2128);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2106);
+					pushFollow(FOLLOW_expression_in_expression2132);
 					b=expression();
 					state._fsp--;
 
@@ -3899,15 +3977,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 15 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:254:6: ^( '%' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:255:6: ^( '%' a= expression b= expression )
 					{
-					match(input,Modulus,FOLLOW_Modulus_in_expression2134); 
+					match(input,Modulus,FOLLOW_Modulus_in_expression2160); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2138);
+					pushFollow(FOLLOW_expression_in_expression2164);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2142);
+					pushFollow(FOLLOW_expression_in_expression2168);
 					b=expression();
 					state._fsp--;
 
@@ -3917,15 +3995,15 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 16 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:255:6: ^( '^' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:256:6: ^( '^' a= expression b= expression )
 					{
-					match(input,Pow,FOLLOW_Pow_in_expression2170); 
+					match(input,Pow,FOLLOW_Pow_in_expression2196); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2174);
+					pushFollow(FOLLOW_expression_in_expression2200);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2178);
+					pushFollow(FOLLOW_expression_in_expression2204);
 					b=expression();
 					state._fsp--;
 
@@ -3935,11 +4013,11 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 17 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:256:6: ^( UNARY_MIN a= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:257:6: ^( UNARY_MIN a= expression )
 					{
-					match(input,UNARY_MIN,FOLLOW_UNARY_MIN_in_expression2206); 
+					match(input,UNARY_MIN,FOLLOW_UNARY_MIN_in_expression2232); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2210);
+					pushFollow(FOLLOW_expression_in_expression2236);
 					a=expression();
 					state._fsp--;
 
@@ -3949,11 +4027,11 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 18 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:257:6: ^( NEGATE a= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:258:6: ^( NEGATE a= expression )
 					{
-					match(input,NEGATE,FOLLOW_NEGATE_in_expression2245); 
+					match(input,NEGATE,FOLLOW_NEGATE_in_expression2271); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2249);
+					pushFollow(FOLLOW_expression_in_expression2275);
 					a=expression();
 					state._fsp--;
 
@@ -3963,61 +4041,61 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					break;
 				case 19 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:258:6: Number
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:259:6: Number
 					{
-					Number135=(CommonTree)match(input,Number,FOLLOW_Number_in_expression2286); 
-					node = new AtomNode(Double.parseDouble((Number135!=null?Number135.getText():null)));
+					Number139=(CommonTree)match(input,Number,FOLLOW_Number_in_expression2312); 
+					node = new AtomNode(Double.parseDouble((Number139!=null?Number139.getText():null)));
 					}
 					break;
 				case 20 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:259:6: Bool
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:260:6: Bool
 					{
-					Bool136=(CommonTree)match(input,Bool,FOLLOW_Bool_in_expression2338); 
-					node = new AtomNode(Boolean.parseBoolean((Bool136!=null?Bool136.getText():null)));
+					Bool140=(CommonTree)match(input,Bool,FOLLOW_Bool_in_expression2364); 
+					node = new AtomNode(Boolean.parseBoolean((Bool140!=null?Bool140.getText():null)));
 					}
 					break;
 				case 21 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:260:6: Null
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:261:6: Null
 					{
-					match(input,Null,FOLLOW_Null_in_expression2392); 
+					match(input,Null,FOLLOW_Null_in_expression2418); 
 					node = new AtomNode(null);
 					}
 					break;
 				case 22 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:261:6: lookup
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:262:6: lookup
 					{
-					pushFollow(FOLLOW_lookup_in_expression2446);
-					lookup137=lookup();
+					pushFollow(FOLLOW_lookup_in_expression2472);
+					lookup141=lookup();
 					state._fsp--;
 
-					node = lookup137;
+					node = lookup141;
 					}
 					break;
 				case 23 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:262:6: COLOR_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:263:6: COLOR_CONSTANT
 					{
-					COLOR_CONSTANT138=(CommonTree)match(input,COLOR_CONSTANT,FOLLOW_COLOR_CONSTANT_in_expression2498); 
-					node = new AtomNode((COLOR_CONSTANT138!=null?COLOR_CONSTANT138.getText():null));
+					COLOR_CONSTANT142=(CommonTree)match(input,COLOR_CONSTANT,FOLLOW_COLOR_CONSTANT_in_expression2524); 
+					node = new AtomNode((COLOR_CONSTANT142!=null?COLOR_CONSTANT142.getText():null));
 					}
 					break;
 				case 24 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:263:5: PI_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:264:5: PI_CONSTANT
 					{
-					match(input,PI_CONSTANT,FOLLOW_PI_CONSTANT_in_expression2517); 
+					match(input,PI_CONSTANT,FOLLOW_PI_CONSTANT_in_expression2543); 
 					node = new AtomNode(Math.PI);
 					}
 					break;
 				case 25 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:264:4: WIDTH_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:265:4: WIDTH_CONSTANT
 					{
-					match(input,WIDTH_CONSTANT,FOLLOW_WIDTH_CONSTANT_in_expression2563); 
+					match(input,WIDTH_CONSTANT,FOLLOW_WIDTH_CONSTANT_in_expression2589); 
 					node = new AtomNode(widthParam);
 					}
 					break;
 				case 26 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:265:4: HEIGHT_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:266:4: HEIGHT_CONSTANT
 					{
-					match(input,HEIGHT_CONSTANT,FOLLOW_HEIGHT_CONSTANT_in_expression2608); 
+					match(input,HEIGHT_CONSTANT,FOLLOW_HEIGHT_CONSTANT_in_expression2634); 
 					node = new AtomNode(heightParam);
 					}
 					break;
@@ -4038,32 +4116,32 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "list"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:268:1: list returns [DCNode node] : ^( LIST ( exprList )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:269:1: list returns [DCNode node] : ^( LIST ( exprList )? ) ;
 	public final DCNode list() throws RecognitionException {
 		DCNode node = null;
 
 
-		java.util.List<DCNode> exprList139 =null;
+		java.util.List<DCNode> exprList143 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:269:3: ( ^( LIST ( exprList )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:269:6: ^( LIST ( exprList )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:270:3: ( ^( LIST ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:270:6: ^( LIST ( exprList )? )
 			{
-			match(input,LIST,FOLLOW_LIST_in_list2667); 
+			match(input,LIST,FOLLOW_LIST_in_list2693); 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:269:13: ( exprList )?
-				int alt51=2;
-				int LA51_0 = input.LA(1);
-				if ( (LA51_0==EXP_LIST) ) {
-					alt51=1;
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:270:13: ( exprList )?
+				int alt53=2;
+				int LA53_0 = input.LA(1);
+				if ( (LA53_0==EXP_LIST) ) {
+					alt53=1;
 				}
-				switch (alt51) {
+				switch (alt53) {
 					case 1 :
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:269:13: exprList
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:270:13: exprList
 						{
-						pushFollow(FOLLOW_exprList_in_list2669);
-						exprList139=exprList();
+						pushFollow(FOLLOW_exprList_in_list2695);
+						exprList143=exprList();
 						state._fsp--;
 
 						}
@@ -4074,7 +4152,7 @@ public class PogoTreeWalker extends TreeParser {
 				match(input, Token.UP, null); 
 			}
 
-			node = new ListNode(exprList139);
+			node = new ListNode(exprList143);
 			}
 
 		}
@@ -4092,40 +4170,40 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "lookup"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:274:1: lookup returns [DCNode node] : ( ^( DOTPROPERTY functionCall dotProperty ) | ^( DOTPROPERTY Identifier dotProperty ) | ^( LOOKUP functionCall (i= indexes )? ) | ^( LOOKUP list (i= indexes )? ) | ^( LOOKUP expression (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP String (i= indexes )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:275:1: lookup returns [DCNode node] : ( ^( DOTPROPERTY functionCall dotProperty ) | ^( DOTPROPERTY Identifier dotProperty ) | ^( LOOKUP functionCall (i= indexes )? ) | ^( LOOKUP list (i= indexes )? ) | ^( LOOKUP expression (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP String (i= indexes )? ) );
 	public final DCNode lookup() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree Identifier142=null;
-		CommonTree LOOKUP145=null;
-		CommonTree LOOKUP147=null;
+		CommonTree Identifier146=null;
 		CommonTree LOOKUP149=null;
-		CommonTree Identifier150=null;
 		CommonTree LOOKUP151=null;
-		CommonTree String152=null;
 		CommonTree LOOKUP153=null;
+		CommonTree Identifier154=null;
+		CommonTree LOOKUP155=null;
+		CommonTree String156=null;
+		CommonTree LOOKUP157=null;
 		java.util.List<DCNode> i =null;
-		DCNode functionCall140 =null;
-		java.util.List<PropertyNode> dotProperty141 =null;
-		java.util.List<PropertyNode> dotProperty143 =null;
 		DCNode functionCall144 =null;
-		DCNode list146 =null;
-		DCNode expression148 =null;
+		java.util.List<PropertyNode> dotProperty145 =null;
+		java.util.List<PropertyNode> dotProperty147 =null;
+		DCNode functionCall148 =null;
+		DCNode list150 =null;
+		DCNode expression152 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:275:3: ( ^( DOTPROPERTY functionCall dotProperty ) | ^( DOTPROPERTY Identifier dotProperty ) | ^( LOOKUP functionCall (i= indexes )? ) | ^( LOOKUP list (i= indexes )? ) | ^( LOOKUP expression (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP String (i= indexes )? ) )
-			int alt57=7;
-			int LA57_0 = input.LA(1);
-			if ( (LA57_0==DOTPROPERTY) ) {
-				int LA57_1 = input.LA(2);
-				if ( (LA57_1==DOWN) ) {
-					int LA57_3 = input.LA(3);
-					if ( (LA57_3==Identifier) ) {
-						alt57=2;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:276:3: ( ^( DOTPROPERTY functionCall dotProperty ) | ^( DOTPROPERTY Identifier dotProperty ) | ^( LOOKUP functionCall (i= indexes )? ) | ^( LOOKUP list (i= indexes )? ) | ^( LOOKUP expression (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP String (i= indexes )? ) )
+			int alt59=7;
+			int LA59_0 = input.LA(1);
+			if ( (LA59_0==DOTPROPERTY) ) {
+				int LA59_1 = input.LA(2);
+				if ( (LA59_1==DOWN) ) {
+					int LA59_3 = input.LA(3);
+					if ( (LA59_3==Identifier) ) {
+						alt59=2;
 					}
-					else if ( (LA57_3==FUNC_CALL) ) {
-						alt57=1;
+					else if ( (LA59_3==FUNC_CALL) ) {
+						alt59=1;
 					}
 
 					else {
@@ -4135,7 +4213,7 @@ public class PogoTreeWalker extends TreeParser {
 								input.consume();
 							}
 							NoViableAltException nvae =
-								new NoViableAltException("", 57, 3, input);
+								new NoViableAltException("", 59, 3, input);
 							throw nvae;
 						} finally {
 							input.rewind(nvaeMark);
@@ -4149,7 +4227,7 @@ public class PogoTreeWalker extends TreeParser {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 57, 1, input);
+							new NoViableAltException("", 59, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -4157,28 +4235,28 @@ public class PogoTreeWalker extends TreeParser {
 				}
 
 			}
-			else if ( (LA57_0==LOOKUP) ) {
-				int LA57_2 = input.LA(2);
-				if ( (LA57_2==DOWN) ) {
+			else if ( (LA59_0==LOOKUP) ) {
+				int LA59_2 = input.LA(2);
+				if ( (LA59_2==DOWN) ) {
 					switch ( input.LA(3) ) {
 					case Identifier:
 						{
-						alt57=6;
+						alt59=6;
 						}
 						break;
 					case String:
 						{
-						alt57=7;
+						alt59=7;
 						}
 						break;
 					case FUNC_CALL:
 						{
-						alt57=3;
+						alt59=3;
 						}
 						break;
 					case LIST:
 						{
-						alt57=4;
+						alt59=4;
 						}
 						break;
 					case Add:
@@ -4206,10 +4284,10 @@ public class PogoTreeWalker extends TreeParser {
 					case TERNARY:
 					case UNARY_MIN:
 					case WIDTH_CONSTANT:
-					case 153:
 					case 155:
+					case 157:
 						{
-						alt57=5;
+						alt59=5;
 						}
 						break;
 					default:
@@ -4219,7 +4297,7 @@ public class PogoTreeWalker extends TreeParser {
 								input.consume();
 							}
 							NoViableAltException nvae =
-								new NoViableAltException("", 57, 4, input);
+								new NoViableAltException("", 59, 4, input);
 							throw nvae;
 						} finally {
 							input.rewind(nvaeMark);
@@ -4232,7 +4310,7 @@ public class PogoTreeWalker extends TreeParser {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 57, 2, input);
+							new NoViableAltException("", 59, 2, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -4243,120 +4321,54 @@ public class PogoTreeWalker extends TreeParser {
 
 			else {
 				NoViableAltException nvae =
-					new NoViableAltException("", 57, 0, input);
+					new NoViableAltException("", 59, 0, input);
 				throw nvae;
 			}
 
-			switch (alt57) {
+			switch (alt59) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:275:4: ^( DOTPROPERTY functionCall dotProperty )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:276:4: ^( DOTPROPERTY functionCall dotProperty )
 					{
-					match(input,DOTPROPERTY,FOLLOW_DOTPROPERTY_in_lookup2692); 
+					match(input,DOTPROPERTY,FOLLOW_DOTPROPERTY_in_lookup2718); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_functionCall_in_lookup2694);
-					functionCall140=functionCall();
-					state._fsp--;
-
-					pushFollow(FOLLOW_dotProperty_in_lookup2696);
-					dotProperty141=dotProperty();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new DotPropertyNode(functionCall140, dotProperty141);
-					}
-					break;
-				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:276:4: ^( DOTPROPERTY Identifier dotProperty )
-					{
-					match(input,DOTPROPERTY,FOLLOW_DOTPROPERTY_in_lookup2704); 
-					match(input, Token.DOWN, null); 
-					Identifier142=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup2706); 
-					pushFollow(FOLLOW_dotProperty_in_lookup2708);
-					dotProperty143=dotProperty();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new DotPropertyNode(new IdentifierNode((Identifier142!=null?Identifier142.getText():null), currentScope), dotProperty143);
-					}
-					break;
-				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:282:5: ^( LOOKUP functionCall (i= indexes )? )
-					{
-					LOOKUP145=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2732); 
-					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_functionCall_in_lookup2734);
+					pushFollow(FOLLOW_functionCall_in_lookup2720);
 					functionCall144=functionCall();
 					state._fsp--;
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:282:28: (i= indexes )?
-					int alt52=2;
-					int LA52_0 = input.LA(1);
-					if ( (LA52_0==INDEXES) ) {
-						alt52=1;
-					}
-					switch (alt52) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:282:28: i= indexes
-							{
-							pushFollow(FOLLOW_indexes_in_lookup2738);
-							i=indexes();
-							state._fsp--;
-
-							}
-							break;
-
-					}
+					pushFollow(FOLLOW_dotProperty_in_lookup2722);
+					dotProperty145=dotProperty();
+					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(functionCall144, i,LOOKUP145.getLine()) : functionCall144;
+					node = new DotPropertyNode(functionCall144, dotProperty145);
 					}
 					break;
-				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:283:6: ^( LOOKUP list (i= indexes )? )
+				case 2 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:277:4: ^( DOTPROPERTY Identifier dotProperty )
 					{
-					LOOKUP147=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2750); 
+					match(input,DOTPROPERTY,FOLLOW_DOTPROPERTY_in_lookup2730); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_list_in_lookup2752);
-					list146=list();
+					Identifier146=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup2732); 
+					pushFollow(FOLLOW_dotProperty_in_lookup2734);
+					dotProperty147=dotProperty();
 					state._fsp--;
-
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:283:21: (i= indexes )?
-					int alt53=2;
-					int LA53_0 = input.LA(1);
-					if ( (LA53_0==INDEXES) ) {
-						alt53=1;
-					}
-					switch (alt53) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:283:21: i= indexes
-							{
-							pushFollow(FOLLOW_indexes_in_lookup2756);
-							i=indexes();
-							state._fsp--;
-
-							}
-							break;
-
-					}
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(list146, i, LOOKUP147.getLine()) : list146;
+					node = new DotPropertyNode(new IdentifierNode((Identifier146!=null?Identifier146.getText():null), currentScope), dotProperty147);
 					}
 					break;
-				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:284:6: ^( LOOKUP expression (i= indexes )? )
+				case 3 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:283:5: ^( LOOKUP functionCall (i= indexes )? )
 					{
-					LOOKUP149=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2776); 
+					LOOKUP149=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2758); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_lookup2778);
-					expression148=expression();
+					pushFollow(FOLLOW_functionCall_in_lookup2760);
+					functionCall148=functionCall();
 					state._fsp--;
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:284:27: (i= indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:283:28: (i= indexes )?
 					int alt54=2;
 					int LA54_0 = input.LA(1);
 					if ( (LA54_0==INDEXES) ) {
@@ -4364,7 +4376,40 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					switch (alt54) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:284:27: i= indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:283:28: i= indexes
+							{
+							pushFollow(FOLLOW_indexes_in_lookup2764);
+							i=indexes();
+							state._fsp--;
+
+							}
+							break;
+
+					}
+
+					match(input, Token.UP, null); 
+
+					node = i != null ? new LookupNode(functionCall148, i,LOOKUP149.getLine()) : functionCall148;
+					}
+					break;
+				case 4 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:284:6: ^( LOOKUP list (i= indexes )? )
+					{
+					LOOKUP151=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2776); 
+					match(input, Token.DOWN, null); 
+					pushFollow(FOLLOW_list_in_lookup2778);
+					list150=list();
+					state._fsp--;
+
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:284:21: (i= indexes )?
+					int alt55=2;
+					int LA55_0 = input.LA(1);
+					if ( (LA55_0==INDEXES) ) {
+						alt55=1;
+					}
+					switch (alt55) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:284:21: i= indexes
 							{
 							pushFollow(FOLLOW_indexes_in_lookup2782);
 							i=indexes();
@@ -4377,46 +4422,19 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(expression148, i,LOOKUP149.getLine()) : expression148;
+					node = i != null ? new LookupNode(list150, i, LOOKUP151.getLine()) : list150;
 					}
 					break;
-				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:285:6: ^( LOOKUP Identifier (i= indexes )? )
+				case 5 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:285:6: ^( LOOKUP expression (i= indexes )? )
 					{
-					LOOKUP151=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2796); 
+					LOOKUP153=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2802); 
 					match(input, Token.DOWN, null); 
-					Identifier150=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup2798); 
+					pushFollow(FOLLOW_expression_in_lookup2804);
+					expression152=expression();
+					state._fsp--;
+
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:285:27: (i= indexes )?
-					int alt55=2;
-					int LA55_0 = input.LA(1);
-					if ( (LA55_0==INDEXES) ) {
-						alt55=1;
-					}
-					switch (alt55) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:285:27: i= indexes
-							{
-							pushFollow(FOLLOW_indexes_in_lookup2802);
-							i=indexes();
-							state._fsp--;
-
-							}
-							break;
-
-					}
-
-					match(input, Token.UP, null); 
-
-					node = i != null ? new LookupNode(new IdentifierNode((Identifier150!=null?Identifier150.getText():null), currentScope), i,LOOKUP151.getLine()) : new IdentifierNode((Identifier150!=null?Identifier150.getText():null), currentScope);
-					}
-					break;
-				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:286:6: ^( LOOKUP String (i= indexes )? )
-					{
-					LOOKUP153=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2816); 
-					match(input, Token.DOWN, null); 
-					String152=(CommonTree)match(input,String,FOLLOW_String_in_lookup2818); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:286:23: (i= indexes )?
 					int alt56=2;
 					int LA56_0 = input.LA(1);
 					if ( (LA56_0==INDEXES) ) {
@@ -4424,9 +4442,9 @@ public class PogoTreeWalker extends TreeParser {
 					}
 					switch (alt56) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:286:23: i= indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:285:27: i= indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup2822);
+							pushFollow(FOLLOW_indexes_in_lookup2808);
 							i=indexes();
 							state._fsp--;
 
@@ -4437,7 +4455,67 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(new AtomNode((String152!=null?String152.getText():null)), i,LOOKUP153.getLine()) : new AtomNode((String152!=null?String152.getText():null));
+					node = i != null ? new LookupNode(expression152, i,LOOKUP153.getLine()) : expression152;
+					}
+					break;
+				case 6 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:286:6: ^( LOOKUP Identifier (i= indexes )? )
+					{
+					LOOKUP155=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2822); 
+					match(input, Token.DOWN, null); 
+					Identifier154=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup2824); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:286:27: (i= indexes )?
+					int alt57=2;
+					int LA57_0 = input.LA(1);
+					if ( (LA57_0==INDEXES) ) {
+						alt57=1;
+					}
+					switch (alt57) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:286:27: i= indexes
+							{
+							pushFollow(FOLLOW_indexes_in_lookup2828);
+							i=indexes();
+							state._fsp--;
+
+							}
+							break;
+
+					}
+
+					match(input, Token.UP, null); 
+
+					node = i != null ? new LookupNode(new IdentifierNode((Identifier154!=null?Identifier154.getText():null), currentScope), i,LOOKUP155.getLine()) : new IdentifierNode((Identifier154!=null?Identifier154.getText():null), currentScope);
+					}
+					break;
+				case 7 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:287:6: ^( LOOKUP String (i= indexes )? )
+					{
+					LOOKUP157=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2842); 
+					match(input, Token.DOWN, null); 
+					String156=(CommonTree)match(input,String,FOLLOW_String_in_lookup2844); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:287:23: (i= indexes )?
+					int alt58=2;
+					int LA58_0 = input.LA(1);
+					if ( (LA58_0==INDEXES) ) {
+						alt58=1;
+					}
+					switch (alt58) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:287:23: i= indexes
+							{
+							pushFollow(FOLLOW_indexes_in_lookup2848);
+							i=indexes();
+							state._fsp--;
+
+							}
+							break;
+
+					}
+
+					match(input, Token.UP, null); 
+
+					node = i != null ? new LookupNode(new AtomNode((String156!=null?String156.getText():null)), i,LOOKUP157.getLine()) : new AtomNode((String156!=null?String156.getText():null));
 					}
 					break;
 
@@ -4457,48 +4535,48 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "indexes"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:296:1: indexes returns [java.util.List<DCNode> e] : ^( INDEXES ( expression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:297:1: indexes returns [java.util.List<DCNode> e] : ^( INDEXES ( expression )+ ) ;
 	public final java.util.List<DCNode> indexes() throws RecognitionException {
 		java.util.List<DCNode> e = null;
 
 
-		DCNode expression154 =null;
+		DCNode expression158 =null;
 
 		e = new java.util.ArrayList<DCNode>();
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:298:3: ( ^( INDEXES ( expression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:298:6: ^( INDEXES ( expression )+ )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:299:3: ( ^( INDEXES ( expression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:299:6: ^( INDEXES ( expression )+ )
 			{
-			match(input,INDEXES,FOLLOW_INDEXES_in_indexes2872); 
+			match(input,INDEXES,FOLLOW_INDEXES_in_indexes2898); 
 			match(input, Token.DOWN, null); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:298:16: ( expression )+
-			int cnt58=0;
-			loop58:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:299:16: ( expression )+
+			int cnt60=0;
+			loop60:
 			while (true) {
-				int alt58=2;
-				int LA58_0 = input.LA(1);
-				if ( (LA58_0==Add||LA58_0==Bool||LA58_0==COLOR_CONSTANT||LA58_0==DOTPROPERTY||LA58_0==Divide||LA58_0==Equals||(LA58_0 >= GT && LA58_0 <= GTEquals)||LA58_0==HEIGHT_CONSTANT||LA58_0==In||LA58_0==LOOKUP||(LA58_0 >= LT && LA58_0 <= LTEquals)||LA58_0==Modulus||(LA58_0 >= Multiply && LA58_0 <= NEquals)||(LA58_0 >= Null && LA58_0 <= Number)||LA58_0==PI_CONSTANT||LA58_0==Pow||(LA58_0 >= Subtract && LA58_0 <= TERNARY)||LA58_0==UNARY_MIN||LA58_0==WIDTH_CONSTANT||LA58_0==153||LA58_0==155) ) {
-					alt58=1;
+				int alt60=2;
+				int LA60_0 = input.LA(1);
+				if ( (LA60_0==Add||LA60_0==Bool||LA60_0==COLOR_CONSTANT||LA60_0==DOTPROPERTY||LA60_0==Divide||LA60_0==Equals||(LA60_0 >= GT && LA60_0 <= GTEquals)||LA60_0==HEIGHT_CONSTANT||LA60_0==In||LA60_0==LOOKUP||(LA60_0 >= LT && LA60_0 <= LTEquals)||LA60_0==Modulus||(LA60_0 >= Multiply && LA60_0 <= NEquals)||(LA60_0 >= Null && LA60_0 <= Number)||LA60_0==PI_CONSTANT||LA60_0==Pow||(LA60_0 >= Subtract && LA60_0 <= TERNARY)||LA60_0==UNARY_MIN||LA60_0==WIDTH_CONSTANT||LA60_0==155||LA60_0==157) ) {
+					alt60=1;
 				}
 
-				switch (alt58) {
+				switch (alt60) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:298:17: expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:299:17: expression
 					{
-					pushFollow(FOLLOW_expression_in_indexes2875);
-					expression154=expression();
+					pushFollow(FOLLOW_expression_in_indexes2901);
+					expression158=expression();
 					state._fsp--;
 
-					e.add(expression154);
+					e.add(expression158);
 					}
 					break;
 
 				default :
-					if ( cnt58 >= 1 ) break loop58;
-					EarlyExitException eee = new EarlyExitException(58, input);
+					if ( cnt60 >= 1 ) break loop60;
+					EarlyExitException eee = new EarlyExitException(60, input);
 					throw eee;
 				}
-				cnt58++;
+				cnt60++;
 			}
 
 			match(input, Token.UP, null); 
@@ -4520,48 +4598,48 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "dotProperty"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:303:2: dotProperty returns [java.util.List<PropertyNode> e] : ^( DOT ( dotExpression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:304:2: dotProperty returns [java.util.List<PropertyNode> e] : ^( DOT ( dotExpression )+ ) ;
 	public final java.util.List<PropertyNode> dotProperty() throws RecognitionException {
 		java.util.List<PropertyNode> e = null;
 
 
-		PropertyNode dotExpression155 =null;
+		PropertyNode dotExpression159 =null;
 
 		e = new java.util.ArrayList<PropertyNode>();
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:305:3: ( ^( DOT ( dotExpression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:305:6: ^( DOT ( dotExpression )+ )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:306:3: ( ^( DOT ( dotExpression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:306:6: ^( DOT ( dotExpression )+ )
 			{
-			match(input,DOT,FOLLOW_DOT_in_dotProperty2913); 
+			match(input,DOT,FOLLOW_DOT_in_dotProperty2939); 
 			match(input, Token.DOWN, null); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:305:12: ( dotExpression )+
-			int cnt59=0;
-			loop59:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:306:12: ( dotExpression )+
+			int cnt61=0;
+			loop61:
 			while (true) {
-				int alt59=2;
-				int LA59_0 = input.LA(1);
-				if ( ((LA59_0 >= DotEnd && LA59_0 <= DotY)) ) {
-					alt59=1;
+				int alt61=2;
+				int LA61_0 = input.LA(1);
+				if ( ((LA61_0 >= DotEnd && LA61_0 <= DotY)) ) {
+					alt61=1;
 				}
 
-				switch (alt59) {
+				switch (alt61) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:305:13: dotExpression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:306:13: dotExpression
 					{
-					pushFollow(FOLLOW_dotExpression_in_dotProperty2916);
-					dotExpression155=dotExpression();
+					pushFollow(FOLLOW_dotExpression_in_dotProperty2942);
+					dotExpression159=dotExpression();
 					state._fsp--;
 
-					e.add(dotExpression155);
+					e.add(dotExpression159);
 					}
 					break;
 
 				default :
-					if ( cnt59 >= 1 ) break loop59;
-					EarlyExitException eee = new EarlyExitException(59, input);
+					if ( cnt61 >= 1 ) break loop61;
+					EarlyExitException eee = new EarlyExitException(61, input);
 					throw eee;
 				}
-				cnt59++;
+				cnt61++;
 			}
 
 			match(input, Token.UP, null); 
@@ -4583,148 +4661,148 @@ public class PogoTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "dotExpression"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:308:3: dotExpression returns [PropertyNode node] : ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:309:3: dotExpression returns [PropertyNode node] : ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight );
 	public final PropertyNode dotExpression() throws RecognitionException {
 		PropertyNode node = null;
 
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:309:3: ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight )
-			int alt60=11;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:310:3: ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight )
+			int alt62=11;
 			switch ( input.LA(1) ) {
 			case DotX:
 				{
-				alt60=1;
+				alt62=1;
 				}
 				break;
 			case DotY:
 				{
-				alt60=2;
+				alt62=2;
 				}
 				break;
 			case DotStart:
 				{
-				alt60=3;
+				alt62=3;
 				}
 				break;
 			case DotEnd:
 				{
-				alt60=4;
+				alt62=4;
 				}
 				break;
 			case DotOrigin:
 				{
-				alt60=5;
+				alt62=5;
 				}
 				break;
 			case DotRotation:
 				{
-				alt60=6;
+				alt62=6;
 				}
 				break;
 			case DotWidth:
 				{
-				alt60=7;
+				alt62=7;
 				}
 				break;
 			case DotHeight:
 				{
-				alt60=8;
+				alt62=8;
 				}
 				break;
 			case DotFill:
 				{
-				alt60=9;
+				alt62=9;
 				}
 				break;
 			case DotStroke:
 				{
-				alt60=10;
+				alt62=10;
 				}
 				break;
 			case DotWeight:
 				{
-				alt60=11;
+				alt62=11;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 60, 0, input);
+					new NoViableAltException("", 62, 0, input);
 				throw nvae;
 			}
-			switch (alt60) {
+			switch (alt62) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:309:5: DotX
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:310:5: DotX
 					{
-					match(input,DotX,FOLLOW_DotX_in_dotExpression2944); 
+					match(input,DotX,FOLLOW_DotX_in_dotExpression2970); 
 					node = new XPropertyNode();
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:310:5: DotY
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:311:5: DotY
 					{
-					match(input,DotY,FOLLOW_DotY_in_dotExpression2952); 
+					match(input,DotY,FOLLOW_DotY_in_dotExpression2978); 
 					node = new YPropertyNode();
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:311:5: DotStart
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:312:5: DotStart
 					{
-					match(input,DotStart,FOLLOW_DotStart_in_dotExpression2960); 
+					match(input,DotStart,FOLLOW_DotStart_in_dotExpression2986); 
 					node = new StartPropertyNode();
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:312:5: DotEnd
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:313:5: DotEnd
 					{
-					match(input,DotEnd,FOLLOW_DotEnd_in_dotExpression2968); 
+					match(input,DotEnd,FOLLOW_DotEnd_in_dotExpression2994); 
 					node = new EndPropertyNode();
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:313:5: DotOrigin
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:314:5: DotOrigin
 					{
-					match(input,DotOrigin,FOLLOW_DotOrigin_in_dotExpression2976); 
+					match(input,DotOrigin,FOLLOW_DotOrigin_in_dotExpression3002); 
 					node = new OriginPropertyNode();
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:314:5: DotRotation
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:315:5: DotRotation
 					{
-					match(input,DotRotation,FOLLOW_DotRotation_in_dotExpression2984); 
+					match(input,DotRotation,FOLLOW_DotRotation_in_dotExpression3010); 
 					node = new RotationPropertyNode();
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:315:5: DotWidth
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:316:5: DotWidth
 					{
-					match(input,DotWidth,FOLLOW_DotWidth_in_dotExpression2992); 
+					match(input,DotWidth,FOLLOW_DotWidth_in_dotExpression3018); 
 					node = new WidthPropertyNode();
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:316:5: DotHeight
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:317:5: DotHeight
 					{
-					match(input,DotHeight,FOLLOW_DotHeight_in_dotExpression3000); 
+					match(input,DotHeight,FOLLOW_DotHeight_in_dotExpression3026); 
 					node = new HeightPropertyNode();
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:317:5: DotFill
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:318:5: DotFill
 					{
-					match(input,DotFill,FOLLOW_DotFill_in_dotExpression3008); 
+					match(input,DotFill,FOLLOW_DotFill_in_dotExpression3034); 
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:318:5: DotStroke
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:319:5: DotStroke
 					{
-					match(input,DotStroke,FOLLOW_DotStroke_in_dotExpression3015); 
+					match(input,DotStroke,FOLLOW_DotStroke_in_dotExpression3041); 
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:319:5: DotWeight
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:320:5: DotWeight
 					{
-					match(input,DotWeight,FOLLOW_DotWeight_in_dotExpression3022); 
+					match(input,DotWeight,FOLLOW_DotWeight_in_dotExpression3048); 
 					}
 					break;
 
@@ -4748,7 +4826,7 @@ public class PogoTreeWalker extends TreeParser {
 	public static final BitSet FOLLOW_block_in_walk65 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_BLOCK_in_block96 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_STATEMENTS_in_block99 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_statement_in_block102 = new BitSet(new long[]{0x0280000000000048L,0x0800000000004000L,0x0000000000800000L});
+	public static final BitSet FOLLOW_statement_in_block102 = new BitSet(new long[]{0x0280000000000048L,0x2000000000008000L,0x0000000002000000L});
 	public static final BitSet FOLLOW_RETURN_in_block110 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_expression_in_block113 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_assignment_in_statement142 = new BitSet(new long[]{0x0000000000000002L});
@@ -4758,23 +4836,23 @@ public class PogoTreeWalker extends TreeParser {
 	public static final BitSet FOLLOW_whileStatement_in_statement189 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_repeatStatement_in_statement197 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_ASSIGNMENT_in_assignment218 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_assignment220 = new BitSet(new long[]{0x0C08000110024108L,0x00090CE40C848400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_indexes_in_assignment222 = new BitSet(new long[]{0x0C08000110024108L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Identifier_in_assignment220 = new BitSet(new long[]{0x0C08000110024108L,0x002431C819090800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_indexes_in_assignment222 = new BitSet(new long[]{0x0C08000110024108L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_assignment225 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall253 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_Identifier_in_functionCall255 = new BitSet(new long[]{0x0000800000000008L});
 	public static final BitSet FOLLOW_exprList_in_functionCall257 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall269 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Println_in_functionCall271 = new BitSet(new long[]{0x0C08000110024108L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Println_in_functionCall271 = new BitSet(new long[]{0x0C08000110024108L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_functionCall273 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall286 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Print_in_functionCall288 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Print_in_functionCall288 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_functionCall290 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall305 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Assert_in_functionCall307 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Assert_in_functionCall307 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_functionCall309 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall323 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Size_in_functionCall325 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Size_in_functionCall325 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_functionCall327 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_functionCall343 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_LAdd_in_functionCall345 = new BitSet(new long[]{0x0000800000000008L});
@@ -4824,7 +4902,7 @@ public class PogoTreeWalker extends TreeParser {
 	public static final BitSet FOLLOW_Heading_in_transformCall644 = new BitSet(new long[]{0x0000800000000008L});
 	public static final BitSet FOLLOW_exprList_in_transformCall646 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall659 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Copy_in_transformCall661 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Copy_in_transformCall661 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_transformCall663 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall674 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_Rotate_in_transformCall676 = new BitSet(new long[]{0x0000800000000008L});
@@ -4836,37 +4914,37 @@ public class PogoTreeWalker extends TreeParser {
 	public static final BitSet FOLLOW_Stroke_in_transformCall708 = new BitSet(new long[]{0x0000800000000008L});
 	public static final BitSet FOLLOW_exprList_in_transformCall710 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall721 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_NoFill_in_transformCall723 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_NoFill_in_transformCall723 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_transformCall725 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall735 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_NoStroke_in_transformCall737 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_NoStroke_in_transformCall737 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_transformCall739 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall749 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_Weight_in_transformCall751 = new BitSet(new long[]{0x0000800000000008L});
 	public static final BitSet FOLLOW_exprList_in_transformCall753 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall764 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Hide_in_transformCall766 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Hide_in_transformCall766 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_transformCall768 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall778 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Show_in_transformCall780 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Show_in_transformCall780 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_transformCall782 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall792 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_Group_in_transformCall794 = new BitSet(new long[]{0x0000800000000008L});
 	public static final BitSet FOLLOW_exprList_in_transformCall796 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall807 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Expand_in_transformCall809 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Expand_in_transformCall809 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_transformCall811 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall820 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Merge_in_transformCall822 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Merge_in_transformCall822 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_transformCall824 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall833 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_Scale_in_transformCall835 = new BitSet(new long[]{0x0000800000000008L});
 	public static final BitSet FOLLOW_exprList_in_transformCall837 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall847 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_MirrorX_in_transformCall849 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_MirrorX_in_transformCall849 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_transformCall851 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall860 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_MirrorY_in_transformCall862 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_MirrorY_in_transformCall862 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_transformCall864 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall873 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_Union_in_transformCall875 = new BitSet(new long[]{0x0000800000000008L});
@@ -4890,201 +4968,207 @@ public class PogoTreeWalker extends TreeParser {
 	public static final BitSet FOLLOW_Arc_in_patternCall983 = new BitSet(new long[]{0x0000800000000008L});
 	public static final BitSet FOLLOW_exprList_in_patternCall985 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1014 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Cosine_in_mathCall1016 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Cosine_in_mathCall1016 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_mathCall1018 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1028 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Sine_in_mathCall1030 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Sine_in_mathCall1030 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_mathCall1032 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1042 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Tan_in_mathCall1044 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Tan_in_mathCall1044 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_mathCall1046 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1056 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ATan_in_mathCall1058 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_ATan_in_mathCall1058 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_mathCall1060 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1074 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Random_in_mathCall1076 = new BitSet(new long[]{0x0000800000000008L});
-	public static final BitSet FOLLOW_exprList_in_mathCall1078 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1089 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Round_in_mathCall1091 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1093 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1103 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Map_in_mathCall1105 = new BitSet(new long[]{0x0000800000000008L});
-	public static final BitSet FOLLOW_exprList_in_mathCall1107 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1118 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Inch_in_mathCall1120 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1122 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1131 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Mm_in_mathCall1133 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1135 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1070 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Random_in_mathCall1072 = new BitSet(new long[]{0x0000800000000008L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1074 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1085 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Gaussian_in_mathCall1087 = new BitSet(new long[]{0x0000800000000008L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1089 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1100 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Noise_in_mathCall1102 = new BitSet(new long[]{0x0000800000000008L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1104 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1115 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Round_in_mathCall1117 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1119 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1129 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Map_in_mathCall1131 = new BitSet(new long[]{0x0000800000000008L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1133 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1144 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Cm_in_mathCall1146 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Inch_in_mathCall1146 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_mathCall1148 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1157 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Units_in_mathCall1159 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_Mm_in_mathCall1159 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_mathCall1161 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1196 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetWidth_in_getCall1198 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_getCall1200 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1210 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetHeight_in_getCall1212 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_getCall1214 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1223 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetX_in_getCall1225 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_getCall1227 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1170 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Cm_in_mathCall1172 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1174 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1183 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Units_in_mathCall1185 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1187 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1222 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetWidth_in_getCall1224 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_getCall1226 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1236 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetY_in_getCall1238 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_GetHeight_in_getCall1238 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_getCall1240 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1249 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetOrigin_in_getCall1251 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_GetX_in_getCall1251 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_getCall1253 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1262 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetRotation_in_getCall1264 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_GetY_in_getCall1264 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_getCall1266 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1275 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetFill_in_getCall1277 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
+	public static final BitSet FOLLOW_GetOrigin_in_getCall1277 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
 	public static final BitSet FOLLOW_expression_in_getCall1279 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1287 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetStroke_in_getCall1289 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_getCall1291 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1299 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetStart_in_getCall1301 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_getCall1303 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1310 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetEnd_in_getCall1312 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_getCall1314 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1322 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetDistance_in_getCall1324 = new BitSet(new long[]{0x0000800000000008L});
-	public static final BitSet FOLLOW_exprList_in_getCall1326 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1288 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetRotation_in_getCall1290 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_getCall1292 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1301 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetFill_in_getCall1303 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_getCall1305 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1313 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetStroke_in_getCall1315 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_getCall1317 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1325 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetStart_in_getCall1327 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_getCall1329 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1336 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetIntersect_in_getCall1338 = new BitSet(new long[]{0x0000800000000008L});
-	public static final BitSet FOLLOW_exprList_in_getCall1340 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_IF_in_ifStatement1374 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ifStat_in_ifStatement1376 = new BitSet(new long[]{0x0000400000000008L});
-	public static final BitSet FOLLOW_elseIfStat_in_ifStatement1380 = new BitSet(new long[]{0x0000400000000008L});
-	public static final BitSet FOLLOW_elseStat_in_ifStatement1386 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_EXP_in_ifStat1406 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_ifStat1408 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_block_in_ifStat1410 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_EXP_in_elseIfStat1429 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_elseIfStat1431 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_block_in_elseIfStat1433 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_EXP_in_elseStat1452 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_block_in_elseStat1454 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_For_in_forStatement1479 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_forStatement1481 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_forStatement1485 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_forStatement1489 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_block_in_forStatement1491 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Repeat_in_repeatStatement1514 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_repeatStatement1516 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement1520 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement1524 = new BitSet(new long[]{0x0C08000110026100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement1529 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_block_in_repeatStatement1533 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_While_in_whileStatement1556 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_whileStatement1558 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_block_in_whileStatement1560 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_ID_LIST_in_idList1587 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_idList1590 = new BitSet(new long[]{0x0000000000000008L,0x0000000000010000L});
-	public static final BitSet FOLLOW_EXP_LIST_in_exprList1620 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_exprList1623 = new BitSet(new long[]{0x0C08000110024108L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_TERNARY_in_expression1648 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1652 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1656 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1660 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_In_in_expression1671 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1675 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1679 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_155_in_expression1708 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1712 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1716 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_153_in_expression1743 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1747 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1751 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Equals_in_expression1778 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1782 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1786 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_NEquals_in_expression1813 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1817 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1821 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_GTEquals_in_expression1848 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1852 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1856 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LTEquals_in_expression1883 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1887 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1891 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_GT_in_expression1918 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1922 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1926 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LT_in_expression1954 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1958 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1962 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Add_in_expression1990 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression1994 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression1998 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Subtract_in_expression2026 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2030 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression2034 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Multiply_in_expression2062 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2066 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression2070 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Divide_in_expression2098 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2102 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression2106 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Modulus_in_expression2134 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2138 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression2142 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Pow_in_expression2170 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2174 = new BitSet(new long[]{0x0C08000110024100L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_expression_in_expression2178 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_UNARY_MIN_in_expression2206 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2210 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_NEGATE_in_expression2245 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2249 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Number_in_expression2286 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Bool_in_expression2338 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Null_in_expression2392 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_lookup_in_expression2446 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_COLOR_CONSTANT_in_expression2498 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_PI_CONSTANT_in_expression2517 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_WIDTH_CONSTANT_in_expression2563 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_HEIGHT_CONSTANT_in_expression2608 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LIST_in_list2667 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_exprList_in_list2669 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_DOTPROPERTY_in_lookup2692 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_functionCall_in_lookup2694 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_dotProperty_in_lookup2696 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_DOTPROPERTY_in_lookup2704 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_lookup2706 = new BitSet(new long[]{0x0000000004000000L});
-	public static final BitSet FOLLOW_dotProperty_in_lookup2708 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup2732 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_functionCall_in_lookup2734 = new BitSet(new long[]{0x0000000000000008L,0x0000000000008000L});
-	public static final BitSet FOLLOW_indexes_in_lookup2738 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup2750 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_list_in_lookup2752 = new BitSet(new long[]{0x0000000000000008L,0x0000000000008000L});
-	public static final BitSet FOLLOW_indexes_in_lookup2756 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_GetEnd_in_getCall1338 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_getCall1340 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1348 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetDistance_in_getCall1350 = new BitSet(new long[]{0x0000800000000008L});
+	public static final BitSet FOLLOW_exprList_in_getCall1352 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1362 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetIntersect_in_getCall1364 = new BitSet(new long[]{0x0000800000000008L});
+	public static final BitSet FOLLOW_exprList_in_getCall1366 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_IF_in_ifStatement1400 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ifStat_in_ifStatement1402 = new BitSet(new long[]{0x0000400000000008L});
+	public static final BitSet FOLLOW_elseIfStat_in_ifStatement1406 = new BitSet(new long[]{0x0000400000000008L});
+	public static final BitSet FOLLOW_elseStat_in_ifStatement1412 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_EXP_in_ifStat1432 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_ifStat1434 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_block_in_ifStat1436 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_EXP_in_elseIfStat1455 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_elseIfStat1457 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_block_in_elseIfStat1459 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_EXP_in_elseStat1478 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_block_in_elseStat1480 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_For_in_forStatement1505 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_forStatement1507 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_forStatement1511 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_forStatement1515 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_block_in_forStatement1517 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Repeat_in_repeatStatement1540 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_repeatStatement1542 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement1546 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement1550 = new BitSet(new long[]{0x0C08000110026100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement1555 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_block_in_repeatStatement1559 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_While_in_whileStatement1582 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_whileStatement1584 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_block_in_whileStatement1586 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_ID_LIST_in_idList1613 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_idList1616 = new BitSet(new long[]{0x0000000000000008L,0x0000000000020000L});
+	public static final BitSet FOLLOW_EXP_LIST_in_exprList1646 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_exprList1649 = new BitSet(new long[]{0x0C08000110024108L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_TERNARY_in_expression1674 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1678 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1682 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1686 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_In_in_expression1697 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1701 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1705 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_157_in_expression1734 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1738 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1742 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_155_in_expression1769 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1773 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1777 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Equals_in_expression1804 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1808 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1812 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_NEquals_in_expression1839 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1843 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1847 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_GTEquals_in_expression1874 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1878 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1882 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LTEquals_in_expression1909 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1913 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1917 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_GT_in_expression1944 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1948 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1952 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LT_in_expression1980 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression1984 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression1988 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Add_in_expression2016 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2020 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression2024 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Subtract_in_expression2052 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2056 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression2060 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Multiply_in_expression2088 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2092 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression2096 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Divide_in_expression2124 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2128 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression2132 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Modulus_in_expression2160 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2164 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression2168 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Pow_in_expression2196 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2200 = new BitSet(new long[]{0x0C08000110024100L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_expression_in_expression2204 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_UNARY_MIN_in_expression2232 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2236 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_NEGATE_in_expression2271 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2275 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Number_in_expression2312 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Bool_in_expression2364 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Null_in_expression2418 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_lookup_in_expression2472 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_COLOR_CONSTANT_in_expression2524 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_PI_CONSTANT_in_expression2543 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_WIDTH_CONSTANT_in_expression2589 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_HEIGHT_CONSTANT_in_expression2634 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LIST_in_list2693 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_exprList_in_list2695 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_DOTPROPERTY_in_lookup2718 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_functionCall_in_lookup2720 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_dotProperty_in_lookup2722 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_DOTPROPERTY_in_lookup2730 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_lookup2732 = new BitSet(new long[]{0x0000000004000000L});
+	public static final BitSet FOLLOW_dotProperty_in_lookup2734 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup2758 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_functionCall_in_lookup2760 = new BitSet(new long[]{0x0000000000000008L,0x0000000000010000L});
+	public static final BitSet FOLLOW_indexes_in_lookup2764 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_LOOKUP_in_lookup2776 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_lookup2778 = new BitSet(new long[]{0x0000000000000008L,0x0000000000008000L});
+	public static final BitSet FOLLOW_list_in_lookup2778 = new BitSet(new long[]{0x0000000000000008L,0x0000000000010000L});
 	public static final BitSet FOLLOW_indexes_in_lookup2782 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup2796 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_lookup2798 = new BitSet(new long[]{0x0000000000000008L,0x0000000000008000L});
-	public static final BitSet FOLLOW_indexes_in_lookup2802 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup2816 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_String_in_lookup2818 = new BitSet(new long[]{0x0000000000000008L,0x0000000000008000L});
-	public static final BitSet FOLLOW_indexes_in_lookup2822 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_INDEXES_in_indexes2872 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_indexes2875 = new BitSet(new long[]{0x0C08000110024108L,0x00090CE40C840400L,0x000000000A123000L});
-	public static final BitSet FOLLOW_DOT_in_dotProperty2913 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_dotExpression_in_dotProperty2916 = new BitSet(new long[]{0x00003FF800000008L});
-	public static final BitSet FOLLOW_DotX_in_dotExpression2944 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotY_in_dotExpression2952 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotStart_in_dotExpression2960 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotEnd_in_dotExpression2968 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotOrigin_in_dotExpression2976 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotRotation_in_dotExpression2984 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotWidth_in_dotExpression2992 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotHeight_in_dotExpression3000 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotFill_in_dotExpression3008 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotStroke_in_dotExpression3015 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotWeight_in_dotExpression3022 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup2802 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_lookup2804 = new BitSet(new long[]{0x0000000000000008L,0x0000000000010000L});
+	public static final BitSet FOLLOW_indexes_in_lookup2808 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup2822 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_lookup2824 = new BitSet(new long[]{0x0000000000000008L,0x0000000000010000L});
+	public static final BitSet FOLLOW_indexes_in_lookup2828 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup2842 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_String_in_lookup2844 = new BitSet(new long[]{0x0000000000000008L,0x0000000000010000L});
+	public static final BitSet FOLLOW_indexes_in_lookup2848 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_INDEXES_in_indexes2898 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_indexes2901 = new BitSet(new long[]{0x0C08000110024108L,0x002431C819080800L,0x000000002848C000L});
+	public static final BitSet FOLLOW_DOT_in_dotProperty2939 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_dotExpression_in_dotProperty2942 = new BitSet(new long[]{0x00003FF800000008L});
+	public static final BitSet FOLLOW_DotX_in_dotExpression2970 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotY_in_dotExpression2978 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotStart_in_dotExpression2986 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotEnd_in_dotExpression2994 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotOrigin_in_dotExpression3002 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotRotation_in_dotExpression3010 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotWidth_in_dotExpression3018 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotHeight_in_dotExpression3026 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotFill_in_dotExpression3034 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotStroke_in_dotExpression3041 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotWeight_in_dotExpression3048 = new BitSet(new long[]{0x0000000000000002L});
 }

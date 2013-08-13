@@ -18,6 +18,8 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
+import java.util.Random;
+
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -26,12 +28,15 @@ import javax.swing.JSplitPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
+
+
 import com.pixelmaid.dresscode.app.ui.tools.*;
 
 import com.pixelmaid.dresscode.data.DCProject;
 import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.InstructionManager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.math.PerlinNoise;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
@@ -108,7 +113,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	//keyboard booleans
 	private boolean altKey = false;
 	private boolean ctrlKey = false;
-
+	
+	public static Random mainRandom; //random component for code
+	public static PerlinNoise noise; //PGraphics for accessing noise for all code
+	
 	public DisplayFrame(){
 		
 	}
@@ -362,12 +370,17 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		this.addWindowListener(this);
 		this.addComponentListener(this);
 		
+		//setup random and noise generators
+		mainRandom = new Random();
+		noise = new PerlinNoise();
+		
 		//run window
 		canvas.init();
 		this.getContentPane().doLayout();
 		this.pack();
 		this.setResizable(true);
 		this.setVisible(true);
+		
 	}
 	
 	//creates main menu
@@ -451,7 +464,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 //reports errors that occurred in parse
 	//TODO: IMPROVE ERROR REPORTING
 	 private void reportErrors(String errorTxt){
-		 console.reportErrors(errorTxt);
+		 console.reportErrors("error="+errorTxt);
 	 }
 	 
 	//resets buttons to non-active states

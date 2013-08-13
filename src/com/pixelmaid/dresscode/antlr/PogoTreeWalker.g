@@ -167,8 +167,9 @@ functionCall returns [DCNode node]
    |^(FUNC_CALL Sine expression) {node = new SineNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Tan expression) {node = new TanNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL ATan expression) {node = new ATanNode($expression.node,$FUNC_CALL.getLine());}
-   
    |^(FUNC_CALL Random exprList?) {node = new RandomNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Gaussian exprList?) {node = new GaussianNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Noise exprList?) {node = new NoiseNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Round expression) {node = new RoundNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Map exprList?) {node = new MapNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Inch expression){node = new ConversionNode($expression.node,"inch",unitParam,$FUNC_CALL.getLine());}

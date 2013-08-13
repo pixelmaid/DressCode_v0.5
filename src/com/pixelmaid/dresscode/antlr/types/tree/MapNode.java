@@ -3,7 +3,6 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 
 import java.util.List;
-import java.util.Random;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
@@ -41,7 +40,7 @@ public class MapNode  extends NodeEvent implements DCNode {
   	return new VarType(returnVal);
   	}
   	catch (ClassCastException e){
-  		throw new RuntimeException("Illegal cosine function call at line:"+ line+" : " + this);
+  		throw new RuntimeException("Illegal map function call at line:"+ line+" : " + this);
   	}
   }
 
