@@ -726,6 +726,7 @@ public static Point findCentroid(Polygon polygon)
 	cy*=factor;
 	res = new Point(cx,cy);
 	//System.out.println("centroid="+cx+","+cy);
+	verticies.remove(verticies.size()-1);
 	return res;
 } 
     

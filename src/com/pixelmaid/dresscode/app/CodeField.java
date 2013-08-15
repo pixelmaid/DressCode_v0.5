@@ -168,6 +168,13 @@ public JMenuItem getUndoMenu(){
 		
 	}
 	
+	
+	public void addText(String t){
+		String text = this.getText();
+		text +=t;
+		this.setText(text);
+	}
+	
 	public void removeText(int pos, int endPos) {
 		String text = this.getText();
 		text = text.substring(0,pos)+text.substring(endPos);

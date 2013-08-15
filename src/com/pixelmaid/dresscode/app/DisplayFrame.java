@@ -35,6 +35,7 @@ import com.pixelmaid.dresscode.app.ui.tools.*;
 import com.pixelmaid.dresscode.data.DCProject;
 import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.InstructionManager;
+import com.pixelmaid.dresscode.data.Stamp;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.PerlinNoise;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
@@ -93,7 +94,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private ArrayList<ImageButton> buttonList =  new ArrayList<ImageButton>(); //array that holds buttons
 	
 	//menu items
-	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction, saveAsAction;
+	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction, saveAsAction, stampAction;
 	
 	private DCProject currentProject; //data structure that manages project data
 	
@@ -355,6 +356,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	    exitAction.addActionListener(this);
 	    exportAction.addActionListener(this);
 	    importAction.addActionListener(this);  
+	    stampAction.addActionListener(this);  
 
 		//setup key listeners
 		drawingToolbar.addKeyListener(this);
@@ -412,6 +414,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        copyAction = new JMenuItem("Copy");
 	        pasteAction = new JMenuItem("Paste");
 	        cutAction = new JMenuItem("Cut");
+	        stampAction = new JMenuItem("Create stamp from selected objects");
 	        
 	     
 	        fileMenu.add(newAction);
@@ -425,6 +428,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        fileMenu.add(exitAction);
 	        editMenu.add(codeField.getUndoMenu());
 	        editMenu.add(codeField.getRedoMenu());
+	        editMenu.add(stampAction);
 	    }
 	 //=================End setup methods=======================//
 
@@ -437,6 +441,24 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void drawIntoCanvas(){
 		 treeManager.getNodes(drawableManager.getDrawables());
 		 canvas.setDrawables(drawableManager.getDrawables());
+	 }
+	 
+	 /* called when create stamp is selected from menu
+	  * creates a stamp out of the currently selected drawable
+	  * add stamp to stamp palette
+	  */
+	 private void createStamp(){
+		 Drawable selected = selectTool.getSelected();
+		 if(selected!=null){
+			 Stamp stamp = new Stamp();
+			 ArrayList<Drawable> d= new ArrayList<Drawable>();
+			 d.add(selected);
+			 stamp.setDrawables(d);
+			 codeField.addText("\n"+stamp.getFunctionDef());
+		 }
+		 else{
+			 System.out.println("no objected selected, cannot create stamp!");
+		 }
 	 }
 	 
 	 /*sets code parse in motion*/
@@ -829,6 +851,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		else if (e.getSource() == exitAction) {
 			System.exit(DISPOSE_ON_CLOSE);
 
+		}
+		else if (e.getSource() == stampAction){
+			createStamp();
 		}
 		
 		canvas.redraw();

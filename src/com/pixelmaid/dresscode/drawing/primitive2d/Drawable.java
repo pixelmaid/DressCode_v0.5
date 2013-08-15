@@ -44,7 +44,7 @@ public class Drawable extends NodeEvent  {
 	private boolean gModified = false; //flag for if last line was modified in code or with graphic tool
 	protected final static int DEFAULT_WIDTH= 50;
 	protected boolean isHole = false;
-
+	private boolean selected = false;
 	private String error; 
 	
 	//===============PRIVATE METHODS=================//
@@ -117,6 +117,7 @@ public class Drawable extends NodeEvent  {
 				for(int j =0;j<this.children.size();j++){
 					if(!this.children.get(j).getHide()){
 						this.children.get(j).draw(embedded);
+						
 					}
 					
 				}
@@ -202,7 +203,7 @@ public void drawOrigin(Canvas embedded){
 	}
 	
 	public void drawBoundingBox(Canvas e){
-		e.stroke(0,0,0);
+		e.stroke(255,0,0);
 		e.noFill();
 		e.strokeWeight(1);
 		e.pushMatrix();
@@ -212,6 +213,7 @@ public void drawOrigin(Canvas embedded){
 		e.rectMode(PConstants.LEFT);
 		e.rect(0,0,(float)this.getWidth(),(float)this.getHeight());
 		e.popMatrix();
+		System.out.println("drawing bounding box");
 	}
 	
 
@@ -384,6 +386,15 @@ public void drawOrigin(Canvas embedded){
 	 //sets whether or not to draw the object's origin on the canvas
 	public void setDrawOrigin(boolean d){
 		drawOrigin=d;
+	}
+	//sets if the drawable is selected or not
+	public void setSelected(boolean s){
+		this.selected = s;
+	}
+	
+	//returns current value of selected
+	public boolean getSelected(){
+		return selected;
 	}
 
 	public void addToCanvas(){

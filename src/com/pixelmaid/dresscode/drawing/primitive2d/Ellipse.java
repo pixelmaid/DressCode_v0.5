@@ -81,6 +81,10 @@ public class Ellipse extends Polygon {
 		e.ellipse(0,0,(float)width,(float)height);
 		e.popMatrix();
 		
+		if(this.getSelected()){
+			this.drawBoundingBox(e);
+		}
+		
 		/*if(this.getDrawOrigin()){
 			this.drawOrigin(e);
 		}*/

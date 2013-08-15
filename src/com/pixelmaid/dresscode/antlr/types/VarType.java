@@ -6,6 +6,7 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Color;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
+import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -209,11 +210,15 @@ public class VarType implements Comparable<VarType> {
 	  public boolean isEllipse(){
 		  return value instanceof Ellipse;
 	  }
-	  
+	  public boolean isLShape() {
+		  return value instanceof LShape;
+		}
 	  @Override  
 	  public String toString() {  
 	    return isNull() ? "NULL" : isVoid() ? "VOID" : String.valueOf(value);  
 	  }
+
+	
 
 	  
 	}  

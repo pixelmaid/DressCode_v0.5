@@ -213,6 +213,13 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	public Point getEnd(){
 		return this.end.copy();
 	}
+	
+	public Point getControl1(){
+		return this.control1.copy();
+	}
+	public Point getControl2(){
+		return this.control2.copy();
+	}
 			
 
 

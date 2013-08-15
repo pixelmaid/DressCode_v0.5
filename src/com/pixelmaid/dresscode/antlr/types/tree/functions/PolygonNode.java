@@ -20,7 +20,7 @@ public class PolygonNode extends DrawableNode implements DCNode {
 		Polygon e = null;
 
 		try{
-			if(params.size()==0){
+			if(params==null){
 				e= new Polygon();
 			}
 			else if(params.get(0).evaluate().isDrawablePoint()){

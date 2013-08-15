@@ -17,7 +17,7 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	protected ArrayList<Point> points;
 	//private ArrayList<Hole> holes;
-	boolean closed = false;
+	boolean closed = true;
 	private static double DEFAULT_LENGTH = 20;
 	
 	public Polygon(){
@@ -67,11 +67,53 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	
 	public void addPoint(Double x, Double y){
 		addPoint(new Point(x,y));
+		
 	}
 	
-	
-	public void addPoint(Point point){
+	protected void addPoint(Point point){
 		this.points.add(point);
+	}
+	
+	public void addDynamicPoint(Point point){
+		System.out.println("=======================\n starting number of points"+this.points.size());
+		
+		if(this.points.size()>1){
+			
+			System.out.println("\n before set absolute");
+			for(int i=0;i<points.size();i++){
+				System.out.println(points.get(i).getX()+","+points.get(i).getY());
+			}
+			
+			this.setPointsAbsolute();
+			
+			System.out.println("\n after set absolute");
+			System.out.println("number of points"+this.points.size());
+			for(int i=0;i<points.size();i++){
+				System.out.println(points.get(i).getX()+","+points.get(i).getY());
+			}
+			System.out.println("\n adding point at: "+point.getX()+","+point.getY());
+
+			this.points.add(point);
+			System.out.println("number of points"+this.points.size());
+
+			this.setOrigin(Geom.findCentroid(this));
+			System.out.println("\n after find centroid");
+			System.out.println("\n centroid at: "+origin.getX()+","+origin.getY());
+			System.out.println("number of points"+this.points.size());
+
+			this.setPointsRelativeTo(this.getOrigin());
+			
+			System.out.println("\n after set relative");
+			System.out.println("number of points"+this.points.size());
+			for(int i=0;i<points.size();i++){
+				System.out.println(points.get(i).getX()+","+points.get(i).getY());
+			}
+			
+		}
+		else{
+			this.points.add(point);
+		}
+
 	}
 	public void reversePoints(){
 		Collections.reverse(this.points);

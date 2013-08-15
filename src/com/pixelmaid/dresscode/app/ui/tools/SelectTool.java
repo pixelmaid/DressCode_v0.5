@@ -22,6 +22,9 @@ public class SelectTool extends Tool  {
 	}
 	
 	public void reset(){
+		if(selectedDrawable!=null){
+			selectedDrawable.setSelected(false);
+		}
 		selectedDrawable = null;
 		selected = false;
 		moved = false;
@@ -48,19 +51,21 @@ public class SelectTool extends Tool  {
 	
 	@Override
 	public void mousePressed(double mouseX, double mouseY) {
-
+		reset();
 		for(int i=tempDrawables.size()-1;i>=0;i--){
 			Point origin = tempDrawables.get(i).getOrigin();
 			
 			if((Math.abs(mouseX-origin.getX())<selectDist)&&(Math.abs(mouseY-origin.getY())<selectDist)){
 				selectedDrawable = tempDrawables.get(i);
 				selected=true;
-			
+				selectedDrawable.setSelected(true);
 				System.out.println("selected object at"+i);
+				this.fireToolEvent(CustomEvent.REDRAW_REQUEST);
 				break;
 		
 			}
 		}
+		
 		
 	}
 	
