@@ -1,9 +1,12 @@
 package com.pixelmaid.dresscode.antlr.types.tree.functions;
 
 
+import java.util.ArrayList;
 import java.util.List;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
+import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
@@ -18,10 +21,27 @@ public class PolygonNode extends DrawableNode implements DCNode {
 	@Override
 	public VarType evaluate() {
 		Polygon e = null;
-
+	
 		try{
 			if(params==null){
 				e= new Polygon();
+			}
+			else if(params.get(0).evaluate().isList()){
+				System.out.println("found list "+params.get(0).evaluate().isList());
+				List<VarType> l = params.get(0).evaluate().asList();
+				ArrayList<Point> pts = new ArrayList<Point>();
+				for(int i=0;i<l.size();i++){
+				
+					DrawablePoint dp =l.get(i).asDrawablePoint();
+					
+					Point p = new Point(dp.getX(),dp.getY());
+					pts.add(p);
+					System.out.println("creating point at: "+p.getX()+","+p.getY());
+
+					
+				}
+				System.out.println("creating new polygon");
+				e = new Polygon(pts);
 			}
 			else if(params.get(0).evaluate().isDrawablePoint()){
 				e= new Polygon(params.get(0).evaluate().asDrawablePoint().getOrigin());

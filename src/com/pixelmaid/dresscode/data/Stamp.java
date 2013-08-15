@@ -26,12 +26,17 @@ public class Stamp {
 	private int gId = 0;
 	private int lId=0;
 	private int cId = 0;
+	private int listId = 0;
 	
 	private String currentGroupId = "g";
-	
+	private String functionName="";
+
 	private final String cm = ",";
 	private final String end = ");";
-	
+	private final String functionStart = "def ";
+	private final String functionMiddle = "():";
+	private final String functionEnd = "end";
+	private String returnStatement = "return "+currentGroupId + ";";
 	public Stamp(){
 		
 	}
@@ -40,11 +45,13 @@ public class Stamp {
 	* which are recursively sorted into a function defintion
 	*/
 	
-	public void setDrawables(ArrayList<Drawable> drawables){
-			
+	public void setDrawables(String fName, boolean isStatic, ArrayList<Drawable> drawables){
+		functionName = fName;
+		
 		System.out.println("set drawables for stamp, length="+drawables.size());
 		if(drawables.size()==1 && drawables.get(0).numChildren()==0){
-			setDrawablesRecur(drawables.get(0),false);
+			functionDef += initGroup();
+			setDrawablesRecur(drawables.get(0),true);
 		}
 		else{
 			functionDef += initGroup();
@@ -52,6 +59,8 @@ public class Stamp {
 				setDrawablesRecur(drawables.get(i),true);
 			}
 		}
+		functionDef = functionStart+functionName+functionMiddle+"\n"+functionDef+"\n"+returnStatement+"\n"+functionEnd;
+		functionCall = functionName+"();";
 	}
 	/*recursive drawable sorting function
 	 * called by setDrawables
@@ -134,23 +143,30 @@ public class Stamp {
 	// individual drawable type statement creators
 		private String addPolyStatement(Polygon e, boolean toGroup){
 			String id ="p"+pId;
-			String start = id +" = poly();";
+			String list  = "lst"+listId+" =[";
+			String listEnd = "];";
+			String start = id +" = poly("+"lst"+listId+end;
 			
-			String statement = start;
+			String statement = "";
 			Polygon eC = e.copy();
 			eC.setPointsAbsolute();
 			ArrayList<Point> points = eC.getPoints();
 			for(int i=0;i<points.size();i++){
-				String pointSt = "\nadd("+id+cm+roundNum(points.get(i).getX())+cm+roundNum(points.get(i).getY())+end;
-				statement = statement+pointSt;
+				String pointSt = "point("+roundNum(points.get(i).getX())+cm+roundNum(points.get(i).getY())+")";
+				if(i!=points.size()-1){
+					pointSt+=",";
+				}
+				list+=pointSt;
 			}
-		
+			list+=listEnd;
+			statement +=list+"\n"+start;
 			statement = checkDefaults(e,id,statement);
 			if(toGroup){
 				statement = addGroupStatement(id, statement);
 			}
 			
 			pId++;
+			listId++;
 			return statement;
 		
 		}

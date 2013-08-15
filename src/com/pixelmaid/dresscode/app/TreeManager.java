@@ -13,6 +13,7 @@ import javax.swing.tree.TreeSelectionModel;
 import com.pixelmaid.dresscode.drawing.primitive2d.ComplexPolygon;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
@@ -56,6 +57,9 @@ public class TreeManager {
 		}
 		else if(d instanceof Curve){
 			name = "curve";
+		}
+		else if(d instanceof DrawablePoint){
+			name = "point";
 		}
 		else if(d instanceof LShape){
 			name = "import";

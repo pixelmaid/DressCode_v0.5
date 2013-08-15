@@ -85,6 +85,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private DrawingToolbar drawingToolbar; 
 	private  Canvas canvas; //drawing canvas
 	public static DimensionDialog dimensionDialog; //dialog component for adjusting dimensions of canvas
+	public static StampDialog stampDialog; //dialog component for adjusting dimensions of canvas
 	//drawing panel buttons
 	private ImageButton selectButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton;
 
@@ -276,6 +277,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		splitFrame.addComponentListener(this);
 	
 		this.getContentPane().add(splitFrame);
+		
+		
+		
 	
 		
 		createMenu();
@@ -450,11 +454,15 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void createStamp(){
 		 Drawable selected = selectTool.getSelected();
 		 if(selected!=null){
-			 Stamp stamp = new Stamp();
-			 ArrayList<Drawable> d= new ArrayList<Drawable>();
-			 d.add(selected);
-			 stamp.setDrawables(d);
-			 codeField.addText("\n"+stamp.getFunctionDef());
+			 stampDialog = new StampDialog(this,true);
+			 if(stampDialog.getAnswer()){
+				 Stamp stamp = new Stamp();
+				 ArrayList<Drawable> d= new ArrayList<Drawable>();
+				 d.add(selected);
+				 stamp.setDrawables(stampDialog.getName(),stampDialog.isStatic(),d);
+			 	codeField.addText("\n\n"+stamp.getFunctionDef());
+			 	codeField.addText("\n\n"+stamp.getFunctionCall());
+			 }
 		 }
 		 else{
 			 System.out.println("no objected selected, cannot create stamp!");

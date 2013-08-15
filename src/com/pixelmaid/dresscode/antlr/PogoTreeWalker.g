@@ -103,7 +103,7 @@ functionCall returns [DCNode node]
 @init{
 	//System.out.println("function called");
 }
-  :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions, widthParam, heightParam, unitParam	); ((NodeEvent)node).addEventListener(drawableManager);}
+  :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions, widthParam, heightParam, unitParam,$FUNC_CALL.getLine()); ((NodeEvent)node).addEventListener(drawableManager);}
   |  ^(FUNC_CALL Println expression?)  {node = new PrintlnNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
   |  ^(FUNC_CALL Print expression)     {node = new PrintNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
   |  ^(FUNC_CALL Assert expression)    {node = new AssertNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}

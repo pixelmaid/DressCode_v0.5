@@ -39,6 +39,7 @@ public class DrawablePoint extends Polygon {
     	this.x = x;
     	this.y = y;
     	this.setOrigin(new Point(x,y));
+    	this.hide();
     }
     
 	
@@ -129,8 +130,9 @@ public class DrawablePoint extends Polygon {
 			
 		
 	}
-
-
+@Override
+	public void drawOrigin(Canvas embedded){
+			}
 
 	public double getX() {
 		// TODO Auto-generated method stub

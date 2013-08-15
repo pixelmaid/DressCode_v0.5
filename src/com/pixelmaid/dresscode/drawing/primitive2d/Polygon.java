@@ -65,8 +65,17 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		holes.add(h);
 	}*/
 	
+	public Polygon(ArrayList<Point> pts) {
+		this(new Point(0,0));
+		this.points=pts;
+		this.setOrigin(Geom.findCentroid(this));
+		this.setPointsRelativeTo(this.getOrigin());
+		
+	}
+
 	public void addPoint(Double x, Double y){
 		addPoint(new Point(x,y));
+		
 		
 	}
 	
@@ -79,35 +88,35 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		
 		if(this.points.size()>1){
 			
-			System.out.println("\n before set absolute");
+			/*System.out.println("\n before set absolute");
 			for(int i=0;i<points.size();i++){
 				System.out.println(points.get(i).getX()+","+points.get(i).getY());
-			}
+			}*/
 			
 			this.setPointsAbsolute();
-			
+			/*
 			System.out.println("\n after set absolute");
 			System.out.println("number of points"+this.points.size());
 			for(int i=0;i<points.size();i++){
 				System.out.println(points.get(i).getX()+","+points.get(i).getY());
 			}
 			System.out.println("\n adding point at: "+point.getX()+","+point.getY());
-
+			 */
 			this.points.add(point);
-			System.out.println("number of points"+this.points.size());
+			///System.out.println("number of points"+this.points.size());
 
 			this.setOrigin(Geom.findCentroid(this));
-			System.out.println("\n after find centroid");
+			/*System.out.println("\n after find centroid");
 			System.out.println("\n centroid at: "+origin.getX()+","+origin.getY());
-			System.out.println("number of points"+this.points.size());
+			System.out.println("number of points"+this.points.size());*/
 
 			this.setPointsRelativeTo(this.getOrigin());
 			
-			System.out.println("\n after set relative");
+			/*System.out.println("\n after set relative");
 			System.out.println("number of points"+this.points.size());
 			for(int i=0;i<points.size();i++){
 				System.out.println(points.get(i).getX()+","+points.get(i).getY());
-			}
+			}*/
 			
 		}
 		else{

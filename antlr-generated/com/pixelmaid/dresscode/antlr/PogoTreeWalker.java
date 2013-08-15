@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g 2013-08-13 18:53:18
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g 2013-08-15 18:17:19
 
  package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -606,20 +606,21 @@ public class PogoTreeWalker extends TreeParser {
 
 
 		CommonTree Identifier13=null;
-		CommonTree FUNC_CALL20=null;
-		CommonTree FUNC_CALL22=null;
+		CommonTree FUNC_CALL15=null;
+		CommonTree FUNC_CALL21=null;
+		CommonTree FUNC_CALL23=null;
 		java.util.List<DCNode> exprList14 =null;
-		DCNode expression15 =null;
 		DCNode expression16 =null;
 		DCNode expression17 =null;
 		DCNode expression18 =null;
-		java.util.List<DCNode> exprList19 =null;
-		java.util.List<DCNode> exprList21 =null;
-		DCNode primitiveCall23 =null;
-		DCNode transformCall24 =null;
-		DCNode patternCall25 =null;
-		DCNode mathCall26 =null;
-		DCNode getCall27 =null;
+		DCNode expression19 =null;
+		java.util.List<DCNode> exprList20 =null;
+		java.util.List<DCNode> exprList22 =null;
+		DCNode primitiveCall24 =null;
+		DCNode transformCall25 =null;
+		DCNode patternCall26 =null;
+		DCNode mathCall27 =null;
+		DCNode getCall28 =null;
 
 
 			//System.out.println("function called");
@@ -785,7 +786,7 @@ public class PogoTreeWalker extends TreeParser {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:106:6: ^( FUNC_CALL Identifier ( exprList )? )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall253); 
+					FUNC_CALL15=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall253); 
 					match(input, Token.DOWN, null); 
 					Identifier13=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_functionCall255); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:106:29: ( exprList )?
@@ -809,7 +810,7 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new FunctionCallNode((Identifier13!=null?Identifier13.getText():null), exprList14, functions, widthParam, heightParam, unitParam	); ((NodeEvent)node).addEventListener(drawableManager);
+					node = new FunctionCallNode((Identifier13!=null?Identifier13.getText():null), exprList14, functions, widthParam, heightParam, unitParam,FUNC_CALL15.getLine()); ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 2 :
@@ -829,7 +830,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:107:26: expression
 							{
 							pushFollow(FOLLOW_expression_in_functionCall273);
-							expression15=expression();
+							expression16=expression();
 							state._fsp--;
 
 							}
@@ -839,7 +840,7 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new PrintlnNode(expression15); ((NodeEvent)node).addEventListener(drawableManager);
+					node = new PrintlnNode(expression16); ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 3 :
@@ -849,12 +850,12 @@ public class PogoTreeWalker extends TreeParser {
 					match(input, Token.DOWN, null); 
 					match(input,Print,FOLLOW_Print_in_functionCall288); 
 					pushFollow(FOLLOW_expression_in_functionCall290);
-					expression16=expression();
+					expression17=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new PrintNode(expression16); ((NodeEvent)node).addEventListener(drawableManager);
+					node = new PrintNode(expression17); ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 4 :
@@ -864,12 +865,12 @@ public class PogoTreeWalker extends TreeParser {
 					match(input, Token.DOWN, null); 
 					match(input,Assert,FOLLOW_Assert_in_functionCall307); 
 					pushFollow(FOLLOW_expression_in_functionCall309);
-					expression17=expression();
+					expression18=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new AssertNode(expression17); ((NodeEvent)node).addEventListener(drawableManager);
+					node = new AssertNode(expression18); ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 5 :
@@ -879,18 +880,18 @@ public class PogoTreeWalker extends TreeParser {
 					match(input, Token.DOWN, null); 
 					match(input,Size,FOLLOW_Size_in_functionCall325); 
 					pushFollow(FOLLOW_expression_in_functionCall327);
-					expression18=expression();
+					expression19=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new SizeNode(expression18); ((NodeEvent)node).addEventListener(drawableManager);
+					node = new SizeNode(expression19); ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 6 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:111:6: ^( FUNC_CALL LAdd ( exprList )? )
 					{
-					FUNC_CALL20=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall343); 
+					FUNC_CALL21=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall343); 
 					match(input, Token.DOWN, null); 
 					match(input,LAdd,FOLLOW_LAdd_in_functionCall345); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:111:23: ( exprList )?
@@ -904,7 +905,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:111:23: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_functionCall347);
-							exprList19=exprList();
+							exprList20=exprList();
 							state._fsp--;
 
 							}
@@ -914,13 +915,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new LAddNode(exprList19,FUNC_CALL20.getLine()); ((NodeEvent)node).addEventListener(drawableManager);
+					node = new LAddNode(exprList20,FUNC_CALL21.getLine()); ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 7 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:112:6: ^( FUNC_CALL LRemove ( exprList )? )
 					{
-					FUNC_CALL22=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall360); 
+					FUNC_CALL23=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall360); 
 					match(input, Token.DOWN, null); 
 					match(input,LRemove,FOLLOW_LRemove_in_functionCall362); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:112:26: ( exprList )?
@@ -934,7 +935,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:112:26: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_functionCall364);
-							exprList21=exprList();
+							exprList22=exprList();
 							state._fsp--;
 
 							}
@@ -944,57 +945,57 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new LRemoveNode(exprList21,FUNC_CALL22.getLine()); ((NodeEvent)node).addEventListener(drawableManager);
+					node = new LRemoveNode(exprList22,FUNC_CALL23.getLine()); ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 8 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:113:6: primitiveCall
 					{
 					pushFollow(FOLLOW_primitiveCall_in_functionCall375);
-					primitiveCall23=primitiveCall();
+					primitiveCall24=primitiveCall();
 					state._fsp--;
 
-					node = primitiveCall23; ((NodeEvent)node).addEventListener(drawableManager);
+					node = primitiveCall24; ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 9 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:114:6: transformCall
 					{
 					pushFollow(FOLLOW_transformCall_in_functionCall384);
-					transformCall24=transformCall();
+					transformCall25=transformCall();
 					state._fsp--;
 
-					node = transformCall24; ((NodeEvent)node).addEventListener(drawableManager);
+					node = transformCall25; ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 10 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:115:6: patternCall
 					{
 					pushFollow(FOLLOW_patternCall_in_functionCall393);
-					patternCall25=patternCall();
+					patternCall26=patternCall();
 					state._fsp--;
 
-					node = patternCall25; ((NodeEvent)node).addEventListener(drawableManager);
+					node = patternCall26; ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 11 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:116:6: mathCall
 					{
 					pushFollow(FOLLOW_mathCall_in_functionCall402);
-					mathCall26=mathCall();
+					mathCall27=mathCall();
 					state._fsp--;
 
-					node= mathCall26; ((NodeEvent)node).addEventListener(drawableManager);
+					node= mathCall27; ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 				case 12 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:117:6: getCall
 					{
 					pushFollow(FOLLOW_getCall_in_functionCall411);
-					getCall27=getCall();
+					getCall28=getCall();
 					state._fsp--;
 
-					node= getCall27; ((NodeEvent)node).addEventListener(drawableManager);
+					node= getCall28; ((NodeEvent)node).addEventListener(drawableManager);
 					}
 					break;
 
@@ -1019,20 +1020,20 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		CommonTree FUNC_CALL29=null;
-		CommonTree FUNC_CALL31=null;
-		CommonTree FUNC_CALL33=null;
-		CommonTree FUNC_CALL35=null;
-		CommonTree FUNC_CALL37=null;
-		CommonTree FUNC_CALL39=null;
-		CommonTree FUNC_CALL41=null;
-		java.util.List<DCNode> exprList28 =null;
-		java.util.List<DCNode> exprList30 =null;
-		java.util.List<DCNode> exprList32 =null;
-		java.util.List<DCNode> exprList34 =null;
-		java.util.List<DCNode> exprList36 =null;
-		java.util.List<DCNode> exprList38 =null;
-		java.util.List<DCNode> exprList40 =null;
+		CommonTree FUNC_CALL30=null;
+		CommonTree FUNC_CALL32=null;
+		CommonTree FUNC_CALL34=null;
+		CommonTree FUNC_CALL36=null;
+		CommonTree FUNC_CALL38=null;
+		CommonTree FUNC_CALL40=null;
+		CommonTree FUNC_CALL42=null;
+		java.util.List<DCNode> exprList29 =null;
+		java.util.List<DCNode> exprList31 =null;
+		java.util.List<DCNode> exprList33 =null;
+		java.util.List<DCNode> exprList35 =null;
+		java.util.List<DCNode> exprList37 =null;
+		java.util.List<DCNode> exprList39 =null;
+		java.util.List<DCNode> exprList41 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:123:4: ( ^( FUNC_CALL Ellipse ( exprList )? ) | ^( FUNC_CALL Line ( exprList )? ) | ^( FUNC_CALL Rect ( exprList )? ) | ^( FUNC_CALL Curve ( exprList )? ) | ^( FUNC_CALL Polygon ( exprList )? ) | ^( FUNC_CALL Skirt ( exprList )? ) | ^( FUNC_CALL SkirtBack ( exprList )? ) | ^( FUNC_CALL LShape ( exprList )? ) | ^( FUNC_CALL Point ( exprList )? ) )
@@ -1126,7 +1127,7 @@ public class PogoTreeWalker extends TreeParser {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:123:5: ^( FUNC_CALL Ellipse ( exprList )? )
 					{
-					FUNC_CALL29=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall441); 
+					FUNC_CALL30=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall441); 
 					match(input, Token.DOWN, null); 
 					match(input,Ellipse,FOLLOW_Ellipse_in_primitiveCall443); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:123:25: ( exprList )?
@@ -1140,7 +1141,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:123:25: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall445);
-							exprList28=exprList();
+							exprList29=exprList();
 							state._fsp--;
 
 							}
@@ -1150,13 +1151,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new EllipseNode(exprList28,FUNC_CALL29.getLine());
+					node = new EllipseNode(exprList29,FUNC_CALL30.getLine());
 					}
 					break;
 				case 2 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:124:5: ^( FUNC_CALL Line ( exprList )? )
 					{
-					FUNC_CALL31=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall457); 
+					FUNC_CALL32=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall457); 
 					match(input, Token.DOWN, null); 
 					match(input,Line,FOLLOW_Line_in_primitiveCall459); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:124:22: ( exprList )?
@@ -1170,7 +1171,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:124:22: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall461);
-							exprList30=exprList();
+							exprList31=exprList();
 							state._fsp--;
 
 							}
@@ -1180,13 +1181,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new LineNode(exprList30,FUNC_CALL31.getLine());
+					node = new LineNode(exprList31,FUNC_CALL32.getLine());
 					}
 					break;
 				case 3 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:125:5: ^( FUNC_CALL Rect ( exprList )? )
 					{
-					FUNC_CALL33=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall474); 
+					FUNC_CALL34=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall474); 
 					match(input, Token.DOWN, null); 
 					match(input,Rect,FOLLOW_Rect_in_primitiveCall476); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:125:22: ( exprList )?
@@ -1200,7 +1201,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:125:22: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall478);
-							exprList32=exprList();
+							exprList33=exprList();
 							state._fsp--;
 
 							}
@@ -1210,13 +1211,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new RectangleNode(exprList32,FUNC_CALL33.getLine());
+					node = new RectangleNode(exprList33,FUNC_CALL34.getLine());
 					}
 					break;
 				case 4 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:126:6: ^( FUNC_CALL Curve ( exprList )? )
 					{
-					FUNC_CALL35=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall492); 
+					FUNC_CALL36=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall492); 
 					match(input, Token.DOWN, null); 
 					match(input,Curve,FOLLOW_Curve_in_primitiveCall494); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:126:24: ( exprList )?
@@ -1230,7 +1231,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:126:24: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall496);
-							exprList34=exprList();
+							exprList35=exprList();
 							state._fsp--;
 
 							}
@@ -1240,13 +1241,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new CurveNode(exprList34,FUNC_CALL35.getLine());
+					node = new CurveNode(exprList35,FUNC_CALL36.getLine());
 					}
 					break;
 				case 5 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:127:6: ^( FUNC_CALL Polygon ( exprList )? )
 					{
-					FUNC_CALL37=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall510); 
+					FUNC_CALL38=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall510); 
 					match(input, Token.DOWN, null); 
 					match(input,Polygon,FOLLOW_Polygon_in_primitiveCall512); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:127:26: ( exprList )?
@@ -1260,7 +1261,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:127:26: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall514);
-							exprList36=exprList();
+							exprList37=exprList();
 							state._fsp--;
 
 							}
@@ -1270,7 +1271,7 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new PolygonNode(exprList36,FUNC_CALL37.getLine());
+					node = new PolygonNode(exprList37,FUNC_CALL38.getLine());
 					}
 					break;
 				case 6 :
@@ -1334,7 +1335,7 @@ public class PogoTreeWalker extends TreeParser {
 				case 8 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:130:7: ^( FUNC_CALL LShape ( exprList )? )
 					{
-					FUNC_CALL39=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall558); 
+					FUNC_CALL40=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall558); 
 					match(input, Token.DOWN, null); 
 					match(input,LShape,FOLLOW_LShape_in_primitiveCall560); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:130:26: ( exprList )?
@@ -1348,7 +1349,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:130:26: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall562);
-							exprList38=exprList();
+							exprList39=exprList();
 							state._fsp--;
 
 							}
@@ -1358,13 +1359,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new LShapeNode(exprList38,FUNC_CALL39.getLine());
+					node = new LShapeNode(exprList39,FUNC_CALL40.getLine());
 					}
 					break;
 				case 9 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:131:7: ^( FUNC_CALL Point ( exprList )? )
 					{
-					FUNC_CALL41=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall575); 
+					FUNC_CALL42=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall575); 
 					match(input, Token.DOWN, null); 
 					match(input,Point,FOLLOW_Point_in_primitiveCall577); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:131:25: ( exprList )?
@@ -1378,7 +1379,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:131:25: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall579);
-							exprList40=exprList();
+							exprList41=exprList();
 							state._fsp--;
 
 							}
@@ -1388,7 +1389,7 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new PointNode(exprList40,FUNC_CALL41.getLine());
+					node = new PointNode(exprList41,FUNC_CALL42.getLine());
 					}
 					break;
 
@@ -1413,50 +1414,50 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		CommonTree FUNC_CALL43=null;
-		CommonTree FUNC_CALL45=null;
-		CommonTree FUNC_CALL47=null;
-		CommonTree FUNC_CALL49=null;
-		CommonTree FUNC_CALL51=null;
-		CommonTree FUNC_CALL53=null;
-		CommonTree FUNC_CALL55=null;
-		CommonTree FUNC_CALL57=null;
-		CommonTree FUNC_CALL59=null;
-		CommonTree FUNC_CALL61=null;
-		CommonTree FUNC_CALL63=null;
-		CommonTree FUNC_CALL65=null;
-		CommonTree FUNC_CALL67=null;
-		CommonTree FUNC_CALL69=null;
-		CommonTree FUNC_CALL71=null;
-		CommonTree FUNC_CALL73=null;
-		CommonTree FUNC_CALL75=null;
-		CommonTree FUNC_CALL77=null;
-		CommonTree FUNC_CALL79=null;
-		CommonTree FUNC_CALL81=null;
-		CommonTree FUNC_CALL83=null;
-		CommonTree FUNC_CALL85=null;
-		java.util.List<DCNode> exprList42 =null;
-		java.util.List<DCNode> exprList44 =null;
-		java.util.List<DCNode> exprList46 =null;
-		DCNode expression48 =null;
-		java.util.List<DCNode> exprList50 =null;
-		java.util.List<DCNode> exprList52 =null;
-		java.util.List<DCNode> exprList54 =null;
-		DCNode expression56 =null;
-		DCNode expression58 =null;
-		java.util.List<DCNode> exprList60 =null;
-		DCNode expression62 =null;
-		DCNode expression64 =null;
-		java.util.List<DCNode> exprList66 =null;
-		DCNode expression68 =null;
-		DCNode expression70 =null;
-		java.util.List<DCNode> exprList72 =null;
-		DCNode expression74 =null;
-		DCNode expression76 =null;
-		java.util.List<DCNode> exprList78 =null;
-		java.util.List<DCNode> exprList80 =null;
-		java.util.List<DCNode> exprList82 =null;
-		java.util.List<DCNode> exprList84 =null;
+		CommonTree FUNC_CALL44=null;
+		CommonTree FUNC_CALL46=null;
+		CommonTree FUNC_CALL48=null;
+		CommonTree FUNC_CALL50=null;
+		CommonTree FUNC_CALL52=null;
+		CommonTree FUNC_CALL54=null;
+		CommonTree FUNC_CALL56=null;
+		CommonTree FUNC_CALL58=null;
+		CommonTree FUNC_CALL60=null;
+		CommonTree FUNC_CALL62=null;
+		CommonTree FUNC_CALL64=null;
+		CommonTree FUNC_CALL66=null;
+		CommonTree FUNC_CALL68=null;
+		CommonTree FUNC_CALL70=null;
+		CommonTree FUNC_CALL72=null;
+		CommonTree FUNC_CALL74=null;
+		CommonTree FUNC_CALL76=null;
+		CommonTree FUNC_CALL78=null;
+		CommonTree FUNC_CALL80=null;
+		CommonTree FUNC_CALL82=null;
+		CommonTree FUNC_CALL84=null;
+		CommonTree FUNC_CALL86=null;
+		java.util.List<DCNode> exprList43 =null;
+		java.util.List<DCNode> exprList45 =null;
+		java.util.List<DCNode> exprList47 =null;
+		DCNode expression49 =null;
+		java.util.List<DCNode> exprList51 =null;
+		java.util.List<DCNode> exprList53 =null;
+		java.util.List<DCNode> exprList55 =null;
+		DCNode expression57 =null;
+		DCNode expression59 =null;
+		java.util.List<DCNode> exprList61 =null;
+		DCNode expression63 =null;
+		DCNode expression65 =null;
+		java.util.List<DCNode> exprList67 =null;
+		DCNode expression69 =null;
+		DCNode expression71 =null;
+		java.util.List<DCNode> exprList73 =null;
+		DCNode expression75 =null;
+		DCNode expression77 =null;
+		java.util.List<DCNode> exprList79 =null;
+		java.util.List<DCNode> exprList81 =null;
+		java.util.List<DCNode> exprList83 =null;
+		java.util.List<DCNode> exprList85 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:135:4: ( ^( FUNC_CALL Move ( exprList )? ) | ^( FUNC_CALL MoveBy ( exprList )? ) | ^( FUNC_CALL Heading ( exprList )? ) | ^( FUNC_CALL Copy expression ) | ^( FUNC_CALL Rotate ( exprList )? ) | ^( FUNC_CALL Fill ( exprList )? ) | ^( FUNC_CALL Stroke ( exprList )? ) | ^( FUNC_CALL NoFill expression ) | ^( FUNC_CALL NoStroke expression ) | ^( FUNC_CALL Weight ( exprList )? ) | ^( FUNC_CALL Hide expression ) | ^( FUNC_CALL Show expression ) | ^( FUNC_CALL Group ( exprList )? ) | ^( FUNC_CALL Expand expression ) | ^( FUNC_CALL Merge expression ) | ^( FUNC_CALL Scale ( exprList )? ) | ^( FUNC_CALL MirrorX expression ) | ^( FUNC_CALL MirrorY expression ) | ^( FUNC_CALL Union ( exprList )? ) | ^( FUNC_CALL Difference ( exprList )? ) | ^( FUNC_CALL Clip ( exprList )? ) | ^( FUNC_CALL Xor ( exprList )? ) )
@@ -1615,7 +1616,7 @@ public class PogoTreeWalker extends TreeParser {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:135:5: ^( FUNC_CALL Move ( exprList )? )
 					{
-					FUNC_CALL43=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall606); 
+					FUNC_CALL44=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall606); 
 					match(input, Token.DOWN, null); 
 					match(input,Move,FOLLOW_Move_in_transformCall608); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:135:22: ( exprList )?
@@ -1629,7 +1630,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:135:22: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall610);
-							exprList42=exprList();
+							exprList43=exprList();
 							state._fsp--;
 
 							}
@@ -1639,13 +1640,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new MoveNode(exprList42,FUNC_CALL43.getLine());
+					node = new MoveNode(exprList43,FUNC_CALL44.getLine());
 					}
 					break;
 				case 2 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:136:6: ^( FUNC_CALL MoveBy ( exprList )? )
 					{
-					FUNC_CALL45=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall624); 
+					FUNC_CALL46=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall624); 
 					match(input, Token.DOWN, null); 
 					match(input,MoveBy,FOLLOW_MoveBy_in_transformCall626); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:136:25: ( exprList )?
@@ -1659,7 +1660,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:136:25: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall628);
-							exprList44=exprList();
+							exprList45=exprList();
 							state._fsp--;
 
 							}
@@ -1669,13 +1670,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new MoveByNode(exprList44,FUNC_CALL45.getLine());
+					node = new MoveByNode(exprList45,FUNC_CALL46.getLine());
 					}
 					break;
 				case 3 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:137:6: ^( FUNC_CALL Heading ( exprList )? )
 					{
-					FUNC_CALL47=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall642); 
+					FUNC_CALL48=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall642); 
 					match(input, Token.DOWN, null); 
 					match(input,Heading,FOLLOW_Heading_in_transformCall644); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:137:26: ( exprList )?
@@ -1689,7 +1690,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:137:26: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall646);
-							exprList46=exprList();
+							exprList47=exprList();
 							state._fsp--;
 
 							}
@@ -1699,28 +1700,28 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new HeadingNode(exprList46,FUNC_CALL47.getLine());
+					node = new HeadingNode(exprList47,FUNC_CALL48.getLine());
 					}
 					break;
 				case 4 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:138:5: ^( FUNC_CALL Copy expression )
 					{
-					FUNC_CALL49=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall659); 
+					FUNC_CALL50=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall659); 
 					match(input, Token.DOWN, null); 
 					match(input,Copy,FOLLOW_Copy_in_transformCall661); 
 					pushFollow(FOLLOW_expression_in_transformCall663);
-					expression48=expression();
+					expression49=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new CopyNode(expression48,FUNC_CALL49.getLine());
+					node = new CopyNode(expression49,FUNC_CALL50.getLine());
 					}
 					break;
 				case 5 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:139:5: ^( FUNC_CALL Rotate ( exprList )? )
 					{
-					FUNC_CALL51=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall674); 
+					FUNC_CALL52=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall674); 
 					match(input, Token.DOWN, null); 
 					match(input,Rotate,FOLLOW_Rotate_in_transformCall676); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:139:24: ( exprList )?
@@ -1734,7 +1735,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:139:24: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall678);
-							exprList50=exprList();
+							exprList51=exprList();
 							state._fsp--;
 
 							}
@@ -1744,13 +1745,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new RotateNode(exprList50,currentScope,FUNC_CALL51.getLine());
+					node = new RotateNode(exprList51,currentScope,FUNC_CALL52.getLine());
 					}
 					break;
 				case 6 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:140:5: ^( FUNC_CALL Fill ( exprList )? )
 					{
-					FUNC_CALL53=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall689); 
+					FUNC_CALL54=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall689); 
 					match(input, Token.DOWN, null); 
 					match(input,Fill,FOLLOW_Fill_in_transformCall691); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:140:22: ( exprList )?
@@ -1764,7 +1765,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:140:22: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall693);
-							exprList52=exprList();
+							exprList53=exprList();
 							state._fsp--;
 
 							}
@@ -1774,13 +1775,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new FillNode(exprList52,FUNC_CALL53.getLine());
+					node = new FillNode(exprList53,FUNC_CALL54.getLine());
 					}
 					break;
 				case 7 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:141:5: ^( FUNC_CALL Stroke ( exprList )? )
 					{
-					FUNC_CALL55=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall706); 
+					FUNC_CALL56=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall706); 
 					match(input, Token.DOWN, null); 
 					match(input,Stroke,FOLLOW_Stroke_in_transformCall708); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:141:24: ( exprList )?
@@ -1794,7 +1795,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:141:24: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall710);
-							exprList54=exprList();
+							exprList55=exprList();
 							state._fsp--;
 
 							}
@@ -1804,43 +1805,43 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new StrokeNode(exprList54,FUNC_CALL55.getLine());
+					node = new StrokeNode(exprList55,FUNC_CALL56.getLine());
 					}
 					break;
 				case 8 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:142:5: ^( FUNC_CALL NoFill expression )
 					{
-					FUNC_CALL57=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall721); 
+					FUNC_CALL58=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall721); 
 					match(input, Token.DOWN, null); 
 					match(input,NoFill,FOLLOW_NoFill_in_transformCall723); 
 					pushFollow(FOLLOW_expression_in_transformCall725);
-					expression56=expression();
+					expression57=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new NoFillNode(expression56 ,FUNC_CALL57.getLine());
+					node = new NoFillNode(expression57 ,FUNC_CALL58.getLine());
 					}
 					break;
 				case 9 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:143:5: ^( FUNC_CALL NoStroke expression )
 					{
-					FUNC_CALL59=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall735); 
+					FUNC_CALL60=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall735); 
 					match(input, Token.DOWN, null); 
 					match(input,NoStroke,FOLLOW_NoStroke_in_transformCall737); 
 					pushFollow(FOLLOW_expression_in_transformCall739);
-					expression58=expression();
+					expression59=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new NoStrokeNode(expression58,FUNC_CALL59.getLine());
+					node = new NoStrokeNode(expression59,FUNC_CALL60.getLine());
 					}
 					break;
 				case 10 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:144:5: ^( FUNC_CALL Weight ( exprList )? )
 					{
-					FUNC_CALL61=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall749); 
+					FUNC_CALL62=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall749); 
 					match(input, Token.DOWN, null); 
 					match(input,Weight,FOLLOW_Weight_in_transformCall751); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:144:24: ( exprList )?
@@ -1854,7 +1855,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:144:24: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall753);
-							exprList60=exprList();
+							exprList61=exprList();
 							state._fsp--;
 
 							}
@@ -1864,43 +1865,43 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new WeightNode(exprList60,FUNC_CALL61.getLine());
+					node = new WeightNode(exprList61,FUNC_CALL62.getLine());
 					}
 					break;
 				case 11 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:145:5: ^( FUNC_CALL Hide expression )
 					{
-					FUNC_CALL63=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall764); 
+					FUNC_CALL64=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall764); 
 					match(input, Token.DOWN, null); 
 					match(input,Hide,FOLLOW_Hide_in_transformCall766); 
 					pushFollow(FOLLOW_expression_in_transformCall768);
-					expression62=expression();
+					expression63=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new HideNode(expression62,FUNC_CALL63.getLine());
+					node = new HideNode(expression63,FUNC_CALL64.getLine());
 					}
 					break;
 				case 12 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:146:5: ^( FUNC_CALL Show expression )
 					{
-					FUNC_CALL65=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall778); 
+					FUNC_CALL66=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall778); 
 					match(input, Token.DOWN, null); 
 					match(input,Show,FOLLOW_Show_in_transformCall780); 
 					pushFollow(FOLLOW_expression_in_transformCall782);
-					expression64=expression();
+					expression65=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ShowNode(expression64,FUNC_CALL65.getLine());
+					node = new ShowNode(expression65,FUNC_CALL66.getLine());
 					}
 					break;
 				case 13 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:147:5: ^( FUNC_CALL Group ( exprList )? )
 					{
-					FUNC_CALL67=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall792); 
+					FUNC_CALL68=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall792); 
 					match(input, Token.DOWN, null); 
 					match(input,Group,FOLLOW_Group_in_transformCall794); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:147:23: ( exprList )?
@@ -1914,7 +1915,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:147:23: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall796);
-							exprList66=exprList();
+							exprList67=exprList();
 							state._fsp--;
 
 							}
@@ -1924,43 +1925,43 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new GroupNode(exprList66,FUNC_CALL67.getLine());
+					node = new GroupNode(exprList67,FUNC_CALL68.getLine());
 					}
 					break;
 				case 14 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:148:5: ^( FUNC_CALL Expand expression )
 					{
-					FUNC_CALL69=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall807); 
+					FUNC_CALL70=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall807); 
 					match(input, Token.DOWN, null); 
 					match(input,Expand,FOLLOW_Expand_in_transformCall809); 
 					pushFollow(FOLLOW_expression_in_transformCall811);
-					expression68=expression();
+					expression69=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ExpandNode(expression68, currentScope, FUNC_CALL69.getLine());
+					node = new ExpandNode(expression69, currentScope, FUNC_CALL70.getLine());
 					}
 					break;
 				case 15 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:149:5: ^( FUNC_CALL Merge expression )
 					{
-					FUNC_CALL71=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall820); 
+					FUNC_CALL72=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall820); 
 					match(input, Token.DOWN, null); 
 					match(input,Merge,FOLLOW_Merge_in_transformCall822); 
 					pushFollow(FOLLOW_expression_in_transformCall824);
-					expression70=expression();
+					expression71=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new MergeNode(expression70,currentScope,FUNC_CALL71.getLine());
+					node = new MergeNode(expression71,currentScope,FUNC_CALL72.getLine());
 					}
 					break;
 				case 16 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:150:5: ^( FUNC_CALL Scale ( exprList )? )
 					{
-					FUNC_CALL73=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall833); 
+					FUNC_CALL74=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall833); 
 					match(input, Token.DOWN, null); 
 					match(input,Scale,FOLLOW_Scale_in_transformCall835); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:150:23: ( exprList )?
@@ -1974,7 +1975,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:150:23: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall837);
-							exprList72=exprList();
+							exprList73=exprList();
 							state._fsp--;
 
 							}
@@ -1984,43 +1985,43 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new ScaleNode(exprList72,FUNC_CALL73.getLine());
+					node = new ScaleNode(exprList73,FUNC_CALL74.getLine());
 					}
 					break;
 				case 17 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:151:5: ^( FUNC_CALL MirrorX expression )
 					{
-					FUNC_CALL75=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall847); 
+					FUNC_CALL76=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall847); 
 					match(input, Token.DOWN, null); 
 					match(input,MirrorX,FOLLOW_MirrorX_in_transformCall849); 
 					pushFollow(FOLLOW_expression_in_transformCall851);
-					expression74=expression();
+					expression75=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new MirrorXNode(expression74,FUNC_CALL75.getLine());
+					node = new MirrorXNode(expression75,FUNC_CALL76.getLine());
 					}
 					break;
 				case 18 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:152:5: ^( FUNC_CALL MirrorY expression )
 					{
-					FUNC_CALL77=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall860); 
+					FUNC_CALL78=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall860); 
 					match(input, Token.DOWN, null); 
 					match(input,MirrorY,FOLLOW_MirrorY_in_transformCall862); 
 					pushFollow(FOLLOW_expression_in_transformCall864);
-					expression76=expression();
+					expression77=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new MirrorYNode(expression76,FUNC_CALL77.getLine());
+					node = new MirrorYNode(expression77,FUNC_CALL78.getLine());
 					}
 					break;
 				case 19 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:153:5: ^( FUNC_CALL Union ( exprList )? )
 					{
-					FUNC_CALL79=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall873); 
+					FUNC_CALL80=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall873); 
 					match(input, Token.DOWN, null); 
 					match(input,Union,FOLLOW_Union_in_transformCall875); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:153:23: ( exprList )?
@@ -2034,7 +2035,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:153:23: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall877);
-							exprList78=exprList();
+							exprList79=exprList();
 							state._fsp--;
 
 							}
@@ -2044,13 +2045,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new UnionNode(exprList78, currentScope, FUNC_CALL79.getLine());
+					node = new UnionNode(exprList79, currentScope, FUNC_CALL80.getLine());
 					}
 					break;
 				case 20 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:154:5: ^( FUNC_CALL Difference ( exprList )? )
 					{
-					FUNC_CALL81=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall887); 
+					FUNC_CALL82=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall887); 
 					match(input, Token.DOWN, null); 
 					match(input,Difference,FOLLOW_Difference_in_transformCall889); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:154:28: ( exprList )?
@@ -2064,7 +2065,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:154:28: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall891);
-							exprList80=exprList();
+							exprList81=exprList();
 							state._fsp--;
 
 							}
@@ -2074,13 +2075,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new DifferenceNode(exprList80, currentScope, FUNC_CALL81.getLine());
+					node = new DifferenceNode(exprList81, currentScope, FUNC_CALL82.getLine());
 					}
 					break;
 				case 21 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:155:5: ^( FUNC_CALL Clip ( exprList )? )
 					{
-					FUNC_CALL83=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall901); 
+					FUNC_CALL84=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall901); 
 					match(input, Token.DOWN, null); 
 					match(input,Clip,FOLLOW_Clip_in_transformCall903); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:155:22: ( exprList )?
@@ -2094,7 +2095,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:155:22: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall905);
-							exprList82=exprList();
+							exprList83=exprList();
 							state._fsp--;
 
 							}
@@ -2104,13 +2105,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new ClipNode(exprList82, currentScope, FUNC_CALL83.getLine());
+					node = new ClipNode(exprList83, currentScope, FUNC_CALL84.getLine());
 					}
 					break;
 				case 22 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:156:5: ^( FUNC_CALL Xor ( exprList )? )
 					{
-					FUNC_CALL85=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall915); 
+					FUNC_CALL86=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall915); 
 					match(input, Token.DOWN, null); 
 					match(input,Xor,FOLLOW_Xor_in_transformCall917); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:156:21: ( exprList )?
@@ -2124,7 +2125,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:156:21: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall919);
-							exprList84=exprList();
+							exprList85=exprList();
 							state._fsp--;
 
 							}
@@ -2134,7 +2135,7 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new XorNode(exprList84, currentScope, FUNC_CALL85.getLine());
+					node = new XorNode(exprList85, currentScope, FUNC_CALL86.getLine());
 					}
 					break;
 
@@ -2159,12 +2160,12 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		CommonTree FUNC_CALL87=null;
-		CommonTree FUNC_CALL89=null;
-		CommonTree FUNC_CALL91=null;
-		java.util.List<DCNode> exprList86 =null;
-		java.util.List<DCNode> exprList88 =null;
-		java.util.List<DCNode> exprList90 =null;
+		CommonTree FUNC_CALL88=null;
+		CommonTree FUNC_CALL90=null;
+		CommonTree FUNC_CALL92=null;
+		java.util.List<DCNode> exprList87 =null;
+		java.util.List<DCNode> exprList89 =null;
+		java.util.List<DCNode> exprList91 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:160:4: ( ^( FUNC_CALL Grid ( exprList )? ) | ^( FUNC_CALL Wave ( exprList )? ) | ^( FUNC_CALL Arc ( exprList )? ) )
@@ -2228,7 +2229,7 @@ public class PogoTreeWalker extends TreeParser {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:160:6: ^( FUNC_CALL Grid ( exprList )? )
 					{
-					FUNC_CALL87=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall949); 
+					FUNC_CALL88=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall949); 
 					match(input, Token.DOWN, null); 
 					match(input,Grid,FOLLOW_Grid_in_patternCall951); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:160:23: ( exprList )?
@@ -2242,7 +2243,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:160:23: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_patternCall953);
-							exprList86=exprList();
+							exprList87=exprList();
 							state._fsp--;
 
 							}
@@ -2252,13 +2253,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new GridNode(exprList86,currentScope,FUNC_CALL87.getLine(),widthParam, heightParam);
+					node = new GridNode(exprList87,currentScope,FUNC_CALL88.getLine(),widthParam, heightParam);
 					}
 					break;
 				case 2 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:161:6: ^( FUNC_CALL Wave ( exprList )? )
 					{
-					FUNC_CALL89=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall965); 
+					FUNC_CALL90=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall965); 
 					match(input, Token.DOWN, null); 
 					match(input,Wave,FOLLOW_Wave_in_patternCall967); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:161:23: ( exprList )?
@@ -2272,7 +2273,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:161:23: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_patternCall969);
-							exprList88=exprList();
+							exprList89=exprList();
 							state._fsp--;
 
 							}
@@ -2282,13 +2283,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new WaveNode(exprList88,currentScope,FUNC_CALL89.getLine(),widthParam, heightParam);
+					node = new WaveNode(exprList89,currentScope,FUNC_CALL90.getLine(),widthParam, heightParam);
 					}
 					break;
 				case 3 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:162:6: ^( FUNC_CALL Arc ( exprList )? )
 					{
-					FUNC_CALL91=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall981); 
+					FUNC_CALL92=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall981); 
 					match(input, Token.DOWN, null); 
 					match(input,Arc,FOLLOW_Arc_in_patternCall983); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:162:22: ( exprList )?
@@ -2302,7 +2303,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:162:22: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_patternCall985);
-							exprList90=exprList();
+							exprList91=exprList();
 							state._fsp--;
 
 							}
@@ -2312,7 +2313,7 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new ArcNode(exprList90,currentScope,FUNC_CALL91.getLine(),widthParam, heightParam);
+					node = new ArcNode(exprList91,currentScope,FUNC_CALL92.getLine(),widthParam, heightParam);
 					}
 					break;
 
@@ -2337,32 +2338,32 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		CommonTree FUNC_CALL93=null;
-		CommonTree FUNC_CALL95=null;
-		CommonTree FUNC_CALL97=null;
-		CommonTree FUNC_CALL99=null;
-		CommonTree FUNC_CALL101=null;
-		CommonTree FUNC_CALL103=null;
-		CommonTree FUNC_CALL105=null;
-		CommonTree FUNC_CALL107=null;
-		CommonTree FUNC_CALL109=null;
-		CommonTree FUNC_CALL111=null;
-		CommonTree FUNC_CALL113=null;
-		CommonTree FUNC_CALL115=null;
-		CommonTree FUNC_CALL117=null;
-		DCNode expression92 =null;
-		DCNode expression94 =null;
-		DCNode expression96 =null;
-		DCNode expression98 =null;
-		java.util.List<DCNode> exprList100 =null;
-		java.util.List<DCNode> exprList102 =null;
-		java.util.List<DCNode> exprList104 =null;
-		DCNode expression106 =null;
-		java.util.List<DCNode> exprList108 =null;
-		DCNode expression110 =null;
-		DCNode expression112 =null;
-		DCNode expression114 =null;
-		DCNode expression116 =null;
+		CommonTree FUNC_CALL94=null;
+		CommonTree FUNC_CALL96=null;
+		CommonTree FUNC_CALL98=null;
+		CommonTree FUNC_CALL100=null;
+		CommonTree FUNC_CALL102=null;
+		CommonTree FUNC_CALL104=null;
+		CommonTree FUNC_CALL106=null;
+		CommonTree FUNC_CALL108=null;
+		CommonTree FUNC_CALL110=null;
+		CommonTree FUNC_CALL112=null;
+		CommonTree FUNC_CALL114=null;
+		CommonTree FUNC_CALL116=null;
+		CommonTree FUNC_CALL118=null;
+		DCNode expression93 =null;
+		DCNode expression95 =null;
+		DCNode expression97 =null;
+		DCNode expression99 =null;
+		java.util.List<DCNode> exprList101 =null;
+		java.util.List<DCNode> exprList103 =null;
+		java.util.List<DCNode> exprList105 =null;
+		DCNode expression107 =null;
+		java.util.List<DCNode> exprList109 =null;
+		DCNode expression111 =null;
+		DCNode expression113 =null;
+		DCNode expression115 =null;
+		DCNode expression117 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:166:4: ( ^( FUNC_CALL Cosine expression ) | ^( FUNC_CALL Sine expression ) | ^( FUNC_CALL Tan expression ) | ^( FUNC_CALL ATan expression ) | ^( FUNC_CALL Random ( exprList )? ) | ^( FUNC_CALL Gaussian ( exprList )? ) | ^( FUNC_CALL Noise ( exprList )? ) | ^( FUNC_CALL Round expression ) | ^( FUNC_CALL Map ( exprList )? ) | ^( FUNC_CALL Inch expression ) | ^( FUNC_CALL Mm expression ) | ^( FUNC_CALL Cm expression ) | ^( FUNC_CALL Units expression ) )
@@ -2476,67 +2477,67 @@ public class PogoTreeWalker extends TreeParser {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:166:5: ^( FUNC_CALL Cosine expression )
 					{
-					FUNC_CALL93=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1014); 
+					FUNC_CALL94=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1014); 
 					match(input, Token.DOWN, null); 
 					match(input,Cosine,FOLLOW_Cosine_in_mathCall1016); 
 					pushFollow(FOLLOW_expression_in_mathCall1018);
-					expression92=expression();
+					expression93=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new CosineNode(expression92,FUNC_CALL93.getLine());
+					node = new CosineNode(expression93,FUNC_CALL94.getLine());
 					}
 					break;
 				case 2 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:167:5: ^( FUNC_CALL Sine expression )
 					{
-					FUNC_CALL95=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1028); 
+					FUNC_CALL96=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1028); 
 					match(input, Token.DOWN, null); 
 					match(input,Sine,FOLLOW_Sine_in_mathCall1030); 
 					pushFollow(FOLLOW_expression_in_mathCall1032);
-					expression94=expression();
+					expression95=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new SineNode(expression94,FUNC_CALL95.getLine());
+					node = new SineNode(expression95,FUNC_CALL96.getLine());
 					}
 					break;
 				case 3 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:168:5: ^( FUNC_CALL Tan expression )
 					{
-					FUNC_CALL97=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1042); 
+					FUNC_CALL98=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1042); 
 					match(input, Token.DOWN, null); 
 					match(input,Tan,FOLLOW_Tan_in_mathCall1044); 
 					pushFollow(FOLLOW_expression_in_mathCall1046);
-					expression96=expression();
+					expression97=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new TanNode(expression96,FUNC_CALL97.getLine());
+					node = new TanNode(expression97,FUNC_CALL98.getLine());
 					}
 					break;
 				case 4 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:169:5: ^( FUNC_CALL ATan expression )
 					{
-					FUNC_CALL99=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1056); 
+					FUNC_CALL100=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1056); 
 					match(input, Token.DOWN, null); 
 					match(input,ATan,FOLLOW_ATan_in_mathCall1058); 
 					pushFollow(FOLLOW_expression_in_mathCall1060);
-					expression98=expression();
+					expression99=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ATanNode(expression98,FUNC_CALL99.getLine());
+					node = new ATanNode(expression99,FUNC_CALL100.getLine());
 					}
 					break;
 				case 5 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:170:5: ^( FUNC_CALL Random ( exprList )? )
 					{
-					FUNC_CALL101=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1070); 
+					FUNC_CALL102=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1070); 
 					match(input, Token.DOWN, null); 
 					match(input,Random,FOLLOW_Random_in_mathCall1072); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:170:24: ( exprList )?
@@ -2550,7 +2551,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:170:24: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_mathCall1074);
-							exprList100=exprList();
+							exprList101=exprList();
 							state._fsp--;
 
 							}
@@ -2560,13 +2561,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new RandomNode(exprList100,FUNC_CALL101.getLine());
+					node = new RandomNode(exprList101,FUNC_CALL102.getLine());
 					}
 					break;
 				case 6 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:171:5: ^( FUNC_CALL Gaussian ( exprList )? )
 					{
-					FUNC_CALL103=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1085); 
+					FUNC_CALL104=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1085); 
 					match(input, Token.DOWN, null); 
 					match(input,Gaussian,FOLLOW_Gaussian_in_mathCall1087); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:171:26: ( exprList )?
@@ -2580,7 +2581,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:171:26: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_mathCall1089);
-							exprList102=exprList();
+							exprList103=exprList();
 							state._fsp--;
 
 							}
@@ -2590,13 +2591,13 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new GaussianNode(exprList102,FUNC_CALL103.getLine());
+					node = new GaussianNode(exprList103,FUNC_CALL104.getLine());
 					}
 					break;
 				case 7 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:172:5: ^( FUNC_CALL Noise ( exprList )? )
 					{
-					FUNC_CALL105=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1100); 
+					FUNC_CALL106=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1100); 
 					match(input, Token.DOWN, null); 
 					match(input,Noise,FOLLOW_Noise_in_mathCall1102); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:172:23: ( exprList )?
@@ -2610,7 +2611,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:172:23: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_mathCall1104);
-							exprList104=exprList();
+							exprList105=exprList();
 							state._fsp--;
 
 							}
@@ -2620,28 +2621,28 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new NoiseNode(exprList104,FUNC_CALL105.getLine());
+					node = new NoiseNode(exprList105,FUNC_CALL106.getLine());
 					}
 					break;
 				case 8 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:173:5: ^( FUNC_CALL Round expression )
 					{
-					FUNC_CALL107=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1115); 
+					FUNC_CALL108=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1115); 
 					match(input, Token.DOWN, null); 
 					match(input,Round,FOLLOW_Round_in_mathCall1117); 
 					pushFollow(FOLLOW_expression_in_mathCall1119);
-					expression106=expression();
+					expression107=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new RoundNode(expression106,FUNC_CALL107.getLine());
+					node = new RoundNode(expression107,FUNC_CALL108.getLine());
 					}
 					break;
 				case 9 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:174:5: ^( FUNC_CALL Map ( exprList )? )
 					{
-					FUNC_CALL109=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1129); 
+					FUNC_CALL110=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1129); 
 					match(input, Token.DOWN, null); 
 					match(input,Map,FOLLOW_Map_in_mathCall1131); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:174:21: ( exprList )?
@@ -2655,7 +2656,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:174:21: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_mathCall1133);
-							exprList108=exprList();
+							exprList109=exprList();
 							state._fsp--;
 
 							}
@@ -2665,67 +2666,67 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new MapNode(exprList108,FUNC_CALL109.getLine());
+					node = new MapNode(exprList109,FUNC_CALL110.getLine());
 					}
 					break;
 				case 10 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:175:5: ^( FUNC_CALL Inch expression )
 					{
-					FUNC_CALL111=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1144); 
+					FUNC_CALL112=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1144); 
 					match(input, Token.DOWN, null); 
 					match(input,Inch,FOLLOW_Inch_in_mathCall1146); 
 					pushFollow(FOLLOW_expression_in_mathCall1148);
-					expression110=expression();
+					expression111=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression110,"inch",unitParam,FUNC_CALL111.getLine());
+					node = new ConversionNode(expression111,"inch",unitParam,FUNC_CALL112.getLine());
 					}
 					break;
 				case 11 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:176:5: ^( FUNC_CALL Mm expression )
 					{
-					FUNC_CALL113=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1157); 
+					FUNC_CALL114=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1157); 
 					match(input, Token.DOWN, null); 
 					match(input,Mm,FOLLOW_Mm_in_mathCall1159); 
 					pushFollow(FOLLOW_expression_in_mathCall1161);
-					expression112=expression();
+					expression113=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression112,"mm",unitParam,FUNC_CALL113.getLine());
+					node = new ConversionNode(expression113,"mm",unitParam,FUNC_CALL114.getLine());
 					}
 					break;
 				case 12 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:177:5: ^( FUNC_CALL Cm expression )
 					{
-					FUNC_CALL115=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1170); 
+					FUNC_CALL116=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1170); 
 					match(input, Token.DOWN, null); 
 					match(input,Cm,FOLLOW_Cm_in_mathCall1172); 
 					pushFollow(FOLLOW_expression_in_mathCall1174);
-					expression114=expression();
+					expression115=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression114,"cm",unitParam,FUNC_CALL115.getLine());
+					node = new ConversionNode(expression115,"cm",unitParam,FUNC_CALL116.getLine());
 					}
 					break;
 				case 13 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:178:5: ^( FUNC_CALL Units expression )
 					{
-					FUNC_CALL117=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1183); 
+					FUNC_CALL118=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1183); 
 					match(input, Token.DOWN, null); 
 					match(input,Units,FOLLOW_Units_in_mathCall1185); 
 					pushFollow(FOLLOW_expression_in_mathCall1187);
-					expression116=expression();
+					expression117=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression116,"units",unitParam,FUNC_CALL117.getLine());
+					node = new ConversionNode(expression117,"units",unitParam,FUNC_CALL118.getLine());
 					}
 					break;
 
@@ -2750,14 +2751,14 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		DCNode expression118 =null;
 		DCNode expression119 =null;
 		DCNode expression120 =null;
 		DCNode expression121 =null;
 		DCNode expression122 =null;
 		DCNode expression123 =null;
-		java.util.List<DCNode> exprList124 =null;
+		DCNode expression124 =null;
 		java.util.List<DCNode> exprList125 =null;
+		java.util.List<DCNode> exprList126 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:184:3: ( ^( FUNC_CALL GetWidth expression ) | ^( FUNC_CALL GetHeight expression ) | ^( FUNC_CALL GetX expression ) | ^( FUNC_CALL GetY expression ) | ^( FUNC_CALL GetOrigin expression ) | ^( FUNC_CALL GetRotation expression ) | ^( FUNC_CALL GetFill expression ) | ^( FUNC_CALL GetStroke expression ) | ^( FUNC_CALL GetStart expression ) | ^( FUNC_CALL GetEnd expression ) | ^( FUNC_CALL GetDistance ( exprList )? ) | ^( FUNC_CALL GetIntersect ( exprList )? ) )
@@ -2870,12 +2871,12 @@ public class PogoTreeWalker extends TreeParser {
 					match(input, Token.DOWN, null); 
 					match(input,GetWidth,FOLLOW_GetWidth_in_getCall1224); 
 					pushFollow(FOLLOW_expression_in_getCall1226);
-					expression118=expression();
+					expression119=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetWidthNode(expression118);
+					node = new GetWidthNode(expression119);
 					}
 					break;
 				case 2 :
@@ -2885,12 +2886,12 @@ public class PogoTreeWalker extends TreeParser {
 					match(input, Token.DOWN, null); 
 					match(input,GetHeight,FOLLOW_GetHeight_in_getCall1238); 
 					pushFollow(FOLLOW_expression_in_getCall1240);
-					expression119=expression();
+					expression120=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetHeightNode(expression119);
+					node = new GetHeightNode(expression120);
 					}
 					break;
 				case 3 :
@@ -2900,12 +2901,12 @@ public class PogoTreeWalker extends TreeParser {
 					match(input, Token.DOWN, null); 
 					match(input,GetX,FOLLOW_GetX_in_getCall1251); 
 					pushFollow(FOLLOW_expression_in_getCall1253);
-					expression120=expression();
+					expression121=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetXNode(expression120);
+					node = new GetXNode(expression121);
 					}
 					break;
 				case 4 :
@@ -2915,12 +2916,12 @@ public class PogoTreeWalker extends TreeParser {
 					match(input, Token.DOWN, null); 
 					match(input,GetY,FOLLOW_GetY_in_getCall1264); 
 					pushFollow(FOLLOW_expression_in_getCall1266);
-					expression121=expression();
+					expression122=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetYNode(expression121);
+					node = new GetYNode(expression122);
 					}
 					break;
 				case 5 :
@@ -2930,12 +2931,12 @@ public class PogoTreeWalker extends TreeParser {
 					match(input, Token.DOWN, null); 
 					match(input,GetOrigin,FOLLOW_GetOrigin_in_getCall1277); 
 					pushFollow(FOLLOW_expression_in_getCall1279);
-					expression122=expression();
+					expression123=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetOriginNode(expression122);
+					node = new GetOriginNode(expression123);
 					}
 					break;
 				case 6 :
@@ -2945,12 +2946,12 @@ public class PogoTreeWalker extends TreeParser {
 					match(input, Token.DOWN, null); 
 					match(input,GetRotation,FOLLOW_GetRotation_in_getCall1290); 
 					pushFollow(FOLLOW_expression_in_getCall1292);
-					expression123=expression();
+					expression124=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetRotationNode(expression123);
+					node = new GetRotationNode(expression124);
 					}
 					break;
 				case 7 :
@@ -3026,7 +3027,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:194:28: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_getCall1352);
-							exprList124=exprList();
+							exprList125=exprList();
 							state._fsp--;
 
 							}
@@ -3036,7 +3037,7 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new DistanceNode(exprList124);
+					node = new DistanceNode(exprList125);
 					}
 					break;
 				case 12 :
@@ -3056,7 +3057,7 @@ public class PogoTreeWalker extends TreeParser {
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:195:29: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_getCall1366);
-							exprList125=exprList();
+							exprList126=exprList();
 							state._fsp--;
 
 							}
@@ -3066,7 +3067,7 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new IntersectNode(exprList125);
+					node = new IntersectNode(exprList126);
 					}
 					break;
 
@@ -3176,8 +3177,8 @@ public class PogoTreeWalker extends TreeParser {
 	// $ANTLR start "ifStat"
 	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:204:1: ifStat[IfNode parent] : ^( EXP expression block ) ;
 	public final void ifStat(IfNode parent) throws RecognitionException {
-		DCNode expression126 =null;
-		BlockNode block127 =null;
+		DCNode expression127 =null;
+		BlockNode block128 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:205:3: ( ^( EXP expression block ) )
@@ -3186,16 +3187,16 @@ public class PogoTreeWalker extends TreeParser {
 			match(input,EXP,FOLLOW_EXP_in_ifStat1432); 
 			match(input, Token.DOWN, null); 
 			pushFollow(FOLLOW_expression_in_ifStat1434);
-			expression126=expression();
+			expression127=expression();
 			state._fsp--;
 
 			pushFollow(FOLLOW_block_in_ifStat1436);
-			block127=block();
+			block128=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			parent.addChoice(expression126, block127);
+			parent.addChoice(expression127, block128);
 			}
 
 		}
@@ -3214,8 +3215,8 @@ public class PogoTreeWalker extends TreeParser {
 	// $ANTLR start "elseIfStat"
 	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:208:1: elseIfStat[IfNode parent] : ^( EXP expression block ) ;
 	public final void elseIfStat(IfNode parent) throws RecognitionException {
-		DCNode expression128 =null;
-		BlockNode block129 =null;
+		DCNode expression129 =null;
+		BlockNode block130 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:209:3: ( ^( EXP expression block ) )
@@ -3224,16 +3225,16 @@ public class PogoTreeWalker extends TreeParser {
 			match(input,EXP,FOLLOW_EXP_in_elseIfStat1455); 
 			match(input, Token.DOWN, null); 
 			pushFollow(FOLLOW_expression_in_elseIfStat1457);
-			expression128=expression();
+			expression129=expression();
 			state._fsp--;
 
 			pushFollow(FOLLOW_block_in_elseIfStat1459);
-			block129=block();
+			block130=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			parent.addChoice(expression128, block129);
+			parent.addChoice(expression129, block130);
 			}
 
 		}
@@ -3252,7 +3253,7 @@ public class PogoTreeWalker extends TreeParser {
 	// $ANTLR start "elseStat"
 	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:212:1: elseStat[IfNode parent] : ^( EXP block ) ;
 	public final void elseStat(IfNode parent) throws RecognitionException {
-		BlockNode block130 =null;
+		BlockNode block131 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:213:3: ( ^( EXP block ) )
@@ -3261,12 +3262,12 @@ public class PogoTreeWalker extends TreeParser {
 			match(input,EXP,FOLLOW_EXP_in_elseStat1478); 
 			match(input, Token.DOWN, null); 
 			pushFollow(FOLLOW_block_in_elseStat1480);
-			block130=block();
+			block131=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			parent.addChoice(new AtomNode(true), block130);
+			parent.addChoice(new AtomNode(true), block131);
 			}
 
 		}
@@ -3288,10 +3289,10 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		CommonTree Identifier131=null;
+		CommonTree Identifier132=null;
 		DCNode a =null;
 		DCNode b =null;
-		BlockNode block132 =null;
+		BlockNode block133 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:217:3: ( ^( For Identifier a= expression b= expression block ) )
@@ -3299,7 +3300,7 @@ public class PogoTreeWalker extends TreeParser {
 			{
 			match(input,For,FOLLOW_For_in_forStatement1505); 
 			match(input, Token.DOWN, null); 
-			Identifier131=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_forStatement1507); 
+			Identifier132=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_forStatement1507); 
 			pushFollow(FOLLOW_expression_in_forStatement1511);
 			a=expression();
 			state._fsp--;
@@ -3309,12 +3310,12 @@ public class PogoTreeWalker extends TreeParser {
 			state._fsp--;
 
 			pushFollow(FOLLOW_block_in_forStatement1517);
-			block132=block();
+			block133=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new ForStatementNode((Identifier131!=null?Identifier131.getText():null), a, b, block132, currentScope);
+			node = new ForStatementNode((Identifier132!=null?Identifier132.getText():null), a, b, block133, currentScope);
 			}
 
 		}
@@ -3337,11 +3338,11 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		CommonTree Identifier133=null;
+		CommonTree Identifier134=null;
 		DCNode a =null;
 		DCNode b =null;
 		DCNode c =null;
-		BlockNode block134 =null;
+		BlockNode block135 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:221:3: ( ^( Repeat Identifier a= expression b= expression (c= expression )? block ) )
@@ -3349,7 +3350,7 @@ public class PogoTreeWalker extends TreeParser {
 			{
 			match(input,Repeat,FOLLOW_Repeat_in_repeatStatement1540); 
 			match(input, Token.DOWN, null); 
-			Identifier133=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_repeatStatement1542); 
+			Identifier134=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_repeatStatement1542); 
 			pushFollow(FOLLOW_expression_in_repeatStatement1546);
 			a=expression();
 			state._fsp--;
@@ -3378,12 +3379,12 @@ public class PogoTreeWalker extends TreeParser {
 			}
 
 			pushFollow(FOLLOW_block_in_repeatStatement1559);
-			block134=block();
+			block135=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new RepeatStatementNode((Identifier133!=null?Identifier133.getText():null), a, b, c, block134, currentScope);
+			node = new RepeatStatementNode((Identifier134!=null?Identifier134.getText():null), a, b, c, block135, currentScope);
 			}
 
 		}
@@ -3406,8 +3407,8 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		DCNode expression135 =null;
-		BlockNode block136 =null;
+		DCNode expression136 =null;
+		BlockNode block137 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:226:3: ( ^( While expression block ) )
@@ -3416,16 +3417,16 @@ public class PogoTreeWalker extends TreeParser {
 			match(input,While,FOLLOW_While_in_whileStatement1582); 
 			match(input, Token.DOWN, null); 
 			pushFollow(FOLLOW_expression_in_whileStatement1584);
-			expression135=expression();
+			expression136=expression();
 			state._fsp--;
 
 			pushFollow(FOLLOW_block_in_whileStatement1586);
-			block136=block();
+			block137=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new WhileStatementNode(expression135, block136);
+			node = new WhileStatementNode(expression136, block137);
 			}
 
 		}
@@ -3448,7 +3449,7 @@ public class PogoTreeWalker extends TreeParser {
 		java.util.List<String> i = null;
 
 
-		CommonTree Identifier137=null;
+		CommonTree Identifier138=null;
 
 		i = new java.util.ArrayList<String>();
 		try {
@@ -3471,8 +3472,8 @@ public class PogoTreeWalker extends TreeParser {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:231:17: Identifier
 					{
-					Identifier137=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_idList1616); 
-					i.add((Identifier137!=null?Identifier137.getText():null));
+					Identifier138=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_idList1616); 
+					i.add((Identifier138!=null?Identifier138.getText():null));
 					}
 					break;
 
@@ -3508,7 +3509,7 @@ public class PogoTreeWalker extends TreeParser {
 		java.util.List<DCNode> e = null;
 
 
-		DCNode expression138 =null;
+		DCNode expression139 =null;
 
 		e = new java.util.ArrayList<DCNode>();
 		try {
@@ -3532,10 +3533,10 @@ public class PogoTreeWalker extends TreeParser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:236:18: expression
 					{
 					pushFollow(FOLLOW_expression_in_exprList1649);
-					expression138=expression();
+					expression139=expression();
 					state._fsp--;
 
-					e.add(expression138);
+					e.add(expression139);
 					}
 					break;
 
@@ -3571,13 +3572,13 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		CommonTree Number139=null;
-		CommonTree Bool140=null;
-		CommonTree COLOR_CONSTANT142=null;
+		CommonTree Number140=null;
+		CommonTree Bool141=null;
+		CommonTree COLOR_CONSTANT143=null;
 		DCNode a =null;
 		DCNode b =null;
 		DCNode c =null;
-		DCNode lookup141 =null;
+		DCNode lookup142 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:241:3: ( ^( TERNARY a= expression b= expression c= expression ) | ^( In a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT )
@@ -4043,15 +4044,15 @@ public class PogoTreeWalker extends TreeParser {
 				case 19 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:259:6: Number
 					{
-					Number139=(CommonTree)match(input,Number,FOLLOW_Number_in_expression2312); 
-					node = new AtomNode(Double.parseDouble((Number139!=null?Number139.getText():null)));
+					Number140=(CommonTree)match(input,Number,FOLLOW_Number_in_expression2312); 
+					node = new AtomNode(Double.parseDouble((Number140!=null?Number140.getText():null)));
 					}
 					break;
 				case 20 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:260:6: Bool
 					{
-					Bool140=(CommonTree)match(input,Bool,FOLLOW_Bool_in_expression2364); 
-					node = new AtomNode(Boolean.parseBoolean((Bool140!=null?Bool140.getText():null)));
+					Bool141=(CommonTree)match(input,Bool,FOLLOW_Bool_in_expression2364); 
+					node = new AtomNode(Boolean.parseBoolean((Bool141!=null?Bool141.getText():null)));
 					}
 					break;
 				case 21 :
@@ -4065,17 +4066,17 @@ public class PogoTreeWalker extends TreeParser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:262:6: lookup
 					{
 					pushFollow(FOLLOW_lookup_in_expression2472);
-					lookup141=lookup();
+					lookup142=lookup();
 					state._fsp--;
 
-					node = lookup141;
+					node = lookup142;
 					}
 					break;
 				case 23 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:263:6: COLOR_CONSTANT
 					{
-					COLOR_CONSTANT142=(CommonTree)match(input,COLOR_CONSTANT,FOLLOW_COLOR_CONSTANT_in_expression2524); 
-					node = new AtomNode((COLOR_CONSTANT142!=null?COLOR_CONSTANT142.getText():null));
+					COLOR_CONSTANT143=(CommonTree)match(input,COLOR_CONSTANT,FOLLOW_COLOR_CONSTANT_in_expression2524); 
+					node = new AtomNode((COLOR_CONSTANT143!=null?COLOR_CONSTANT143.getText():null));
 					}
 					break;
 				case 24 :
@@ -4121,7 +4122,7 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		java.util.List<DCNode> exprList143 =null;
+		java.util.List<DCNode> exprList144 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:270:3: ( ^( LIST ( exprList )? ) )
@@ -4141,7 +4142,7 @@ public class PogoTreeWalker extends TreeParser {
 						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:270:13: exprList
 						{
 						pushFollow(FOLLOW_exprList_in_list2695);
-						exprList143=exprList();
+						exprList144=exprList();
 						state._fsp--;
 
 						}
@@ -4152,7 +4153,7 @@ public class PogoTreeWalker extends TreeParser {
 				match(input, Token.UP, null); 
 			}
 
-			node = new ListNode(exprList143);
+			node = new ListNode(exprList144);
 			}
 
 		}
@@ -4175,21 +4176,21 @@ public class PogoTreeWalker extends TreeParser {
 		DCNode node = null;
 
 
-		CommonTree Identifier146=null;
-		CommonTree LOOKUP149=null;
-		CommonTree LOOKUP151=null;
-		CommonTree LOOKUP153=null;
-		CommonTree Identifier154=null;
-		CommonTree LOOKUP155=null;
-		CommonTree String156=null;
-		CommonTree LOOKUP157=null;
+		CommonTree Identifier147=null;
+		CommonTree LOOKUP150=null;
+		CommonTree LOOKUP152=null;
+		CommonTree LOOKUP154=null;
+		CommonTree Identifier155=null;
+		CommonTree LOOKUP156=null;
+		CommonTree String157=null;
+		CommonTree LOOKUP158=null;
 		java.util.List<DCNode> i =null;
-		DCNode functionCall144 =null;
-		java.util.List<PropertyNode> dotProperty145 =null;
-		java.util.List<PropertyNode> dotProperty147 =null;
-		DCNode functionCall148 =null;
-		DCNode list150 =null;
-		DCNode expression152 =null;
+		DCNode functionCall145 =null;
+		java.util.List<PropertyNode> dotProperty146 =null;
+		java.util.List<PropertyNode> dotProperty148 =null;
+		DCNode functionCall149 =null;
+		DCNode list151 =null;
+		DCNode expression153 =null;
 
 		try {
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:276:3: ( ^( DOTPROPERTY functionCall dotProperty ) | ^( DOTPROPERTY Identifier dotProperty ) | ^( LOOKUP functionCall (i= indexes )? ) | ^( LOOKUP list (i= indexes )? ) | ^( LOOKUP expression (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP String (i= indexes )? ) )
@@ -4332,16 +4333,16 @@ public class PogoTreeWalker extends TreeParser {
 					match(input,DOTPROPERTY,FOLLOW_DOTPROPERTY_in_lookup2718); 
 					match(input, Token.DOWN, null); 
 					pushFollow(FOLLOW_functionCall_in_lookup2720);
-					functionCall144=functionCall();
+					functionCall145=functionCall();
 					state._fsp--;
 
 					pushFollow(FOLLOW_dotProperty_in_lookup2722);
-					dotProperty145=dotProperty();
+					dotProperty146=dotProperty();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new DotPropertyNode(functionCall144, dotProperty145);
+					node = new DotPropertyNode(functionCall145, dotProperty146);
 					}
 					break;
 				case 2 :
@@ -4349,23 +4350,23 @@ public class PogoTreeWalker extends TreeParser {
 					{
 					match(input,DOTPROPERTY,FOLLOW_DOTPROPERTY_in_lookup2730); 
 					match(input, Token.DOWN, null); 
-					Identifier146=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup2732); 
+					Identifier147=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup2732); 
 					pushFollow(FOLLOW_dotProperty_in_lookup2734);
-					dotProperty147=dotProperty();
+					dotProperty148=dotProperty();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new DotPropertyNode(new IdentifierNode((Identifier146!=null?Identifier146.getText():null), currentScope), dotProperty147);
+					node = new DotPropertyNode(new IdentifierNode((Identifier147!=null?Identifier147.getText():null), currentScope), dotProperty148);
 					}
 					break;
 				case 3 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:283:5: ^( LOOKUP functionCall (i= indexes )? )
 					{
-					LOOKUP149=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2758); 
+					LOOKUP150=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2758); 
 					match(input, Token.DOWN, null); 
 					pushFollow(FOLLOW_functionCall_in_lookup2760);
-					functionCall148=functionCall();
+					functionCall149=functionCall();
 					state._fsp--;
 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:283:28: (i= indexes )?
@@ -4389,16 +4390,16 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(functionCall148, i,LOOKUP149.getLine()) : functionCall148;
+					node = i != null ? new LookupNode(functionCall149, i,LOOKUP150.getLine()) : functionCall149;
 					}
 					break;
 				case 4 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:284:6: ^( LOOKUP list (i= indexes )? )
 					{
-					LOOKUP151=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2776); 
+					LOOKUP152=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2776); 
 					match(input, Token.DOWN, null); 
 					pushFollow(FOLLOW_list_in_lookup2778);
-					list150=list();
+					list151=list();
 					state._fsp--;
 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:284:21: (i= indexes )?
@@ -4422,16 +4423,16 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(list150, i, LOOKUP151.getLine()) : list150;
+					node = i != null ? new LookupNode(list151, i, LOOKUP152.getLine()) : list151;
 					}
 					break;
 				case 5 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:285:6: ^( LOOKUP expression (i= indexes )? )
 					{
-					LOOKUP153=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2802); 
+					LOOKUP154=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2802); 
 					match(input, Token.DOWN, null); 
 					pushFollow(FOLLOW_expression_in_lookup2804);
-					expression152=expression();
+					expression153=expression();
 					state._fsp--;
 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:285:27: (i= indexes )?
@@ -4455,15 +4456,15 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(expression152, i,LOOKUP153.getLine()) : expression152;
+					node = i != null ? new LookupNode(expression153, i,LOOKUP154.getLine()) : expression153;
 					}
 					break;
 				case 6 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:286:6: ^( LOOKUP Identifier (i= indexes )? )
 					{
-					LOOKUP155=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2822); 
+					LOOKUP156=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2822); 
 					match(input, Token.DOWN, null); 
-					Identifier154=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup2824); 
+					Identifier155=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup2824); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:286:27: (i= indexes )?
 					int alt57=2;
 					int LA57_0 = input.LA(1);
@@ -4485,15 +4486,15 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(new IdentifierNode((Identifier154!=null?Identifier154.getText():null), currentScope), i,LOOKUP155.getLine()) : new IdentifierNode((Identifier154!=null?Identifier154.getText():null), currentScope);
+					node = i != null ? new LookupNode(new IdentifierNode((Identifier155!=null?Identifier155.getText():null), currentScope), i,LOOKUP156.getLine()) : new IdentifierNode((Identifier155!=null?Identifier155.getText():null), currentScope);
 					}
 					break;
 				case 7 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:287:6: ^( LOOKUP String (i= indexes )? )
 					{
-					LOOKUP157=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2842); 
+					LOOKUP158=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup2842); 
 					match(input, Token.DOWN, null); 
-					String156=(CommonTree)match(input,String,FOLLOW_String_in_lookup2844); 
+					String157=(CommonTree)match(input,String,FOLLOW_String_in_lookup2844); 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:287:23: (i= indexes )?
 					int alt58=2;
 					int LA58_0 = input.LA(1);
@@ -4515,7 +4516,7 @@ public class PogoTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(new AtomNode((String156!=null?String156.getText():null)), i,LOOKUP157.getLine()) : new AtomNode((String156!=null?String156.getText():null));
+					node = i != null ? new LookupNode(new AtomNode((String157!=null?String157.getText():null)), i,LOOKUP158.getLine()) : new AtomNode((String157!=null?String157.getText():null));
 					}
 					break;
 
@@ -4540,7 +4541,7 @@ public class PogoTreeWalker extends TreeParser {
 		java.util.List<DCNode> e = null;
 
 
-		DCNode expression158 =null;
+		DCNode expression159 =null;
 
 		e = new java.util.ArrayList<DCNode>();
 		try {
@@ -4564,10 +4565,10 @@ public class PogoTreeWalker extends TreeParser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:299:17: expression
 					{
 					pushFollow(FOLLOW_expression_in_indexes2901);
-					expression158=expression();
+					expression159=expression();
 					state._fsp--;
 
-					e.add(expression158);
+					e.add(expression159);
 					}
 					break;
 
@@ -4603,7 +4604,7 @@ public class PogoTreeWalker extends TreeParser {
 		java.util.List<PropertyNode> e = null;
 
 
-		PropertyNode dotExpression159 =null;
+		PropertyNode dotExpression160 =null;
 
 		e = new java.util.ArrayList<PropertyNode>();
 		try {
@@ -4627,10 +4628,10 @@ public class PogoTreeWalker extends TreeParser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PogoTreeWalker.g:306:13: dotExpression
 					{
 					pushFollow(FOLLOW_dotExpression_in_dotProperty2942);
-					dotExpression159=dotExpression();
+					dotExpression160=dotExpression();
 					state._fsp--;
 
-					e.add(dotExpression159);
+					e.add(dotExpression160);
 					}
 					break;
 

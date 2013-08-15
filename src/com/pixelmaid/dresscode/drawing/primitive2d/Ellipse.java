@@ -53,6 +53,7 @@ public class Ellipse extends Polygon {
     	this.width = width;
         this.height = height;
         this.origin = o;
+        setResolution();
     	
 
     }
@@ -65,6 +66,7 @@ public class Ellipse extends Polygon {
     	copyParameters(this,e);
     	e.width = this.width;
     	e.height = this.height;
+    	e.setResolution();
     	return e;
     }
 
@@ -146,10 +148,12 @@ public class Ellipse extends Polygon {
 	
 	public void setWidth(double w){
 		this.width=w;
+		setResolution();
 	}
 	
 	public void setHeight(double h){
 		this.height=h;
+		setResolution();
 	
 	}
 	
@@ -157,6 +161,7 @@ public class Ellipse extends Polygon {
 	public void scale(double x,double y){
 		this.width = this.width*x;
 		this.height = this.height*y;
+		setResolution();
 	}
 	
 	@Override
@@ -173,6 +178,17 @@ public class Ellipse extends Polygon {
 		Point p = poly.getPoints().get(i).copy();
 		
 		return p;
+	}
+	
+	protected void setResolution(){
+		resolution = width*height/1000;
+		if(resolution<10){
+			resolution = 10;
+		}
+		if(resolution>100){
+			resolution = 100;
+		}
+		System.out.println("resolution="+resolution);
 	}
 
 }

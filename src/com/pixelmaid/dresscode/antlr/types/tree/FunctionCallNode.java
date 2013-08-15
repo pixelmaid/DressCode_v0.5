@@ -7,6 +7,7 @@ import java.util.Map;
 import com.pixelmaid.dresscode.antlr.types.FunctionType;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.data.DrawableManager;
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 public class FunctionCallNode  extends NodeEvent implements DCNode {
 
@@ -15,14 +16,15 @@ public class FunctionCallNode  extends NodeEvent implements DCNode {
     private Map<String, FunctionType> functions;
     private double 	width,height;
     private int units;
-
-    public FunctionCallNode(String id, List<DCNode> ps, Map<String, FunctionType> fs,double w, double h, int u) {
+    int line;
+    public FunctionCallNode(String id, List<DCNode> ps, Map<String, FunctionType> fs,double w, double h, int u, int l) {
         identifier = id;
         params = ps == null ? new ArrayList<DCNode>() : ps;
         functions = fs;
         width=w;
         height=h;
         units = u;
+        line = l;
     }
 
     @Override
@@ -37,6 +39,12 @@ public class FunctionCallNode  extends NodeEvent implements DCNode {
 
         FunctionType function = new FunctionType(f);
 
-        return function.invoke(params, functions,(DrawableManager) this.getListenerAt(0),width,height,units);
+        VarType result = function.invoke(params, functions,(DrawableManager) this.getListenerAt(0),width,height,units);
+        if(result.isDrawable()){
+        	Drawable d = result.asDrawable();
+        	d.setLine(line);
+        	d.setIdentifier(null);
+        }
+        return result;
     }
 }
