@@ -28,7 +28,7 @@ public class ExpandNode extends NodeEvent implements DCNode {
     public VarType evaluate() {
     	
     	Drawable dNew= null;
-    	try{
+    	//try{
     		
     	VarType d= param.evaluate();
     	if(d.isDrawable()){
@@ -52,11 +52,11 @@ public class ExpandNode extends NodeEvent implements DCNode {
     		
     		return v;
     		}
-    	}
+    	//}
     	
-    	catch (ClassCastException e){
-    		throw new RuntimeException("Illegal expand function call at line:"+ line+" : " + this);
-    	}
+    	//catch (ClassCastException e){
+    		//throw new RuntimeException("Illegal expand function call at line:"+ line+" : " + this);
+    	//}
     	
     	return new VarType(dNew);
     }

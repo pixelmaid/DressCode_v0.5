@@ -72,8 +72,9 @@ public class PolyBoolean{
 	//performs union of two polygons and returns the result
 	
 	public static Drawable union(Drawable a, Drawable b){
-		return unionRecur(a,b);
-		
+		Drawable result = unionRecur(a,b);
+		result.copyParameters(a,result);
+		return result;
 	}
 	
 	private static Drawable unionRecur(Drawable d1, Drawable d2){
@@ -128,7 +129,9 @@ public class PolyBoolean{
 		BooleanPoly b_Poly =  drawableToBoolean(b);
 		Poly o_Poly = a_Poly.difference(b_Poly);	
 		
-		return booleanToDrawable(o_Poly);
+		Drawable result = booleanToDrawable(o_Poly);
+		result.copyParameters(a,result);
+		return result;
 	
 	}
 	
@@ -142,7 +145,9 @@ public class PolyBoolean{
 	    Poly o_Poly = a_Poly.xor(b_Poly);
 		//System.out.println("oPoly.size="+o_Poly.getNumPoints());
 
-		return booleanToDrawable(o_Poly);
+	    Drawable result = booleanToDrawable(o_Poly);
+		result.copyParameters(a,result);
+		return result;
 	}
 	
 	//performs difference of two polygons and returns the result
@@ -176,6 +181,9 @@ public class PolyBoolean{
 				System.out.println("holes for o poly="+ o_Poly.getNumInnerPoly());
 
 				Polygon returnPoly = booleanToPolygon(o_Poly);
+			
+				returnPoly.copyParameters(a,returnPoly);
+			
 				return returnPoly;
 				}
 				//System.out.println("holes for converted poly="+ b_Poly.getNumInnerPoly());
@@ -185,7 +193,10 @@ public class PolyBoolean{
 			//}
 			else{
 				b_Poly = drawableToBoolean(b);
-				return groupIntersection(a_Poly,b_Poly);
+				 Drawable result =  groupIntersection(a_Poly,b_Poly);
+					result.copyParameters(a,result);
+					return result;
+			
 			}
 		}
 	}
@@ -239,6 +250,8 @@ public class PolyBoolean{
 					bP = complexPolygonToBoolean(p);
 				}
 				else{
+				System.out.println("d check:");
+				System.out.println(d instanceof Polygon);
 				Polygon p = (Polygon)d.children.get(j);
 				bP = polygonToBoolean(p);
 				if(p.isHole()){
