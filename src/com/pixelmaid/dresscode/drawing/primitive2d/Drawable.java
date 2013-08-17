@@ -746,16 +746,19 @@ public void drawOrigin(Canvas embedded){
 	public void copyParameters(Drawable o, Drawable c){
 		c.setOrigin(o.origin.copy());
 		c.rotate(o.getRotation());
-		//c.scaleX(o.getScaleX());
-		//c.scaleY(o.getScaleY());
+		c.rotate(o.getRotation());
+		c.setParent(o.getParent());
+		copyStyleParams(o,c);
+	}
+	
+	public void copyStyleParams(Drawable o, Drawable c){
+		
 		c.setFillColor(o.getFillColor());
 		c.setStrokeColor(o.getStrokeColor());
 		c.setStrokeWeight(o.getStrokeWeight());
 		c.doFill(o.doFill);
 		c.doStroke(o.doStroke);
-		c.setDrawOrigin(o.getDrawOrigin());
-		c.rotate(o.getRotation());
-		c.setParent(o.getParent());
+	
 	}
 	
 	

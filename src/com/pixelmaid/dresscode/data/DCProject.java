@@ -7,6 +7,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.LinkedHashMap;
 
 import javax.swing.JFileChooser;
 import javax.swing.text.BadLocationException;
@@ -83,8 +84,17 @@ public class DCProject {
 		return this.code;
 	}
 
-	public void run(String code, InstructionManager instructionManager){
-		setCode(code);
+	public void run(String code, LinkedHashMap<String, Stamp> stampMap, InstructionManager instructionManager){
+		String stampCode ="";
+		for (String key : stampMap.keySet())
+		{
+		  
+		    Stamp s= stampMap.get(key);
+		    stampCode +="\n"+s.getFunctionDef();
+		}
+		
+		
+		setCode(code+"\n"+stampCode);
 
 		instructionManager.parseText(getCode(),this.getUnits());
 	}

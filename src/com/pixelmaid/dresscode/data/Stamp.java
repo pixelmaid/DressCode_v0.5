@@ -61,6 +61,7 @@ public class Stamp {
 		}
 		functionDef = functionStart+functionName+functionMiddle+"\n"+functionDef+"\n"+returnStatement+"\n"+functionEnd;
 		functionCall = functionName+"();";
+		
 	}
 	/*recursive drawable sorting function
 	 * called by setDrawables
@@ -339,6 +340,11 @@ public class Stamp {
 	public String getFunctionCall(){
 		return functionCall;
 	}
+	
+	public String getFunctionName() {
+		// TODO Auto-generated method stub
+		return functionName;
+	}
 
 	public String initGroup(){
 		//System.out.println("init group statement");
@@ -352,5 +358,7 @@ public class Stamp {
 		String add =  "\nadd("+currentGroupId+cm+id+end;
 		return statement+=add;
 	}
+
+	
 	
 }

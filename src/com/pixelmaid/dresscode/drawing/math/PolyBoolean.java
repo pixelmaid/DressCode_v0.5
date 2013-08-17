@@ -73,7 +73,7 @@ public class PolyBoolean{
 	
 	public static Drawable union(Drawable a, Drawable b){
 		Drawable result = unionRecur(a,b);
-		result.copyParameters(a,result);
+		result.copyStyleParams(a,result);
 		return result;
 	}
 	
@@ -130,7 +130,7 @@ public class PolyBoolean{
 		Poly o_Poly = a_Poly.difference(b_Poly);	
 		
 		Drawable result = booleanToDrawable(o_Poly);
-		result.copyParameters(a,result);
+		result.copyStyleParams(a,result);
 		return result;
 	
 	}
@@ -146,7 +146,7 @@ public class PolyBoolean{
 		//System.out.println("oPoly.size="+o_Poly.getNumPoints());
 
 	    Drawable result = booleanToDrawable(o_Poly);
-		result.copyParameters(a,result);
+		result.copyStyleParams(a,result);
 		return result;
 	}
 	
@@ -182,7 +182,7 @@ public class PolyBoolean{
 
 				Polygon returnPoly = booleanToPolygon(o_Poly);
 			
-				returnPoly.copyParameters(a,returnPoly);
+				returnPoly.copyStyleParams(a,returnPoly);
 			
 				return returnPoly;
 				}
@@ -194,7 +194,7 @@ public class PolyBoolean{
 			else{
 				b_Poly = drawableToBoolean(b);
 				 Drawable result =  groupIntersection(a_Poly,b_Poly);
-					result.copyParameters(a,result);
+					result.copyStyleParams(a,result);
 					return result;
 			
 			}

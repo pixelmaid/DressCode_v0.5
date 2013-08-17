@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry excluding="com/pixelmaid/dresscode/drawing/datatype/Matrix.java|com/pixelmaid/dresscode/drawing/math/LUdcmp.java|com/pixelmaid/dresscode/drawing/math/Matrix.java|com/pixelmaid/dresscode/app/DXFExport.java|com/pixelmaid/dresscode/app/CopyOfEmbedded.java|com/pixelmaid/dresscode/app/CopyOfDisplayFrame.java|com/pixelmaid/dresscode/drawing/primitive2d/Hole.java" kind="src" path="src"/>
+	<classpathentry excluding="com/pixelmaid/dresscode/drawing/datatype/Matrix.java|com/pixelmaid/dresscode/drawing/math/LUdcmp.java|com/pixelmaid/dresscode/drawing/math/Matrix.java|com/pixelmaid/dresscode/app/DXFExport.java|com/pixelmaid/dresscode/app/CopyOfEmbedded.java|com/pixelmaid/dresscode/app/CopyOfDisplayFrame.java|com/pixelmaid/dresscode/drawing/primitive2d/Hole.java|com/pixelmaid/dresscode/app/Embedded.java" kind="src" path="src"/>
 	<classpathentry kind="src" path="antlr-generated"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
 	<classpathentry kind="lib" path="/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/lib/rsyntaxtextarea.jar"/>

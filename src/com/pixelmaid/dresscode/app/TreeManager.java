@@ -10,6 +10,7 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreeSelectionModel;
 
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.ComplexPolygon;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
@@ -20,19 +21,23 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 
-public class TreeManager {
+public class TreeManager extends NodeEvent {
 
-	private JTree tree;
-	private DefaultMutableTreeNode top;
+	protected JTree tree;
+	protected DefaultMutableTreeNode top;
 	
-	public TreeManager(Color bg){
+	public TreeManager(){
 		top = new DefaultMutableTreeNode("Scene");
 		   // createNodes(top);
 		tree = new JTree(top);
-		this.tree.setBackground(bg);
+		
 			  
 		
 		
+	}
+	
+	public void setColors(Color bg){
+		this.tree.setBackground(bg);
 	}
 	
 	public void getNodes(ArrayList<Drawable> drawables){
