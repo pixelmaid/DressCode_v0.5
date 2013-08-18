@@ -626,10 +626,28 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					canvas.redraw();
 					break;
 				case CustomEvent.STAMP_SELECTED:
+					System.out.println("Stamp selected");
+					this.currentProject.setCode(this.codeField.getCode());
 					String stampName = stampManager.getSelectedNode();
-					System.out.println("stamp selected"+ stampName);
 					Stamp stamp = stampMap.get(stampName);
-					codeField.addText("\n"+stamp.getFunctionCall());
+					
+					this.codeField.setText(stamp.getFunctionDef());
+					break;
+				case CustomEvent.MAIN_SELECTED:
+					System.out.println("Main selected");
+					this.codeField.setText(this.currentProject.getCode());
+					break;
+				case CustomEvent.STAMP_INSERTED:
+					System.out.println("Stamp inserted");
+					String stampName2 = stampManager.getSelectedNode();
+					System.out.println("stamp inserted "+ stampName2);
+					Stamp stamp2 = stampMap.get(stampName2);
+					
+					this.codeField.setText(this.currentProject.getCode());
+					codeField.addText("\n"+stamp2.getFunctionCall());
+					this.currentProject.setCode(this.codeField.getCode());
+					
+					break;
 				
 			}
 		}

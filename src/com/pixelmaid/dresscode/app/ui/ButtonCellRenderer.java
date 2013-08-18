@@ -41,7 +41,16 @@ public class ButtonCellRenderer extends JPanel implements TreeCellRenderer
        if(selected){
     	   this.setBackground(Color.LIGHT_GRAY);
        }
+       else{
+    	   this.setBackground(Color.WHITE);
+
+       }
         return this;
     }
+    
+    public void deSelect(){
+    	this.setBackground(Color.WHITE);
+    }
+
 
 }
