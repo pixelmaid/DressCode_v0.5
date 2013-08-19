@@ -28,6 +28,8 @@ public class CustomEvent extends EventObject {
 	public static final int RECT_ADDED = 17;
 	public static final int ELLIPSE_ADDED = 18;
 	public static final int STAMP_SELECTED = 19;
+	public static final int STAMP_INSERTED = 20;
+	public static final int MAIN_SELECTED = 21;
 
 	public CustomEvent(Object source) {
 		super(source);

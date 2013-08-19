@@ -60,8 +60,13 @@ public class ButtonCellEditor extends AbstractCellEditor implements TreeCellEdit
         this.tree = tree;
         label.setText(value.toString());
         if(selected){
-        	panel.setBackground(Color.LIGHT_GRAY);
+     	 panel.setBackground(Color.LIGHT_GRAY);
         }
+        else{
+        	 panel.setBackground(Color.WHITE);
+
+        }
+    
         return panel;
     }
 
@@ -82,6 +87,10 @@ public class ButtonCellEditor extends AbstractCellEditor implements TreeCellEdit
     }
 
     @Override public void mouseExited(MouseEvent e){
+    	
+    }
+    public void deSelect(){
+    	panel.setBackground(Color.WHITE);
     }
 
 
