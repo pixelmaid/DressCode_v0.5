@@ -303,13 +303,20 @@ public JMenuItem getUndoMenu(){
 		}
 		String rectEnd =");";
 		Point origin = created.getOrigin();
-		String rectStatement = rectStart+origin.getX()+","+origin.getY()+","+created.getWidth()+","+created.getHeight()+rectEnd;
+		String rectStatement = rectStart+roundNum(origin.getX())+","+roundNum(origin.getY())+","+roundNum(created.getWidth())+","+roundNum(created.getHeight())+rectEnd;
 		
 		
 		
 		insertText(point,rectStatement);
 		
 	}
+	
+	
+	//returns a clean string from a rounded double
+	private String roundNum(double n){
+		return String.format("%.2f", n);
+	}
+
  
   /*  public void actionPerformed(ActionEvent evt) {
         String text = textField.getText();
@@ -452,5 +459,6 @@ protected void update()
    putValue(Action.NAME, "Redo");
  }
 }
+
 
 }

@@ -609,7 +609,8 @@ public void drawOrigin(Canvas embedded){
 		}*/
 	
 
-	//scales the object 
+	//scales the object  
+	//TODO make scaling recursive
 	public void scale(double x, double y) {
 		Point oldOrigin = this.origin.copy();
 		ArrayList<Point> origins = new ArrayList<Point>();
@@ -633,7 +634,7 @@ public void drawOrigin(Canvas embedded){
 	
 		
 		this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
-
+		
 		this.moveTo(oldOrigin.getX(), oldOrigin.getY());
 
 	}

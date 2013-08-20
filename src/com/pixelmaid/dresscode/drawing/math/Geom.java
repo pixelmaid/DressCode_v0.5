@@ -116,6 +116,7 @@ public class Geom {
    }
    
    public static Point getAveragePoint(ArrayList<Point> p){
+	  
 	   Point average = p.get(0);
 	   for(int i=1;i<p.size();i++){
 		   average = average.add(p.get(i));

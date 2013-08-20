@@ -1,11 +1,13 @@
 package com.pixelmaid.dresscode.app;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 
 import com.pixelmaid.dresscode.app.ui.CodeToolbar;
 import com.pixelmaid.dresscode.app.ui.DrawingToolbar;
 import com.pixelmaid.dresscode.app.ui.ImageButton;
+import com.pixelmaid.dresscode.app.ui.TreeToolbar;
 
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
@@ -26,6 +28,7 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.UIManager;
@@ -283,12 +286,37 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		JScrollPane treeView = new JScrollPane(treeManager.getTree());
 		treeView.setBorder(null);
+		
+		
+
+		JPanel stampContainer = new JPanel();
+		stampContainer.setBorder(null);
+		stampContainer.setBackground(OFF_WHITE);
+		BorderLayout b = new BorderLayout();
+		b.setVgap(10);
+		stampContainer.setLayout(b);
+		TreeToolbar stampToolbar = new TreeToolbar();
+		stampToolbar.init(400,20, "Stamps", BROWN,OFF_WHITE, PINK);
+		stampContainer.add(stampToolbar,BorderLayout.NORTH);
+		stampContainer.add(stampView,BorderLayout.CENTER);
+		
+		JPanel treeContainer = new JPanel();
+		treeContainer.setBorder(null);
+		treeContainer.setBackground(OFF_WHITE);
+		BorderLayout b2 = new BorderLayout();
+		b2.setVgap(10);
+		treeContainer.setLayout(b2);
+		TreeToolbar treeToolbar = new TreeToolbar();
+		treeToolbar.init(400,20, "Shapes", BROWN,OFF_WHITE, PINK);
+		treeContainer.add(treeToolbar,BorderLayout.NORTH);
+		treeContainer.add(treeView,BorderLayout.CENTER);
+		
 		leftSplitFrame = new JSplitPane();
 		leftSplitFrame.setBorder(null);
 		leftSplitFrame.setOrientation(JSplitPane.VERTICAL_SPLIT );
 		leftSplitFrame.setDividerLocation(height/2); 
-		leftSplitFrame.setTopComponent(stampView);
-		leftSplitFrame.setBottomComponent(treeView);
+		leftSplitFrame.setTopComponent(stampContainer);
+		leftSplitFrame.setBottomComponent(treeContainer);
 		
 	
 		leftSplitFrame.setDividerSize(5);
@@ -937,6 +965,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			currentTool = penTool;
 			penButton.setActive();
 			canvas.changeCursor(penTool.getImage());
+		}
+		else if (e.getSource()==clearButton){
+			console.clearText();
 		}
 		
 		else if (e.getSource() == openButton || e.getSource() == openAction) {

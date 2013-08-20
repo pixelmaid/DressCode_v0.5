@@ -69,9 +69,6 @@ public class CodingFrame extends JPanel {
 		codeContainer.setBorder(null);
 		codeContainer.setLayout(new BorderLayout());
 		
-		treeContainer = new JPanel();
-		treeContainer.setBorder(null);
-		treeContainer.setLayout(new BorderLayout());
 		//hiddeHolder = new JPanel();
 		//codeHolder.setLayout(new BorderLayout());
 
@@ -137,13 +134,9 @@ public class CodingFrame extends JPanel {
 		
 		
 	
-		treeContainer.add(d,BorderLayout.CENTER);
-		TreeToolbar tToolbar = new TreeToolbar();
-		tToolbar.init(400, 10, bg,brdr);
-		tToolbar.setMaximumSize(new Dimension(400,10));
-		//treeContainer.add(tToolbar,BorderLayout.NORTH);
 		
-		splitPane.setLeftComponent(treeContainer);
+		
+		splitPane.setLeftComponent(d);
 		//treeView.setMinimumSize(new Dimension(0,0));
 		
 			//this.add(t, BorderLayout.PAGE_START);
