@@ -2,6 +2,7 @@ package com.pixelmaid.dresscode.app;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 
@@ -48,7 +49,7 @@ public class CodingFrame extends JPanel {
 		
 	}
 	
-	 public void init(int w, int he, CodeField c, CodeField h, Console o, Toolbar t, JTree d, Color bg,Color sb, Color brdr, ImageButton clearButton){
+	 public void init(int w, int he, CodeField c, CodeField h, Console o, Toolbar t, Component d, Color bg,Color sb, Color brdr, ImageButton clearButton){
 		this.setBorder(null);
 		BorderLayout layout = new BorderLayout();
 		layout.setHgap(0);
@@ -135,16 +136,15 @@ public class CodingFrame extends JPanel {
 		//Create the scroll pane and add the tree to it. 
 		
 		
-		JScrollPane treeView = new JScrollPane(d);
-		treeView.setBorder(null);
-		treeContainer.add(treeView,BorderLayout.CENTER);
+	
+		treeContainer.add(d,BorderLayout.CENTER);
 		TreeToolbar tToolbar = new TreeToolbar();
 		tToolbar.init(400, 10, bg,brdr);
 		tToolbar.setMaximumSize(new Dimension(400,10));
 		//treeContainer.add(tToolbar,BorderLayout.NORTH);
 		
 		splitPane.setLeftComponent(treeContainer);
-		treeView.setMinimumSize(new Dimension(0,0));
+		//treeView.setMinimumSize(new Dimension(0,0));
 		
 			//this.add(t, BorderLayout.PAGE_START);
 		this.add(splitPane,BorderLayout.CENTER);

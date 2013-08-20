@@ -336,6 +336,10 @@ public class Stamp {
 		return functionDef;
 	}
 	
+	public void setFunctionDef(String def){
+		functionDef = def;		
+	}
+	
 	//returns function call
 	public String getFunctionCall(){
 		return functionCall;

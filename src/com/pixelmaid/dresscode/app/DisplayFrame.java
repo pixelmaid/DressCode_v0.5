@@ -18,18 +18,19 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowListener;
 import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Random;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.border.Border;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 
@@ -82,6 +83,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private  CodeField hiddenCodeField; //secondary code field (depreciated) //TODO: get rid of hiddenCodeField
 	private TreeManager	treeManager; //declarative view UI component
 	private StampManager stampManager; //stamp manager UI component
+	private boolean fromMain = true; //boolean to manage stamp switching
+	private String currentStamp = ""; //boolean to manage stamp switching
 
 	private  Console console; //output console
 	private CodeToolbar codingToolbar;
@@ -97,7 +100,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private ImageButton selectButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton;
 
 	private JSplitPane splitFrame; //split frame that holds drawing frame and coding frame
-
+	private JSplitPane leftSplitFrame; //split frame that holds tree views for stamps and declarative view
 	
 	private ArrayList<ImageButton> buttonList =  new ArrayList<ImageButton>(); //array that holds buttons
 	private LinkedHashMap<String, Stamp> stampMap = new LinkedHashMap<String, Stamp>(); //hashmap for storing created stamps
@@ -266,18 +269,33 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		codingToolbar.init(defaultDrawingPaneWidth,DEFAULT_TOOLBAR_HEIGHT,BROWN);
 		
 		//setup treeManager for declarative view
-		treeManager = new TreeManager();
-		treeManager.setColors(OFF_WHITE);
+		treeManager = new TreeManager(OFF_WHITE,LIGHT_GREY);
 		treeManager.getTree().addKeyListener(this);
 
-		stampManager = new StampManager();
-		stampManager.setColors(OFF_WHITE);
+		stampManager = new StampManager(OFF_WHITE,LIGHT_GREY);
 		stampManager.getTree().addKeyListener(this);
-		
+
 		//setup coding frame
 		codingFrame = new CodingFrame();
-		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, console, codingToolbar, stampManager.getTree(),BROWN,GREY,PINK,clearButton);
-
+		
+		JScrollPane stampView = new JScrollPane(stampManager.getTree());
+		stampView.setBorder(null);
+		
+		JScrollPane treeView = new JScrollPane(treeManager.getTree());
+		treeView.setBorder(null);
+		leftSplitFrame = new JSplitPane();
+		leftSplitFrame.setBorder(null);
+		leftSplitFrame.setOrientation(JSplitPane.VERTICAL_SPLIT );
+		leftSplitFrame.setDividerLocation(height/2); 
+		leftSplitFrame.setTopComponent(stampView);
+		leftSplitFrame.setBottomComponent(treeView);
+		
+	
+		leftSplitFrame.setDividerSize(5);
+		leftSplitFrame.setBackground(GREY);
+		leftSplitFrame.addComponentListener(this);
+		
+		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, console, codingToolbar, leftSplitFrame,BROWN,GREY,PINK,clearButton);
 		//setup split frame
 		splitFrame = new JSplitPane();
 		splitFrame.setOrientation(JSplitPane.HORIZONTAL_SPLIT );
@@ -288,6 +306,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		splitFrame.setDividerSize(5);
 		splitFrame.setBackground(GREY);
 		splitFrame.addComponentListener(this);
+		
+		//setup left split frame
+		
+		
 	
 		this.getContentPane().add(splitFrame);
 		
@@ -469,7 +491,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void createStamp(){
 		 Drawable selected = selectTool.getSelected();
 		 if(selected!=null){
-			 stampDialog = new StampDialog(this,true);
+			 stampDialog = new StampDialog(this,true,stampMap);
 			 if(stampDialog.getAnswer()){
 				 Stamp stamp = new Stamp();
 				 ArrayList<Drawable> d= new ArrayList<Drawable>();
@@ -477,13 +499,64 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				 stamp.setDrawables(stampDialog.getName(),stampDialog.isStatic(),d);
 				 stampManager.addChild(stamp);
 				 stampMap.put(stamp.getFunctionName(),stamp);
-			 	//codeField.addText("\n\n"+stamp.getFunctionDef());
-			 	//codeField.addText("\n\n"+stamp.getFunctionCall());
+			 	
 			 }
 		 }
 		 else{
 			 System.out.println("no objected selected, cannot create stamp!");
 		 }
+	 }
+	 
+	 /*called when stamp is selected in stamp manager*/
+	 private void selectStamp(){
+		 this.codeField.stopFilter(); //remove the current document filter on the codefield
+
+			if(fromMain){//if current code is main code, save into current project
+				this.currentProject.setCode(this.codeField.getCode());
+			}
+			else{ //otherwise save current stamp code in correct stamp
+				updateStampCode();
+			}
+			fromMain = false; //set from main to false (prevents incorrect saving of files)
+			String stampName = stampManager.getSelectedNode(); //get new stamp name from stampManager
+			currentStamp = stampName;
+			codingToolbar.updateLabel(stampName); //update label of coding window
+
+			Stamp stamp = stampMap.get(stampName); //locate new stamp based on name
+			this.codeField.setText(stamp.getFunctionDef()); //set code field text to stamp function
+			this.codeField.startFilter(stamp.getFunctionCall().length()+4); //filter code field to prevent editing of function name
+	 }
+	 
+	 /*resets code field to main program*/
+	 private void selectMain(){
+		 this.codeField.stopFilter(); //remove the current document filter on the codefield
+		if(currentStamp!=""){
+			updateStampCode(); //save stamp modifications
+		}
+
+		currentStamp=""; //set current stamp to empty string
+		fromMain = true; //set from main to true (prevents incorrect saving of files)
+		 stampManager.selectMainNode();
+
+		codingToolbar.updateLabel(this.currentProject.getName()); //set label back to main project name
+		this.codeField.setText(this.currentProject.getCode());//set code field text back to main project code
+	 }
+	 
+	 /*inserts stamp function call into program*/
+	 private void insertStamp(){
+		
+		 String stampName = stampManager.getSelectedNode();
+		 Stamp stamp = stampMap.get(stampName);
+		 selectMain();	
+		 codeField.addText("\n"+stamp.getFunctionCall());
+		this.currentProject.setCode(this.codeField.getCode()); //update project code to include added statements
+	
+	 }
+	 
+	 /*updates the code of the current stamp with modifications made by user*/
+	 private void updateStampCode(){
+		 Stamp pStamp =  stampMap.get(currentStamp);
+			pStamp.setFunctionDef(this.codeField.getCode());
 	 }
 	 
 	 /*sets code parse in motion*/
@@ -496,9 +569,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			//removes existing drawables
 			//TODO: EVENTUALLY PARSE ONLY MODIFIED CODE
 			drawableManager.clearAllDrawables();
-			
+			if(fromMain){
+				currentProject.setCode(codeField.getCode());
+			}
+			else{
+				updateStampCode();
+			}
 			//runs code from current project
-			currentProject.run(codeField.getCode(),stampMap,instructionManager);	
+			currentProject.run(currentProject.getCode(),stampMap,instructionManager);	
 			
 			/*if(currentProject.hiddenCode()){	
 				currentProject.run(codeField.getCode(),hiddenCodeField.getCode(),instructionManager);
@@ -594,10 +672,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					currentTool.mouseDragged(canvas.relativeMouseX(), canvas.relativeMouseY());
 				break;
 				case CustomEvent.TARGET_SELECTED:
+					selectMain();
 					Point p = targetTool.getTarget();
 					this.codeField.insertCoordinate(p.getX(), p.getY());
 				break;
 				case CustomEvent.DRAWABLE_MOVED:
+					selectMain();
 					Drawable d = selectTool.getSelected();
 					this.codeField.insertMoveStatement(d);
 					selectTool.reset();
@@ -607,16 +687,23 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					canvas.redraw();
 				break;
 				case CustomEvent.DRAWABLE_CREATED:
+					selectMain();
 					Drawable r = currentTool.getCreated();
 					drawableManager.addDrawable(r);
 					System.out.println(drawableManager.getDrawables().size());
 					canvas.redraw();
 					break;
 				case CustomEvent.RECT_ADDED:
+					selectMain();
 					codeField.insertShapeStatement(currentTool.getCreated(),"rect");
+					this.currentProject.setCode(this.codeField.getCode());
+
 					break;
 				case CustomEvent.ELLIPSE_ADDED:
+					selectMain();
 					codeField.insertShapeStatement(currentTool.getCreated(),"ellipse");
+					this.currentProject.setCode(this.codeField.getCode());
+
 					break;	
 				case CustomEvent.REDRAW_REQUEST:
 					System.out.println("redraw recieved");
@@ -625,28 +712,16 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 					canvas.redraw();
 					break;
-				case CustomEvent.STAMP_SELECTED:
-					System.out.println("Stamp selected");
-					this.currentProject.setCode(this.codeField.getCode());
-					String stampName = stampManager.getSelectedNode();
-					Stamp stamp = stampMap.get(stampName);
-					
-					this.codeField.setText(stamp.getFunctionDef());
+				case CustomEvent.STAMP_SELECTED:	
+					selectStamp();
+
 					break;
 				case CustomEvent.MAIN_SELECTED:
-					System.out.println("Main selected");
-					this.codeField.setText(this.currentProject.getCode());
+					selectMain();
 					break;
 				case CustomEvent.STAMP_INSERTED:
-					System.out.println("Stamp inserted");
-					String stampName2 = stampManager.getSelectedNode();
-					System.out.println("stamp inserted "+ stampName2);
-					Stamp stamp2 = stampMap.get(stampName2);
-					
-					this.codeField.setText(this.currentProject.getCode());
-					codeField.addText("\n"+stamp2.getFunctionCall());
-					this.currentProject.setCode(this.codeField.getCode());
-					
+					insertStamp();
+					run();
 					break;
 				
 			}
@@ -870,6 +945,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		else if (e.getSource() == saveButton || e.getSource() == saveAction ) {
 			currentProject.saveFile(this,codeField.getCode(),codingFrame);
+			this.codingToolbar.updateLabel(currentProject.getName());
 		}
 		
 		else if (e.getSource() == saveButton || e.getSource() == saveAsAction ) {
@@ -900,6 +976,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		else if (e.getSource() == stampAction){
 			createStamp();
+			run();
+			
 		}
 		
 		canvas.redraw();

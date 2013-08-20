@@ -4,6 +4,8 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
+import java.awt.FlowLayout;
+import java.awt.Font;
 
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -20,37 +22,44 @@ public class ButtonCellRenderer extends JPanel implements TreeCellRenderer
 	JButton button;
     JLabel label;
     JTree tree;
+    Color bg;
+    Color fg;
 
-    public ButtonCellRenderer(){
+    public ButtonCellRenderer(Color bg, Color fg){
        
     	super();
-    	  BorderLayout b = new BorderLayout();
-          b.setHgap(5);
-          this.setLayout(b);
+    	this.bg = bg;
+    	this.fg = fg;
+    	 FlowLayout b = new FlowLayout();
+	  	  b.setAlignment(FlowLayout.RIGHT);
+	  	  b.setVgap(0);
+	      b.setHgap(5);
+
+	    this.setLayout(b);
         button = new JButton("+");
-        button.setPreferredSize(new Dimension(20,20));
+        button.setBackground(bg);
+        button.setPreferredSize(new Dimension(15,15));
         label = new JLabel();
-      
+        label.setFont(new Font("Helvetica", Font.PLAIN, 12));
+        
         add(button, BorderLayout.EAST);
         add(label);
     }
 
     @Override public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus){
-        label.setText(value.toString());
+        
+    	
+    	label.setText(value.toString());
        this.tree = tree;
        if(selected){
-    	   this.setBackground(Color.LIGHT_GRAY);
+    	   this.setBackground(fg);
        }
        else{
-    	   this.setBackground(Color.WHITE);
+    	   this.setBackground(bg);
 
        }
         return this;
     }
-    
-    public void deSelect(){
-    	this.setBackground(Color.WHITE);
-    }
-
+  
 
 }

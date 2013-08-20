@@ -9,14 +9,17 @@ import java.awt.Font;
 import java.awt.event.*;
 import java.io.File;
 
+import javax.swing.text.AttributeSet;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import javax.swing.event.DocumentEvent;
 import javax.swing.event.DocumentListener;
 import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;
+import javax.swing.text.AbstractDocument;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.Document;
+import javax.swing.text.DocumentFilter;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
@@ -24,7 +27,32 @@ import javax.swing.undo.UndoManager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
+class Filter extends DocumentFilter {
+	  private int promptPosition =0;
+	  
+		public void setPrompt(int p){
+			promptPosition =p;
+		}
+		public void insertString(final FilterBypass fb, final int offset, final String string, final AttributeSet attr)
+	            throws BadLocationException {
+	        if (offset >= promptPosition) {
+	            super.insertString(fb, offset, string, attr);
+	        }
+	    }
 
+	    public void remove(final FilterBypass fb, final int offset, final int length) throws BadLocationException {
+	        if (offset >= promptPosition) {
+	            super.remove(fb, offset, length);
+	        }
+	    }
+
+	    public void replace(final FilterBypass fb, final int offset, final int length, final String text, final AttributeSet attrs)
+	            throws BadLocationException {
+	        if (offset >= promptPosition) {
+	            super.replace(fb, offset, length, text, attrs);
+	        }
+	    }
+	}
 
 public class CodeField extends JEditorPane implements DocumentListener, KeyListener{
 	private static final long serialVersionUID = 1L;
@@ -33,7 +61,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 	protected UndoManager undoManager = new UndoManager();
 	protected UndoAction undoAction = null;
 	protected RedoAction redoAction = null;
-    
+    private Filter filter;
 	
 	public CodeField() {
         super();
@@ -60,9 +88,18 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 		undoAction.setActions(undoManager,redoAction);
 		redoAction.setActions(undoManager,undoAction);
 		undoHandler.setActions(undoManager, undoAction, redoAction);
+		filter = new Filter(); // filter for Stamp editor
 		
     }
  
+    public void startFilter(int filterLength){
+    	filter.setPrompt(filterLength);
+    	((AbstractDocument)this.getDocument()).setDocumentFilter(filter);
+    }
+    
+    public void stopFilter(){
+    	((AbstractDocument)this.getDocument()).setDocumentFilter(null);
+    }
     
     public JMenuItem getRedoMenu(){
     	
@@ -173,6 +210,7 @@ public JMenuItem getUndoMenu(){
 		String text = this.getText();
 		text +=t;
 		this.setText(text);
+		this.setCaretPosition(this.getText().length());
 	}
 	
 	public void removeText(int pos, int endPos) {
@@ -414,4 +452,5 @@ protected void update()
    putValue(Action.NAME, "Redo");
  }
 }
+
 }

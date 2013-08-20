@@ -86,6 +86,7 @@ public class DCProject {
 
 	public void run(String code, LinkedHashMap<String, Stamp> stampMap, InstructionManager instructionManager){
 		String stampCode ="";
+		String parseCode = "";
 		for (String key : stampMap.keySet())
 		{
 		  
@@ -94,14 +95,16 @@ public class DCProject {
 		}
 		
 		
-		setCode(code+"\n"+stampCode);
+		parseCode = code+"\n"+stampCode;
 
-		instructionManager.parseText(getCode(),this.getUnits());
+		instructionManager.parseText(parseCode,this.getUnits());
+		
+		
 	}
 
 	public void run(String code, String hc, InstructionManager instructionManager){
-		setCode(hc+"\n"+code);
-		instructionManager.parseText(getCode(),this.getUnits());
+		String parseCode = hc+"\n"+code;
+		instructionManager.parseText(parseCode,this.getUnits());
 	}
 
 
@@ -323,6 +326,10 @@ public class DCProject {
 	}
 	public int getUnits() {
 		return this.units;
+	}
+	
+	public String getName() {
+		return this.name;
 	}
 	public void setSaved(boolean b) {
 		saved = b;

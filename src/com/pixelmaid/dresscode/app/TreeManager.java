@@ -1,6 +1,8 @@
 package com.pixelmaid.dresscode.app;
 
+import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.net.URL;
 import java.util.ArrayList;
 
@@ -25,20 +27,22 @@ public class TreeManager extends NodeEvent {
 
 	protected JTree tree;
 	protected DefaultMutableTreeNode top;
+	protected Color bg;
+	protected Color fg;
 	
-	public TreeManager(){
+	public TreeManager(Color bg, Color fg){
 		top = new DefaultMutableTreeNode("Scene");
 		   // createNodes(top);
 		tree = new JTree(top);
+		this.bg = bg;
+		this.fg = fg;
+		this.tree.setBackground(bg);
 		
 			  
 		
 		
 	}
 	
-	public void setColors(Color bg){
-		this.tree.setBackground(bg);
-	}
 	
 	public void getNodes(ArrayList<Drawable> drawables){
 		top.removeAllChildren();

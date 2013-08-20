@@ -3,8 +3,10 @@ package com.pixelmaid.dresscode.app;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Component;
+import java.awt.ComponentOrientation;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -33,17 +35,17 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 
 public class StampManager extends TreeManager {
 	private String selectedNode;
-	public StampManager(){
-
+	public StampManager(Color bg, Color fg){
+		super(bg,fg);
 		top = new DefaultMutableTreeNode("untitled");
 		   // createNodes(top);
 		tree = new JTree(top);
 		tree.setLayout(new BorderLayout());
 		tree.setRowHeight(20);
 		tree.setEditable(true);
-		tree.setCellRenderer(new ButtonCellRenderer());
+		tree.setCellRenderer(new ButtonCellRenderer(bg,fg));
 	    tree.setCellEditor(new ButtonCellEditor());
-		
+		tree.setBackground(bg);
 	        
 	     // retrieve the HashMap of Default properties.
 		 UIDefaults uiDefs = UIManager.getDefaults();
@@ -84,6 +86,10 @@ public class StampManager extends TreeManager {
 	}
 	
 	
+	public void selectMainNode(){
+		this.tree.setSelectionRow(0);
+	}
+	
 	
 	public class ButtonCellEditor extends AbstractCellEditor implements TreeCellEditor, ActionListener, MouseListener
 	{
@@ -99,23 +105,32 @@ public class StampManager extends TreeManager {
 
 	    public ButtonCellEditor(){
 	    	
-	  	  BorderLayout b = new BorderLayout();
-	        b.setHgap(5);
-	       
+	  	  FlowLayout b = new FlowLayout();
+	  	  b.setAlignment(FlowLayout.RIGHT);
+	  	  b.setVgap(0);
+
+	      b.setHgap(10);
+
 	        panel = new JPanel(b);
 	        button = new JButton("+");
-	        button.setPreferredSize(new Dimension(20,20));
+	        button.setPreferredSize(new Dimension(15,15));
 
 	        button.addMouseListener(this);
 	        label = new JLabel();
+	        label.setFont(new Font("Helvetica", Font.PLAIN, 12));
 	        label.addMouseListener(this);
-	        panel.add(button, BorderLayout.EAST);
+	        panel.add(button);
 	        panel.add(label);
 	    }
 
 	    @Override public Object getCellEditorValue(){
 	        return value.toString();
 	    }
+	    
+	    public void removeButton(){
+	       button.setVisible(false);
+	    }
+
 
 	    @Override public void actionPerformed(ActionEvent e){
 	       
@@ -127,10 +142,10 @@ public class StampManager extends TreeManager {
 	        this.tree = tree;
 	        label.setText(value.toString());
 	        if(selected){
-	     	 panel.setBackground(Color.LIGHT_GRAY);
+	     	 panel.setBackground(fg);
 	        }
 	        else{
-	        	 panel.setBackground(Color.WHITE);
+	        	 panel.setBackground(bg);
 
 	        }
 	    
@@ -143,7 +158,7 @@ public class StampManager extends TreeManager {
 	    @Override public void mousePressed(MouseEvent e){
 	        String val = value.toString();
 	        stopCellEditing();
-	        tree.updateUI();
+	        //tree.updateUI();
 	    }
 
 	    @Override public void mouseReleased(MouseEvent e){
@@ -155,7 +170,7 @@ public class StampManager extends TreeManager {
 			        singleClick(val);
 		        }
 		        stopCellEditing();
-		        tree.updateUI();
+		      //  tree.updateUI();
 	    
 	    }
 

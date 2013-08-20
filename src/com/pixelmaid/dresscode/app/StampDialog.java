@@ -19,7 +19,11 @@ import javax.swing.JButton;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
+import com.pixelmaid.dresscode.data.Stamp;
+
 import java.awt.event.ActionEvent; 
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class StampDialog extends JDialog implements ActionListener{
 	/**
@@ -36,12 +40,22 @@ public class StampDialog extends JDialog implements ActionListener{
 	    private JTextField nameF;
 	    private JRadioButton dynamicB;
 	    private JRadioButton staticB;
+	    private ArrayList<String> stampNames;
 
 	    public boolean getAnswer() { return answer; }
 	    private String message = "Create a new stamp";
 	    
-	    public StampDialog(JFrame frame, boolean modal) {
+	    public StampDialog(JFrame frame, boolean modal, LinkedHashMap<String, Stamp>stampMap) {
 	        super(frame, modal);
+	        stampNames = new ArrayList<String>();
+	        for (String key : stampMap.keySet())
+			{
+			  
+			    stampNames.add(key);
+			}
+			
+	        
+	        
 	        this.setPreferredSize(new Dimension(200,150));
 	        this.setTitle("New Stamp");
 	        myPanel = new JPanel();
@@ -110,6 +124,10 @@ public class StampDialog extends JDialog implements ActionListener{
 	            }
 	            else if(name.contains(" ")){
 	            	StampDialog.infoBox("Stamp name cannot contain any spaces.", "");
+	            }
+	            else if(stampNames.contains(name)){
+	            	StampDialog.infoBox("You already have a stamp named "+name+".\n Please choose a unique name.", "");
+
 	            }
 	            else{
 	            	answer = true;
