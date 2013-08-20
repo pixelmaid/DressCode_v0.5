@@ -363,6 +363,12 @@ public class Stamp {
 		return statement+=add;
 	}
 
+	public void setFunctionCall(String name) {
+		functionCall = name+"();";
+		functionName = name;
+		
+	}
+
 	
 	
 }

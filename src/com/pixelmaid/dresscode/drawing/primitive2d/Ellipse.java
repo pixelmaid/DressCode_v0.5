@@ -75,6 +75,10 @@ public class Ellipse extends Polygon {
     public void draw(Canvas e) {
 		if(!this.getHide()){
 			appearance(e.g);
+			if(this.getSelected()){
+				e.strokeWeight(2);
+				e.stroke(Drawable.SELECTED.r(),Drawable.SELECTED.g(),Drawable.SELECTED.b());
+			}
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			 e.rotate((float)Math.toRadians(getRotation()));
@@ -83,9 +87,7 @@ public class Ellipse extends Polygon {
 		e.ellipse(0,0,(float)width,(float)height);
 		e.popMatrix();
 		
-		if(this.getSelected()){
-			this.drawBoundingBox(e);
-		}
+		
 		
 		/*if(this.getDrawOrigin()){
 			this.drawOrigin(e);

@@ -24,6 +24,7 @@ import javax.swing.UIDefaults;
 import javax.swing.UIManager;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeCellRenderer;
+import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeCellEditor;
 import javax.swing.tree.TreeCellRenderer;
 import javax.swing.tree.TreePath;
@@ -62,6 +63,17 @@ public class StampManager extends TreeManager {
 		tree.updateUI();
 	}
 	
+	public void clearChildren(){
+		top.removeAllChildren();
+		DefaultTreeModel model = (DefaultTreeModel)tree.getModel();
+		model.reload(top);
+		tree.updateUI();
+	}
+	
+	public void updateLabel(String label){
+		this.top.setUserObject(label);
+		tree.updateUI();
+	}
 
 	private void singleClick(String s) {
 		selectedNode = s;

@@ -445,12 +445,15 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		mainRandom = new Random();
 		noise = new PerlinNoise();
 		
+		
 		//run window
 		canvas.init();
 		this.getContentPane().doLayout();
 		this.pack();
 		this.setResizable(true);
 		this.setVisible(true);
+		currentProject.newFile(codingFrame, codeField,canvas, drawableManager , instructionManager);
+		updateLabels();
 		
 	}
 	
@@ -498,6 +501,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        editMenu.add(codeField.getUndoMenu());
 	        editMenu.add(codeField.getRedoMenu());
 	        editMenu.add(stampAction);
+	        
+			
+
 	    }
 	 //=================End setup methods=======================//
 
@@ -614,6 +620,52 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			}*/
 	 }
 	 
+	 
+	 //opens new file
+	 
+	 private void openFile(){
+		 LinkedHashMap<String,Stamp> stmps = currentProject.openFile(this,codingFrame,canvas,instructionManager);
+			if(stmps!=null){
+				stampManager.clearChildren();
+				stampMap.clear();
+				stampMap = stmps;
+				for (String key : stampMap.keySet())
+				{
+					stampManager.addChild(stampMap.get(key));
+				}
+			}
+			codeField.setUnsaved(false);
+			updateLabels();
+	 }
+	 
+	 //creates new file
+	 private void newFile(){
+		 if(codeField.getUnsaved()){
+			 NewSaveDialog sd = new NewSaveDialog(this,true);
+			 if(sd.getAnswer()==NewSaveDialog.SAVED){
+				 saveFile();
+			}
+		 }
+		 codeField.setUnsaved(false);
+		currentProject.newFile(codingFrame, codeField,canvas, drawableManager , instructionManager);
+		updateLabels();
+	 }
+	 
+	 //saves the file
+	 private void saveFile(){
+		 currentProject.saveFile(this,codeField.getCode(),this.stampMap,codingFrame);
+		 codeField.setUnsaved(false);
+		 updateLabels();
+	 }
+	 
+	 //updates any identifying labels of the files
+	 private void updateLabels(){
+		if(fromMain){
+		 this.codingToolbar.updateLabel(currentProject.getName());
+		}
+		 this.stampManager.updateLabel(currentProject.getName());
+	 }
+	 
 	 //reports errors that occurred in parse
 	//TODO: IMPROVE ERROR REPORTING
 	 private void reportErrors(String errorTxt){
@@ -708,7 +760,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					selectMain();
 					Drawable d = selectTool.getSelected();
 					this.codeField.insertMoveStatement(d);
-					selectTool.reset();
 				break;
 				case CustomEvent.PAN_ACTIVE:
 					canvas.pan();
@@ -971,21 +1022,21 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		
 		else if (e.getSource() == openButton || e.getSource() == openAction) {
-			currentProject.openFile(this,codingFrame,canvas,instructionManager);
+			openFile();
 		}
 		
 		else if (e.getSource() == saveButton || e.getSource() == saveAction ) {
-			currentProject.saveFile(this,codeField.getCode(),codingFrame);
-			this.codingToolbar.updateLabel(currentProject.getName());
+			saveFile();
 		}
 		
-		else if (e.getSource() == saveButton || e.getSource() == saveAsAction ) {
+		else if (e.getSource() == saveAsAction ) {
 			currentProject.setSaved(false);
-			currentProject.saveFile(this,codeField.getCode(),codingFrame);
+			saveFile();
 		}
+		
 		
 		else if (e.getSource()==newButton ||e.getSource() == newAction){
-			currentProject.newFile(codingFrame, codeField,canvas, drawableManager , instructionManager);
+			newFile();
 		}
 		
 		else if (e.getSource() == printButton|| e.getSource() == exportAction) {

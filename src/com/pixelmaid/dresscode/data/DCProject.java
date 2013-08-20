@@ -33,6 +33,7 @@ public class DCProject {
 	public static JFileChooser	 fc;
 	public boolean saved = false;
 	private int template = 0;
+	private int inc=0;
 	protected boolean hasHiddenCode= false;
 
 	public DCProject(){
@@ -112,6 +113,8 @@ public class DCProject {
 		
 		cf.hideHiddenTab();
 		codeField.clear();
+		this.name="untitled_"+inc;
+		inc++;
 		dm.clearAllDrawables();
 		canvas.clear();
 		saved= false;
@@ -119,9 +122,9 @@ public class DCProject {
 	}
 
 
-	public void openFile(Component component, CodingFrame cf, Canvas canvas, InstructionManager im){
+	public LinkedHashMap<String, Stamp> openFile(Component component, CodingFrame cf, Canvas canvas, InstructionManager im){
 		int returnVal = fc.showOpenDialog(component);
-
+		LinkedHashMap<String, Stamp> stamps = null;
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = fc.getSelectedFile();
 			String filetxt= readFile(file);
@@ -160,12 +163,18 @@ public class DCProject {
 			else{
 				hasHiddenCode=false;
 			}
+			
+			String stampFile = path+"/"+"stamps";
+			stamps  = convertStamps(stampFile);
+			
 			this.saved=false;
+			return stamps;
 		} 
+		return null;
 
 	}
 
-	public void saveFile(Component component,String code,CodingFrame cf){
+	public void saveFile(Component component,String code,LinkedHashMap<String, Stamp> stampMap, CodingFrame cf){
 		setCode(code);
 		if(!saved){
 			if(this.path!=""){
@@ -179,52 +188,68 @@ public class DCProject {
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
 				File file = fc.getSelectedFile();
 
-				this.name =file.getName();
-				this.path= file.getAbsolutePath();
-				this.path = this.path.substring(0,path.length()-name.length());
-				File fileDir = new File(path+name);
-				System.out.println(fileDir.mkdirs());
-				File dataDir = new File(path+name+"/"+"data");
-				System.out.println(dataDir.mkdirs());
-				File fileNew = new File(path+name+"/"+name+extension);
-
-				System.out.println(path+name+"/"+name+extension);
-				writeFile(getCode(),fileNew);
-
-				File paramFile = new File(path+name+"/"+data+"/"+params);
-				double [] vars = new double[10];
-
-				vars[0]= getUnitWidth();
-				vars[1]= getUnitHeight(); // default width and height of project
-				vars[2]=  units; //units
-				vars[3] = template;
-				if(hasHiddenCode){
-					vars[4]=1;
-					cf.setTabTitle(1,name+"_hidden");
-					File hiddenFile = new File(path+name+"/"+data+"/"+name+"_hidden"+extension);
-					writeFile(cf.hiddenCodeField.getCode(),hiddenFile);
-				}
-				else{
-					vars[4]=0;
-
-				}
-
-				writeFile(vars,paramFile);
-				this.saved=true;
-				cf.setTabTitle(0, name);
-
+				saveToFile(file,cf,stampMap);
 			} 
 
 		}
 		else{
-			File f = new File(path+name+extension);
-			System.out.println("saved file");
-			writeFile(getCode(),f);
+			File file = new File(path+name);
+			saveToFile(file,cf,stampMap);
 		}
+		
 	}
 
+	private void saveToFile(File file, CodingFrame cf,LinkedHashMap<String, Stamp> stampMap){
+		this.name =file.getName();
+		this.path= file.getAbsolutePath();
+		this.path = this.path.substring(0,path.length()-name.length());
+		File fileDir = new File(path+name);
+		System.out.println(fileDir.mkdirs());
+		File dataDir = new File(path+name+"/"+"data");
+		File stampDir = new File(path+name+"/"+"stamps");
+		stampDir.mkdirs();
+		System.out.println(dataDir.mkdirs());
+		File fileNew = new File(path+name+"/"+name+extension);
 
+		System.out.println(path+name+"/"+name+extension);
+		writeFile(getCode(),fileNew);
 
+		File paramFile = new File(path+name+"/"+data+"/"+params);
+		double [] vars = new double[10];
+
+		vars[0]= getUnitWidth();
+		vars[1]= getUnitHeight(); // default width and height of project
+		vars[2]=  units; //units
+		vars[3] = template;
+		if(hasHiddenCode){
+			vars[4]=1;
+			cf.setTabTitle(1,name+"_hidden");
+			File hiddenFile = new File(path+name+"/"+data+"/"+name+"_hidden"+extension);
+			writeFile(cf.hiddenCodeField.getCode(),hiddenFile);
+		}
+		else{
+			vars[4]=0;
+
+		}
+
+		writeFile(vars,paramFile);
+		
+		for (String key : stampMap.keySet())
+		{
+		  
+		    Stamp s= stampMap.get(key);
+		    String stampName = key;
+		    String stampCode =s.getFunctionDef();
+		    File stampFile = new File(path+name+"/"+"stamps"+"/"+stampName+extension);
+		    writeFile(stampCode,stampFile);
+		}
+		
+		this.saved=true;
+		cf.setTabTitle(0, name);
+
+	}
+
+	
 	public void printFile(Component component, Canvas canvas){
 		File blank = new File(this.name);
 		fc.setSelectedFile(blank);
@@ -289,6 +314,29 @@ public class DCProject {
 		}
 
 		return vars;
+	}
+	
+	public LinkedHashMap<String, Stamp> convertStamps(String filePath){
+		LinkedHashMap<String, Stamp> stamps = new LinkedHashMap<String, Stamp>();
+		
+			File stampFolder = new File(filePath);
+			if(stampFolder.isDirectory()){
+			File[] files = stampFolder.listFiles();
+			for (File file : files) {
+				String filetxt= readFile(file);
+				String name = file.getName().substring(0, file.getName().length()-3);
+				System.out.println("name="+name+"\n"+"file="+filetxt);
+				Stamp stamp = new Stamp();
+				stamp.setFunctionDef(filetxt);
+				stamp.setFunctionCall(name);
+				stamps.put(name, stamp);
+			}
+		}
+				
+
+		
+	
+		return stamps;
 	}
 
 	public void writeFile(double[] vars, File file){

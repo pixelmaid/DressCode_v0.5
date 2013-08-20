@@ -62,6 +62,7 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 	protected UndoAction undoAction = null;
 	protected RedoAction redoAction = null;
     private Filter filter;
+    private boolean unsavedChanges= false;
 	
 	public CodeField() {
         super();
@@ -89,6 +90,8 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 		redoAction.setActions(undoManager,undoAction);
 		undoHandler.setActions(undoManager, undoAction, redoAction);
 		filter = new Filter(); // filter for Stamp editor
+		this.addKeyListener(this);
+		
 		
     }
  
@@ -168,6 +171,7 @@ public JMenuItem getUndoMenu(){
 			updateCanvas();
 		}*/
 		//this.getParent().dispatchEvent(e);
+		
 	}
 	
 
@@ -182,6 +186,7 @@ public JMenuItem getUndoMenu(){
 	public void keyTyped(KeyEvent e) {
 		// TODO Auto-generated method stub
 		//this.getParent().dispatchEvent(e);
+		unsavedChanges = true;
 		
 	}
 
@@ -315,6 +320,15 @@ public JMenuItem getUndoMenu(){
 	//returns a clean string from a rounded double
 	private String roundNum(double n){
 		return String.format("%.2f", n);
+	}
+	
+	
+	public boolean getUnsaved(){
+		return this.unsavedChanges;
+	}
+	
+	public void setUnsaved(boolean u){
+		this.unsavedChanges=u;
 	}
 
  

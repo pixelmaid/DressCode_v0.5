@@ -40,6 +40,10 @@ public class Line extends Polygon {
 	public void draw(Canvas e){
 		if(!this.getHide()){
 		appearance(e.g);
+		if(this.getSelected()){
+			e.strokeWeight(2);
+			e.stroke(Drawable.SELECTED.r(),Drawable.SELECTED.g(),Drawable.SELECTED.b());
+		}
 		e.pushMatrix();
 	
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));

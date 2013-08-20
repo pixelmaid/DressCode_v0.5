@@ -22,9 +22,12 @@ public class SelectTool extends Tool  {
 	}
 	
 	public void reset(){
-		if(selectedDrawable!=null){
-			selectedDrawable.setSelected(false);
+		
+		for(int i=0;i<tempDrawables.size();i++){
+			tempDrawables.get(i).setSelected(false);
+			System.out.println("setting "+i+" to false");
 		}
+		
 		selectedDrawable = null;
 		selected = false;
 		moved = false;
@@ -33,6 +36,7 @@ public class SelectTool extends Tool  {
 	@Override 
 	public void setActive(boolean a){
 		this.reset();
+		
 		active = a;
 	}
 	
@@ -60,11 +64,12 @@ public class SelectTool extends Tool  {
 				selected=true;
 				selectedDrawable.setSelected(true);
 				System.out.println("selected object at"+i);
-				this.fireToolEvent(CustomEvent.REDRAW_REQUEST);
 				break;
 		
 			}
 		}
+		this.fireToolEvent(CustomEvent.REDRAW_REQUEST);
+
 		
 		
 	}

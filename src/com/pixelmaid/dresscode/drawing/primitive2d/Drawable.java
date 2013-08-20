@@ -43,6 +43,9 @@ public class Drawable extends NodeEvent  {
 	private boolean codeCreated = true; //flag for if drawable was created with code or with graphic tool
 	private boolean gModified = false; //flag for if last line was modified in code or with graphic tool
 	protected final static int DEFAULT_WIDTH= 50;
+
+
+	public static final Color SELECTED = new Color(0,204,0);
 	protected boolean isHole = false;
 	private boolean selected = false;
 	private String error; 
@@ -110,6 +113,10 @@ public class Drawable extends NodeEvent  {
 	public void draw(Canvas embedded) {
 		if(!this.getHide()){//only draws if child is not hidden
 		appearance(embedded.g);
+		if(this.getSelected()){
+			embedded.strokeWeight(2);
+			embedded.stroke(Drawable.SELECTED.r(),Drawable.SELECTED.g(),Drawable.SELECTED.b());
+		}
 		embedded.pushMatrix();
 		embedded.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		embedded.rotate(PApplet.radians((float)getRotation()));
@@ -390,6 +397,9 @@ public void drawOrigin(Canvas embedded){
 	//sets if the drawable is selected or not
 	public void setSelected(boolean s){
 		this.selected = s;
+		for(int i=0;i<numChildren();i++){
+			this.getChildren().get(i).setSelected(s);
+		}
 	}
 	
 	//returns current value of selected

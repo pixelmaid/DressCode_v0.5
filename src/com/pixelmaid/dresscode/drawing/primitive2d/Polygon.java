@@ -202,6 +202,10 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	public void draw(Canvas e){
 		if(!this.getHide()){
 		appearance(e.g);
+		if(this.getSelected()){
+			e.strokeWeight(2);
+			e.stroke(Drawable.SELECTED.r(),Drawable.SELECTED.g(),Drawable.SELECTED.b());
+		}
 		if(isHole()){
 			e.fill(e.DEFAULT_BG);
 		}
@@ -269,7 +273,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		for(int i=0;i<points.size();i++){
 			Point p = points.get(i);
 			double delta = getOrigin().getY()-p.getY();
-			double yNew = origin.getX()+delta;
+			double yNew = origin.getY()+delta;
 			points.set(i, new Point(p.getX(),yNew));
 		}
 		
