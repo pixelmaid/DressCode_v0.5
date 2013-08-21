@@ -30,7 +30,7 @@ public class MirrorYNode extends NodeEvent implements DCNode {
     	d= param.evaluate().asDrawable();
     	d.setLine(line);
 
-    	d.mirrorY();
+    	d.mirrorY(d.getOrigin(),true);
     
     	return new VarType(d);	
         //throw new RuntimeException("Illegal function call: " + this);

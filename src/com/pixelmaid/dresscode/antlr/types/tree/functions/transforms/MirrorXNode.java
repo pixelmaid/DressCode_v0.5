@@ -29,7 +29,7 @@ public class MirrorXNode extends NodeEvent implements DCNode {
     	
     	d= param.evaluate().asDrawable();
     	d.setLine(line);
-    	d.mirrorX();
+    	d.mirrorX(d.getOrigin(),true);
     
     	return new VarType(d);	
         //throw new RuntimeException("Illegal function call: " + this);

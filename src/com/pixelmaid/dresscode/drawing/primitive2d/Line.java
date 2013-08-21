@@ -121,8 +121,49 @@ public class Line extends Polygon {
 			this.origin= Geom.getMidpoint(start, end);
 			return this;
 		}
-
-	
+		
+		
+		@Override
+		public Drawable mirrorX(Point focus, Boolean top){
+				
+				Point p1 = start.copy();
+				Point p2 = end.copy();
+				double delta = focus.getX()-p1.getX();
+				double xNew = focus.getX()+delta;
+				end = new Point(xNew,p1.getY());
+				
+				delta = focus.getX()-p2.getX();
+				xNew = focus.getX()+delta;
+				start = new Point(xNew,p2.getY());
+				
+			if(top){
+				resetOriginRecur();
+			}
+			return this;
+		}
+		@Override
+		public Drawable mirrorY(Point focus, Boolean top){
+				
+				Point p1 = start.copy();
+				Point p2 = end.copy();
+				double delta = focus.getY()-p1.getY();
+				double yNew = focus.getY()+delta;
+				end = new Point(p1.getX(),yNew);
+				
+				delta = focus.getY()-p2.getY();
+				yNew = focus.getY()+delta;
+				start = new Point(p2.getX(),yNew);
+				if(top){
+					resetOriginRecur();
+				}	
+			return this;
+		}
+	@Override
+	public void resetOriginRecur(){
+			
+		this.origin=Geom.getMidpoint(start, end);
+		//this.setPointsRelativeTo(this.origin);
+		}
 	
 	@Override
 	//converts line to polygon (questionable...)
@@ -133,6 +174,13 @@ public class Line extends Polygon {
 		poly.addPoint(end);
 		return poly;
 		
+	}
+	
+	@Override
+	//sets the points and holes relative around a new origin
+	public void setPointsRelativeTo(Point p) {
+		
+		this.moveTo(p.getX(), p.getY());
 	}
 	
 	@Override

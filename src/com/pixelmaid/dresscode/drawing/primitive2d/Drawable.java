@@ -475,18 +475,7 @@ public void drawOrigin(Canvas embedded){
 				
 				resetOriginRecur();
 			}
-			/*if(this.children.size()>1){
-				this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
-			}
 			
-			else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
-				this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
-			}
-			
-			
-			if(this.getParent()!=null){
-				this.parent.resetOrigin();
-			}*/
 			return this;
 			
 		}
@@ -513,54 +502,44 @@ public void drawOrigin(Canvas embedded){
 			
 			
 		
-		public Drawable mirrorX() {
+		public Drawable mirrorX(Point focus, Boolean top) {
 			this.setAbsolute();
-			ArrayList<Point> origins = new ArrayList<Point>();
 			
 			for(int i=0;i<this.children.size();i++){
-				this.children.get(i).mirrorX();
-				origins.add(this.children.get(i).getOrigin());
+				Drawable d = this.children.get(i);
+				d = d.mirrorX(focus, false);
+				this.children.set(i, d);
+				//origins.add(this.children.get(i).getOrigin());
 			}
 			
-			/*for(int i=0;i<this.holes.size();i++){
-				this.holes.get(i).mirrorX();
-			}*/
+			if(top){
 			
-			if(this.children.size()>1){
-				this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+				
+				resetOriginRecur();
 			}
 			
-			else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
-				this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
-			}
-			
-			if(this.getParent()!=null){
-				this.parent.resetOrigin();
-			}
 			return this;
+			
 		}
 		
-		public Drawable mirrorY() {
+		public Drawable mirrorY(Point focus, Boolean top) {
 			this.setAbsolute();
-			ArrayList<Point> origins = new ArrayList<Point>();
 			
 			for(int i=0;i<this.children.size();i++){
-				this.children.get(i).mirrorY();
-				origins.add(this.children.get(i).getOrigin());
+				Drawable d = this.children.get(i);
+				d = d.mirrorY(focus, false);
+				this.children.set(i, d);
+				//origins.add(this.children.get(i).getOrigin());
 			}
 			
-			if(this.children.size()>1){
-				this.moveOrigin(Geom.getAveragePoint(origins)); //set origin to average of group origins and re-orient group origins
+			if(top){
+			
+				
+				resetOriginRecur();
 			}
 			
-			else if(this.children.size()==1){ //if only one child, return the child and remove empty group from canvas
-				this.moveOrigin(this.children.get(0).getOrigin()); //set origin to average of group origins and re-orient group origins
-			}
-			
-			if(this.getParent()!=null){
-				this.parent.resetOrigin();
-			}
 			return this;
+			
 		}
 	
 	//returns the rotation of an object

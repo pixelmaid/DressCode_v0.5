@@ -146,31 +146,46 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	public void setClosed(boolean c){
 		closed = c;
 	}
-	/*public ArrayList<Hole> getHoles(){
-		return this.holes;
-	}*/
-	
-	/*public Point rotatePoint(Point pt, Point center, double angle)
-	{
-	    double theta =  ((angle/180)*Math.PI);
-	    double cosAngle = Math.cos(theta);
-	    double sinAngle = Math.sin(theta);
-	    
-	    double x = center.getX() + (int) ((pt.getX()-center.getX())*cosAngle-(pt.getY()-center.getY())*sinAngle);
-	    double y = center.getY() + (int) ((pt.getX()-center.getX())*sinAngle+(pt.getY()-center.getY())*cosAngle);
-	    Point nP = new Point(x,y);
-	    return nP;
-	}*/
 	
 	@Override
-	//rotates around a focus. does not change the rotation property
-	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
-		System.out.println("polygon rotate w/ focus");
-		if(getParent()!=null){
-		System.out.println("polygon parent origin="+getParent().getOrigin().getX()+","+getParent().getOrigin().getY());
+	public Drawable mirrorX(Point focus, Boolean top){
+	this.setPointsAbsolute();
+		for(int i=0;i<points.size();i++){
+			Point p = points.get(i);
+			double delta = focus.getX()-p.getX();
+			double xNew = focus.getX()+delta;
+			points.set(i, new Point(xNew,p.getY()));
 		}
-		System.out.println("polygon origin="+this.getOrigin().getX()+","+this.getOrigin().getY());
+		this.reversePoints();
 
+		if(top){
+			resetOriginRecur();
+		}
+		
+		
+		return this;
+	}
+	@Override
+	public Drawable mirrorY(Point focus, Boolean top){
+		this.setPointsAbsolute();
+		for(int i=0;i<points.size();i++){
+			Point p = points.get(i);
+			double delta = focus.getY()-p.getY();
+			double yNew = focus.getY()+delta;
+			points.set(i, new Point(p.getX(),yNew));
+		}
+		this.reversePoints();
+
+		if(top){
+			resetOriginRecur();
+		}
+		return this;
+	}
+	
+
+	@Override
+	//rotates around a focus. does not change the rotation property
+	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){	
 		this.setPointsAbsolute();
 		for(int i=0;i<this.points.size();i++){
 			Point newPoint = this.points.get(i).rotate(theta, focus);
@@ -181,7 +196,12 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		}
 		return this;
 
-		
+		/*System.out.println("polygon rotate w/ focus");
+		if(getParent()!=null){
+		System.out.println("polygon parent origin="+getParent().getOrigin().getX()+","+getParent().getOrigin().getY());
+		}
+		System.out.println("polygon origin="+this.getOrigin().getX()+","+this.getOrigin().getY());
+	*/
 	}
 	
 	
@@ -252,34 +272,6 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		e.popMatrix();
 		}
 	
-	}
-	@Override
-	public Drawable mirrorX(){
-	this.setPointsAbsolute();
-		for(int i=0;i<points.size();i++){
-			Point p = points.get(i);
-			double delta = getOrigin().getX()-p.getX();
-			double xNew = origin.getX()+delta;
-			points.set(i, new Point(xNew,p.getY()));
-		}
-		
-		this.setPointsRelativeTo(this.origin);
-		
-		return this;
-	}
-	@Override
-	public Drawable mirrorY(){
-		this.setPointsAbsolute();
-		for(int i=0;i<points.size();i++){
-			Point p = points.get(i);
-			double delta = getOrigin().getY()-p.getY();
-			double yNew = origin.getY()+delta;
-			points.set(i, new Point(p.getX(),yNew));
-		}
-		
-		this.setPointsRelativeTo(this.origin);
-		
-		return this;
 	}
 	
 	@Override
