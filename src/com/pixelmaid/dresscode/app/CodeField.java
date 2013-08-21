@@ -26,6 +26,7 @@ import javax.swing.undo.UndoManager;
 
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
 class Filter extends DocumentFilter {
 	  private int promptPosition =0;
@@ -310,6 +311,29 @@ public JMenuItem getUndoMenu(){
 		Point origin = created.getOrigin();
 		String rectStatement = rectStart+roundNum(origin.getX())+","+roundNum(origin.getY())+","+roundNum(created.getWidth())+","+roundNum(created.getHeight())+rectEnd;
 		
+		
+		
+		insertText(point,rectStatement);
+		
+	}
+	
+	public void insertPolyStatement(Polygon created, double rotation, String shape) {
+		int point = this.getText().length();
+		String rectStart;
+		String rectEnd = ");";
+		String rotationStatement="";
+		if(rotation!=0){
+			rectStart = "rotate(poly(";
+			rotationStatement="),"+roundNum(rotation);
+			
+		}
+		else{
+			rectStart = "poly(";
+		}
+	
+		
+		Point origin = created.getOrigin();
+		String rectStatement = rectStart+roundNum(origin.getX())+","+roundNum(origin.getY())+","+roundNum(created.numSides())+","+roundNum(created.sideLength())+rotationStatement+rectEnd;
 		
 		
 		insertText(point,rectStatement);

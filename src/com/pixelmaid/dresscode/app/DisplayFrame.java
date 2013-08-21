@@ -16,6 +16,8 @@ import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowListener;
@@ -54,9 +56,9 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
+import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
-
-public class DisplayFrame extends javax.swing.JFrame implements CustomEventListener, KeyListener, ActionListener, WindowListener, WindowFocusListener,ComponentListener,TreeSelectionListener{
+public class DisplayFrame extends javax.swing.JFrame implements CustomEventListener, KeyListener, ActionListener, MouseListener, WindowListener, WindowFocusListener,ComponentListener,TreeSelectionListener{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -123,6 +125,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private PanTool panTool;
 	private RectTool rectTool;
 	private EllipseTool ellipseTool;
+	private PolyTool polyTool;
 	private Tool defaultTool;
 	private Tool currentTool;	
 	
@@ -382,6 +385,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		rectTool.setImage("cross_t");
 		ellipseTool = new EllipseTool();
 		ellipseTool.setImage("cross_t");
+		polyTool = new PolyTool();
+		polyTool.setImage("cross_t");
 		defaultTool = new Tool();
 		
 		currentTool= defaultTool;
@@ -396,6 +401,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		panTool.addEventListener(this);
 		rectTool.addEventListener(this);
 		ellipseTool.addEventListener(this);
+		polyTool.addEventListener(this);
+
 		stampManager.addEventListener(this);
 		
 		//setup action listeners
@@ -409,6 +416,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		rectButton.addActionListener(this);
 		ellipseButton.addActionListener(this);
 		polyButton.addActionListener(this);
+		polyButton.addMouseListener(this);
 		lineButton.addActionListener(this);
 		curveButton.addActionListener(this);
 		penButton.addActionListener(this);
@@ -825,6 +833,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					this.currentProject.setCode(this.codeField.getCode());
 
 					break;	
+				case CustomEvent.POLY_ADDED:
+					selectMain();
+					codeField.insertPolyStatement((Polygon)currentTool.getCreated(),((PolyTool)currentTool).getRotation(),"poly");
+					this.currentProject.setCode(this.codeField.getCode());
+
+					break;
 				case CustomEvent.REDRAW_REQUEST:
 					System.out.println("redraw recieved");
 					System.out.println(drawableManager.getDrawables().size());
@@ -1058,6 +1072,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			penButton.setActive();
 			canvas.changeCursor(penTool.getImage());
 		}
+		else if (e.getSource()==polyButton){
+			currentTool = polyTool;
+			polyButton.setActive();
+			canvas.changeCursor(polyTool.getImage());
+		}
+		
 		else if (e.getSource()==clearButton){
 			console.clearText();
 		}
@@ -1138,6 +1158,43 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		public String getName(){
 			return this.name;
 		}
+		
+	}
+
+
+
+
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
 		
 	}
 	

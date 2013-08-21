@@ -1077,6 +1077,11 @@ public void drawOrigin(Canvas embedded){
 			return this.error;
 		}
 
+		public Drawable setUnitDistance() {
+			// TODO Auto-generated method stub
+			return this;
+		}
+
 
 		
 

@@ -16,6 +16,8 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 
 public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	protected ArrayList<Point> points;
+	private int sideNum = 0;
+	private double sideLength = 0;
 	//private ArrayList<Hole> holes;
 	boolean closed = true;
 	private static double DEFAULT_LENGTH = 20;
@@ -38,8 +40,22 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		this(x,y,sides,DEFAULT_LENGTH);
 	}
 	
+	public Drawable setRadius(double r,int sides){
+		this.clearPoints();
+		sideNum  = sides;
+		sideLength = 2*r*Math.sin(Math.toRadians(180/sides));
+		for(int i=0;i<sides;i++){
+			double theta = 360/sides*i;
+			Point p = new Point(0,0,Math.toRadians(theta)+Math.PI/2 - Math.PI/sides,r);
+			this.addPoint(p);
+		}
+		return this;
+	}
+	
 	public Polygon(double x, double y,int sides, double length){
 		this(new Point(x,y));
+		sideNum  = sides;
+		sideLength = length;
 		if(sides!=0){
 		double a = length/(2*Math.sin(Math.toRadians(180/sides)));
 		for(int i=0;i<sides;i++){
@@ -308,6 +324,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	
 	
 	
+	
 	@Override
 	//scales the object on the x axis
 		public Drawable scale(double x, double y,  Point focus, Boolean top ) {
@@ -568,6 +585,20 @@ public Drawable expand(){
 			public void rotateTurtleTo(double theta){
 				
 				TurtleStruct.angle = theta;
+			}
+
+			
+			//returns number of sides
+			public int numSides() {
+				// TODO Auto-generated method stub
+				return sideNum;
+			}
+			
+
+			//returns number of sides
+			public double sideLength() {
+				// TODO Auto-generated method stub
+				return sideLength;
 			}
 
 			
