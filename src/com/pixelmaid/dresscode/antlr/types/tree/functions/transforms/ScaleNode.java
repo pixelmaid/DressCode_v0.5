@@ -38,7 +38,7 @@ public class ScaleNode extends NodeEvent implements DCNode {
     	if(params.size()==3){
     	y=params.get(2).evaluate().asDouble();
     	
-    		d.scale(x,y);
+    		d.scale(x,y,d.getOrigin().copy(),true);
     		
     	}
     	

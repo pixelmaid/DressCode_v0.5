@@ -1,0 +1,26 @@
+lastX = WIDTH/2;
+lastY = HEIGHT/2;
+g = group();
+
+num = 800;
+length = 30;
+
+repeat i=0: num:
+x = round(random(-1,1))*length;
+y = round(random(-1,1))*length;
+
+if lastX+x<0 || lastX+x>WIDTH:
+x=-x;
+end
+
+if lastY+y<0 || lastY+y>HEIGHT:
+y=-y;
+end
+
+l = line(lastX,lastY,lastX+x,lastY+y);
+add(g,l);
+
+lastX = x+lastX;
+lastY= y+lastY;
+
+end

@@ -7,6 +7,7 @@ import processing.core.PGraphics;
 import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
+import com.pixelmaid.dresscode.drawing.math.Vec2d;
 
 public class Rectangle extends Polygon{
 	private double width;
@@ -107,6 +108,45 @@ public class Rectangle extends Polygon{
 	}
 	
 	@Override
+	public Drawable mirrorX(Point focus, Boolean top){
+		this.setAbsolute();
+			Point p1 = origin.copy();
+			
+			double delta = focus.getX()-p1.getX();
+			double xNew = focus.getX()+delta;
+			this.setOrigin(new Point(xNew,p1.getY()));
+			
+			
+			
+		if(top){
+			resetOriginRecur();
+		}
+		return this;
+	}
+	@Override
+	public Drawable mirrorY(Point focus, Boolean top){
+		this.setAbsolute();
+			Point p1 = origin.copy();
+			
+			double delta = focus.getY()-p1.getY();
+			double yNew = focus.getY()+delta;
+			this.setOrigin(new Point(p1.getX(),yNew));
+			
+			
+			
+		if(top){
+			resetOriginRecur();
+		}
+		return this;
+	}
+	
+	@Override
+	public void resetOriginRecur(){
+			
+		System.out.println("no origin reset needed for rectangle");
+		}
+	
+	@Override
 	//converts rectangle to polygon
 	public Polygon toPolygon() {
 		Polygon poly =  new Polygon();
@@ -121,9 +161,25 @@ public class Rectangle extends Polygon{
 	}
 	
 	@Override
-	public void scale(double x,double y){
+	public Drawable scale(double x, double y, Point focus, Boolean top){
+		this.setAbsolute();
+		Point p = this.getOrigin();
+		Vec2d vX = new Vec2d(p.getX()-focus.getX(),p.getY()-focus.getY());
+		vX = vX.mul(x);
+		p.setX(vX.x+focus.getX());
+		
+		Vec2d vY = new Vec2d(p.getX()-focus.getX(),p.getY()-focus.getY());
+		vY = vY.mul(y);
+		p.setY(vY.y+focus.getY());
+		this.setOrigin(p);
+		
 		this.width = this.width*x;
 		this.height = this.height*y;
+		
+		if(top){
+			resetOriginRecur();
+		}
+		return this;
 	}
 	
 

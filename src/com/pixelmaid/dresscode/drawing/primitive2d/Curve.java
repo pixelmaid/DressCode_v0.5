@@ -8,6 +8,7 @@ import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
+import com.pixelmaid.dresscode.drawing.math.Vec2d;
 
 
 public class Curve extends Polygon { //series of symmetrical curved lines grouped together in a single line
@@ -43,9 +44,12 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		this.control2=control2;
 		this.end=end;
 		this.origin= this.getOrigin();
+		this.doFill(false);
 
 	}
 
+
+	
 	@Override
 	public void draw(Canvas e){
 		//TODO: MAKE CURVE DRAW ORIGIN CORRECTLY
@@ -60,18 +64,31 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		e.rotate(PApplet.radians((float)getRotation()));
 		e.scale((float)getScaleX(),(float)getScaleY());
 		e.bezier((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()),(float)(control1.getX()-getOrigin().getX()), (float)(control1.getY()-getOrigin().getY()), (float)(control2.getX()-origin.getX()), (float)(control2.getY()-origin.getY()),(float)(end.getX()-origin.getX()), (float)(end.getY()-origin.getY()));
+		e.popMatrix();
+		
+		}
+	}
+	
+	
+	@Override
+	public void drawOrigin(Canvas e){
+		e.stroke(0,0,0);
+		e.strokeWeight(8);
+		e.point((float)this.origin.getX(),(float)this.origin.getY());
+		
+		e.stroke(255,255,255);
+		e.strokeWeight(4);
+		e.point((float)this.origin.getX(),(float)this.origin.getY());
+		
+		e.pushMatrix();
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.stroke(255,0,0);
 		e.strokeWeight(5);
 		e.point((float)(control1.getX()-getOrigin().getX()), (float)(control1.getY()-getOrigin().getY()));
 		e.stroke(0,0,255);
 		e.point((float)(control2.getX()-getOrigin().getX()), (float)(control2.getY()-getOrigin().getY()));
 		e.popMatrix();
-		/*if(this.getDrawOrigin()){
-			this.drawOrigin(e);
-		}*/
-		}
 	}
-
 	
 	@Override
 	public void print(PGraphics e){
@@ -89,11 +106,21 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		
 	}
 
+	@Override 
+	public void setAbsolute() {
+		
+		if(this.getParent()!=null){
+			this.start= this.start.add(this.getParent().getOrigin()); //add parent's origin to its origin
+			this.end= this.end.add(this.getParent().getOrigin()); //add parent's origin to its origin
+			this.control1= this.control1.add(this.getParent().getOrigin()); //add parent's origin to its origin
+			this.control2= this.control2.add(this.getParent().getOrigin()); //add parent's origin to its origin
+			this.rotation = (this.getRotation()+this.getParent().getRotation()); //adds parent's rotation to its rotation
+		}
 
-	/*@Override
-	public void setAbsolute(){
-		//do nothing;
-	}*/
+		
+		
+	}
+	
 
 	@Override
 	public Curve copy(){
@@ -103,13 +130,155 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	}
 	
 	@Override
-	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
-		this.start = start.rotate(theta, focus);
-		this.end = end.rotate(theta, focus);
-		this.control1 = control1.rotate(theta,focus);
-		this.control2 = control2.rotate(theta,focus);
-		this.origin= this.getOrigin();
+	//rotates around a focus. does not change the rotation property
+	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){	
+		this.setPointsAbsolute();
+		
+			start= start.rotate(theta, focus);
+			end =  end.rotate(theta, focus);
+			control1= control1.rotate(theta, focus);
+			control2 =  control2.rotate(theta, focus);
+		
+		if(top){
+			resetOriginRecur();
+		}
 		return this;
+	}
+	
+	@Override
+	public Drawable mirrorX(Point focus, Boolean top){
+		this.setAbsolute();
+			Point p1 = start.copy();
+			Point p2 = end.copy();
+			Point c1 = control1.copy();
+			Point c2 = control2.copy();
+			
+			double delta = focus.getX()-p1.getX();
+			double xNew = focus.getX()+delta;
+			start = new Point(xNew,p1.getY());
+			
+			delta = focus.getX()-p2.getX();
+			xNew = focus.getX()+delta;
+			end = new Point(xNew,p2.getY());
+			
+			delta = focus.getX()-c1.getX();
+			xNew = focus.getX()+delta;
+			control1 = new Point(xNew,c1.getY());
+			
+
+			delta = focus.getX()-c2.getX();
+			xNew = focus.getX()+delta;
+			control2 = new Point(xNew,c2.getY());
+			this.origin= this.getOrigin();
+			
+		if(top){
+			resetOriginRecur();
+		}
+		return this;
+	}
+	
+	
+	@Override
+	public Drawable mirrorY(Point focus, Boolean top){
+		this.setAbsolute();
+			Point p1 = start.copy();
+			Point p2 = end.copy();
+			Point c1 = control1.copy();
+			Point c2 = control2.copy();
+			
+			double delta = focus.getY()-p1.getY();
+			double yNew = focus.getY()+delta;
+			start = new Point(p1.getX(),yNew);
+			
+			delta = focus.getY()-p2.getY();
+			yNew = focus.getY()+delta;
+			end = new Point(p2.getX(),yNew);
+			
+			delta = focus.getY()-c1.getY();
+			yNew = focus.getY()+delta;
+			control1 = new Point(c1.getX(),yNew);
+			
+
+			delta = focus.getY()-c2.getY();
+			yNew = focus.getY()+delta;
+			control2 = new Point(c2.getX(),yNew);
+			this.origin= this.getOrigin();
+			
+		if(top){
+			resetOriginRecur();
+		}
+		return this;
+	}
+	
+	@Override
+	public Drawable scale(double x, double y, Point focus, Boolean top){
+		this.setAbsolute();
+		Point p1 = this.end.copy();
+		Point p2 = this.start.copy();
+		Point c1 = this.control1.copy();
+		Point c2 = this.control2.copy();
+		Vec2d vX = new Vec2d(p1.getX()-focus.getX(),p1.getY()-focus.getY());
+		vX = vX.mul(x);
+		p1.setX(vX.x+focus.getX());
+		
+		Vec2d vY = new Vec2d(p1.getX()-focus.getX(),p1.getY()-focus.getY());
+		vY = vY.mul(y);
+		p1.setY(vY.y+focus.getY());
+		start=p1;
+		
+		vX = new Vec2d(p2.getX()-focus.getX(),p2.getY()-focus.getY());
+		vX = vX.mul(x);
+		p2.setX(vX.x+focus.getX());
+		
+		
+		vY = new Vec2d(p2.getX()-focus.getX(),p2.getY()-focus.getY());
+		vY = vY.mul(y);
+		p2.setY(vY.y+focus.getY());
+		end=p2;
+		
+		vX = new Vec2d(c1.getX()-focus.getX(),c1.getY()-focus.getY());
+		vX = vX.mul(x);
+		c1.setX(vX.x+focus.getX());
+		
+		vY = new Vec2d(c1.getX()-focus.getX(),c1.getY()-focus.getY());
+		vY = vY.mul(y);
+		c1.setY(vY.y+focus.getY());
+		control1 = c1;
+		
+		vX = new Vec2d(c2.getX()-focus.getX(),c2.getY()-focus.getY());
+		vX = vX.mul(x);
+		c2.setX(vX.x+focus.getX());
+		
+		vY = new Vec2d(c2.getX()-focus.getX(),c2.getY()-focus.getY());
+		vY = vY.mul(y);
+		c2.setY(vY.y+focus.getY());
+		control2=c2;
+		
+		this.getOrigin();
+		
+		if(top){
+			resetOriginRecur();
+		}
+		return this;
+	}
+	
+	@Override
+	public void resetOriginRecur(){
+			
+		this.origin=this.getOrigin();
+		//this.setPointsRelativeTo(this.origin);
+		}
+	
+	@Override 
+	protected void setRelativeTo(Point p) {
+
+		this.start = this.start.difference(p);
+		this.end = this.end.difference(p);
+		this.control1 = this.control1.difference(p);
+		this.control2 = this.control2.difference(p);
+		this.getOrigin();
+
+		
 	}
 	
 	@Override
@@ -181,6 +350,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	
 	@Override
 	public void moveTo(double x, double y){
+		this.origin= this.getOrigin();
 		double dx = x - this.origin.getX();
 		double dy = y-this.origin.getY();
 		this.start.moveBy(dx,dy);

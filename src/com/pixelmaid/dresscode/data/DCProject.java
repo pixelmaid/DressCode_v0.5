@@ -122,11 +122,18 @@ public class DCProject {
 	}
 
 
-	public LinkedHashMap<String, Stamp> openFile(Component component, CodingFrame cf, Canvas canvas, InstructionManager im){
-		int returnVal = fc.showOpenDialog(component);
+	public LinkedHashMap<String, Stamp> openFile(File file, Component component, CodingFrame cf, Canvas canvas, InstructionManager im){
+		int returnVal = JFileChooser.CANCEL_OPTION;
 		LinkedHashMap<String, Stamp> stamps = null;
-		if (returnVal == JFileChooser.APPROVE_OPTION) {
-			File file = fc.getSelectedFile();
+		
+		if(file ==null){
+			returnVal = fc.showOpenDialog(component);
+			if (returnVal == JFileChooser.APPROVE_OPTION) {
+				file = fc.getSelectedFile();
+			}
+		}
+		
+		if( file!=null){
 			String filetxt= readFile(file);
 			setCode(filetxt);
 
@@ -264,7 +271,7 @@ public class DCProject {
 	
 
 
-	public String readFile(File file) {
+	public static String readFile(File file) {
 
 		BufferedReader br = null;
 		String fileString="";

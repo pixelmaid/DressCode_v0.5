@@ -195,13 +195,6 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 			resetOriginRecur();
 		}
 		return this;
-
-		/*System.out.println("polygon rotate w/ focus");
-		if(getParent()!=null){
-		System.out.println("polygon parent origin="+getParent().getOrigin().getX()+","+getParent().getOrigin().getY());
-		}
-		System.out.println("polygon origin="+this.getOrigin().getX()+","+this.getOrigin().getY());
-	*/
 	}
 	
 	
@@ -303,33 +296,31 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	
 	
 	@Override
-/*	public void scaleX(double x){
-		scaleX(x, this.getOrigin());
-	}
-	*/
 	//scales the object on the x axis
-		public void scale(double x,double y ) {
-		double oldX = this.getOrigin().getX();
-		double oldY = this.getOrigin().getY();
+		public Drawable scale(double x, double y,  Point focus, Boolean top ) {
+		
+		this.setPointsAbsolute();
 		for(int i=0;i<points.size();i++){
 			Point p = points.get(i);
 			System.out.println("startX ="+p.getX());
-			Vec2d vX = new Vec2d(p.getX()-origin.getX(),p.getY()-origin.getY());
+			Vec2d vX = new Vec2d(p.getX()-focus.getX(),p.getY()-focus.getY());
 			vX = vX.mul(x);
-			p.setX(vX.x+origin.getX());
+			p.setX(vX.x+focus.getX());
 			
-			Vec2d vY = new Vec2d(p.getX()-origin.getX(),p.getY()-origin.getY());
+			Vec2d vY = new Vec2d(p.getX()-focus.getX(),p.getY()-focus.getY());
 			vY = vY.mul(y);
-			p.setY(vY.y+origin.getY());
+			p.setY(vY.y+focus.getY());
 			//p.setY(v.y+this.getOrigin().getY());
 			points.set(i,p);
 			
 			
 		}
 	
-		resetOriginRecur();
-	
-		this.setOrigin(new Point(oldX, oldY));
+		if(top){
+			resetOriginRecur();
+		}
+		return this;
+		
 		
 	
 		}

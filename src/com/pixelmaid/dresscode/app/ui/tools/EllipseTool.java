@@ -56,7 +56,7 @@ public class EllipseTool extends Tool  {
 			((Ellipse)(createdDrawable)).setHeight(1);
 			double scaleX = Math.abs(mouseX+4-createdDrawable.getOrigin().getX())*2;
 			double scaleY = Math.abs(mouseY+5-createdDrawable.getOrigin().getY())*2;
-			createdDrawable.scale(scaleX,scaleY);
+			createdDrawable.scale(scaleX,scaleY,createdDrawable.getOrigin(),true);
 			System.out.println(createdDrawable.getWidth()+","+createdDrawable.getHeight());
 			this.fireToolEvent(CustomEvent.REDRAW_REQUEST);
 		}

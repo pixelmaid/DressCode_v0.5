@@ -114,27 +114,35 @@ public class Line extends Polygon {
 		this.origin= Geom.getMidpoint(start, end);
 	}
 	
-		@Override
-		public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
-			this.start = start.rotate(theta, focus);
-			this.end = end.rotate(theta, focus);
-			this.origin= Geom.getMidpoint(start, end);
-			return this;
+	@Override
+	//rotates around a focus. does not change the rotation property
+	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){	
+		this.setPointsAbsolute();
+		
+			start= start.rotate(theta, focus);
+			end =  end.rotate(theta, focus);
+		
+		if(top){
+			resetOriginRecur();
 		}
+		return this;
+	}
+	
 		
 		
 		@Override
 		public Drawable mirrorX(Point focus, Boolean top){
-				
+			this.setAbsolute();
 				Point p1 = start.copy();
 				Point p2 = end.copy();
 				double delta = focus.getX()-p1.getX();
 				double xNew = focus.getX()+delta;
-				end = new Point(xNew,p1.getY());
+				start = new Point(xNew,p1.getY());
 				
 				delta = focus.getX()-p2.getX();
 				xNew = focus.getX()+delta;
-				start = new Point(xNew,p2.getY());
+				end = new Point(xNew,p2.getY());
+				this.origin= Geom.getMidpoint(start,end);
 				
 			if(top){
 				resetOriginRecur();
@@ -143,21 +151,57 @@ public class Line extends Polygon {
 		}
 		@Override
 		public Drawable mirrorY(Point focus, Boolean top){
-				
+			this.setAbsolute();
+	
 				Point p1 = start.copy();
 				Point p2 = end.copy();
 				double delta = focus.getY()-p1.getY();
 				double yNew = focus.getY()+delta;
-				end = new Point(p1.getX(),yNew);
+				start = new Point(p1.getX(),yNew);
 				
 				delta = focus.getY()-p2.getY();
 				yNew = focus.getY()+delta;
-				start = new Point(p2.getX(),yNew);
+				end = new Point(p2.getX(),yNew);
+				this.origin= Geom.getMidpoint(start,end);
+
 				if(top){
 					resetOriginRecur();
 				}	
 			return this;
 		}
+		
+		
+		@Override
+		public Drawable scale(double x, double y, Point focus, Boolean top){
+			this.setAbsolute();
+			Point p1 = this.end.copy();
+			Point p2 = this.start.copy();
+			Vec2d vX = new Vec2d(p1.getX()-focus.getX(),p1.getY()-focus.getY());
+			vX = vX.mul(x);
+			p1.setX(vX.x+focus.getX());
+			
+			Vec2d vY = new Vec2d(p1.getX()-focus.getX(),p1.getY()-focus.getY());
+			vY = vY.mul(y);
+			p1.setY(vY.y+focus.getY());
+			start = p1;
+			
+			vX = new Vec2d(p2.getX()-focus.getX(),p2.getY()-focus.getY());
+			vX = vX.mul(x);
+			p2.setX(vX.x+focus.getX());
+			
+			vY = new Vec2d(p2.getX()-focus.getX(),p2.getY()-focus.getY());
+			vY = vY.mul(y);
+			p2.setY(vY.y+focus.getY());
+			end=p2;
+			
+			this.origin  = Geom.getMidpoint(start, end);
+			
+			if(top){
+				resetOriginRecur();
+			}
+			return this;
+		}
+		
 	@Override
 	public void resetOriginRecur(){
 			
@@ -183,11 +227,7 @@ public class Line extends Polygon {
 		this.moveTo(p.getX(), p.getY());
 	}
 	
-	@Override
-	public void scale(double x,double y){
-		//this.width = this.width*x;
-		//this.height = this.height*y;
-	}
+	
 	
 	public Drawable expand(){
 		if(this.getStrokeWeight()<1){
@@ -223,8 +263,8 @@ public class Line extends Polygon {
 
 		this.start = this.start.difference(p);
 		this.end = this.end.difference(p);
+		this.origin= Geom.getMidpoint(start,end);
 
-		
 		
 	}
 	

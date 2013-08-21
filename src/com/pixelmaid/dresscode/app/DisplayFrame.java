@@ -19,11 +19,13 @@ import java.awt.event.KeyListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Random;
 
 import javax.swing.BorderFactory;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -107,6 +109,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 	private ArrayList<ImageButton> buttonList =  new ArrayList<ImageButton>(); //array that holds buttons
 	private LinkedHashMap<String, Stamp> stampMap = new LinkedHashMap<String, Stamp>(); //hashmap for storing created stamps
+	private ArrayList<String> exampleList = new ArrayList<String>();
 	
 	//menu items
 	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction, saveAsAction, stampAction;
@@ -121,7 +124,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private RectTool rectTool;
 	private EllipseTool ellipseTool;
 	private Tool defaultTool;
-	private Tool currentTool;
+	private Tool currentTool;	
 	
 	private static InstructionManager instructionManager; //data manager for program data
 	private static DrawableManager drawableManager; //data manager for drawing data
@@ -468,6 +471,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        JMenu fileMenu = new JMenu("File");
 	        JMenu editMenu = new JMenu("Edit");
 	        JMenu exampleMenu = new JMenu("Examples");
+	        setupExampleMenu(exampleMenu);
 	        //TODO:setup example menu
 	      
 	        menuBar.add(fileMenu);
@@ -505,6 +509,28 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			
 
 	    }
+	 
+	 //loads the example menu with examples
+	 private void setupExampleMenu(JMenu exampleMenu){
+		String path = (ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/examples")).getPath();
+		 File exampleFolder = new File(path);
+			File[] files = exampleFolder.listFiles();
+			for (File file : files) {
+				String name = file.getName().substring(0, file.getName().length());
+				System.out.println("name="+name+"\n");
+				exampleList.add(name);
+				JMenuItem exampleAction = new ExampleItem(name);
+				exampleMenu.add(exampleAction);
+				exampleAction.addActionListener(this);
+			} 
+	 }
+	 
+	 //opens an example according to string
+	 private void openExample(String name){
+		String path = (ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/examples/"+name+"/"+name+".dc")).getPath();
+		File example = new File(path);
+		openFile(example);
+	 }
 	 //=================End setup methods=======================//
 
 	 //=================Event response methods=======================//
@@ -623,8 +649,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 //opens new file
 	 
-	 private void openFile(){
-		 LinkedHashMap<String,Stamp> stmps = currentProject.openFile(this,codingFrame,canvas,instructionManager);
+	 private void openFile(File file){
+		 LinkedHashMap<String,Stamp> stmps = currentProject.openFile(file, this,codingFrame,canvas,instructionManager);
 			if(stmps!=null){
 				stampManager.clearChildren();
 				stampMap.clear();
@@ -642,13 +668,28 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void newFile(){
 		 if(codeField.getUnsaved()){
 			 NewSaveDialog sd = new NewSaveDialog(this,true);
+			if(sd.getAnswer()==NewSaveDialog.CANCEL){
+				System.out.println("new file canceled");
+			}
+			else{
 			 if(sd.getAnswer()==NewSaveDialog.SAVED){
 				 saveFile();
 			}
+			 codeField.setUnsaved(false);
+			 stampMap.clear();
+			 stampManager.clearChildren();
+			currentProject.newFile(codingFrame, codeField,canvas, drawableManager , instructionManager);
+			updateLabels();
+			}
 		 }
-		 codeField.setUnsaved(false);
-		currentProject.newFile(codingFrame, codeField,canvas, drawableManager , instructionManager);
-		updateLabels();
+		 else{
+			codeField.setUnsaved(false);
+			 stampMap.clear();
+			 stampManager.clearChildren();
+			currentProject.newFile(codingFrame, codeField,canvas, drawableManager , instructionManager);
+			updateLabels();
+		 }
+		
 	 }
 	 
 	 //saves the file
@@ -1022,7 +1063,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		
 		else if (e.getSource() == openButton || e.getSource() == openAction) {
-			openFile();
+			openFile(null);
 		}
 		
 		else if (e.getSource() == saveButton || e.getSource() == saveAction ) {
@@ -1061,6 +1102,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			run();
 			
 		}
+		else if (e.getSource() instanceof ExampleItem){
+			ExampleItem eI = (ExampleItem)e.getSource();
+			System.out.println(eI.getName());
+			openExample(eI.getName());
+			
+		}
+			
 		
 		canvas.redraw();
 
@@ -1073,8 +1121,24 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 	}
 	
+	
+	
+	
 	//================= END DEFAULT Action Listeners =======================//
 
 	
+	class ExampleItem extends JMenuItem{
+		String name;
+		public ExampleItem(String name){
+			
+			super(name);
+			this.name= name;
+		}
+		
+		public String getName(){
+			return this.name;
+		}
+		
+	}
 	
 }
