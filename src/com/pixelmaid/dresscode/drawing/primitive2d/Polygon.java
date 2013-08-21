@@ -184,6 +184,19 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	
 
 	@Override
+	//flattens multi-dimensional groups into 1 dimension
+	public Drawable flatten(boolean top,Drawable d){
+		if(top){
+			this.flattenedDrawable = d;
+		}
+		
+		System.out.println("flattening polygon");
+		this.setAbsolute();	
+		d.add(this);	
+		return this;
+	}
+	
+	@Override
 	//rotates around a focus. does not change the rotation property
 	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){	
 		this.setPointsAbsolute();

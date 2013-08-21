@@ -48,7 +48,10 @@ public class Drawable extends NodeEvent  {
 	public static final Color SELECTED = new Color(0,204,0);
 	protected boolean isHole = false;
 	private boolean selected = false;
-	private String error; 
+	private String error;
+
+
+	protected Drawable flattenedDrawable= null; 
 	
 	//===============PRIVATE METHODS=================//
 	
@@ -453,6 +456,27 @@ public void drawOrigin(Canvas embedded){
 
 	}
 	
+	//flattens multi-dimensional groups into 1 dimension
+	public Drawable flatten(boolean top, Drawable d){
+		if(top){
+			this.flattenedDrawable = d;
+		}
+		this.setAbsolute();
+		ArrayList<Drawable> children = this.getChildren();
+		System.out.println("num children to flatten="+this.numChildren());
+		for(int i=0;i<this.numChildren();i++){
+			children.get(i).flatten(false,d);
+		}
+		if(top){
+			d.resetOriginRecur();
+		}
+		return this;
+	}
+	
+	public Drawable getFlattenedDrawable(){
+		return this.flattenedDrawable;
+	}
+	
 	//rotates around a focus. does not change the rotation property
 		public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
 			System.out.println("rotate with focus");
@@ -617,7 +641,7 @@ public void drawOrigin(Canvas embedded){
 		Drawable d = new Drawable();
 		copyParameters(this,d);
 		for(int i=0;i<this.children.size();i++){
-			d.add(this.children.get(i).copy());
+			d.addToGroup(this.children.get(i).copy());
 		}
 			
 		return d;

@@ -33,13 +33,15 @@ public class ClipNode extends NodeEvent implements DCNode {
     
     	//try{
     	Drawable aP = params.get(0).evaluate().asDrawable();
-    	Drawable bP =  params.get(1).evaluate().asDrawable();
+    	Drawable b = params.get(1).evaluate().asDrawable();
+    	Drawable bP =  b.flatten(true,new Drawable()).getFlattenedDrawable();
     
     	
     	d = PolyBoolean.intersection(aP.copy(),bP.copy());
         d.setIdentifier(aP.getIdentifier());
         aP.hide();
     	bP.hide();
+    	b.hide();
 
     	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d);
     	

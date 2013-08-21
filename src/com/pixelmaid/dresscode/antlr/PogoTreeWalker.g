@@ -154,8 +154,10 @@ functionCall returns [DCNode node]
    |^(FUNC_CALL Difference exprList?){node = new DifferenceNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
    |^(FUNC_CALL Clip exprList?){node = new ClipNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
    |^(FUNC_CALL Xor exprList?){node = new XorNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
+   |^(FUNC_CALL Flatten expression){node = new FlattenNode($expression.node,currentScope, $FUNC_CALL.getLine());}
    ;
    
+  
     patternCall returns [DCNode node]
    : ^(FUNC_CALL Grid exprList?) {node = new GridNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
    | ^(FUNC_CALL Wave exprList?) {node = new WaveNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}

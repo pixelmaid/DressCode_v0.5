@@ -147,6 +147,7 @@ functionCall
    | Difference	'(' exprList? ')'-> ^(FUNC_CALL Difference exprList?)
    | Clip	'(' exprList? ')'-> ^(FUNC_CALL Clip exprList?)
    | Xor	'(' exprList? ')'-> ^(FUNC_CALL Xor exprList?)
+   | Flatten	'(' expression ')'-> ^(FUNC_CALL Flatten expression)
    ;
    
    patternCall
@@ -400,6 +401,7 @@ Union: 'union';
 Difference: 'diff';
 Clip	: 'clip';
 Xor	:'xor';
+Flatten : 'flatten';
 
 //patterns
 Grid	: 'grid';
