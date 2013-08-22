@@ -45,11 +45,15 @@ public class Stamp {
 	* which are recursively sorted into a function defintion
 	*/
 	
-	public void setDrawables(String fName, boolean isStatic, ArrayList<Drawable> drawables){
+	public void setDrawables(String fName, boolean isStatic, Drawable d){
 		functionName = fName;
 		
-		System.out.println("set drawables for stamp, length="+drawables.size());
-		if(drawables.size()==1 && drawables.get(0).numChildren()==0){
+		
+			functionDef += initGroup();
+			setDrawablesRecur(d,true);
+		
+		
+	/*	if(drawables.size()==1 && drawables.get(0).numChildren()==0){
 			functionDef += initGroup();
 			setDrawablesRecur(drawables.get(0),true);
 		}
@@ -58,7 +62,7 @@ public class Stamp {
 		for (int i=0;i<drawables.size();i++){
 				setDrawablesRecur(drawables.get(i),true);
 			}
-		}
+		}*/
 		functionDef = functionStart+functionName+functionMiddle+"\n"+functionDef+"\n"+returnStatement+"\n"+functionEnd;
 		functionCall = functionName+"();";
 		
@@ -67,29 +71,35 @@ public class Stamp {
 	 * called by setDrawables
 	 */
 	private void setDrawablesRecur(Drawable d, boolean toGroup){
-		d.setAbsolute();
+		
 		VarType v = new VarType(d);
 		if(v.isEllipse()){
+			d.setAbsolute();
 			functionDef+= "\n"+addEllipseStatement((Ellipse)d, toGroup);	
 			System.out.println("functionDef="+functionDef);
 		}
 		else if(v.isRectangle()){
+			d.setAbsolute();
 			functionDef+= "\n"+addRectStatement((Rectangle)d,toGroup);	
 		}
 		
 		else if(v.isCurve()){
+			d.setAbsolute();
 			functionDef+= "\n"+addCurveStatement((Curve)d,toGroup);	
 		}
 		else if(v.isLine()){
+			d.setAbsolute();
 			functionDef+= "\n"+addLineStatement((Line)d,toGroup);	
 		}
 		else if(v.isLShape()){
+			d.setAbsolute();
 			functionDef+= "\n"+addLShapeStatement((LShape)d,toGroup);	
 		}
 		else if(v.isPolygon()){
 			functionDef+= "\n"+addPolyStatement((Polygon)d,toGroup);	
 		}
 		else{
+			d.setAbsolute();
 			ArrayList<Drawable> drawables = d.getChildren();
 			for (int i=0;i<drawables.size();i++){
 				setDrawablesRecur(drawables.get(i),toGroup);
@@ -143,6 +153,7 @@ public class Stamp {
 	
 	// individual drawable type statement creators
 		public static String addPolyStatement(Polygon e, boolean toGroup){
+			
 			String id ="p"+pId;
 			String list  = "lst"+listId+" =[";
 			String listEnd = "];";

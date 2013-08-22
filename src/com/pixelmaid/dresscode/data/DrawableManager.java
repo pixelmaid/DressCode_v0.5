@@ -113,6 +113,20 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 		
 	}
 
+	public void deselectAll() {
+		for(int i=0;i<drawables.size();i++){
+			drawables.get(i).setSelected(false);
+		}
+		
+	}
+	
+	public void selectAll() {
+		for(int i=0;i<drawables.size();i++){
+			drawables.get(i).setSelected(true);
+		}
+		
+	}
+
 	
 	
 	

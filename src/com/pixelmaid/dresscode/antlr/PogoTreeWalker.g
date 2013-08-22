@@ -168,7 +168,7 @@ functionCall returns [DCNode node]
    :^(FUNC_CALL Cosine expression) {node = new CosineNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Sine expression) {node = new SineNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Tan expression) {node = new TanNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL ATan expression) {node = new ATanNode($expression.node,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL ATan exprList?) {node = new ATanNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Random exprList?) {node = new RandomNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Gaussian exprList?) {node = new GaussianNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Noise exprList?) {node = new NoiseNode($exprList.e,$FUNC_CALL.getLine());}
@@ -181,6 +181,7 @@ functionCall returns [DCNode node]
    
    ;
    
+  
    
    getCall returns [DCNode node]
   : ^(FUNC_CALL GetWidth expression) {node = new GetWidthNode($expression.node);}
@@ -195,6 +196,8 @@ functionCall returns [DCNode node]
   |^(FUNC_CALL GetEnd expression) 
   |^(FUNC_CALL GetDistance exprList?) {node = new DistanceNode($exprList.e);}
   |^(FUNC_CALL GetIntersect exprList?) {node = new IntersectNode($exprList.e);}
+  |^(FUNC_CALL GetAngle exprList? ) {node = new GetAngleNode($exprList.e);}
+  |^(FUNC_CALL GetRadius exprList? ) {node = new GetRadiusNode($exprList.e);}
   ;
 
 ifStatement returns [DCNode node]

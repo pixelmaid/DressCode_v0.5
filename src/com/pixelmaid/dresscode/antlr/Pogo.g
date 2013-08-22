@@ -169,13 +169,15 @@ functionCall
   |GetEnd '(' expression ')'-> ^(FUNC_CALL GetEnd expression) 
   |GetDistance '(' exprList?  ')'-> ^(FUNC_CALL GetDistance exprList? ) 
   |GetIntersect'(' exprList?  ')'-> ^(FUNC_CALL GetIntersect exprList? ) 
+  |GetAngle'(' exprList?  ')'-> ^(FUNC_CALL GetAngle exprList? ) 
+  |GetRadius'(' exprList?  ')'-> ^(FUNC_CALL GetRadius exprList? ) 
   ;
    
    mathCall
    	:Cosine '(' expression ')'   -> ^(FUNC_CALL Cosine expression)
    	|Sine '(' expression ')'   -> ^(FUNC_CALL Sine expression)
    	|Tan '(' expression ')'   -> ^(FUNC_CALL Tan expression)
-   	|ATan '(' expression ')'   -> ^(FUNC_CALL ATan expression)
+   	|ATan '(' exprList? ')'   -> ^(FUNC_CALL ATan exprList?)
    	|Random '(' exprList? ')'   -> ^(FUNC_CALL Random exprList?)
    	|Gaussian '(' exprList? ')'   -> ^(FUNC_CALL Gaussian exprList?)
    	|Noise '(' exprList? ')'   -> ^(FUNC_CALL Noise exprList?)
@@ -416,6 +418,8 @@ GetX: 'getX';
 GetY: 'getY';
 GetOrigin: 'getOrigin';
 GetRotation: 'getRotation';
+GetAngle	: 'getAngle';
+GetRadius	: 'getRadius';
 GetFill: 'getFill';
 GetStroke: 'getStroke';
 GetStart: 'getStart';

@@ -37,6 +37,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
+import javax.swing.text.BadLocationException;
 
 
 
@@ -413,6 +414,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		curveTool.addEventListener(this);
 
 		stampManager.addEventListener(this);
+		treeManager.addEventListener(this);
 		
 		//setup action listeners
 		selectButton.addActionListener(this);
@@ -571,9 +573,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			 stampDialog = new StampDialog(this,true,stampMap);
 			 if(stampDialog.getAnswer()){
 				 Stamp stamp = new Stamp();
-				 ArrayList<Drawable> d= new ArrayList<Drawable>();
-				 d.add(selected);
-				 stamp.setDrawables(stampDialog.getName(),stampDialog.isStatic(),d);
+				 stamp.setDrawables(stampDialog.getName(),stampDialog.isStatic(),selected);
 				 stampManager.addChild(stamp);
 				 stampMap.put(stamp.getFunctionName(),stamp);
 			 	
@@ -649,7 +649,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 	runButton.setActive(); //toggles run button to active visual state
 			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); //sets cursor to wait
 			console.clearText();
-
+			codeField.removeHighlights();
 			//removes existing drawables
 			//TODO: EVENTUALLY PARSE ONLY MODIFIED CODE
 			drawableManager.clearAllDrawables();
@@ -823,6 +823,17 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					this.currentProject.setCode(this.codeField.getCode());
 
 				break;
+				case CustomEvent.TREE_DRAWABLE_SELECTED:
+					try{
+						Drawable selected = treeManager.getSelectedDrawable();
+						codeField.highlightLine(selected.getInitLine());
+
+						canvas.redraw();
+					}
+					catch (BadLocationException e){
+						System.out.println(e);
+					}
+					break;
 				case CustomEvent.DRAWABLE_MOVED:
 					selectMain();
 					Drawable d = selectTool.getSelected();
@@ -846,6 +857,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					codeField.insertShapeStatement(currentTool.getCreated(),"rect");
 					this.currentProject.setCode(this.codeField.getCode());
 					run();	
+					
 					break;
 				case CustomEvent.ELLIPSE_ADDED:
 					selectMain();
@@ -879,10 +891,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					run();	
 					break;
 				case CustomEvent.REDRAW_REQUEST:
-					System.out.println("redraw recieved");
-					System.out.println(drawableManager.getDrawables().size());
 					 canvas.setDrawables(drawableManager.getDrawables());
 
+					canvas.redraw();
+					break;
+				case CustomEvent.DESELECT_ALL:
+					
+					drawableManager.deselectAll();
 					canvas.redraw();
 					break;
 				case CustomEvent.STAMP_SELECTED:	

@@ -39,6 +39,7 @@ public class Drawable extends NodeEvent  {
 	private boolean drawOrigin=true;
 	private String identifier = "";
 	private int line= 0; //last line of modification
+	private int initLine = -1;
 	private int endPos = -1;//if modified graphically, position where modification code ends
 	private boolean codeCreated = true; //flag for if drawable was created with code or with graphic tool
 	private boolean gModified = false; //flag for if last line was modified in code or with graphic tool
@@ -189,7 +190,7 @@ public class Drawable extends NodeEvent  {
 			
 		}
 		else{
-			//e.noStroke();
+			e.noStroke();
 		}
 		e.strokeWeight((float)this.getStrokeWeight());
 		
@@ -249,7 +250,15 @@ public void drawOrigin(Canvas embedded){
 	
 	public void setLine(int l){
 		this.line = l;
+		if(initLine==-1){
+			initLine = l;
+		}
 	}
+	public int getInitLine() {
+		return this.line;
+	}
+	
+	
 	
 	public void setCodeCreated(boolean cC){
 		codeCreated = cC;

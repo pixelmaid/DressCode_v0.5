@@ -412,6 +412,7 @@ public Drawable expand(){
 	@Override
 	//sets all points to absolute position based on the origin of the object
 	public void setPointsAbsolute() {
+		//TODO: eventually need to deal with the fact that this should not contain setAbsolute
 		this.setAbsolute();
 		
 		for(int i=0;i<this.points.size();i++){

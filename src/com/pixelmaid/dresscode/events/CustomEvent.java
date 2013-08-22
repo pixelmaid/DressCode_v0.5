@@ -34,6 +34,8 @@ public class CustomEvent extends EventObject {
 	public static final int LINE_ADDED = 23;
 	public static final int CURVE_ADDED = 24;
 	public static final int IRREGULAR_POLY_ADDED = 25;
+	public static final int DESELECT_ALL = 26;
+	public static final int TREE_DRAWABLE_SELECTED = 27;
 
 	public CustomEvent(Object source) {
 		super(source);

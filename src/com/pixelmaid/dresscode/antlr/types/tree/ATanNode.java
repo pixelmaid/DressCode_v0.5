@@ -2,17 +2,19 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 
 
+import java.util.List;
+
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
 public class ATanNode  extends NodeEvent implements DCNode {
 
-	protected DCNode param;
+	protected List<DCNode> params;
 
     protected int line;
 
 
-  public ATanNode(DCNode p, int l) {
-      param = p;
+  public ATanNode(List<DCNode> ps, int l) {
+      params = ps;
       line = l;
      
   }
@@ -22,12 +24,12 @@ public class ATanNode  extends NodeEvent implements DCNode {
   	
   	try{
   		
-  	double d= Math.atan(param.evaluate().asDouble());
+  	double d= Math.atan2(params.get(0).evaluate().asDouble(),params.get(1).evaluate().asDouble());
   	
-  	return new VarType(d);
+  	return new VarType(Math.toDegrees(d));
   	}
   	catch (ClassCastException e){
-  		throw new RuntimeException("Illegal cosine function call at line:"+ line+" : " + this);
+  		throw new RuntimeException("Illegal atan function call at line:"+ line+" : " + this);
   	}
   }
 

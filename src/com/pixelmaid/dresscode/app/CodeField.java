@@ -3,11 +3,16 @@ package com.pixelmaid.dresscode.app;
 /*manages the code entry interface, and intializes and runs the antlr lexer and parser classes
 to update the canvas */
 
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Event;
 import java.awt.Font;
 import java.awt.event.*;
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.IOException;
+import java.io.StringReader;
+import java.util.ArrayList;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.*;
@@ -18,8 +23,12 @@ import javax.swing.event.UndoableEditEvent;
 import javax.swing.event.UndoableEditListener;
 import javax.swing.text.AbstractDocument;
 import javax.swing.text.BadLocationException;
+import javax.swing.text.DefaultHighlighter;
+import javax.swing.text.DefaultHighlighter.DefaultHighlightPainter;
 import javax.swing.text.Document;
 import javax.swing.text.DocumentFilter;
+import javax.swing.text.Element;
+import javax.swing.text.PlainDocument;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
@@ -76,6 +85,10 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
     	this.setPreferredSize(new Dimension(550,500));
 		this.setContentType("text/java");
 		this.setText("");
+		Document doc = this.getDocument();
+		if (doc instanceof PlainDocument) {
+		    doc.putProperty(PlainDocument.tabSizeAttribute, 2);
+		}
 		this.setBorder(new EmptyBorder(10,10,10,10));
 		this.setFont(new Font("Courier", 0, size));
 		editorPaneDocument = this.getDocument();
@@ -190,6 +203,7 @@ public JMenuItem getUndoMenu(){
 		// TODO Auto-generated method stub
 		//this.getParent().dispatchEvent(e);
 		unsavedChanges = true;
+		removeHighlights();
 		
 	}
 
@@ -395,6 +409,61 @@ public JMenuItem getUndoMenu(){
 		insertText(point,polyStatement);
 		
 	}
+	
+	public void removeHighlights(){
+		this.getHighlighter().removeAllHighlights();
+	}
+	
+	//TODO: CLEAN THIS UP- seriously this is sad code. 
+	public void highlightLine(int lineNumber) throws BadLocationException{
+		this.getHighlighter().removeAllHighlights();
+		int lineNum = lineNumber-1;
+		System.out.println("lineNumber="+lineNumber);
+	
+		
+		String text = this.getText();
+		ArrayList<String> lines = new ArrayList<String>();
+		final BufferedReader br = new BufferedReader(new StringReader(text));
+		String line;
+		
+		try {
+			while ((line = br.readLine()) != null) {
+			  lines.add(line);
+			}
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	
+		int pos =0;
+		for(int i=0;i<lineNum; i++){
+			pos+=lines.get(i).length();
+			if(i!=0){
+				pos++;
+			}
+		}
+	
+		String chunk = text.substring(pos,text.length());
+		
+		if(chunk.startsWith("\n")){
+			chunk = chunk.substring(1,chunk.length());
+		}
+	
+		int endPos = chunk.indexOf("\n");
+		if(endPos<1){
+			endPos = text.length()-pos;
+		}
+		else{
+			endPos++;
+		}
+		
+		DefaultHighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(Color.GREEN);
+        this.getHighlighter().addHighlight(pos,pos+endPos, painter);
+		
+
+	}
+	
+	
 
 	
 	//returns a clean string from a rounded double
