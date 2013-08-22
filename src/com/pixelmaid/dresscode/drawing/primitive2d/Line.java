@@ -292,5 +292,13 @@ public class Line extends Polygon {
 		}
 		throw new RuntimeException("Illegal point index at line call");
 	}
+	public void setEnd(double x, double y) {
+	 this.end = new Point(x,y);
+		
+	}
+	public void setStart(double x, double y) {
+		 this.start = new Point(x,y);
+			
+		}
 
 }

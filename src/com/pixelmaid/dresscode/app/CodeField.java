@@ -25,7 +25,9 @@ import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
 
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
 class Filter extends DocumentFilter {
@@ -317,7 +319,48 @@ public JMenuItem getUndoMenu(){
 		
 	}
 	
-	public void insertPolyStatement(Polygon created, double rotation, String shape) {
+	public void insertCurveStatement(Curve created) {
+		int point = this.getText().length();
+		Point start = created.getStart();
+		Point end = created.getEnd();
+		Point c1 = created.getControl1();
+		Point c2 = created.getControl2();
+		String startX = String.valueOf(roundNum(start.getX()));
+		String startY = String.valueOf(roundNum(start.getY()));
+		String endX = String.valueOf(roundNum(end.getX()));
+		String endY = String.valueOf(roundNum(end.getY()));
+		String c1X = String.valueOf(roundNum(c1.getX()));
+		String c1Y = String.valueOf(roundNum(c1.getY()));
+		String c2X = String.valueOf(roundNum(c2.getX()));
+		String c2Y = String.valueOf(roundNum(c2.getY()));
+		
+		String lineStart = "curve(";
+		String lineEnd = ");";
+		String lineStatement = lineStart+startX+","+startY+","+c1X+","+c1Y+","+c2X+","+c2Y+","+endX+","+endY+lineEnd;
+		insertText(point,lineStatement);
+
+		
+	}
+
+	
+	public void insertLineStatement(Line created) {
+		int point = this.getText().length();
+		Point start = created.getStart();
+		Point end = created.getEnd();
+		String startX = String.valueOf(roundNum(start.getX()));
+		String startY = String.valueOf(roundNum(start.getY()));
+		String endX = String.valueOf(roundNum(end.getX()));
+		String endY = String.valueOf(roundNum(end.getY()));
+		
+		String lineStart = "line(";
+		String lineEnd = ");";
+		String lineStatement = lineStart+startX+","+startY+","+endX+","+endY+lineEnd;
+		insertText(point,lineStatement);
+
+
+	}
+	
+	public void insertPolyStatement(Polygon created, double rotation) {
 		int point = this.getText().length();
 		String rectStart;
 		String rectEnd = ");";
@@ -329,6 +372,9 @@ public JMenuItem getUndoMenu(){
 		}
 		else{
 			rectStart = "poly(";
+		}
+		if(point !=0){
+			rectStart = "\n"+rectStart;
 		}
 	
 		
@@ -354,6 +400,9 @@ public JMenuItem getUndoMenu(){
 	public void setUnsaved(boolean u){
 		this.unsavedChanges=u;
 	}
+
+	
+	
 
  
   /*  public void actionPerformed(ActionEvent evt) {

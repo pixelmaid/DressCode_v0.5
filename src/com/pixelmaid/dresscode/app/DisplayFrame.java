@@ -26,8 +26,6 @@ import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Random;
 
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -37,7 +35,6 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-import javax.swing.border.Border;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 
@@ -52,8 +49,10 @@ import com.pixelmaid.dresscode.data.Stamp;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.PerlinNoise;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
+import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
+import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
@@ -126,6 +125,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private RectTool rectTool;
 	private EllipseTool ellipseTool;
 	private PolyTool polyTool;
+	private int currentSides= 5; //number of sides for polyTool
+	private LineTool lineTool;
+	private CurveTool curveTool;
 	private Tool defaultTool;
 	private Tool currentTool;	
 	
@@ -387,6 +389,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		ellipseTool.setImage("cross_t");
 		polyTool = new PolyTool();
 		polyTool.setImage("cross_t");
+		polyTool.setSideNum(currentSides);
+		lineTool = new LineTool();
+		lineTool.setImage("cross_t");
+		curveTool = new CurveTool();
+		curveTool.setImage("cross_t");
 		defaultTool = new Tool();
 		
 		currentTool= defaultTool;
@@ -402,6 +409,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		rectTool.addEventListener(this);
 		ellipseTool.addEventListener(this);
 		polyTool.addEventListener(this);
+		lineTool.addEventListener(this);
+		curveTool.addEventListener(this);
 
 		stampManager.addEventListener(this);
 		
@@ -804,11 +813,15 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					selectMain();
 					Point p = targetTool.getTarget();
 					this.codeField.insertCoordinate(p.getX(), p.getY());
+					this.currentProject.setCode(this.codeField.getCode());
+
 				break;
 				case CustomEvent.DRAWABLE_MOVED:
 					selectMain();
 					Drawable d = selectTool.getSelected();
 					this.codeField.insertMoveStatement(d);
+					this.currentProject.setCode(this.codeField.getCode());
+
 				break;
 				case CustomEvent.PAN_ACTIVE:
 					canvas.pan();
@@ -835,7 +848,19 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					break;	
 				case CustomEvent.POLY_ADDED:
 					selectMain();
-					codeField.insertPolyStatement((Polygon)currentTool.getCreated(),((PolyTool)currentTool).getRotation(),"poly");
+					codeField.insertPolyStatement((Polygon)currentTool.getCreated(),((PolyTool)currentTool).getRotation());
+					this.currentProject.setCode(this.codeField.getCode());
+
+					break;
+				case CustomEvent.LINE_ADDED:
+					selectMain();
+					codeField.insertLineStatement((Line)currentTool.getCreated());
+					this.currentProject.setCode(this.codeField.getCode());
+
+					break;
+				case CustomEvent.CURVE_ADDED:
+					selectMain();
+					codeField.insertCurveStatement((Curve)currentTool.getCreated());
 					this.currentProject.setCode(this.codeField.getCode());
 
 					break;
@@ -1077,6 +1102,16 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			polyButton.setActive();
 			canvas.changeCursor(polyTool.getImage());
 		}
+		else if (e.getSource()==lineButton){
+			currentTool = lineTool;
+			lineButton.setActive();
+			canvas.changeCursor(lineTool.getImage());
+		}
+		else if (e.getSource()==curveButton){
+			currentTool = curveTool;
+			curveButton.setActive();
+			canvas.changeCursor(curveTool.getImage());
+		}
 		
 		else if (e.getSource()==clearButton){
 			console.clearText();
@@ -1165,10 +1200,22 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 
 	@Override
-	public void mouseClicked(MouseEvent arg0) {
-		// TODO Auto-generated method stub
+	public void mouseClicked(MouseEvent e) {
+		if (e.getClickCount() == 2 && !e.isConsumed()) {
+		   System.out.println("double click event");
+		   if(e.getSource()==polyButton){
+			   PolyDialog polyDialog = new PolyDialog(this,true,currentSides);
+			   if(polyDialog.getAnswer()){
+				   currentSides = polyDialog.getSides();
+				   polyTool.setSideNum(currentSides);
+			   }
+			   
+		   }
+		}
 		
 	}
+	
+	
 
 
 	@Override
