@@ -33,6 +33,7 @@ public class CustomEvent extends EventObject {
 	public static final int POLY_ADDED = 22;
 	public static final int LINE_ADDED = 23;
 	public static final int CURVE_ADDED = 24;
+	public static final int IRREGULAR_POLY_ADDED = 25;
 
 	public CustomEvent(Object source) {
 		super(source);

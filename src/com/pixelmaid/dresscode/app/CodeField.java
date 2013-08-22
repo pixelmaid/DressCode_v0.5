@@ -387,6 +387,16 @@ public JMenuItem getUndoMenu(){
 	}
 	
 	
+	public void insertIrregularStatement(String polyStatement) {
+		int point = this.getText().length();
+		if(point !=0){
+			polyStatement = "\n"+polyStatement;
+		}
+		insertText(point,polyStatement);
+		
+	}
+
+	
 	//returns a clean string from a rounded double
 	private String roundNum(double n){
 		return String.format("%.2f", n);
@@ -401,6 +411,7 @@ public JMenuItem getUndoMenu(){
 		this.unsavedChanges=u;
 	}
 
+	
 	
 	
 

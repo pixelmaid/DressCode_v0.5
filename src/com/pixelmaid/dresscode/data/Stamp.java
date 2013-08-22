@@ -21,18 +21,18 @@ public class Stamp {
 	//identifier labels for primitives
 	private int eId =0;
 	private int rId=0;
-	private int pId =0;
+	private static int pId =0;
 	private int sId =0;
 	private int gId = 0;
 	private int lId=0;
 	private int cId = 0;
-	private int listId = 0;
+	private static int listId = 0;
 	
-	private String currentGroupId = "g";
+	private static String currentGroupId = "g";
 	private String functionName="";
 
-	private final String cm = ",";
-	private final String end = ");";
+	private final static String cm = ",";
+	private final static String end = ");";
 	private final String functionStart = "def ";
 	private final String functionMiddle = "():";
 	private final String functionEnd = "end";
@@ -142,7 +142,7 @@ public class Stamp {
 	}
 	
 	// individual drawable type statement creators
-		private String addPolyStatement(Polygon e, boolean toGroup){
+		public static String addPolyStatement(Polygon e, boolean toGroup){
 			String id ="p"+pId;
 			String list  = "lst"+listId+" =[";
 			String listEnd = "];";
@@ -252,7 +252,7 @@ public class Stamp {
 				}
 	
 	//checks for color and stroke settings of drawable and adds in necessary statements
-	private String checkDefaults(Drawable e, String id, String statement){
+	private static String checkDefaults(Drawable e, String id, String statement){
 		if(!defaultFill(e.getFillColor())){
 			statement += "\n"+fillStatement(id,e.getFillColor());
 		}
@@ -272,35 +272,35 @@ public class Stamp {
 		
 	}
 	
-	private String fillStatement(String id, Color col){
+	private static String fillStatement(String id, Color col){
 		String statement = "fill("+id+cm+col.r()+cm+col.g()+cm+col.b()+end;
 		return statement;
 	}
 	
-	private String strokeStatement(String id, Color col){
+	private static String strokeStatement(String id, Color col){
 		String statement = "stroke("+id+cm+col.r()+cm+col.g()+cm+col.b()+end;
 		return statement;
 	}
 	
 	
-	private String noFillStatement(String id){
+	private static String noFillStatement(String id){
 		String statement = "noFill("+id+end;
 		return statement;
 	}
 	
-	private String noStrokeStatement(String id){
+	private static String noStrokeStatement(String id){
 		String statement = "noStroke("+id+end;
 		return statement;
 	}
 	
-	private String weightStatement(String id, double w){
+	private static String weightStatement(String id, double w){
 		String statement = "weight("+id+cm+w+end;
 		return statement;
 	}
 	
 	
 	
-	private boolean defaultFill(Color c){
+	private static boolean defaultFill(Color c){
 		if (c.r()!=255 && c.b()!=255 && c.g()!=255){
 			return false;
 		}
@@ -309,7 +309,7 @@ public class Stamp {
 		}
 	}
 	
-	private boolean defaultStroke(Color c){
+	private static boolean defaultStroke(Color c){
 		if (c.r()!=0 && c.b()!=0 && c.g()!=0){
 			return false;
 		}
@@ -318,7 +318,7 @@ public class Stamp {
 		}
 	}
 	//checks to see if drawable has default weight
-	private boolean defaultWeight(double w){
+	private static boolean defaultWeight(double w){
 		if (w!=1){
 			return false;
 		}
@@ -328,7 +328,7 @@ public class Stamp {
 	}
 	
 	//returns a clean string from a rounded double
-	private String roundNum(double n){
+	private static String roundNum(double n){
 		return String.format("%.2f", n);
 	}
 	//returns function definition
@@ -357,7 +357,7 @@ public class Stamp {
 		return statement;
 	}
 	
-	public String addGroupStatement(String id, String statement){
+	public static String addGroupStatement(String id, String statement){
 		//System.out.println("add group statement");
 		String add =  "\nadd("+currentGroupId+cm+id+end;
 		return statement+=add;

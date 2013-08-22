@@ -635,6 +635,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 Stamp pStamp =  stampMap.get(currentStamp);
 			pStamp.setFunctionDef(this.codeField.getCode());
 	 }
+	
+	 /*adds in an irregular polygon statement to the code field*/
+	 private void addPolyStatement(Polygon p){
+			String polyStatement = Stamp.addPolyStatement(p, false);
+			codeField.insertIrregularStatement(polyStatement);
+			this.currentProject.setCode(this.codeField.getCode());
+	 }
 	 
 	 /*sets code parse in motion*/
 	 private void run(){
@@ -838,31 +845,38 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					selectMain();
 					codeField.insertShapeStatement(currentTool.getCreated(),"rect");
 					this.currentProject.setCode(this.codeField.getCode());
-
+					run();	
 					break;
 				case CustomEvent.ELLIPSE_ADDED:
 					selectMain();
 					codeField.insertShapeStatement(currentTool.getCreated(),"ellipse");
 					this.currentProject.setCode(this.codeField.getCode());
-
+					run();	
 					break;	
 				case CustomEvent.POLY_ADDED:
 					selectMain();
 					codeField.insertPolyStatement((Polygon)currentTool.getCreated(),((PolyTool)currentTool).getRotation());
 					this.currentProject.setCode(this.codeField.getCode());
-
+					run();	
 					break;
+					
+				case CustomEvent.IRREGULAR_POLY_ADDED:
+					selectMain();
+					addPolyStatement(((PenTool)currentTool).closePoly());
+					run();	
+					break;
+				
 				case CustomEvent.LINE_ADDED:
 					selectMain();
 					codeField.insertLineStatement((Line)currentTool.getCreated());
 					this.currentProject.setCode(this.codeField.getCode());
-
+					run();	
 					break;
 				case CustomEvent.CURVE_ADDED:
 					selectMain();
 					codeField.insertCurveStatement((Curve)currentTool.getCreated());
 					this.currentProject.setCode(this.codeField.getCode());
-
+					run();	
 					break;
 				case CustomEvent.REDRAW_REQUEST:
 					System.out.println("redraw recieved");
@@ -982,6 +996,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	@Override
 	public void keyPressed(KeyEvent e) {
 		//zoom in when ctrl + is pressed
+		if(this.fromMain){
+			
+				this.currentProject.setCode(this.codeField.getCode());
+			
+		}
 		if(e.getKeyCode()==61 && ctrlKey ==true){
 			canvas.zoomIn();
 			canvas.redraw();
@@ -1041,6 +1060,15 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		resetButtons();
 		currentTool = defaultTool;
 		canvas.changeCursor(null);
+		if(e.getSource() !=penButton && penTool.isActive()){
+			Polygon p = penTool.closePoly();
+			if(p!=null){
+				addPolyStatement(p);
+			}
+			penTool.setActive(false);
+			
+		}
+		
 		if (e.getSource() == runButton ) {
 			run();	
 		}
@@ -1095,6 +1123,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		else if (e.getSource()==penButton){
 			currentTool = penTool;
 			penButton.setActive();
+			penTool.setActive(true);
 			canvas.changeCursor(penTool.getImage());
 		}
 		else if (e.getSource()==polyButton){
