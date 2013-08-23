@@ -13,6 +13,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.*;
@@ -25,10 +27,13 @@ import javax.swing.text.AbstractDocument;
 import javax.swing.text.BadLocationException;
 import javax.swing.text.DefaultHighlighter;
 import javax.swing.text.DefaultHighlighter.DefaultHighlightPainter;
+import javax.swing.text.DefaultStyledDocument;
 import javax.swing.text.Document;
 import javax.swing.text.DocumentFilter;
 import javax.swing.text.Element;
 import javax.swing.text.PlainDocument;
+import javax.swing.text.StyleConstants;
+import javax.swing.text.StyleContext;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
@@ -66,7 +71,7 @@ class Filter extends DocumentFilter {
 	    }
 	}
 
-public class CodeField extends JEditorPane implements DocumentListener, KeyListener{
+public class CodeField extends JTextPane implements DocumentListener, KeyListener{
 	private static final long serialVersionUID = 1L;
 	private Document editorPaneDocument;
 	protected UndoHandler undoHandler = new UndoHandler();
@@ -75,8 +80,12 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
 	protected RedoAction redoAction = null;
     private Filter filter;
     private boolean unsavedChanges= false;
-	
-	public CodeField() {
+    private Pattern p = Pattern.compile("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)");
+    final StyleContext cont = StyleContext.getDefaultStyleContext();
+    final AttributeSet attr = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.GRAY);
+    final AttributeSet attrBlack = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.BLACK);
+    private DefaultStyledDocument doc;
+    public CodeField() {
         super();
     }
     
@@ -85,10 +94,52 @@ public class CodeField extends JEditorPane implements DocumentListener, KeyListe
     	this.setPreferredSize(new Dimension(550,500));
 		this.setContentType("text/java");
 		this.setText("");
-		Document doc = this.getDocument();
-		if (doc instanceof PlainDocument) {
+		
+		doc = new DefaultStyledDocument();/* {
+            public void insertString (int offset, String str, AttributeSet a) throws BadLocationException {
+                super.insertString(offset, str, a);
+
+                String text = getText(0, getLength());
+                int before = findLastNonWordChar(text, offset);
+                if (before < 0) before = 0;
+                int after = findFirstNonWordChar(text, offset + str.length());
+                int wordL = before;
+                int wordR = before;
+
+                while (wordR <= after) {
+                    if (wordR == after || String.valueOf(text.charAt(wordR)).matches("\\W")) {
+                        if (text.substring(wordL, wordR).matches("(\\W)*(private|public|protected)"))
+                            setCharacterAttributes(wordL, wordR - wordL, attr, false);
+                        else
+                            setCharacterAttributes(wordL, wordR - wordL, attrBlack, false);
+                        wordL = wordR;
+                    }
+                    wordR++;
+                }
+            }
+
+            public void remove (int offs, int len) throws BadLocationException {
+                super.remove(offs, len);
+
+                String text = getText(0, getLength());
+                int before = findLastNonWordChar(text, offs);
+                if (before < 0) before = 0;
+                int after = findFirstNonWordChar(text, offs);
+
+                if (text.substring(before, after).matches("(\\W)*(private|public|protected)")) {
+                    setCharacterAttributes(before, after - before, attr, false);
+                } else {
+                    setCharacterAttributes(before, after - before, attrBlack, false);
+                }
+            }
+        };*/
+		
+		
+		this.setDocument(doc);
+		
+		/*if (doc instanceof PlainDocument) {
 		    doc.putProperty(PlainDocument.tabSizeAttribute, 2);
-		}
+		}*/
 		this.setBorder(new EmptyBorder(10,10,10,10));
 		this.setFont(new Font("Courier", 0, size));
 		editorPaneDocument = this.getDocument();
@@ -138,7 +189,45 @@ public JMenuItem getUndoMenu(){
     	return this.getText()+"\n";
     }
     
+    private void checkForComments(){
+        String txt = this.getCode();
+    	if(txt.length()!=0){
+    	//String [] nonComments = getCode().split("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)");
+        //ArrayList<String> comments = new ArrayList<String>();
+        Matcher m = p.matcher(getCode());
+    	((DefaultStyledDocument)this.getDocument()).setCharacterAttributes(0,txt.length(), attr, false);
+        while (m.find()) {
+        	int start = m.start();
+        	int end = m.start()+m.group().length();
+        	((DefaultStyledDocument)this.getDocument()).setCharacterAttributes(start,end, attr, false);
+        	((DefaultStyledDocument)this.getDocument()).setCharacterAttributes(end,txt.length(), attrBlack, false);
+            String s = m.group();
+            System.out.println("comment found="+s);
+        }
+        
+        }
+       
+       
+    }
   
+    private int findLastNonWordChar (String text, int index) {
+        while (--index >= 0) {
+            if (String.valueOf(text.charAt(index)).matches("\\W")) {
+                break;
+            }
+        }
+        return index;
+    }
+
+    private int findFirstNonWordChar (String text, int index) {
+        while (index < text.length()) {
+            if (String.valueOf(text.charAt(index)).matches("\\W")) {
+                break;
+            }
+            index++;
+        }
+        return index;
+    }
 
     //adds a line of code to import in a shape;
     public void insertPath(File f) throws BadLocationException{
@@ -204,12 +293,14 @@ public JMenuItem getUndoMenu(){
 		//this.getParent().dispatchEvent(e);
 		unsavedChanges = true;
 		removeHighlights();
+			checkForComments();
 		
 	}
 
 	public void loadFile(String filetxt) {
 		System.out.println("load file="+filetxt);
 		this.setText(filetxt);
+		checkForComments();
 		//updateCanvas();
 		
 	}
@@ -224,7 +315,7 @@ public JMenuItem getUndoMenu(){
 		String text = this.getText();
 		text = text.substring(0,pos)+ newText  +text.substring(pos);
 		this.setText(text);
-		
+		checkForComments();
 	}
 	
 	
@@ -232,6 +323,7 @@ public JMenuItem getUndoMenu(){
 		String text = this.getText();
 		text +=t;
 		this.setText(text);
+		checkForComments();
 		this.setCaretPosition(this.getText().length());
 	}
 	
@@ -239,6 +331,7 @@ public JMenuItem getUndoMenu(){
 		String text = this.getText();
 		text = text.substring(0,pos)+text.substring(endPos);
 		this.setText(text);
+		checkForComments();
 		
 	}
 
@@ -626,6 +719,8 @@ protected void update()
    putValue(Action.NAME, "Redo");
  }
 }
+
+
 
 
 }

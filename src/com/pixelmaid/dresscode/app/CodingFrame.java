@@ -152,7 +152,8 @@ public class CodingFrame extends JPanel {
 	}
 	 
 	public void setCode(String title,String code){
-		codeField.setText(code);
+		codeField.loadFile(code);
+		
 		setTabTitle(0, title);
 	}
 	 
