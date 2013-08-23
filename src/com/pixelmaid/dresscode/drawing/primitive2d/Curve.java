@@ -95,7 +95,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		//TODO: MAKE CURVE DRAW RELATIVE
 		if(!this.getHide()){
 			appearance(e);
-			e.noFill();
+			//e.noFill();
 			e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate(PApplet.radians((float)getRotation()));

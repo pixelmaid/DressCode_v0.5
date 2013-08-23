@@ -32,8 +32,11 @@ import javax.swing.text.Document;
 import javax.swing.text.DocumentFilter;
 import javax.swing.text.Element;
 import javax.swing.text.PlainDocument;
+import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyleContext;
+import javax.swing.text.TabSet;
+import javax.swing.text.TabStop;
 import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
@@ -137,9 +140,11 @@ public class CodeField extends JTextPane implements DocumentListener, KeyListene
 		
 		this.setDocument(doc);
 		
-		/*if (doc instanceof PlainDocument) {
-		    doc.putProperty(PlainDocument.tabSizeAttribute, 2);
-		}*/
+		StyleContext sc = StyleContext.getDefaultStyleContext();
+		TabSet tabs = new TabSet(new TabStop[] { new TabStop(20) });
+		AttributeSet paraSet = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.TabSet, tabs);
+		this.setParagraphAttributes(paraSet, false);
+		
 		this.setBorder(new EmptyBorder(10,10,10,10));
 		this.setFont(new Font("Courier", 0, size));
 		editorPaneDocument = this.getDocument();
@@ -189,45 +194,26 @@ public JMenuItem getUndoMenu(){
     	return this.getText()+"\n";
     }
     
-    private void checkForComments(){
+    public void checkForComments(){
         String txt = this.getCode();
     	if(txt.length()!=0){
     	//String [] nonComments = getCode().split("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)");
         //ArrayList<String> comments = new ArrayList<String>();
         Matcher m = p.matcher(getCode());
-    	((DefaultStyledDocument)this.getDocument()).setCharacterAttributes(0,txt.length(), attr, false);
+    	((DefaultStyledDocument)this.getDocument()).setCharacterAttributes(0,txt.length(), attrBlack, false);
         while (m.find()) {
         	int start = m.start();
         	int end = m.start()+m.group().length();
         	((DefaultStyledDocument)this.getDocument()).setCharacterAttributes(start,end, attr, false);
-        	((DefaultStyledDocument)this.getDocument()).setCharacterAttributes(end,txt.length(), attrBlack, false);
-            String s = m.group();
-            System.out.println("comment found="+s);
-        }
+        	((DefaultStyledDocument)this.getDocument()).setCharacterAttributes(end,txt.length(), attrBlack, false);       
+        	}
         
         }
        
        
     }
   
-    private int findLastNonWordChar (String text, int index) {
-        while (--index >= 0) {
-            if (String.valueOf(text.charAt(index)).matches("\\W")) {
-                break;
-            }
-        }
-        return index;
-    }
-
-    private int findFirstNonWordChar (String text, int index) {
-        while (index < text.length()) {
-            if (String.valueOf(text.charAt(index)).matches("\\W")) {
-                break;
-            }
-            index++;
-        }
-        return index;
-    }
+   
 
     //adds a line of code to import in a shape;
     public void insertPath(File f) throws BadLocationException{
@@ -293,7 +279,7 @@ public JMenuItem getUndoMenu(){
 		//this.getParent().dispatchEvent(e);
 		unsavedChanges = true;
 		removeHighlights();
-			checkForComments();
+		//checkForComments();
 		
 	}
 
@@ -315,7 +301,7 @@ public JMenuItem getUndoMenu(){
 		String text = this.getText();
 		text = text.substring(0,pos)+ newText  +text.substring(pos);
 		this.setText(text);
-		checkForComments();
+		//checkForComments();
 	}
 	
 	
@@ -323,7 +309,7 @@ public JMenuItem getUndoMenu(){
 		String text = this.getText();
 		text +=t;
 		this.setText(text);
-		checkForComments();
+		//checkForComments();
 		this.setCaretPosition(this.getText().length());
 	}
 	
@@ -331,7 +317,7 @@ public JMenuItem getUndoMenu(){
 		String text = this.getText();
 		text = text.substring(0,pos)+text.substring(endPos);
 		this.setText(text);
-		checkForComments();
+		//checkForComments();
 		
 	}
 
@@ -612,9 +598,11 @@ public void setActions(UndoManager uM, UndoAction uA, RedoAction rA){
 
 public void undoableEditHappened(UndoableEditEvent e)
 {
- undoManager.addEdit(e.getEdit());
- undoAction.update();
- redoAction.update();
+	if(e.getEdit().getPresentationName().contentEquals("style change")){
+		undoManager.addEdit(e.getEdit());
+		undoAction.update();
+		redoAction.update();
+	}
 }
 }
 
@@ -644,7 +632,7 @@ public void actionPerformed(ActionEvent e)
 {
  try
  {
-   undoManager.undo();
+	 undoManager.undo();
  }
  catch (CannotUndoException ex)
  {
@@ -660,6 +648,7 @@ protected void update()
  if (undoManager.canUndo())
  {
    setEnabled(true);
+ 
    putValue(Action.NAME, undoManager.getUndoPresentationName());
  }
  else
@@ -701,6 +690,7 @@ public void actionPerformed(ActionEvent e)
  {
    // TODO deal with this
    ex.printStackTrace();
+   
  }
  update();
  undoAction.update();

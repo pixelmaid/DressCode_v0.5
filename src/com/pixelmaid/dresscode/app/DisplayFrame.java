@@ -652,6 +652,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); //sets cursor to wait
 			console.clearText();
 			codeField.removeHighlights();
+			codeField.checkForComments();
 			//removes existing drawables
 			//TODO: EVENTUALLY PARSE ONLY MODIFIED CODE
 			drawableManager.clearAllDrawables();
