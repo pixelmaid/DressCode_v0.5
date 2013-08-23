@@ -535,12 +535,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 File exampleFolder = new File(path);
 			File[] files = exampleFolder.listFiles();
 			for (File file : files) {
+				if(file.isDirectory()){
 				String name = file.getName().substring(0, file.getName().length());
 				System.out.println("name="+name+"\n");
 				exampleList.add(name);
 				JMenuItem exampleAction = new ExampleItem(name);
 				exampleMenu.add(exampleAction);
 				exampleAction.addActionListener(this);
+				}
 			} 
 	 }
 	 
@@ -699,6 +701,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			 if(sd.getAnswer()==NewSaveDialog.SAVED){
 				 saveFile();
 			}
+			 selectMain();
 			 codeField.setUnsaved(false);
 			 stampMap.clear();
 			 stampManager.clearChildren();
@@ -707,6 +710,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			}
 		 }
 		 else{
+			 selectMain();
 			codeField.setUnsaved(false);
 			 stampMap.clear();
 			 stampManager.clearChildren();
