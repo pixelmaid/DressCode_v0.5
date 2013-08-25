@@ -345,9 +345,9 @@ public JMenuItem getUndoMenu(){
 			
 			//System.out.println("line "+i+"="+lines[i]);
 		}
-		System.out.println("pos="+pos);
-		System.out.println("endPos="+endPos);
-		System.out.println("x and y on move= "+x+","+y);
+		
+		
+		
 		if(identifier!=null){
 			String moveText = "\nmove("+identifier+","+String.format("%.1f", x)+","+String.format("%.1f", y)+");";
 
@@ -394,7 +394,8 @@ public JMenuItem getUndoMenu(){
 	}
 
 	public void insertShapeStatement(Drawable created, String shape) {
-		int point = this.getText().length();
+		//int point = this.getText().length();
+		int point = 0;
 		String rectStart;
 		if(point==0){
 			rectStart=shape+"(";
@@ -408,12 +409,13 @@ public JMenuItem getUndoMenu(){
 		
 		
 		
-		insertText(point,rectStatement);
+		insertText(point,rectStatement+"\n\n");
 		
 	}
 	
 	public void insertCurveStatement(Curve created) {
-		int point = this.getText().length();
+		//int point = this.getText().length();
+				int point = 0;
 		Point start = created.getStart();
 		Point end = created.getEnd();
 		Point c1 = created.getControl1();
@@ -430,14 +432,15 @@ public JMenuItem getUndoMenu(){
 		String lineStart = "curve(";
 		String lineEnd = ");";
 		String lineStatement = lineStart+startX+","+startY+","+c1X+","+c1Y+","+c2X+","+c2Y+","+endX+","+endY+lineEnd;
-		insertText(point,lineStatement);
+		insertText(point,lineStatement+"\n\n");
 
 		
 	}
 
 	
 	public void insertLineStatement(Line created) {
-		int point = this.getText().length();
+		//int point = this.getText().length();
+				int point = 0;
 		Point start = created.getStart();
 		Point end = created.getEnd();
 		String startX = String.valueOf(roundNum(start.getX()));
@@ -448,13 +451,14 @@ public JMenuItem getUndoMenu(){
 		String lineStart = "line(";
 		String lineEnd = ");";
 		String lineStatement = lineStart+startX+","+startY+","+endX+","+endY+lineEnd;
-		insertText(point,lineStatement);
+		insertText(point,lineStatement+"\n\n");
 
 
 	}
 	
 	public void insertPolyStatement(Polygon created, double rotation) {
-		int point = this.getText().length();
+		//int point = this.getText().length();
+				int point = 0;
 		String rectStart;
 		String rectEnd = ");";
 		String rotationStatement="";
@@ -475,17 +479,18 @@ public JMenuItem getUndoMenu(){
 		String rectStatement = rectStart+roundNum(origin.getX())+","+roundNum(origin.getY())+","+roundNum(created.numSides())+","+roundNum(created.sideLength())+rotationStatement+rectEnd;
 		
 		
-		insertText(point,rectStatement);
+		insertText(point,rectStatement+"\n\n");
 		
 	}
 	
 	
 	public void insertIrregularStatement(String polyStatement) {
-		int point = this.getText().length();
+		//int point = this.getText().length();
+				int point = 0;
 		if(point !=0){
 			polyStatement = "\n"+polyStatement;
 		}
-		insertText(point,polyStatement);
+		insertText(point,polyStatement+"\n\n");
 		
 	}
 	
@@ -598,7 +603,7 @@ public void setActions(UndoManager uM, UndoAction uA, RedoAction rA){
 
 public void undoableEditHappened(UndoableEditEvent e)
 {
-	if(e.getEdit().getPresentationName().contentEquals("style change")){
+	if(!e.getEdit().getPresentationName().contentEquals("style change")){
 		undoManager.addEdit(e.getEdit());
 		undoAction.update();
 		redoAction.update();

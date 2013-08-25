@@ -120,13 +120,13 @@ public class StampDialog extends JDialog implements ActionListener{
 	            System.err.println("User chose yes.");
 	            String name = nameF.getText();
 	            if(Character.isDigit(name.charAt(0))){
-	            	StampDialog.infoBox("Stamp name cannot start with a number.", "");
+	            	StampDialog.infoBox("Stamp name cannot start with a number.", "","Error in stamp name");
 	            }
 	            else if(name.contains(" ")){
-	            	StampDialog.infoBox("Stamp name cannot contain any spaces.", "");
+	            	StampDialog.infoBox("Stamp name cannot contain any spaces.", "","Error in stamp name");
 	            }
 	            else if(stampNames.contains(name)){
-	            	StampDialog.infoBox("You already have a stamp named "+name+".\n Please choose a unique name.", "");
+	            	StampDialog.infoBox("You already have a stamp named "+name+".\n Please choose a unique name.", "","Error in stamp name");
 
 	            }
 	            else{
@@ -151,9 +151,9 @@ public class StampDialog extends JDialog implements ActionListener{
 	    	return staticS;
 	    }
 	    
-	    public static void infoBox(String infoMessage, String location)
+	    public static void infoBox(String infoMessage, String location, String boxTitle)
 	    {
 	    
-	    	JOptionPane.showMessageDialog(null, infoMessage, "Error in stamp name" + location, JOptionPane.ERROR_MESSAGE);
+	    	JOptionPane.showMessageDialog(null, infoMessage, boxTitle + location, JOptionPane.ERROR_MESSAGE);
 	    }
 }

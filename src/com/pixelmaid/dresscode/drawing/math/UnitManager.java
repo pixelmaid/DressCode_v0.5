@@ -9,8 +9,8 @@ public final class UnitManager {
 	public static double PIX_IN_INCH = 	72;
 	public static double PIX_IN_MM = 2.8346;
 public static double PIX_IN_CM = 28.3465 ;
-public static double DEFAULT_WIDTH=6.5;
-public static double DEFAULT_HEIGHT=6.5;
+public static double DEFAULT_WIDTH=8.25;
+public static double DEFAULT_HEIGHT=10.75;
 
 
 	public static double toPixels(double x, int units){

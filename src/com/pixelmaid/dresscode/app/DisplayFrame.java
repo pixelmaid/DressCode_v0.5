@@ -23,6 +23,7 @@ import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Random;
 
@@ -45,6 +46,7 @@ import com.pixelmaid.dresscode.app.ui.tools.*;
 
 import com.pixelmaid.dresscode.data.DCProject;
 import com.pixelmaid.dresscode.data.DrawableManager;
+import com.pixelmaid.dresscode.data.DynamicStamp;
 import com.pixelmaid.dresscode.data.InstructionManager;
 import com.pixelmaid.dresscode.data.Stamp;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -114,7 +116,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private ArrayList<String> exampleList = new ArrayList<String>();
 	
 	//menu items
-	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction, saveAsAction, stampAction;
+	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction, saveAsAction, stampAction,dStampAction;
 	
 	private DCProject currentProject; //data structure that manages project data
 	
@@ -447,6 +449,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	    exportAction.addActionListener(this);
 	    importAction.addActionListener(this);  
 	    stampAction.addActionListener(this);
+	    dStampAction.addActionListener(this);
+
 	    stampManager.getTree().addTreeSelectionListener(this);
 
 		//setup key listeners
@@ -509,8 +513,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        copyAction = new JMenuItem("Copy");
 	        pasteAction = new JMenuItem("Paste");
 	        cutAction = new JMenuItem("Cut");
-	        stampAction = new JMenuItem("Create stamp from selected objects");
-	        
+	        stampAction = new JMenuItem("Create static stamp from selected object");
+	        dStampAction = new JMenuItem("Create dynamic stamp from selected text");
+
 	     
 	        fileMenu.add(newAction);
 	        fileMenu.add(openAction);
@@ -524,15 +529,24 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        editMenu.add(codeField.getUndoMenu());
 	        editMenu.add(codeField.getRedoMenu());
 	        editMenu.add(stampAction);
+	        editMenu.add(dStampAction);
 	        
 			
 
 	    }
 	 
-	 //loads the example menu with examples
-	 private void setupExampleMenu(JMenu exampleMenu){
+	//loads the example menu with examples
+	private void setupExampleMenu(JMenu exampleMenu){
+		
+	
+	}
+	
+	
+	/* private void setupExampleMenu(JMenu exampleMenu){
 		String path = (ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/examples")).getPath();
-		 File exampleFolder = new File(path);
+		System.out.println("path="+path);
+		File exampleFolder = new File(path);
+		System.out.println("file="+path);
 			File[] files = exampleFolder.listFiles();
 			for (File file : files) {
 				if(file.isDirectory()){
@@ -544,7 +558,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				exampleAction.addActionListener(this);
 				}
 			} 
-	 }
+	 }*/
 	 
 	 //opens an example according to string
 	 private void openExample(String name){
@@ -569,7 +583,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	  * creates a stamp out of the currently selected drawable
 	  * add stamp to stamp palette
 	  */
-	 private void createStamp(){
+	 private void createStaticStamp(){
 		 Drawable selected = selectTool.getSelected();
 		 if(selected!=null){
 			 stampDialog = new StampDialog(this,true,stampMap);
@@ -582,7 +596,24 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			 }
 		 }
 		 else{
-			 System.out.println("no objected selected, cannot create stamp!");
+			 StampDialog.infoBox("No object is selected.", "", "Error creating stamp");
+		 }
+	 }
+	 
+	 private void createDynamicStamp(){
+		String selected = codeField.getSelectedText();
+		 if(selected!=null){
+			 stampDialog = new StampDialog(this,true,stampMap);
+			 if(stampDialog.getAnswer()){
+				 DynamicStamp stamp = new DynamicStamp();
+				 stamp.setCode(stampDialog.getName(),selected);
+				 stampManager.addChild(stamp);
+				 stampMap.put(stamp.getFunctionName(),stamp);
+			 	
+			 }
+		 }
+		 else{
+			 StampDialog.infoBox("No text is selected.", "","Error creating stamp");
 		 }
 	 }
 	 
@@ -1202,7 +1233,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 		}
 		else if (e.getSource() == stampAction){
-			createStamp();
+			createStaticStamp();
+			run();
+			
+		}
+		else if (e.getSource() == dStampAction){
+			createDynamicStamp();
 			run();
 			
 		}

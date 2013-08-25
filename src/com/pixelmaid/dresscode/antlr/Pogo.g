@@ -179,6 +179,8 @@ functionCall
    	|Tan '(' expression ')'   -> ^(FUNC_CALL Tan expression)
    	|ATan '(' exprList? ')'   -> ^(FUNC_CALL ATan exprList?)
    	|Random '(' exprList? ')'   -> ^(FUNC_CALL Random exprList?)
+   	|Sqrt '(' expression ')'   -> ^(FUNC_CALL Sqrt expression)
+   	|Sq '(' expression ')'   -> ^(FUNC_CALL Sq expression)
    	|Gaussian '(' exprList? ')'   -> ^(FUNC_CALL Gaussian exprList?)
    	|Noise '(' exprList? ')'   -> ^(FUNC_CALL Noise exprList?)
    	|Round'(' expression ')'   -> ^(FUNC_CALL Round expression)
@@ -369,6 +371,8 @@ Cosine	:'cos';
 Sine	: 'sin';
 Tan		: 'tan';
 ATan	: 'atan';
+Sqrt	: 'sqrt';
+Sq		: 'sq';
 Random 	: 'random';
 Round	: 'round';
 Gaussian: 'gaussianNoise';

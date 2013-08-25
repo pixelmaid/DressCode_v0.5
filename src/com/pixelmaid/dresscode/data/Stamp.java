@@ -31,12 +31,12 @@ public class Stamp {
 	private static String currentGroupId = "g";
 	private String functionName="";
 
-	private final static String cm = ",";
-	private final static String end = ");";
-	private final String functionStart = "def ";
-	private final String functionMiddle = "():";
-	private final String functionEnd = "end";
-	private String returnStatement = "return "+currentGroupId + ";";
+	protected  final static String cm = ",";
+	protected  final static String end = ");";
+	protected  final String functionStart = "def ";
+	protected final String functionMiddle = "():";
+	protected final String functionEnd = "end";
+	protected  String returnStatement = "return "+currentGroupId + ";";
 	public Stamp(){
 		
 	}
