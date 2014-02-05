@@ -1,0 +1,8 @@
+def leaf():
+g= group();
+lst1 =[point(298.66,121.56),point(295.26,119.16),point(293.76,114.76),point(294.06,111.06),point(296.46,105.36),point(294.36,102.56),point(298.56,105.56),point(300.56,111.46),point(301.36,116.06),point(299.36,118.66)];
+p1 = poly(lst1);
+fill(p1,0,0,0);
+add(g,p1);
+return g;
+end

@@ -1,0 +1,106 @@
+def createBase(numSide):
+
+height = HEIGHT;
+d = WIDTH;
+margin = 40;
+slotWidth = 2;
+sideLength = d/numSide;
+r = sideLength/(2*tan(180/numSide));
+slotGap = 10;
+slotLengthGap = 200;
+slotLength=sideLength-slotLengthGap/numSide;
+
+tabWidth = slotLength;
+tabHeight = 60;
+
+
+
+base = poly(0,0,numSide,sideLength);
+
+rotate(base,180,0,0);
+ 
+sides = [];
+slots = group();
+
+repeat i =0:numSide:
+side = rect(i*sideLength,0,sideLength+0.5,height+0.5);
+
+
+if i==0:
+sideSlot = rect(0-sideLength/2+slotGap,0,slotWidth,slotLength);
+side = side-sideSlot;
+end
+
+if i>1:
+
+tab = rect(i*sideLength,height/2,tabWidth,tabHeight);
+side= side+tab;
+
+end
+
+if i==numSide-1:
+tab = rect(i*sideLength+tabHeight,0,tabHeight*2,tabWidth);
+side = side+tab;
+end
+
+add(sides,side);
+
+
+
+
+theta = 360/numSide*i;
+slotX = cos(theta)*(r-slotGap);
+slotY = sin(theta)*(r-slotGap);
+
+
+
+slot = rect(slotX,slotY,slotLength,slotWidth);
+slot = rotate(slot,theta-90,slotX,slotY);
+add(slots,slot);
+
+end
+
+
+
+
+move(base,0,height/2+base.height/2);
+
+e1 = point(getX(base[0]),getY(base[0]));
+e2 = point(0-sideLength/2,height/2);
+
+
+d = getDist(e1,e2);
+moveBy(base,0,0-d);
+
+
+move(slots,getX(base),getY(base));
+
+//merge(sides);
+
+rotate(slots,(PI/2 - PI/numSide)*180/PI,getOrigin(slots));
+if numSide%2==0:
+ rotate(slots,90,getOrigin(slots));
+end
+if numSide==4:
+rotate(slots,45,getOrigin(slots));
+end
+
+repeat i =0:numSide:
+base = union(base,sides[i]);
+
+end
+
+base = base-slots;
+window = rect(sideLength*numSide/2-sideLength/2,0,sideLength*numSide-margin,height-margin);
+base = base-window;
+moveBy(base,sideLength/2,height/2);
+
+wWidth = getWidth(window);
+wHeight = getHeight(window);
+return base;
+end
+
+
+
+
+
