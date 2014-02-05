@@ -6,6 +6,7 @@ import java.util.Map;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.antlr.types.tree.functions.DrawableNode;
+import com.pixelmaid.dresscode.app.ui.usercreated.UserUI;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
@@ -124,6 +125,18 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 		for(int i=0;i<drawables.size();i++){
 			drawables.get(i).setSelected(true);
 		}
+		
+	}
+
+	@Override
+	public void handleCustomUINodeEvent(Object nodeEvent, int event, UserUI d) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void handleCustomUIEvent(Object source, int event) {
+		// TODO Auto-generated method stub
 		
 	}
 

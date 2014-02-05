@@ -16,6 +16,7 @@ import java.util.List;
 import com.pixelmaid.dresscode.app.ui.tools.PenTool;
 import com.pixelmaid.dresscode.app.ui.tools.TargetTool;
 import com.pixelmaid.dresscode.app.ui.tools.Tool;
+import com.pixelmaid.dresscode.app.ui.usercreated.UserUI;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
@@ -67,6 +68,8 @@ public class Canvas extends PApplet implements EventInterface{
 	private double zeroY=0;
 	
 	private ArrayList<Drawable> tempDrawables;
+	private ArrayList<UserUI> userUI;
+
 	private boolean drawGrid = true;
 
 	private int currentMode = -1;
@@ -113,7 +116,7 @@ public class Canvas extends PApplet implements EventInterface{
 		drawingBoardHeight =height;
 		zeroX = defaultCanvasWidth/2-drawingBoardWidth/2-13; //magic numbers here... not sure why these values are needed
 		zeroY= defaultCanvasHeight/2-drawingBoardHeight/2+12;
-		System.out.println("drawing board="+drawingBoardWidth+","+drawingBoardHeight);
+		//System.out.println("drawing board="+drawingBoardWidth+","+drawingBoardHeight);
 		unitType = units;
 		if(gridNum!=1){
 		if(unitType==UnitManager.STANDARD){
@@ -204,6 +207,7 @@ public class Canvas extends PApplet implements EventInterface{
 	public void setup() {
 		System.out.println("setting up canvas");
 		tempDrawables = new	 ArrayList<Drawable>();
+		userUI = new ArrayList<UserUI>();
 		//tempDrawables.add(new Ellipse(100,100));
 		PFont f; 
 		f = createFont("Monospaced", 11);
@@ -233,9 +237,14 @@ public class Canvas extends PApplet implements EventInterface{
 
 	public void setDrawables(ArrayList<Drawable> d){
 		this.tempDrawables=d;
-		System.out.println("drawables set:"+id);
+		//System.out.println("drawables set:"+id);
 	}
 
+	
+	public void setUserUI(ArrayList<UserUI> d){
+		this.userUI=d;
+		
+	}
 
 	public void draw() {
 			System.out.println("drawing");
@@ -271,9 +280,18 @@ public class Canvas extends PApplet implements EventInterface{
 
 
 			popMatrix();	
-		
 			rulers();
+			drawUserUI();
+
 			
+	}
+	
+	private void drawUserUI(){
+		System.out.println("num of uis ="+userUI.size());
+		
+		for(int i=0;i<userUI.size();i++){
+			userUI.get(i).draw(this);
+		}
 	}
 
 
@@ -320,8 +338,11 @@ public class Canvas extends PApplet implements EventInterface{
 
 	public void mousePressed() {
 		//System.out.println(mousePressed);
-		
+		System.out.println("mouse pos="+mouseX+","+mouseY);
 		this.fireMousePressedEvent(this, CustomEvent.CANVAS_MOUSE_PRESSED);
+		for(int i=0;i<userUI.size();i++){
+			userUI.get(i).checkForMousePress(mouseX, mouseY);
+		}
 		/*if(currentMode == SELECT_MODE){
 			checkSelect();
 		}
@@ -335,7 +356,9 @@ public class Canvas extends PApplet implements EventInterface{
 
 	public void mouseReleased() {
 		this.fireMousePressedEvent(this, CustomEvent.CANVAS_MOUSE_RELEASED);
-
+		for(int i=0;i<userUI.size();i++){
+			userUI.get(i).checkForMouseRelease(mouseX, mouseY);
+		}
 		//currentTool.mouseReleased(relativeMouseX(),relativeMouseY());
 		
 		
@@ -344,6 +367,10 @@ public class Canvas extends PApplet implements EventInterface{
 
 	public void mouseDragged(){
 		this.fireMousePressedEvent(this, CustomEvent.CANVAS_MOUSE_DRAGGED);
+		for(int i=0;i<userUI.size();i++){
+			userUI.get(i).checkForMouseDrag(mouseX, mouseY);
+		}
+		redraw();
 		//checkModeMove();
 		//redraw();
 		//currentTool.mouseDragged(mouseX,mouseY);

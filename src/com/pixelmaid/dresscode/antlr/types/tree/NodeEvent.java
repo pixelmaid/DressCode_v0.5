@@ -3,6 +3,7 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import com.pixelmaid.dresscode.app.ui.usercreated.UserUI;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 import com.pixelmaid.dresscode.events.EventInterface;
@@ -35,6 +36,16 @@ public class NodeEvent implements EventInterface{
 		    }
 		
 	}
+	 
+	 public void fireUIEvent(int event, UserUI d) {
+		  Iterator<CustomEventListener> i = _listeners.iterator();
+		    while(i.hasNext())  {
+		    	
+		      ((CustomEventListener) i.next()).handleCustomUINodeEvent(this, event, d);
+		    }
+		
+	}
+	 
 	
 	 public void fireDrawableEvent(int event, Drawable d1,Drawable d2) {
 		  Iterator<CustomEventListener> i = _listeners.iterator();

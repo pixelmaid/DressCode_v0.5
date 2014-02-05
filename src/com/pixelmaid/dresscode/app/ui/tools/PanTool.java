@@ -5,7 +5,7 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 public class PanTool extends Tool{
 
 	@Override
-	public void mouseDragged(double mouseX, double mouseY) {
+	public void mouseDragged(double mouseX, double mouseY, boolean special) {
 
 			
 			this.fireToolEvent(CustomEvent.PAN_ACTIVE);

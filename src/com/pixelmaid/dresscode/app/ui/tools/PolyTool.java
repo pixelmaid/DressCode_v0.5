@@ -35,7 +35,7 @@ public class PolyTool extends Tool  {
 	
 	
 	@Override
-	public void mouseReleased(double mouseX, double mouseY) {
+	public void mouseReleased(double mouseX, double mouseY, boolean special) {
 		
 		if (created){
 			this.fireToolEvent(CustomEvent.POLY_ADDED);
@@ -43,7 +43,7 @@ public class PolyTool extends Tool  {
 	}
 	
 	@Override
-	public void mousePressed(double mouseX, double mouseY) {
+	public void mousePressed(double mouseX, double mouseY, boolean special) {
 		created=true;
 		createdDrawable = new Polygon(new Point(mouseX+4, mouseY+6));
 		this.fireToolEvent(CustomEvent.DRAWABLE_CREATED);
@@ -52,7 +52,7 @@ public class PolyTool extends Tool  {
 	}
 	
 	@Override
-	public void mouseDragged(double mouseX, double mouseY) {
+	public void mouseDragged(double mouseX, double mouseY, boolean special) {
 
 		if(created){
 			

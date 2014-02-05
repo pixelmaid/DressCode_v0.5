@@ -22,6 +22,7 @@ public class LAddNode extends NodeEvent implements DCNode {
 
 	}
 
+	//TODO:address this with grouping of drawables and identifers.
 	@Override
 	public VarType evaluate() {
 		if(params.size()>=2){

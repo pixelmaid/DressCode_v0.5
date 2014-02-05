@@ -3,6 +3,7 @@ package com.pixelmaid.dresscode.data;
 import java.util.ArrayList;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
+import com.pixelmaid.dresscode.app.ui.tools.BoolTool;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.*;
 
@@ -19,13 +20,17 @@ public class Stamp {
 	private String functionCall=""; //stores function call of stamp
 	
 	//identifier labels for primitives
-	private int eId =0;
-	private int rId=0;
+	private static int eId =0;
+	private static int rId=0;
 	private static int pId =0;
-	private int sId =0;
-	private int gId = 0;
-	private int lId=0;
-	private int cId = 0;
+	private static int sId =0;
+	private static int gId = 0;
+	private static int lId=0;
+	private static int cId = 0;
+	private static int uId =0;
+	private static int dId =0;
+	private static int iId =0;
+	private static int xId =0;
 	private static int listId = 0;
 	
 	private static String currentGroupId = "g";
@@ -108,7 +113,7 @@ public class Stamp {
 	}
 	
 	// individual drawable type statement creators
-	private String addEllipseStatement(Ellipse e, boolean toGroup){
+	public static String addEllipseStatement(Ellipse e, boolean toGroup){
 		String id ="e"+eId;
 		String start = id +" = ellipse(";
 		Point origin = e.getOrigin();
@@ -130,7 +135,7 @@ public class Stamp {
 	}
 	
 	// individual drawable type statement creators
-	private String addRectStatement(Rectangle e, boolean toGroup){
+	public static String addRectStatement(Rectangle e, boolean toGroup){
 		String id ="r"+rId;
 		String start = id +" = rect(";
 		Point origin = e.getOrigin();
@@ -150,6 +155,30 @@ public class Stamp {
 		return statement;
 	
 	}
+	
+	public static String addRPolyStatement(Polygon created, double rotation, boolean inGroup) {
+		//int point = 0;
+		String id ="p"+pId;
+		String rectStart;
+		String rectEnd = ");";
+		String rotationStatement="";
+		if(rotation!=0){
+			rectStart = "rotate(poly(";
+			rotationStatement="),"+roundNum(rotation);
+			
+		}
+		else{
+			rectStart = "poly(";
+		}
+		
+		Point origin = created.getOrigin();
+		String rectStatement = id +" = "+rectStart+roundNum(origin.getX())+","+roundNum(origin.getY())+","+roundNum(created.numSides())+","+roundNum(created.sideLength())+rotationStatement+rectEnd;
+		
+		pId++;
+		return rectStatement;
+		
+	}
+	
 	
 	// individual drawable type statement creators
 		public static String addPolyStatement(Polygon e, boolean toGroup){
@@ -184,7 +213,7 @@ public class Stamp {
 		}
 		
 		// individual drawable type statement creators
-		private String addCurveStatement(Curve e, boolean toGroup){
+		public static String addCurveStatement(Curve e, boolean toGroup){
 			String id ="c"+cId;
 			String start = id +" = curve(";
 			Point startP = e.getStart();
@@ -213,7 +242,7 @@ public class Stamp {
 		}
 		
 		// individual drawable type statement creators
-				private String addLineStatement(Line e, boolean toGroup){
+		public static String addLineStatement(Line e, boolean toGroup){
 					String id ="l"+lId;
 					String start = id +" = line(";
 					Point startP = e.getStart();
@@ -236,9 +265,48 @@ public class Stamp {
 					return statement;
 				
 				}
+		
+		public static String addBoolStatement(ArrayList<Drawable> selected, int boolType, boolean toGroup) {
+			
+			String n1 =selected.get(0).getIdentifier();
+			String n2 =selected.get(1).getIdentifier();
+			
+			String id = "";
+			String lineStart="";
+			switch(boolType){
+			case BoolTool.UNION:
+				id = "u"+uId+"=";
+				uId++;
+				lineStart ="union(";
+			break;
+			case BoolTool.DIFF:
+				id = "d"+dId+"=";
+				dId++;
+				lineStart ="diff(";
+			break;
+			case BoolTool.XOR:
+				id = "x"+xId+"=";
+				xId++;
+				lineStart ="xor(";
+			
+			break;
+			case BoolTool.CLIP:
+				id = "i"+iId+"=";
+				iId++;
+				lineStart ="clip(";
+			break;
+			
+			
+		}
+			String lineEnd = ");";
+			String lineStatement = id+lineStart+n1+","+n2+lineEnd;
+			return lineStatement;
+
+			
+		}
 				
 				// individual drawable type statement creators
-		private String addLShapeStatement(LShape e, boolean toGroup){
+		public static String addLShapeStatement(LShape e, boolean toGroup){
 					String id ="s"+sId;
 					String start = id +" = import(";
 					String path = e.getPath();

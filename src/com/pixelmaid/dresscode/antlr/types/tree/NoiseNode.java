@@ -38,7 +38,7 @@ public class NoiseNode  extends NodeEvent implements DCNode {
   		else if(params.size()==3){
   			x= params.get(0).evaluate().asDouble();
   			y = params.get(1).evaluate().asDouble();
-  			y = params.get(2 ).evaluate().asDouble();
+  			y = params.get(2).evaluate().asDouble();
   			num = DisplayFrame.noise.noise(x,y,z);
   			
   		}

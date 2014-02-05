@@ -8,6 +8,7 @@ import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
@@ -33,27 +34,29 @@ public class ClipNode extends NodeEvent implements DCNode {
     
     	//try{
     	Drawable aP = params.get(0).evaluate().asDrawable();
-    	Drawable b = params.get(1).evaluate().asDrawable();
-    	Drawable bP =  b.flatten(true,new Drawable()).getFlattenedDrawable();
+    	Drawable bP = params.get(1).evaluate().asDrawable();
     
     	
-    	d = PolyBoolean.intersection(aP.copy(),bP.copy());
-        d.setIdentifier(aP.getIdentifier());
+    	
         aP.hide();
     	bP.hide();
-    	b.hide();
+		d = PolyBoolean.intersection(aP.copy(),bP.copy());
 
-    	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d);
+    	if(d!=null){
+            d.setIdentifier(aP.getIdentifier());
+    		this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d);
     	
-    	v=  new VarType(d);
+    		v=  new VarType(d);
 		
-    	d.setLine(line);
+    		d.setLine(line);
+    		return v;
+    	}
 
 //    	}
     	/*catch (ClassCastException e){
     		throw new RuntimeException("Illegal clip function call at line:"+ line+" : " + this);
     	}*/
-    	return v;
+    	return new VarType(new Polygon());
     	
     }
 

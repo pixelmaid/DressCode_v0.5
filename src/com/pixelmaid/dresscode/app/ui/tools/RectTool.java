@@ -33,7 +33,7 @@ public class RectTool extends Tool  {
 	
 	
 	@Override
-	public void mouseReleased(double mouseX, double mouseY) {
+	public void mouseReleased(double mouseX, double mouseY, boolean special) {
 		
 		if (created){
 			this.fireToolEvent(CustomEvent.RECT_ADDED);
@@ -41,7 +41,7 @@ public class RectTool extends Tool  {
 	}
 	
 	@Override
-	public void mousePressed(double mouseX, double mouseY) {
+	public void mousePressed(double mouseX, double mouseY, boolean special) {
 		created=true;
 		createdDrawable = new Rectangle(mouseX+4, mouseY+6,1,1);
 		this.fireToolEvent(CustomEvent.DRAWABLE_CREATED);
@@ -50,7 +50,7 @@ public class RectTool extends Tool  {
 	}
 	
 	@Override
-	public void mouseDragged(double mouseX, double mouseY) {
+	public void mouseDragged(double mouseX, double mouseY, boolean special) {
 
 		if(created){
 			((Rectangle)(createdDrawable)).setWidth(1);

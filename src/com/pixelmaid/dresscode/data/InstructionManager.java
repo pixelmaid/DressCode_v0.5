@@ -27,13 +27,16 @@ public class InstructionManager extends NodeEvent{
 	private CommonTree tree;
 	private String error = "";
 	private DrawableManager drawableManager;
+	private UserUIManager uiManager;
+
 	private double widthParam,heightParam;
 	private int unitParam;
 	
 	
-	public InstructionManager(DrawableManager dm, double w, double h) {
+	public InstructionManager(DrawableManager dm, UserUIManager ui, double w, double h) {
 		lexer = new PogoLexer();
 		drawableManager = dm;
+		uiManager = ui;
 		widthParam = w;
 		heightParam = h;
 		
@@ -72,7 +75,7 @@ public class InstructionManager extends NodeEvent{
 	    		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
 
 	    		// pass the reference to the Map of functions to the tree walker
-	    		PogoTreeWalker walker = new PogoTreeWalker(nodes, parser.functions,drawableManager,widthParam, heightParam, unitParam);
+	    		PogoTreeWalker walker = new PogoTreeWalker(nodes, parser.functions,drawableManager,uiManager,widthParam, heightParam, unitParam);
 
 	    		// get the returned node 
 	    		BlockNode returned = walker.walk();

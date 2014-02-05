@@ -2,6 +2,8 @@ package com.pixelmaid.dresscode.antlr.types;
 
 import java.util.List;
 
+import com.pixelmaid.dresscode.app.ui.usercreated.Slider;
+import com.pixelmaid.dresscode.app.ui.usercreated.UserUI;
 import com.pixelmaid.dresscode.drawing.primitive2d.Color;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
@@ -19,7 +21,7 @@ public class VarType implements Comparable<VarType> {
 	  public static final VarType VOID = new VarType();  
 	  
 	  private Object value;  
-	  
+	  private int line;
 	  private VarType() {  
 	    // private constructor: only used for NULL and VOID  
 	    value = new Object();  
@@ -111,6 +113,14 @@ public class VarType implements Comparable<VarType> {
 	  
 	  public Color asColor() {
 		  return new Color((String)value);
+		}
+	  
+	  public Slider asSlider() {
+		  return (Slider)value;
+		}
+	  
+	  public UserUI asUserUI() {
+		  return (UserUI)value;
 		}
 	  @Override  
 	  public int compareTo(VarType that) {  
@@ -210,6 +220,10 @@ public class VarType implements Comparable<VarType> {
 	  public boolean isEllipse(){
 		  return value instanceof Ellipse;
 	  }
+	  
+	  public boolean isSlider(){
+		  return value instanceof Slider;
+	  }
 	  public boolean isLShape() {
 		  return value instanceof LShape;
 		}
@@ -217,6 +231,15 @@ public class VarType implements Comparable<VarType> {
 	  public String toString() {  
 	    return isNull() ? "NULL" : isVoid() ? "VOID" : String.valueOf(value);  
 	  }
+
+	public void setLine(int l) {
+		line = l;
+	}
+	
+	public int getLine(){
+		return line;
+	}
+	
 
 	
 

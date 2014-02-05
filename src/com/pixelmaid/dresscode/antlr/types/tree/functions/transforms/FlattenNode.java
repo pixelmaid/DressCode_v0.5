@@ -28,15 +28,19 @@ public class FlattenNode extends NodeEvent implements DCNode {
     public VarType evaluate() {
     	Drawable d;
     	
-    	d= param.evaluate().asDrawable().copy();
+    	d= param.evaluate().asDrawable();
  
     	
+    	d.hide();
+    	Drawable n = d.flatten(true,new Drawable());
+    
     	
-    	d.flatten(true,new Drawable());
-    	Drawable flattened = d.getFlattenedDrawable();
-    	flattened.setLine(line);
-    	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d.getFlattenedDrawable());
-    	return new VarType(flattened);	
+    	n.setLine(line);
+    	if(d.getIdentifier()!=null){
+    		n.setIdentifier(d.getIdentifier());
+    	}
+    	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, n);
+    	return new VarType(n);	
         //throw new RuntimeException("Illegal function call: " + this);
     }
 

@@ -5,6 +5,7 @@ import processing.core.PShape;
 
 import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.math.Vec2d;
 
 //class used for importing in pre-defined svg vector objects
 
@@ -78,6 +79,10 @@ public class LShape extends Polygon {
 			}
 	    }
 		
+		@Override
+		public Drawable scale(double x, double y, Point focus, Boolean top){
+			return this;
+		}
 		
 
 		@Override

@@ -69,5 +69,13 @@ public class EventSource {
 			
 		}
 		
+		public void fireUIModifedEvent(Object source, int event){
+			 Iterator i = _listeners.iterator();
+			    while(i.hasNext())  {
+			    	
+			      ((CustomEventListener) i.next()).handleCustomUIEvent(source, event);
+			    }
+		}
+		
 		
 }

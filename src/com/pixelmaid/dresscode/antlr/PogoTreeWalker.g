@@ -13,6 +13,7 @@ options {
   import com.pixelmaid.dresscode.antlr.types.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.functions.*; 
+  import com.pixelmaid.dresscode.antlr.types.tree.UI.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.properties.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
   import com.pixelmaid.dresscode.data.*;
@@ -29,6 +30,7 @@ options {
  double heightParam;
  int unitParam;
  DrawableManager drawableManager;
+ UserUIManager uiManager;
   Scope currentScope = null;
   
   
@@ -44,16 +46,17 @@ options {
     }
   public Map<String, FunctionType> functions = null;
   
-  public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns, DrawableManager dm, double w, double h,int u) {
-    this(nodes, null, fns,dm,w,h,u);
+  public PogoTreeWalker(CommonTreeNodeStream nodes, Map<String, FunctionType> fns, DrawableManager dm,UserUIManager ui,double w, double h,int u) {
+    this(nodes, null, fns,dm,ui,w,h,u);
    
   }
   
-  public PogoTreeWalker(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns, DrawableManager dm,double w,double h, int u) {
+  public PogoTreeWalker(CommonTreeNodeStream nds, Scope sc, Map<String, FunctionType> fns, DrawableManager dm,UserUIManager ui, double w,double h, int u) {
     super(nds);
     currentScope = sc;
     functions = fns;
     this.drawableManager = dm;
+    this.uiManager = ui;
     widthParam = w;
     heightParam = h;
     unitParam = u;
@@ -95,7 +98,7 @@ statement returns [DCNode node]
   ;
 
 assignment returns [DCNode node]
-  :  ^(ASSIGNMENT Identifier indexes? expression?) {node = new AssignmentNode($Identifier.text, $indexes.e, $expression.node, currentScope);}
+  :  ^(ASSIGNMENT Identifier indexes? expression?) {node = new AssignmentNode($Identifier.text, $indexes.e, $expression.node, currentScope,$ASSIGNMENT.getLine());}
 
   ;
 
@@ -103,7 +106,7 @@ functionCall returns [DCNode node]
 @init{
 	//System.out.println("function called");
 }
-  :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions, widthParam, heightParam, unitParam,$FUNC_CALL.getLine()); ((NodeEvent)node).addEventListener(drawableManager);}
+  :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions, widthParam, heightParam, unitParam,$FUNC_CALL.getLine()); ((NodeEvent)node).addEventListener(drawableManager);((NodeEvent)node).addEventListener(uiManager);}
   |  ^(FUNC_CALL Println expression?)  {node = new PrintlnNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
   |  ^(FUNC_CALL Print expression)     {node = new PrintNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
   |  ^(FUNC_CALL Assert expression)    {node = new AssertNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
@@ -115,7 +118,7 @@ functionCall returns [DCNode node]
   |	 patternCall {node = $patternCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |	 mathCall {node= $mathCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |	 getCall {node= $getCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
-  
+  | uICall {node = $uICall.node; ((NodeEvent)node).addEventListener(uiManager);}
   ;
   
   
@@ -163,6 +166,7 @@ functionCall returns [DCNode node]
    | ^(FUNC_CALL Wave exprList?) {node = new WaveNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
    | ^(FUNC_CALL Arc exprList?) {node = new ArcNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
    ;
+  
    
    mathCall returns [DCNode node]
    :^(FUNC_CALL Cosine expression) {node = new CosineNode($expression.node,$FUNC_CALL.getLine());}
@@ -170,6 +174,7 @@ functionCall returns [DCNode node]
    |^(FUNC_CALL Tan expression) {node = new TanNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL ATan exprList?) {node = new ATanNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Random exprList?) {node = new RandomNode($exprList.e,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Pow exprList?){node = new PowFNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Sqrt expression){node = new SqrtNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Sq expression){node = new SqNode($expression.node,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Gaussian exprList?) {node = new GaussianNode($exprList.e,$FUNC_CALL.getLine());}
@@ -201,6 +206,11 @@ functionCall returns [DCNode node]
   |^(FUNC_CALL GetAngle exprList? ) {node = new GetAngleNode($exprList.e);}
   |^(FUNC_CALL GetRadius exprList? ) {node = new GetRadiusNode($exprList.e);}
   ;
+  
+  uICall returns [DCNode node]
+  	: ^(FUNC_CALL Slider exprList?)  {node = new SliderNode($exprList.e,currentScope);}
+  	;
+  
 
 ifStatement returns [DCNode node]
 @init  {IfNode ifNode = new IfNode();}
@@ -281,7 +291,7 @@ list returns [DCNode node]
 //START HERE TOMOROW FIXING DOT LOOKUP WITH MULTIPLE INDEXES
 lookup returns [DCNode node]
  	:^(DOTPROPERTY functionCall dotProperty){node = new DotPropertyNode($functionCall.node, $dotProperty.e);}
- 	|^(DOTPROPERTY Identifier dotProperty){node = new DotPropertyNode(new IdentifierNode($Identifier.text, currentScope), $dotProperty.e);}
+ 	|^(DOTPROPERTY Identifier dotProperty){node = new DotPropertyNode(new IdentifierNode($Identifier.text, currentScope,$DOTPROPERTY.getLine()), $dotProperty.e);}
  
  // :  ^(DOTPROPERTY functionCall d=dotLookup[$functionCall.node]) {node = $d.node;}
   //|  ^(DOTPROPERTY Identifier d=dotLookup[new IdentifierNode($Identifier.text, currentScope)]) {node = $d.node;}
@@ -290,7 +300,7 @@ lookup returns [DCNode node]
   | ^(LOOKUP functionCall i=indexes?) {node = $i.e != null ? new LookupNode($functionCall.node, $indexes.e,$LOOKUP.getLine()) : $functionCall.node;}
   |  ^(LOOKUP list i=indexes?)         {node = $i.e != null ? new LookupNode($list.node, $indexes.e, $LOOKUP.getLine()) : $list.node;}
   |  ^(LOOKUP expression i=indexes?)   {node = $i.e != null ? new LookupNode($expression.node, $indexes.e,$LOOKUP.getLine()) : $expression.node;}
-  |  ^(LOOKUP Identifier i=indexes?)   {node = $i.e != null ? new LookupNode(new IdentifierNode($Identifier.text, currentScope), $indexes.e,$LOOKUP.getLine()) : new IdentifierNode($Identifier.text, currentScope);}
+  |  ^(LOOKUP Identifier i=indexes?)   {node = $i.e != null ? new LookupNode(new IdentifierNode($Identifier.text, currentScope,$LOOKUP.getLine()), $indexes.e,$LOOKUP.getLine()) : new IdentifierNode($Identifier.text, currentScope,$LOOKUP.getLine());}
   |  ^(LOOKUP String i=indexes?)       {node = $i.e != null ? new LookupNode(new AtomNode($String.text), $indexes.e,$LOOKUP.getLine()) : new AtomNode($String.text);}
   
  

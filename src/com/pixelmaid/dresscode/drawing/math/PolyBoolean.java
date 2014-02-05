@@ -13,7 +13,7 @@ import com.seisw.util.geom.Poly;
 import com.seisw.util.geom.Clip;
 public class PolyBoolean{
 	//merges a group of objects into one
-/*	public static Drawable merge(Drawable d) {
+	/*public static Drawable merge(Drawable d) {
 		
 		
 		//Point origin = d.getOrigin();
@@ -43,7 +43,9 @@ public class PolyBoolean{
 			return master;
 		}
 		
-	}*/
+	}
+
+	*/
 
 	
 	public static Drawable merge(Drawable d) {
@@ -150,6 +152,59 @@ public class PolyBoolean{
 		return result;
 	}
 	
+	
+	//performs difference of two polygons and returns the result
+		public static Drawable intersection(Drawable a, Drawable b) {
+			System.out.println("intersection");
+			a  = a.toPolygon();
+			b = b.toPolygon();
+			if(a.numChildren()>0){
+				System.out.println("num children a >  0");
+
+				a = a.getChildren().get(0);
+			}
+			
+			BooleanPoly a_Poly =  polygonToBoolean((Polygon)a);
+			BooleanPoly b_Poly;
+			
+			if(b.numChildren()<=0){
+				System.out.println("num children b = 0");
+				b_Poly = polygonToBoolean((Polygon)b);
+				Poly c_Poly = a_Poly.intersection(b_Poly);
+				if(!c_Poly.isEmpty()){
+					Drawable m = booleanToPolygon(c_Poly);
+					if(m!=null){
+						m.copyStyleParams(b,m);
+						return m;
+					}
+				}
+				return null;	
+				
+			}
+			
+			else{
+				Drawable m = new Drawable();
+				System.out.println("num children b ="+b.numChildren());
+				ArrayList<Drawable> c = b.getChildren();
+				for(int i=0;i<c.size();i++){
+					b_Poly = polygonToBoolean((Polygon)c.get(i));
+					
+					Poly c_Poly = a_Poly.intersection(b_Poly);
+					if(!c_Poly.isEmpty()){
+						Polygon nc = booleanToPolygon(c_Poly);
+						if(nc!=null){
+							m.addToGroup(nc);
+						}
+					}
+				}
+				m.copyStyleParams(b,m);
+				return m;
+			}
+			
+			
+			
+		}
+	/*
 	//performs difference of two polygons and returns the result
 	public static Drawable intersection(Drawable a, Drawable b) {
 		a  = a.toPolygon();
@@ -180,27 +235,26 @@ public class PolyBoolean{
 				Poly o_Poly = Clip.intersection(a_Poly,b_Poly);
 				System.out.println("holes for o poly="+ o_Poly.getNumInnerPoly());
 
-				Polygon returnPoly = booleanToPolygon(o_Poly);
+				if(!o_Poly.isEmpty()){
+					Polygon returnPoly = booleanToPolygon(o_Poly);
 			
-				returnPoly.copyStyleParams(a,returnPoly);
+					returnPoly.copyStyleParams(a,returnPoly);
 			
-				return returnPoly;
+					return returnPoly;
+					}
+					return null;
 				}
-				//System.out.println("holes for converted poly="+ b_Poly.getNumInnerPoly());
 				
-				//Poly o_Poly = a_Poly.intersection(b_Poly);
-				
-			//}
 			else{
 				b_Poly = drawableToBoolean(b);
 				 Drawable result =  groupIntersection(a_Poly,b_Poly);
-					result.copyStyleParams(a,result);
+					//result.copyStyleParams(a,result);
 					return result;
 			
 			}
 		}
 	}
-	
+	*/
 	
 	// performs intersection on a group of objects
 		private static Drawable groupIntersection(BooleanPoly clip, BooleanPoly group){
@@ -215,7 +269,7 @@ public class PolyBoolean{
 			}
 			else{
 				
-
+				System.out.println("number of inner poly>1");
 				for( int i = 0 ; i < group.getNumInnerPoly() ; i++ )
 				{
 					Poly ip = group.getInnerPoly(i);
@@ -223,7 +277,8 @@ public class PolyBoolean{
 					if(!i_Poly.isEmpty()){
 						Polygon p = booleanToPolygon(i_Poly);
 						
-						master.addToGroup(p);
+							master.addToGroup(p);
+						
 					}
 				}
 			
@@ -251,7 +306,7 @@ public class PolyBoolean{
 				}
 				else{
 				System.out.println("d check:");
-				System.out.println(d instanceof Polygon);
+				System.out.println(d);
 				Polygon p = (Polygon)d.children.get(j);
 				bP = polygonToBoolean(p);
 				if(p.isHole()){
@@ -340,6 +395,7 @@ public class PolyBoolean{
 	private static Drawable booleanToDrawable(Poly poly){
 		
 		Drawable master = new Drawable();
+		
 	if(poly.getNumInnerPoly()==1){
 			master = booleanToPolygon(poly.getInnerPoly(0));
 	
@@ -404,11 +460,15 @@ public class PolyBoolean{
 		}
 		//set all points relative to the centroid;
 		Point c;
+		try{
 		if(ip.isHole()){
 			jp.reversePoints();
 		}
 		
 		c = Geom.findCentroid(jp);
+		if(c==null){
+			return null;
+		}
 		if(ip.isHole()){
 			jp.reversePoints();
 		}
@@ -416,6 +476,10 @@ public class PolyBoolean{
 		jp.setPointsRelativeTo(c) ;
 		//System.out.println("holes for hole count="+holeCount);
 		return jp;
+		}
+		catch(IllegalStateException e){
+			return null;
+		}
 	}
 
 	

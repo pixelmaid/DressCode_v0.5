@@ -46,7 +46,7 @@ public class PenTool extends Tool  {
 	}
 
 	@Override
-	public void mousePressed(double mouseX, double mouseY) {
+	public void mousePressed(double mouseX, double mouseY, boolean special) {
 		if(createdDrawable==null){
 			createdDrawable = new Polygon();
 			createdDrawable.setClosed(false);

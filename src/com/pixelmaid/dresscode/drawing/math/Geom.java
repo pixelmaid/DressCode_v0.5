@@ -702,6 +702,7 @@ public static Point findCentroid(Polygon polygon)
 	double cx=0,cy=0;
 	double A= SignedPolygonArea(polygon);
 	ArrayList<Point> verticies = polygon.getPoints();
+	if (verticies.size()>0){
 	//System.out.println("signedArea="+A);
 	Point res;
 	int i,j;
@@ -729,6 +730,10 @@ public static Point findCentroid(Polygon polygon)
 	//System.out.println("centroid="+cx+","+cy);
 	verticies.remove(verticies.size()-1);
 	return res;
+	}
+	else{
+		return null;
+	}
 } 
     
     

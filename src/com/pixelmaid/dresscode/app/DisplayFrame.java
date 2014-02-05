@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Cursor;
 
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.ui.CodeToolbar;
 import com.pixelmaid.dresscode.app.ui.DrawingToolbar;
 import com.pixelmaid.dresscode.app.ui.ImageButton;
@@ -43,19 +44,23 @@ import javax.swing.text.BadLocationException;
 
 
 import com.pixelmaid.dresscode.app.ui.tools.*;
+import com.pixelmaid.dresscode.app.ui.usercreated.UserUI;
 
 import com.pixelmaid.dresscode.data.DCProject;
 import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.DynamicStamp;
 import com.pixelmaid.dresscode.data.InstructionManager;
 import com.pixelmaid.dresscode.data.Stamp;
+import com.pixelmaid.dresscode.data.UserUIManager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.PerlinNoise;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
+import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
@@ -106,7 +111,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public static DimensionDialog dimensionDialog; //dialog component for adjusting dimensions of canvas
 	public static StampDialog stampDialog; //dialog component for adjusting dimensions of canvas
 	//drawing panel buttons
-	private ImageButton selectButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton;
+	private ImageButton selectButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton,sliderButton;
+	private ImageButton unionButton, diffButton, xorButton, clipButton;
 
 	private JSplitPane splitFrame; //split frame that holds drawing frame and coding frame
 	private JSplitPane leftSplitFrame; //split frame that holds tree views for stamps and declarative view
@@ -131,15 +137,18 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private int currentSides= 5; //number of sides for polyTool
 	private LineTool lineTool;
 	private CurveTool curveTool;
+	private BoolTool boolTool;
 	private Tool defaultTool;
 	private Tool currentTool;	
 	
 	private static InstructionManager instructionManager; //data manager for program data
 	private static DrawableManager drawableManager; //data manager for drawing data
+	private static UserUIManager uiManager; //data manager for drawing data
 
 	//keyboard booleans
 	private boolean altKey = false;
 	private boolean ctrlKey = false;
+	private boolean shiftKey = false;
 	
 	public static Random mainRandom; //random component for code
 	public static PerlinNoise noise; //PGraphics for accessing noise for all code
@@ -201,6 +210,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		penButton = new ImageButton("pen","pen","pen tool",DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);	
 		printButton = new ImageButton("print","print", "export your design to pdf", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 
+		//setup boolean buttons
+		unionButton = new ImageButton("union","union", "arrow", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT );
+		diffButton = new ImageButton("diff","diff", "arrow", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT );
+		xorButton = new ImageButton("xor","xor", "arrow", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT );
+		clipButton = new ImageButton("clip","clip", "arrow", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT );
+
+		
 		//add drawing buttons to button list
 		buttonList.add(selectButton);
 		buttonList.add(panButton);
@@ -217,6 +233,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		buttonList.add(curveButton);
 		buttonList.add(importButton);
 		buttonList.add(penButton);
+		buttonList.add(unionButton);
+		buttonList.add(diffButton);
+		buttonList.add(xorButton);
+		buttonList.add(clipButton);
 
 		//add drawing buttons to drawing toolbar section 1
 		drawingToolbar.addButtonTo1(selectButton);
@@ -234,7 +254,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		drawingToolbar.addButtonTo2(importButton);
 		drawingToolbar.addButtonTo2(penButton);
 		//add drawing buttons to drawing toolbar section 3
-		drawingToolbar.addButtonTo3(printButton);
+		drawingToolbar.addButtonTo3(unionButton);
+		drawingToolbar.addButtonTo3(diffButton);
+		drawingToolbar.addButtonTo3(xorButton);
+		drawingToolbar.addButtonTo3(clipButton);
+
+		
+		drawingToolbar.addButtonTo4(printButton);
 		
 		//initialize drawing toolbar
 		drawingToolbar.init(DEFAULT_TOOLBAR_HEIGHT,defaultDrawingPaneWidth,BROWN);
@@ -365,8 +391,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public void initData(){
 		//setup data managers
 		currentProject = new DCProject();
-	   	drawableManager = new DrawableManager(); 
-		instructionManager = new InstructionManager(drawableManager,currentProject.getWidth(),currentProject.getHeight());
+	   	drawableManager = new DrawableManager();
+	   	uiManager = new UserUIManager(this.codeField); 
+	   	uiManager.addEventListener(this);
+		instructionManager = new InstructionManager(drawableManager,uiManager,currentProject.getWidth(),currentProject.getHeight());
 	
 		//set dimensions
      	currentProject.setDimensions(UnitManager.DEFAULT_WIDTH,UnitManager.DEFAULT_HEIGHT, UnitManager.STANDARD, canvas, instructionManager);
@@ -384,6 +412,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		targetTool = new TargetTool();
 		targetTool.setImage("target_t");
 		selectTool = new SelectTool();
+		selectTool.init();
 		panTool = new PanTool();
 		panTool.setImage("pan_t");
 		rectTool = new RectTool();
@@ -398,7 +427,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		curveTool = new CurveTool();
 		curveTool.setImage("cross_t");
 		defaultTool = new Tool();
-		
+		boolTool = new BoolTool();
 		currentTool= defaultTool;
 		
 		//setup event listeners
@@ -414,7 +443,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		polyTool.addEventListener(this);
 		lineTool.addEventListener(this);
 		curveTool.addEventListener(this);
-
+		boolTool.addEventListener(this);
 		stampManager.addEventListener(this);
 		treeManager.addEventListener(this);
 		
@@ -434,6 +463,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		curveButton.addActionListener(this);
 		penButton.addActionListener(this);
 		importButton.addActionListener(this);
+		unionButton.addActionListener(this);
+		xorButton.addActionListener(this);
+		diffButton.addActionListener(this);
+		clipButton.addActionListener(this);
 		printButton.addActionListener(this);
 		clearButton.addActionListener(this);
 		runButton.addActionListener(this);
@@ -536,13 +569,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	    }
 	 
 	//loads the example menu with examples
-	private void setupExampleMenu(JMenu exampleMenu){
+//	private void setupExampleMenu(JMenu exampleMenu){
 		
+//	
+	//}
 	
-	}
 	
-	
-	/* private void setupExampleMenu(JMenu exampleMenu){
+	 private void setupExampleMenu(JMenu exampleMenu){
 		String path = (ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/examples")).getPath();
 		System.out.println("path="+path);
 		File exampleFolder = new File(path);
@@ -557,8 +590,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				exampleMenu.add(exampleAction);
 				exampleAction.addActionListener(this);
 				}
-			} 
-	 }*/
+			} 		
+	 }
 	 
 	 //opens an example according to string
 	 private void openExample(String name){
@@ -577,6 +610,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void drawIntoCanvas(){
 		 treeManager.getNodes(drawableManager.getDrawables());
 		 canvas.setDrawables(drawableManager.getDrawables());
+		 canvas.setUserUI(uiManager.getUserUIs());
 	 }
 	 
 	 /* called when create stamp is selected from menu
@@ -584,7 +618,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	  * add stamp to stamp palette
 	  */
 	 private void createStaticStamp(){
-		 Drawable selected = selectTool.getSelected();
+		 //TODO: create groups from multiply selected shapes?
+		 Drawable selected = selectTool.getSelected().get(0);
 		 if(selected!=null){
 			 stampDialog = new StampDialog(this,true,stampMap);
 			 if(stampDialog.getAnswer()){
@@ -634,11 +669,19 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 			Stamp stamp = stampMap.get(stampName); //locate new stamp based on name
 			this.codeField.setText(stamp.getFunctionDef()); //set code field text to stamp function
-			this.codeField.startFilter(stamp.getFunctionCall().length()+4); //filter code field to prevent editing of function name
-	 }
+			//if (!(stamp instanceof DynamicStamp)){
+			//this.codeField.startFilter(stamp.getFunctionCall().length()+4); //filter code field to prevent editing of function name
+	 
+			//}
+		}
 	 
 	 /*resets code field to main program*/
 	 private void selectMain(){
+		
+		 if(this.fromMain){
+			this.currentProject.setCode(codeField.getCode());//set code field text back to main project code
+
+		 }
 		 this.codeField.stopFilter(); //remove the current document filter on the codefield
 		if(currentStamp!=""){
 			updateStampCode(); //save stamp modifications
@@ -654,7 +697,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 /*inserts stamp function call into program*/
 	 private void insertStamp(){
-		
 		 String stampName = stampManager.getSelectedNode();
 		 Stamp stamp = stampMap.get(stampName);
 		 selectMain();	
@@ -672,7 +714,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 /*adds in an irregular polygon statement to the code field*/
 	 private void addPolyStatement(Polygon p){
 			String polyStatement = Stamp.addPolyStatement(p, false);
-			codeField.insertIrregularStatement(polyStatement);
+			codeField.insertGesturalStatement(polyStatement);
 			this.currentProject.setCode(this.codeField.getCode());
 	 }
 	 
@@ -687,6 +729,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			//removes existing drawables
 			//TODO: EVENTUALLY PARSE ONLY MODIFIED CODE
 			drawableManager.clearAllDrawables();
+			uiManager.clearAllUserUIs();
 			if(fromMain){
 				currentProject.setCode(codeField.getCode());
 			}
@@ -842,15 +885,15 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		public void handleCustomToolEvent(Object source, int eventType) {
 			switch (eventType){
 				case CustomEvent.CANVAS_MOUSE_PRESSED:	
-					currentTool.mousePressed(canvas.relativeMouseX(), canvas.relativeMouseY());
+					currentTool.mousePressed(canvas.relativeMouseX(), canvas.relativeMouseY(),shiftKey);
 				break;
 			
 				case CustomEvent.CANVAS_MOUSE_RELEASED:
-					currentTool.mouseReleased(canvas.relativeMouseX(), canvas.relativeMouseY());
+					currentTool.mouseReleased(canvas.relativeMouseX(), canvas.relativeMouseY(),shiftKey);
 					
 					break;
 				case CustomEvent.CANVAS_MOUSE_DRAGGED:
-					currentTool.mouseDragged(canvas.relativeMouseX(), canvas.relativeMouseY());
+					currentTool.mouseDragged(canvas.relativeMouseX(), canvas.relativeMouseY(),shiftKey);
 				break;
 				case CustomEvent.TARGET_SELECTED:
 					selectMain();
@@ -872,9 +915,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					break;
 				case CustomEvent.DRAWABLE_MOVED:
 					selectMain();
-					Drawable d = selectTool.getSelected();
-					this.codeField.insertMoveStatement(d);
-					this.currentProject.setCode(this.codeField.getCode());
+					ArrayList<Drawable> dlist = selectTool.getSelected();
+					System.out.println("moved list size="+dlist.size());
+					for(int i=0;i<dlist.size();i++){
+						Drawable d = dlist.get(i);
+						this.codeField.insertMoveStatement(d);
+						this.currentProject.setCode(this.codeField.getCode());
+					}
 
 				break;
 				case CustomEvent.PAN_ACTIVE:
@@ -890,23 +937,34 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					break;
 				case CustomEvent.RECT_ADDED:
 					selectMain();
-					codeField.insertShapeStatement(currentTool.getCreated(),"rect");
+					String rectStatement = Stamp.addRectStatement((Rectangle)rectTool.getCreated(), false);
+					codeField.insertGesturalStatement(rectStatement);
 					this.currentProject.setCode(this.codeField.getCode());
 					run();	
 					
 					break;
 				case CustomEvent.ELLIPSE_ADDED:
 					selectMain();
-					codeField.insertShapeStatement(currentTool.getCreated(),"ellipse");
+					String ellipseStatement = Stamp.addEllipseStatement((Ellipse)ellipseTool.getCreated(), false);
+					codeField.insertGesturalStatement(ellipseStatement);
 					this.currentProject.setCode(this.codeField.getCode());
 					run();	
+				case CustomEvent.BOOL_PERFORMED:
+					selectMain();
+					int type = boolTool.boolType;
+					String boolStatement = Stamp.addBoolStatement(selectTool.getSelected(), type, false);
+					codeField.insertGesturalStatement(boolStatement);
+					//codeField.insertShapeStatement(currentTool.getCreated(),"rect");
+					this.currentProject.setCode(this.codeField.getCode());
+					run();	
+					run();
 					break;	
 				case CustomEvent.POLY_ADDED:
 					selectMain();
-					codeField.insertPolyStatement((Polygon)currentTool.getCreated(),((PolyTool)currentTool).getRotation());
+					String polyStatement = Stamp.addRPolyStatement((Polygon)polyTool.getCreated(), polyTool.getRotation(),false);
+					codeField.insertGesturalStatement(polyStatement);
 					this.currentProject.setCode(this.codeField.getCode());
 					run();	
-					break;
 					
 				case CustomEvent.IRREGULAR_POLY_ADDED:
 					selectMain();
@@ -916,20 +974,26 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				
 				case CustomEvent.LINE_ADDED:
 					selectMain();
-					codeField.insertLineStatement((Line)currentTool.getCreated());
+					String lineStatement = Stamp.addLineStatement((Line)lineTool.getCreated(), false);
+					codeField.insertGesturalStatement(lineStatement);
 					this.currentProject.setCode(this.codeField.getCode());
-					run();	
+					run();		
 					break;
 				case CustomEvent.CURVE_ADDED:
 					selectMain();
-					codeField.insertCurveStatement((Curve)currentTool.getCreated());
+					String curveStatement = Stamp.addCurveStatement((Curve)curveTool.getCreated(), false);
+					codeField.insertGesturalStatement(curveStatement);
 					this.currentProject.setCode(this.codeField.getCode());
 					run();	
-					break;
 				case CustomEvent.REDRAW_REQUEST:
 					 canvas.setDrawables(drawableManager.getDrawables());
 
 					canvas.redraw();
+					break;
+				case CustomEvent.RUN_REQUEST:
+					run();
+					canvas.redraw();
+					
 					break;
 				case CustomEvent.DESELECT_ALL:
 					
@@ -1069,6 +1133,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		if(e.getKeyCode()==17){
 			ctrlKey=true;
 		}
+		//toggle for ctrl key
+		if(e.getKeyCode()==16){
+			shiftKey=true;
+		}
 		//toggle pan when space bar is pressed
 		if(e.getKeyCode() ==32){
 			canvas.panMode();
@@ -1087,6 +1155,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		if(e.getKeyCode()==17){
 			ctrlKey=false;
+		}
+		if(e.getKeyCode()==16){
+			shiftKey=false;
 		}
 		if(e.getKeyCode() ==32){
 			if(panButton.isActive()){
@@ -1186,6 +1257,32 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			currentTool = lineTool;
 			lineButton.setActive();
 			canvas.changeCursor(lineTool.getImage());
+		}
+		else if (e.getSource()==curveButton){
+			currentTool = curveTool;
+			curveButton.setActive();
+			canvas.changeCursor(curveTool.getImage());
+		}
+		else if (e.getSource()==unionButton){
+			currentTool = boolTool;
+			boolTool.doBool(selectTool.getSelected(),boolTool.UNION);
+		}
+		else if (e.getSource()==diffButton){
+			currentTool = boolTool;
+			boolTool.doBool(selectTool.getSelected(),boolTool.DIFF);
+		}
+		else if (e.getSource()==xorButton){
+			currentTool = boolTool;
+			boolTool.doBool(selectTool.getSelected(),boolTool.XOR);
+		}
+		else if (e.getSource()==clipButton){
+			currentTool = boolTool;
+			boolTool.doBool(selectTool.getSelected(),boolTool.CLIP);
+		}
+		else if (e.getSource()==curveButton){
+			currentTool = curveTool;
+			curveButton.setActive();
+			canvas.changeCursor(curveTool.getImage());
 		}
 		else if (e.getSource()==curveButton){
 			currentTool = curveTool;
@@ -1326,6 +1423,20 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	@Override
 	public void mouseReleased(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void handleCustomUINodeEvent(Object nodeEvent, int event, UserUI d) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void handleCustomUIEvent(Object source, int event) {
 		// TODO Auto-generated method stub
 		
 	}

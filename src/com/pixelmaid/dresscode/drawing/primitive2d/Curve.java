@@ -95,7 +95,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		//TODO: MAKE CURVE DRAW RELATIVE
 		if(!this.getHide()){
 			appearance(e);
-			//e.noFill();
+			e.noFill();
 			e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate(PApplet.radians((float)getRotation()));
@@ -107,7 +107,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	}
 
 	@Override 
-	public void setAbsolute() {
+	public Drawable setAbsolute() {
 
 		if(this.getParent()!=null){
 			this.start= this.start.add(this.getParent().getOrigin()); //add parent's origin to its origin
@@ -116,6 +116,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 			this.control2= this.control2.add(this.getParent().getOrigin()); //add parent's origin to its origin
 			this.rotation = (this.getRotation()+this.getParent().getRotation()); //adds parent's rotation to its rotation
 		}
+		return this;
 
 
 

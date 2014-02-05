@@ -109,6 +109,7 @@ functionCall
   |	 patternCall
   |	 mathCall
   | getCall
+  |	uICall
   ;
   
   
@@ -179,6 +180,7 @@ functionCall
    	|Tan '(' expression ')'   -> ^(FUNC_CALL Tan expression)
    	|ATan '(' exprList? ')'   -> ^(FUNC_CALL ATan exprList?)
    	|Random '(' exprList? ')'   -> ^(FUNC_CALL Random exprList?)
+   	|Pow '(' exprList? ')'   -> ^(FUNC_CALL Pow exprList?)
    	|Sqrt '(' expression ')'   -> ^(FUNC_CALL Sqrt expression)
    	|Sq '(' expression ')'   -> ^(FUNC_CALL Sq expression)
    	|Gaussian '(' exprList? ')'   -> ^(FUNC_CALL Gaussian exprList?)
@@ -191,7 +193,9 @@ functionCall
    	|Units'(' expression ')'   -> ^(FUNC_CALL Units expression)
    	;
   
-  
+  uICall
+  	:Slider '(' exprList? ')'   -> ^(FUNC_CALL Slider exprList?) 
+  	;
   
 
 ifStatement
@@ -372,6 +376,7 @@ Sine	: 'sin';
 Tan		: 'tan';
 ATan	: 'atan';
 Sqrt	: 'sqrt';
+Pow		: 'pow';
 Sq		: 'sq';
 Random 	: 'random';
 Round	: 'round';
@@ -414,6 +419,9 @@ Grid	: 'grid';
 Wave	: 'wave';
 Spiral	: 'spiral';
 Arc	: 'arc';
+
+//UIcommands
+Slider	: 'slider';
  
 //getMethods
 GetWidth: 'getWidth';
@@ -428,8 +436,8 @@ GetFill: 'getFill';
 GetStroke: 'getStroke';
 GetStart: 'getStart';
 GetEnd: 'getEnd';
-GetDistance: 'dist';
-GetIntersect: 'intersects';
+GetDistance: 'getDist';
+GetIntersect: 'getIntersect';
 
 
 
@@ -483,7 +491,7 @@ Equals   : '==';
 NEquals  : '!=';
 GTEquals : '>=';
 LTEquals : '<=';
-Pow      : '^';
+Pw       : '^';
 Excl     : '!';
 GT       : '>';
 LT       : '<';

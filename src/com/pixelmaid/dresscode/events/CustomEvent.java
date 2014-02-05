@@ -36,6 +36,11 @@ public class CustomEvent extends EventObject {
 	public static final int IRREGULAR_POLY_ADDED = 25;
 	public static final int DESELECT_ALL = 26;
 	public static final int TREE_DRAWABLE_SELECTED = 27;
+	public static final int BOOL_PERFORMED = 28;
+	public static final int UI_CREATED = 29;
+	public static final int UI_MODIFIED = 30;
+	public static final int RUN_REQUEST = 31;
+	public static final int UI_RELEASED = 32;
 
 	public CustomEvent(Object source) {
 		super(source);

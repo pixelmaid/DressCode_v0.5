@@ -1,7 +1,9 @@
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
+import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
@@ -14,6 +16,7 @@ import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.CmpX;
 import com.pixelmaid.dresscode.drawing.datatype.CmpY;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.math.CmpDist;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.Vec2d;
 import com.pixelmaid.dresscode.events.CustomEvent;
@@ -147,7 +150,7 @@ public class Drawable extends NodeEvent  {
 	public void print(PGraphics embedded) {
 		if(!this.getHide()){//only draws if child is not hidden
 			appearance(embedded);
-			//embedded.noFill();
+			embedded.noFill();
 			embedded.pushMatrix();
 			embedded.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			embedded.rotate(PApplet.radians((float)getRotation()));
@@ -778,8 +781,11 @@ public void drawOrigin(Canvas embedded){
 
 	//sets the drawable's origin relative to a new origin
 	protected void setRelativeTo(Point p) {
+	
 		this.origin= this.origin.difference(p);	
+		if(this.parent!=null){
 		this.rotation = (this.getRotation()-this.getParent().getRotation()); //adds parent's rotation to its rotation
+		}
 	}
 	
 	//sets the drawable at a new origin, and moves all children relative to that new origin //should only be used when a new child is added to the group
@@ -794,11 +800,12 @@ public void drawOrigin(Canvas embedded){
 	}
 	
 	//sets the drawable to its absolute position with respect to its parent
-	public void setAbsolute() {
+	public Drawable setAbsolute() {
 			if(this.parent!=null){
 				this.origin= this.origin.add(this.parent.getOrigin()); //add parent's origin to its origin
 				this.rotation = (this.getRotation()+this.getParent().getRotation()); //adds parent's rotation to its rotation
 			}
+			return this;
 	}
 	
 	private Drawable returnAbsoluteAt(int i){
@@ -958,7 +965,7 @@ public void drawOrigin(Canvas embedded){
 		//removes all children from a drawable and returns them as orphans (must be overridden by subclasses)
 		public ArrayList<Drawable> removeAllChildren(){
 			ArrayList<Drawable> orphans = new ArrayList<Drawable>();
-			for(int i=this.children.size()-1;i>=0;i++){
+			for(int i=this.children.size()-1;i>=0;i--){
 				Drawable d = removeFromGroup(this.children.get(i));
 				orphans.add(d);
 			}
@@ -1091,6 +1098,12 @@ public void drawOrigin(Canvas embedded){
 			return this;
 		}
 
+		public void sortByDist(Point target) {
+			Collections.sort(this.children,new CmpDist(target));
+			
+		}
+
+	
 
 		
 
@@ -1136,7 +1149,7 @@ public void drawOrigin(Canvas embedded){
 	
 	
 	
-	
+		
 	
 	
 	

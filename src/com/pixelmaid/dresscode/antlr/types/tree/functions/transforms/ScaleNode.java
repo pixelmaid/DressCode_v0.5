@@ -41,6 +41,9 @@ public class ScaleNode extends NodeEvent implements DCNode {
     		d.scale(x,y,d.getOrigin().copy(),true);
     		
     	}
+    	else{
+    		d.scale(x,x,d.getOrigin().copy(),true);
+    	}
     	
     
     	d.setLine(line);

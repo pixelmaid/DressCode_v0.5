@@ -36,13 +36,13 @@ public class CurveTool extends Tool  {
 	
 	
 	@Override
-	public void mouseReleased(double mouseX, double mouseY) {
+	public void mouseReleased(double mouseX, double mouseY, boolean special) {
 		
 		
 	}
 	
 	@Override
-	public void mousePressed(double mouseX, double mouseY) {
+	public void mousePressed(double mouseX, double mouseY, boolean special) {
 		if(clickCount==0){
 			created=true;
 		
@@ -78,7 +78,7 @@ public class CurveTool extends Tool  {
 	}
 	
 	@Override
-	public void mouseDragged(double mouseX, double mouseY) {
+	public void mouseDragged(double mouseX, double mouseY, boolean special) {
 
 		if(created){
 			

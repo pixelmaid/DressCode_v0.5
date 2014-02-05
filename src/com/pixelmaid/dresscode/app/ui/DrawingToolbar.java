@@ -13,6 +13,7 @@ public class DrawingToolbar extends Toolbar {
 	JPanel btnPanel1= new JPanel();
 	JPanel btnPanel2 = new JPanel();
 	JPanel btnPanel3 = new JPanel();
+	JPanel btnPanel4 = new JPanel();
 	JPanel masterBtnPanel = new JPanel();
 	
 	
@@ -23,11 +24,14 @@ public class DrawingToolbar extends Toolbar {
 	
 		btnPanel1.setPreferredSize(new Dimension(24,152));
 		btnPanel2.setPreferredSize(new Dimension(24,175));
-		btnPanel3.setPreferredSize(new Dimension(24,175));
-		
+		btnPanel3.setPreferredSize(new Dimension(24,100));
+		btnPanel4.setPreferredSize(new Dimension(24,175));
+
 		masterBtnPanel.add(btnPanel1);
 		masterBtnPanel.add(btnPanel2);
 		masterBtnPanel.add(btnPanel3);
+		masterBtnPanel.add(btnPanel4);
+
 		this.add(masterBtnPanel);
 		
 		FlowLayout layout = new FlowLayout();
@@ -59,19 +63,24 @@ public class DrawingToolbar extends Toolbar {
 		btnPanel1.setLayout(panelLayout);
 		btnPanel2.setLayout(panelLayout);
 		btnPanel3.setLayout(panelLayout);
+		btnPanel4.setLayout(panelLayout);
+
 		
 		btnPanel1.setBackground(background);
 		btnPanel2.setBackground(background);
 		btnPanel3.setBackground(background);
+		btnPanel4.setBackground(background);
+
 		
 		
 		btnPanel1.setBorder(b);
 		btnPanel2.setBorder(b);
 		btnPanel3.setBorder(b);
-		
+		btnPanel4.setBorder(b);
 		btnPanel1.doLayout();
 		btnPanel2.doLayout();
 		btnPanel3.doLayout();
+		btnPanel4.doLayout();
 
 		this.doLayout();
 	}
@@ -86,6 +95,10 @@ public class DrawingToolbar extends Toolbar {
 	
 	public void addButtonTo3(ImageButton btn){
 		btnPanel3.add(btn);
+	}
+
+	public void addButtonTo4(ImageButton btn) {
+		btnPanel4.add(btn);
 	}
 	
 }

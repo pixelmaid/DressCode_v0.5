@@ -25,7 +25,7 @@ public class TargetTool extends Tool {
 	}
 	
 	@Override
-	public void mouseReleased(double mouseX, double mouseY) {
+	public void mouseReleased(double mouseX, double mouseY, boolean special) {
 		this.target = new Point(mouseX,mouseY);
 		this.fireToolEvent(CustomEvent.TARGET_SELECTED);
 	}

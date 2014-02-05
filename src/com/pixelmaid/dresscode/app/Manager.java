@@ -31,6 +31,7 @@ public final class Manager{
 	    Double width = screenSize.getWidth();
 	    Double height = screenSize.getHeight();
 		displayFrame.initLook(width.intValue(),height.intValue());
+		System.out.println("data initated");
 		displayFrame.initData();
 
 				//Window manager = new Window("DressCode");

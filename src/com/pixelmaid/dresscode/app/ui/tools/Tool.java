@@ -35,17 +35,17 @@ public class Tool extends NodeEvent{
 		active =a;
 	}
 
-	public void mousePressed(double mouseX, double mouseY) {
+	public void mousePressed(double mouseX, double mouseY, boolean special) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void mouseReleased(double mouseX, double mouseY) {
+	public void mouseReleased(double mouseX, double mouseY, boolean special) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	public void mouseDragged(double mouseX, double mouseY) {
+	public void mouseDragged(double mouseX, double mouseY, boolean special) {
 		// TODO Auto-generated method stub
 		
 	}

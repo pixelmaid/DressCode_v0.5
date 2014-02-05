@@ -2,6 +2,8 @@ package com.pixelmaid.dresscode.events;
 
 import java.util.EventObject;
 
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
+import com.pixelmaid.dresscode.app.ui.usercreated.UserUI;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 public interface CustomEventListener {
@@ -17,8 +19,11 @@ public interface CustomEventListener {
 	public void handleCustomRuntimeErrorEventDrawableEvent(Object source,
 			int event, String message);
 
-
 	public void handleCustomPrintEvent(Object source, int event, String value);
+
+	public void handleCustomUINodeEvent(Object source, int event, UserUI d);
+	
+	public void handleCustomUIEvent(Object source, int event);
 
 
 	

@@ -8,10 +8,16 @@ public class IdentifierNode extends NodeEvent implements DCNode {
 
   private String identifier;
   private Scope scope;
+  private int line;
 
-  public IdentifierNode(String id, Scope s) {
+  public IdentifierNode(String id, Scope s, int l) {
     identifier = id;
     scope = s;
+    line = l;
+  }
+  
+  public String getId(){
+	  return identifier;
   }
 
   @Override
@@ -30,5 +36,10 @@ public class IdentifierNode extends NodeEvent implements DCNode {
   public String toString() {
     return identifier;
   }
+
+public int getLine() {
+	// TODO Auto-generated method stub
+	return line;
+}
 }
 

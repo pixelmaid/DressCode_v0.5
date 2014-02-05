@@ -14,12 +14,14 @@ public class AssignmentNode extends NodeEvent implements DCNode {
   protected List<DCNode> indexNodes;
   protected DCNode rhs;
   protected Scope scope;
+  protected int line;
 
-  public AssignmentNode(String i, List<DCNode> e, DCNode n, Scope s) {
+  public AssignmentNode(String i, List<DCNode> e, DCNode n, Scope s, int l) {
     identifier = i;
     indexNodes = (e == null) ? new ArrayList<DCNode>() : e;
     rhs = (n == null) ? null : n;
     scope = s;
+    line = l;
   }
 
   @Override
@@ -31,7 +33,7 @@ public class AssignmentNode extends NodeEvent implements DCNode {
 	 else{
 		 value=new VarType(null);
 	 }
-	 
+	 value.setLine(line);
 
 		/* if (value == VarType.VOID) {
 			 throw new RuntimeException("can't assign VOID to " + identifier);
@@ -73,7 +75,7 @@ public class AssignmentNode extends NodeEvent implements DCNode {
       List<VarType> existing = list.asList();
       existing.set(lastIndex.asLong().intValue(), value);
     }
-
+    
     return VarType.VOID;
   }
 

@@ -22,6 +22,7 @@ public class Scope {
     if(resolve(var) != null) {
       // There is already such a variable, re-assign it
       this.reAssign(var, value);
+      
     }
     else {
       // A newly declared variable

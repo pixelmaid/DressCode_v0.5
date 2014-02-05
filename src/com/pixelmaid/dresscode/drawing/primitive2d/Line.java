@@ -269,7 +269,7 @@ public class Line extends Polygon {
 	}
 	
 	@Override 
-	public void setAbsolute() {
+	public Drawable setAbsolute() {
 		
 		if(this.getParent()!=null){
 			this.start= this.start.add(this.getParent().getOrigin()); //add parent's origin to its origin
@@ -277,6 +277,8 @@ public class Line extends Polygon {
 
 			this.rotation = (this.getRotation()+this.getParent().getRotation()); //adds parent's rotation to its rotation
 		}
+		
+		return this;
 
 		
 		
