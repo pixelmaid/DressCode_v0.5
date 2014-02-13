@@ -5,7 +5,7 @@
  * in the future. Initialized by the PatternManager class
  */
 
-package com.pixelmaid.dresscode.patterns;
+package com.pixelmaid.dresscode.data.templates;
 
 import processing.core.PApplet;
 import processing.core.PConstants;
@@ -13,21 +13,31 @@ import processing.core.PImage;
 
 import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.primitive2d.*;
-public class Piece extends Rectangle {
+public class Template extends Rectangle {
 
 private double seam;
 private String name;
 
-	public Piece(double w,double h,double s, String n){
+	public Template(){
+		super(0,0,100,100);
+	}
+	
+	public Template(double w,double h,double s, String n){
 		super(0,0,w,h);
 		this.width =w;
 		this.height = h;
 		seam = s;
 		name = n;
 	}
-	
+	public void setSeam(double s){
+		seam = s;
+	}
 	public double getSeam(){
 		return seam;
+	}
+	
+	public void setName(String n){
+		name = n;
 	}
 	public String getName(){
 		return name;

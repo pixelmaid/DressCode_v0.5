@@ -17,13 +17,13 @@ import com.pixelmaid.dresscode.app.ui.tools.PenTool;
 import com.pixelmaid.dresscode.app.ui.tools.TargetTool;
 import com.pixelmaid.dresscode.app.ui.tools.Tool;
 import com.pixelmaid.dresscode.app.ui.usercreated.UserUI;
+import com.pixelmaid.dresscode.data.templates.TemplateManager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 import com.pixelmaid.dresscode.events.EventInterface;
-import com.pixelmaid.dresscode.patterns.PatternManager;
 
 import processing.core.*;
 import processing.dxf.RawDXF;
@@ -282,7 +282,7 @@ public class Canvas extends PApplet implements EventInterface{
 				
 				translate((float)zeroX,(float)zeroY);
 				
-					PatternManager.draw(this,designImage);	
+					TemplateManager.draw(this,designImage);	
 				
 			}
 			

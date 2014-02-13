@@ -110,6 +110,7 @@ functionCall
   |	 mathCall
   | getCall
   |	uICall
+  |	templateCall
   ;
   
   
@@ -196,6 +197,15 @@ functionCall
   uICall
   	:Slider '(' exprList? ')'   -> ^(FUNC_CALL Slider exprList?) 
   	;
+  	
+  templateCall
+  	:Template '(' exprList? ')'   -> ^(FUNC_CALL Template exprList?)
+  	|SetWidth '(' exprList? ')'   -> ^(FUNC_CALL SetWidth exprList?)
+  	|SetHeight '(' exprList? ')'   -> ^(FUNC_CALL SetHeight exprList?)
+  	|SetSeam '(' exprList? ')'   -> ^(FUNC_CALL SetSeam exprList?)
+  	|SetName '(' exprList? ')'   -> ^(FUNC_CALL SetName exprList?)
+  	;
+  	
   
 
 ifStatement
@@ -422,6 +432,13 @@ Arc	: 'arc';
 
 //UIcommands
 Slider	: 'slider';
+
+//Template commands
+Template	: 'template';
+SetWidth	: 'setWidth';
+SetHeight	: 'setHeight';
+SetSeam		: 'setSeam';
+SetName		: 'setName';
  
 //getMethods
 GetWidth: 'getWidth';

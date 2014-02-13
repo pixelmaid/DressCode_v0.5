@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.app.ui.usercreated.Slider;
 import com.pixelmaid.dresscode.app.ui.usercreated.UserUI;
+import com.pixelmaid.dresscode.data.templates.Template;
 import com.pixelmaid.dresscode.drawing.primitive2d.Color;
 import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
@@ -122,6 +123,9 @@ public class VarType implements Comparable<VarType> {
 	  public UserUI asUserUI() {
 		  return (UserUI)value;
 		}
+	  public Template asTemplate() {
+		  return (Template)value;
+		}
 	  @Override  
 	  public int compareTo(VarType that) {  
 	    if(this.isNumber() && that.isNumber()) {  
@@ -223,6 +227,10 @@ public class VarType implements Comparable<VarType> {
 	  
 	  public boolean isSlider(){
 		  return value instanceof Slider;
+	  }
+	  
+	  public boolean isTemplate(){
+		  return value instanceof Template;
 	  }
 	  public boolean isLShape() {
 		  return value instanceof LShape;

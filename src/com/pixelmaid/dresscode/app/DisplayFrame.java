@@ -54,6 +54,7 @@ import com.pixelmaid.dresscode.data.DynamicStamp;
 import com.pixelmaid.dresscode.data.InstructionManager;
 import com.pixelmaid.dresscode.data.Stamp;
 import com.pixelmaid.dresscode.data.UserUIManager;
+import com.pixelmaid.dresscode.data.templates.TemplateManager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.PerlinNoise;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
@@ -65,7 +66,6 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
-import com.pixelmaid.dresscode.patterns.PatternManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
 public class DisplayFrame extends javax.swing.JFrame implements CustomEventListener, KeyListener, ActionListener, MouseListener, WindowListener, WindowFocusListener,ComponentListener,TreeSelectionListener{
@@ -226,7 +226,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		simButton = new ImageButton("sim","sim", "open simulation view", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 		designButton = new ImageButton("design","design", "switch to design view", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 		designButton.setActive();
-		patternButton.setEnabled(false);
+		//patternButton.setEnabled(false);
 		simButton.setEnabled(false);
 		//add drawing buttons to button list
 		buttonList.add(selectButton);
@@ -1379,9 +1379,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		else if(e.getSource() == loadPatternAction){
 			
-			PatternManager.openPattern(this);
-			if(PatternManager.patternLoaded){
-				ArrayList<String> patternNames =  PatternManager.getPieceNames();
+			TemplateManager.openPattern(this);
+			if(TemplateManager.patternLoaded){
+				ArrayList<String> patternNames =  TemplateManager.getTemplateNames();
 				for(int i=0;i<patternNames.size();i++){
 					patternDropdown.addItem(patternNames.get(i));
 				}
@@ -1402,7 +1402,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		else if(e.getSource()==patternDropdown){
 			 String name = (String)patternDropdown.getSelectedItem();
-			 PatternManager.setSelected(name);
+			 TemplateManager.setSelected(name);
 		}
 			
 		

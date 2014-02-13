@@ -14,6 +14,7 @@ options {
   import com.pixelmaid.dresscode.antlr.types.tree.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.functions.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.UI.*; 
+  import com.pixelmaid.dresscode.antlr.types.tree.templates.*;
   import com.pixelmaid.dresscode.antlr.types.tree.properties.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
   import com.pixelmaid.dresscode.data.*;
@@ -119,6 +120,7 @@ functionCall returns [DCNode node]
   |	 mathCall {node= $mathCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |	 getCall {node= $getCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   | uICall {node = $uICall.node; ((NodeEvent)node).addEventListener(uiManager);}
+  | templateCall {node = $templateCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   ;
   
   
@@ -209,6 +211,14 @@ functionCall returns [DCNode node]
   
   uICall returns [DCNode node]
   	: ^(FUNC_CALL Slider exprList?)  {node = new SliderNode($exprList.e,currentScope);}
+  	;
+  	
+   templateCall returns [DCNode node]
+  	: ^(FUNC_CALL Template exprList?) {node = new TemplateNode($exprList.e,$FUNC_CALL.getLine());}
+  	|^(FUNC_CALL SetWidth exprList?)
+  	|^(FUNC_CALL SetHeight exprList?)
+  	|^(FUNC_CALL SetSeam exprList?)
+  	| ^(FUNC_CALL SetName exprList?)
   	;
   
 
