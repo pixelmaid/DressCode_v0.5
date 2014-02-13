@@ -8,6 +8,7 @@ import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.ui.CodeToolbar;
 import com.pixelmaid.dresscode.app.ui.DrawingToolbar;
 import com.pixelmaid.dresscode.app.ui.ImageButton;
+import com.pixelmaid.dresscode.app.ui.PatternToolbar;
 import com.pixelmaid.dresscode.app.ui.TreeToolbar;
 
 import java.awt.Dimension;
@@ -28,6 +29,7 @@ import java.util.Collection;
 import java.util.LinkedHashMap;
 import java.util.Random;
 
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -63,6 +65,7 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
+import com.pixelmaid.dresscode.patterns.PatternManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
 public class DisplayFrame extends javax.swing.JFrame implements CustomEventListener, KeyListener, ActionListener, MouseListener, WindowListener, WindowFocusListener,ComponentListener,TreeSelectionListener{
@@ -103,7 +106,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private  Console console; //output console
 	private CodeToolbar codingToolbar;
 	private ImageButton openButton, saveButton, runButton, stopButton, newButton, importButton; //coding panel buttons
-		
+	
+	private PatternToolbar patternToolbar;
+	private JComboBox patternDropdown;
 	//UI components for Drawing
 	private DrawingFrame drawingFrame;
 	private DrawingToolbar drawingToolbar; 
@@ -113,7 +118,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	//drawing panel buttons
 	private ImageButton selectButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton,sliderButton;
 	private ImageButton unionButton, diffButton, xorButton, clipButton;
-
+	private ImageButton simButton, patternButton, designButton;
 	private JSplitPane splitFrame; //split frame that holds drawing frame and coding frame
 	private JSplitPane leftSplitFrame; //split frame that holds tree views for stamps and declarative view
 	
@@ -122,7 +127,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private ArrayList<String> exampleList = new ArrayList<String>();
 	
 	//menu items
-	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, importAction, copyAction ,pasteAction ,cutAction, saveAsAction, stampAction,dStampAction;
+	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, loadPatternAction, importAction, copyAction ,pasteAction ,cutAction, saveAsAction, stampAction,dStampAction;
 	
 	private DCProject currentProject; //data structure that manages project data
 	
@@ -216,7 +221,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		xorButton = new ImageButton("xor","xor", "arrow", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT );
 		clipButton = new ImageButton("clip","clip", "arrow", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT );
 
-		
+		//setup pattern buttons
+		patternButton = new ImageButton("pattern","pattern", "switch to pattern template view", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
+		simButton = new ImageButton("sim","sim", "open simulation view", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
+		designButton = new ImageButton("design","design", "switch to design view", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
+		designButton.setActive();
+		patternButton.setEnabled(false);
+		simButton.setEnabled(false);
 		//add drawing buttons to button list
 		buttonList.add(selectButton);
 		buttonList.add(panButton);
@@ -265,9 +276,20 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		//initialize drawing toolbar
 		drawingToolbar.init(DEFAULT_TOOLBAR_HEIGHT,defaultDrawingPaneWidth,BROWN);
 		
+		//initialize pattern toolbar
+		patternToolbar = new PatternToolbar();
+		
+		patternDropdown = new JComboBox();
+		patternDropdown.setEnabled(false);
+		
+		patternToolbar.addButton(designButton);
+		patternToolbar.addButton(patternButton);
+		patternToolbar.addButton(simButton);
+		patternToolbar.init(defaultDrawingPaneWidth,DEFAULT_TOOLBAR_HEIGHT,patternDropdown,BROWN);
+
 		//setup drawing frame
 		drawingFrame = new DrawingFrame();
-		drawingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight,canvas,drawingToolbar);
+		drawingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight,canvas,drawingToolbar, patternToolbar);
 		drawingFrame.addComponentListener(this);
 	
 		
@@ -315,6 +337,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		stampManager = new StampManager(OFF_WHITE,LIGHT_GREY);
 		stampManager.getTree().addKeyListener(this);
 
+		
+		
 		//setup coding frame
 		codingFrame = new CodingFrame();
 		
@@ -480,9 +504,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	    saveAsAction.addActionListener(this);
 	    exitAction.addActionListener(this);
 	    exportAction.addActionListener(this);
-	    importAction.addActionListener(this);  
+	    importAction.addActionListener(this);
+	    loadPatternAction.addActionListener(this);
 	    stampAction.addActionListener(this);
 	    dStampAction.addActionListener(this);
+	    designButton.addActionListener(this);
+	    patternButton.addActionListener(this);
+	    simButton.addActionListener(this);
+	    patternDropdown.addActionListener(this);
 
 	    stampManager.getTree().addTreeSelectionListener(this);
 
@@ -539,7 +568,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        openAction = new JMenuItem("Open");
 	        saveAction = new JMenuItem("Save");
 	        saveAsAction = new JMenuItem("Save As");
-
+	        loadPatternAction = new JMenuItem("Load Pattern Template");
 	        exitAction = new JMenuItem("Exit");
 	        exportAction = new JMenuItem("Export to PDF");
 	        importAction = new JMenuItem("Import SVG");
@@ -557,6 +586,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        fileMenu.addSeparator();
 	        fileMenu.add(exportAction);
 	        fileMenu.add(importAction);
+	        fileMenu.addSeparator();
+	        fileMenu.add(loadPatternAction);
 	        fileMenu.addSeparator();
 	        fileMenu.add(exitAction);
 	        editMenu.add(codeField.getUndoMenu());
@@ -1344,6 +1375,34 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			System.out.println(eI.getName());
 			openExample(eI.getName());
 			
+		}
+		
+		else if(e.getSource() == loadPatternAction){
+			
+			PatternManager.openPattern(this);
+			if(PatternManager.patternLoaded){
+				ArrayList<String> patternNames =  PatternManager.getPieceNames();
+				for(int i=0;i<patternNames.size();i++){
+					patternDropdown.addItem(patternNames.get(i));
+				}
+				simButton.setEnabled(true);
+				patternButton.setEnabled(true);
+			}
+		}
+		else if(e.getSource()==patternButton){
+			canvas.createImage();
+			canvas.patternMode();
+			patternDropdown.setEnabled(true);
+
+		}
+		else if(e.getSource()==designButton){
+			canvas.designMode();
+			patternDropdown.setEnabled(false);
+
+		}
+		else if(e.getSource()==patternDropdown){
+			 String name = (String)patternDropdown.getSelectedItem();
+			 PatternManager.setSelected(name);
 		}
 			
 		

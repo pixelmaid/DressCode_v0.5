@@ -60,7 +60,9 @@ public class SelectTool extends Tool  {
 	
 	@Override
 	public void mousePressed(double mouseX, double mouseY, boolean special) {
-				for(int i=tempDrawables.size()-1;i>=0;i--){
+		
+		
+		for(int i=tempDrawables.size()-1;i>=0;i--){
 			Point origin = tempDrawables.get(i).getOrigin();
 			if(!special){
 				reset();

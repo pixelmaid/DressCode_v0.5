@@ -33,7 +33,9 @@ public final class Manager{
 		displayFrame.initLook(width.intValue(),height.intValue());
 		System.out.println("data initated");
 		displayFrame.initData();
-
+		
+		//SimFrame simFrame = new SimFrame();
+		
 				//Window manager = new Window("DressCode");
 				//manager.createAndShowGUI();
 		

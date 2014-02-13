@@ -10,8 +10,8 @@ import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.Vec2d;
 
 public class Rectangle extends Polygon{
-	private double width;
-	private double height;
+	protected double width;
+	protected double height;
 
 	
 	public Rectangle(double startX, double startY){

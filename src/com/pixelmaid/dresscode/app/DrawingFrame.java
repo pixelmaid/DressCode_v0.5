@@ -26,13 +26,14 @@ public class DrawingFrame extends JPanel{
 	private JInternalFrame sketch; //holds the actual sketch
 	//private ScrollPane sketchScroll; //scrollpane to hold sketch
 	private Toolbar toolbar;
+	private Toolbar toolbar_top;
 	public DrawingFrame(){
 		
 	}
 	
 	
 
-	 public void init(int width, int height, Canvas c, Toolbar t){
+	 public void init(int width, int height, Canvas c, Toolbar t, Toolbar t2){
 			masterDimension = new Dimension(width,height); //will act as size of sketch
 			//this.setPreferredSize(masterDimension);
 	 		//this.setMaximumSize(masterDimension);
@@ -43,6 +44,7 @@ public class DrawingFrame extends JPanel{
 			canvas = c;
 			
 			toolbar = t;
+			toolbar_top = t2;
 			 //sketchPanel size is the larger of either sketchWindow or canvas
 		     sketchPanel.setLayout(new BoxLayout(sketchPanel, BoxLayout.PAGE_AXIS)); //centers sketch - optional
 		     
@@ -74,7 +76,7 @@ public class DrawingFrame extends JPanel{
 	       // sketchScroll.add(sketchPanel); //adds JPanel to ScrollPane
 	       
 	        //canvas.init();
-	         
+	          this.add(t2,BorderLayout.NORTH); 
 	        this.add(sketch, BorderLayout.CENTER); 
 	        this.add(t,BorderLayout.LINE_END);
 	       //Add the toolbar and the log to this panel.

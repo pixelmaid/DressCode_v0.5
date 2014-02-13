@@ -23,6 +23,7 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 import com.pixelmaid.dresscode.events.EventInterface;
+import com.pixelmaid.dresscode.patterns.PatternManager;
 
 import processing.core.*;
 import processing.dxf.RawDXF;
@@ -51,7 +52,7 @@ public class Canvas extends PApplet implements EventInterface{
 	protected int defaultCanvasHeight = 500;
 	private double drawingBoardWidth = 500;
 	private double drawingBoardHeight = 500;
-	
+	private boolean patternMode = false;
 	
 	private boolean showOrigin = false; // determines whether or not to show origin;
 	private Drawable selectedObject = null;
@@ -94,6 +95,7 @@ public class Canvas extends PApplet implements EventInterface{
 	
 	RawDXF dxf;
 	PGraphicsPDF pdf;
+	PGraphics designImage;
 
 	public void setId(int i){
 		
@@ -234,7 +236,8 @@ public class Canvas extends PApplet implements EventInterface{
 	}
 	
 	
-
+	
+	
 	public void setDrawables(ArrayList<Drawable> d){
 		this.tempDrawables=d;
 		//System.out.println("drawables set:"+id);
@@ -247,19 +250,22 @@ public class Canvas extends PApplet implements EventInterface{
 	}
 
 	public void draw() {
+		
 			System.out.println("drawing");
 			pushMatrix();
 			background(backgroundColor.getRed(),backgroundColor.getGreen(),backgroundColor.getBlue());
 			//translate(translateXAmount,translateYAmount,zoomAmount);
 			translate(translateXAmount,translateYAmount);
 			scale(zoomAmount);
-			
-			dimensions(false);
+			if(!patternMode){
+				dimensions(false);
+			}
 
 			pushMatrix();
 			
 			//translate(zeroX,zeroY,0);
 			translate((float)zeroX,(float)zeroY);
+			if(!patternMode){
 			for (int i=0;i<tempDrawables.size();i++){
 				tempDrawables.get(i).draw(this);
 				if(showOrigin){
@@ -270,18 +276,31 @@ public class Canvas extends PApplet implements EventInterface{
 				}
 				
 			}
+			}
+			else{
+				
+				
+				translate((float)zeroX,(float)zeroY);
+				
+					PatternManager.draw(this,designImage);	
+				
+			}
 			
 			popMatrix();
 		
 			if(drawGrid){
 				grid();
 			}
-			dimensions(true);
+			if(!patternMode){
+				dimensions(true);
+			}
 
 
 			popMatrix();	
 			rulers();
 			drawUserUI();
+		
+		
 
 			
 	}
@@ -294,7 +313,21 @@ public class Canvas extends PApplet implements EventInterface{
 		}
 	}
 
+	public void createImage(){
+		designImage = createGraphics(((Double)drawingBoardWidth).intValue(), ((Double)drawingBoardHeight).intValue());
+		designImage.beginDraw();
+		
+		designImage.background(255);
+		
+		for (int i=0;i<tempDrawables.size();i++){
 
+			tempDrawables.get(i).print(designImage);
+		
+		}
+		
+		designImage.endDraw();
+	}
+	
 	public void print(File file){
 		String pdfFilename = file.getAbsolutePath();
 		String dxfFilename = file.getAbsolutePath();
@@ -311,7 +344,7 @@ public class Canvas extends PApplet implements EventInterface{
 		
 		
 		for (int i=0;i<tempDrawables.size();i++){
-
+			
 			tempDrawables.get(i).print(pdf);
 		
 		}
@@ -380,6 +413,13 @@ public class Canvas extends PApplet implements EventInterface{
 	
 	//===========================MODE AND TOOL FUNCTIONS===========================//
 	
+	public void patternMode(){
+		patternMode= true;
+	}
+	
+	public void designMode(){
+		patternMode = false;
+	}
 	
 	public void clearMode() {
 		currentMode = NO_MODE;
