@@ -12,9 +12,9 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class TemplateNode extends DrawableNode implements DCNode {
+public class TemplateSetWidthNode extends DrawableNode implements DCNode {
 
-    public TemplateNode(List<DCNode> ps, int l, int c) {
+    public TemplateSetWidthNode(List<DCNode> ps, int l, int c) {
        super(ps,l);
     	
     }
@@ -24,34 +24,20 @@ public class TemplateNode extends DrawableNode implements DCNode {
 		
 
 		try{
-			String name = params.get(0).evaluate().asString();
-			Template e = new Template(name);
-			if(params.size()>2){
+			
+			Template e = params.get(0).evaluate().asTemplate();
+			if(params.size()==2){
 			
 					double width = params.get(1).evaluate().asDouble();
-					double height = params.get(2).evaluate().asDouble();
+					e.setWidth(width);
+				
 			}
-			if(params.size()>3){	
-					double seam = params.get(3).evaluate().asDouble();
-					e.setSeam(seam);
-
-				}
-				
-					
-
-				
-				
-			
-			
-			TemplateManager.addTemplate(e);
-			this.fireDrawableEvent(CustomEvent.TEMPLATE_CREATED, e);
-			e.setLine(line);
 			return new VarType(e);	
 		}
 		catch (ClassCastException err){
 			//Window.output.setText("incorrect parameters for rectangle call at line:"+line);
 
-			System.err.println("incorrect parameters for Template at line:"+line);
+			System.err.println("incorrect parameters for Template Set Width at line:"+line);
 			return null;
 
 		}

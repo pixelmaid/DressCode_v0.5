@@ -125,7 +125,7 @@ functionCall returns [DCNode node]
   
   
   primitiveCall returns [DCNode node]
-  	:^(FUNC_CALL Ellipse exprList?)  {node = new EllipseNode($exprList.e,$FUNC_CALL.getLine());}
+  	:^(FUNC_CALL Ellipse exprList?)  {node = new EllipseNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   	|^(FUNC_CALL Line exprList?) 	 {node = new LineNode($exprList.e,$FUNC_CALL.getLine());}
   	|^(FUNC_CALL Rect exprList?) 	 {node = new RectangleNode($exprList.e,$FUNC_CALL.getLine());}
   	| ^(FUNC_CALL Curve exprList?)   {node = new CurveNode($exprList.e,$FUNC_CALL.getLine());}
@@ -214,8 +214,8 @@ functionCall returns [DCNode node]
   	;
   	
    templateCall returns [DCNode node]
-  	: ^(FUNC_CALL Template exprList?) {node = new TemplateNode($exprList.e,$FUNC_CALL.getLine());}
-  	|^(FUNC_CALL SetWidth exprList?)
+  	: ^(FUNC_CALL Template exprList?) {node = new TemplateNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	|^(FUNC_CALL SetWidth exprList?) {node = new TemplateSetWidthNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   	|^(FUNC_CALL SetHeight exprList?)
   	|^(FUNC_CALL SetSeam exprList?)
   	| ^(FUNC_CALL SetName exprList?)

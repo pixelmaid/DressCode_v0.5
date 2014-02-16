@@ -470,6 +470,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		boolTool.addEventListener(this);
 		stampManager.addEventListener(this);
 		treeManager.addEventListener(this);
+		TemplateManager.e.addEventListener(this);
 		
 		//setup action listeners
 		selectButton.addActionListener(this);
@@ -903,6 +904,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				((LShape)d).setCanvas(this.canvas);
 				((LShape)d).loadShape();
 				break;
+				case CustomEvent.TEMPLATE_CREATED:
+					System.out.println("template created");
+					patternDropdown.addItem(TemplateManager.templates.get(TemplateManager.templates.size()-1).getName());
+					break;
 			}
 			
 		}
@@ -1042,6 +1047,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					insertStamp();
 					run();
 					break;
+				
 				
 			}
 		}
@@ -1496,7 +1502,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	@Override
 	public void handleCustomUIEvent(Object source, int event) {
-		// TODO Auto-generated method stub
+	
 		
 	}
 	

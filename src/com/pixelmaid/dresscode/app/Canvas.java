@@ -117,7 +117,7 @@ public class Canvas extends PApplet implements EventInterface{
 		drawingBoardWidth = width;
 		drawingBoardHeight =height;
 		zeroX = defaultCanvasWidth/2-drawingBoardWidth/2-13; //magic numbers here... not sure why these values are needed
-		zeroY= defaultCanvasHeight/2-drawingBoardHeight/2+12;
+		zeroY= defaultCanvasHeight/2-drawingBoardHeight/2;
 		//System.out.println("drawing board="+drawingBoardWidth+","+drawingBoardHeight);
 		unitType = units;
 		if(gridNum!=1){

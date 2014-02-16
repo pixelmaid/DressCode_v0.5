@@ -13,18 +13,24 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.swing.JFileChooser;
 
 import processing.core.PImage;
 
+import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
+import com.pixelmaid.dresscode.events.CustomEvent;
+import com.pixelmaid.dresscode.events.EventSource;
 
-public class TemplateManager {
+public class TemplateManager extends EventSource{
 	public static boolean patternLoaded = true;
 	public static ArrayList<Template> templates = new ArrayList<Template>();
+	private static HashMap<String,Template> templateKeys = new HashMap<String, Template>();
+	public static NodeEvent e = new NodeEvent();
 	private static int selected = 0;
 	private static JFileChooser fc = new JFileChooser();
 	private TemplateManager(){
@@ -45,6 +51,13 @@ public class TemplateManager {
 		}
 	}
 	
+	public static Template checkIdChar(char n){
+		if(templateKeys.containsKey(n)){
+			return templateKeys.get(n);
+		}
+		return null;
+	}
+	
 	public static ArrayList<String> getTemplateNames(){
 		ArrayList<String> names = new ArrayList<String>();
 		for(int i=0;i<templates.size();i++){
@@ -61,15 +74,22 @@ public class TemplateManager {
 	}
 	
 	public static void addTemplate(Template t){
-		templates.add(t);
+		if(!templateKeys.containsKey(t.GetNodeName())){
+			templates.add(t);
+			templateKeys.put(t.GetNodeName(), t);
+			e.fireDrawableEvent(CustomEvent.TEMPLATE_CREATED,t);
+		
+		}
 	}
 	
 	public static void removeTemplate(Template t){
 		templates.remove(t);
+		templateKeys.remove(t.GetNodeName());
 	}
 	
 	public static void removeTemplateAt(int i){
-		templates.remove(i);
+		Template t = templates.remove(i);
+		templateKeys.remove(t.GetNodeName());
 	}
 	
 	public static void loadPattern(File path) throws IOException{
@@ -93,14 +113,19 @@ public class TemplateManager {
 			double w = UnitManager.toPixels(Double.parseDouble(lines.get(i+1)),1);
 			double h = UnitManager.toPixels(Double.parseDouble(lines.get(i+2)),1);
 			double s = UnitManager.toPixels(Double.parseDouble(lines.get(i+3)),1);
-			Template p = new Template(w,h,s,lines.get(i));
+			Template p = new Template(lines.get(i));
+			p.setWidth(w);
+			p.setHeight(h);
+			p.setSeam(s);
 			templates.add(p);
 		}
 		patternLoaded = true;	
 	}
 
 	public static void draw(Canvas canvas, PImage design) {
-		templates.get(selected).draw(canvas, design);
+		if(templates.size()!=0&&selected<templates.size()){
+			templates.get(selected).draw(canvas, design);
+		}
 		
 	}
 	

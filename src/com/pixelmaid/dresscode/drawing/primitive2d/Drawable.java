@@ -13,6 +13,7 @@ import processing.core.PGraphics;
 
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.Canvas;
+import com.pixelmaid.dresscode.data.GraphNode;
 import com.pixelmaid.dresscode.drawing.datatype.CmpX;
 import com.pixelmaid.dresscode.drawing.datatype.CmpY;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
@@ -22,7 +23,7 @@ import com.pixelmaid.dresscode.drawing.math.Vec2d;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class Drawable extends NodeEvent  {
+public class Drawable extends GraphNode  {
 
 	public  ArrayList<Drawable> children =new ArrayList<Drawable>(); //stores all children of a drawable
 	
@@ -104,7 +105,7 @@ public class Drawable extends NodeEvent  {
 	}
 	
 	public Drawable(double x, double y){
-		
+		super(null,"foo");
 		origin= new Point(0,0);
 		this.fillColor= new Color();
 		this.strokeColor= new Color();

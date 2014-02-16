@@ -10,8 +10,9 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 
 public class EllipseNode extends DrawableNode implements DCNode {
 
-	public EllipseNode(List<DCNode> ps, int l) {
+	public EllipseNode(List<DCNode> ps, int l, int c) {
 		super(ps,l);
+		System.out.println("char position is:"+c);
 
 	}
 

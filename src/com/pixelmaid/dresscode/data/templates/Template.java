@@ -17,18 +17,13 @@ public class Template extends Rectangle {
 
 private double seam;
 private String name;
-
-	public Template(){
+	public Template(String name){
 		super(0,0,100,100);
+		this.setName(name);
+		this.setNodeName(name);
 	}
 	
-	public Template(double w,double h,double s, String n){
-		super(0,0,w,h);
-		this.width =w;
-		this.height = h;
-		seam = s;
-		name = n;
-	}
+	
 	public void setSeam(double s){
 		seam = s;
 	}
