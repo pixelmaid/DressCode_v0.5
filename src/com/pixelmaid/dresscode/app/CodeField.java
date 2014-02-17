@@ -323,10 +323,22 @@ public JMenuItem getUndoMenu(){
 		
 	}
 	
-	public void updateVariable(String updateTxt, int line){
+	public void updateVariable(String replaceText, int line, int c){
 	
 		String text = this.getText();
 		String[] lines = text.split("\r\n|\r|\n");
+		System.out.print("length="+lines.length);
+		System.out.print("replace line="+lines[line-1]);
+		lines[line-1]=replaceText;
+		String newText = "";
+		for(int i=0;i<lines.length;i++){
+			newText +=lines[i];
+			if(i!=lines.length-1){
+				newText+="\n";
+			}
+		}
+		this.setText(newText);
+		/*String[] lines = text.split("\r\n|\r|\n");
 		line= line-1;
 		int lineLength = lines[line].length();
 		System.out.println("line number="+line);
@@ -343,7 +355,7 @@ public JMenuItem getUndoMenu(){
 		System.out.println("endPos="+pos+lineLength);
 
 		this.removeText(pos, pos+lineLength);
-		this.insertText(pos, updateTxt);
+		this.insertText(pos, updateTxt);*/
 	}
 
 	public void insertMoveStatement(Drawable sD ) {

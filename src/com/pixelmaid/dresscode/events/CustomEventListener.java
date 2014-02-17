@@ -2,6 +2,8 @@ package com.pixelmaid.dresscode.events;
 
 import java.util.EventObject;
 
+import javax.swing.JComponent;
+
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.ui.usercreated.UserUI;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;

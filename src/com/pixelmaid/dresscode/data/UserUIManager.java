@@ -2,18 +2,25 @@ package com.pixelmaid.dresscode.data;
 
 import java.util.ArrayList;
 
+import javax.swing.JSlider;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
+
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.CodeField;
+import com.pixelmaid.dresscode.app.SliderFrame;
 import com.pixelmaid.dresscode.app.ui.usercreated.*;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 import com.pixelmaid.dresscode.events.EventInterface;
-public class UserUIManager extends NodeEvent implements CustomEventListener {
+public class UserUIManager extends NodeEvent implements CustomEventListener, ChangeListener {
 private ArrayList<UserUI> uis= new ArrayList<UserUI>();
 private CodeField codeField;
-public UserUIManager(CodeField cf){
+private SliderFrame sliderFrame;
+public UserUIManager(CodeField cf, SliderFrame sf){
 	codeField= cf;
+	sliderFrame = sf;
 	
 	
 }
@@ -21,7 +28,9 @@ public UserUIManager(CodeField cf){
 
 	public void addUI(UserUI d) {
 		uis.add(d);
-		d.addEventListener(this);
+		Slider s = (Slider)d;
+		JSlider js = sliderFrame.addSlider(s.getName(), s.getMin(), s.getMax(), s.getSliderValue());
+		js.addChangeListener(this);
 	
 	}
 	
@@ -118,7 +127,7 @@ public UserUIManager(CodeField cf){
 			int line = s.getLine();
 		
 			String insertStatement = s.getId()+"="+Math.round(s.getSliderValue())+";";
-			codeField.updateVariable(insertStatement, line);
+			codeField.updateVariable(insertStatement, line,0);
 			System.out.println("insertStatement:"+insertStatement);
 			
 		break;
@@ -126,6 +135,28 @@ public UserUIManager(CodeField cf){
 			this.fireToolEvent(CustomEvent.RUN_REQUEST);
 			break;
 		}
+		
+	}
+
+
+	@Override
+	public void stateChanged(ChangeEvent event) {
+		JSlider js = (JSlider)event.getSource();
+		String name = js.getName();
+		Slider s = null;
+		for(int i=0;i<uis.size();i++){
+			if(uis.get(i).getName().matches(name)){
+				s = (Slider)uis.get(i);
+				s.setSliderValue(js.getValue());
+				int line = s.getLine();
+				String insertStatement = s.getId()+"="+Math.round(s.getSliderValue())+";";
+				codeField.updateVariable(insertStatement, line,0);
+				System.out.println("insertStatement:"+insertStatement);
+				break;
+				
+			}
+		}
+		
 		
 	}
 

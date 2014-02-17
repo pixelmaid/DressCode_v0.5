@@ -122,6 +122,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private JSplitPane splitFrame; //split frame that holds drawing frame and coding frame
 	private JSplitPane leftSplitFrame; //split frame that holds tree views for stamps and declarative view
 	
+	private SliderFrame sliderFrame;
+	
+	
 	private ArrayList<ImageButton> buttonList =  new ArrayList<ImageButton>(); //array that holds buttons
 	private LinkedHashMap<String, Stamp> stampMap = new LinkedHashMap<String, Stamp>(); //hashmap for storing created stamps
 	private ArrayList<String> exampleList = new ArrayList<String>();
@@ -145,6 +148,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private BoolTool boolTool;
 	private Tool defaultTool;
 	private Tool currentTool;	
+	
 	
 	private static InstructionManager instructionManager; //data manager for program data
 	private static DrawableManager drawableManager; //data manager for drawing data
@@ -408,7 +412,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		createMenu();
 		
-		
+		sliderFrame = new SliderFrame();
+		sliderFrame.init(100, 200);
+		sliderFrame.setVisible(true);
+	
+
 	}
 	
 	
@@ -416,7 +424,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		//setup data managers
 		currentProject = new DCProject();
 	   	drawableManager = new DrawableManager();
-	   	uiManager = new UserUIManager(this.codeField); 
+	   	uiManager = new UserUIManager(this.codeField,sliderFrame); 
 	   	uiManager.addEventListener(this);
 		instructionManager = new InstructionManager(drawableManager,uiManager,currentProject.getWidth(),currentProject.getHeight());
 	
@@ -642,7 +650,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void drawIntoCanvas(){
 		 treeManager.getNodes(drawableManager.getDrawables());
 		 canvas.setDrawables(drawableManager.getDrawables());
-		 canvas.setUserUI(uiManager.getUserUIs());
+		// canvas.setUserUI(uiManager.getUserUIs());
 	 }
 	 
 	 /* called when create stamp is selected from menu
@@ -756,6 +764,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 	runButton.setActive(); //toggles run button to active visual state
 			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); //sets cursor to wait
 			console.clearText();
+			sliderFrame.clearAllSliders();
 			codeField.removeHighlights();
 			codeField.checkForComments();
 			//removes existing drawables

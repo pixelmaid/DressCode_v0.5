@@ -20,7 +20,6 @@ public class Slider extends UserUI {
     private double minTarget;
     private double maxTarget;
     private boolean selected;
-    private String name;
     private String units;
     
     public Slider() {
@@ -102,6 +101,17 @@ public class Slider extends UserUI {
         value = Basic.map(val, minTarget, maxTarget, 0, 1);
     }
 
+    
+  
+    
+    public double getMin(){
+    	return minTarget;
+    }
+    
+    public double getMax(){
+    	return this.maxTarget;
+    }
+    
 	
 
 }

@@ -1,5 +1,7 @@
 package com.pixelmaid.dresscode.app.ui.usercreated;
 
+import javax.swing.JComponent;
+
 import processing.core.PApplet;
 
 import com.pixelmaid.dresscode.events.CustomEvent;
@@ -9,6 +11,7 @@ import com.pixelmaid.dresscode.events.EventSource;
 public class UserUI extends EventSource {
 	private String identifier;
 	private int line;
+	protected String name;
 	public void setId(String id){
 		identifier=id;
 	}
@@ -29,6 +32,9 @@ public class UserUI extends EventSource {
 		
 	}
 
+	  public String getName(){
+	    	return name;
+	    }
 
 	
 	  public boolean checkForMousePress(double mouseX, double mouseY) {

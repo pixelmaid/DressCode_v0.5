@@ -69,7 +69,7 @@ public class Canvas extends PApplet implements EventInterface{
 	private double zeroY=0;
 	
 	private ArrayList<Drawable> tempDrawables;
-	private ArrayList<UserUI> userUI;
+	//private ArrayList<UserUI> userUI;
 
 	private boolean drawGrid = true;
 
@@ -209,7 +209,7 @@ public class Canvas extends PApplet implements EventInterface{
 	public void setup() {
 		System.out.println("setting up canvas");
 		tempDrawables = new	 ArrayList<Drawable>();
-		userUI = new ArrayList<UserUI>();
+		//userUI = new ArrayList<UserUI>();
 		//tempDrawables.add(new Ellipse(100,100));
 		PFont f; 
 		f = createFont("Monospaced", 11);
@@ -244,10 +244,10 @@ public class Canvas extends PApplet implements EventInterface{
 	}
 
 	
-	public void setUserUI(ArrayList<UserUI> d){
+	/*public void setUserUI(ArrayList<UserUI> d){
 		this.userUI=d;
 		
-	}
+	}*/
 
 	public void draw() {
 		
@@ -298,20 +298,20 @@ public class Canvas extends PApplet implements EventInterface{
 
 			popMatrix();	
 			rulers();
-			drawUserUI();
+			//drawUserUI();
 		
 		
 
 			
 	}
 	
-	private void drawUserUI(){
+	/*private void drawUserUI(){
 		System.out.println("num of uis ="+userUI.size());
 		
 		for(int i=0;i<userUI.size();i++){
 			userUI.get(i).draw(this);
 		}
-	}
+	}*/
 
 	public void createImage(){
 		designImage = createGraphics(((Double)drawingBoardWidth).intValue(), ((Double)drawingBoardHeight).intValue());
@@ -373,9 +373,9 @@ public class Canvas extends PApplet implements EventInterface{
 		//System.out.println(mousePressed);
 		System.out.println("mouse pos="+mouseX+","+mouseY);
 		this.fireMousePressedEvent(this, CustomEvent.CANVAS_MOUSE_PRESSED);
-		for(int i=0;i<userUI.size();i++){
+		/*for(int i=0;i<userUI.size();i++){
 			userUI.get(i).checkForMousePress(mouseX, mouseY);
-		}
+		}*/
 		/*if(currentMode == SELECT_MODE){
 			checkSelect();
 		}
@@ -389,9 +389,9 @@ public class Canvas extends PApplet implements EventInterface{
 
 	public void mouseReleased() {
 		this.fireMousePressedEvent(this, CustomEvent.CANVAS_MOUSE_RELEASED);
-		for(int i=0;i<userUI.size();i++){
+		/*for(int i=0;i<userUI.size();i++){
 			userUI.get(i).checkForMouseRelease(mouseX, mouseY);
-		}
+		}*/
 		//currentTool.mouseReleased(relativeMouseX(),relativeMouseY());
 		
 		
@@ -400,9 +400,9 @@ public class Canvas extends PApplet implements EventInterface{
 
 	public void mouseDragged(){
 		this.fireMousePressedEvent(this, CustomEvent.CANVAS_MOUSE_DRAGGED);
-		for(int i=0;i<userUI.size();i++){
+		/*for(int i=0;i<userUI.size();i++){
 			userUI.get(i).checkForMouseDrag(mouseX, mouseY);
-		}
+		}*/
 		redraw();
 		//checkModeMove();
 		//redraw();
