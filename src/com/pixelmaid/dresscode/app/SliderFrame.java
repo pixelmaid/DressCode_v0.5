@@ -17,7 +17,7 @@ public class SliderFrame extends javax.swing.JFrame{
 	private JPanel content;
 	private ArrayList<JSlider> sliders;
 	private int sliderWidth = 70;
-	private int sliderHeight = 20;
+	private int sliderHeight = 45;
 	private int width;
 	private int height;
 	public SliderFrame(){
@@ -27,6 +27,8 @@ public class SliderFrame extends javax.swing.JFrame{
 	public void init(int w, int h){
 		width = w;
 		height= h;
+		sliders = new ArrayList<JSlider>();
+
 		//setup window dimensions and appearance
 				try {
 					// System.setProperty("apple.laf.useScreenMenuBar", "true"); 
@@ -50,7 +52,7 @@ public class SliderFrame extends javax.swing.JFrame{
 				this.setAlwaysOnTop(true);
 				
 				content = new JPanel();
-				content.setPreferredSize(new Dimension(width,height));
+				content.setPreferredSize(new Dimension(width,sliders.size()*sliderHeight));
 				content.setLayout(new BoxLayout(content, BoxLayout.Y_AXIS));
 				JScrollPane scrPane1 = new JScrollPane(content);
 				
@@ -61,7 +63,6 @@ public class SliderFrame extends javax.swing.JFrame{
 				
 				
 				this.add(scrPane1);
-				sliders = new ArrayList<JSlider>();
 
 
 	}
@@ -71,14 +72,14 @@ public class SliderFrame extends javax.swing.JFrame{
 	public JSlider addSlider(String name,double min, double max, double val){
 		
 		JSlider s = new JSlider(JSlider.HORIZONTAL,(int)min,(int)max,(int)val);
-		s.setSize(new Dimension(sliderWidth, sliderHeight));
+		
 		s.setName(name);
 		JLabel sliderLabel = new JLabel(name, JLabel.LEFT);
         sliderLabel.setAlignmentX(Component.LEFT_ALIGNMENT);
 		sliders.add(s);
 		content.add(sliderLabel);
 		content.add(s);
-		content.setPreferredSize(new Dimension(width,height+sliders.size()*10));
+		content.setPreferredSize(new Dimension(width,sliders.size()*sliderHeight));
 		content.updateUI();
 		return s;
 		
@@ -88,7 +89,8 @@ public class SliderFrame extends javax.swing.JFrame{
 	
 	public void clearAllSliders(){
 		content.removeAll();
-		content.setPreferredSize(new Dimension(width,height+sliders.size()*10));
+		sliders.clear();
+		content.setPreferredSize(new Dimension(width,sliders.size()*sliderHeight));
 		content.updateUI();
 	}
 

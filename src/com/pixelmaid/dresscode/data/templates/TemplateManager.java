@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 
 import javax.swing.JFileChooser;
@@ -22,6 +23,8 @@ import processing.core.PImage;
 
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.Canvas;
+import com.pixelmaid.dresscode.data.InstructionManager;
+import com.pixelmaid.dresscode.data.Stamp;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.EventSource;
@@ -33,6 +36,8 @@ public class TemplateManager extends EventSource{
 	public static NodeEvent e = new NodeEvent();
 	private static int selected = 0;
 	private static JFileChooser fc = new JFileChooser();
+	private static String templateProgram="";
+	private static String name = "untitled_template";
 	private TemplateManager(){
 		throw new AssertionError();
 	}
@@ -70,6 +75,7 @@ public class TemplateManager extends EventSource{
 	
 	public static void clearAllTemplates(){
 		templates.clear();
+		templateKeys.clear();
 		
 	}
 	
@@ -138,6 +144,28 @@ public class TemplateManager extends EventSource{
 		}
 	}
 
+	public static void setTemplateCode(String c){
+		templateProgram = c;
+	}
+	
+	public static String getTemplateCode(){
+		return templateProgram;
+	}
+	
+	public static void setName(String c){
+		name = c;
+	}
+	
+	public static String getName(){
+		return name;
+	}
+	
+	public static void run(InstructionManager instructionManager, int units){
+
+		instructionManager.parseText(templateProgram,units);
+		
+		
+	}
 	
 	
 }

@@ -1,5 +1,7 @@
 package com.pixelmaid.dresscode.data;
 
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.util.ArrayList;
 
 import javax.swing.JSlider;
@@ -14,7 +16,7 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 import com.pixelmaid.dresscode.events.EventInterface;
-public class UserUIManager extends NodeEvent implements CustomEventListener, ChangeListener {
+public class UserUIManager extends NodeEvent implements CustomEventListener, ChangeListener, MouseListener {
 private ArrayList<UserUI> uis= new ArrayList<UserUI>();
 private CodeField codeField;
 private SliderFrame sliderFrame;
@@ -31,6 +33,7 @@ public UserUIManager(CodeField cf, SliderFrame sf){
 		Slider s = (Slider)d;
 		JSlider js = sliderFrame.addSlider(s.getName(), s.getMin(), s.getMax(), s.getSliderValue());
 		js.addChangeListener(this);
+		js.addMouseListener(this);
 	
 	}
 	
@@ -61,6 +64,7 @@ public UserUIManager(CodeField cf, SliderFrame sf){
 	
 	public void clearAllUserUIs() {
 		uis.clear();
+		sliderFrame.clearAllSliders();
 
 	}
 	
@@ -157,6 +161,43 @@ public UserUIManager(CodeField cf, SliderFrame sf){
 			}
 		}
 		
+		
+	}
+
+
+	@Override
+	public void mouseClicked(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseEntered(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseExited(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mousePressed(MouseEvent arg0) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+	@Override
+	public void mouseReleased(MouseEvent event) {
+		if(event.getSource() instanceof JSlider){
+			this.fireToolEvent(CustomEvent.RUN_REQUEST);
+		}
 		
 	}
 

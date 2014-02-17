@@ -26,7 +26,14 @@ public class SliderNode extends UINode {
 		s.setLine(l.evaluate().getLine());
 		double minT = params.get(1).evaluate().asDouble();
 		double maxT = params.get(2).evaluate().asDouble();
-		s.init(0, 0, 150, 20, l.evaluate().asDouble().floatValue(), minT, maxT, s.getId(), "");
+		if(params.size()<4){
+			s.init(0, 0, 150, 20, l.evaluate().asDouble().floatValue(), minT, maxT, s.getId(), "");
+		}
+		else{
+			String name = params.get(3).evaluate().asString();
+			s.init(0, 0, 150, 20, l.evaluate().asDouble().floatValue(), minT, maxT, name, "");
+
+		}
 		System.out.println("slider id="+s.getId());
 		
 		System.out.println("evaluating slider");

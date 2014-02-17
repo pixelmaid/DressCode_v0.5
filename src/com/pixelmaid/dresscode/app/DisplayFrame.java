@@ -101,6 +101,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private TreeManager	treeManager; //declarative view UI component
 	private StampManager stampManager; //stamp manager UI component
 	private boolean fromMain = true; //boolean to manage stamp switching
+	private boolean fromTemplate = false; //boolean to manage stamp switching
+
 	private String currentStamp = ""; //boolean to manage stamp switching
 
 	private  Console console; //output console
@@ -413,7 +415,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		createMenu();
 		
 		sliderFrame = new SliderFrame();
-		sliderFrame.init(100, 200);
+		sliderFrame.init(100, 400);
 		sliderFrame.setVisible(true);
 	
 
@@ -715,6 +717,28 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			//}
 		}
 	 
+	 /*called when stamp is selected in stamp manager*/
+	 private void selectTemplate(){
+		 this.codeField.stopFilter(); //remove the current document filter on the codefield
+
+		   if(fromMain){//if current code is main code, save into current project
+				this.currentProject.setCode(this.codeField.getCode());
+			}
+		   else{
+			   System.out.println("updating stamp code");
+			   updateStampCode();
+		   }
+			
+			fromMain = false; //set from main to false (prevents incorrect saving of files)
+			codingToolbar.updateLabel(TemplateManager.getName()); //update label of coding window
+			fromTemplate = true; //set from main to true (prevents incorrect saving of files)
+			this.codeField.setText(TemplateManager.getTemplateCode()); //set code field text to stamp function
+			//if (!(stamp instanceof DynamicStamp)){
+			//this.codeField.startFilter(stamp.getFunctionCall().length()+4); //filter code field to prevent editing of function name
+	 
+			//}
+		}
+	 
 	 /*resets code field to main program*/
 	 private void selectMain(){
 		
@@ -722,13 +746,20 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			this.currentProject.setCode(codeField.getCode());//set code field text back to main project code
 
 		 }
+		 if(this.fromTemplate){
+			 TemplateManager.setTemplateCode(codeField.getCode());
+		 }
+		 else{
+			 if(currentStamp!=""){
+					updateStampCode(); //save stamp modifications
+				}
+		 }
 		 this.codeField.stopFilter(); //remove the current document filter on the codefield
-		if(currentStamp!=""){
-			updateStampCode(); //save stamp modifications
-		}
+		
 
 		currentStamp=""; //set current stamp to empty string
 		fromMain = true; //set from main to true (prevents incorrect saving of files)
+		fromTemplate = false; //set from main to true (prevents incorrect saving of files)
 		 stampManager.selectMainNode();
 
 		codingToolbar.updateLabel(this.currentProject.getName()); //set label back to main project name
@@ -764,13 +795,21 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 	runButton.setActive(); //toggles run button to active visual state
 			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); //sets cursor to wait
 			console.clearText();
-			sliderFrame.clearAllSliders();
+			
 			codeField.removeHighlights();
 			codeField.checkForComments();
+			uiManager.clearAllUserUIs();
+			
+			if(fromTemplate){
+				TemplateManager.clearAllTemplates();
+				patternDropdown.removeAllItems();
+				TemplateManager.setTemplateCode(codeField.getCode());
+				TemplateManager.run(instructionManager,currentProject.getUnits());
+			}
+			else{
 			//removes existing drawables
 			//TODO: EVENTUALLY PARSE ONLY MODIFIED CODE
 			drawableManager.clearAllDrawables();
-			uiManager.clearAllUserUIs();
 			if(fromMain){
 				currentProject.setCode(codeField.getCode());
 			}
@@ -778,7 +817,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				updateStampCode();
 			}
 			//runs code from current project
-			currentProject.run(currentProject.getCode(),stampMap,instructionManager);	
+			currentProject.run(currentProject.getCode(),stampMap,instructionManager);
+			}
 			
 			/*if(currentProject.hiddenCode()){	
 				currentProject.run(codeField.getCode(),hiddenCodeField.getCode(),instructionManager);
@@ -1408,11 +1448,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			canvas.createImage();
 			canvas.patternMode();
 			patternDropdown.setEnabled(true);
+			this.selectTemplate();
 
 		}
 		else if(e.getSource()==designButton){
 			canvas.designMode();
 			patternDropdown.setEnabled(false);
+			this.selectMain();
 
 		}
 		else if(e.getSource()==patternDropdown){
