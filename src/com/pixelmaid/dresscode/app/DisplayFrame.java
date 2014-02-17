@@ -719,8 +719,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 /*called when stamp is selected in stamp manager*/
 	 private void selectTemplate(){
-		 this.codeField.stopFilter(); //remove the current document filter on the codefield
-
+		 
+		 if(!fromTemplate){
+			 this.codeField.stopFilter(); //remove the current document filter on the codefield
+		 
+		
 		   if(fromMain){//if current code is main code, save into current project
 				this.currentProject.setCode(this.codeField.getCode());
 			}
@@ -737,6 +740,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			//this.codeField.startFilter(stamp.getFunctionCall().length()+4); //filter code field to prevent editing of function name
 	 
 			//}
+		 }
 		}
 	 
 	 /*resets code field to main program*/
@@ -878,7 +882,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 //saves the file
 	 private void saveFile(){
-		 currentProject.saveFile(this,codeField.getCode(),this.stampMap,codingFrame);
+		 currentProject.saveFile(this,codeField.getCode(),this.stampMap,codingFrame,TemplateManager.getTemplateCode());
 		 codeField.setUnsaved(false);
 		 updateLabels();
 	 }

@@ -17,6 +17,7 @@ import org.antlr.gunit.gUnitParser.file_return;
 import com.pixelmaid.dresscode.app.CodeField;
 import com.pixelmaid.dresscode.app.CodingFrame;
 import com.pixelmaid.dresscode.app.Canvas;
+import com.pixelmaid.dresscode.data.templates.TemplateManager;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 
@@ -172,6 +173,14 @@ public class DCProject {
 			}
 			
 			String stampFile = path+"/"+"stamps";
+			File templateFolder = new File(path+"/"+"template");
+			if(templateFolder.isDirectory()){
+				File[] tfiles = templateFolder.listFiles();
+				File templateFile = tfiles[0];
+				TemplateManager.setTemplateCode(readFile(templateFile));
+				TemplateManager.setName(templateFile.getName());
+			}
+			
 			stamps  = convertStamps(stampFile);
 			
 			this.saved=false;
@@ -181,8 +190,11 @@ public class DCProject {
 
 	}
 
-	public void saveFile(Component component,String code,LinkedHashMap<String, Stamp> stampMap, CodingFrame cf){
+	public void saveFile(Component component,String code,LinkedHashMap<String, Stamp> stampMap, CodingFrame cf, String templateCode){
 		setCode(code);
+		if (templateCode.trim().length() > 0){
+			template=1;
+		}
 		if(!saved){
 			if(this.path!=""){
 			fc.changeToParentDirectory();
@@ -195,18 +207,18 @@ public class DCProject {
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
 				File file = fc.getSelectedFile();
 
-				saveToFile(file,cf,stampMap);
+				saveToFile(file,cf,stampMap, templateCode);
 			} 
 
 		}
 		else{
 			File file = new File(path+name);
-			saveToFile(file,cf,stampMap);
+			saveToFile(file,cf,stampMap,templateCode);
 		}
 		
 	}
 
-	private void saveToFile(File file, CodingFrame cf,LinkedHashMap<String, Stamp> stampMap){
+	private void saveToFile(File file, CodingFrame cf,LinkedHashMap<String, Stamp> stampMap, String templateCode){
 		this.name =file.getName();
 		this.path= file.getAbsolutePath();
 		this.path = this.path.substring(0,path.length()-name.length());
@@ -215,12 +227,21 @@ public class DCProject {
 		File dataDir = new File(path+name+"/"+"data");
 		File stampDir = new File(path+name+"/"+"stamps");
 		stampDir.mkdirs();
+		File templateDir = new File(path+name+"/"+"template");
+		templateDir.mkdirs();
 		System.out.println(dataDir.mkdirs());
 		File fileNew = new File(path+name+"/"+name+extension);
 
 		System.out.println(path+name+"/"+name+extension);
 		writeFile(getCode(),fileNew);
-
+		if(template!=0){
+			File templateFile = new File(path+name+"/"+"template"+"/"+TemplateManager.getName()+extension);
+			writeFile(templateCode,templateFile);
+		}
+		else{
+			File templateFile = new File(path+name+"/"+"template"+"/"+TemplateManager.getName()+extension);
+			templateFile.delete();
+		}
 		File paramFile = new File(path+name+"/"+data+"/"+params);
 		double [] vars = new double[10];
 
@@ -238,6 +259,7 @@ public class DCProject {
 			vars[4]=0;
 
 		}
+		
 
 		writeFile(vars,paramFile);
 		
