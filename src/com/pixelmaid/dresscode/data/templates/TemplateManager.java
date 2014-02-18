@@ -38,6 +38,7 @@ public class TemplateManager extends EventSource{
 	private static JFileChooser fc = new JFileChooser();
 	private static String templateProgram="";
 	private static String name = "untitled_template";
+	private static String lastSelected ="";
 	private TemplateManager(){
 		throw new AssertionError();
 	}
@@ -74,8 +75,11 @@ public class TemplateManager extends EventSource{
 	}
 	
 	public static void clearAllTemplates(){
-		templates.clear();
-		templateKeys.clear();
+		if(templates.size()!=0){
+			lastSelected = templates.get(selected).getName();
+			templates.clear();
+			templateKeys.clear();
+		}
 		
 	}
 	
@@ -129,6 +133,7 @@ public class TemplateManager extends EventSource{
 	}
 
 	public static void draw(Canvas canvas, PImage design) {
+		System.out.println("selected template ="+selected);
 		if(templates.size()!=0&&selected<templates.size()){
 			templates.get(selected).draw(canvas, design);
 		}
@@ -139,11 +144,17 @@ public class TemplateManager extends EventSource{
 		for(int i=0;i<templates.size();i++){
 			if(templates.get(i).getName().matches(name)){
 				selected = i;
+				e.fireToolEvent(CustomEvent.TEMPLATE_SELECTED);
 				break;
 			}
 		}
+		
 	}
 
+	
+	public static int getSelected(){
+		return selected;
+	}
 	public static void setTemplateCode(String c){
 		templateProgram = c;
 	}
@@ -163,6 +174,12 @@ public class TemplateManager extends EventSource{
 	public static void run(InstructionManager instructionManager, int units){
 
 		instructionManager.parseText(templateProgram,units);
+		if(lastSelected !=""){
+			setSelected(lastSelected);
+			
+			
+			
+		}
 		
 		
 	}

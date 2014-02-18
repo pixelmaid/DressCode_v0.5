@@ -7,6 +7,8 @@
 
 package com.pixelmaid.dresscode.data.templates;
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PImage;
@@ -17,10 +19,16 @@ public class Template extends Rectangle {
 
 private double seam;
 private String name;
+private ArrayList<Double> hfolds;
+private ArrayList<Double> vfolds;
+
 	public Template(String name){
 		super(0,0,100,100);
 		this.setName(name);
 		this.setNodeName(name);
+		hfolds = new ArrayList<Double>();
+		vfolds = new ArrayList<Double>();
+
 	}
 	
 	
@@ -39,24 +47,37 @@ private String name;
 	}
 	
 	public void draw(Canvas e, PImage design){
-		e.image(design, (float)-width/2,(float)-height/2);
+		e.image(design, 0,0);
 		e.noFill();
 		e.stroke(216,65,78);
 		e.strokeWeight(3);
 		e.pushMatrix();
-		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
-		e.rotate(PApplet.radians((float)getRotation()));
-		e.scale((float)getScaleX(),(float)getScaleY());
-		e.rectMode(PConstants.CENTER);
+		e.rectMode(PConstants.LEFT);
 		e.rect(0,0,(float)width,(float)height);
 		e.stroke(209,255,178);
-		e.rect(0, 0, (float)(width-(seam*2)),(float)(height-(seam*2)));
+		e.rect((float)seam, (float)seam, (float)(width-seam),(float)(height-seam));
+		
+		e.stroke(153,0,255);
+		for(int i=0;i<hfolds.size();i++){
+			e.line( (float)(0),  hfolds.get(i).floatValue(),  (float)(width),  hfolds.get(i).floatValue());
+		}
+		for(int i=0;i<vfolds.size();i++){
+			e.line( vfolds.get(i).floatValue(),(float)(0),  vfolds.get(i).floatValue(), (float)(height));
+		}
 		e.popMatrix();
 		
 		/*if(this.getDrawOrigin()){
 			this.drawOrigin(e);
 		}*/	
 		
+	}
+	
+	public void setHFold(double x){
+		hfolds.add(x);
+	}
+	
+public void setVFold(double y){
+	vfolds.add(y);
 	}
 	
 }

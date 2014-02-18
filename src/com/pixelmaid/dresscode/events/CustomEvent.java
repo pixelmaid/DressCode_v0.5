@@ -42,6 +42,7 @@ public class CustomEvent extends EventObject {
 	public static final int RUN_REQUEST = 31;
 	public static final int UI_RELEASED = 32;
 	public static final int TEMPLATE_CREATED = 33;
+	public static final int TEMPLATE_SELECTED = 34;
 
 	public CustomEvent(Object source) {
 		super(source);

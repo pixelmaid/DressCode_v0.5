@@ -118,9 +118,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public static DimensionDialog dimensionDialog; //dialog component for adjusting dimensions of canvas
 	public static StampDialog stampDialog; //dialog component for adjusting dimensions of canvas
 	//drawing panel buttons
-	private ImageButton selectButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton,sliderButton;
+	private ImageButton selectButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton;
 	private ImageButton unionButton, diffButton, xorButton, clipButton;
-	private ImageButton simButton, patternButton, designButton;
+	private ImageButton simButton, patternButton, designButton, sliderButton;
 	private JSplitPane splitFrame; //split frame that holds drawing frame and coding frame
 	private JSplitPane leftSplitFrame; //split frame that holds tree views for stamps and declarative view
 	
@@ -231,6 +231,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		patternButton = new ImageButton("pattern","pattern", "switch to pattern template view", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 		simButton = new ImageButton("sim","sim", "open simulation view", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 		designButton = new ImageButton("design","design", "switch to design view", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
+		sliderButton = new ImageButton("sliders","sliders","open slider panel",DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 		designButton.setActive();
 		//patternButton.setEnabled(false);
 		simButton.setEnabled(false);
@@ -291,7 +292,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		patternToolbar.addButton(designButton);
 		patternToolbar.addButton(patternButton);
 		patternToolbar.addButton(simButton);
-		patternToolbar.init(defaultDrawingPaneWidth,DEFAULT_TOOLBAR_HEIGHT,patternDropdown,BROWN);
+
+		patternToolbar.init(defaultDrawingPaneWidth,DEFAULT_TOOLBAR_HEIGHT,patternDropdown,BROWN,sliderButton);
 
 		//setup drawing frame
 		drawingFrame = new DrawingFrame();
@@ -416,7 +418,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		sliderFrame = new SliderFrame();
 		sliderFrame.init(100, 400);
-		sliderFrame.setVisible(true);
 	
 
 	}
@@ -522,6 +523,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	    designButton.addActionListener(this);
 	    patternButton.addActionListener(this);
 	    simButton.addActionListener(this);
+	    sliderButton.addActionListener(this);
 	    patternDropdown.addActionListener(this);
 
 	    stampManager.getTree().addTreeSelectionListener(this);
@@ -652,6 +654,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void drawIntoCanvas(){
 		 treeManager.getNodes(drawableManager.getDrawables());
 		 canvas.setDrawables(drawableManager.getDrawables());
+		 canvas.redraw();
 		// canvas.setUserUI(uiManager.getUserUIs());
 	 }
 	 
@@ -696,6 +699,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 /*called when stamp is selected in stamp manager*/
 	 private void selectStamp(){
+		 this.patternButton.setInactive();
+		 this.designButton.setActive();
+		 this.patternToolbar.updateLabel("Design View");
 		 this.codeField.stopFilter(); //remove the current document filter on the codefield
 
 			if(fromMain){//if current code is main code, save into current project
@@ -717,9 +723,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			//}
 		}
 	 
-	 /*called when stamp is selected in stamp manager*/
+	 /*called when template is selected*/
 	 private void selectTemplate(){
-		 
+		 this.patternButton.setActive();
+		 this.designButton.setInactive();
+		 this.patternToolbar.updateLabel("Template View");
 		 if(!fromTemplate){
 			 this.codeField.stopFilter(); //remove the current document filter on the codefield
 		 
@@ -745,7 +753,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 /*resets code field to main program*/
 	 private void selectMain(){
-		
+		 this.patternButton.setInactive();
+		 this.designButton.setActive();
+		 this.patternToolbar.updateLabel("Design View");
 		 if(this.fromMain){
 			this.currentProject.setCode(codeField.getCode());//set code field text back to main project code
 
@@ -836,6 +846,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 //opens new file
 	 
 	 private void openFile(File file){
+		 selectMain();
 		 LinkedHashMap<String,Stamp> stmps = currentProject.openFile(file, this,codingFrame,canvas,instructionManager);
 			if(stmps!=null){
 				stampManager.clearChildren();
@@ -852,6 +863,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 //creates new file
 	 private void newFile(){
+		 
 		 if(codeField.getUnsaved()){
 			 NewSaveDialog sd = new NewSaveDialog(this,true);
 			if(sd.getAnswer()==NewSaveDialog.CANCEL){
@@ -882,6 +894,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 //saves the file
 	 private void saveFile(){
+		 selectMain();
 		 currentProject.saveFile(this,codeField.getCode(),this.stampMap,codingFrame,TemplateManager.getTemplateCode());
 		 codeField.setUnsaved(false);
 		 updateLabels();
@@ -1081,7 +1094,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					break;
 				case CustomEvent.RUN_REQUEST:
 					run();
-					canvas.redraw();
+					
 					
 					break;
 				case CustomEvent.DESELECT_ALL:
@@ -1100,7 +1113,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					insertStamp();
 					run();
 					break;
-				
+				case CustomEvent.TEMPLATE_SELECTED:
+					canvas.redraw();
+					patternDropdown.setSelectedIndex(TemplateManager.getSelected());
+					
+					System.out.println("set selected");
+					
 				
 			}
 		}
@@ -1464,10 +1482,17 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		else if(e.getSource()==patternDropdown){
 			 String name = (String)patternDropdown.getSelectedItem();
 			 TemplateManager.setSelected(name);
+			 
+		}
+		else if(e.getSource()==sliderButton){
+			sliderFrame.setLocation(this.getX()+this.getWidth()-sliderFrame.getWidth()-60,100);
+			sliderFrame.setVisible(true);
+			
+
 		}
 			
 		
-		canvas.redraw();
+		//canvas.redraw();
 
 	}
 

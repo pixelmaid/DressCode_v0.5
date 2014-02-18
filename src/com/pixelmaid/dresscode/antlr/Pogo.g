@@ -204,6 +204,9 @@ functionCall
   	|SetHeight '(' exprList? ')'   -> ^(FUNC_CALL SetHeight exprList?)
   	|SetSeam '(' exprList? ')'   -> ^(FUNC_CALL SetSeam exprList?)
   	|SetName '(' exprList? ')'   -> ^(FUNC_CALL SetName exprList?)
+  	|SetVFold '(' exprList? ')'   -> ^(FUNC_CALL SetVFold exprList?)
+  	|SetHFold '(' exprList? ')'   -> ^(FUNC_CALL SetHFold exprList?)
+  	|TemplateCollection '('   exprList? ')'   -> ^(FUNC_CALL TemplateCollection   exprList?)
   	;
   	
   
@@ -439,6 +442,9 @@ SetWidth	: 'setWidth';
 SetHeight	: 'setHeight';
 SetSeam		: 'setSeam';
 SetName		: 'setName';
+SetVFold	: 'setVFold';
+SetHFold	: 'setHFold';
+TemplateCollection	: 'templateCollection';
  
 //getMethods
 GetWidth: 'getWidth';

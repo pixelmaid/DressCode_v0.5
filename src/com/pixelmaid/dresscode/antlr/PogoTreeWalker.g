@@ -216,9 +216,12 @@ functionCall returns [DCNode node]
    templateCall returns [DCNode node]
   	: ^(FUNC_CALL Template exprList?) {node = new TemplateNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   	|^(FUNC_CALL SetWidth exprList?) {node = new TemplateSetWidthNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
-  	|^(FUNC_CALL SetHeight exprList?)
-  	|^(FUNC_CALL SetSeam exprList?)
-  	| ^(FUNC_CALL SetName exprList?)
+  	|^(FUNC_CALL SetHeight exprList?){node = new TemplateSetHeightNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	|^(FUNC_CALL SetSeam exprList?){node = new TemplateSetSeamNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	|^(FUNC_CALL SetName exprList?)
+  	|^(FUNC_CALL SetVFold exprList?){node = new TemplateSetVFoldNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	|^(FUNC_CALL SetHFold exprList?){node = new TemplateSetHFoldNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	|^(FUNC_CALL TemplateCollection   exprList?){node = new TemplateSetCollectionNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   	;
   
 
