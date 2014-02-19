@@ -316,9 +316,7 @@ public class Canvas extends PApplet implements EventInterface{
 	public void createImage(){
 		designImage = createGraphics(((Double)drawingBoardWidth).intValue(), ((Double)drawingBoardHeight).intValue());
 		designImage.beginDraw();
-		
-		designImage.background(255);
-		
+				
 		for (int i=0;i<tempDrawables.size();i++){
 
 			tempDrawables.get(i).print(designImage);
@@ -518,6 +516,7 @@ public class Canvas extends PApplet implements EventInterface{
 	public void rulers(){
 		noStroke();
 		fill(255,255,255);
+		rectMode(PConstants.CENTER);
 		rect(0,0,gridWidth,40);
 		rect(0,0,40,gridHeight);
 		stroke(0,0,0);

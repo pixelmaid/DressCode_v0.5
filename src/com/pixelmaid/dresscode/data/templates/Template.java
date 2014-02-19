@@ -21,6 +21,9 @@ private double seam;
 private String name;
 private ArrayList<Double> hfolds;
 private ArrayList<Double> vfolds;
+private ArrayList<Double> xPos;
+private ArrayList<Double> yPos;
+
 
 	public Template(String name){
 		super(0,0,100,100);
@@ -28,6 +31,8 @@ private ArrayList<Double> vfolds;
 		this.setNodeName(name);
 		hfolds = new ArrayList<Double>();
 		vfolds = new ArrayList<Double>();
+		xPos = new ArrayList<Double>();
+		yPos = new ArrayList<Double>();
 
 	}
 	
@@ -47,7 +52,16 @@ private ArrayList<Double> vfolds;
 	}
 	
 	public void draw(Canvas e, PImage design){
-		e.image(design, 0,0);
+		e.imageMode(PConstants.CENTER);
+
+		if(xPos.size()==0){
+			e.image(design,(float)(width/2),(float)(height/2));
+		}
+		else{
+			for(int i=0;i<xPos.size();i++){
+				e.image(design, xPos.get(i).floatValue(), yPos.get(i).floatValue());
+			}
+		}
 		e.noFill();
 		e.stroke(216,65,78);
 		e.strokeWeight(3);
@@ -79,5 +93,12 @@ private ArrayList<Double> vfolds;
 public void setVFold(double y){
 	vfolds.add(y);
 	}
+
+
+public void addDesign(double x, double y) {
+	xPos.add(x);
+	yPos.add(y);
+	
+}
 	
 }

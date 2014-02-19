@@ -207,6 +207,7 @@ functionCall
   	|SetVFold '(' exprList? ')'   -> ^(FUNC_CALL SetVFold exprList?)
   	|SetHFold '(' exprList? ')'   -> ^(FUNC_CALL SetHFold exprList?)
   	|TemplateCollection '('   exprList? ')'   -> ^(FUNC_CALL TemplateCollection   exprList?)
+  	|AddDesign'(' exprList? ')'   -> ^(FUNC_CALL AddDesign exprList?)
   	;
   	
   
@@ -444,6 +445,7 @@ SetSeam		: 'setSeam';
 SetName		: 'setName';
 SetVFold	: 'setVFold';
 SetHFold	: 'setHFold';
+AddDesign	: 'addDesign';
 TemplateCollection	: 'templateCollection';
  
 //getMethods

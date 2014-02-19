@@ -134,6 +134,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	//menu items
 	public static JMenuItem newAction, openAction,saveAction ,exitAction ,exportAction, loadPatternAction, importAction, copyAction ,pasteAction ,cutAction, saveAsAction, stampAction,dStampAction;
 	
+	private JMenu fileMenu, editMenu, exampleMenu;
+	
 	private DCProject currentProject; //data structure that manages project data
 	
 	//drawing tools
@@ -566,9 +568,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	        this.setJMenuBar(menuBar);
 	        
 	        // Define and add two drop down menu to the menubar
-	        JMenu fileMenu = new JMenu("File");
-	        JMenu editMenu = new JMenu("Edit");
-	        JMenu exampleMenu = new JMenu("Examples");
+	       fileMenu = new JMenu("File");
+	       editMenu = new JMenu("Edit");
+	        exampleMenu = new JMenu("Examples");
 	        setupExampleMenu(exampleMenu);
 	        //TODO:setup example menu
 	      
@@ -620,7 +622,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 	
 	 private void setupExampleMenu(JMenu exampleMenu){
-		String path = (ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/examples")).getPath();
+		/*String path = (ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/examples")).getPath();
 		System.out.println("path="+path);
 		File exampleFolder = new File(path);
 		System.out.println("file="+path);
@@ -634,7 +636,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				exampleMenu.add(exampleAction);
 				exampleAction.addActionListener(this);
 				}
-			} 		
+			} */		
 	 }
 	 
 	 //opens an example according to string
@@ -898,6 +900,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 currentProject.saveFile(this,codeField.getCode(),this.stampMap,codingFrame,TemplateManager.getTemplateCode());
 		 codeField.setUnsaved(false);
 		 updateLabels();
+	
 	 }
 	 
 	 //updates any identifying labels of the files
@@ -1116,7 +1119,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				case CustomEvent.TEMPLATE_SELECTED:
 					canvas.redraw();
 					patternDropdown.setSelectedIndex(TemplateManager.getSelected());
-					
+						
 					System.out.println("set selected");
 					
 				
@@ -1403,37 +1406,55 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		
 		else if (e.getSource() == openButton || e.getSource() == openAction) {
+			 sliderFrame.setVisible(false);
+
 			openFile(null);
 		}
 		
 		else if (e.getSource() == saveButton || e.getSource() == saveAction ) {
+			 sliderFrame.setVisible(false);
+
 			saveFile();
+	       
+
 		}
 		
 		else if (e.getSource() == saveAsAction ) {
+			 sliderFrame.setVisible(false);
+
 			currentProject.setSaved(false);
 			saveFile();
+
 		}
 		
 		
 		else if (e.getSource()==newButton ||e.getSource() == newAction){
+			 sliderFrame.setVisible(false);
+
 			newFile();
 		}
 		
 		else if (e.getSource() == printButton|| e.getSource() == exportAction) {
+			 sliderFrame.setVisible(false);
+
 			currentProject.printFile(this,canvas);
 
 		}
 		else if (e.getSource()==dimensionButton){
+			 sliderFrame.setVisible(false);
+
 			setDimensions();
 			
 		}
 		
 		else if (e.getSource() == importButton || e.getSource() == importAction ) {
+			 sliderFrame.setVisible(false);
+
 			currentProject.importFile(this,codeField);
 		}
 		
 		else if (e.getSource() == exitAction) {
+			 sliderFrame.dispose();
 			System.exit(DISPOSE_ON_CLOSE);
 
 		}
@@ -1471,12 +1492,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			canvas.patternMode();
 			patternDropdown.setEnabled(true);
 			this.selectTemplate();
+			canvas.redraw();
 
 		}
 		else if(e.getSource()==designButton){
 			canvas.designMode();
 			patternDropdown.setEnabled(false);
 			this.selectMain();
+			canvas.redraw();
 
 		}
 		else if(e.getSource()==patternDropdown){
