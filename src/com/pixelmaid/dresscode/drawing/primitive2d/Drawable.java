@@ -779,6 +779,18 @@ public void drawOrigin(Canvas embedded){
 		return this.origin;
 	}
 	
+	//get the current x position of the drawable
+	public double getX(){
+		return this.origin.getX();
+	}
+		
+		
+	//get the current y position of the drawable
+	public double getY(){
+		return this.origin.getY();
+	}
+				
+	
 
 	//sets the drawable's origin relative to a new origin
 	protected void setRelativeTo(Point p) {

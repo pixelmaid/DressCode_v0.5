@@ -1,4 +1,4 @@
-					grammar Pogo;
+grammar Pogo;
 
 options {
   output=AST;
@@ -206,6 +206,7 @@ functionCall
   	|SetName '(' exprList? ')'   -> ^(FUNC_CALL SetName exprList?)
   	|SetVFold '(' exprList? ')'   -> ^(FUNC_CALL SetVFold exprList?)
   	|SetHFold '(' exprList? ')'   -> ^(FUNC_CALL SetHFold exprList?)
+  	|SetCorner '(' exprList? ')'   -> ^(FUNC_CALL SetCorner exprList?)
   	|TemplateCollection '('   exprList? ')'   -> ^(FUNC_CALL TemplateCollection   exprList?)
   	|AddDesign'(' exprList? ')'   -> ^(FUNC_CALL AddDesign exprList?)
   	;
@@ -442,6 +443,7 @@ Template	: 'template';
 SetWidth	: 'setWidth';
 SetHeight	: 'setHeight';
 SetSeam		: 'setSeam';
+SetCorner	: 'setCorner';
 SetName		: 'setName';
 SetVFold	: 'setVFold';
 SetHFold	: 'setHFold';

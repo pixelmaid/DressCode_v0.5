@@ -70,16 +70,17 @@ public class InstructionManager extends NodeEvent{
 	    	// walk the tree
 	    	
 	    	try {
-	    		tree = (CommonTree)parser.parse().getTree();
-
+	    		PogoParser.block_return result = parser.block();
+	    		tree = (CommonTree)result.getTree();
+	    		
 	    		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
-
+	    		System.out.println(tree.toStringTree());
 	    		// pass the reference to the Map of functions to the tree walker
 	    		PogoTreeWalker walker = new PogoTreeWalker(nodes, parser.functions,drawableManager,uiManager,widthParam, heightParam, unitParam);
 
 	    		// get the returned node 
 	    		BlockNode returned = walker.walk();
-
+	    		System.out.println("num of statements="+returned.getNumStatements());
 	    		returned.evaluate();
 	    		//registers a completed parse event
 	    		List<String> errors = walker.getErrors();

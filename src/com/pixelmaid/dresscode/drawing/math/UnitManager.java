@@ -11,6 +11,8 @@ public final class UnitManager {
 public static double PIX_IN_CM = 28.3465 ;
 public static double DEFAULT_WIDTH=8.25;
 public static double DEFAULT_HEIGHT=10.75;
+public static double DEFAULT_TEMPLATE_WIDTH=8.5;
+public static double DEFAULT_TEMPLATE_HEIGHT=11;
 
 
 	public static double toPixels(double x, int units){

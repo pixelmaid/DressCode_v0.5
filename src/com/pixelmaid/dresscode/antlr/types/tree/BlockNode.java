@@ -75,5 +75,9 @@ public class BlockNode extends NodeEvent implements DCNode {
     }
     return b.toString();
   }
+  
+  public int getNumStatements(){
+	  return statements.size();
+  }
 }
 

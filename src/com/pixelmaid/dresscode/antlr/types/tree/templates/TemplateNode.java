@@ -30,13 +30,19 @@ public class TemplateNode extends DrawableNode implements DCNode {
 			
 					double width = params.get(1).evaluate().asDouble();
 					double height = params.get(2).evaluate().asDouble();
+					e.setWidth(width);
+					e.setHeight(height);
 			}
 			if(params.size()>3){	
 					double seam = params.get(3).evaluate().asDouble();
 					e.setSeam(seam);
 
 				}
-				
+			if(params.size()>4){	
+				double rad = params.get(4).evaluate().asDouble();
+				e.setRad(rad);
+
+			}	
 					
 
 				

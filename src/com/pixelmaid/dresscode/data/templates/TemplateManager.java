@@ -19,13 +19,16 @@ import java.util.List;
 
 import javax.swing.JFileChooser;
 
+import processing.core.PGraphics;
 import processing.core.PImage;
 
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.app.Canvas;
+import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.InstructionManager;
 import com.pixelmaid.dresscode.data.Stamp;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
+import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.EventSource;
 
@@ -39,12 +42,14 @@ public class TemplateManager extends EventSource{
 	private static String templateProgram="";
 	private static String name = "untitled_template";
 	private static String lastSelected ="";
+	private static double width;
+	private static double height;
 	private TemplateManager(){
 		throw new AssertionError();
 	}
 	
 	public static void openPattern(Component component){
-		System.out.println("open patternfile");
+		System.out.println("open pattern file");
 		int returnVal = JFileChooser.CANCEL_OPTION;
 		returnVal = fc.showOpenDialog(component);
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
@@ -76,7 +81,12 @@ public class TemplateManager extends EventSource{
 	
 	public static void clearAllTemplates(){
 		if(templates.size()!=0){
-			lastSelected = templates.get(selected).getName();
+			if(selected!=-1){
+				lastSelected = templates.get(selected).getName();
+			}
+			else{
+				lastSelected="";
+			}
 			templates.clear();
 			templateKeys.clear();
 		}
@@ -132,21 +142,42 @@ public class TemplateManager extends EventSource{
 		patternLoaded = true;	
 	}
 
-	public static void draw(Canvas canvas, PImage design) {
+	public static void draw(Canvas canvas,  ArrayList<Drawable> d) {
 		System.out.println("selected template ="+selected);
-		if(templates.size()!=0&&selected<templates.size()){
-			templates.get(selected).draw(canvas, design);
+		if(templates.size()!=0){
+			if(selected<templates.size()&&selected!=-1){
+				templates.get(selected).draw(canvas,  d,false);
+			}
+			else if(selected==-1){
+				for(int i=0;i<templates.size();i++){
+					templates.get(i).draw(canvas, d,true);
+				}
+				
+			}
 		}
 		
 	}
 	
+	public static void print(PGraphics canvas, ArrayList<Drawable> d) {
+			for(int i=0;i<templates.size();i++){
+					templates.get(i).print(canvas, d,false);
+			}
+				
+		
+	}
+	
 	public static void setSelected(String name){
+		if(name== "all templates"){
+			selected=-1;
+		}
+		else{
 		for(int i=0;i<templates.size();i++){
 			if(templates.get(i).getName().matches(name)){
 				selected = i;
 				e.fireToolEvent(CustomEvent.TEMPLATE_SELECTED);
 				break;
 			}
+		}
 		}
 		
 	}
@@ -181,6 +212,25 @@ public class TemplateManager extends EventSource{
 			
 		}
 		
+		
+	}
+
+	public static void setWidth(double w) {
+		width=w;
+		
+	}
+	
+	public static void setHeight(double h) {
+		height=h;
+		
+	}
+	
+	public static double getWidth() {
+		return width;
+	}
+	
+	public static double getHeight() {
+		return height;
 		
 	}
 	

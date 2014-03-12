@@ -221,6 +221,7 @@ functionCall returns [DCNode node]
   	|^(FUNC_CALL SetName exprList?)
   	|^(FUNC_CALL SetVFold exprList?){node = new TemplateSetVFoldNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   	|^(FUNC_CALL SetHFold exprList?){node = new TemplateSetHFoldNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	|^(FUNC_CALL SetCorner exprList?) {node = new TemplateSetCornerNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   	|^(FUNC_CALL TemplateCollection   exprList?){node = new TemplateSetCollectionNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   	|^(FUNC_CALL AddDesign exprList?){node = new TemplateAddDesignNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   	;

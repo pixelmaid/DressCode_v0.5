@@ -22,8 +22,8 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 
 public class DCProject {
-	private double width, height, unitWidth, unitHeight; // default width and height of project
-	private int units; //units
+	private double width, height, unitWidth, unitHeight, templateUnitWidth, templateUnitHeight; // default width and height of project
+	private int units, templateUnits; //units
 	
 	private String code = "";
 	private String path="";
@@ -55,6 +55,15 @@ public class DCProject {
 		canvas.setDrawingBoardDimensions(width, height, this.getUnits());
 		im.setDimensionParams(width, height,getUnits());
 	}
+	
+	public void setTemplateDimensions(double w, double h, int u){
+		this.templateUnits = u;
+		TemplateManager.setWidth(UnitManager.toPixels(w, units));
+		TemplateManager.setHeight(UnitManager.toPixels(h, units));
+
+		this.templateUnitWidth = w;
+		this.templateUnitHeight = h;
+	}
 
 
 	public boolean hiddenCode(){
@@ -78,6 +87,18 @@ public class DCProject {
 
 		return this.unitWidth;
 	}
+	
+	public double getTemplateUnitHeight(){
+
+		return this.templateUnitHeight;
+	}
+
+
+	public double getTemplateUnitWidth(){
+
+		return this.templateUnitWidth;
+	}
+
 
 	public void setCode(String c){
 		this.code = c;
@@ -120,6 +141,8 @@ public class DCProject {
 		canvas.clear();
 		saved= false;
 		setDimensions(this.getUnitWidth(),this.getUnitHeight(), units, canvas, im);
+		setTemplateDimensions(UnitManager.DEFAULT_TEMPLATE_WIDTH,UnitManager.DEFAULT_TEMPLATE_HEIGHT, units);
+
 	}
 
 
@@ -150,27 +173,22 @@ public class DCProject {
 
 			double w = ((Double)(vars[0]));
 			double h = ((Double)(vars[1]));
-			
-
+			double tw = ((Double)(vars[4]));
+			double th = ((Double)(vars[5]));
+			templateUnits = ((Double)(vars[6])).intValue();
+			if(tw==0||th==0){
+				tw=UnitManager.DEFAULT_TEMPLATE_WIDTH;
+				th=UnitManager.DEFAULT_TEMPLATE_HEIGHT;
+				templateUnits= units;
+			}
 			setDimensions(w, h, units,canvas,  im);
-
+			setTemplateDimensions(tw,th,templateUnits);
 			template =((Double)(vars[3])).intValue();
 			cf.setCode(name,getCode());
 			canvas.setDrawingBoardDimensions(width, height,getUnits());
 			im.setDimensionParams(width, height,getUnits());
 
-			if(vars[4]==1){
-				hasHiddenCode=true;
-
-				String hiddenCodePath = path+"/"+data+"/"+name+"_hidden.dc";
-				String hiddenFiletxt= readFile(new File(hiddenCodePath));
-				setCode(hiddenFiletxt+"\n"+filetxt);
-				cf.showHiddenTab(name+"_hidden", hiddenFiletxt);
-
-			}
-			else{
-				hasHiddenCode=false;
-			}
+			
 			
 			String stampFile = path+"/"+"stamps";
 			File templateFolder = new File(path+"/"+"template");
@@ -249,16 +267,10 @@ public class DCProject {
 		vars[1]= getUnitHeight(); // default width and height of project
 		vars[2]=  units; //units
 		vars[3] = template;
-		if(hasHiddenCode){
-			vars[4]=1;
-			cf.setTabTitle(1,name+"_hidden");
-			File hiddenFile = new File(path+name+"/"+data+"/"+name+"_hidden"+extension);
-			writeFile(cf.hiddenCodeField.getCode(),hiddenFile);
-		}
-		else{
-			vars[4]=0;
-
-		}
+		vars[4] = getTemplateUnitWidth();
+		vars[5] = getTemplateUnitHeight();
+		vars[6]= templateUnits;
+		
 		
 
 		writeFile(vars,paramFile);
@@ -403,6 +415,10 @@ public class DCProject {
 	}
 	public int getUnits() {
 		return this.units;
+	}
+	
+	public int getTemplateUnits() {
+		return this.templateUnits;
 	}
 	
 	public String getName() {

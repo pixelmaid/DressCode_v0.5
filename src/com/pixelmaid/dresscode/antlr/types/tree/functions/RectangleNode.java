@@ -39,6 +39,13 @@ public class RectangleNode extends DrawableNode implements DCNode {
 					e= new Rectangle(x,y,width,height);
 
 				}
+				else if(params.size()==5){
+					double width =  params.get(2).evaluate().asDouble();
+					double height = params.get(3).evaluate().asDouble();
+					e= new Rectangle(x,y,width,height);
+					e.setRad(params.get(4).evaluate().asDouble());
+
+				}
 				else{
 					//Window.output.setText("incorrect parameters for rectangle call at line:"+line);
 

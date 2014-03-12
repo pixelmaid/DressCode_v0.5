@@ -12,6 +12,7 @@ import com.pixelmaid.dresscode.drawing.math.Vec2d;
 public class Rectangle extends Polygon{
 	protected double width;
 	protected double height;
+	protected double rad;
 
 	
 	public Rectangle(double startX, double startY){
@@ -32,6 +33,7 @@ public class Rectangle extends Polygon{
 	public Rectangle(Point o, double width, double height){
 		this.width=width;
 		this.height=height;
+		this.rad=0;
 		this.origin=o;
 	}
 	
@@ -52,6 +54,9 @@ public class Rectangle extends Polygon{
 		this.height=h;
 	
 	}
+	public void setRad(double r){
+		this.rad=r;
+	}
 	
 	@Override
 	public void draw(Canvas e){
@@ -66,7 +71,7 @@ public class Rectangle extends Polygon{
 		e.rotate(PApplet.radians((float)getRotation()));
 		e.scale((float)getScaleX(),(float)getScaleY());
 		e.rectMode(PConstants.CENTER);
-		e.rect(0,0,(float)width,(float)height);
+		e.rect(0,0,(float)width,(float)height,(float)rad);
 		e.popMatrix();
 		
 		/*if(this.getDrawOrigin()){

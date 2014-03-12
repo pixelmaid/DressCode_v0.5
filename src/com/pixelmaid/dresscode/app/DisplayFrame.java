@@ -622,7 +622,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 	
 	 private void setupExampleMenu(JMenu exampleMenu){
-		/*String path = (ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/examples")).getPath();
+		String path = (ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/examples")).getPath();
 		System.out.println("path="+path);
 		File exampleFolder = new File(path);
 		System.out.println("file="+path);
@@ -636,7 +636,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				exampleMenu.add(exampleAction);
 				exampleAction.addActionListener(this);
 				}
-			} */		
+			} 		
 	 }
 	 
 	 //opens an example according to string
@@ -926,15 +926,31 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		//activates dialog to change dimensions of drawing board
 			private void setDimensions(){
-				
-				 dimensionDialog = new DimensionDialog(this, true,currentProject.getUnitWidth(),currentProject.getUnitHeight(), currentProject.getUnits());
+				double dw;
+				double dh;
+				int u;
+				if(fromTemplate){
+					dw = currentProject.getTemplateUnitWidth();
+					dh = currentProject.getTemplateUnitHeight();
+					u = currentProject.getTemplateUnits();
+				}
+				else{
+					dw = currentProject.getUnitWidth();
+					dh = currentProject.getUnitHeight();
+					u = currentProject.getUnits();
+				}
+				 dimensionDialog = new DimensionDialog(this, true,dw,dh,u);
 		     
 		         if(dimensionDialog.getAnswer()) {
 		        	 double widthVal = dimensionDialog.getCanvasWidth();
 		        	 double heightVal = dimensionDialog.getCanvasHeight();
 		        	 int unitsVal=dimensionDialog.getUnits();
-		         	
-		        	 currentProject.setDimensions(widthVal,heightVal, unitsVal, canvas, instructionManager);
+		        	 if(fromTemplate){
+		        		 currentProject.setTemplateDimensions(widthVal,heightVal, unitsVal);
+		        	 }
+		        	 else{
+		        		 currentProject.setDimensions(widthVal,heightVal, unitsVal, canvas, instructionManager);
+		        	 }
 		    	
 		         }
 		         else {
@@ -975,6 +991,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				break;
 				case CustomEvent.TEMPLATE_CREATED:
 					System.out.println("template created");
+					if(patternDropdown.getItemCount()==0){
+						patternDropdown.addItem("all templates");
+					}
 					patternDropdown.addItem(TemplateManager.templates.get(TemplateManager.templates.size()-1).getName());
 					break;
 			}
@@ -1118,7 +1137,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					break;
 				case CustomEvent.TEMPLATE_SELECTED:
 					canvas.redraw();
-					patternDropdown.setSelectedIndex(TemplateManager.getSelected());
+					patternDropdown.setSelectedIndex(TemplateManager.getSelected()+1);
 						
 					System.out.println("set selected");
 					

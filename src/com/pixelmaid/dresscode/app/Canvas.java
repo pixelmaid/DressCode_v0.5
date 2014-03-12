@@ -260,12 +260,16 @@ public class Canvas extends PApplet implements EventInterface{
 			if(!patternMode){
 				dimensions(false);
 			}
+			else{
+				templateBackground(TemplateManager.getWidth(),TemplateManager.getHeight());
+			}
 
 			pushMatrix();
 			
 			//translate(zeroX,zeroY,0);
-			translate((float)zeroX,(float)zeroY);
+			
 			if(!patternMode){
+				translate((float)zeroX,(float)zeroY);
 			for (int i=0;i<tempDrawables.size();i++){
 				tempDrawables.get(i).draw(this);
 				if(showOrigin){
@@ -278,11 +282,10 @@ public class Canvas extends PApplet implements EventInterface{
 			}
 			}
 			else{
-				
-				
-				translate((float)zeroX,(float)zeroY);
-				
-					TemplateManager.draw(this,designImage);	
+				double tzeroX = defaultCanvasWidth/2-TemplateManager.getWidth()/2-13; //magic numbers here... not sure why these values are needed
+				double tzeroY= defaultCanvasHeight/2-TemplateManager.getHeight()/2;
+				translate((float)tzeroX,(float)tzeroY);
+				TemplateManager.draw(this,tempDrawables);	
 				
 			}
 			
@@ -335,16 +338,25 @@ public class Canvas extends PApplet implements EventInterface{
 			//System.out.println("substr!=pdf");
 			pdfFilename =pdfFilename.concat(".pdf");
 		}
-		
-		pdf = (PGraphicsPDF) createGraphics(((Double)drawingBoardWidth).intValue(), ((Double)drawingBoardHeight).intValue(), PDF, pdfFilename);
-		pdf.beginDraw();
+
 		
 		
-		
-		for (int i=0;i<tempDrawables.size();i++){
+		if(!patternMode){
+			pdf = (PGraphicsPDF) createGraphics(((Double)drawingBoardWidth).intValue(), ((Double)drawingBoardHeight).intValue(), PDF, pdfFilename);
+			pdf.beginDraw();
+			for (int i=0;i<tempDrawables.size();i++){
+				
+				tempDrawables.get(i).print(pdf);
 			
-			tempDrawables.get(i).print(pdf);
+			}
+		}
+
+		else{
+			pdf = (PGraphicsPDF) createGraphics(((Double)TemplateManager.getWidth()).intValue(), ((Double)TemplateManager.getHeight()).intValue(), PDF, pdfFilename);
+			pdf.beginDraw();
 		
+			TemplateManager.print(pdf,tempDrawables);	
+			
 		}
 		
 
@@ -653,6 +665,19 @@ public class Canvas extends PApplet implements EventInterface{
 				
 	
 	}
+	
+	public void templateBackground(double w, double h){
+
+		stroke(0);
+		strokeWeight(0.5f);
+		this.fill(DEFAULT_BG);
+		rectMode(CENTER);
+		
+		rect(width/2,height/2,(float)w,(float)h);
+		
+
+}
+
 
 
 	public void zoomIn(){
