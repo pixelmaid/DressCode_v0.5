@@ -42,6 +42,7 @@ tokens {
 
 @lexer::header {
   package com.pixelmaid.dresscode.antlr;
+  
 }
 
 @parser::members {
@@ -71,6 +72,28 @@ tokens {
 @lexer::members{
 int implicitLineJoiningLevel = 0;
 int startPos=-1;
+private int previousIndents = -1;
+private int indentLevel =0;
+java.util.Queue<Token> tokens = new java.util.LinkedList<Token>();
+
+
+@Override
+  public void emit(Token t) {
+    state.token = t;
+    tokens.offer(t);
+  }
+
+  @Override
+  public Token nextToken() {
+    super.nextToken();
+    return tokens.isEmpty() ? getEOFToken() : tokens.poll();
+  }
+
+ private void jump(int ttype) {
+    indentLevel += (ttype == Dedent ? -1 : 1);
+    emit(new CommonToken(ttype, "level=" + indentLevel));
+  }
+
 }
 
 parse
@@ -405,7 +428,7 @@ Units	: 'units';
 
 
 //transforms
-Move	: 'move';
+Move	: 'moveTo';
 MoveBy	: 'moveBy';
 Heading	: 'headingBy';
 Copy	: 'copy';
@@ -566,53 +589,12 @@ Comment
   |  '/*' .* '*/'         {skip();}
   ;
 
-Space
-  : (' '| '\t'|'\r'|'\f'|'\n')+{$channel = HIDDEN;}
-  ;
+SpaceChars
+ : SP {skip();}
+ ;
 
 
-/*
 
-CONTINUED_LINE
-    :    '\\' ('\r')? '\n' (' '|'\t')*  { $channel=HIDDEN; }
-         ( nl=NEWLINE {emit(new ClassicToken(NEWLINE,nl.getText()));}
-         |
-         )
-    ;
-
-
-NEWLINE
-    :   (('\u000C')?('\r')? '\n' )+
-        {if ( startPos==0 || implicitLineJoiningLevel>0 )
-            $channel=HIDDEN;
-        }
-    ;
-    
-
-LEADING_WS
-@init {
-    int spaces = 0;
-}
-    :   {startPos==0}?=>
-        (   {implicitLineJoiningLevel>0}? ( ' ' | '\t' )+ {$channel=HIDDEN;}
-           |    (     ' '  { spaces++; }
-            |    '\t' { spaces += 8; spaces -= (spaces \% 8); }
-               )+
-            {
-            // make a string of n spaces where n is column number - 1
-            char[] indentation = new char[spaces];
-            for (int i=0; i<spaces; i++) {
-                indentation[i] = ' ';
-            }
-            String s = new String(indentation);
-            emit(new ClassicToken(LEADING_WS,new String(indentation)));
-            }
-            // kill trailing newline if present and then ignore
-            ( ('\r')? '\n' {if (token!=null) token.setChannel(HIDDEN); else $channel=HIDDEN;})*
-           // {token.setChannel(99); }
-        )
-    ;
-    */
 fragment Int
   :  '1'..'9' Digit*
   |  '0'
@@ -621,3 +603,8 @@ fragment Int
 fragment Digit 
   :  '0'..'9'
   ;
+  
+  fragment NL     : '\r'? '\n' | '\r';
+fragment SP     : (' ' | '\t')+;
+fragment Indent : ;
+fragment Dedent : ;

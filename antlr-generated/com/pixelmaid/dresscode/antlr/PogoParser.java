@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g 2014-03-11 16:03:14
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g 2014-03-17 15:01:59
 
   package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -22,31 +22,32 @@ public class PogoParser extends Parser {
 		"ATan", "Add", "AddDesign", "And", "Arc", "Assert", "Assign", "BLOCK", 
 		"Bool", "CBrace", "CBracket", "COLOR_CONSTANT", "CParen", "Clip", "Cm", 
 		"Comma", "Comment", "Copy", "Cosine", "Curve", "DOT", "DOTLOOKUP", "DOTPROPERTY", 
-		"Def", "Difference", "Digit", "Divide", "Do", "Dot", "DotEnd", "DotFill", 
-		"DotHeight", "DotOrigin", "DotRotation", "DotStart", "DotStroke", "DotWeight", 
-		"DotWidth", "DotX", "DotY", "EXP", "EXP_LIST", "Ellipse", "Else", "End", 
-		"Equals", "Excl", "Expand", "FUNCTION", "FUNC_CALL", "Fill", "Flatten", 
-		"For", "GT", "GTEquals", "Gaussian", "GetAngle", "GetDistance", "GetEnd", 
-		"GetFill", "GetHeight", "GetIntersect", "GetOrigin", "GetRadius", "GetRotation", 
-		"GetStart", "GetStroke", "GetWidth", "GetX", "GetY", "Grid", "Group", 
-		"HEIGHT_CONSTANT", "Heading", "Hide", "ID_LIST", "IF", "INDEXES", "Identifier", 
-		"If", "In", "Inch", "Int", "LAdd", "LIST", "LOOKUP", "LRemove", "LShape", 
-		"LT", "LTEquals", "Line", "Map", "Merge", "MirrorX", "MirrorY", "Mm", 
-		"Modulus", "Move", "MoveBy", "Multiply", "NEGATE", "NEquals", "NoFill", 
-		"NoStroke", "Noise", "Null", "Number", "OBrace", "OBracket", "OParen", 
-		"Or", "PI_CONSTANT", "Point", "Polygon", "Pow", "Print", "Println", "Pw", 
-		"QMark", "Quad", "RETURN", "Random", "Rect", "Repeat", "Return", "Rotate", 
-		"Round", "SPECIAL", "STATEMENTS", "SUB_CALL", "Scale", "SetCorner", "SetHFold", 
-		"SetHeight", "SetName", "SetSeam", "SetVFold", "SetWidth", "Show", "Sine", 
-		"Size", "Skirt", "SkirtBack", "Slider", "Space", "Spiral", "Sq", "Sqrt", 
-		"String", "Stroke", "Subtract", "TERNARY", "Tan", "Template", "TemplateCollection", 
-		"To", "Triangle", "UNARY_MIN", "Union", "Units", "WIDTH_CONSTANT", "Wave", 
-		"Weight", "While", "Xor", "'&&'", "';'", "'||'"
+		"Dedent", "Def", "Difference", "Digit", "Divide", "Do", "Dot", "DotEnd", 
+		"DotFill", "DotHeight", "DotOrigin", "DotRotation", "DotStart", "DotStroke", 
+		"DotWeight", "DotWidth", "DotX", "DotY", "EXP", "EXP_LIST", "Ellipse", 
+		"Else", "End", "Equals", "Excl", "Expand", "FUNCTION", "FUNC_CALL", "Fill", 
+		"Flatten", "For", "GT", "GTEquals", "Gaussian", "GetAngle", "GetDistance", 
+		"GetEnd", "GetFill", "GetHeight", "GetIntersect", "GetOrigin", "GetRadius", 
+		"GetRotation", "GetStart", "GetStroke", "GetWidth", "GetX", "GetY", "Grid", 
+		"Group", "HEIGHT_CONSTANT", "Heading", "Hide", "ID_LIST", "IF", "INDEXES", 
+		"Identifier", "If", "In", "Inch", "Indent", "Int", "LAdd", "LIST", "LOOKUP", 
+		"LRemove", "LShape", "LT", "LTEquals", "Line", "Map", "Merge", "MirrorX", 
+		"MirrorY", "Mm", "Modulus", "Move", "MoveBy", "Multiply", "NEGATE", "NEquals", 
+		"NL", "NoFill", "NoStroke", "Noise", "Null", "Number", "OBrace", "OBracket", 
+		"OParen", "Or", "PI_CONSTANT", "Point", "Polygon", "Pow", "Print", "Println", 
+		"Pw", "QMark", "Quad", "RETURN", "Random", "Rect", "Repeat", "Return", 
+		"Rotate", "Round", "SP", "SPECIAL", "STATEMENTS", "SUB_CALL", "Scale", 
+		"SetCorner", "SetHFold", "SetHeight", "SetName", "SetSeam", "SetVFold", 
+		"SetWidth", "Show", "Sine", "Size", "Skirt", "SkirtBack", "Slider", "SpaceChars", 
+		"Spiral", "Sq", "Sqrt", "String", "Stroke", "Subtract", "TERNARY", "Tan", 
+		"Template", "TemplateCollection", "To", "Triangle", "UNARY_MIN", "Union", 
+		"Units", "WIDTH_CONSTANT", "Wave", "Weight", "While", "Xor", "'&&'", "';'", 
+		"'||'"
 	};
 	public static final int EOF=-1;
-	public static final int T__172=172;
-	public static final int T__173=173;
-	public static final int T__174=174;
+	public static final int T__176=176;
+	public static final int T__177=177;
+	public static final int T__178=178;
 	public static final int ADD_CALL=4;
 	public static final int AND_CALL=5;
 	public static final int ASSIGNMENT=6;
@@ -73,148 +74,152 @@ public class PogoParser extends Parser {
 	public static final int DOT=27;
 	public static final int DOTLOOKUP=28;
 	public static final int DOTPROPERTY=29;
-	public static final int Def=30;
-	public static final int Difference=31;
-	public static final int Digit=32;
-	public static final int Divide=33;
-	public static final int Do=34;
-	public static final int Dot=35;
-	public static final int DotEnd=36;
-	public static final int DotFill=37;
-	public static final int DotHeight=38;
-	public static final int DotOrigin=39;
-	public static final int DotRotation=40;
-	public static final int DotStart=41;
-	public static final int DotStroke=42;
-	public static final int DotWeight=43;
-	public static final int DotWidth=44;
-	public static final int DotX=45;
-	public static final int DotY=46;
-	public static final int EXP=47;
-	public static final int EXP_LIST=48;
-	public static final int Ellipse=49;
-	public static final int Else=50;
-	public static final int End=51;
-	public static final int Equals=52;
-	public static final int Excl=53;
-	public static final int Expand=54;
-	public static final int FUNCTION=55;
-	public static final int FUNC_CALL=56;
-	public static final int Fill=57;
-	public static final int Flatten=58;
-	public static final int For=59;
-	public static final int GT=60;
-	public static final int GTEquals=61;
-	public static final int Gaussian=62;
-	public static final int GetAngle=63;
-	public static final int GetDistance=64;
-	public static final int GetEnd=65;
-	public static final int GetFill=66;
-	public static final int GetHeight=67;
-	public static final int GetIntersect=68;
-	public static final int GetOrigin=69;
-	public static final int GetRadius=70;
-	public static final int GetRotation=71;
-	public static final int GetStart=72;
-	public static final int GetStroke=73;
-	public static final int GetWidth=74;
-	public static final int GetX=75;
-	public static final int GetY=76;
-	public static final int Grid=77;
-	public static final int Group=78;
-	public static final int HEIGHT_CONSTANT=79;
-	public static final int Heading=80;
-	public static final int Hide=81;
-	public static final int ID_LIST=82;
-	public static final int IF=83;
-	public static final int INDEXES=84;
-	public static final int Identifier=85;
-	public static final int If=86;
-	public static final int In=87;
-	public static final int Inch=88;
-	public static final int Int=89;
-	public static final int LAdd=90;
-	public static final int LIST=91;
-	public static final int LOOKUP=92;
-	public static final int LRemove=93;
-	public static final int LShape=94;
-	public static final int LT=95;
-	public static final int LTEquals=96;
-	public static final int Line=97;
-	public static final int Map=98;
-	public static final int Merge=99;
-	public static final int MirrorX=100;
-	public static final int MirrorY=101;
-	public static final int Mm=102;
-	public static final int Modulus=103;
-	public static final int Move=104;
-	public static final int MoveBy=105;
-	public static final int Multiply=106;
-	public static final int NEGATE=107;
-	public static final int NEquals=108;
-	public static final int NoFill=109;
-	public static final int NoStroke=110;
-	public static final int Noise=111;
-	public static final int Null=112;
-	public static final int Number=113;
-	public static final int OBrace=114;
-	public static final int OBracket=115;
-	public static final int OParen=116;
-	public static final int Or=117;
-	public static final int PI_CONSTANT=118;
-	public static final int Point=119;
-	public static final int Polygon=120;
-	public static final int Pow=121;
-	public static final int Print=122;
-	public static final int Println=123;
-	public static final int Pw=124;
-	public static final int QMark=125;
-	public static final int Quad=126;
-	public static final int RETURN=127;
-	public static final int Random=128;
-	public static final int Rect=129;
-	public static final int Repeat=130;
-	public static final int Return=131;
-	public static final int Rotate=132;
-	public static final int Round=133;
-	public static final int SPECIAL=134;
-	public static final int STATEMENTS=135;
-	public static final int SUB_CALL=136;
-	public static final int Scale=137;
-	public static final int SetCorner=138;
-	public static final int SetHFold=139;
-	public static final int SetHeight=140;
-	public static final int SetName=141;
-	public static final int SetSeam=142;
-	public static final int SetVFold=143;
-	public static final int SetWidth=144;
-	public static final int Show=145;
-	public static final int Sine=146;
-	public static final int Size=147;
-	public static final int Skirt=148;
-	public static final int SkirtBack=149;
-	public static final int Slider=150;
-	public static final int Space=151;
-	public static final int Spiral=152;
-	public static final int Sq=153;
-	public static final int Sqrt=154;
-	public static final int String=155;
-	public static final int Stroke=156;
-	public static final int Subtract=157;
-	public static final int TERNARY=158;
-	public static final int Tan=159;
-	public static final int Template=160;
-	public static final int TemplateCollection=161;
-	public static final int To=162;
-	public static final int Triangle=163;
-	public static final int UNARY_MIN=164;
-	public static final int Union=165;
-	public static final int Units=166;
-	public static final int WIDTH_CONSTANT=167;
-	public static final int Wave=168;
-	public static final int Weight=169;
-	public static final int While=170;
-	public static final int Xor=171;
+	public static final int Dedent=30;
+	public static final int Def=31;
+	public static final int Difference=32;
+	public static final int Digit=33;
+	public static final int Divide=34;
+	public static final int Do=35;
+	public static final int Dot=36;
+	public static final int DotEnd=37;
+	public static final int DotFill=38;
+	public static final int DotHeight=39;
+	public static final int DotOrigin=40;
+	public static final int DotRotation=41;
+	public static final int DotStart=42;
+	public static final int DotStroke=43;
+	public static final int DotWeight=44;
+	public static final int DotWidth=45;
+	public static final int DotX=46;
+	public static final int DotY=47;
+	public static final int EXP=48;
+	public static final int EXP_LIST=49;
+	public static final int Ellipse=50;
+	public static final int Else=51;
+	public static final int End=52;
+	public static final int Equals=53;
+	public static final int Excl=54;
+	public static final int Expand=55;
+	public static final int FUNCTION=56;
+	public static final int FUNC_CALL=57;
+	public static final int Fill=58;
+	public static final int Flatten=59;
+	public static final int For=60;
+	public static final int GT=61;
+	public static final int GTEquals=62;
+	public static final int Gaussian=63;
+	public static final int GetAngle=64;
+	public static final int GetDistance=65;
+	public static final int GetEnd=66;
+	public static final int GetFill=67;
+	public static final int GetHeight=68;
+	public static final int GetIntersect=69;
+	public static final int GetOrigin=70;
+	public static final int GetRadius=71;
+	public static final int GetRotation=72;
+	public static final int GetStart=73;
+	public static final int GetStroke=74;
+	public static final int GetWidth=75;
+	public static final int GetX=76;
+	public static final int GetY=77;
+	public static final int Grid=78;
+	public static final int Group=79;
+	public static final int HEIGHT_CONSTANT=80;
+	public static final int Heading=81;
+	public static final int Hide=82;
+	public static final int ID_LIST=83;
+	public static final int IF=84;
+	public static final int INDEXES=85;
+	public static final int Identifier=86;
+	public static final int If=87;
+	public static final int In=88;
+	public static final int Inch=89;
+	public static final int Indent=90;
+	public static final int Int=91;
+	public static final int LAdd=92;
+	public static final int LIST=93;
+	public static final int LOOKUP=94;
+	public static final int LRemove=95;
+	public static final int LShape=96;
+	public static final int LT=97;
+	public static final int LTEquals=98;
+	public static final int Line=99;
+	public static final int Map=100;
+	public static final int Merge=101;
+	public static final int MirrorX=102;
+	public static final int MirrorY=103;
+	public static final int Mm=104;
+	public static final int Modulus=105;
+	public static final int Move=106;
+	public static final int MoveBy=107;
+	public static final int Multiply=108;
+	public static final int NEGATE=109;
+	public static final int NEquals=110;
+	public static final int NL=111;
+	public static final int NoFill=112;
+	public static final int NoStroke=113;
+	public static final int Noise=114;
+	public static final int Null=115;
+	public static final int Number=116;
+	public static final int OBrace=117;
+	public static final int OBracket=118;
+	public static final int OParen=119;
+	public static final int Or=120;
+	public static final int PI_CONSTANT=121;
+	public static final int Point=122;
+	public static final int Polygon=123;
+	public static final int Pow=124;
+	public static final int Print=125;
+	public static final int Println=126;
+	public static final int Pw=127;
+	public static final int QMark=128;
+	public static final int Quad=129;
+	public static final int RETURN=130;
+	public static final int Random=131;
+	public static final int Rect=132;
+	public static final int Repeat=133;
+	public static final int Return=134;
+	public static final int Rotate=135;
+	public static final int Round=136;
+	public static final int SP=137;
+	public static final int SPECIAL=138;
+	public static final int STATEMENTS=139;
+	public static final int SUB_CALL=140;
+	public static final int Scale=141;
+	public static final int SetCorner=142;
+	public static final int SetHFold=143;
+	public static final int SetHeight=144;
+	public static final int SetName=145;
+	public static final int SetSeam=146;
+	public static final int SetVFold=147;
+	public static final int SetWidth=148;
+	public static final int Show=149;
+	public static final int Sine=150;
+	public static final int Size=151;
+	public static final int Skirt=152;
+	public static final int SkirtBack=153;
+	public static final int Slider=154;
+	public static final int SpaceChars=155;
+	public static final int Spiral=156;
+	public static final int Sq=157;
+	public static final int Sqrt=158;
+	public static final int String=159;
+	public static final int Stroke=160;
+	public static final int Subtract=161;
+	public static final int TERNARY=162;
+	public static final int Tan=163;
+	public static final int Template=164;
+	public static final int TemplateCollection=165;
+	public static final int To=166;
+	public static final int Triangle=167;
+	public static final int UNARY_MIN=168;
+	public static final int Union=169;
+	public static final int Units=170;
+	public static final int WIDTH_CONSTANT=171;
+	public static final int Wave=172;
+	public static final int Weight=173;
+	public static final int While=174;
+	public static final int Xor=175;
 
 	// delegates
 	public Parser[] getDelegates() {
@@ -274,7 +279,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "parse"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:76:1: parse : block EOF -> block ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:99:1: parse : block EOF -> block ;
 	public final PogoParser.parse_return parse() throws RecognitionException {
 		PogoParser.parse_return retval = new PogoParser.parse_return();
 		retval.start = input.LT(1);
@@ -289,8 +294,8 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:77:3: ( block EOF -> block )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:77:6: block EOF
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:100:3: ( block EOF -> block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:100:6: block EOF
 			{
 			pushFollow(FOLLOW_block_in_parse183);
 			block1=block();
@@ -311,7 +316,7 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 77:16: -> block
+			// 100:16: -> block
 			{
 				adaptor.addChild(root_0, stream_block.nextTree());
 			}
@@ -348,7 +353,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "block"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:80:1: block : ( statement | functionDecl )* ( Return expression ';' )? -> ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:103:1: block : ( statement | functionDecl )* ( Return expression ';' )? -> ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) ) ;
 	public final PogoParser.block_return block() throws RecognitionException {
 		PogoParser.block_return retval = new PogoParser.block_return();
 		retval.start = input.LT(1);
@@ -363,22 +368,22 @@ public class PogoParser extends Parser {
 
 		Object Return5_tree=null;
 		Object char_literal7_tree=null;
-		RewriteRuleTokenStream stream_173=new RewriteRuleTokenStream(adaptor,"token 173");
 		RewriteRuleTokenStream stream_Return=new RewriteRuleTokenStream(adaptor,"token Return");
+		RewriteRuleTokenStream stream_177=new RewriteRuleTokenStream(adaptor,"token 177");
 		RewriteRuleSubtreeStream stream_statement=new RewriteRuleSubtreeStream(adaptor,"rule statement");
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 		RewriteRuleSubtreeStream stream_functionDecl=new RewriteRuleSubtreeStream(adaptor,"rule functionDecl");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:81:3: ( ( statement | functionDecl )* ( Return expression ';' )? -> ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:81:5: ( statement | functionDecl )* ( Return expression ';' )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:104:3: ( ( statement | functionDecl )* ( Return expression ';' )? -> ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:104:5: ( statement | functionDecl )* ( Return expression ';' )?
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:81:5: ( statement | functionDecl )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:104:5: ( statement | functionDecl )*
 			loop1:
 			while (true) {
 				int alt1=3;
 				int LA1_0 = input.LA(1);
-				if ( (LA1_0==ATan||LA1_0==AddDesign||(LA1_0 >= Arc && LA1_0 <= Assert)||(LA1_0 >= Clip && LA1_0 <= Cm)||(LA1_0 >= Copy && LA1_0 <= Curve)||LA1_0==Difference||LA1_0==Ellipse||LA1_0==Expand||(LA1_0 >= Fill && LA1_0 <= For)||(LA1_0 >= Gaussian && LA1_0 <= Group)||(LA1_0 >= Heading && LA1_0 <= Hide)||(LA1_0 >= Identifier && LA1_0 <= If)||LA1_0==Inch||LA1_0==LAdd||(LA1_0 >= LRemove && LA1_0 <= LShape)||(LA1_0 >= Line && LA1_0 <= Mm)||(LA1_0 >= Move && LA1_0 <= MoveBy)||(LA1_0 >= NoFill && LA1_0 <= Noise)||(LA1_0 >= Point && LA1_0 <= Println)||(LA1_0 >= Random && LA1_0 <= Repeat)||(LA1_0 >= Rotate && LA1_0 <= Round)||(LA1_0 >= Scale && LA1_0 <= Slider)||(LA1_0 >= Sq && LA1_0 <= Sqrt)||LA1_0==Stroke||(LA1_0 >= Tan && LA1_0 <= TemplateCollection)||(LA1_0 >= Union && LA1_0 <= Units)||(LA1_0 >= Wave && LA1_0 <= Xor)||LA1_0==173) ) {
+				if ( (LA1_0==ATan||LA1_0==AddDesign||(LA1_0 >= Arc && LA1_0 <= Assert)||(LA1_0 >= Clip && LA1_0 <= Cm)||(LA1_0 >= Copy && LA1_0 <= Curve)||LA1_0==Difference||LA1_0==Ellipse||LA1_0==Expand||(LA1_0 >= Fill && LA1_0 <= For)||(LA1_0 >= Gaussian && LA1_0 <= Group)||(LA1_0 >= Heading && LA1_0 <= Hide)||(LA1_0 >= Identifier && LA1_0 <= If)||LA1_0==Inch||LA1_0==LAdd||(LA1_0 >= LRemove && LA1_0 <= LShape)||(LA1_0 >= Line && LA1_0 <= Mm)||(LA1_0 >= Move && LA1_0 <= MoveBy)||(LA1_0 >= NoFill && LA1_0 <= Noise)||(LA1_0 >= Point && LA1_0 <= Println)||(LA1_0 >= Random && LA1_0 <= Repeat)||(LA1_0 >= Rotate && LA1_0 <= Round)||(LA1_0 >= Scale && LA1_0 <= Slider)||(LA1_0 >= Sq && LA1_0 <= Sqrt)||LA1_0==Stroke||(LA1_0 >= Tan && LA1_0 <= TemplateCollection)||(LA1_0 >= Union && LA1_0 <= Units)||(LA1_0 >= Wave && LA1_0 <= Xor)||LA1_0==177) ) {
 					alt1=1;
 				}
 				else if ( (LA1_0==Def) ) {
@@ -387,7 +392,7 @@ public class PogoParser extends Parser {
 
 				switch (alt1) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:81:6: statement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:104:6: statement
 					{
 					pushFollow(FOLLOW_statement_in_block203);
 					statement3=statement();
@@ -397,7 +402,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:81:18: functionDecl
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:104:18: functionDecl
 					{
 					pushFollow(FOLLOW_functionDecl_in_block207);
 					functionDecl4=functionDecl();
@@ -412,7 +417,7 @@ public class PogoParser extends Parser {
 				}
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:81:33: ( Return expression ';' )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:104:33: ( Return expression ';' )?
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0==Return) ) {
@@ -420,7 +425,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt2) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:81:34: Return expression ';'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:104:34: Return expression ';'
 					{
 					Return5=(Token)match(input,Return,FOLLOW_Return_in_block212);  
 					stream_Return.add(Return5);
@@ -430,8 +435,8 @@ public class PogoParser extends Parser {
 					state._fsp--;
 
 					stream_expression.add(expression6.getTree());
-					char_literal7=(Token)match(input,173,FOLLOW_173_in_block216);  
-					stream_173.add(char_literal7);
+					char_literal7=(Token)match(input,177,FOLLOW_177_in_block216);  
+					stream_177.add(char_literal7);
 
 					}
 					break;
@@ -449,17 +454,17 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 82:6: -> ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) )
+			// 105:6: -> ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:82:9: ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:9: ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(BLOCK, "BLOCK"), root_1);
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:82:17: ^( STATEMENTS ( statement )* )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:17: ^( STATEMENTS ( statement )* )
 				{
 				Object root_2 = (Object)adaptor.nil();
 				root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(STATEMENTS, "STATEMENTS"), root_2);
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:82:30: ( statement )*
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:30: ( statement )*
 				while ( stream_statement.hasNext() ) {
 					adaptor.addChild(root_2, stream_statement.nextTree());
 				}
@@ -468,11 +473,11 @@ public class PogoParser extends Parser {
 				adaptor.addChild(root_1, root_2);
 				}
 
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:82:42: ^( RETURN ( expression )? )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:42: ^( RETURN ( expression )? )
 				{
 				Object root_2 = (Object)adaptor.nil();
 				root_2 = (Object)adaptor.becomeRoot((Object)adaptor.create(RETURN, "RETURN"), root_2);
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:82:51: ( expression )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:51: ( expression )?
 				if ( stream_expression.hasNext() ) {
 					adaptor.addChild(root_2, stream_expression.nextTree());
 				}
@@ -518,7 +523,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "statement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:85:1: statement : ( assignment ';' -> assignment | functionCall ';' -> functionCall | ifStatement | forStatement | whileStatement | repeatStatement );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:108:1: statement : ( assignment ';' -> assignment | functionCall ';' -> functionCall | ifStatement | forStatement | whileStatement | repeatStatement );
 	public final PogoParser.statement_return statement() throws RecognitionException {
 		PogoParser.statement_return retval = new PogoParser.statement_return();
 		retval.start = input.LT(1);
@@ -536,12 +541,12 @@ public class PogoParser extends Parser {
 
 		Object char_literal9_tree=null;
 		Object char_literal11_tree=null;
-		RewriteRuleTokenStream stream_173=new RewriteRuleTokenStream(adaptor,"token 173");
+		RewriteRuleTokenStream stream_177=new RewriteRuleTokenStream(adaptor,"token 177");
 		RewriteRuleSubtreeStream stream_functionCall=new RewriteRuleSubtreeStream(adaptor,"rule functionCall");
 		RewriteRuleSubtreeStream stream_assignment=new RewriteRuleSubtreeStream(adaptor,"rule assignment");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:86:3: ( assignment ';' -> assignment | functionCall ';' -> functionCall | ifStatement | forStatement | whileStatement | repeatStatement )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:109:3: ( assignment ';' -> assignment | functionCall ';' -> functionCall | ifStatement | forStatement | whileStatement | repeatStatement )
 			int alt3=6;
 			switch ( input.LA(1) ) {
 			case Identifier:
@@ -550,7 +555,7 @@ public class PogoParser extends Parser {
 				if ( (LA3_1==OParen) ) {
 					alt3=2;
 				}
-				else if ( (LA3_1==Assign||LA3_1==OBracket||LA3_1==173) ) {
+				else if ( (LA3_1==Assign||LA3_1==OBracket||LA3_1==177) ) {
 					alt3=1;
 				}
 
@@ -568,7 +573,7 @@ public class PogoParser extends Parser {
 
 				}
 				break;
-			case 173:
+			case 177:
 				{
 				alt3=1;
 				}
@@ -686,15 +691,15 @@ public class PogoParser extends Parser {
 			}
 			switch (alt3) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:86:6: assignment ';'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:109:6: assignment ';'
 					{
 					pushFollow(FOLLOW_assignment_in_statement258);
 					assignment8=assignment();
 					state._fsp--;
 
 					stream_assignment.add(assignment8.getTree());
-					char_literal9=(Token)match(input,173,FOLLOW_173_in_statement260);  
-					stream_173.add(char_literal9);
+					char_literal9=(Token)match(input,177,FOLLOW_177_in_statement260);  
+					stream_177.add(char_literal9);
 
 					// AST REWRITE
 					// elements: assignment
@@ -707,7 +712,7 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 86:23: -> assignment
+					// 109:23: -> assignment
 					{
 						adaptor.addChild(root_0, stream_assignment.nextTree());
 					}
@@ -718,15 +723,15 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:87:6: functionCall ';'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:110:6: functionCall ';'
 					{
 					pushFollow(FOLLOW_functionCall_in_statement273);
 					functionCall10=functionCall();
 					state._fsp--;
 
 					stream_functionCall.add(functionCall10.getTree());
-					char_literal11=(Token)match(input,173,FOLLOW_173_in_statement275);  
-					stream_173.add(char_literal11);
+					char_literal11=(Token)match(input,177,FOLLOW_177_in_statement275);  
+					stream_177.add(char_literal11);
 
 					// AST REWRITE
 					// elements: functionCall
@@ -739,7 +744,7 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 87:24: -> functionCall
+					// 110:24: -> functionCall
 					{
 						adaptor.addChild(root_0, stream_functionCall.nextTree());
 					}
@@ -750,7 +755,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:88:6: ifStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:111:6: ifStatement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -764,7 +769,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:89:6: forStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:112:6: forStatement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -778,7 +783,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:90:6: whileStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:113:6: whileStatement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -792,7 +797,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:91:6: repeatStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:114:6: repeatStatement
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -834,7 +839,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "assignment"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:94:1: assignment : ( Identifier ( indexes )? ( '=' expression )? -> ^( ASSIGNMENT Identifier ( indexes )? ( expression )? ) |);
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:117:1: assignment : ( Identifier ( indexes )? ( '=' expression )? -> ^( ASSIGNMENT Identifier ( indexes )? ( expression )? ) |);
 	public final PogoParser.assignment_return assignment() throws RecognitionException {
 		PogoParser.assignment_return retval = new PogoParser.assignment_return();
 		retval.start = input.LT(1);
@@ -854,13 +859,13 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_indexes=new RewriteRuleSubtreeStream(adaptor,"rule indexes");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:95:3: ( Identifier ( indexes )? ( '=' expression )? -> ^( ASSIGNMENT Identifier ( indexes )? ( expression )? ) |)
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:3: ( Identifier ( indexes )? ( '=' expression )? -> ^( ASSIGNMENT Identifier ( indexes )? ( expression )? ) |)
 			int alt6=2;
 			int LA6_0 = input.LA(1);
 			if ( (LA6_0==Identifier) ) {
 				alt6=1;
 			}
-			else if ( (LA6_0==173) ) {
+			else if ( (LA6_0==177) ) {
 				alt6=2;
 			}
 
@@ -872,12 +877,12 @@ public class PogoParser extends Parser {
 
 			switch (alt6) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:95:6: Identifier ( indexes )? ( '=' expression )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:6: Identifier ( indexes )? ( '=' expression )?
 					{
 					Identifier16=(Token)match(input,Identifier,FOLLOW_Identifier_in_assignment322);  
 					stream_Identifier.add(Identifier16);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:95:17: ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:17: ( indexes )?
 					int alt4=2;
 					int LA4_0 = input.LA(1);
 					if ( (LA4_0==OBracket) ) {
@@ -885,7 +890,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt4) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:95:17: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:17: indexes
 							{
 							pushFollow(FOLLOW_indexes_in_assignment324);
 							indexes17=indexes();
@@ -897,7 +902,7 @@ public class PogoParser extends Parser {
 
 					}
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:95:26: ( '=' expression )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:26: ( '=' expression )?
 					int alt5=2;
 					int LA5_0 = input.LA(1);
 					if ( (LA5_0==Assign) ) {
@@ -905,7 +910,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt5) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:95:27: '=' expression
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:27: '=' expression
 							{
 							char_literal18=(Token)match(input,Assign,FOLLOW_Assign_in_assignment328);  
 							stream_Assign.add(char_literal18);
@@ -931,20 +936,20 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 95:45: -> ^( ASSIGNMENT Identifier ( indexes )? ( expression )? )
+					// 118:45: -> ^( ASSIGNMENT Identifier ( indexes )? ( expression )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:95:48: ^( ASSIGNMENT Identifier ( indexes )? ( expression )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:48: ^( ASSIGNMENT Identifier ( indexes )? ( expression )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(ASSIGNMENT, "ASSIGNMENT"), root_1);
 						adaptor.addChild(root_1, stream_Identifier.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:95:72: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:72: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
 						stream_indexes.reset();
 
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:95:81: ( expression )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:81: ( expression )?
 						if ( stream_expression.hasNext() ) {
 							adaptor.addChild(root_1, stream_expression.nextTree());
 						}
@@ -961,7 +966,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:97:3: 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:120:3: 
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -997,7 +1002,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "functionCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:99:1: functionCall : ( Identifier '(' ( exprList )? ')' -> ^( FUNC_CALL Identifier ( exprList )? ) | Println '(' ( expression )? ')' -> ^( FUNC_CALL Println ( expression )? ) | Print '(' expression ')' -> ^( FUNC_CALL Print expression ) | Assert '(' expression ')' -> ^( FUNC_CALL Assert expression ) | Size '(' expression ')' -> ^( FUNC_CALL Size expression ) | LAdd '(' ( exprList )? ')' -> ^( FUNC_CALL LAdd ( exprList )? ) | LRemove '(' ( exprList )? ')' -> ^( FUNC_CALL LRemove ( exprList )? ) | primitiveCall | transformCall | patternCall | mathCall | getCall | uICall | templateCall );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:122:1: functionCall : ( Identifier '(' ( exprList )? ')' -> ^( FUNC_CALL Identifier ( exprList )? ) | Println '(' ( expression )? ')' -> ^( FUNC_CALL Println ( expression )? ) | Print '(' expression ')' -> ^( FUNC_CALL Print expression ) | Assert '(' expression ')' -> ^( FUNC_CALL Assert expression ) | Size '(' expression ')' -> ^( FUNC_CALL Size expression ) | LAdd '(' ( exprList )? ')' -> ^( FUNC_CALL LAdd ( exprList )? ) | LRemove '(' ( exprList )? ')' -> ^( FUNC_CALL LRemove ( exprList )? ) | primitiveCall | transformCall | patternCall | mathCall | getCall | uICall | templateCall );
 	public final PogoParser.functionCall_return functionCall() throws RecognitionException {
 		PogoParser.functionCall_return retval = new PogoParser.functionCall_return();
 		retval.start = input.LT(1);
@@ -1074,7 +1079,7 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:100:3: ( Identifier '(' ( exprList )? ')' -> ^( FUNC_CALL Identifier ( exprList )? ) | Println '(' ( expression )? ')' -> ^( FUNC_CALL Println ( expression )? ) | Print '(' expression ')' -> ^( FUNC_CALL Print expression ) | Assert '(' expression ')' -> ^( FUNC_CALL Assert expression ) | Size '(' expression ')' -> ^( FUNC_CALL Size expression ) | LAdd '(' ( exprList )? ')' -> ^( FUNC_CALL LAdd ( exprList )? ) | LRemove '(' ( exprList )? ')' -> ^( FUNC_CALL LRemove ( exprList )? ) | primitiveCall | transformCall | patternCall | mathCall | getCall | uICall | templateCall )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:3: ( Identifier '(' ( exprList )? ')' -> ^( FUNC_CALL Identifier ( exprList )? ) | Println '(' ( expression )? ')' -> ^( FUNC_CALL Println ( expression )? ) | Print '(' expression ')' -> ^( FUNC_CALL Print expression ) | Assert '(' expression ')' -> ^( FUNC_CALL Assert expression ) | Size '(' expression ')' -> ^( FUNC_CALL Size expression ) | LAdd '(' ( exprList )? ')' -> ^( FUNC_CALL LAdd ( exprList )? ) | LRemove '(' ( exprList )? ')' -> ^( FUNC_CALL LRemove ( exprList )? ) | primitiveCall | transformCall | patternCall | mathCall | getCall | uICall | templateCall )
 			int alt11=14;
 			switch ( input.LA(1) ) {
 			case Identifier:
@@ -1223,7 +1228,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt11) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:100:6: Identifier '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:6: Identifier '(' ( exprList )? ')'
 					{
 					Identifier20=(Token)match(input,Identifier,FOLLOW_Identifier_in_functionCall366);  
 					stream_Identifier.add(Identifier20);
@@ -1231,7 +1236,7 @@ public class PogoParser extends Parser {
 					char_literal21=(Token)match(input,OParen,FOLLOW_OParen_in_functionCall368);  
 					stream_OParen.add(char_literal21);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:100:21: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:21: ( exprList )?
 					int alt7=2;
 					int LA7_0 = input.LA(1);
 					if ( (LA7_0==ATan||LA7_0==AddDesign||(LA7_0 >= Arc && LA7_0 <= Assert)||LA7_0==Bool||LA7_0==COLOR_CONSTANT||(LA7_0 >= Clip && LA7_0 <= Cm)||(LA7_0 >= Copy && LA7_0 <= Curve)||LA7_0==Difference||LA7_0==Ellipse||(LA7_0 >= Excl && LA7_0 <= Expand)||(LA7_0 >= Fill && LA7_0 <= Flatten)||(LA7_0 >= Gaussian && LA7_0 <= Hide)||LA7_0==Identifier||LA7_0==Inch||LA7_0==LAdd||(LA7_0 >= LRemove && LA7_0 <= LShape)||(LA7_0 >= Line && LA7_0 <= Mm)||(LA7_0 >= Move && LA7_0 <= MoveBy)||(LA7_0 >= NoFill && LA7_0 <= Number)||(LA7_0 >= OBracket && LA7_0 <= OParen)||(LA7_0 >= PI_CONSTANT && LA7_0 <= Println)||(LA7_0 >= Random && LA7_0 <= Rect)||(LA7_0 >= Rotate && LA7_0 <= Round)||(LA7_0 >= Scale && LA7_0 <= Slider)||(LA7_0 >= Sq && LA7_0 <= Subtract)||(LA7_0 >= Tan && LA7_0 <= TemplateCollection)||(LA7_0 >= Union && LA7_0 <= Weight)||LA7_0==Xor) ) {
@@ -1239,7 +1244,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt7) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:100:21: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:21: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_functionCall370);
 							exprList22=exprList();
@@ -1265,14 +1270,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 100:35: -> ^( FUNC_CALL Identifier ( exprList )? )
+					// 123:35: -> ^( FUNC_CALL Identifier ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:100:38: ^( FUNC_CALL Identifier ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:38: ^( FUNC_CALL Identifier ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Identifier.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:100:61: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:61: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -1289,7 +1294,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:101:6: Println '(' ( expression )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:124:6: Println '(' ( expression )? ')'
 					{
 					Println24=(Token)match(input,Println,FOLLOW_Println_in_functionCall391);  
 					stream_Println.add(Println24);
@@ -1297,7 +1302,7 @@ public class PogoParser extends Parser {
 					char_literal25=(Token)match(input,OParen,FOLLOW_OParen_in_functionCall393);  
 					stream_OParen.add(char_literal25);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:101:18: ( expression )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:124:18: ( expression )?
 					int alt8=2;
 					int LA8_0 = input.LA(1);
 					if ( (LA8_0==ATan||LA8_0==AddDesign||(LA8_0 >= Arc && LA8_0 <= Assert)||LA8_0==Bool||LA8_0==COLOR_CONSTANT||(LA8_0 >= Clip && LA8_0 <= Cm)||(LA8_0 >= Copy && LA8_0 <= Curve)||LA8_0==Difference||LA8_0==Ellipse||(LA8_0 >= Excl && LA8_0 <= Expand)||(LA8_0 >= Fill && LA8_0 <= Flatten)||(LA8_0 >= Gaussian && LA8_0 <= Hide)||LA8_0==Identifier||LA8_0==Inch||LA8_0==LAdd||(LA8_0 >= LRemove && LA8_0 <= LShape)||(LA8_0 >= Line && LA8_0 <= Mm)||(LA8_0 >= Move && LA8_0 <= MoveBy)||(LA8_0 >= NoFill && LA8_0 <= Number)||(LA8_0 >= OBracket && LA8_0 <= OParen)||(LA8_0 >= PI_CONSTANT && LA8_0 <= Println)||(LA8_0 >= Random && LA8_0 <= Rect)||(LA8_0 >= Rotate && LA8_0 <= Round)||(LA8_0 >= Scale && LA8_0 <= Slider)||(LA8_0 >= Sq && LA8_0 <= Subtract)||(LA8_0 >= Tan && LA8_0 <= TemplateCollection)||(LA8_0 >= Union && LA8_0 <= Weight)||LA8_0==Xor) ) {
@@ -1305,7 +1310,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt8) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:101:18: expression
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:124:18: expression
 							{
 							pushFollow(FOLLOW_expression_in_functionCall395);
 							expression26=expression();
@@ -1331,14 +1336,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 101:35: -> ^( FUNC_CALL Println ( expression )? )
+					// 124:35: -> ^( FUNC_CALL Println ( expression )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:101:38: ^( FUNC_CALL Println ( expression )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:124:38: ^( FUNC_CALL Println ( expression )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Println.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:101:58: ( expression )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:124:58: ( expression )?
 						if ( stream_expression.hasNext() ) {
 							adaptor.addChild(root_1, stream_expression.nextTree());
 						}
@@ -1355,7 +1360,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:102:6: Print '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:125:6: Print '(' expression ')'
 					{
 					Print28=(Token)match(input,Print,FOLLOW_Print_in_functionCall417);  
 					stream_Print.add(Print28);
@@ -1382,9 +1387,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 102:35: -> ^( FUNC_CALL Print expression )
+					// 125:35: -> ^( FUNC_CALL Print expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:102:38: ^( FUNC_CALL Print expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:125:38: ^( FUNC_CALL Print expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -1401,7 +1406,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:103:6: Assert '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:126:6: Assert '(' expression ')'
 					{
 					Assert32=(Token)match(input,Assert,FOLLOW_Assert_in_functionCall444);  
 					stream_Assert.add(Assert32);
@@ -1428,9 +1433,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 103:35: -> ^( FUNC_CALL Assert expression )
+					// 126:35: -> ^( FUNC_CALL Assert expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:103:38: ^( FUNC_CALL Assert expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:126:38: ^( FUNC_CALL Assert expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -1447,7 +1452,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:104:6: Size '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:127:6: Size '(' expression ')'
 					{
 					Size36=(Token)match(input,Size,FOLLOW_Size_in_functionCall470);  
 					stream_Size.add(Size36);
@@ -1474,9 +1479,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 104:35: -> ^( FUNC_CALL Size expression )
+					// 127:35: -> ^( FUNC_CALL Size expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:104:38: ^( FUNC_CALL Size expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:127:38: ^( FUNC_CALL Size expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -1493,7 +1498,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:6: LAdd '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:128:6: LAdd '(' ( exprList )? ')'
 					{
 					LAdd40=(Token)match(input,LAdd,FOLLOW_LAdd_in_functionCall498);  
 					stream_LAdd.add(LAdd40);
@@ -1501,7 +1506,7 @@ public class PogoParser extends Parser {
 					char_literal41=(Token)match(input,OParen,FOLLOW_OParen_in_functionCall500);  
 					stream_OParen.add(char_literal41);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:15: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:128:15: ( exprList )?
 					int alt9=2;
 					int LA9_0 = input.LA(1);
 					if ( (LA9_0==ATan||LA9_0==AddDesign||(LA9_0 >= Arc && LA9_0 <= Assert)||LA9_0==Bool||LA9_0==COLOR_CONSTANT||(LA9_0 >= Clip && LA9_0 <= Cm)||(LA9_0 >= Copy && LA9_0 <= Curve)||LA9_0==Difference||LA9_0==Ellipse||(LA9_0 >= Excl && LA9_0 <= Expand)||(LA9_0 >= Fill && LA9_0 <= Flatten)||(LA9_0 >= Gaussian && LA9_0 <= Hide)||LA9_0==Identifier||LA9_0==Inch||LA9_0==LAdd||(LA9_0 >= LRemove && LA9_0 <= LShape)||(LA9_0 >= Line && LA9_0 <= Mm)||(LA9_0 >= Move && LA9_0 <= MoveBy)||(LA9_0 >= NoFill && LA9_0 <= Number)||(LA9_0 >= OBracket && LA9_0 <= OParen)||(LA9_0 >= PI_CONSTANT && LA9_0 <= Println)||(LA9_0 >= Random && LA9_0 <= Rect)||(LA9_0 >= Rotate && LA9_0 <= Round)||(LA9_0 >= Scale && LA9_0 <= Slider)||(LA9_0 >= Sq && LA9_0 <= Subtract)||(LA9_0 >= Tan && LA9_0 <= TemplateCollection)||(LA9_0 >= Union && LA9_0 <= Weight)||LA9_0==Xor) ) {
@@ -1509,7 +1514,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt9) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:15: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:128:15: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_functionCall502);
 							exprList42=exprList();
@@ -1535,14 +1540,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 105:31: -> ^( FUNC_CALL LAdd ( exprList )? )
+					// 128:31: -> ^( FUNC_CALL LAdd ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:34: ^( FUNC_CALL LAdd ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:128:34: ^( FUNC_CALL LAdd ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_LAdd.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:105:51: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:128:51: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -1559,7 +1564,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:106:6: LRemove '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:129:6: LRemove '(' ( exprList )? ')'
 					{
 					LRemove44=(Token)match(input,LRemove,FOLLOW_LRemove_in_functionCall526);  
 					stream_LRemove.add(LRemove44);
@@ -1567,7 +1572,7 @@ public class PogoParser extends Parser {
 					char_literal45=(Token)match(input,OParen,FOLLOW_OParen_in_functionCall528);  
 					stream_OParen.add(char_literal45);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:106:18: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:129:18: ( exprList )?
 					int alt10=2;
 					int LA10_0 = input.LA(1);
 					if ( (LA10_0==ATan||LA10_0==AddDesign||(LA10_0 >= Arc && LA10_0 <= Assert)||LA10_0==Bool||LA10_0==COLOR_CONSTANT||(LA10_0 >= Clip && LA10_0 <= Cm)||(LA10_0 >= Copy && LA10_0 <= Curve)||LA10_0==Difference||LA10_0==Ellipse||(LA10_0 >= Excl && LA10_0 <= Expand)||(LA10_0 >= Fill && LA10_0 <= Flatten)||(LA10_0 >= Gaussian && LA10_0 <= Hide)||LA10_0==Identifier||LA10_0==Inch||LA10_0==LAdd||(LA10_0 >= LRemove && LA10_0 <= LShape)||(LA10_0 >= Line && LA10_0 <= Mm)||(LA10_0 >= Move && LA10_0 <= MoveBy)||(LA10_0 >= NoFill && LA10_0 <= Number)||(LA10_0 >= OBracket && LA10_0 <= OParen)||(LA10_0 >= PI_CONSTANT && LA10_0 <= Println)||(LA10_0 >= Random && LA10_0 <= Rect)||(LA10_0 >= Rotate && LA10_0 <= Round)||(LA10_0 >= Scale && LA10_0 <= Slider)||(LA10_0 >= Sq && LA10_0 <= Subtract)||(LA10_0 >= Tan && LA10_0 <= TemplateCollection)||(LA10_0 >= Union && LA10_0 <= Weight)||LA10_0==Xor) ) {
@@ -1575,7 +1580,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt10) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:106:18: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:129:18: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_functionCall530);
 							exprList46=exprList();
@@ -1601,14 +1606,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 106:34: -> ^( FUNC_CALL LRemove ( exprList )? )
+					// 129:34: -> ^( FUNC_CALL LRemove ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:106:37: ^( FUNC_CALL LRemove ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:129:37: ^( FUNC_CALL LRemove ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_LRemove.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:106:57: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:129:57: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -1625,7 +1630,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:107:6: primitiveCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:130:6: primitiveCall
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1639,7 +1644,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:108:6: transformCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:131:6: transformCall
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1653,7 +1658,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:109:6: patternCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:132:6: patternCall
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1667,7 +1672,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:110:6: mathCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:133:6: mathCall
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1681,7 +1686,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:111:5: getCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:134:5: getCall
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1695,7 +1700,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:112:5: uICall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:135:5: uICall
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1709,7 +1714,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:113:5: templateCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:136:5: templateCall
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -1751,7 +1756,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "primitiveCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:117:3: primitiveCall : ( Ellipse '(' ( exprList )? ')' -> ^( FUNC_CALL Ellipse ( exprList )? ) | Line '(' ( exprList )? ')' -> ^( FUNC_CALL Line ( exprList )? ) | Rect '(' ( exprList )? ')' -> ^( FUNC_CALL Rect ( exprList )? ) | Curve '(' ( exprList )? ')' -> ^( FUNC_CALL Curve ( exprList )? ) | Polygon '(' ( exprList )? ')' -> ^( FUNC_CALL Polygon ( exprList )? ) | Skirt '(' ( exprList )? ')' -> ^( FUNC_CALL Skirt ( exprList )? ) | SkirtBack '(' ( exprList )? ')' -> ^( FUNC_CALL SkirtBack ( exprList )? ) | LShape '(' ( exprList )? ')' -> ^( FUNC_CALL LShape ( exprList )? ) | Point '(' ( exprList )? ')' -> ^( FUNC_CALL Point ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:140:3: primitiveCall : ( Ellipse '(' ( exprList )? ')' -> ^( FUNC_CALL Ellipse ( exprList )? ) | Line '(' ( exprList )? ')' -> ^( FUNC_CALL Line ( exprList )? ) | Rect '(' ( exprList )? ')' -> ^( FUNC_CALL Rect ( exprList )? ) | Curve '(' ( exprList )? ')' -> ^( FUNC_CALL Curve ( exprList )? ) | Polygon '(' ( exprList )? ')' -> ^( FUNC_CALL Polygon ( exprList )? ) | Skirt '(' ( exprList )? ')' -> ^( FUNC_CALL Skirt ( exprList )? ) | SkirtBack '(' ( exprList )? ')' -> ^( FUNC_CALL SkirtBack ( exprList )? ) | LShape '(' ( exprList )? ')' -> ^( FUNC_CALL LShape ( exprList )? ) | Point '(' ( exprList )? ')' -> ^( FUNC_CALL Point ( exprList )? ) );
 	public final PogoParser.primitiveCall_return primitiveCall() throws RecognitionException {
 		PogoParser.primitiveCall_return retval = new PogoParser.primitiveCall_return();
 		retval.start = input.LT(1);
@@ -1836,7 +1841,7 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:4: ( Ellipse '(' ( exprList )? ')' -> ^( FUNC_CALL Ellipse ( exprList )? ) | Line '(' ( exprList )? ')' -> ^( FUNC_CALL Line ( exprList )? ) | Rect '(' ( exprList )? ')' -> ^( FUNC_CALL Rect ( exprList )? ) | Curve '(' ( exprList )? ')' -> ^( FUNC_CALL Curve ( exprList )? ) | Polygon '(' ( exprList )? ')' -> ^( FUNC_CALL Polygon ( exprList )? ) | Skirt '(' ( exprList )? ')' -> ^( FUNC_CALL Skirt ( exprList )? ) | SkirtBack '(' ( exprList )? ')' -> ^( FUNC_CALL SkirtBack ( exprList )? ) | LShape '(' ( exprList )? ')' -> ^( FUNC_CALL LShape ( exprList )? ) | Point '(' ( exprList )? ')' -> ^( FUNC_CALL Point ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:141:4: ( Ellipse '(' ( exprList )? ')' -> ^( FUNC_CALL Ellipse ( exprList )? ) | Line '(' ( exprList )? ')' -> ^( FUNC_CALL Line ( exprList )? ) | Rect '(' ( exprList )? ')' -> ^( FUNC_CALL Rect ( exprList )? ) | Curve '(' ( exprList )? ')' -> ^( FUNC_CALL Curve ( exprList )? ) | Polygon '(' ( exprList )? ')' -> ^( FUNC_CALL Polygon ( exprList )? ) | Skirt '(' ( exprList )? ')' -> ^( FUNC_CALL Skirt ( exprList )? ) | SkirtBack '(' ( exprList )? ')' -> ^( FUNC_CALL SkirtBack ( exprList )? ) | LShape '(' ( exprList )? ')' -> ^( FUNC_CALL LShape ( exprList )? ) | Point '(' ( exprList )? ')' -> ^( FUNC_CALL Point ( exprList )? ) )
 			int alt21=9;
 			switch ( input.LA(1) ) {
 			case Ellipse:
@@ -1891,7 +1896,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt21) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:5: Ellipse '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:141:5: Ellipse '(' ( exprList )? ')'
 					{
 					Ellipse55=(Token)match(input,Ellipse,FOLLOW_Ellipse_in_primitiveCall613);  
 					stream_Ellipse.add(Ellipse55);
@@ -1899,7 +1904,7 @@ public class PogoParser extends Parser {
 					char_literal56=(Token)match(input,OParen,FOLLOW_OParen_in_primitiveCall615);  
 					stream_OParen.add(char_literal56);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:141:17: ( exprList )?
 					int alt12=2;
 					int LA12_0 = input.LA(1);
 					if ( (LA12_0==ATan||LA12_0==AddDesign||(LA12_0 >= Arc && LA12_0 <= Assert)||LA12_0==Bool||LA12_0==COLOR_CONSTANT||(LA12_0 >= Clip && LA12_0 <= Cm)||(LA12_0 >= Copy && LA12_0 <= Curve)||LA12_0==Difference||LA12_0==Ellipse||(LA12_0 >= Excl && LA12_0 <= Expand)||(LA12_0 >= Fill && LA12_0 <= Flatten)||(LA12_0 >= Gaussian && LA12_0 <= Hide)||LA12_0==Identifier||LA12_0==Inch||LA12_0==LAdd||(LA12_0 >= LRemove && LA12_0 <= LShape)||(LA12_0 >= Line && LA12_0 <= Mm)||(LA12_0 >= Move && LA12_0 <= MoveBy)||(LA12_0 >= NoFill && LA12_0 <= Number)||(LA12_0 >= OBracket && LA12_0 <= OParen)||(LA12_0 >= PI_CONSTANT && LA12_0 <= Println)||(LA12_0 >= Random && LA12_0 <= Rect)||(LA12_0 >= Rotate && LA12_0 <= Round)||(LA12_0 >= Scale && LA12_0 <= Slider)||(LA12_0 >= Sq && LA12_0 <= Subtract)||(LA12_0 >= Tan && LA12_0 <= TemplateCollection)||(LA12_0 >= Union && LA12_0 <= Weight)||LA12_0==Xor) ) {
@@ -1907,7 +1912,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt12) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:141:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall617);
 							exprList57=exprList();
@@ -1933,14 +1938,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 118:33: -> ^( FUNC_CALL Ellipse ( exprList )? )
+					// 141:33: -> ^( FUNC_CALL Ellipse ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:36: ^( FUNC_CALL Ellipse ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:141:36: ^( FUNC_CALL Ellipse ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Ellipse.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:118:56: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:141:56: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -1957,7 +1962,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:119:5: Line '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:142:5: Line '(' ( exprList )? ')'
 					{
 					Line59=(Token)match(input,Line,FOLLOW_Line_in_primitiveCall640);  
 					stream_Line.add(Line59);
@@ -1965,7 +1970,7 @@ public class PogoParser extends Parser {
 					char_literal60=(Token)match(input,OParen,FOLLOW_OParen_in_primitiveCall642);  
 					stream_OParen.add(char_literal60);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:119:14: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:142:14: ( exprList )?
 					int alt13=2;
 					int LA13_0 = input.LA(1);
 					if ( (LA13_0==ATan||LA13_0==AddDesign||(LA13_0 >= Arc && LA13_0 <= Assert)||LA13_0==Bool||LA13_0==COLOR_CONSTANT||(LA13_0 >= Clip && LA13_0 <= Cm)||(LA13_0 >= Copy && LA13_0 <= Curve)||LA13_0==Difference||LA13_0==Ellipse||(LA13_0 >= Excl && LA13_0 <= Expand)||(LA13_0 >= Fill && LA13_0 <= Flatten)||(LA13_0 >= Gaussian && LA13_0 <= Hide)||LA13_0==Identifier||LA13_0==Inch||LA13_0==LAdd||(LA13_0 >= LRemove && LA13_0 <= LShape)||(LA13_0 >= Line && LA13_0 <= Mm)||(LA13_0 >= Move && LA13_0 <= MoveBy)||(LA13_0 >= NoFill && LA13_0 <= Number)||(LA13_0 >= OBracket && LA13_0 <= OParen)||(LA13_0 >= PI_CONSTANT && LA13_0 <= Println)||(LA13_0 >= Random && LA13_0 <= Rect)||(LA13_0 >= Rotate && LA13_0 <= Round)||(LA13_0 >= Scale && LA13_0 <= Slider)||(LA13_0 >= Sq && LA13_0 <= Subtract)||(LA13_0 >= Tan && LA13_0 <= TemplateCollection)||(LA13_0 >= Union && LA13_0 <= Weight)||LA13_0==Xor) ) {
@@ -1973,7 +1978,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt13) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:119:14: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:142:14: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall644);
 							exprList61=exprList();
@@ -1999,14 +2004,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 119:30: -> ^( FUNC_CALL Line ( exprList )? )
+					// 142:30: -> ^( FUNC_CALL Line ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:119:33: ^( FUNC_CALL Line ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:142:33: ^( FUNC_CALL Line ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Line.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:119:50: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:142:50: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -2023,7 +2028,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:120:5: Rect '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:143:5: Rect '(' ( exprList )? ')'
 					{
 					Rect63=(Token)match(input,Rect,FOLLOW_Rect_in_primitiveCall667);  
 					stream_Rect.add(Rect63);
@@ -2031,7 +2036,7 @@ public class PogoParser extends Parser {
 					char_literal64=(Token)match(input,OParen,FOLLOW_OParen_in_primitiveCall669);  
 					stream_OParen.add(char_literal64);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:120:14: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:143:14: ( exprList )?
 					int alt14=2;
 					int LA14_0 = input.LA(1);
 					if ( (LA14_0==ATan||LA14_0==AddDesign||(LA14_0 >= Arc && LA14_0 <= Assert)||LA14_0==Bool||LA14_0==COLOR_CONSTANT||(LA14_0 >= Clip && LA14_0 <= Cm)||(LA14_0 >= Copy && LA14_0 <= Curve)||LA14_0==Difference||LA14_0==Ellipse||(LA14_0 >= Excl && LA14_0 <= Expand)||(LA14_0 >= Fill && LA14_0 <= Flatten)||(LA14_0 >= Gaussian && LA14_0 <= Hide)||LA14_0==Identifier||LA14_0==Inch||LA14_0==LAdd||(LA14_0 >= LRemove && LA14_0 <= LShape)||(LA14_0 >= Line && LA14_0 <= Mm)||(LA14_0 >= Move && LA14_0 <= MoveBy)||(LA14_0 >= NoFill && LA14_0 <= Number)||(LA14_0 >= OBracket && LA14_0 <= OParen)||(LA14_0 >= PI_CONSTANT && LA14_0 <= Println)||(LA14_0 >= Random && LA14_0 <= Rect)||(LA14_0 >= Rotate && LA14_0 <= Round)||(LA14_0 >= Scale && LA14_0 <= Slider)||(LA14_0 >= Sq && LA14_0 <= Subtract)||(LA14_0 >= Tan && LA14_0 <= TemplateCollection)||(LA14_0 >= Union && LA14_0 <= Weight)||LA14_0==Xor) ) {
@@ -2039,7 +2044,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt14) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:120:14: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:143:14: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall671);
 							exprList65=exprList();
@@ -2065,14 +2070,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 120:30: -> ^( FUNC_CALL Rect ( exprList )? )
+					// 143:30: -> ^( FUNC_CALL Rect ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:120:33: ^( FUNC_CALL Rect ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:143:33: ^( FUNC_CALL Rect ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Rect.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:120:50: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:143:50: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -2089,7 +2094,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:121:5: Curve '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:144:5: Curve '(' ( exprList )? ')'
 					{
 					Curve67=(Token)match(input,Curve,FOLLOW_Curve_in_primitiveCall694);  
 					stream_Curve.add(Curve67);
@@ -2097,7 +2102,7 @@ public class PogoParser extends Parser {
 					char_literal68=(Token)match(input,OParen,FOLLOW_OParen_in_primitiveCall696);  
 					stream_OParen.add(char_literal68);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:121:15: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:144:15: ( exprList )?
 					int alt15=2;
 					int LA15_0 = input.LA(1);
 					if ( (LA15_0==ATan||LA15_0==AddDesign||(LA15_0 >= Arc && LA15_0 <= Assert)||LA15_0==Bool||LA15_0==COLOR_CONSTANT||(LA15_0 >= Clip && LA15_0 <= Cm)||(LA15_0 >= Copy && LA15_0 <= Curve)||LA15_0==Difference||LA15_0==Ellipse||(LA15_0 >= Excl && LA15_0 <= Expand)||(LA15_0 >= Fill && LA15_0 <= Flatten)||(LA15_0 >= Gaussian && LA15_0 <= Hide)||LA15_0==Identifier||LA15_0==Inch||LA15_0==LAdd||(LA15_0 >= LRemove && LA15_0 <= LShape)||(LA15_0 >= Line && LA15_0 <= Mm)||(LA15_0 >= Move && LA15_0 <= MoveBy)||(LA15_0 >= NoFill && LA15_0 <= Number)||(LA15_0 >= OBracket && LA15_0 <= OParen)||(LA15_0 >= PI_CONSTANT && LA15_0 <= Println)||(LA15_0 >= Random && LA15_0 <= Rect)||(LA15_0 >= Rotate && LA15_0 <= Round)||(LA15_0 >= Scale && LA15_0 <= Slider)||(LA15_0 >= Sq && LA15_0 <= Subtract)||(LA15_0 >= Tan && LA15_0 <= TemplateCollection)||(LA15_0 >= Union && LA15_0 <= Weight)||LA15_0==Xor) ) {
@@ -2105,7 +2110,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt15) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:121:15: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:144:15: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall698);
 							exprList69=exprList();
@@ -2131,14 +2136,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 121:29: -> ^( FUNC_CALL Curve ( exprList )? )
+					// 144:29: -> ^( FUNC_CALL Curve ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:121:33: ^( FUNC_CALL Curve ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:144:33: ^( FUNC_CALL Curve ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Curve.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:121:51: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:144:51: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -2155,7 +2160,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:122:5: Polygon '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:145:5: Polygon '(' ( exprList )? ')'
 					{
 					Polygon71=(Token)match(input,Polygon,FOLLOW_Polygon_in_primitiveCall719);  
 					stream_Polygon.add(Polygon71);
@@ -2163,7 +2168,7 @@ public class PogoParser extends Parser {
 					char_literal72=(Token)match(input,OParen,FOLLOW_OParen_in_primitiveCall721);  
 					stream_OParen.add(char_literal72);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:122:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:145:17: ( exprList )?
 					int alt16=2;
 					int LA16_0 = input.LA(1);
 					if ( (LA16_0==ATan||LA16_0==AddDesign||(LA16_0 >= Arc && LA16_0 <= Assert)||LA16_0==Bool||LA16_0==COLOR_CONSTANT||(LA16_0 >= Clip && LA16_0 <= Cm)||(LA16_0 >= Copy && LA16_0 <= Curve)||LA16_0==Difference||LA16_0==Ellipse||(LA16_0 >= Excl && LA16_0 <= Expand)||(LA16_0 >= Fill && LA16_0 <= Flatten)||(LA16_0 >= Gaussian && LA16_0 <= Hide)||LA16_0==Identifier||LA16_0==Inch||LA16_0==LAdd||(LA16_0 >= LRemove && LA16_0 <= LShape)||(LA16_0 >= Line && LA16_0 <= Mm)||(LA16_0 >= Move && LA16_0 <= MoveBy)||(LA16_0 >= NoFill && LA16_0 <= Number)||(LA16_0 >= OBracket && LA16_0 <= OParen)||(LA16_0 >= PI_CONSTANT && LA16_0 <= Println)||(LA16_0 >= Random && LA16_0 <= Rect)||(LA16_0 >= Rotate && LA16_0 <= Round)||(LA16_0 >= Scale && LA16_0 <= Slider)||(LA16_0 >= Sq && LA16_0 <= Subtract)||(LA16_0 >= Tan && LA16_0 <= TemplateCollection)||(LA16_0 >= Union && LA16_0 <= Weight)||LA16_0==Xor) ) {
@@ -2171,7 +2176,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt16) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:122:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:145:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall723);
 							exprList73=exprList();
@@ -2197,14 +2202,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 122:31: -> ^( FUNC_CALL Polygon ( exprList )? )
+					// 145:31: -> ^( FUNC_CALL Polygon ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:122:35: ^( FUNC_CALL Polygon ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:145:35: ^( FUNC_CALL Polygon ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Polygon.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:122:55: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:145:55: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -2221,7 +2226,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:5: Skirt '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:146:5: Skirt '(' ( exprList )? ')'
 					{
 					Skirt75=(Token)match(input,Skirt,FOLLOW_Skirt_in_primitiveCall744);  
 					stream_Skirt.add(Skirt75);
@@ -2229,7 +2234,7 @@ public class PogoParser extends Parser {
 					char_literal76=(Token)match(input,OParen,FOLLOW_OParen_in_primitiveCall746);  
 					stream_OParen.add(char_literal76);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:15: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:146:15: ( exprList )?
 					int alt17=2;
 					int LA17_0 = input.LA(1);
 					if ( (LA17_0==ATan||LA17_0==AddDesign||(LA17_0 >= Arc && LA17_0 <= Assert)||LA17_0==Bool||LA17_0==COLOR_CONSTANT||(LA17_0 >= Clip && LA17_0 <= Cm)||(LA17_0 >= Copy && LA17_0 <= Curve)||LA17_0==Difference||LA17_0==Ellipse||(LA17_0 >= Excl && LA17_0 <= Expand)||(LA17_0 >= Fill && LA17_0 <= Flatten)||(LA17_0 >= Gaussian && LA17_0 <= Hide)||LA17_0==Identifier||LA17_0==Inch||LA17_0==LAdd||(LA17_0 >= LRemove && LA17_0 <= LShape)||(LA17_0 >= Line && LA17_0 <= Mm)||(LA17_0 >= Move && LA17_0 <= MoveBy)||(LA17_0 >= NoFill && LA17_0 <= Number)||(LA17_0 >= OBracket && LA17_0 <= OParen)||(LA17_0 >= PI_CONSTANT && LA17_0 <= Println)||(LA17_0 >= Random && LA17_0 <= Rect)||(LA17_0 >= Rotate && LA17_0 <= Round)||(LA17_0 >= Scale && LA17_0 <= Slider)||(LA17_0 >= Sq && LA17_0 <= Subtract)||(LA17_0 >= Tan && LA17_0 <= TemplateCollection)||(LA17_0 >= Union && LA17_0 <= Weight)||LA17_0==Xor) ) {
@@ -2237,7 +2242,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt17) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:15: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:146:15: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall748);
 							exprList77=exprList();
@@ -2263,14 +2268,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 123:29: -> ^( FUNC_CALL Skirt ( exprList )? )
+					// 146:29: -> ^( FUNC_CALL Skirt ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:33: ^( FUNC_CALL Skirt ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:146:33: ^( FUNC_CALL Skirt ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Skirt.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:123:51: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:146:51: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -2287,7 +2292,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:124:5: SkirtBack '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:147:5: SkirtBack '(' ( exprList )? ')'
 					{
 					SkirtBack79=(Token)match(input,SkirtBack,FOLLOW_SkirtBack_in_primitiveCall769);  
 					stream_SkirtBack.add(SkirtBack79);
@@ -2295,7 +2300,7 @@ public class PogoParser extends Parser {
 					char_literal80=(Token)match(input,OParen,FOLLOW_OParen_in_primitiveCall771);  
 					stream_OParen.add(char_literal80);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:124:19: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:147:19: ( exprList )?
 					int alt18=2;
 					int LA18_0 = input.LA(1);
 					if ( (LA18_0==ATan||LA18_0==AddDesign||(LA18_0 >= Arc && LA18_0 <= Assert)||LA18_0==Bool||LA18_0==COLOR_CONSTANT||(LA18_0 >= Clip && LA18_0 <= Cm)||(LA18_0 >= Copy && LA18_0 <= Curve)||LA18_0==Difference||LA18_0==Ellipse||(LA18_0 >= Excl && LA18_0 <= Expand)||(LA18_0 >= Fill && LA18_0 <= Flatten)||(LA18_0 >= Gaussian && LA18_0 <= Hide)||LA18_0==Identifier||LA18_0==Inch||LA18_0==LAdd||(LA18_0 >= LRemove && LA18_0 <= LShape)||(LA18_0 >= Line && LA18_0 <= Mm)||(LA18_0 >= Move && LA18_0 <= MoveBy)||(LA18_0 >= NoFill && LA18_0 <= Number)||(LA18_0 >= OBracket && LA18_0 <= OParen)||(LA18_0 >= PI_CONSTANT && LA18_0 <= Println)||(LA18_0 >= Random && LA18_0 <= Rect)||(LA18_0 >= Rotate && LA18_0 <= Round)||(LA18_0 >= Scale && LA18_0 <= Slider)||(LA18_0 >= Sq && LA18_0 <= Subtract)||(LA18_0 >= Tan && LA18_0 <= TemplateCollection)||(LA18_0 >= Union && LA18_0 <= Weight)||LA18_0==Xor) ) {
@@ -2303,7 +2308,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt18) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:124:19: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:147:19: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall773);
 							exprList81=exprList();
@@ -2329,14 +2334,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 124:33: -> ^( FUNC_CALL SkirtBack ( exprList )? )
+					// 147:33: -> ^( FUNC_CALL SkirtBack ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:124:37: ^( FUNC_CALL SkirtBack ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:147:37: ^( FUNC_CALL SkirtBack ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_SkirtBack.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:124:59: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:147:59: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -2353,7 +2358,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:125:6: LShape '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:148:6: LShape '(' ( exprList )? ')'
 					{
 					LShape83=(Token)match(input,LShape,FOLLOW_LShape_in_primitiveCall795);  
 					stream_LShape.add(LShape83);
@@ -2361,7 +2366,7 @@ public class PogoParser extends Parser {
 					char_literal84=(Token)match(input,OParen,FOLLOW_OParen_in_primitiveCall797);  
 					stream_OParen.add(char_literal84);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:125:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:148:17: ( exprList )?
 					int alt19=2;
 					int LA19_0 = input.LA(1);
 					if ( (LA19_0==ATan||LA19_0==AddDesign||(LA19_0 >= Arc && LA19_0 <= Assert)||LA19_0==Bool||LA19_0==COLOR_CONSTANT||(LA19_0 >= Clip && LA19_0 <= Cm)||(LA19_0 >= Copy && LA19_0 <= Curve)||LA19_0==Difference||LA19_0==Ellipse||(LA19_0 >= Excl && LA19_0 <= Expand)||(LA19_0 >= Fill && LA19_0 <= Flatten)||(LA19_0 >= Gaussian && LA19_0 <= Hide)||LA19_0==Identifier||LA19_0==Inch||LA19_0==LAdd||(LA19_0 >= LRemove && LA19_0 <= LShape)||(LA19_0 >= Line && LA19_0 <= Mm)||(LA19_0 >= Move && LA19_0 <= MoveBy)||(LA19_0 >= NoFill && LA19_0 <= Number)||(LA19_0 >= OBracket && LA19_0 <= OParen)||(LA19_0 >= PI_CONSTANT && LA19_0 <= Println)||(LA19_0 >= Random && LA19_0 <= Rect)||(LA19_0 >= Rotate && LA19_0 <= Round)||(LA19_0 >= Scale && LA19_0 <= Slider)||(LA19_0 >= Sq && LA19_0 <= Subtract)||(LA19_0 >= Tan && LA19_0 <= TemplateCollection)||(LA19_0 >= Union && LA19_0 <= Weight)||LA19_0==Xor) ) {
@@ -2369,7 +2374,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt19) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:125:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:148:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall799);
 							exprList85=exprList();
@@ -2395,14 +2400,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 125:31: -> ^( FUNC_CALL LShape ( exprList )? )
+					// 148:31: -> ^( FUNC_CALL LShape ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:125:35: ^( FUNC_CALL LShape ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:148:35: ^( FUNC_CALL LShape ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_LShape.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:125:54: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:148:54: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -2419,7 +2424,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:126:7: Point '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:149:7: Point '(' ( exprList )? ')'
 					{
 					Point87=(Token)match(input,Point,FOLLOW_Point_in_primitiveCall822);  
 					stream_Point.add(Point87);
@@ -2427,7 +2432,7 @@ public class PogoParser extends Parser {
 					char_literal88=(Token)match(input,OParen,FOLLOW_OParen_in_primitiveCall824);  
 					stream_OParen.add(char_literal88);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:126:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:149:17: ( exprList )?
 					int alt20=2;
 					int LA20_0 = input.LA(1);
 					if ( (LA20_0==ATan||LA20_0==AddDesign||(LA20_0 >= Arc && LA20_0 <= Assert)||LA20_0==Bool||LA20_0==COLOR_CONSTANT||(LA20_0 >= Clip && LA20_0 <= Cm)||(LA20_0 >= Copy && LA20_0 <= Curve)||LA20_0==Difference||LA20_0==Ellipse||(LA20_0 >= Excl && LA20_0 <= Expand)||(LA20_0 >= Fill && LA20_0 <= Flatten)||(LA20_0 >= Gaussian && LA20_0 <= Hide)||LA20_0==Identifier||LA20_0==Inch||LA20_0==LAdd||(LA20_0 >= LRemove && LA20_0 <= LShape)||(LA20_0 >= Line && LA20_0 <= Mm)||(LA20_0 >= Move && LA20_0 <= MoveBy)||(LA20_0 >= NoFill && LA20_0 <= Number)||(LA20_0 >= OBracket && LA20_0 <= OParen)||(LA20_0 >= PI_CONSTANT && LA20_0 <= Println)||(LA20_0 >= Random && LA20_0 <= Rect)||(LA20_0 >= Rotate && LA20_0 <= Round)||(LA20_0 >= Scale && LA20_0 <= Slider)||(LA20_0 >= Sq && LA20_0 <= Subtract)||(LA20_0 >= Tan && LA20_0 <= TemplateCollection)||(LA20_0 >= Union && LA20_0 <= Weight)||LA20_0==Xor) ) {
@@ -2435,7 +2440,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt20) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:126:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:149:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall826);
 							exprList89=exprList();
@@ -2461,14 +2466,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 126:31: -> ^( FUNC_CALL Point ( exprList )? )
+					// 149:31: -> ^( FUNC_CALL Point ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:126:35: ^( FUNC_CALL Point ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:149:35: ^( FUNC_CALL Point ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Point.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:126:53: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:149:53: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -2513,7 +2518,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "transformCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:129:3: transformCall : ( Move '(' ( exprList )? ')' -> ^( FUNC_CALL Move ( exprList )? ) | MoveBy '(' ( exprList )? ')' -> ^( FUNC_CALL MoveBy ( exprList )? ) | Heading '(' ( exprList )? ')' -> ^( FUNC_CALL Heading ( exprList )? ) | Copy '(' expression ')' -> ^( FUNC_CALL Copy expression ) | Rotate '(' ( exprList )? ')' -> ^( FUNC_CALL Rotate ( exprList )? ) | Fill '(' ( exprList )? ')' -> ^( FUNC_CALL Fill ( exprList )? ) | Stroke '(' ( exprList )? ')' -> ^( FUNC_CALL Stroke ( exprList )? ) | NoFill '(' expression ')' -> ^( FUNC_CALL NoFill expression ) | NoStroke '(' expression ')' -> ^( FUNC_CALL NoStroke expression ) | Weight '(' ( exprList )? ')' -> ^( FUNC_CALL Weight ( exprList )? ) | Hide '(' expression ')' -> ^( FUNC_CALL Hide expression ) | Show '(' expression ')' -> ^( FUNC_CALL Show expression ) | Group '(' ( exprList )? ')' -> ^( FUNC_CALL Group ( exprList )? ) | Expand '(' expression ')' -> ^( FUNC_CALL Expand expression ) | Merge '(' expression ')' -> ^( FUNC_CALL Merge expression ) | Scale '(' ( exprList )? ')' -> ^( FUNC_CALL Scale ( exprList )? ) | MirrorX '(' expression ')' -> ^( FUNC_CALL MirrorX expression ) | MirrorY '(' expression ')' -> ^( FUNC_CALL MirrorY expression ) | Union '(' ( exprList )? ')' -> ^( FUNC_CALL Union ( exprList )? ) | Difference '(' ( exprList )? ')' -> ^( FUNC_CALL Difference ( exprList )? ) | Clip '(' ( exprList )? ')' -> ^( FUNC_CALL Clip ( exprList )? ) | Xor '(' ( exprList )? ')' -> ^( FUNC_CALL Xor ( exprList )? ) | Flatten '(' expression ')' -> ^( FUNC_CALL Flatten expression ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:152:3: transformCall : ( Move '(' ( exprList )? ')' -> ^( FUNC_CALL Move ( exprList )? ) | MoveBy '(' ( exprList )? ')' -> ^( FUNC_CALL MoveBy ( exprList )? ) | Heading '(' ( exprList )? ')' -> ^( FUNC_CALL Heading ( exprList )? ) | Copy '(' expression ')' -> ^( FUNC_CALL Copy expression ) | Rotate '(' ( exprList )? ')' -> ^( FUNC_CALL Rotate ( exprList )? ) | Fill '(' ( exprList )? ')' -> ^( FUNC_CALL Fill ( exprList )? ) | Stroke '(' ( exprList )? ')' -> ^( FUNC_CALL Stroke ( exprList )? ) | NoFill '(' expression ')' -> ^( FUNC_CALL NoFill expression ) | NoStroke '(' expression ')' -> ^( FUNC_CALL NoStroke expression ) | Weight '(' ( exprList )? ')' -> ^( FUNC_CALL Weight ( exprList )? ) | Hide '(' expression ')' -> ^( FUNC_CALL Hide expression ) | Show '(' expression ')' -> ^( FUNC_CALL Show expression ) | Group '(' ( exprList )? ')' -> ^( FUNC_CALL Group ( exprList )? ) | Expand '(' expression ')' -> ^( FUNC_CALL Expand expression ) | Merge '(' expression ')' -> ^( FUNC_CALL Merge expression ) | Scale '(' ( exprList )? ')' -> ^( FUNC_CALL Scale ( exprList )? ) | MirrorX '(' expression ')' -> ^( FUNC_CALL MirrorX expression ) | MirrorY '(' expression ')' -> ^( FUNC_CALL MirrorY expression ) | Union '(' ( exprList )? ')' -> ^( FUNC_CALL Union ( exprList )? ) | Difference '(' ( exprList )? ')' -> ^( FUNC_CALL Difference ( exprList )? ) | Clip '(' ( exprList )? ')' -> ^( FUNC_CALL Clip ( exprList )? ) | Xor '(' ( exprList )? ')' -> ^( FUNC_CALL Xor ( exprList )? ) | Flatten '(' expression ')' -> ^( FUNC_CALL Flatten expression ) );
 	public final PogoParser.transformCall_return transformCall() throws RecognitionException {
 		PogoParser.transformCall_return retval = new PogoParser.transformCall_return();
 		retval.start = input.LT(1);
@@ -2711,7 +2716,7 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:130:4: ( Move '(' ( exprList )? ')' -> ^( FUNC_CALL Move ( exprList )? ) | MoveBy '(' ( exprList )? ')' -> ^( FUNC_CALL MoveBy ( exprList )? ) | Heading '(' ( exprList )? ')' -> ^( FUNC_CALL Heading ( exprList )? ) | Copy '(' expression ')' -> ^( FUNC_CALL Copy expression ) | Rotate '(' ( exprList )? ')' -> ^( FUNC_CALL Rotate ( exprList )? ) | Fill '(' ( exprList )? ')' -> ^( FUNC_CALL Fill ( exprList )? ) | Stroke '(' ( exprList )? ')' -> ^( FUNC_CALL Stroke ( exprList )? ) | NoFill '(' expression ')' -> ^( FUNC_CALL NoFill expression ) | NoStroke '(' expression ')' -> ^( FUNC_CALL NoStroke expression ) | Weight '(' ( exprList )? ')' -> ^( FUNC_CALL Weight ( exprList )? ) | Hide '(' expression ')' -> ^( FUNC_CALL Hide expression ) | Show '(' expression ')' -> ^( FUNC_CALL Show expression ) | Group '(' ( exprList )? ')' -> ^( FUNC_CALL Group ( exprList )? ) | Expand '(' expression ')' -> ^( FUNC_CALL Expand expression ) | Merge '(' expression ')' -> ^( FUNC_CALL Merge expression ) | Scale '(' ( exprList )? ')' -> ^( FUNC_CALL Scale ( exprList )? ) | MirrorX '(' expression ')' -> ^( FUNC_CALL MirrorX expression ) | MirrorY '(' expression ')' -> ^( FUNC_CALL MirrorY expression ) | Union '(' ( exprList )? ')' -> ^( FUNC_CALL Union ( exprList )? ) | Difference '(' ( exprList )? ')' -> ^( FUNC_CALL Difference ( exprList )? ) | Clip '(' ( exprList )? ')' -> ^( FUNC_CALL Clip ( exprList )? ) | Xor '(' ( exprList )? ')' -> ^( FUNC_CALL Xor ( exprList )? ) | Flatten '(' expression ')' -> ^( FUNC_CALL Flatten expression ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:153:4: ( Move '(' ( exprList )? ')' -> ^( FUNC_CALL Move ( exprList )? ) | MoveBy '(' ( exprList )? ')' -> ^( FUNC_CALL MoveBy ( exprList )? ) | Heading '(' ( exprList )? ')' -> ^( FUNC_CALL Heading ( exprList )? ) | Copy '(' expression ')' -> ^( FUNC_CALL Copy expression ) | Rotate '(' ( exprList )? ')' -> ^( FUNC_CALL Rotate ( exprList )? ) | Fill '(' ( exprList )? ')' -> ^( FUNC_CALL Fill ( exprList )? ) | Stroke '(' ( exprList )? ')' -> ^( FUNC_CALL Stroke ( exprList )? ) | NoFill '(' expression ')' -> ^( FUNC_CALL NoFill expression ) | NoStroke '(' expression ')' -> ^( FUNC_CALL NoStroke expression ) | Weight '(' ( exprList )? ')' -> ^( FUNC_CALL Weight ( exprList )? ) | Hide '(' expression ')' -> ^( FUNC_CALL Hide expression ) | Show '(' expression ')' -> ^( FUNC_CALL Show expression ) | Group '(' ( exprList )? ')' -> ^( FUNC_CALL Group ( exprList )? ) | Expand '(' expression ')' -> ^( FUNC_CALL Expand expression ) | Merge '(' expression ')' -> ^( FUNC_CALL Merge expression ) | Scale '(' ( exprList )? ')' -> ^( FUNC_CALL Scale ( exprList )? ) | MirrorX '(' expression ')' -> ^( FUNC_CALL MirrorX expression ) | MirrorY '(' expression ')' -> ^( FUNC_CALL MirrorY expression ) | Union '(' ( exprList )? ')' -> ^( FUNC_CALL Union ( exprList )? ) | Difference '(' ( exprList )? ')' -> ^( FUNC_CALL Difference ( exprList )? ) | Clip '(' ( exprList )? ')' -> ^( FUNC_CALL Clip ( exprList )? ) | Xor '(' ( exprList )? ')' -> ^( FUNC_CALL Xor ( exprList )? ) | Flatten '(' expression ')' -> ^( FUNC_CALL Flatten expression ) )
 			int alt35=23;
 			switch ( input.LA(1) ) {
 			case Move:
@@ -2836,7 +2841,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt35) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:130:6: Move '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:153:6: Move '(' ( exprList )? ')'
 					{
 					Move91=(Token)match(input,Move,FOLLOW_Move_in_transformCall860);  
 					stream_Move.add(Move91);
@@ -2844,7 +2849,7 @@ public class PogoParser extends Parser {
 					char_literal92=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall862);  
 					stream_OParen.add(char_literal92);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:130:15: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:153:15: ( exprList )?
 					int alt22=2;
 					int LA22_0 = input.LA(1);
 					if ( (LA22_0==ATan||LA22_0==AddDesign||(LA22_0 >= Arc && LA22_0 <= Assert)||LA22_0==Bool||LA22_0==COLOR_CONSTANT||(LA22_0 >= Clip && LA22_0 <= Cm)||(LA22_0 >= Copy && LA22_0 <= Curve)||LA22_0==Difference||LA22_0==Ellipse||(LA22_0 >= Excl && LA22_0 <= Expand)||(LA22_0 >= Fill && LA22_0 <= Flatten)||(LA22_0 >= Gaussian && LA22_0 <= Hide)||LA22_0==Identifier||LA22_0==Inch||LA22_0==LAdd||(LA22_0 >= LRemove && LA22_0 <= LShape)||(LA22_0 >= Line && LA22_0 <= Mm)||(LA22_0 >= Move && LA22_0 <= MoveBy)||(LA22_0 >= NoFill && LA22_0 <= Number)||(LA22_0 >= OBracket && LA22_0 <= OParen)||(LA22_0 >= PI_CONSTANT && LA22_0 <= Println)||(LA22_0 >= Random && LA22_0 <= Rect)||(LA22_0 >= Rotate && LA22_0 <= Round)||(LA22_0 >= Scale && LA22_0 <= Slider)||(LA22_0 >= Sq && LA22_0 <= Subtract)||(LA22_0 >= Tan && LA22_0 <= TemplateCollection)||(LA22_0 >= Union && LA22_0 <= Weight)||LA22_0==Xor) ) {
@@ -2852,7 +2857,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt22) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:130:15: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:153:15: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall864);
 							exprList93=exprList();
@@ -2878,14 +2883,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 130:29: -> ^( FUNC_CALL Move ( exprList )? )
+					// 153:29: -> ^( FUNC_CALL Move ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:130:32: ^( FUNC_CALL Move ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:153:32: ^( FUNC_CALL Move ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Move.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:130:49: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:153:49: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -2902,7 +2907,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:131:6: MoveBy '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:154:6: MoveBy '(' ( exprList )? ')'
 					{
 					MoveBy95=(Token)match(input,MoveBy,FOLLOW_MoveBy_in_transformCall885);  
 					stream_MoveBy.add(MoveBy95);
@@ -2910,7 +2915,7 @@ public class PogoParser extends Parser {
 					char_literal96=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall887);  
 					stream_OParen.add(char_literal96);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:131:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:154:17: ( exprList )?
 					int alt23=2;
 					int LA23_0 = input.LA(1);
 					if ( (LA23_0==ATan||LA23_0==AddDesign||(LA23_0 >= Arc && LA23_0 <= Assert)||LA23_0==Bool||LA23_0==COLOR_CONSTANT||(LA23_0 >= Clip && LA23_0 <= Cm)||(LA23_0 >= Copy && LA23_0 <= Curve)||LA23_0==Difference||LA23_0==Ellipse||(LA23_0 >= Excl && LA23_0 <= Expand)||(LA23_0 >= Fill && LA23_0 <= Flatten)||(LA23_0 >= Gaussian && LA23_0 <= Hide)||LA23_0==Identifier||LA23_0==Inch||LA23_0==LAdd||(LA23_0 >= LRemove && LA23_0 <= LShape)||(LA23_0 >= Line && LA23_0 <= Mm)||(LA23_0 >= Move && LA23_0 <= MoveBy)||(LA23_0 >= NoFill && LA23_0 <= Number)||(LA23_0 >= OBracket && LA23_0 <= OParen)||(LA23_0 >= PI_CONSTANT && LA23_0 <= Println)||(LA23_0 >= Random && LA23_0 <= Rect)||(LA23_0 >= Rotate && LA23_0 <= Round)||(LA23_0 >= Scale && LA23_0 <= Slider)||(LA23_0 >= Sq && LA23_0 <= Subtract)||(LA23_0 >= Tan && LA23_0 <= TemplateCollection)||(LA23_0 >= Union && LA23_0 <= Weight)||LA23_0==Xor) ) {
@@ -2918,7 +2923,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt23) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:131:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:154:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall889);
 							exprList97=exprList();
@@ -2944,14 +2949,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 131:31: -> ^( FUNC_CALL MoveBy ( exprList )? )
+					// 154:31: -> ^( FUNC_CALL MoveBy ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:131:34: ^( FUNC_CALL MoveBy ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:154:34: ^( FUNC_CALL MoveBy ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_MoveBy.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:131:53: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:154:53: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -2968,7 +2973,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:132:6: Heading '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:155:6: Heading '(' ( exprList )? ')'
 					{
 					Heading99=(Token)match(input,Heading,FOLLOW_Heading_in_transformCall911);  
 					stream_Heading.add(Heading99);
@@ -2976,7 +2981,7 @@ public class PogoParser extends Parser {
 					char_literal100=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall913);  
 					stream_OParen.add(char_literal100);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:132:18: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:155:18: ( exprList )?
 					int alt24=2;
 					int LA24_0 = input.LA(1);
 					if ( (LA24_0==ATan||LA24_0==AddDesign||(LA24_0 >= Arc && LA24_0 <= Assert)||LA24_0==Bool||LA24_0==COLOR_CONSTANT||(LA24_0 >= Clip && LA24_0 <= Cm)||(LA24_0 >= Copy && LA24_0 <= Curve)||LA24_0==Difference||LA24_0==Ellipse||(LA24_0 >= Excl && LA24_0 <= Expand)||(LA24_0 >= Fill && LA24_0 <= Flatten)||(LA24_0 >= Gaussian && LA24_0 <= Hide)||LA24_0==Identifier||LA24_0==Inch||LA24_0==LAdd||(LA24_0 >= LRemove && LA24_0 <= LShape)||(LA24_0 >= Line && LA24_0 <= Mm)||(LA24_0 >= Move && LA24_0 <= MoveBy)||(LA24_0 >= NoFill && LA24_0 <= Number)||(LA24_0 >= OBracket && LA24_0 <= OParen)||(LA24_0 >= PI_CONSTANT && LA24_0 <= Println)||(LA24_0 >= Random && LA24_0 <= Rect)||(LA24_0 >= Rotate && LA24_0 <= Round)||(LA24_0 >= Scale && LA24_0 <= Slider)||(LA24_0 >= Sq && LA24_0 <= Subtract)||(LA24_0 >= Tan && LA24_0 <= TemplateCollection)||(LA24_0 >= Union && LA24_0 <= Weight)||LA24_0==Xor) ) {
@@ -2984,7 +2989,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt24) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:132:18: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:155:18: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall915);
 							exprList101=exprList();
@@ -3010,14 +3015,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 132:32: -> ^( FUNC_CALL Heading ( exprList )? )
+					// 155:32: -> ^( FUNC_CALL Heading ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:132:35: ^( FUNC_CALL Heading ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:155:35: ^( FUNC_CALL Heading ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Heading.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:132:55: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:155:55: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -3034,7 +3039,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:133:6: Copy '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:156:6: Copy '(' expression ')'
 					{
 					Copy103=(Token)match(input,Copy,FOLLOW_Copy_in_transformCall937);  
 					stream_Copy.add(Copy103);
@@ -3061,9 +3066,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 133:30: -> ^( FUNC_CALL Copy expression )
+					// 156:30: -> ^( FUNC_CALL Copy expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:133:33: ^( FUNC_CALL Copy expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:156:33: ^( FUNC_CALL Copy expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -3080,7 +3085,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:134:6: Rotate '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:157:6: Rotate '(' ( exprList )? ')'
 					{
 					Rotate107=(Token)match(input,Rotate,FOLLOW_Rotate_in_transformCall960);  
 					stream_Rotate.add(Rotate107);
@@ -3088,7 +3093,7 @@ public class PogoParser extends Parser {
 					char_literal108=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall962);  
 					stream_OParen.add(char_literal108);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:134:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:157:17: ( exprList )?
 					int alt25=2;
 					int LA25_0 = input.LA(1);
 					if ( (LA25_0==ATan||LA25_0==AddDesign||(LA25_0 >= Arc && LA25_0 <= Assert)||LA25_0==Bool||LA25_0==COLOR_CONSTANT||(LA25_0 >= Clip && LA25_0 <= Cm)||(LA25_0 >= Copy && LA25_0 <= Curve)||LA25_0==Difference||LA25_0==Ellipse||(LA25_0 >= Excl && LA25_0 <= Expand)||(LA25_0 >= Fill && LA25_0 <= Flatten)||(LA25_0 >= Gaussian && LA25_0 <= Hide)||LA25_0==Identifier||LA25_0==Inch||LA25_0==LAdd||(LA25_0 >= LRemove && LA25_0 <= LShape)||(LA25_0 >= Line && LA25_0 <= Mm)||(LA25_0 >= Move && LA25_0 <= MoveBy)||(LA25_0 >= NoFill && LA25_0 <= Number)||(LA25_0 >= OBracket && LA25_0 <= OParen)||(LA25_0 >= PI_CONSTANT && LA25_0 <= Println)||(LA25_0 >= Random && LA25_0 <= Rect)||(LA25_0 >= Rotate && LA25_0 <= Round)||(LA25_0 >= Scale && LA25_0 <= Slider)||(LA25_0 >= Sq && LA25_0 <= Subtract)||(LA25_0 >= Tan && LA25_0 <= TemplateCollection)||(LA25_0 >= Union && LA25_0 <= Weight)||LA25_0==Xor) ) {
@@ -3096,7 +3101,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt25) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:134:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:157:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall964);
 							exprList109=exprList();
@@ -3122,14 +3127,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 134:30: -> ^( FUNC_CALL Rotate ( exprList )? )
+					// 157:30: -> ^( FUNC_CALL Rotate ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:134:33: ^( FUNC_CALL Rotate ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:157:33: ^( FUNC_CALL Rotate ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Rotate.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:134:52: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:157:52: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -3146,7 +3151,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:135:6: Fill '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:158:6: Fill '(' ( exprList )? ')'
 					{
 					Fill111=(Token)match(input,Fill,FOLLOW_Fill_in_transformCall984);  
 					stream_Fill.add(Fill111);
@@ -3154,7 +3159,7 @@ public class PogoParser extends Parser {
 					char_literal112=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall986);  
 					stream_OParen.add(char_literal112);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:135:15: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:158:15: ( exprList )?
 					int alt26=2;
 					int LA26_0 = input.LA(1);
 					if ( (LA26_0==ATan||LA26_0==AddDesign||(LA26_0 >= Arc && LA26_0 <= Assert)||LA26_0==Bool||LA26_0==COLOR_CONSTANT||(LA26_0 >= Clip && LA26_0 <= Cm)||(LA26_0 >= Copy && LA26_0 <= Curve)||LA26_0==Difference||LA26_0==Ellipse||(LA26_0 >= Excl && LA26_0 <= Expand)||(LA26_0 >= Fill && LA26_0 <= Flatten)||(LA26_0 >= Gaussian && LA26_0 <= Hide)||LA26_0==Identifier||LA26_0==Inch||LA26_0==LAdd||(LA26_0 >= LRemove && LA26_0 <= LShape)||(LA26_0 >= Line && LA26_0 <= Mm)||(LA26_0 >= Move && LA26_0 <= MoveBy)||(LA26_0 >= NoFill && LA26_0 <= Number)||(LA26_0 >= OBracket && LA26_0 <= OParen)||(LA26_0 >= PI_CONSTANT && LA26_0 <= Println)||(LA26_0 >= Random && LA26_0 <= Rect)||(LA26_0 >= Rotate && LA26_0 <= Round)||(LA26_0 >= Scale && LA26_0 <= Slider)||(LA26_0 >= Sq && LA26_0 <= Subtract)||(LA26_0 >= Tan && LA26_0 <= TemplateCollection)||(LA26_0 >= Union && LA26_0 <= Weight)||LA26_0==Xor) ) {
@@ -3162,7 +3167,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt26) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:135:15: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:158:15: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall988);
 							exprList113=exprList();
@@ -3188,14 +3193,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 135:28: -> ^( FUNC_CALL Fill ( exprList )? )
+					// 158:28: -> ^( FUNC_CALL Fill ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:135:31: ^( FUNC_CALL Fill ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:158:31: ^( FUNC_CALL Fill ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Fill.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:135:48: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:158:48: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -3212,7 +3217,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:136:6: Stroke '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:159:6: Stroke '(' ( exprList )? ')'
 					{
 					Stroke115=(Token)match(input,Stroke,FOLLOW_Stroke_in_transformCall1008);  
 					stream_Stroke.add(Stroke115);
@@ -3220,7 +3225,7 @@ public class PogoParser extends Parser {
 					char_literal116=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall1010);  
 					stream_OParen.add(char_literal116);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:136:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:159:17: ( exprList )?
 					int alt27=2;
 					int LA27_0 = input.LA(1);
 					if ( (LA27_0==ATan||LA27_0==AddDesign||(LA27_0 >= Arc && LA27_0 <= Assert)||LA27_0==Bool||LA27_0==COLOR_CONSTANT||(LA27_0 >= Clip && LA27_0 <= Cm)||(LA27_0 >= Copy && LA27_0 <= Curve)||LA27_0==Difference||LA27_0==Ellipse||(LA27_0 >= Excl && LA27_0 <= Expand)||(LA27_0 >= Fill && LA27_0 <= Flatten)||(LA27_0 >= Gaussian && LA27_0 <= Hide)||LA27_0==Identifier||LA27_0==Inch||LA27_0==LAdd||(LA27_0 >= LRemove && LA27_0 <= LShape)||(LA27_0 >= Line && LA27_0 <= Mm)||(LA27_0 >= Move && LA27_0 <= MoveBy)||(LA27_0 >= NoFill && LA27_0 <= Number)||(LA27_0 >= OBracket && LA27_0 <= OParen)||(LA27_0 >= PI_CONSTANT && LA27_0 <= Println)||(LA27_0 >= Random && LA27_0 <= Rect)||(LA27_0 >= Rotate && LA27_0 <= Round)||(LA27_0 >= Scale && LA27_0 <= Slider)||(LA27_0 >= Sq && LA27_0 <= Subtract)||(LA27_0 >= Tan && LA27_0 <= TemplateCollection)||(LA27_0 >= Union && LA27_0 <= Weight)||LA27_0==Xor) ) {
@@ -3228,7 +3233,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt27) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:136:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:159:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall1012);
 							exprList117=exprList();
@@ -3254,14 +3259,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 136:30: -> ^( FUNC_CALL Stroke ( exprList )? )
+					// 159:30: -> ^( FUNC_CALL Stroke ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:136:33: ^( FUNC_CALL Stroke ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:159:33: ^( FUNC_CALL Stroke ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Stroke.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:136:52: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:159:52: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -3278,7 +3283,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:137:6: NoFill '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:160:6: NoFill '(' expression ')'
 					{
 					NoFill119=(Token)match(input,NoFill,FOLLOW_NoFill_in_transformCall1032);  
 					stream_NoFill.add(NoFill119);
@@ -3305,9 +3310,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 137:31: -> ^( FUNC_CALL NoFill expression )
+					// 160:31: -> ^( FUNC_CALL NoFill expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:137:34: ^( FUNC_CALL NoFill expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:160:34: ^( FUNC_CALL NoFill expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -3324,7 +3329,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:138:6: NoStroke '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:161:6: NoStroke '(' expression ')'
 					{
 					NoStroke123=(Token)match(input,NoStroke,FOLLOW_NoStroke_in_transformCall1054);  
 					stream_NoStroke.add(NoStroke123);
@@ -3351,9 +3356,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 138:33: -> ^( FUNC_CALL NoStroke expression )
+					// 161:33: -> ^( FUNC_CALL NoStroke expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:138:36: ^( FUNC_CALL NoStroke expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:161:36: ^( FUNC_CALL NoStroke expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -3370,7 +3375,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:139:6: Weight '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:162:6: Weight '(' ( exprList )? ')'
 					{
 					Weight127=(Token)match(input,Weight,FOLLOW_Weight_in_transformCall1076);  
 					stream_Weight.add(Weight127);
@@ -3378,7 +3383,7 @@ public class PogoParser extends Parser {
 					char_literal128=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall1078);  
 					stream_OParen.add(char_literal128);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:139:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:162:17: ( exprList )?
 					int alt28=2;
 					int LA28_0 = input.LA(1);
 					if ( (LA28_0==ATan||LA28_0==AddDesign||(LA28_0 >= Arc && LA28_0 <= Assert)||LA28_0==Bool||LA28_0==COLOR_CONSTANT||(LA28_0 >= Clip && LA28_0 <= Cm)||(LA28_0 >= Copy && LA28_0 <= Curve)||LA28_0==Difference||LA28_0==Ellipse||(LA28_0 >= Excl && LA28_0 <= Expand)||(LA28_0 >= Fill && LA28_0 <= Flatten)||(LA28_0 >= Gaussian && LA28_0 <= Hide)||LA28_0==Identifier||LA28_0==Inch||LA28_0==LAdd||(LA28_0 >= LRemove && LA28_0 <= LShape)||(LA28_0 >= Line && LA28_0 <= Mm)||(LA28_0 >= Move && LA28_0 <= MoveBy)||(LA28_0 >= NoFill && LA28_0 <= Number)||(LA28_0 >= OBracket && LA28_0 <= OParen)||(LA28_0 >= PI_CONSTANT && LA28_0 <= Println)||(LA28_0 >= Random && LA28_0 <= Rect)||(LA28_0 >= Rotate && LA28_0 <= Round)||(LA28_0 >= Scale && LA28_0 <= Slider)||(LA28_0 >= Sq && LA28_0 <= Subtract)||(LA28_0 >= Tan && LA28_0 <= TemplateCollection)||(LA28_0 >= Union && LA28_0 <= Weight)||LA28_0==Xor) ) {
@@ -3386,7 +3391,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt28) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:139:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:162:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall1080);
 							exprList129=exprList();
@@ -3412,14 +3417,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 139:30: -> ^( FUNC_CALL Weight ( exprList )? )
+					// 162:30: -> ^( FUNC_CALL Weight ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:139:33: ^( FUNC_CALL Weight ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:162:33: ^( FUNC_CALL Weight ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Weight.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:139:52: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:162:52: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -3436,7 +3441,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:140:6: Hide '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:163:6: Hide '(' expression ')'
 					{
 					Hide131=(Token)match(input,Hide,FOLLOW_Hide_in_transformCall1100);  
 					stream_Hide.add(Hide131);
@@ -3463,9 +3468,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 140:29: -> ^( FUNC_CALL Hide expression )
+					// 163:29: -> ^( FUNC_CALL Hide expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:140:32: ^( FUNC_CALL Hide expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:163:32: ^( FUNC_CALL Hide expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -3482,7 +3487,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:141:6: Show '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:164:6: Show '(' expression ')'
 					{
 					Show135=(Token)match(input,Show,FOLLOW_Show_in_transformCall1122);  
 					stream_Show.add(Show135);
@@ -3509,9 +3514,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 141:29: -> ^( FUNC_CALL Show expression )
+					// 164:29: -> ^( FUNC_CALL Show expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:141:32: ^( FUNC_CALL Show expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:164:32: ^( FUNC_CALL Show expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -3528,7 +3533,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:142:6: Group '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:165:6: Group '(' ( exprList )? ')'
 					{
 					Group139=(Token)match(input,Group,FOLLOW_Group_in_transformCall1144);  
 					stream_Group.add(Group139);
@@ -3536,7 +3541,7 @@ public class PogoParser extends Parser {
 					char_literal140=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall1146);  
 					stream_OParen.add(char_literal140);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:142:16: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:165:16: ( exprList )?
 					int alt29=2;
 					int LA29_0 = input.LA(1);
 					if ( (LA29_0==ATan||LA29_0==AddDesign||(LA29_0 >= Arc && LA29_0 <= Assert)||LA29_0==Bool||LA29_0==COLOR_CONSTANT||(LA29_0 >= Clip && LA29_0 <= Cm)||(LA29_0 >= Copy && LA29_0 <= Curve)||LA29_0==Difference||LA29_0==Ellipse||(LA29_0 >= Excl && LA29_0 <= Expand)||(LA29_0 >= Fill && LA29_0 <= Flatten)||(LA29_0 >= Gaussian && LA29_0 <= Hide)||LA29_0==Identifier||LA29_0==Inch||LA29_0==LAdd||(LA29_0 >= LRemove && LA29_0 <= LShape)||(LA29_0 >= Line && LA29_0 <= Mm)||(LA29_0 >= Move && LA29_0 <= MoveBy)||(LA29_0 >= NoFill && LA29_0 <= Number)||(LA29_0 >= OBracket && LA29_0 <= OParen)||(LA29_0 >= PI_CONSTANT && LA29_0 <= Println)||(LA29_0 >= Random && LA29_0 <= Rect)||(LA29_0 >= Rotate && LA29_0 <= Round)||(LA29_0 >= Scale && LA29_0 <= Slider)||(LA29_0 >= Sq && LA29_0 <= Subtract)||(LA29_0 >= Tan && LA29_0 <= TemplateCollection)||(LA29_0 >= Union && LA29_0 <= Weight)||LA29_0==Xor) ) {
@@ -3544,7 +3549,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt29) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:142:16: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:165:16: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall1148);
 							exprList141=exprList();
@@ -3570,14 +3575,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 142:29: -> ^( FUNC_CALL Group ( exprList )? )
+					// 165:29: -> ^( FUNC_CALL Group ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:142:32: ^( FUNC_CALL Group ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:165:32: ^( FUNC_CALL Group ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Group.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:142:50: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:165:50: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -3594,7 +3599,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:143:6: Expand '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:166:6: Expand '(' expression ')'
 					{
 					Expand143=(Token)match(input,Expand,FOLLOW_Expand_in_transformCall1168);  
 					stream_Expand.add(Expand143);
@@ -3621,9 +3626,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 143:31: -> ^( FUNC_CALL Expand expression )
+					// 166:31: -> ^( FUNC_CALL Expand expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:143:34: ^( FUNC_CALL Expand expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:166:34: ^( FUNC_CALL Expand expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -3640,7 +3645,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 15 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:144:6: Merge '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:167:6: Merge '(' expression ')'
 					{
 					Merge147=(Token)match(input,Merge,FOLLOW_Merge_in_transformCall1190);  
 					stream_Merge.add(Merge147);
@@ -3667,9 +3672,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 144:30: -> ^( FUNC_CALL Merge expression )
+					// 167:30: -> ^( FUNC_CALL Merge expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:144:33: ^( FUNC_CALL Merge expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:167:33: ^( FUNC_CALL Merge expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -3686,7 +3691,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 16 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:145:6: Scale '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:168:6: Scale '(' ( exprList )? ')'
 					{
 					Scale151=(Token)match(input,Scale,FOLLOW_Scale_in_transformCall1212);  
 					stream_Scale.add(Scale151);
@@ -3694,7 +3699,7 @@ public class PogoParser extends Parser {
 					char_literal152=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall1214);  
 					stream_OParen.add(char_literal152);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:145:16: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:168:16: ( exprList )?
 					int alt30=2;
 					int LA30_0 = input.LA(1);
 					if ( (LA30_0==ATan||LA30_0==AddDesign||(LA30_0 >= Arc && LA30_0 <= Assert)||LA30_0==Bool||LA30_0==COLOR_CONSTANT||(LA30_0 >= Clip && LA30_0 <= Cm)||(LA30_0 >= Copy && LA30_0 <= Curve)||LA30_0==Difference||LA30_0==Ellipse||(LA30_0 >= Excl && LA30_0 <= Expand)||(LA30_0 >= Fill && LA30_0 <= Flatten)||(LA30_0 >= Gaussian && LA30_0 <= Hide)||LA30_0==Identifier||LA30_0==Inch||LA30_0==LAdd||(LA30_0 >= LRemove && LA30_0 <= LShape)||(LA30_0 >= Line && LA30_0 <= Mm)||(LA30_0 >= Move && LA30_0 <= MoveBy)||(LA30_0 >= NoFill && LA30_0 <= Number)||(LA30_0 >= OBracket && LA30_0 <= OParen)||(LA30_0 >= PI_CONSTANT && LA30_0 <= Println)||(LA30_0 >= Random && LA30_0 <= Rect)||(LA30_0 >= Rotate && LA30_0 <= Round)||(LA30_0 >= Scale && LA30_0 <= Slider)||(LA30_0 >= Sq && LA30_0 <= Subtract)||(LA30_0 >= Tan && LA30_0 <= TemplateCollection)||(LA30_0 >= Union && LA30_0 <= Weight)||LA30_0==Xor) ) {
@@ -3702,7 +3707,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt30) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:145:16: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:168:16: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall1216);
 							exprList153=exprList();
@@ -3728,14 +3733,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 145:29: -> ^( FUNC_CALL Scale ( exprList )? )
+					// 168:29: -> ^( FUNC_CALL Scale ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:145:32: ^( FUNC_CALL Scale ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:168:32: ^( FUNC_CALL Scale ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Scale.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:145:50: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:168:50: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -3752,7 +3757,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 17 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:146:6: MirrorX '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:169:6: MirrorX '(' expression ')'
 					{
 					MirrorX155=(Token)match(input,MirrorX,FOLLOW_MirrorX_in_transformCall1236);  
 					stream_MirrorX.add(MirrorX155);
@@ -3779,9 +3784,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 146:32: -> ^( FUNC_CALL MirrorX expression )
+					// 169:32: -> ^( FUNC_CALL MirrorX expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:146:35: ^( FUNC_CALL MirrorX expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:169:35: ^( FUNC_CALL MirrorX expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -3798,7 +3803,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 18 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:147:6: MirrorY '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:170:6: MirrorY '(' expression ')'
 					{
 					MirrorY159=(Token)match(input,MirrorY,FOLLOW_MirrorY_in_transformCall1258);  
 					stream_MirrorY.add(MirrorY159);
@@ -3825,9 +3830,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 147:32: -> ^( FUNC_CALL MirrorY expression )
+					// 170:32: -> ^( FUNC_CALL MirrorY expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:147:35: ^( FUNC_CALL MirrorY expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:170:35: ^( FUNC_CALL MirrorY expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -3844,7 +3849,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 19 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:148:6: Union '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:171:6: Union '(' ( exprList )? ')'
 					{
 					Union163=(Token)match(input,Union,FOLLOW_Union_in_transformCall1280);  
 					stream_Union.add(Union163);
@@ -3852,7 +3857,7 @@ public class PogoParser extends Parser {
 					char_literal164=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall1282);  
 					stream_OParen.add(char_literal164);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:148:16: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:171:16: ( exprList )?
 					int alt31=2;
 					int LA31_0 = input.LA(1);
 					if ( (LA31_0==ATan||LA31_0==AddDesign||(LA31_0 >= Arc && LA31_0 <= Assert)||LA31_0==Bool||LA31_0==COLOR_CONSTANT||(LA31_0 >= Clip && LA31_0 <= Cm)||(LA31_0 >= Copy && LA31_0 <= Curve)||LA31_0==Difference||LA31_0==Ellipse||(LA31_0 >= Excl && LA31_0 <= Expand)||(LA31_0 >= Fill && LA31_0 <= Flatten)||(LA31_0 >= Gaussian && LA31_0 <= Hide)||LA31_0==Identifier||LA31_0==Inch||LA31_0==LAdd||(LA31_0 >= LRemove && LA31_0 <= LShape)||(LA31_0 >= Line && LA31_0 <= Mm)||(LA31_0 >= Move && LA31_0 <= MoveBy)||(LA31_0 >= NoFill && LA31_0 <= Number)||(LA31_0 >= OBracket && LA31_0 <= OParen)||(LA31_0 >= PI_CONSTANT && LA31_0 <= Println)||(LA31_0 >= Random && LA31_0 <= Rect)||(LA31_0 >= Rotate && LA31_0 <= Round)||(LA31_0 >= Scale && LA31_0 <= Slider)||(LA31_0 >= Sq && LA31_0 <= Subtract)||(LA31_0 >= Tan && LA31_0 <= TemplateCollection)||(LA31_0 >= Union && LA31_0 <= Weight)||LA31_0==Xor) ) {
@@ -3860,7 +3865,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt31) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:148:16: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:171:16: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall1284);
 							exprList165=exprList();
@@ -3886,14 +3891,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 148:29: -> ^( FUNC_CALL Union ( exprList )? )
+					// 171:29: -> ^( FUNC_CALL Union ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:148:32: ^( FUNC_CALL Union ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:171:32: ^( FUNC_CALL Union ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Union.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:148:50: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:171:50: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -3910,7 +3915,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 20 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:149:6: Difference '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:172:6: Difference '(' ( exprList )? ')'
 					{
 					Difference167=(Token)match(input,Difference,FOLLOW_Difference_in_transformCall1304);  
 					stream_Difference.add(Difference167);
@@ -3918,7 +3923,7 @@ public class PogoParser extends Parser {
 					char_literal168=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall1306);  
 					stream_OParen.add(char_literal168);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:149:21: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:172:21: ( exprList )?
 					int alt32=2;
 					int LA32_0 = input.LA(1);
 					if ( (LA32_0==ATan||LA32_0==AddDesign||(LA32_0 >= Arc && LA32_0 <= Assert)||LA32_0==Bool||LA32_0==COLOR_CONSTANT||(LA32_0 >= Clip && LA32_0 <= Cm)||(LA32_0 >= Copy && LA32_0 <= Curve)||LA32_0==Difference||LA32_0==Ellipse||(LA32_0 >= Excl && LA32_0 <= Expand)||(LA32_0 >= Fill && LA32_0 <= Flatten)||(LA32_0 >= Gaussian && LA32_0 <= Hide)||LA32_0==Identifier||LA32_0==Inch||LA32_0==LAdd||(LA32_0 >= LRemove && LA32_0 <= LShape)||(LA32_0 >= Line && LA32_0 <= Mm)||(LA32_0 >= Move && LA32_0 <= MoveBy)||(LA32_0 >= NoFill && LA32_0 <= Number)||(LA32_0 >= OBracket && LA32_0 <= OParen)||(LA32_0 >= PI_CONSTANT && LA32_0 <= Println)||(LA32_0 >= Random && LA32_0 <= Rect)||(LA32_0 >= Rotate && LA32_0 <= Round)||(LA32_0 >= Scale && LA32_0 <= Slider)||(LA32_0 >= Sq && LA32_0 <= Subtract)||(LA32_0 >= Tan && LA32_0 <= TemplateCollection)||(LA32_0 >= Union && LA32_0 <= Weight)||LA32_0==Xor) ) {
@@ -3926,7 +3931,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt32) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:149:21: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:172:21: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall1308);
 							exprList169=exprList();
@@ -3952,14 +3957,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 149:34: -> ^( FUNC_CALL Difference ( exprList )? )
+					// 172:34: -> ^( FUNC_CALL Difference ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:149:37: ^( FUNC_CALL Difference ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:172:37: ^( FUNC_CALL Difference ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Difference.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:149:60: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:172:60: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -3976,7 +3981,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 21 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:150:6: Clip '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:173:6: Clip '(' ( exprList )? ')'
 					{
 					Clip171=(Token)match(input,Clip,FOLLOW_Clip_in_transformCall1328);  
 					stream_Clip.add(Clip171);
@@ -3984,7 +3989,7 @@ public class PogoParser extends Parser {
 					char_literal172=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall1330);  
 					stream_OParen.add(char_literal172);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:150:15: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:173:15: ( exprList )?
 					int alt33=2;
 					int LA33_0 = input.LA(1);
 					if ( (LA33_0==ATan||LA33_0==AddDesign||(LA33_0 >= Arc && LA33_0 <= Assert)||LA33_0==Bool||LA33_0==COLOR_CONSTANT||(LA33_0 >= Clip && LA33_0 <= Cm)||(LA33_0 >= Copy && LA33_0 <= Curve)||LA33_0==Difference||LA33_0==Ellipse||(LA33_0 >= Excl && LA33_0 <= Expand)||(LA33_0 >= Fill && LA33_0 <= Flatten)||(LA33_0 >= Gaussian && LA33_0 <= Hide)||LA33_0==Identifier||LA33_0==Inch||LA33_0==LAdd||(LA33_0 >= LRemove && LA33_0 <= LShape)||(LA33_0 >= Line && LA33_0 <= Mm)||(LA33_0 >= Move && LA33_0 <= MoveBy)||(LA33_0 >= NoFill && LA33_0 <= Number)||(LA33_0 >= OBracket && LA33_0 <= OParen)||(LA33_0 >= PI_CONSTANT && LA33_0 <= Println)||(LA33_0 >= Random && LA33_0 <= Rect)||(LA33_0 >= Rotate && LA33_0 <= Round)||(LA33_0 >= Scale && LA33_0 <= Slider)||(LA33_0 >= Sq && LA33_0 <= Subtract)||(LA33_0 >= Tan && LA33_0 <= TemplateCollection)||(LA33_0 >= Union && LA33_0 <= Weight)||LA33_0==Xor) ) {
@@ -3992,7 +3997,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt33) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:150:15: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:173:15: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall1332);
 							exprList173=exprList();
@@ -4018,14 +4023,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 150:28: -> ^( FUNC_CALL Clip ( exprList )? )
+					// 173:28: -> ^( FUNC_CALL Clip ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:150:31: ^( FUNC_CALL Clip ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:173:31: ^( FUNC_CALL Clip ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Clip.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:150:48: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:173:48: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -4042,7 +4047,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 22 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:151:6: Xor '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:174:6: Xor '(' ( exprList )? ')'
 					{
 					Xor175=(Token)match(input,Xor,FOLLOW_Xor_in_transformCall1352);  
 					stream_Xor.add(Xor175);
@@ -4050,7 +4055,7 @@ public class PogoParser extends Parser {
 					char_literal176=(Token)match(input,OParen,FOLLOW_OParen_in_transformCall1354);  
 					stream_OParen.add(char_literal176);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:151:14: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:174:14: ( exprList )?
 					int alt34=2;
 					int LA34_0 = input.LA(1);
 					if ( (LA34_0==ATan||LA34_0==AddDesign||(LA34_0 >= Arc && LA34_0 <= Assert)||LA34_0==Bool||LA34_0==COLOR_CONSTANT||(LA34_0 >= Clip && LA34_0 <= Cm)||(LA34_0 >= Copy && LA34_0 <= Curve)||LA34_0==Difference||LA34_0==Ellipse||(LA34_0 >= Excl && LA34_0 <= Expand)||(LA34_0 >= Fill && LA34_0 <= Flatten)||(LA34_0 >= Gaussian && LA34_0 <= Hide)||LA34_0==Identifier||LA34_0==Inch||LA34_0==LAdd||(LA34_0 >= LRemove && LA34_0 <= LShape)||(LA34_0 >= Line && LA34_0 <= Mm)||(LA34_0 >= Move && LA34_0 <= MoveBy)||(LA34_0 >= NoFill && LA34_0 <= Number)||(LA34_0 >= OBracket && LA34_0 <= OParen)||(LA34_0 >= PI_CONSTANT && LA34_0 <= Println)||(LA34_0 >= Random && LA34_0 <= Rect)||(LA34_0 >= Rotate && LA34_0 <= Round)||(LA34_0 >= Scale && LA34_0 <= Slider)||(LA34_0 >= Sq && LA34_0 <= Subtract)||(LA34_0 >= Tan && LA34_0 <= TemplateCollection)||(LA34_0 >= Union && LA34_0 <= Weight)||LA34_0==Xor) ) {
@@ -4058,7 +4063,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt34) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:151:14: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:174:14: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall1356);
 							exprList177=exprList();
@@ -4084,14 +4089,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 151:27: -> ^( FUNC_CALL Xor ( exprList )? )
+					// 174:27: -> ^( FUNC_CALL Xor ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:151:30: ^( FUNC_CALL Xor ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:174:30: ^( FUNC_CALL Xor ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Xor.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:151:46: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:174:46: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -4108,7 +4113,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 23 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:152:6: Flatten '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:175:6: Flatten '(' expression ')'
 					{
 					Flatten179=(Token)match(input,Flatten,FOLLOW_Flatten_in_transformCall1376);  
 					stream_Flatten.add(Flatten179);
@@ -4135,9 +4140,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 152:32: -> ^( FUNC_CALL Flatten expression )
+					// 175:32: -> ^( FUNC_CALL Flatten expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:152:35: ^( FUNC_CALL Flatten expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:175:35: ^( FUNC_CALL Flatten expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4182,7 +4187,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "patternCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:155:4: patternCall : ( Grid '(' ( exprList )? ')' -> ^( FUNC_CALL Grid ( exprList )? ) | Wave '(' ( exprList )? ')' -> ^( FUNC_CALL Wave ( exprList )? ) | Arc '(' ( exprList )? ')' -> ^( FUNC_CALL Arc ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:178:4: patternCall : ( Grid '(' ( exprList )? ')' -> ^( FUNC_CALL Grid ( exprList )? ) | Wave '(' ( exprList )? ')' -> ^( FUNC_CALL Wave ( exprList )? ) | Arc '(' ( exprList )? ')' -> ^( FUNC_CALL Arc ( exprList )? ) );
 	public final PogoParser.patternCall_return patternCall() throws RecognitionException {
 		PogoParser.patternCall_return retval = new PogoParser.patternCall_return();
 		retval.start = input.LT(1);
@@ -4219,7 +4224,7 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:156:4: ( Grid '(' ( exprList )? ')' -> ^( FUNC_CALL Grid ( exprList )? ) | Wave '(' ( exprList )? ')' -> ^( FUNC_CALL Wave ( exprList )? ) | Arc '(' ( exprList )? ')' -> ^( FUNC_CALL Arc ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:179:4: ( Grid '(' ( exprList )? ')' -> ^( FUNC_CALL Grid ( exprList )? ) | Wave '(' ( exprList )? ')' -> ^( FUNC_CALL Wave ( exprList )? ) | Arc '(' ( exprList )? ')' -> ^( FUNC_CALL Arc ( exprList )? ) )
 			int alt39=3;
 			switch ( input.LA(1) ) {
 			case Grid:
@@ -4244,7 +4249,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt39) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:156:6: Grid '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:179:6: Grid '(' ( exprList )? ')'
 					{
 					Grid183=(Token)match(input,Grid,FOLLOW_Grid_in_patternCall1412);  
 					stream_Grid.add(Grid183);
@@ -4252,7 +4257,7 @@ public class PogoParser extends Parser {
 					char_literal184=(Token)match(input,OParen,FOLLOW_OParen_in_patternCall1414);  
 					stream_OParen.add(char_literal184);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:156:15: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:179:15: ( exprList )?
 					int alt36=2;
 					int LA36_0 = input.LA(1);
 					if ( (LA36_0==ATan||LA36_0==AddDesign||(LA36_0 >= Arc && LA36_0 <= Assert)||LA36_0==Bool||LA36_0==COLOR_CONSTANT||(LA36_0 >= Clip && LA36_0 <= Cm)||(LA36_0 >= Copy && LA36_0 <= Curve)||LA36_0==Difference||LA36_0==Ellipse||(LA36_0 >= Excl && LA36_0 <= Expand)||(LA36_0 >= Fill && LA36_0 <= Flatten)||(LA36_0 >= Gaussian && LA36_0 <= Hide)||LA36_0==Identifier||LA36_0==Inch||LA36_0==LAdd||(LA36_0 >= LRemove && LA36_0 <= LShape)||(LA36_0 >= Line && LA36_0 <= Mm)||(LA36_0 >= Move && LA36_0 <= MoveBy)||(LA36_0 >= NoFill && LA36_0 <= Number)||(LA36_0 >= OBracket && LA36_0 <= OParen)||(LA36_0 >= PI_CONSTANT && LA36_0 <= Println)||(LA36_0 >= Random && LA36_0 <= Rect)||(LA36_0 >= Rotate && LA36_0 <= Round)||(LA36_0 >= Scale && LA36_0 <= Slider)||(LA36_0 >= Sq && LA36_0 <= Subtract)||(LA36_0 >= Tan && LA36_0 <= TemplateCollection)||(LA36_0 >= Union && LA36_0 <= Weight)||LA36_0==Xor) ) {
@@ -4260,7 +4265,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt36) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:156:15: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:179:15: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_patternCall1416);
 							exprList185=exprList();
@@ -4286,14 +4291,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 156:29: -> ^( FUNC_CALL Grid ( exprList )? )
+					// 179:29: -> ^( FUNC_CALL Grid ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:156:32: ^( FUNC_CALL Grid ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:179:32: ^( FUNC_CALL Grid ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Grid.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:156:49: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:179:49: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -4310,7 +4315,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:157:6: Wave '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:180:6: Wave '(' ( exprList )? ')'
 					{
 					Wave187=(Token)match(input,Wave,FOLLOW_Wave_in_patternCall1437);  
 					stream_Wave.add(Wave187);
@@ -4318,7 +4323,7 @@ public class PogoParser extends Parser {
 					char_literal188=(Token)match(input,OParen,FOLLOW_OParen_in_patternCall1439);  
 					stream_OParen.add(char_literal188);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:157:15: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:180:15: ( exprList )?
 					int alt37=2;
 					int LA37_0 = input.LA(1);
 					if ( (LA37_0==ATan||LA37_0==AddDesign||(LA37_0 >= Arc && LA37_0 <= Assert)||LA37_0==Bool||LA37_0==COLOR_CONSTANT||(LA37_0 >= Clip && LA37_0 <= Cm)||(LA37_0 >= Copy && LA37_0 <= Curve)||LA37_0==Difference||LA37_0==Ellipse||(LA37_0 >= Excl && LA37_0 <= Expand)||(LA37_0 >= Fill && LA37_0 <= Flatten)||(LA37_0 >= Gaussian && LA37_0 <= Hide)||LA37_0==Identifier||LA37_0==Inch||LA37_0==LAdd||(LA37_0 >= LRemove && LA37_0 <= LShape)||(LA37_0 >= Line && LA37_0 <= Mm)||(LA37_0 >= Move && LA37_0 <= MoveBy)||(LA37_0 >= NoFill && LA37_0 <= Number)||(LA37_0 >= OBracket && LA37_0 <= OParen)||(LA37_0 >= PI_CONSTANT && LA37_0 <= Println)||(LA37_0 >= Random && LA37_0 <= Rect)||(LA37_0 >= Rotate && LA37_0 <= Round)||(LA37_0 >= Scale && LA37_0 <= Slider)||(LA37_0 >= Sq && LA37_0 <= Subtract)||(LA37_0 >= Tan && LA37_0 <= TemplateCollection)||(LA37_0 >= Union && LA37_0 <= Weight)||LA37_0==Xor) ) {
@@ -4326,7 +4331,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt37) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:157:15: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:180:15: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_patternCall1441);
 							exprList189=exprList();
@@ -4352,14 +4357,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 157:29: -> ^( FUNC_CALL Wave ( exprList )? )
+					// 180:29: -> ^( FUNC_CALL Wave ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:157:32: ^( FUNC_CALL Wave ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:180:32: ^( FUNC_CALL Wave ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Wave.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:157:49: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:180:49: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -4376,7 +4381,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:158:6: Arc '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:181:6: Arc '(' ( exprList )? ')'
 					{
 					Arc191=(Token)match(input,Arc,FOLLOW_Arc_in_patternCall1462);  
 					stream_Arc.add(Arc191);
@@ -4384,7 +4389,7 @@ public class PogoParser extends Parser {
 					char_literal192=(Token)match(input,OParen,FOLLOW_OParen_in_patternCall1464);  
 					stream_OParen.add(char_literal192);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:158:14: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:181:14: ( exprList )?
 					int alt38=2;
 					int LA38_0 = input.LA(1);
 					if ( (LA38_0==ATan||LA38_0==AddDesign||(LA38_0 >= Arc && LA38_0 <= Assert)||LA38_0==Bool||LA38_0==COLOR_CONSTANT||(LA38_0 >= Clip && LA38_0 <= Cm)||(LA38_0 >= Copy && LA38_0 <= Curve)||LA38_0==Difference||LA38_0==Ellipse||(LA38_0 >= Excl && LA38_0 <= Expand)||(LA38_0 >= Fill && LA38_0 <= Flatten)||(LA38_0 >= Gaussian && LA38_0 <= Hide)||LA38_0==Identifier||LA38_0==Inch||LA38_0==LAdd||(LA38_0 >= LRemove && LA38_0 <= LShape)||(LA38_0 >= Line && LA38_0 <= Mm)||(LA38_0 >= Move && LA38_0 <= MoveBy)||(LA38_0 >= NoFill && LA38_0 <= Number)||(LA38_0 >= OBracket && LA38_0 <= OParen)||(LA38_0 >= PI_CONSTANT && LA38_0 <= Println)||(LA38_0 >= Random && LA38_0 <= Rect)||(LA38_0 >= Rotate && LA38_0 <= Round)||(LA38_0 >= Scale && LA38_0 <= Slider)||(LA38_0 >= Sq && LA38_0 <= Subtract)||(LA38_0 >= Tan && LA38_0 <= TemplateCollection)||(LA38_0 >= Union && LA38_0 <= Weight)||LA38_0==Xor) ) {
@@ -4392,7 +4397,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt38) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:158:14: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:181:14: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_patternCall1466);
 							exprList193=exprList();
@@ -4418,14 +4423,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 158:28: -> ^( FUNC_CALL Arc ( exprList )? )
+					// 181:28: -> ^( FUNC_CALL Arc ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:158:31: ^( FUNC_CALL Arc ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:181:31: ^( FUNC_CALL Arc ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Arc.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:158:47: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:181:47: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -4470,7 +4475,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "getCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:161:4: getCall : ( GetWidth '(' expression ')' -> ^( FUNC_CALL GetWidth expression ) | GetHeight '(' expression ')' -> ^( FUNC_CALL GetHeight expression ) | GetX '(' expression ')' -> ^( FUNC_CALL GetX expression ) | GetY '(' expression ')' -> ^( FUNC_CALL GetY expression ) | GetOrigin '(' expression ')' -> ^( FUNC_CALL GetOrigin expression ) | GetRotation '(' expression ')' -> ^( FUNC_CALL GetRotation expression ) | GetFill '(' expression ')' -> ^( FUNC_CALL GetFill expression ) | GetStroke '(' expression ')' -> ^( FUNC_CALL GetStroke expression ) | GetStart '(' expression ')' -> ^( FUNC_CALL GetStart expression ) | GetEnd '(' expression ')' -> ^( FUNC_CALL GetEnd expression ) | GetDistance '(' ( exprList )? ')' -> ^( FUNC_CALL GetDistance ( exprList )? ) | GetIntersect '(' ( exprList )? ')' -> ^( FUNC_CALL GetIntersect ( exprList )? ) | GetAngle '(' ( exprList )? ')' -> ^( FUNC_CALL GetAngle ( exprList )? ) | GetRadius '(' ( exprList )? ')' -> ^( FUNC_CALL GetRadius ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:184:4: getCall : ( GetWidth '(' expression ')' -> ^( FUNC_CALL GetWidth expression ) | GetHeight '(' expression ')' -> ^( FUNC_CALL GetHeight expression ) | GetX '(' expression ')' -> ^( FUNC_CALL GetX expression ) | GetY '(' expression ')' -> ^( FUNC_CALL GetY expression ) | GetOrigin '(' expression ')' -> ^( FUNC_CALL GetOrigin expression ) | GetRotation '(' expression ')' -> ^( FUNC_CALL GetRotation expression ) | GetFill '(' expression ')' -> ^( FUNC_CALL GetFill expression ) | GetStroke '(' expression ')' -> ^( FUNC_CALL GetStroke expression ) | GetStart '(' expression ')' -> ^( FUNC_CALL GetStart expression ) | GetEnd '(' expression ')' -> ^( FUNC_CALL GetEnd expression ) | GetDistance '(' ( exprList )? ')' -> ^( FUNC_CALL GetDistance ( exprList )? ) | GetIntersect '(' ( exprList )? ')' -> ^( FUNC_CALL GetIntersect ( exprList )? ) | GetAngle '(' ( exprList )? ')' -> ^( FUNC_CALL GetAngle ( exprList )? ) | GetRadius '(' ( exprList )? ')' -> ^( FUNC_CALL GetRadius ( exprList )? ) );
 	public final PogoParser.getCall_return getCall() throws RecognitionException {
 		PogoParser.getCall_return retval = new PogoParser.getCall_return();
 		retval.start = input.LT(1);
@@ -4596,7 +4601,7 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:162:3: ( GetWidth '(' expression ')' -> ^( FUNC_CALL GetWidth expression ) | GetHeight '(' expression ')' -> ^( FUNC_CALL GetHeight expression ) | GetX '(' expression ')' -> ^( FUNC_CALL GetX expression ) | GetY '(' expression ')' -> ^( FUNC_CALL GetY expression ) | GetOrigin '(' expression ')' -> ^( FUNC_CALL GetOrigin expression ) | GetRotation '(' expression ')' -> ^( FUNC_CALL GetRotation expression ) | GetFill '(' expression ')' -> ^( FUNC_CALL GetFill expression ) | GetStroke '(' expression ')' -> ^( FUNC_CALL GetStroke expression ) | GetStart '(' expression ')' -> ^( FUNC_CALL GetStart expression ) | GetEnd '(' expression ')' -> ^( FUNC_CALL GetEnd expression ) | GetDistance '(' ( exprList )? ')' -> ^( FUNC_CALL GetDistance ( exprList )? ) | GetIntersect '(' ( exprList )? ')' -> ^( FUNC_CALL GetIntersect ( exprList )? ) | GetAngle '(' ( exprList )? ')' -> ^( FUNC_CALL GetAngle ( exprList )? ) | GetRadius '(' ( exprList )? ')' -> ^( FUNC_CALL GetRadius ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:185:3: ( GetWidth '(' expression ')' -> ^( FUNC_CALL GetWidth expression ) | GetHeight '(' expression ')' -> ^( FUNC_CALL GetHeight expression ) | GetX '(' expression ')' -> ^( FUNC_CALL GetX expression ) | GetY '(' expression ')' -> ^( FUNC_CALL GetY expression ) | GetOrigin '(' expression ')' -> ^( FUNC_CALL GetOrigin expression ) | GetRotation '(' expression ')' -> ^( FUNC_CALL GetRotation expression ) | GetFill '(' expression ')' -> ^( FUNC_CALL GetFill expression ) | GetStroke '(' expression ')' -> ^( FUNC_CALL GetStroke expression ) | GetStart '(' expression ')' -> ^( FUNC_CALL GetStart expression ) | GetEnd '(' expression ')' -> ^( FUNC_CALL GetEnd expression ) | GetDistance '(' ( exprList )? ')' -> ^( FUNC_CALL GetDistance ( exprList )? ) | GetIntersect '(' ( exprList )? ')' -> ^( FUNC_CALL GetIntersect ( exprList )? ) | GetAngle '(' ( exprList )? ')' -> ^( FUNC_CALL GetAngle ( exprList )? ) | GetRadius '(' ( exprList )? ')' -> ^( FUNC_CALL GetRadius ( exprList )? ) )
 			int alt44=14;
 			switch ( input.LA(1) ) {
 			case GetWidth:
@@ -4676,7 +4681,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt44) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:162:5: GetWidth '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:185:5: GetWidth '(' expression ')'
 					{
 					GetWidth195=(Token)match(input,GetWidth,FOLLOW_GetWidth_in_getCall1500);  
 					stream_GetWidth.add(GetWidth195);
@@ -4703,9 +4708,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 162:32: -> ^( FUNC_CALL GetWidth expression )
+					// 185:32: -> ^( FUNC_CALL GetWidth expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:162:35: ^( FUNC_CALL GetWidth expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:185:35: ^( FUNC_CALL GetWidth expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4722,7 +4727,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:163:4: GetHeight '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:186:4: GetHeight '(' expression ')'
 					{
 					GetHeight199=(Token)match(input,GetHeight,FOLLOW_GetHeight_in_getCall1520);  
 					stream_GetHeight.add(GetHeight199);
@@ -4749,9 +4754,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 163:32: -> ^( FUNC_CALL GetHeight expression )
+					// 186:32: -> ^( FUNC_CALL GetHeight expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:163:35: ^( FUNC_CALL GetHeight expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:186:35: ^( FUNC_CALL GetHeight expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4768,7 +4773,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:164:4: GetX '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:187:4: GetX '(' expression ')'
 					{
 					GetX203=(Token)match(input,GetX,FOLLOW_GetX_in_getCall1540);  
 					stream_GetX.add(GetX203);
@@ -4795,9 +4800,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 164:27: -> ^( FUNC_CALL GetX expression )
+					// 187:27: -> ^( FUNC_CALL GetX expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:164:30: ^( FUNC_CALL GetX expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:187:30: ^( FUNC_CALL GetX expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4814,7 +4819,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:165:4: GetY '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:188:4: GetY '(' expression ')'
 					{
 					GetY207=(Token)match(input,GetY,FOLLOW_GetY_in_getCall1560);  
 					stream_GetY.add(GetY207);
@@ -4841,9 +4846,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 165:27: -> ^( FUNC_CALL GetY expression )
+					// 188:27: -> ^( FUNC_CALL GetY expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:165:30: ^( FUNC_CALL GetY expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:188:30: ^( FUNC_CALL GetY expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4860,7 +4865,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:166:4: GetOrigin '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:189:4: GetOrigin '(' expression ')'
 					{
 					GetOrigin211=(Token)match(input,GetOrigin,FOLLOW_GetOrigin_in_getCall1580);  
 					stream_GetOrigin.add(GetOrigin211);
@@ -4887,9 +4892,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 166:32: -> ^( FUNC_CALL GetOrigin expression )
+					// 189:32: -> ^( FUNC_CALL GetOrigin expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:166:35: ^( FUNC_CALL GetOrigin expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:189:35: ^( FUNC_CALL GetOrigin expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4906,7 +4911,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:167:4: GetRotation '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:190:4: GetRotation '(' expression ')'
 					{
 					GetRotation215=(Token)match(input,GetRotation,FOLLOW_GetRotation_in_getCall1600);  
 					stream_GetRotation.add(GetRotation215);
@@ -4933,9 +4938,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 167:34: -> ^( FUNC_CALL GetRotation expression )
+					// 190:34: -> ^( FUNC_CALL GetRotation expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:167:37: ^( FUNC_CALL GetRotation expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:190:37: ^( FUNC_CALL GetRotation expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4952,7 +4957,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:168:4: GetFill '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:191:4: GetFill '(' expression ')'
 					{
 					GetFill219=(Token)match(input,GetFill,FOLLOW_GetFill_in_getCall1620);  
 					stream_GetFill.add(GetFill219);
@@ -4979,9 +4984,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 168:30: -> ^( FUNC_CALL GetFill expression )
+					// 191:30: -> ^( FUNC_CALL GetFill expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:168:33: ^( FUNC_CALL GetFill expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:191:33: ^( FUNC_CALL GetFill expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4998,7 +5003,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:169:4: GetStroke '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:192:4: GetStroke '(' expression ')'
 					{
 					GetStroke223=(Token)match(input,GetStroke,FOLLOW_GetStroke_in_getCall1640);  
 					stream_GetStroke.add(GetStroke223);
@@ -5025,9 +5030,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 169:32: -> ^( FUNC_CALL GetStroke expression )
+					// 192:32: -> ^( FUNC_CALL GetStroke expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:169:35: ^( FUNC_CALL GetStroke expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:192:35: ^( FUNC_CALL GetStroke expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5044,7 +5049,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:170:4: GetStart '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:193:4: GetStart '(' expression ')'
 					{
 					GetStart227=(Token)match(input,GetStart,FOLLOW_GetStart_in_getCall1660);  
 					stream_GetStart.add(GetStart227);
@@ -5071,9 +5076,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 170:31: -> ^( FUNC_CALL GetStart expression )
+					// 193:31: -> ^( FUNC_CALL GetStart expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:170:34: ^( FUNC_CALL GetStart expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:193:34: ^( FUNC_CALL GetStart expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5090,7 +5095,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:171:4: GetEnd '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:194:4: GetEnd '(' expression ')'
 					{
 					GetEnd231=(Token)match(input,GetEnd,FOLLOW_GetEnd_in_getCall1680);  
 					stream_GetEnd.add(GetEnd231);
@@ -5117,9 +5122,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 171:29: -> ^( FUNC_CALL GetEnd expression )
+					// 194:29: -> ^( FUNC_CALL GetEnd expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:171:32: ^( FUNC_CALL GetEnd expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:194:32: ^( FUNC_CALL GetEnd expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5136,7 +5141,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:172:4: GetDistance '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:195:4: GetDistance '(' ( exprList )? ')'
 					{
 					GetDistance235=(Token)match(input,GetDistance,FOLLOW_GetDistance_in_getCall1701);  
 					stream_GetDistance.add(GetDistance235);
@@ -5144,7 +5149,7 @@ public class PogoParser extends Parser {
 					char_literal236=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1703);  
 					stream_OParen.add(char_literal236);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:172:20: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:195:20: ( exprList )?
 					int alt40=2;
 					int LA40_0 = input.LA(1);
 					if ( (LA40_0==ATan||LA40_0==AddDesign||(LA40_0 >= Arc && LA40_0 <= Assert)||LA40_0==Bool||LA40_0==COLOR_CONSTANT||(LA40_0 >= Clip && LA40_0 <= Cm)||(LA40_0 >= Copy && LA40_0 <= Curve)||LA40_0==Difference||LA40_0==Ellipse||(LA40_0 >= Excl && LA40_0 <= Expand)||(LA40_0 >= Fill && LA40_0 <= Flatten)||(LA40_0 >= Gaussian && LA40_0 <= Hide)||LA40_0==Identifier||LA40_0==Inch||LA40_0==LAdd||(LA40_0 >= LRemove && LA40_0 <= LShape)||(LA40_0 >= Line && LA40_0 <= Mm)||(LA40_0 >= Move && LA40_0 <= MoveBy)||(LA40_0 >= NoFill && LA40_0 <= Number)||(LA40_0 >= OBracket && LA40_0 <= OParen)||(LA40_0 >= PI_CONSTANT && LA40_0 <= Println)||(LA40_0 >= Random && LA40_0 <= Rect)||(LA40_0 >= Rotate && LA40_0 <= Round)||(LA40_0 >= Scale && LA40_0 <= Slider)||(LA40_0 >= Sq && LA40_0 <= Subtract)||(LA40_0 >= Tan && LA40_0 <= TemplateCollection)||(LA40_0 >= Union && LA40_0 <= Weight)||LA40_0==Xor) ) {
@@ -5152,7 +5157,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt40) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:172:20: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:195:20: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_getCall1705);
 							exprList237=exprList();
@@ -5178,14 +5183,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 172:34: -> ^( FUNC_CALL GetDistance ( exprList )? )
+					// 195:34: -> ^( FUNC_CALL GetDistance ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:172:37: ^( FUNC_CALL GetDistance ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:195:37: ^( FUNC_CALL GetDistance ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_GetDistance.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:172:61: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:195:61: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5202,7 +5207,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:173:4: GetIntersect '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:196:4: GetIntersect '(' ( exprList )? ')'
 					{
 					GetIntersect239=(Token)match(input,GetIntersect,FOLLOW_GetIntersect_in_getCall1726);  
 					stream_GetIntersect.add(GetIntersect239);
@@ -5210,7 +5215,7 @@ public class PogoParser extends Parser {
 					char_literal240=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1727);  
 					stream_OParen.add(char_literal240);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:173:20: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:196:20: ( exprList )?
 					int alt41=2;
 					int LA41_0 = input.LA(1);
 					if ( (LA41_0==ATan||LA41_0==AddDesign||(LA41_0 >= Arc && LA41_0 <= Assert)||LA41_0==Bool||LA41_0==COLOR_CONSTANT||(LA41_0 >= Clip && LA41_0 <= Cm)||(LA41_0 >= Copy && LA41_0 <= Curve)||LA41_0==Difference||LA41_0==Ellipse||(LA41_0 >= Excl && LA41_0 <= Expand)||(LA41_0 >= Fill && LA41_0 <= Flatten)||(LA41_0 >= Gaussian && LA41_0 <= Hide)||LA41_0==Identifier||LA41_0==Inch||LA41_0==LAdd||(LA41_0 >= LRemove && LA41_0 <= LShape)||(LA41_0 >= Line && LA41_0 <= Mm)||(LA41_0 >= Move && LA41_0 <= MoveBy)||(LA41_0 >= NoFill && LA41_0 <= Number)||(LA41_0 >= OBracket && LA41_0 <= OParen)||(LA41_0 >= PI_CONSTANT && LA41_0 <= Println)||(LA41_0 >= Random && LA41_0 <= Rect)||(LA41_0 >= Rotate && LA41_0 <= Round)||(LA41_0 >= Scale && LA41_0 <= Slider)||(LA41_0 >= Sq && LA41_0 <= Subtract)||(LA41_0 >= Tan && LA41_0 <= TemplateCollection)||(LA41_0 >= Union && LA41_0 <= Weight)||LA41_0==Xor) ) {
@@ -5218,7 +5223,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt41) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:173:20: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:196:20: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_getCall1729);
 							exprList241=exprList();
@@ -5244,14 +5249,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 173:34: -> ^( FUNC_CALL GetIntersect ( exprList )? )
+					// 196:34: -> ^( FUNC_CALL GetIntersect ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:173:37: ^( FUNC_CALL GetIntersect ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:196:37: ^( FUNC_CALL GetIntersect ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_GetIntersect.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:173:62: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:196:62: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5268,7 +5273,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:174:4: GetAngle '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:197:4: GetAngle '(' ( exprList )? ')'
 					{
 					GetAngle243=(Token)match(input,GetAngle,FOLLOW_GetAngle_in_getCall1750);  
 					stream_GetAngle.add(GetAngle243);
@@ -5276,7 +5281,7 @@ public class PogoParser extends Parser {
 					char_literal244=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1751);  
 					stream_OParen.add(char_literal244);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:174:16: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:197:16: ( exprList )?
 					int alt42=2;
 					int LA42_0 = input.LA(1);
 					if ( (LA42_0==ATan||LA42_0==AddDesign||(LA42_0 >= Arc && LA42_0 <= Assert)||LA42_0==Bool||LA42_0==COLOR_CONSTANT||(LA42_0 >= Clip && LA42_0 <= Cm)||(LA42_0 >= Copy && LA42_0 <= Curve)||LA42_0==Difference||LA42_0==Ellipse||(LA42_0 >= Excl && LA42_0 <= Expand)||(LA42_0 >= Fill && LA42_0 <= Flatten)||(LA42_0 >= Gaussian && LA42_0 <= Hide)||LA42_0==Identifier||LA42_0==Inch||LA42_0==LAdd||(LA42_0 >= LRemove && LA42_0 <= LShape)||(LA42_0 >= Line && LA42_0 <= Mm)||(LA42_0 >= Move && LA42_0 <= MoveBy)||(LA42_0 >= NoFill && LA42_0 <= Number)||(LA42_0 >= OBracket && LA42_0 <= OParen)||(LA42_0 >= PI_CONSTANT && LA42_0 <= Println)||(LA42_0 >= Random && LA42_0 <= Rect)||(LA42_0 >= Rotate && LA42_0 <= Round)||(LA42_0 >= Scale && LA42_0 <= Slider)||(LA42_0 >= Sq && LA42_0 <= Subtract)||(LA42_0 >= Tan && LA42_0 <= TemplateCollection)||(LA42_0 >= Union && LA42_0 <= Weight)||LA42_0==Xor) ) {
@@ -5284,7 +5289,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt42) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:174:16: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:197:16: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_getCall1753);
 							exprList245=exprList();
@@ -5310,14 +5315,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 174:30: -> ^( FUNC_CALL GetAngle ( exprList )? )
+					// 197:30: -> ^( FUNC_CALL GetAngle ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:174:33: ^( FUNC_CALL GetAngle ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:197:33: ^( FUNC_CALL GetAngle ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_GetAngle.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:174:54: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:197:54: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5334,7 +5339,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:175:4: GetRadius '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:4: GetRadius '(' ( exprList )? ')'
 					{
 					GetRadius247=(Token)match(input,GetRadius,FOLLOW_GetRadius_in_getCall1774);  
 					stream_GetRadius.add(GetRadius247);
@@ -5342,7 +5347,7 @@ public class PogoParser extends Parser {
 					char_literal248=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1775);  
 					stream_OParen.add(char_literal248);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:175:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:17: ( exprList )?
 					int alt43=2;
 					int LA43_0 = input.LA(1);
 					if ( (LA43_0==ATan||LA43_0==AddDesign||(LA43_0 >= Arc && LA43_0 <= Assert)||LA43_0==Bool||LA43_0==COLOR_CONSTANT||(LA43_0 >= Clip && LA43_0 <= Cm)||(LA43_0 >= Copy && LA43_0 <= Curve)||LA43_0==Difference||LA43_0==Ellipse||(LA43_0 >= Excl && LA43_0 <= Expand)||(LA43_0 >= Fill && LA43_0 <= Flatten)||(LA43_0 >= Gaussian && LA43_0 <= Hide)||LA43_0==Identifier||LA43_0==Inch||LA43_0==LAdd||(LA43_0 >= LRemove && LA43_0 <= LShape)||(LA43_0 >= Line && LA43_0 <= Mm)||(LA43_0 >= Move && LA43_0 <= MoveBy)||(LA43_0 >= NoFill && LA43_0 <= Number)||(LA43_0 >= OBracket && LA43_0 <= OParen)||(LA43_0 >= PI_CONSTANT && LA43_0 <= Println)||(LA43_0 >= Random && LA43_0 <= Rect)||(LA43_0 >= Rotate && LA43_0 <= Round)||(LA43_0 >= Scale && LA43_0 <= Slider)||(LA43_0 >= Sq && LA43_0 <= Subtract)||(LA43_0 >= Tan && LA43_0 <= TemplateCollection)||(LA43_0 >= Union && LA43_0 <= Weight)||LA43_0==Xor) ) {
@@ -5350,7 +5355,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt43) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:175:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_getCall1777);
 							exprList249=exprList();
@@ -5376,14 +5381,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 175:31: -> ^( FUNC_CALL GetRadius ( exprList )? )
+					// 198:31: -> ^( FUNC_CALL GetRadius ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:175:34: ^( FUNC_CALL GetRadius ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:34: ^( FUNC_CALL GetRadius ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_GetRadius.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:175:56: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:56: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5428,7 +5433,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "mathCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:178:4: mathCall : ( Cosine '(' expression ')' -> ^( FUNC_CALL Cosine expression ) | Sine '(' expression ')' -> ^( FUNC_CALL Sine expression ) | Tan '(' expression ')' -> ^( FUNC_CALL Tan expression ) | ATan '(' ( exprList )? ')' -> ^( FUNC_CALL ATan ( exprList )? ) | Random '(' ( exprList )? ')' -> ^( FUNC_CALL Random ( exprList )? ) | Pow '(' ( exprList )? ')' -> ^( FUNC_CALL Pow ( exprList )? ) | Sqrt '(' expression ')' -> ^( FUNC_CALL Sqrt expression ) | Sq '(' expression ')' -> ^( FUNC_CALL Sq expression ) | Gaussian '(' ( exprList )? ')' -> ^( FUNC_CALL Gaussian ( exprList )? ) | Noise '(' ( exprList )? ')' -> ^( FUNC_CALL Noise ( exprList )? ) | Round '(' expression ')' -> ^( FUNC_CALL Round expression ) | Map '(' ( exprList )? ')' -> ^( FUNC_CALL Map ( exprList )? ) | Inch '(' expression ')' -> ^( FUNC_CALL Inch expression ) | Mm '(' expression ')' -> ^( FUNC_CALL Mm expression ) | Cm '(' expression ')' -> ^( FUNC_CALL Cm expression ) | Units '(' expression ')' -> ^( FUNC_CALL Units expression ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:201:4: mathCall : ( Cosine '(' expression ')' -> ^( FUNC_CALL Cosine expression ) | Sine '(' expression ')' -> ^( FUNC_CALL Sine expression ) | Tan '(' expression ')' -> ^( FUNC_CALL Tan expression ) | ATan '(' ( exprList )? ')' -> ^( FUNC_CALL ATan ( exprList )? ) | Random '(' ( exprList )? ')' -> ^( FUNC_CALL Random ( exprList )? ) | Pow '(' ( exprList )? ')' -> ^( FUNC_CALL Pow ( exprList )? ) | Sqrt '(' expression ')' -> ^( FUNC_CALL Sqrt expression ) | Sq '(' expression ')' -> ^( FUNC_CALL Sq expression ) | Gaussian '(' ( exprList )? ')' -> ^( FUNC_CALL Gaussian ( exprList )? ) | Noise '(' ( exprList )? ')' -> ^( FUNC_CALL Noise ( exprList )? ) | Round '(' expression ')' -> ^( FUNC_CALL Round expression ) | Map '(' ( exprList )? ')' -> ^( FUNC_CALL Map ( exprList )? ) | Inch '(' expression ')' -> ^( FUNC_CALL Inch expression ) | Mm '(' expression ')' -> ^( FUNC_CALL Mm expression ) | Cm '(' expression ')' -> ^( FUNC_CALL Cm expression ) | Units '(' expression ')' -> ^( FUNC_CALL Units expression ) );
 	public final PogoParser.mathCall_return mathCall() throws RecognitionException {
 		PogoParser.mathCall_return retval = new PogoParser.mathCall_return();
 		retval.start = input.LT(1);
@@ -5570,7 +5575,7 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:179:5: ( Cosine '(' expression ')' -> ^( FUNC_CALL Cosine expression ) | Sine '(' expression ')' -> ^( FUNC_CALL Sine expression ) | Tan '(' expression ')' -> ^( FUNC_CALL Tan expression ) | ATan '(' ( exprList )? ')' -> ^( FUNC_CALL ATan ( exprList )? ) | Random '(' ( exprList )? ')' -> ^( FUNC_CALL Random ( exprList )? ) | Pow '(' ( exprList )? ')' -> ^( FUNC_CALL Pow ( exprList )? ) | Sqrt '(' expression ')' -> ^( FUNC_CALL Sqrt expression ) | Sq '(' expression ')' -> ^( FUNC_CALL Sq expression ) | Gaussian '(' ( exprList )? ')' -> ^( FUNC_CALL Gaussian ( exprList )? ) | Noise '(' ( exprList )? ')' -> ^( FUNC_CALL Noise ( exprList )? ) | Round '(' expression ')' -> ^( FUNC_CALL Round expression ) | Map '(' ( exprList )? ')' -> ^( FUNC_CALL Map ( exprList )? ) | Inch '(' expression ')' -> ^( FUNC_CALL Inch expression ) | Mm '(' expression ')' -> ^( FUNC_CALL Mm expression ) | Cm '(' expression ')' -> ^( FUNC_CALL Cm expression ) | Units '(' expression ')' -> ^( FUNC_CALL Units expression ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:202:5: ( Cosine '(' expression ')' -> ^( FUNC_CALL Cosine expression ) | Sine '(' expression ')' -> ^( FUNC_CALL Sine expression ) | Tan '(' expression ')' -> ^( FUNC_CALL Tan expression ) | ATan '(' ( exprList )? ')' -> ^( FUNC_CALL ATan ( exprList )? ) | Random '(' ( exprList )? ')' -> ^( FUNC_CALL Random ( exprList )? ) | Pow '(' ( exprList )? ')' -> ^( FUNC_CALL Pow ( exprList )? ) | Sqrt '(' expression ')' -> ^( FUNC_CALL Sqrt expression ) | Sq '(' expression ')' -> ^( FUNC_CALL Sq expression ) | Gaussian '(' ( exprList )? ')' -> ^( FUNC_CALL Gaussian ( exprList )? ) | Noise '(' ( exprList )? ')' -> ^( FUNC_CALL Noise ( exprList )? ) | Round '(' expression ')' -> ^( FUNC_CALL Round expression ) | Map '(' ( exprList )? ')' -> ^( FUNC_CALL Map ( exprList )? ) | Inch '(' expression ')' -> ^( FUNC_CALL Inch expression ) | Mm '(' expression ')' -> ^( FUNC_CALL Mm expression ) | Cm '(' expression ')' -> ^( FUNC_CALL Cm expression ) | Units '(' expression ')' -> ^( FUNC_CALL Units expression ) )
 			int alt51=16;
 			switch ( input.LA(1) ) {
 			case Cosine:
@@ -5660,7 +5665,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt51) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:179:6: Cosine '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:202:6: Cosine '(' expression ')'
 					{
 					Cosine251=(Token)match(input,Cosine,FOLLOW_Cosine_in_mathCall1813);  
 					stream_Cosine.add(Cosine251);
@@ -5687,9 +5692,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 179:34: -> ^( FUNC_CALL Cosine expression )
+					// 202:34: -> ^( FUNC_CALL Cosine expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:179:37: ^( FUNC_CALL Cosine expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:202:37: ^( FUNC_CALL Cosine expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5706,7 +5711,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:180:6: Sine '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:203:6: Sine '(' expression ')'
 					{
 					Sine255=(Token)match(input,Sine,FOLLOW_Sine_in_mathCall1838);  
 					stream_Sine.add(Sine255);
@@ -5733,9 +5738,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 180:32: -> ^( FUNC_CALL Sine expression )
+					// 203:32: -> ^( FUNC_CALL Sine expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:180:35: ^( FUNC_CALL Sine expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:203:35: ^( FUNC_CALL Sine expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5752,7 +5757,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:181:6: Tan '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:204:6: Tan '(' expression ')'
 					{
 					Tan259=(Token)match(input,Tan,FOLLOW_Tan_in_mathCall1863);  
 					stream_Tan.add(Tan259);
@@ -5779,9 +5784,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 181:31: -> ^( FUNC_CALL Tan expression )
+					// 204:31: -> ^( FUNC_CALL Tan expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:181:34: ^( FUNC_CALL Tan expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:204:34: ^( FUNC_CALL Tan expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5798,7 +5803,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:182:6: ATan '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:205:6: ATan '(' ( exprList )? ')'
 					{
 					ATan263=(Token)match(input,ATan,FOLLOW_ATan_in_mathCall1888);  
 					stream_ATan.add(ATan263);
@@ -5806,7 +5811,7 @@ public class PogoParser extends Parser {
 					char_literal264=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1890);  
 					stream_OParen.add(char_literal264);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:182:15: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:205:15: ( exprList )?
 					int alt45=2;
 					int LA45_0 = input.LA(1);
 					if ( (LA45_0==ATan||LA45_0==AddDesign||(LA45_0 >= Arc && LA45_0 <= Assert)||LA45_0==Bool||LA45_0==COLOR_CONSTANT||(LA45_0 >= Clip && LA45_0 <= Cm)||(LA45_0 >= Copy && LA45_0 <= Curve)||LA45_0==Difference||LA45_0==Ellipse||(LA45_0 >= Excl && LA45_0 <= Expand)||(LA45_0 >= Fill && LA45_0 <= Flatten)||(LA45_0 >= Gaussian && LA45_0 <= Hide)||LA45_0==Identifier||LA45_0==Inch||LA45_0==LAdd||(LA45_0 >= LRemove && LA45_0 <= LShape)||(LA45_0 >= Line && LA45_0 <= Mm)||(LA45_0 >= Move && LA45_0 <= MoveBy)||(LA45_0 >= NoFill && LA45_0 <= Number)||(LA45_0 >= OBracket && LA45_0 <= OParen)||(LA45_0 >= PI_CONSTANT && LA45_0 <= Println)||(LA45_0 >= Random && LA45_0 <= Rect)||(LA45_0 >= Rotate && LA45_0 <= Round)||(LA45_0 >= Scale && LA45_0 <= Slider)||(LA45_0 >= Sq && LA45_0 <= Subtract)||(LA45_0 >= Tan && LA45_0 <= TemplateCollection)||(LA45_0 >= Union && LA45_0 <= Weight)||LA45_0==Xor) ) {
@@ -5814,7 +5819,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt45) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:182:15: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:205:15: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_mathCall1892);
 							exprList265=exprList();
@@ -5830,7 +5835,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal266);
 
 					// AST REWRITE
-					// elements: exprList, ATan
+					// elements: ATan, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5840,14 +5845,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 182:31: -> ^( FUNC_CALL ATan ( exprList )? )
+					// 205:31: -> ^( FUNC_CALL ATan ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:182:34: ^( FUNC_CALL ATan ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:205:34: ^( FUNC_CALL ATan ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_ATan.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:182:51: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:205:51: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5864,7 +5869,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:183:6: Random '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:206:6: Random '(' ( exprList )? ')'
 					{
 					Random267=(Token)match(input,Random,FOLLOW_Random_in_mathCall1915);  
 					stream_Random.add(Random267);
@@ -5872,7 +5877,7 @@ public class PogoParser extends Parser {
 					char_literal268=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1917);  
 					stream_OParen.add(char_literal268);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:183:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:206:17: ( exprList )?
 					int alt46=2;
 					int LA46_0 = input.LA(1);
 					if ( (LA46_0==ATan||LA46_0==AddDesign||(LA46_0 >= Arc && LA46_0 <= Assert)||LA46_0==Bool||LA46_0==COLOR_CONSTANT||(LA46_0 >= Clip && LA46_0 <= Cm)||(LA46_0 >= Copy && LA46_0 <= Curve)||LA46_0==Difference||LA46_0==Ellipse||(LA46_0 >= Excl && LA46_0 <= Expand)||(LA46_0 >= Fill && LA46_0 <= Flatten)||(LA46_0 >= Gaussian && LA46_0 <= Hide)||LA46_0==Identifier||LA46_0==Inch||LA46_0==LAdd||(LA46_0 >= LRemove && LA46_0 <= LShape)||(LA46_0 >= Line && LA46_0 <= Mm)||(LA46_0 >= Move && LA46_0 <= MoveBy)||(LA46_0 >= NoFill && LA46_0 <= Number)||(LA46_0 >= OBracket && LA46_0 <= OParen)||(LA46_0 >= PI_CONSTANT && LA46_0 <= Println)||(LA46_0 >= Random && LA46_0 <= Rect)||(LA46_0 >= Rotate && LA46_0 <= Round)||(LA46_0 >= Scale && LA46_0 <= Slider)||(LA46_0 >= Sq && LA46_0 <= Subtract)||(LA46_0 >= Tan && LA46_0 <= TemplateCollection)||(LA46_0 >= Union && LA46_0 <= Weight)||LA46_0==Xor) ) {
@@ -5880,7 +5885,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt46) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:183:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:206:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_mathCall1919);
 							exprList269=exprList();
@@ -5896,7 +5901,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal270);
 
 					// AST REWRITE
-					// elements: Random, exprList
+					// elements: exprList, Random
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5906,14 +5911,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 183:33: -> ^( FUNC_CALL Random ( exprList )? )
+					// 206:33: -> ^( FUNC_CALL Random ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:183:36: ^( FUNC_CALL Random ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:206:36: ^( FUNC_CALL Random ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Random.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:183:55: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:206:55: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5930,7 +5935,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:184:6: Pow '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:207:6: Pow '(' ( exprList )? ')'
 					{
 					Pow271=(Token)match(input,Pow,FOLLOW_Pow_in_mathCall1942);  
 					stream_Pow.add(Pow271);
@@ -5938,7 +5943,7 @@ public class PogoParser extends Parser {
 					char_literal272=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1944);  
 					stream_OParen.add(char_literal272);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:184:14: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:207:14: ( exprList )?
 					int alt47=2;
 					int LA47_0 = input.LA(1);
 					if ( (LA47_0==ATan||LA47_0==AddDesign||(LA47_0 >= Arc && LA47_0 <= Assert)||LA47_0==Bool||LA47_0==COLOR_CONSTANT||(LA47_0 >= Clip && LA47_0 <= Cm)||(LA47_0 >= Copy && LA47_0 <= Curve)||LA47_0==Difference||LA47_0==Ellipse||(LA47_0 >= Excl && LA47_0 <= Expand)||(LA47_0 >= Fill && LA47_0 <= Flatten)||(LA47_0 >= Gaussian && LA47_0 <= Hide)||LA47_0==Identifier||LA47_0==Inch||LA47_0==LAdd||(LA47_0 >= LRemove && LA47_0 <= LShape)||(LA47_0 >= Line && LA47_0 <= Mm)||(LA47_0 >= Move && LA47_0 <= MoveBy)||(LA47_0 >= NoFill && LA47_0 <= Number)||(LA47_0 >= OBracket && LA47_0 <= OParen)||(LA47_0 >= PI_CONSTANT && LA47_0 <= Println)||(LA47_0 >= Random && LA47_0 <= Rect)||(LA47_0 >= Rotate && LA47_0 <= Round)||(LA47_0 >= Scale && LA47_0 <= Slider)||(LA47_0 >= Sq && LA47_0 <= Subtract)||(LA47_0 >= Tan && LA47_0 <= TemplateCollection)||(LA47_0 >= Union && LA47_0 <= Weight)||LA47_0==Xor) ) {
@@ -5946,7 +5951,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt47) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:184:14: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:207:14: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_mathCall1946);
 							exprList273=exprList();
@@ -5972,14 +5977,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 184:30: -> ^( FUNC_CALL Pow ( exprList )? )
+					// 207:30: -> ^( FUNC_CALL Pow ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:184:33: ^( FUNC_CALL Pow ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:207:33: ^( FUNC_CALL Pow ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Pow.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:184:49: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:207:49: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5996,7 +6001,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:185:6: Sqrt '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:208:6: Sqrt '(' expression ')'
 					{
 					Sqrt275=(Token)match(input,Sqrt,FOLLOW_Sqrt_in_mathCall1969);  
 					stream_Sqrt.add(Sqrt275);
@@ -6023,9 +6028,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 185:32: -> ^( FUNC_CALL Sqrt expression )
+					// 208:32: -> ^( FUNC_CALL Sqrt expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:185:35: ^( FUNC_CALL Sqrt expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:208:35: ^( FUNC_CALL Sqrt expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6042,7 +6047,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:186:6: Sq '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:209:6: Sq '(' expression ')'
 					{
 					Sq279=(Token)match(input,Sq,FOLLOW_Sq_in_mathCall1994);  
 					stream_Sq.add(Sq279);
@@ -6059,7 +6064,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal282);
 
 					// AST REWRITE
-					// elements: Sq, expression
+					// elements: expression, Sq
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6069,9 +6074,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 186:30: -> ^( FUNC_CALL Sq expression )
+					// 209:30: -> ^( FUNC_CALL Sq expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:186:33: ^( FUNC_CALL Sq expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:209:33: ^( FUNC_CALL Sq expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6088,7 +6093,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:187:6: Gaussian '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:210:6: Gaussian '(' ( exprList )? ')'
 					{
 					Gaussian283=(Token)match(input,Gaussian,FOLLOW_Gaussian_in_mathCall2019);  
 					stream_Gaussian.add(Gaussian283);
@@ -6096,7 +6101,7 @@ public class PogoParser extends Parser {
 					char_literal284=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2021);  
 					stream_OParen.add(char_literal284);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:187:19: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:210:19: ( exprList )?
 					int alt48=2;
 					int LA48_0 = input.LA(1);
 					if ( (LA48_0==ATan||LA48_0==AddDesign||(LA48_0 >= Arc && LA48_0 <= Assert)||LA48_0==Bool||LA48_0==COLOR_CONSTANT||(LA48_0 >= Clip && LA48_0 <= Cm)||(LA48_0 >= Copy && LA48_0 <= Curve)||LA48_0==Difference||LA48_0==Ellipse||(LA48_0 >= Excl && LA48_0 <= Expand)||(LA48_0 >= Fill && LA48_0 <= Flatten)||(LA48_0 >= Gaussian && LA48_0 <= Hide)||LA48_0==Identifier||LA48_0==Inch||LA48_0==LAdd||(LA48_0 >= LRemove && LA48_0 <= LShape)||(LA48_0 >= Line && LA48_0 <= Mm)||(LA48_0 >= Move && LA48_0 <= MoveBy)||(LA48_0 >= NoFill && LA48_0 <= Number)||(LA48_0 >= OBracket && LA48_0 <= OParen)||(LA48_0 >= PI_CONSTANT && LA48_0 <= Println)||(LA48_0 >= Random && LA48_0 <= Rect)||(LA48_0 >= Rotate && LA48_0 <= Round)||(LA48_0 >= Scale && LA48_0 <= Slider)||(LA48_0 >= Sq && LA48_0 <= Subtract)||(LA48_0 >= Tan && LA48_0 <= TemplateCollection)||(LA48_0 >= Union && LA48_0 <= Weight)||LA48_0==Xor) ) {
@@ -6104,7 +6109,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt48) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:187:19: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:210:19: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_mathCall2023);
 							exprList285=exprList();
@@ -6130,14 +6135,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 187:35: -> ^( FUNC_CALL Gaussian ( exprList )? )
+					// 210:35: -> ^( FUNC_CALL Gaussian ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:187:38: ^( FUNC_CALL Gaussian ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:210:38: ^( FUNC_CALL Gaussian ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Gaussian.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:187:59: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:210:59: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -6154,7 +6159,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:188:6: Noise '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:211:6: Noise '(' ( exprList )? ')'
 					{
 					Noise287=(Token)match(input,Noise,FOLLOW_Noise_in_mathCall2046);  
 					stream_Noise.add(Noise287);
@@ -6162,7 +6167,7 @@ public class PogoParser extends Parser {
 					char_literal288=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2048);  
 					stream_OParen.add(char_literal288);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:188:16: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:211:16: ( exprList )?
 					int alt49=2;
 					int LA49_0 = input.LA(1);
 					if ( (LA49_0==ATan||LA49_0==AddDesign||(LA49_0 >= Arc && LA49_0 <= Assert)||LA49_0==Bool||LA49_0==COLOR_CONSTANT||(LA49_0 >= Clip && LA49_0 <= Cm)||(LA49_0 >= Copy && LA49_0 <= Curve)||LA49_0==Difference||LA49_0==Ellipse||(LA49_0 >= Excl && LA49_0 <= Expand)||(LA49_0 >= Fill && LA49_0 <= Flatten)||(LA49_0 >= Gaussian && LA49_0 <= Hide)||LA49_0==Identifier||LA49_0==Inch||LA49_0==LAdd||(LA49_0 >= LRemove && LA49_0 <= LShape)||(LA49_0 >= Line && LA49_0 <= Mm)||(LA49_0 >= Move && LA49_0 <= MoveBy)||(LA49_0 >= NoFill && LA49_0 <= Number)||(LA49_0 >= OBracket && LA49_0 <= OParen)||(LA49_0 >= PI_CONSTANT && LA49_0 <= Println)||(LA49_0 >= Random && LA49_0 <= Rect)||(LA49_0 >= Rotate && LA49_0 <= Round)||(LA49_0 >= Scale && LA49_0 <= Slider)||(LA49_0 >= Sq && LA49_0 <= Subtract)||(LA49_0 >= Tan && LA49_0 <= TemplateCollection)||(LA49_0 >= Union && LA49_0 <= Weight)||LA49_0==Xor) ) {
@@ -6170,7 +6175,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt49) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:188:16: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:211:16: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_mathCall2050);
 							exprList289=exprList();
@@ -6196,14 +6201,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 188:32: -> ^( FUNC_CALL Noise ( exprList )? )
+					// 211:32: -> ^( FUNC_CALL Noise ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:188:35: ^( FUNC_CALL Noise ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:211:35: ^( FUNC_CALL Noise ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Noise.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:188:53: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:211:53: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -6220,7 +6225,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:189:6: Round '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:212:6: Round '(' expression ')'
 					{
 					Round291=(Token)match(input,Round,FOLLOW_Round_in_mathCall2073);  
 					stream_Round.add(Round291);
@@ -6247,9 +6252,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 189:32: -> ^( FUNC_CALL Round expression )
+					// 212:32: -> ^( FUNC_CALL Round expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:189:35: ^( FUNC_CALL Round expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:212:35: ^( FUNC_CALL Round expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6266,7 +6271,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:190:6: Map '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:213:6: Map '(' ( exprList )? ')'
 					{
 					Map295=(Token)match(input,Map,FOLLOW_Map_in_mathCall2097);  
 					stream_Map.add(Map295);
@@ -6274,7 +6279,7 @@ public class PogoParser extends Parser {
 					char_literal296=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2098);  
 					stream_OParen.add(char_literal296);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:190:13: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:213:13: ( exprList )?
 					int alt50=2;
 					int LA50_0 = input.LA(1);
 					if ( (LA50_0==ATan||LA50_0==AddDesign||(LA50_0 >= Arc && LA50_0 <= Assert)||LA50_0==Bool||LA50_0==COLOR_CONSTANT||(LA50_0 >= Clip && LA50_0 <= Cm)||(LA50_0 >= Copy && LA50_0 <= Curve)||LA50_0==Difference||LA50_0==Ellipse||(LA50_0 >= Excl && LA50_0 <= Expand)||(LA50_0 >= Fill && LA50_0 <= Flatten)||(LA50_0 >= Gaussian && LA50_0 <= Hide)||LA50_0==Identifier||LA50_0==Inch||LA50_0==LAdd||(LA50_0 >= LRemove && LA50_0 <= LShape)||(LA50_0 >= Line && LA50_0 <= Mm)||(LA50_0 >= Move && LA50_0 <= MoveBy)||(LA50_0 >= NoFill && LA50_0 <= Number)||(LA50_0 >= OBracket && LA50_0 <= OParen)||(LA50_0 >= PI_CONSTANT && LA50_0 <= Println)||(LA50_0 >= Random && LA50_0 <= Rect)||(LA50_0 >= Rotate && LA50_0 <= Round)||(LA50_0 >= Scale && LA50_0 <= Slider)||(LA50_0 >= Sq && LA50_0 <= Subtract)||(LA50_0 >= Tan && LA50_0 <= TemplateCollection)||(LA50_0 >= Union && LA50_0 <= Weight)||LA50_0==Xor) ) {
@@ -6282,7 +6287,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt50) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:190:13: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:213:13: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_mathCall2100);
 							exprList297=exprList();
@@ -6308,14 +6313,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 190:29: -> ^( FUNC_CALL Map ( exprList )? )
+					// 213:29: -> ^( FUNC_CALL Map ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:190:32: ^( FUNC_CALL Map ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:213:32: ^( FUNC_CALL Map ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Map.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:190:48: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:213:48: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -6332,7 +6337,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:191:6: Inch '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:214:6: Inch '(' expression ')'
 					{
 					Inch299=(Token)match(input,Inch,FOLLOW_Inch_in_mathCall2123);  
 					stream_Inch.add(Inch299);
@@ -6359,9 +6364,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 191:32: -> ^( FUNC_CALL Inch expression )
+					// 214:32: -> ^( FUNC_CALL Inch expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:191:35: ^( FUNC_CALL Inch expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:214:35: ^( FUNC_CALL Inch expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6378,7 +6383,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:192:6: Mm '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:215:6: Mm '(' expression ')'
 					{
 					Mm303=(Token)match(input,Mm,FOLLOW_Mm_in_mathCall2148);  
 					stream_Mm.add(Mm303);
@@ -6395,7 +6400,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal306);
 
 					// AST REWRITE
-					// elements: Mm, expression
+					// elements: expression, Mm
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6405,9 +6410,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 192:30: -> ^( FUNC_CALL Mm expression )
+					// 215:30: -> ^( FUNC_CALL Mm expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:192:33: ^( FUNC_CALL Mm expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:215:33: ^( FUNC_CALL Mm expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6424,7 +6429,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 15 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:193:6: Cm '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:216:6: Cm '(' expression ')'
 					{
 					Cm307=(Token)match(input,Cm,FOLLOW_Cm_in_mathCall2173);  
 					stream_Cm.add(Cm307);
@@ -6441,7 +6446,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal310);
 
 					// AST REWRITE
-					// elements: expression, Cm
+					// elements: Cm, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6451,9 +6456,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 193:30: -> ^( FUNC_CALL Cm expression )
+					// 216:30: -> ^( FUNC_CALL Cm expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:193:33: ^( FUNC_CALL Cm expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:216:33: ^( FUNC_CALL Cm expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6470,7 +6475,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 16 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:194:6: Units '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:6: Units '(' expression ')'
 					{
 					Units311=(Token)match(input,Units,FOLLOW_Units_in_mathCall2198);  
 					stream_Units.add(Units311);
@@ -6487,7 +6492,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal314);
 
 					// AST REWRITE
-					// elements: expression, Units
+					// elements: Units, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6497,9 +6502,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 194:32: -> ^( FUNC_CALL Units expression )
+					// 217:32: -> ^( FUNC_CALL Units expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:194:35: ^( FUNC_CALL Units expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:35: ^( FUNC_CALL Units expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6544,7 +6549,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "uICall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:197:3: uICall : Slider '(' ( exprList )? ')' -> ^( FUNC_CALL Slider ( exprList )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:220:3: uICall : Slider '(' ( exprList )? ')' -> ^( FUNC_CALL Slider ( exprList )? ) ;
 	public final PogoParser.uICall_return uICall() throws RecognitionException {
 		PogoParser.uICall_return retval = new PogoParser.uICall_return();
 		retval.start = input.LT(1);
@@ -6565,8 +6570,8 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:4: ( Slider '(' ( exprList )? ')' -> ^( FUNC_CALL Slider ( exprList )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:5: Slider '(' ( exprList )? ')'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:221:4: ( Slider '(' ( exprList )? ')' -> ^( FUNC_CALL Slider ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:221:5: Slider '(' ( exprList )? ')'
 			{
 			Slider315=(Token)match(input,Slider,FOLLOW_Slider_in_uICall2234);  
 			stream_Slider.add(Slider315);
@@ -6574,7 +6579,7 @@ public class PogoParser extends Parser {
 			char_literal316=(Token)match(input,OParen,FOLLOW_OParen_in_uICall2236);  
 			stream_OParen.add(char_literal316);
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:16: ( exprList )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:221:16: ( exprList )?
 			int alt52=2;
 			int LA52_0 = input.LA(1);
 			if ( (LA52_0==ATan||LA52_0==AddDesign||(LA52_0 >= Arc && LA52_0 <= Assert)||LA52_0==Bool||LA52_0==COLOR_CONSTANT||(LA52_0 >= Clip && LA52_0 <= Cm)||(LA52_0 >= Copy && LA52_0 <= Curve)||LA52_0==Difference||LA52_0==Ellipse||(LA52_0 >= Excl && LA52_0 <= Expand)||(LA52_0 >= Fill && LA52_0 <= Flatten)||(LA52_0 >= Gaussian && LA52_0 <= Hide)||LA52_0==Identifier||LA52_0==Inch||LA52_0==LAdd||(LA52_0 >= LRemove && LA52_0 <= LShape)||(LA52_0 >= Line && LA52_0 <= Mm)||(LA52_0 >= Move && LA52_0 <= MoveBy)||(LA52_0 >= NoFill && LA52_0 <= Number)||(LA52_0 >= OBracket && LA52_0 <= OParen)||(LA52_0 >= PI_CONSTANT && LA52_0 <= Println)||(LA52_0 >= Random && LA52_0 <= Rect)||(LA52_0 >= Rotate && LA52_0 <= Round)||(LA52_0 >= Scale && LA52_0 <= Slider)||(LA52_0 >= Sq && LA52_0 <= Subtract)||(LA52_0 >= Tan && LA52_0 <= TemplateCollection)||(LA52_0 >= Union && LA52_0 <= Weight)||LA52_0==Xor) ) {
@@ -6582,7 +6587,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt52) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:16: exprList
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:221:16: exprList
 					{
 					pushFollow(FOLLOW_exprList_in_uICall2238);
 					exprList317=exprList();
@@ -6608,14 +6613,14 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 198:32: -> ^( FUNC_CALL Slider ( exprList )? )
+			// 221:32: -> ^( FUNC_CALL Slider ( exprList )? )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:35: ^( FUNC_CALL Slider ( exprList )? )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:221:35: ^( FUNC_CALL Slider ( exprList )? )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 				adaptor.addChild(root_1, stream_Slider.nextNode());
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:198:54: ( exprList )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:221:54: ( exprList )?
 				if ( stream_exprList.hasNext() ) {
 					adaptor.addChild(root_1, stream_exprList.nextTree());
 				}
@@ -6658,7 +6663,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "templateCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:201:3: templateCall : ( Template '(' ( exprList )? ')' -> ^( FUNC_CALL Template ( exprList )? ) | SetWidth '(' ( exprList )? ')' -> ^( FUNC_CALL SetWidth ( exprList )? ) | SetHeight '(' ( exprList )? ')' -> ^( FUNC_CALL SetHeight ( exprList )? ) | SetSeam '(' ( exprList )? ')' -> ^( FUNC_CALL SetSeam ( exprList )? ) | SetName '(' ( exprList )? ')' -> ^( FUNC_CALL SetName ( exprList )? ) | SetVFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetVFold ( exprList )? ) | SetHFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetHFold ( exprList )? ) | SetCorner '(' ( exprList )? ')' -> ^( FUNC_CALL SetCorner ( exprList )? ) | TemplateCollection '(' ( exprList )? ')' -> ^( FUNC_CALL TemplateCollection ( exprList )? ) | AddDesign '(' ( exprList )? ')' -> ^( FUNC_CALL AddDesign ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:224:3: templateCall : ( Template '(' ( exprList )? ')' -> ^( FUNC_CALL Template ( exprList )? ) | SetWidth '(' ( exprList )? ')' -> ^( FUNC_CALL SetWidth ( exprList )? ) | SetHeight '(' ( exprList )? ')' -> ^( FUNC_CALL SetHeight ( exprList )? ) | SetSeam '(' ( exprList )? ')' -> ^( FUNC_CALL SetSeam ( exprList )? ) | SetName '(' ( exprList )? ')' -> ^( FUNC_CALL SetName ( exprList )? ) | SetVFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetVFold ( exprList )? ) | SetHFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetHFold ( exprList )? ) | SetCorner '(' ( exprList )? ')' -> ^( FUNC_CALL SetCorner ( exprList )? ) | TemplateCollection '(' ( exprList )? ')' -> ^( FUNC_CALL TemplateCollection ( exprList )? ) | AddDesign '(' ( exprList )? ')' -> ^( FUNC_CALL AddDesign ( exprList )? ) );
 	public final PogoParser.templateCall_return templateCall() throws RecognitionException {
 		PogoParser.templateCall_return retval = new PogoParser.templateCall_return();
 		retval.start = input.LT(1);
@@ -6751,7 +6756,7 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:202:4: ( Template '(' ( exprList )? ')' -> ^( FUNC_CALL Template ( exprList )? ) | SetWidth '(' ( exprList )? ')' -> ^( FUNC_CALL SetWidth ( exprList )? ) | SetHeight '(' ( exprList )? ')' -> ^( FUNC_CALL SetHeight ( exprList )? ) | SetSeam '(' ( exprList )? ')' -> ^( FUNC_CALL SetSeam ( exprList )? ) | SetName '(' ( exprList )? ')' -> ^( FUNC_CALL SetName ( exprList )? ) | SetVFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetVFold ( exprList )? ) | SetHFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetHFold ( exprList )? ) | SetCorner '(' ( exprList )? ')' -> ^( FUNC_CALL SetCorner ( exprList )? ) | TemplateCollection '(' ( exprList )? ')' -> ^( FUNC_CALL TemplateCollection ( exprList )? ) | AddDesign '(' ( exprList )? ')' -> ^( FUNC_CALL AddDesign ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:225:4: ( Template '(' ( exprList )? ')' -> ^( FUNC_CALL Template ( exprList )? ) | SetWidth '(' ( exprList )? ')' -> ^( FUNC_CALL SetWidth ( exprList )? ) | SetHeight '(' ( exprList )? ')' -> ^( FUNC_CALL SetHeight ( exprList )? ) | SetSeam '(' ( exprList )? ')' -> ^( FUNC_CALL SetSeam ( exprList )? ) | SetName '(' ( exprList )? ')' -> ^( FUNC_CALL SetName ( exprList )? ) | SetVFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetVFold ( exprList )? ) | SetHFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetHFold ( exprList )? ) | SetCorner '(' ( exprList )? ')' -> ^( FUNC_CALL SetCorner ( exprList )? ) | TemplateCollection '(' ( exprList )? ')' -> ^( FUNC_CALL TemplateCollection ( exprList )? ) | AddDesign '(' ( exprList )? ')' -> ^( FUNC_CALL AddDesign ( exprList )? ) )
 			int alt63=10;
 			switch ( input.LA(1) ) {
 			case Template:
@@ -6811,7 +6816,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt63) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:202:5: Template '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:225:5: Template '(' ( exprList )? ')'
 					{
 					Template319=(Token)match(input,Template,FOLLOW_Template_in_templateCall2274);  
 					stream_Template.add(Template319);
@@ -6819,7 +6824,7 @@ public class PogoParser extends Parser {
 					char_literal320=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2276);  
 					stream_OParen.add(char_literal320);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:202:18: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:225:18: ( exprList )?
 					int alt53=2;
 					int LA53_0 = input.LA(1);
 					if ( (LA53_0==ATan||LA53_0==AddDesign||(LA53_0 >= Arc && LA53_0 <= Assert)||LA53_0==Bool||LA53_0==COLOR_CONSTANT||(LA53_0 >= Clip && LA53_0 <= Cm)||(LA53_0 >= Copy && LA53_0 <= Curve)||LA53_0==Difference||LA53_0==Ellipse||(LA53_0 >= Excl && LA53_0 <= Expand)||(LA53_0 >= Fill && LA53_0 <= Flatten)||(LA53_0 >= Gaussian && LA53_0 <= Hide)||LA53_0==Identifier||LA53_0==Inch||LA53_0==LAdd||(LA53_0 >= LRemove && LA53_0 <= LShape)||(LA53_0 >= Line && LA53_0 <= Mm)||(LA53_0 >= Move && LA53_0 <= MoveBy)||(LA53_0 >= NoFill && LA53_0 <= Number)||(LA53_0 >= OBracket && LA53_0 <= OParen)||(LA53_0 >= PI_CONSTANT && LA53_0 <= Println)||(LA53_0 >= Random && LA53_0 <= Rect)||(LA53_0 >= Rotate && LA53_0 <= Round)||(LA53_0 >= Scale && LA53_0 <= Slider)||(LA53_0 >= Sq && LA53_0 <= Subtract)||(LA53_0 >= Tan && LA53_0 <= TemplateCollection)||(LA53_0 >= Union && LA53_0 <= Weight)||LA53_0==Xor) ) {
@@ -6827,7 +6832,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt53) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:202:18: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:225:18: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_templateCall2278);
 							exprList321=exprList();
@@ -6853,14 +6858,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 202:34: -> ^( FUNC_CALL Template ( exprList )? )
+					// 225:34: -> ^( FUNC_CALL Template ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:202:37: ^( FUNC_CALL Template ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:225:37: ^( FUNC_CALL Template ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Template.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:202:58: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:225:58: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -6877,7 +6882,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:203:5: SetWidth '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:5: SetWidth '(' ( exprList )? ')'
 					{
 					SetWidth323=(Token)match(input,SetWidth,FOLLOW_SetWidth_in_templateCall2300);  
 					stream_SetWidth.add(SetWidth323);
@@ -6885,7 +6890,7 @@ public class PogoParser extends Parser {
 					char_literal324=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2302);  
 					stream_OParen.add(char_literal324);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:203:18: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:18: ( exprList )?
 					int alt54=2;
 					int LA54_0 = input.LA(1);
 					if ( (LA54_0==ATan||LA54_0==AddDesign||(LA54_0 >= Arc && LA54_0 <= Assert)||LA54_0==Bool||LA54_0==COLOR_CONSTANT||(LA54_0 >= Clip && LA54_0 <= Cm)||(LA54_0 >= Copy && LA54_0 <= Curve)||LA54_0==Difference||LA54_0==Ellipse||(LA54_0 >= Excl && LA54_0 <= Expand)||(LA54_0 >= Fill && LA54_0 <= Flatten)||(LA54_0 >= Gaussian && LA54_0 <= Hide)||LA54_0==Identifier||LA54_0==Inch||LA54_0==LAdd||(LA54_0 >= LRemove && LA54_0 <= LShape)||(LA54_0 >= Line && LA54_0 <= Mm)||(LA54_0 >= Move && LA54_0 <= MoveBy)||(LA54_0 >= NoFill && LA54_0 <= Number)||(LA54_0 >= OBracket && LA54_0 <= OParen)||(LA54_0 >= PI_CONSTANT && LA54_0 <= Println)||(LA54_0 >= Random && LA54_0 <= Rect)||(LA54_0 >= Rotate && LA54_0 <= Round)||(LA54_0 >= Scale && LA54_0 <= Slider)||(LA54_0 >= Sq && LA54_0 <= Subtract)||(LA54_0 >= Tan && LA54_0 <= TemplateCollection)||(LA54_0 >= Union && LA54_0 <= Weight)||LA54_0==Xor) ) {
@@ -6893,7 +6898,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt54) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:203:18: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:18: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_templateCall2304);
 							exprList325=exprList();
@@ -6909,7 +6914,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal326);
 
 					// AST REWRITE
-					// elements: SetWidth, exprList
+					// elements: exprList, SetWidth
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6919,14 +6924,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 203:34: -> ^( FUNC_CALL SetWidth ( exprList )? )
+					// 226:34: -> ^( FUNC_CALL SetWidth ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:203:37: ^( FUNC_CALL SetWidth ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:37: ^( FUNC_CALL SetWidth ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_SetWidth.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:203:58: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:58: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -6943,7 +6948,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:204:5: SetHeight '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:5: SetHeight '(' ( exprList )? ')'
 					{
 					SetHeight327=(Token)match(input,SetHeight,FOLLOW_SetHeight_in_templateCall2326);  
 					stream_SetHeight.add(SetHeight327);
@@ -6951,7 +6956,7 @@ public class PogoParser extends Parser {
 					char_literal328=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2328);  
 					stream_OParen.add(char_literal328);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:204:19: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:19: ( exprList )?
 					int alt55=2;
 					int LA55_0 = input.LA(1);
 					if ( (LA55_0==ATan||LA55_0==AddDesign||(LA55_0 >= Arc && LA55_0 <= Assert)||LA55_0==Bool||LA55_0==COLOR_CONSTANT||(LA55_0 >= Clip && LA55_0 <= Cm)||(LA55_0 >= Copy && LA55_0 <= Curve)||LA55_0==Difference||LA55_0==Ellipse||(LA55_0 >= Excl && LA55_0 <= Expand)||(LA55_0 >= Fill && LA55_0 <= Flatten)||(LA55_0 >= Gaussian && LA55_0 <= Hide)||LA55_0==Identifier||LA55_0==Inch||LA55_0==LAdd||(LA55_0 >= LRemove && LA55_0 <= LShape)||(LA55_0 >= Line && LA55_0 <= Mm)||(LA55_0 >= Move && LA55_0 <= MoveBy)||(LA55_0 >= NoFill && LA55_0 <= Number)||(LA55_0 >= OBracket && LA55_0 <= OParen)||(LA55_0 >= PI_CONSTANT && LA55_0 <= Println)||(LA55_0 >= Random && LA55_0 <= Rect)||(LA55_0 >= Rotate && LA55_0 <= Round)||(LA55_0 >= Scale && LA55_0 <= Slider)||(LA55_0 >= Sq && LA55_0 <= Subtract)||(LA55_0 >= Tan && LA55_0 <= TemplateCollection)||(LA55_0 >= Union && LA55_0 <= Weight)||LA55_0==Xor) ) {
@@ -6959,7 +6964,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt55) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:204:19: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:19: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_templateCall2330);
 							exprList329=exprList();
@@ -6985,14 +6990,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 204:35: -> ^( FUNC_CALL SetHeight ( exprList )? )
+					// 227:35: -> ^( FUNC_CALL SetHeight ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:204:38: ^( FUNC_CALL SetHeight ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:38: ^( FUNC_CALL SetHeight ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_SetHeight.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:204:60: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:227:60: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7009,7 +7014,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:205:5: SetSeam '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:5: SetSeam '(' ( exprList )? ')'
 					{
 					SetSeam331=(Token)match(input,SetSeam,FOLLOW_SetSeam_in_templateCall2352);  
 					stream_SetSeam.add(SetSeam331);
@@ -7017,7 +7022,7 @@ public class PogoParser extends Parser {
 					char_literal332=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2354);  
 					stream_OParen.add(char_literal332);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:205:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:17: ( exprList )?
 					int alt56=2;
 					int LA56_0 = input.LA(1);
 					if ( (LA56_0==ATan||LA56_0==AddDesign||(LA56_0 >= Arc && LA56_0 <= Assert)||LA56_0==Bool||LA56_0==COLOR_CONSTANT||(LA56_0 >= Clip && LA56_0 <= Cm)||(LA56_0 >= Copy && LA56_0 <= Curve)||LA56_0==Difference||LA56_0==Ellipse||(LA56_0 >= Excl && LA56_0 <= Expand)||(LA56_0 >= Fill && LA56_0 <= Flatten)||(LA56_0 >= Gaussian && LA56_0 <= Hide)||LA56_0==Identifier||LA56_0==Inch||LA56_0==LAdd||(LA56_0 >= LRemove && LA56_0 <= LShape)||(LA56_0 >= Line && LA56_0 <= Mm)||(LA56_0 >= Move && LA56_0 <= MoveBy)||(LA56_0 >= NoFill && LA56_0 <= Number)||(LA56_0 >= OBracket && LA56_0 <= OParen)||(LA56_0 >= PI_CONSTANT && LA56_0 <= Println)||(LA56_0 >= Random && LA56_0 <= Rect)||(LA56_0 >= Rotate && LA56_0 <= Round)||(LA56_0 >= Scale && LA56_0 <= Slider)||(LA56_0 >= Sq && LA56_0 <= Subtract)||(LA56_0 >= Tan && LA56_0 <= TemplateCollection)||(LA56_0 >= Union && LA56_0 <= Weight)||LA56_0==Xor) ) {
@@ -7025,7 +7030,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt56) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:205:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_templateCall2356);
 							exprList333=exprList();
@@ -7041,7 +7046,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal334);
 
 					// AST REWRITE
-					// elements: SetSeam, exprList
+					// elements: exprList, SetSeam
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7051,14 +7056,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 205:33: -> ^( FUNC_CALL SetSeam ( exprList )? )
+					// 228:33: -> ^( FUNC_CALL SetSeam ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:205:36: ^( FUNC_CALL SetSeam ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:36: ^( FUNC_CALL SetSeam ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_SetSeam.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:205:56: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:228:56: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7075,7 +7080,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:206:5: SetName '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:5: SetName '(' ( exprList )? ')'
 					{
 					SetName335=(Token)match(input,SetName,FOLLOW_SetName_in_templateCall2378);  
 					stream_SetName.add(SetName335);
@@ -7083,7 +7088,7 @@ public class PogoParser extends Parser {
 					char_literal336=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2380);  
 					stream_OParen.add(char_literal336);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:206:17: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:17: ( exprList )?
 					int alt57=2;
 					int LA57_0 = input.LA(1);
 					if ( (LA57_0==ATan||LA57_0==AddDesign||(LA57_0 >= Arc && LA57_0 <= Assert)||LA57_0==Bool||LA57_0==COLOR_CONSTANT||(LA57_0 >= Clip && LA57_0 <= Cm)||(LA57_0 >= Copy && LA57_0 <= Curve)||LA57_0==Difference||LA57_0==Ellipse||(LA57_0 >= Excl && LA57_0 <= Expand)||(LA57_0 >= Fill && LA57_0 <= Flatten)||(LA57_0 >= Gaussian && LA57_0 <= Hide)||LA57_0==Identifier||LA57_0==Inch||LA57_0==LAdd||(LA57_0 >= LRemove && LA57_0 <= LShape)||(LA57_0 >= Line && LA57_0 <= Mm)||(LA57_0 >= Move && LA57_0 <= MoveBy)||(LA57_0 >= NoFill && LA57_0 <= Number)||(LA57_0 >= OBracket && LA57_0 <= OParen)||(LA57_0 >= PI_CONSTANT && LA57_0 <= Println)||(LA57_0 >= Random && LA57_0 <= Rect)||(LA57_0 >= Rotate && LA57_0 <= Round)||(LA57_0 >= Scale && LA57_0 <= Slider)||(LA57_0 >= Sq && LA57_0 <= Subtract)||(LA57_0 >= Tan && LA57_0 <= TemplateCollection)||(LA57_0 >= Union && LA57_0 <= Weight)||LA57_0==Xor) ) {
@@ -7091,7 +7096,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt57) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:206:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:17: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_templateCall2382);
 							exprList337=exprList();
@@ -7117,14 +7122,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 206:33: -> ^( FUNC_CALL SetName ( exprList )? )
+					// 229:33: -> ^( FUNC_CALL SetName ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:206:36: ^( FUNC_CALL SetName ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:36: ^( FUNC_CALL SetName ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_SetName.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:206:56: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:56: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7141,7 +7146,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:207:5: SetVFold '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:5: SetVFold '(' ( exprList )? ')'
 					{
 					SetVFold339=(Token)match(input,SetVFold,FOLLOW_SetVFold_in_templateCall2404);  
 					stream_SetVFold.add(SetVFold339);
@@ -7149,7 +7154,7 @@ public class PogoParser extends Parser {
 					char_literal340=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2406);  
 					stream_OParen.add(char_literal340);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:207:18: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:18: ( exprList )?
 					int alt58=2;
 					int LA58_0 = input.LA(1);
 					if ( (LA58_0==ATan||LA58_0==AddDesign||(LA58_0 >= Arc && LA58_0 <= Assert)||LA58_0==Bool||LA58_0==COLOR_CONSTANT||(LA58_0 >= Clip && LA58_0 <= Cm)||(LA58_0 >= Copy && LA58_0 <= Curve)||LA58_0==Difference||LA58_0==Ellipse||(LA58_0 >= Excl && LA58_0 <= Expand)||(LA58_0 >= Fill && LA58_0 <= Flatten)||(LA58_0 >= Gaussian && LA58_0 <= Hide)||LA58_0==Identifier||LA58_0==Inch||LA58_0==LAdd||(LA58_0 >= LRemove && LA58_0 <= LShape)||(LA58_0 >= Line && LA58_0 <= Mm)||(LA58_0 >= Move && LA58_0 <= MoveBy)||(LA58_0 >= NoFill && LA58_0 <= Number)||(LA58_0 >= OBracket && LA58_0 <= OParen)||(LA58_0 >= PI_CONSTANT && LA58_0 <= Println)||(LA58_0 >= Random && LA58_0 <= Rect)||(LA58_0 >= Rotate && LA58_0 <= Round)||(LA58_0 >= Scale && LA58_0 <= Slider)||(LA58_0 >= Sq && LA58_0 <= Subtract)||(LA58_0 >= Tan && LA58_0 <= TemplateCollection)||(LA58_0 >= Union && LA58_0 <= Weight)||LA58_0==Xor) ) {
@@ -7157,7 +7162,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt58) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:207:18: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:18: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_templateCall2408);
 							exprList341=exprList();
@@ -7173,7 +7178,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal342);
 
 					// AST REWRITE
-					// elements: exprList, SetVFold
+					// elements: SetVFold, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7183,14 +7188,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 207:34: -> ^( FUNC_CALL SetVFold ( exprList )? )
+					// 230:34: -> ^( FUNC_CALL SetVFold ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:207:37: ^( FUNC_CALL SetVFold ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:37: ^( FUNC_CALL SetVFold ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_SetVFold.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:207:58: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:58: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7207,7 +7212,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:208:5: SetHFold '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:5: SetHFold '(' ( exprList )? ')'
 					{
 					SetHFold343=(Token)match(input,SetHFold,FOLLOW_SetHFold_in_templateCall2430);  
 					stream_SetHFold.add(SetHFold343);
@@ -7215,7 +7220,7 @@ public class PogoParser extends Parser {
 					char_literal344=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2432);  
 					stream_OParen.add(char_literal344);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:208:18: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:18: ( exprList )?
 					int alt59=2;
 					int LA59_0 = input.LA(1);
 					if ( (LA59_0==ATan||LA59_0==AddDesign||(LA59_0 >= Arc && LA59_0 <= Assert)||LA59_0==Bool||LA59_0==COLOR_CONSTANT||(LA59_0 >= Clip && LA59_0 <= Cm)||(LA59_0 >= Copy && LA59_0 <= Curve)||LA59_0==Difference||LA59_0==Ellipse||(LA59_0 >= Excl && LA59_0 <= Expand)||(LA59_0 >= Fill && LA59_0 <= Flatten)||(LA59_0 >= Gaussian && LA59_0 <= Hide)||LA59_0==Identifier||LA59_0==Inch||LA59_0==LAdd||(LA59_0 >= LRemove && LA59_0 <= LShape)||(LA59_0 >= Line && LA59_0 <= Mm)||(LA59_0 >= Move && LA59_0 <= MoveBy)||(LA59_0 >= NoFill && LA59_0 <= Number)||(LA59_0 >= OBracket && LA59_0 <= OParen)||(LA59_0 >= PI_CONSTANT && LA59_0 <= Println)||(LA59_0 >= Random && LA59_0 <= Rect)||(LA59_0 >= Rotate && LA59_0 <= Round)||(LA59_0 >= Scale && LA59_0 <= Slider)||(LA59_0 >= Sq && LA59_0 <= Subtract)||(LA59_0 >= Tan && LA59_0 <= TemplateCollection)||(LA59_0 >= Union && LA59_0 <= Weight)||LA59_0==Xor) ) {
@@ -7223,7 +7228,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt59) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:208:18: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:18: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_templateCall2434);
 							exprList345=exprList();
@@ -7249,14 +7254,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 208:34: -> ^( FUNC_CALL SetHFold ( exprList )? )
+					// 231:34: -> ^( FUNC_CALL SetHFold ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:208:37: ^( FUNC_CALL SetHFold ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:37: ^( FUNC_CALL SetHFold ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_SetHFold.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:208:58: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:231:58: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7273,7 +7278,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:209:5: SetCorner '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:5: SetCorner '(' ( exprList )? ')'
 					{
 					SetCorner347=(Token)match(input,SetCorner,FOLLOW_SetCorner_in_templateCall2456);  
 					stream_SetCorner.add(SetCorner347);
@@ -7281,7 +7286,7 @@ public class PogoParser extends Parser {
 					char_literal348=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2458);  
 					stream_OParen.add(char_literal348);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:209:19: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:19: ( exprList )?
 					int alt60=2;
 					int LA60_0 = input.LA(1);
 					if ( (LA60_0==ATan||LA60_0==AddDesign||(LA60_0 >= Arc && LA60_0 <= Assert)||LA60_0==Bool||LA60_0==COLOR_CONSTANT||(LA60_0 >= Clip && LA60_0 <= Cm)||(LA60_0 >= Copy && LA60_0 <= Curve)||LA60_0==Difference||LA60_0==Ellipse||(LA60_0 >= Excl && LA60_0 <= Expand)||(LA60_0 >= Fill && LA60_0 <= Flatten)||(LA60_0 >= Gaussian && LA60_0 <= Hide)||LA60_0==Identifier||LA60_0==Inch||LA60_0==LAdd||(LA60_0 >= LRemove && LA60_0 <= LShape)||(LA60_0 >= Line && LA60_0 <= Mm)||(LA60_0 >= Move && LA60_0 <= MoveBy)||(LA60_0 >= NoFill && LA60_0 <= Number)||(LA60_0 >= OBracket && LA60_0 <= OParen)||(LA60_0 >= PI_CONSTANT && LA60_0 <= Println)||(LA60_0 >= Random && LA60_0 <= Rect)||(LA60_0 >= Rotate && LA60_0 <= Round)||(LA60_0 >= Scale && LA60_0 <= Slider)||(LA60_0 >= Sq && LA60_0 <= Subtract)||(LA60_0 >= Tan && LA60_0 <= TemplateCollection)||(LA60_0 >= Union && LA60_0 <= Weight)||LA60_0==Xor) ) {
@@ -7289,7 +7294,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt60) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:209:19: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:19: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_templateCall2460);
 							exprList349=exprList();
@@ -7305,7 +7310,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal350);
 
 					// AST REWRITE
-					// elements: exprList, SetCorner
+					// elements: SetCorner, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7315,14 +7320,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 209:35: -> ^( FUNC_CALL SetCorner ( exprList )? )
+					// 232:35: -> ^( FUNC_CALL SetCorner ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:209:38: ^( FUNC_CALL SetCorner ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:38: ^( FUNC_CALL SetCorner ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_SetCorner.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:209:60: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:232:60: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7339,7 +7344,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:210:5: TemplateCollection '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:5: TemplateCollection '(' ( exprList )? ')'
 					{
 					TemplateCollection351=(Token)match(input,TemplateCollection,FOLLOW_TemplateCollection_in_templateCall2482);  
 					stream_TemplateCollection.add(TemplateCollection351);
@@ -7347,7 +7352,7 @@ public class PogoParser extends Parser {
 					char_literal352=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2484);  
 					stream_OParen.add(char_literal352);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:210:30: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:30: ( exprList )?
 					int alt61=2;
 					int LA61_0 = input.LA(1);
 					if ( (LA61_0==ATan||LA61_0==AddDesign||(LA61_0 >= Arc && LA61_0 <= Assert)||LA61_0==Bool||LA61_0==COLOR_CONSTANT||(LA61_0 >= Clip && LA61_0 <= Cm)||(LA61_0 >= Copy && LA61_0 <= Curve)||LA61_0==Difference||LA61_0==Ellipse||(LA61_0 >= Excl && LA61_0 <= Expand)||(LA61_0 >= Fill && LA61_0 <= Flatten)||(LA61_0 >= Gaussian && LA61_0 <= Hide)||LA61_0==Identifier||LA61_0==Inch||LA61_0==LAdd||(LA61_0 >= LRemove && LA61_0 <= LShape)||(LA61_0 >= Line && LA61_0 <= Mm)||(LA61_0 >= Move && LA61_0 <= MoveBy)||(LA61_0 >= NoFill && LA61_0 <= Number)||(LA61_0 >= OBracket && LA61_0 <= OParen)||(LA61_0 >= PI_CONSTANT && LA61_0 <= Println)||(LA61_0 >= Random && LA61_0 <= Rect)||(LA61_0 >= Rotate && LA61_0 <= Round)||(LA61_0 >= Scale && LA61_0 <= Slider)||(LA61_0 >= Sq && LA61_0 <= Subtract)||(LA61_0 >= Tan && LA61_0 <= TemplateCollection)||(LA61_0 >= Union && LA61_0 <= Weight)||LA61_0==Xor) ) {
@@ -7355,7 +7360,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt61) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:210:30: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:30: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_templateCall2488);
 							exprList353=exprList();
@@ -7381,14 +7386,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 210:46: -> ^( FUNC_CALL TemplateCollection ( exprList )? )
+					// 233:46: -> ^( FUNC_CALL TemplateCollection ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:210:49: ^( FUNC_CALL TemplateCollection ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:49: ^( FUNC_CALL TemplateCollection ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_TemplateCollection.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:210:82: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:82: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7405,7 +7410,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:211:5: AddDesign '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:5: AddDesign '(' ( exprList )? ')'
 					{
 					AddDesign355=(Token)match(input,AddDesign,FOLLOW_AddDesign_in_templateCall2512);  
 					stream_AddDesign.add(AddDesign355);
@@ -7413,7 +7418,7 @@ public class PogoParser extends Parser {
 					char_literal356=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2513);  
 					stream_OParen.add(char_literal356);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:211:18: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:18: ( exprList )?
 					int alt62=2;
 					int LA62_0 = input.LA(1);
 					if ( (LA62_0==ATan||LA62_0==AddDesign||(LA62_0 >= Arc && LA62_0 <= Assert)||LA62_0==Bool||LA62_0==COLOR_CONSTANT||(LA62_0 >= Clip && LA62_0 <= Cm)||(LA62_0 >= Copy && LA62_0 <= Curve)||LA62_0==Difference||LA62_0==Ellipse||(LA62_0 >= Excl && LA62_0 <= Expand)||(LA62_0 >= Fill && LA62_0 <= Flatten)||(LA62_0 >= Gaussian && LA62_0 <= Hide)||LA62_0==Identifier||LA62_0==Inch||LA62_0==LAdd||(LA62_0 >= LRemove && LA62_0 <= LShape)||(LA62_0 >= Line && LA62_0 <= Mm)||(LA62_0 >= Move && LA62_0 <= MoveBy)||(LA62_0 >= NoFill && LA62_0 <= Number)||(LA62_0 >= OBracket && LA62_0 <= OParen)||(LA62_0 >= PI_CONSTANT && LA62_0 <= Println)||(LA62_0 >= Random && LA62_0 <= Rect)||(LA62_0 >= Rotate && LA62_0 <= Round)||(LA62_0 >= Scale && LA62_0 <= Slider)||(LA62_0 >= Sq && LA62_0 <= Subtract)||(LA62_0 >= Tan && LA62_0 <= TemplateCollection)||(LA62_0 >= Union && LA62_0 <= Weight)||LA62_0==Xor) ) {
@@ -7421,7 +7426,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt62) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:211:18: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:18: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_templateCall2515);
 							exprList357=exprList();
@@ -7437,7 +7442,7 @@ public class PogoParser extends Parser {
 					stream_CParen.add(char_literal358);
 
 					// AST REWRITE
-					// elements: exprList, AddDesign
+					// elements: AddDesign, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7447,14 +7452,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 211:34: -> ^( FUNC_CALL AddDesign ( exprList )? )
+					// 234:34: -> ^( FUNC_CALL AddDesign ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:211:37: ^( FUNC_CALL AddDesign ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:37: ^( FUNC_CALL AddDesign ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_AddDesign.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:211:59: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:59: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7499,7 +7504,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "ifStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:216:1: ifStatement : ifStat ( elseIfStat )* ( elseStat )? End -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:239:1: ifStatement : ifStat ( elseIfStat )* ( elseStat )? End -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) ;
 	public final PogoParser.ifStatement_return ifStatement() throws RecognitionException {
 		PogoParser.ifStatement_return retval = new PogoParser.ifStatement_return();
 		retval.start = input.LT(1);
@@ -7518,15 +7523,15 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_elseStat=new RewriteRuleSubtreeStream(adaptor,"rule elseStat");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:3: ( ifStat ( elseIfStat )* ( elseStat )? End -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:6: ifStat ( elseIfStat )* ( elseStat )? End
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:240:3: ( ifStat ( elseIfStat )* ( elseStat )? End -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:240:6: ifStat ( elseIfStat )* ( elseStat )? End
 			{
 			pushFollow(FOLLOW_ifStat_in_ifStatement2553);
 			ifStat359=ifStat();
 			state._fsp--;
 
 			stream_ifStat.add(ifStat359.getTree());
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:13: ( elseIfStat )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:240:13: ( elseIfStat )*
 			loop64:
 			while (true) {
 				int alt64=2;
@@ -7541,7 +7546,7 @@ public class PogoParser extends Parser {
 
 				switch (alt64) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:13: elseIfStat
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:240:13: elseIfStat
 					{
 					pushFollow(FOLLOW_elseIfStat_in_ifStatement2555);
 					elseIfStat360=elseIfStat();
@@ -7556,7 +7561,7 @@ public class PogoParser extends Parser {
 				}
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:25: ( elseStat )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:240:25: ( elseStat )?
 			int alt65=2;
 			int LA65_0 = input.LA(1);
 			if ( (LA65_0==Else) ) {
@@ -7564,7 +7569,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt65) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:25: elseStat
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:240:25: elseStat
 					{
 					pushFollow(FOLLOW_elseStat_in_ifStatement2558);
 					elseStat361=elseStat();
@@ -7580,7 +7585,7 @@ public class PogoParser extends Parser {
 			stream_End.add(End362);
 
 			// AST REWRITE
-			// elements: elseStat, ifStat, elseIfStat
+			// elements: elseIfStat, elseStat, ifStat
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -7590,20 +7595,20 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 217:39: -> ^( IF ifStat ( elseIfStat )* ( elseStat )? )
+			// 240:39: -> ^( IF ifStat ( elseIfStat )* ( elseStat )? )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:42: ^( IF ifStat ( elseIfStat )* ( elseStat )? )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:240:42: ^( IF ifStat ( elseIfStat )* ( elseStat )? )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(IF, "IF"), root_1);
 				adaptor.addChild(root_1, stream_ifStat.nextTree());
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:54: ( elseIfStat )*
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:240:54: ( elseIfStat )*
 				while ( stream_elseIfStat.hasNext() ) {
 					adaptor.addChild(root_1, stream_elseIfStat.nextTree());
 				}
 				stream_elseIfStat.reset();
 
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:217:66: ( elseStat )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:240:66: ( elseStat )?
 				if ( stream_elseStat.hasNext() ) {
 					adaptor.addChild(root_1, stream_elseStat.nextTree());
 				}
@@ -7646,7 +7651,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "ifStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:221:1: ifStat : If expression Do block -> ^( EXP expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:1: ifStat : If expression Do block -> ^( EXP expression block ) ;
 	public final PogoParser.ifStat_return ifStat() throws RecognitionException {
 		PogoParser.ifStat_return retval = new PogoParser.ifStat_return();
 		retval.start = input.LT(1);
@@ -7666,8 +7671,8 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:222:3: ( If expression Do block -> ^( EXP expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:222:6: If expression Do block
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:245:3: ( If expression Do block -> ^( EXP expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:245:6: If expression Do block
 			{
 			If363=(Token)match(input,If,FOLLOW_If_in_ifStat2590);  
 			stream_If.add(If363);
@@ -7686,7 +7691,7 @@ public class PogoParser extends Parser {
 
 			stream_block.add(block366.getTree());
 			// AST REWRITE
-			// elements: expression, block
+			// elements: block, expression
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -7696,9 +7701,9 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 222:29: -> ^( EXP expression block )
+			// 245:29: -> ^( EXP expression block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:222:32: ^( EXP expression block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:245:32: ^( EXP expression block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXP, "EXP"), root_1);
@@ -7741,7 +7746,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "elseIfStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:225:1: elseIfStat : Else If expression Do block -> ^( EXP expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:248:1: elseIfStat : Else If expression Do block -> ^( EXP expression block ) ;
 	public final PogoParser.elseIfStat_return elseIfStat() throws RecognitionException {
 		PogoParser.elseIfStat_return retval = new PogoParser.elseIfStat_return();
 		retval.start = input.LT(1);
@@ -7764,8 +7769,8 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:3: ( Else If expression Do block -> ^( EXP expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:6: Else If expression Do block
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:249:3: ( Else If expression Do block -> ^( EXP expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:249:6: Else If expression Do block
 			{
 			Else367=(Token)match(input,Else,FOLLOW_Else_in_elseIfStat2620);  
 			stream_Else.add(Else367);
@@ -7787,7 +7792,7 @@ public class PogoParser extends Parser {
 
 			stream_block.add(block371.getTree());
 			// AST REWRITE
-			// elements: block, expression
+			// elements: expression, block
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -7797,9 +7802,9 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 226:34: -> ^( EXP expression block )
+			// 249:34: -> ^( EXP expression block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:226:37: ^( EXP expression block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:249:37: ^( EXP expression block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXP, "EXP"), root_1);
@@ -7842,7 +7847,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "elseStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:229:1: elseStat : Else Do block -> ^( EXP block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:252:1: elseStat : Else Do block -> ^( EXP block ) ;
 	public final PogoParser.elseStat_return elseStat() throws RecognitionException {
 		PogoParser.elseStat_return retval = new PogoParser.elseStat_return();
 		retval.start = input.LT(1);
@@ -7860,8 +7865,8 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:3: ( Else Do block -> ^( EXP block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:6: Else Do block
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:253:3: ( Else Do block -> ^( EXP block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:253:6: Else Do block
 			{
 			Else372=(Token)match(input,Else,FOLLOW_Else_in_elseStat2652);  
 			stream_Else.add(Else372);
@@ -7885,9 +7890,9 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 230:20: -> ^( EXP block )
+			// 253:20: -> ^( EXP block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:230:23: ^( EXP block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:253:23: ^( EXP block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXP, "EXP"), root_1);
@@ -7929,7 +7934,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "functionDecl"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:233:1: functionDecl : Def Identifier '(' ( idList )? ')' Do block End ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:256:1: functionDecl : Def Identifier '(' ( idList )? ')' Do block End ;
 	public final PogoParser.functionDecl_return functionDecl() throws RecognitionException {
 		PogoParser.functionDecl_return retval = new PogoParser.functionDecl_return();
 		retval.start = input.LT(1);
@@ -7953,8 +7958,8 @@ public class PogoParser extends Parser {
 		Object End382_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:3: ( Def Identifier '(' ( idList )? ')' Do block End )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:6: Def Identifier '(' ( idList )? ')' Do block End
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:257:3: ( Def Identifier '(' ( idList )? ')' Do block End )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:257:6: Def Identifier '(' ( idList )? ')' Do block End
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -7971,7 +7976,7 @@ public class PogoParser extends Parser {
 			char_literal377_tree = (Object)adaptor.create(char_literal377);
 			adaptor.addChild(root_0, char_literal377_tree);
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:25: ( idList )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:257:25: ( idList )?
 			int alt66=2;
 			int LA66_0 = input.LA(1);
 			if ( (LA66_0==Identifier) ) {
@@ -7979,7 +7984,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt66) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:234:25: idList
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:257:25: idList
 					{
 					pushFollow(FOLLOW_idList_in_functionDecl2684);
 					idList378=idList();
@@ -8040,7 +8045,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "forStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:238:1: forStatement : For Identifier '=' expression Do expression Do block End -> ^( For Identifier expression expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:261:1: forStatement : For Identifier '=' expression Do expression Do block End -> ^( For Identifier expression expression block ) ;
 	public final PogoParser.forStatement_return forStatement() throws RecognitionException {
 		PogoParser.forStatement_return retval = new PogoParser.forStatement_return();
 		retval.start = input.LT(1);
@@ -8072,8 +8077,8 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:239:3: ( For Identifier '=' expression Do expression Do block End -> ^( For Identifier expression expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:239:6: For Identifier '=' expression Do expression Do block End
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:262:3: ( For Identifier '=' expression Do expression Do block End -> ^( For Identifier expression expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:262:6: For Identifier '=' expression Do expression Do block End
 			{
 			For383=(Token)match(input,For,FOLLOW_For_in_forStatement2715);  
 			stream_For.add(For383);
@@ -8109,7 +8114,7 @@ public class PogoParser extends Parser {
 			stream_End.add(End391);
 
 			// AST REWRITE
-			// elements: block, For, expression, Identifier, expression
+			// elements: Identifier, For, block, expression, expression
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8119,9 +8124,9 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 240:6: -> ^( For Identifier expression expression block )
+			// 263:6: -> ^( For Identifier expression expression block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:240:9: ^( For Identifier expression expression block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:263:9: ^( For Identifier expression expression block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot(stream_For.nextNode(), root_1);
@@ -8166,7 +8171,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "repeatStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:243:1: repeatStatement : Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block End -> ^( Repeat Identifier expression expression ( expression )? block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:266:1: repeatStatement : Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block End -> ^( Repeat Identifier expression expression ( expression )? block ) ;
 	public final PogoParser.repeatStatement_return repeatStatement() throws RecognitionException {
 		PogoParser.repeatStatement_return retval = new PogoParser.repeatStatement_return();
 		retval.start = input.LT(1);
@@ -8202,8 +8207,8 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:3: ( Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block End -> ^( Repeat Identifier expression expression ( expression )? block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:5: Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block End
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:267:3: ( Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block End -> ^( Repeat Identifier expression expression ( expression )? block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:267:5: Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block End
 			{
 			Repeat392=(Token)match(input,Repeat,FOLLOW_Repeat_in_repeatStatement2764);  
 			stream_Repeat.add(Repeat392);
@@ -8227,7 +8232,7 @@ public class PogoParser extends Parser {
 			state._fsp--;
 
 			stream_expression.add(expression397.getTree());
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:52: ( 'add' expression )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:267:52: ( 'add' expression )*
 			loop67:
 			while (true) {
 				int alt67=2;
@@ -8238,7 +8243,7 @@ public class PogoParser extends Parser {
 
 				switch (alt67) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:53: 'add' expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:267:53: 'add' expression
 					{
 					string_literal398=(Token)match(input,LAdd,FOLLOW_LAdd_in_repeatStatement2777);  
 					stream_LAdd.add(string_literal398);
@@ -8268,7 +8273,7 @@ public class PogoParser extends Parser {
 			stream_End.add(End402);
 
 			// AST REWRITE
-			// elements: block, expression, expression, Repeat, expression, Identifier
+			// elements: expression, block, Repeat, expression, expression, Identifier
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8278,16 +8283,16 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 244:85: -> ^( Repeat Identifier expression expression ( expression )? block )
+			// 267:85: -> ^( Repeat Identifier expression expression ( expression )? block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:88: ^( Repeat Identifier expression expression ( expression )? block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:267:88: ^( Repeat Identifier expression expression ( expression )? block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot(stream_Repeat.nextNode(), root_1);
 				adaptor.addChild(root_1, stream_Identifier.nextNode());
 				adaptor.addChild(root_1, stream_expression.nextTree());
 				adaptor.addChild(root_1, stream_expression.nextTree());
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:244:130: ( expression )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:267:130: ( expression )?
 				if ( stream_expression.hasNext() ) {
 					adaptor.addChild(root_1, stream_expression.nextTree());
 				}
@@ -8331,7 +8336,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "whileStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:247:1: whileStatement : While expression Do block End -> ^( While expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:270:1: whileStatement : While expression Do block End -> ^( While expression block ) ;
 	public final PogoParser.whileStatement_return whileStatement() throws RecognitionException {
 		PogoParser.whileStatement_return retval = new PogoParser.whileStatement_return();
 		retval.start = input.LT(1);
@@ -8354,8 +8359,8 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:248:3: ( While expression Do block End -> ^( While expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:248:6: While expression Do block End
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:3: ( While expression Do block End -> ^( While expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:6: While expression Do block End
 			{
 			While403=(Token)match(input,While,FOLLOW_While_in_whileStatement2820);  
 			stream_While.add(While403);
@@ -8377,7 +8382,7 @@ public class PogoParser extends Parser {
 			stream_End.add(End407);
 
 			// AST REWRITE
-			// elements: expression, While, block
+			// elements: expression, block, While
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8387,9 +8392,9 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 248:36: -> ^( While expression block )
+			// 271:36: -> ^( While expression block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:248:39: ^( While expression block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:39: ^( While expression block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot(stream_While.nextNode(), root_1);
@@ -8432,7 +8437,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "idList"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:251:1: idList : Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:274:1: idList : Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) ;
 	public final PogoParser.idList_return idList() throws RecognitionException {
 		PogoParser.idList_return retval = new PogoParser.idList_return();
 		retval.start = input.LT(1);
@@ -8450,13 +8455,13 @@ public class PogoParser extends Parser {
 		RewriteRuleTokenStream stream_Identifier=new RewriteRuleTokenStream(adaptor,"token Identifier");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:252:3: ( Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:252:6: Identifier ( ',' Identifier )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:3: ( Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:6: Identifier ( ',' Identifier )*
 			{
 			Identifier408=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList2852);  
 			stream_Identifier.add(Identifier408);
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:252:17: ( ',' Identifier )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:17: ( ',' Identifier )*
 			loop68:
 			while (true) {
 				int alt68=2;
@@ -8467,7 +8472,7 @@ public class PogoParser extends Parser {
 
 				switch (alt68) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:252:18: ',' Identifier
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:18: ',' Identifier
 					{
 					char_literal409=(Token)match(input,Comma,FOLLOW_Comma_in_idList2855);  
 					stream_Comma.add(char_literal409);
@@ -8494,9 +8499,9 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 252:35: -> ^( ID_LIST ( Identifier )+ )
+			// 275:35: -> ^( ID_LIST ( Identifier )+ )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:252:38: ^( ID_LIST ( Identifier )+ )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:38: ^( ID_LIST ( Identifier )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(ID_LIST, "ID_LIST"), root_1);
@@ -8545,7 +8550,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "exprList"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:255:1: exprList : expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:278:1: exprList : expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) ;
 	public final PogoParser.exprList_return exprList() throws RecognitionException {
 		PogoParser.exprList_return retval = new PogoParser.exprList_return();
 		retval.start = input.LT(1);
@@ -8561,15 +8566,15 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:256:3: ( expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:256:6: expression ( ',' expression )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:3: ( expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:6: expression ( ',' expression )*
 			{
 			pushFollow(FOLLOW_expression_in_exprList2882);
 			expression411=expression();
 			state._fsp--;
 
 			stream_expression.add(expression411.getTree());
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:256:17: ( ',' expression )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:17: ( ',' expression )*
 			loop69:
 			while (true) {
 				int alt69=2;
@@ -8580,7 +8585,7 @@ public class PogoParser extends Parser {
 
 				switch (alt69) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:256:18: ',' expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:18: ',' expression
 					{
 					char_literal412=(Token)match(input,Comma,FOLLOW_Comma_in_exprList2885);  
 					stream_Comma.add(char_literal412);
@@ -8609,9 +8614,9 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 256:35: -> ^( EXP_LIST ( expression )+ )
+			// 279:35: -> ^( EXP_LIST ( expression )+ )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:256:38: ^( EXP_LIST ( expression )+ )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:38: ^( EXP_LIST ( expression )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXP_LIST, "EXP_LIST"), root_1);
@@ -8660,7 +8665,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "expression"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:259:1: expression : condExpr ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:282:1: expression : condExpr ;
 	public final PogoParser.expression_return expression() throws RecognitionException {
 		PogoParser.expression_return retval = new PogoParser.expression_return();
 		retval.start = input.LT(1);
@@ -8671,8 +8676,8 @@ public class PogoParser extends Parser {
 
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:260:3: ( condExpr )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:260:6: condExpr
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:283:3: ( condExpr )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:283:6: condExpr
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -8712,7 +8717,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "condExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:263:1: condExpr : ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:286:1: condExpr : ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? ;
 	public final PogoParser.condExpr_return condExpr() throws RecognitionException {
 		PogoParser.condExpr_return retval = new PogoParser.condExpr_return();
 		retval.start = input.LT(1);
@@ -8737,11 +8742,11 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_orExpr=new RewriteRuleSubtreeStream(adaptor,"rule orExpr");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:264:3: ( ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:264:6: ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:3: ( ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:6: ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:264:6: ( orExpr -> orExpr )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:264:7: orExpr
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:6: ( orExpr -> orExpr )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:7: orExpr
 			{
 			pushFollow(FOLLOW_orExpr_in_condExpr2927);
 			orExpr415=orExpr();
@@ -8759,7 +8764,7 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 264:14: -> orExpr
+			// 287:14: -> orExpr
 			{
 				adaptor.addChild(root_0, stream_orExpr.nextTree());
 			}
@@ -8769,7 +8774,7 @@ public class PogoParser extends Parser {
 
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:265:6: ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:288:6: ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
 			int alt70=3;
 			int LA70_0 = input.LA(1);
 			if ( (LA70_0==QMark) ) {
@@ -8780,7 +8785,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt70) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:265:8: '?' a= expression ':' b= expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:288:8: '?' a= expression ':' b= expression
 					{
 					char_literal416=(Token)match(input,QMark,FOLLOW_QMark_in_condExpr2942);  
 					stream_QMark.add(char_literal416);
@@ -8799,7 +8804,7 @@ public class PogoParser extends Parser {
 
 					stream_expression.add(b.getTree());
 					// AST REWRITE
-					// elements: b, a, orExpr
+					// elements: a, orExpr, b
 					// token labels: 
 					// rule labels: retval, b, a
 					// token list labels: 
@@ -8811,9 +8816,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"rule a",a!=null?a.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 265:42: -> ^( TERNARY orExpr $a $b)
+					// 288:42: -> ^( TERNARY orExpr $a $b)
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:265:45: ^( TERNARY orExpr $a $b)
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:288:45: ^( TERNARY orExpr $a $b)
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(TERNARY, "TERNARY"), root_1);
@@ -8831,7 +8836,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:266:8: In expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:289:8: In expression
 					{
 					In418=(Token)match(input,In,FOLLOW_In_in_condExpr2975);  
 					stream_In.add(In418);
@@ -8842,7 +8847,7 @@ public class PogoParser extends Parser {
 
 					stream_expression.add(expression419.getTree());
 					// AST REWRITE
-					// elements: expression, In, orExpr
+					// elements: In, orExpr, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -8852,9 +8857,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 266:42: -> ^( In orExpr expression )
+					// 289:42: -> ^( In orExpr expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:266:45: ^( In orExpr expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:289:45: ^( In orExpr expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot(stream_In.nextNode(), root_1);
@@ -8902,7 +8907,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "orExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:270:1: orExpr : andExpr ( '||' ^ andExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:293:1: orExpr : andExpr ( '||' ^ andExpr )* ;
 	public final PogoParser.orExpr_return orExpr() throws RecognitionException {
 		PogoParser.orExpr_return retval = new PogoParser.orExpr_return();
 		retval.start = input.LT(1);
@@ -8916,8 +8921,8 @@ public class PogoParser extends Parser {
 		Object string_literal421_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:3: ( andExpr ( '||' ^ andExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:6: andExpr ( '||' ^ andExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:294:3: ( andExpr ( '||' ^ andExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:294:6: andExpr ( '||' ^ andExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -8928,20 +8933,20 @@ public class PogoParser extends Parser {
 
 			adaptor.addChild(root_0, andExpr420.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:14: ( '||' ^ andExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:294:14: ( '||' ^ andExpr )*
 			loop71:
 			while (true) {
 				int alt71=2;
 				int LA71_0 = input.LA(1);
-				if ( (LA71_0==174) ) {
+				if ( (LA71_0==178) ) {
 					alt71=1;
 				}
 
 				switch (alt71) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:271:15: '||' ^ andExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:294:15: '||' ^ andExpr
 					{
-					string_literal421=(Token)match(input,174,FOLLOW_174_in_orExpr3032); 
+					string_literal421=(Token)match(input,178,FOLLOW_178_in_orExpr3032); 
 					string_literal421_tree = (Object)adaptor.create(string_literal421);
 					root_0 = (Object)adaptor.becomeRoot(string_literal421_tree, root_0);
 
@@ -8988,7 +8993,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "andExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:274:1: andExpr : equExpr ( '&&' ^ equExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:297:1: andExpr : equExpr ( '&&' ^ equExpr )* ;
 	public final PogoParser.andExpr_return andExpr() throws RecognitionException {
 		PogoParser.andExpr_return retval = new PogoParser.andExpr_return();
 		retval.start = input.LT(1);
@@ -9002,8 +9007,8 @@ public class PogoParser extends Parser {
 		Object string_literal424_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:3: ( equExpr ( '&&' ^ equExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:6: equExpr ( '&&' ^ equExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:298:3: ( equExpr ( '&&' ^ equExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:298:6: equExpr ( '&&' ^ equExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9014,20 +9019,20 @@ public class PogoParser extends Parser {
 
 			adaptor.addChild(root_0, equExpr423.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:14: ( '&&' ^ equExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:298:14: ( '&&' ^ equExpr )*
 			loop72:
 			while (true) {
 				int alt72=2;
 				int LA72_0 = input.LA(1);
-				if ( (LA72_0==172) ) {
+				if ( (LA72_0==176) ) {
 					alt72=1;
 				}
 
 				switch (alt72) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:275:15: '&&' ^ equExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:298:15: '&&' ^ equExpr
 					{
-					string_literal424=(Token)match(input,172,FOLLOW_172_in_andExpr3054); 
+					string_literal424=(Token)match(input,176,FOLLOW_176_in_andExpr3054); 
 					string_literal424_tree = (Object)adaptor.create(string_literal424);
 					root_0 = (Object)adaptor.becomeRoot(string_literal424_tree, root_0);
 
@@ -9074,7 +9079,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "equExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:278:1: equExpr : relExpr ( ( '==' | '!=' ) ^ relExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:301:1: equExpr : relExpr ( ( '==' | '!=' ) ^ relExpr )* ;
 	public final PogoParser.equExpr_return equExpr() throws RecognitionException {
 		PogoParser.equExpr_return retval = new PogoParser.equExpr_return();
 		retval.start = input.LT(1);
@@ -9088,8 +9093,8 @@ public class PogoParser extends Parser {
 		Object set427_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:3: ( relExpr ( ( '==' | '!=' ) ^ relExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:6: relExpr ( ( '==' | '!=' ) ^ relExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:302:3: ( relExpr ( ( '==' | '!=' ) ^ relExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:302:6: relExpr ( ( '==' | '!=' ) ^ relExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9100,7 +9105,7 @@ public class PogoParser extends Parser {
 
 			adaptor.addChild(root_0, relExpr426.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:14: ( ( '==' | '!=' ) ^ relExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:302:14: ( ( '==' | '!=' ) ^ relExpr )*
 			loop73:
 			while (true) {
 				int alt73=2;
@@ -9111,7 +9116,7 @@ public class PogoParser extends Parser {
 
 				switch (alt73) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:279:15: ( '==' | '!=' ) ^ relExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:302:15: ( '==' | '!=' ) ^ relExpr
 					{
 					set427=input.LT(1);
 					set427=input.LT(1);
@@ -9167,7 +9172,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "relExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:282:1: relExpr : addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:305:1: relExpr : addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* ;
 	public final PogoParser.relExpr_return relExpr() throws RecognitionException {
 		PogoParser.relExpr_return retval = new PogoParser.relExpr_return();
 		retval.start = input.LT(1);
@@ -9181,8 +9186,8 @@ public class PogoParser extends Parser {
 		Object set430_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:283:3: ( addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:283:6: addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:306:3: ( addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:306:6: addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9193,7 +9198,7 @@ public class PogoParser extends Parser {
 
 			adaptor.addChild(root_0, addExpr429.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:283:14: ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:306:14: ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
 			loop74:
 			while (true) {
 				int alt74=2;
@@ -9204,7 +9209,7 @@ public class PogoParser extends Parser {
 
 				switch (alt74) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:283:15: ( '>=' | '<=' | '>' | '<' ) ^ addExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:306:15: ( '>=' | '<=' | '>' | '<' ) ^ addExpr
 					{
 					set430=input.LT(1);
 					set430=input.LT(1);
@@ -9260,7 +9265,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "addExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:286:1: addExpr : mulExpr ( ( '+' | '-' ) ^ mulExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:309:1: addExpr : mulExpr ( ( '+' | '-' ) ^ mulExpr )* ;
 	public final PogoParser.addExpr_return addExpr() throws RecognitionException {
 		PogoParser.addExpr_return retval = new PogoParser.addExpr_return();
 		retval.start = input.LT(1);
@@ -9274,8 +9279,8 @@ public class PogoParser extends Parser {
 		Object set433_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:3: ( mulExpr ( ( '+' | '-' ) ^ mulExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:6: mulExpr ( ( '+' | '-' ) ^ mulExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:310:3: ( mulExpr ( ( '+' | '-' ) ^ mulExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:310:6: mulExpr ( ( '+' | '-' ) ^ mulExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9286,7 +9291,7 @@ public class PogoParser extends Parser {
 
 			adaptor.addChild(root_0, mulExpr432.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:14: ( ( '+' | '-' ) ^ mulExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:310:14: ( ( '+' | '-' ) ^ mulExpr )*
 			loop75:
 			while (true) {
 				int alt75=2;
@@ -9297,7 +9302,7 @@ public class PogoParser extends Parser {
 
 				switch (alt75) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:287:15: ( '+' | '-' ) ^ mulExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:310:15: ( '+' | '-' ) ^ mulExpr
 					{
 					set433=input.LT(1);
 					set433=input.LT(1);
@@ -9353,7 +9358,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "mulExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:290:1: mulExpr : powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:313:1: mulExpr : powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* ;
 	public final PogoParser.mulExpr_return mulExpr() throws RecognitionException {
 		PogoParser.mulExpr_return retval = new PogoParser.mulExpr_return();
 		retval.start = input.LT(1);
@@ -9367,8 +9372,8 @@ public class PogoParser extends Parser {
 		Object set436_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:291:3: ( powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:291:6: powExpr ( ( '*' | '/' | '%' ) ^ powExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:314:3: ( powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:314:6: powExpr ( ( '*' | '/' | '%' ) ^ powExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9379,7 +9384,7 @@ public class PogoParser extends Parser {
 
 			adaptor.addChild(root_0, powExpr435.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:291:14: ( ( '*' | '/' | '%' ) ^ powExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:314:14: ( ( '*' | '/' | '%' ) ^ powExpr )*
 			loop76:
 			while (true) {
 				int alt76=2;
@@ -9390,7 +9395,7 @@ public class PogoParser extends Parser {
 
 				switch (alt76) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:291:15: ( '*' | '/' | '%' ) ^ powExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:314:15: ( '*' | '/' | '%' ) ^ powExpr
 					{
 					set436=input.LT(1);
 					set436=input.LT(1);
@@ -9446,7 +9451,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "powExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:294:1: powExpr : unaryExpr ( '^' ^ unaryExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:317:1: powExpr : unaryExpr ( '^' ^ unaryExpr )* ;
 	public final PogoParser.powExpr_return powExpr() throws RecognitionException {
 		PogoParser.powExpr_return retval = new PogoParser.powExpr_return();
 		retval.start = input.LT(1);
@@ -9460,8 +9465,8 @@ public class PogoParser extends Parser {
 		Object char_literal439_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:295:3: ( unaryExpr ( '^' ^ unaryExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:295:6: unaryExpr ( '^' ^ unaryExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:3: ( unaryExpr ( '^' ^ unaryExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:6: unaryExpr ( '^' ^ unaryExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
@@ -9472,7 +9477,7 @@ public class PogoParser extends Parser {
 
 			adaptor.addChild(root_0, unaryExpr438.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:295:16: ( '^' ^ unaryExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:16: ( '^' ^ unaryExpr )*
 			loop77:
 			while (true) {
 				int alt77=2;
@@ -9483,7 +9488,7 @@ public class PogoParser extends Parser {
 
 				switch (alt77) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:295:17: '^' ^ unaryExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:318:17: '^' ^ unaryExpr
 					{
 					char_literal439=(Token)match(input,Pw,FOLLOW_Pw_in_powExpr3200); 
 					char_literal439_tree = (Object)adaptor.create(char_literal439);
@@ -9532,7 +9537,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "unaryExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:298:1: unaryExpr : ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:321:1: unaryExpr : ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom );
 	public final PogoParser.unaryExpr_return unaryExpr() throws RecognitionException {
 		PogoParser.unaryExpr_return retval = new PogoParser.unaryExpr_return();
 		retval.start = input.LT(1);
@@ -9552,7 +9557,7 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_atom=new RewriteRuleSubtreeStream(adaptor,"rule atom");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:299:3: ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:3: ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom )
 			int alt78=3;
 			switch ( input.LA(1) ) {
 			case Subtract:
@@ -9669,7 +9674,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt78) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:299:6: '-' atom
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:6: '-' atom
 					{
 					char_literal441=(Token)match(input,Subtract,FOLLOW_Subtract_in_unaryExpr3221);  
 					stream_Subtract.add(char_literal441);
@@ -9690,9 +9695,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 299:15: -> ^( UNARY_MIN atom )
+					// 322:15: -> ^( UNARY_MIN atom )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:299:18: ^( UNARY_MIN atom )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:18: ^( UNARY_MIN atom )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(UNARY_MIN, "UNARY_MIN"), root_1);
@@ -9708,7 +9713,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:300:6: '!' atom
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:6: '!' atom
 					{
 					char_literal443=(Token)match(input,Excl,FOLLOW_Excl_in_unaryExpr3238);  
 					stream_Excl.add(char_literal443);
@@ -9729,9 +9734,9 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 300:15: -> ^( NEGATE atom )
+					// 323:15: -> ^( NEGATE atom )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:300:18: ^( NEGATE atom )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:18: ^( NEGATE atom )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(NEGATE, "NEGATE"), root_1);
@@ -9747,7 +9752,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:301:6: atom
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:324:6: atom
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9789,7 +9794,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "atom"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:304:1: atom : ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:327:1: atom : ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT );
 	public final PogoParser.atom_return atom() throws RecognitionException {
 		PogoParser.atom_return retval = new PogoParser.atom_return();
 		retval.start = input.LT(1);
@@ -9814,7 +9819,7 @@ public class PogoParser extends Parser {
 		Object HEIGHT_CONSTANT453_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:305:3: ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:328:3: ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT )
 			int alt79=8;
 			switch ( input.LA(1) ) {
 			case Number:
@@ -9949,7 +9954,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt79) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:305:6: Number
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:328:6: Number
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9961,7 +9966,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:306:6: Bool
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:329:6: Bool
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9973,7 +9978,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:307:6: Null
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:330:6: Null
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9985,7 +9990,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:308:6: lookup
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:331:6: lookup
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -9999,7 +10004,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:309:5: COLOR_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:332:5: COLOR_CONSTANT
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10011,7 +10016,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:310:5: PI_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:333:5: PI_CONSTANT
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10023,7 +10028,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:311:5: WIDTH_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:334:5: WIDTH_CONSTANT
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10035,7 +10040,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:312:5: HEIGHT_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:335:5: HEIGHT_CONSTANT
 					{
 					root_0 = (Object)adaptor.nil();
 
@@ -10075,7 +10080,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "list"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:315:1: list : '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:338:1: list : '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) ;
 	public final PogoParser.list_return list() throws RecognitionException {
 		PogoParser.list_return retval = new PogoParser.list_return();
 		retval.start = input.LT(1);
@@ -10093,13 +10098,13 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:316:3: ( '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:316:6: '[' ( exprList )? ']'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:339:3: ( '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:339:6: '[' ( exprList )? ']'
 			{
 			char_literal454=(Token)match(input,OBracket,FOLLOW_OBracket_in_list3328);  
 			stream_OBracket.add(char_literal454);
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:316:10: ( exprList )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:339:10: ( exprList )?
 			int alt80=2;
 			int LA80_0 = input.LA(1);
 			if ( (LA80_0==ATan||LA80_0==AddDesign||(LA80_0 >= Arc && LA80_0 <= Assert)||LA80_0==Bool||LA80_0==COLOR_CONSTANT||(LA80_0 >= Clip && LA80_0 <= Cm)||(LA80_0 >= Copy && LA80_0 <= Curve)||LA80_0==Difference||LA80_0==Ellipse||(LA80_0 >= Excl && LA80_0 <= Expand)||(LA80_0 >= Fill && LA80_0 <= Flatten)||(LA80_0 >= Gaussian && LA80_0 <= Hide)||LA80_0==Identifier||LA80_0==Inch||LA80_0==LAdd||(LA80_0 >= LRemove && LA80_0 <= LShape)||(LA80_0 >= Line && LA80_0 <= Mm)||(LA80_0 >= Move && LA80_0 <= MoveBy)||(LA80_0 >= NoFill && LA80_0 <= Number)||(LA80_0 >= OBracket && LA80_0 <= OParen)||(LA80_0 >= PI_CONSTANT && LA80_0 <= Println)||(LA80_0 >= Random && LA80_0 <= Rect)||(LA80_0 >= Rotate && LA80_0 <= Round)||(LA80_0 >= Scale && LA80_0 <= Slider)||(LA80_0 >= Sq && LA80_0 <= Subtract)||(LA80_0 >= Tan && LA80_0 <= TemplateCollection)||(LA80_0 >= Union && LA80_0 <= Weight)||LA80_0==Xor) ) {
@@ -10107,7 +10112,7 @@ public class PogoParser extends Parser {
 			}
 			switch (alt80) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:316:10: exprList
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:339:10: exprList
 					{
 					pushFollow(FOLLOW_exprList_in_list3330);
 					exprList455=exprList();
@@ -10133,13 +10138,13 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 316:24: -> ^( LIST ( exprList )? )
+			// 339:24: -> ^( LIST ( exprList )? )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:316:27: ^( LIST ( exprList )? )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:339:27: ^( LIST ( exprList )? )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LIST, "LIST"), root_1);
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:316:34: ( exprList )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:339:34: ( exprList )?
 				if ( stream_exprList.hasNext() ) {
 					adaptor.addChild(root_1, stream_exprList.nextTree());
 				}
@@ -10182,7 +10187,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "lookup"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:319:1: lookup : ( functionCall ( ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | dotProperty -> ^( DOTPROPERTY functionCall dotProperty ) ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | dotProperty -> ^( DOTPROPERTY Identifier dotProperty ) ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:342:1: lookup : ( functionCall ( ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | dotProperty -> ^( DOTPROPERTY functionCall dotProperty ) ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | dotProperty -> ^( DOTPROPERTY Identifier dotProperty ) ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) );
 	public final PogoParser.lookup_return lookup() throws RecognitionException {
 		PogoParser.lookup_return retval = new PogoParser.lookup_return();
 		retval.start = input.LT(1);
@@ -10219,7 +10224,7 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_list=new RewriteRuleSubtreeStream(adaptor,"rule list");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:320:3: ( functionCall ( ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | dotProperty -> ^( DOTPROPERTY functionCall dotProperty ) ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | dotProperty -> ^( DOTPROPERTY Identifier dotProperty ) ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:343:3: ( functionCall ( ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | dotProperty -> ^( DOTPROPERTY functionCall dotProperty ) ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | dotProperty -> ^( DOTPROPERTY Identifier dotProperty ) ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) )
 			int alt88=5;
 			switch ( input.LA(1) ) {
 			case Identifier:
@@ -10228,7 +10233,7 @@ public class PogoParser extends Parser {
 				if ( (LA88_1==OParen) ) {
 					alt88=1;
 				}
-				else if ( (LA88_1==Add||LA88_1==CBracket||LA88_1==CParen||LA88_1==Comma||(LA88_1 >= Divide && LA88_1 <= Do)||(LA88_1 >= DotEnd && LA88_1 <= DotY)||LA88_1==Equals||(LA88_1 >= GT && LA88_1 <= GTEquals)||LA88_1==In||LA88_1==LAdd||(LA88_1 >= LT && LA88_1 <= LTEquals)||LA88_1==Modulus||LA88_1==Multiply||LA88_1==NEquals||LA88_1==OBracket||(LA88_1 >= Pw && LA88_1 <= QMark)||LA88_1==Subtract||(LA88_1 >= 172 && LA88_1 <= 174)) ) {
+				else if ( (LA88_1==Add||LA88_1==CBracket||LA88_1==CParen||LA88_1==Comma||(LA88_1 >= Divide && LA88_1 <= Do)||(LA88_1 >= DotEnd && LA88_1 <= DotY)||LA88_1==Equals||(LA88_1 >= GT && LA88_1 <= GTEquals)||LA88_1==In||LA88_1==LAdd||(LA88_1 >= LT && LA88_1 <= LTEquals)||LA88_1==Modulus||LA88_1==Multiply||LA88_1==NEquals||LA88_1==OBracket||(LA88_1 >= Pw && LA88_1 <= QMark)||LA88_1==Subtract||(LA88_1 >= 176 && LA88_1 <= 178)) ) {
 					alt88=3;
 				}
 
@@ -10354,17 +10359,17 @@ public class PogoParser extends Parser {
 			}
 			switch (alt88) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:320:6: functionCall ( ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | dotProperty -> ^( DOTPROPERTY functionCall dotProperty ) )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:343:6: functionCall ( ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | dotProperty -> ^( DOTPROPERTY functionCall dotProperty ) )
 					{
 					pushFollow(FOLLOW_functionCall_in_lookup3356);
 					functionCall457=functionCall();
 					state._fsp--;
 
 					stream_functionCall.add(functionCall457.getTree());
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:320:19: ( ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | dotProperty -> ^( DOTPROPERTY functionCall dotProperty ) )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:343:19: ( ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | dotProperty -> ^( DOTPROPERTY functionCall dotProperty ) )
 					int alt82=2;
 					int LA82_0 = input.LA(1);
-					if ( (LA82_0==Add||LA82_0==CBracket||LA82_0==CParen||LA82_0==Comma||(LA82_0 >= Divide && LA82_0 <= Do)||LA82_0==Equals||(LA82_0 >= GT && LA82_0 <= GTEquals)||LA82_0==In||LA82_0==LAdd||(LA82_0 >= LT && LA82_0 <= LTEquals)||LA82_0==Modulus||LA82_0==Multiply||LA82_0==NEquals||LA82_0==OBracket||(LA82_0 >= Pw && LA82_0 <= QMark)||LA82_0==Subtract||(LA82_0 >= 172 && LA82_0 <= 174)) ) {
+					if ( (LA82_0==Add||LA82_0==CBracket||LA82_0==CParen||LA82_0==Comma||(LA82_0 >= Divide && LA82_0 <= Do)||LA82_0==Equals||(LA82_0 >= GT && LA82_0 <= GTEquals)||LA82_0==In||LA82_0==LAdd||(LA82_0 >= LT && LA82_0 <= LTEquals)||LA82_0==Modulus||LA82_0==Multiply||LA82_0==NEquals||LA82_0==OBracket||(LA82_0 >= Pw && LA82_0 <= QMark)||LA82_0==Subtract||(LA82_0 >= 176 && LA82_0 <= 178)) ) {
 						alt82=1;
 					}
 					else if ( ((LA82_0 >= DotEnd && LA82_0 <= DotY)) ) {
@@ -10379,9 +10384,9 @@ public class PogoParser extends Parser {
 
 					switch (alt82) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:320:20: ( indexes )?
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:343:20: ( indexes )?
 							{
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:320:20: ( indexes )?
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:343:20: ( indexes )?
 							int alt81=2;
 							int LA81_0 = input.LA(1);
 							if ( (LA81_0==OBracket) ) {
@@ -10389,7 +10394,7 @@ public class PogoParser extends Parser {
 							}
 							switch (alt81) {
 								case 1 :
-									// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:320:20: indexes
+									// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:343:20: indexes
 									{
 									pushFollow(FOLLOW_indexes_in_lookup3359);
 									indexes458=indexes();
@@ -10412,14 +10417,14 @@ public class PogoParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (Object)adaptor.nil();
-							// 320:30: -> ^( LOOKUP functionCall ( indexes )? )
+							// 343:30: -> ^( LOOKUP functionCall ( indexes )? )
 							{
-								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:320:33: ^( LOOKUP functionCall ( indexes )? )
+								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:343:33: ^( LOOKUP functionCall ( indexes )? )
 								{
 								Object root_1 = (Object)adaptor.nil();
 								root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 								adaptor.addChild(root_1, stream_functionCall.nextTree());
-								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:320:55: ( indexes )?
+								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:343:55: ( indexes )?
 								if ( stream_indexes.hasNext() ) {
 									adaptor.addChild(root_1, stream_indexes.nextTree());
 								}
@@ -10436,7 +10441,7 @@ public class PogoParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:320:67: dotProperty
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:343:67: dotProperty
 							{
 							pushFollow(FOLLOW_dotProperty_in_lookup3376);
 							dotProperty459=dotProperty();
@@ -10454,9 +10459,9 @@ public class PogoParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (Object)adaptor.nil();
-							// 320:80: -> ^( DOTPROPERTY functionCall dotProperty )
+							// 343:80: -> ^( DOTPROPERTY functionCall dotProperty )
 							{
-								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:320:83: ^( DOTPROPERTY functionCall dotProperty )
+								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:343:83: ^( DOTPROPERTY functionCall dotProperty )
 								{
 								Object root_1 = (Object)adaptor.nil();
 								root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DOTPROPERTY, "DOTPROPERTY"), root_1);
@@ -10478,14 +10483,14 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:321:6: list ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:344:6: list ( indexes )?
 					{
 					pushFollow(FOLLOW_list_in_lookup3401);
 					list460=list();
 					state._fsp--;
 
 					stream_list.add(list460.getTree());
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:321:11: ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:344:11: ( indexes )?
 					int alt83=2;
 					int LA83_0 = input.LA(1);
 					if ( (LA83_0==OBracket) ) {
@@ -10493,7 +10498,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt83) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:321:11: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:344:11: indexes
 							{
 							pushFollow(FOLLOW_indexes_in_lookup3403);
 							indexes461=indexes();
@@ -10506,7 +10511,7 @@ public class PogoParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: indexes, list
+					// elements: list, indexes
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -10516,14 +10521,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 321:34: -> ^( LOOKUP list ( indexes )? )
+					// 344:34: -> ^( LOOKUP list ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:321:37: ^( LOOKUP list ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:344:37: ^( LOOKUP list ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_list.nextTree());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:321:51: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:344:51: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -10540,15 +10545,15 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:6: Identifier ( ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | dotProperty -> ^( DOTPROPERTY Identifier dotProperty ) )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:345:6: Identifier ( ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | dotProperty -> ^( DOTPROPERTY Identifier dotProperty ) )
 					{
 					Identifier462=(Token)match(input,Identifier,FOLLOW_Identifier_in_lookup3436);  
 					stream_Identifier.add(Identifier462);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:17: ( ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | dotProperty -> ^( DOTPROPERTY Identifier dotProperty ) )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:345:17: ( ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | dotProperty -> ^( DOTPROPERTY Identifier dotProperty ) )
 					int alt85=2;
 					int LA85_0 = input.LA(1);
-					if ( (LA85_0==Add||LA85_0==CBracket||LA85_0==CParen||LA85_0==Comma||(LA85_0 >= Divide && LA85_0 <= Do)||LA85_0==Equals||(LA85_0 >= GT && LA85_0 <= GTEquals)||LA85_0==In||LA85_0==LAdd||(LA85_0 >= LT && LA85_0 <= LTEquals)||LA85_0==Modulus||LA85_0==Multiply||LA85_0==NEquals||LA85_0==OBracket||(LA85_0 >= Pw && LA85_0 <= QMark)||LA85_0==Subtract||(LA85_0 >= 172 && LA85_0 <= 174)) ) {
+					if ( (LA85_0==Add||LA85_0==CBracket||LA85_0==CParen||LA85_0==Comma||(LA85_0 >= Divide && LA85_0 <= Do)||LA85_0==Equals||(LA85_0 >= GT && LA85_0 <= GTEquals)||LA85_0==In||LA85_0==LAdd||(LA85_0 >= LT && LA85_0 <= LTEquals)||LA85_0==Modulus||LA85_0==Multiply||LA85_0==NEquals||LA85_0==OBracket||(LA85_0 >= Pw && LA85_0 <= QMark)||LA85_0==Subtract||(LA85_0 >= 176 && LA85_0 <= 178)) ) {
 						alt85=1;
 					}
 					else if ( ((LA85_0 >= DotEnd && LA85_0 <= DotY)) ) {
@@ -10563,9 +10568,9 @@ public class PogoParser extends Parser {
 
 					switch (alt85) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:18: ( indexes )?
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:345:18: ( indexes )?
 							{
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:18: ( indexes )?
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:345:18: ( indexes )?
 							int alt84=2;
 							int LA84_0 = input.LA(1);
 							if ( (LA84_0==OBracket) ) {
@@ -10573,7 +10578,7 @@ public class PogoParser extends Parser {
 							}
 							switch (alt84) {
 								case 1 :
-									// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:18: indexes
+									// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:345:18: indexes
 									{
 									pushFollow(FOLLOW_indexes_in_lookup3439);
 									indexes463=indexes();
@@ -10586,7 +10591,7 @@ public class PogoParser extends Parser {
 							}
 
 							// AST REWRITE
-							// elements: indexes, Identifier
+							// elements: Identifier, indexes
 							// token labels: 
 							// rule labels: retval
 							// token list labels: 
@@ -10596,14 +10601,14 @@ public class PogoParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (Object)adaptor.nil();
-							// 322:28: -> ^( LOOKUP Identifier ( indexes )? )
+							// 345:28: -> ^( LOOKUP Identifier ( indexes )? )
 							{
-								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:31: ^( LOOKUP Identifier ( indexes )? )
+								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:345:31: ^( LOOKUP Identifier ( indexes )? )
 								{
 								Object root_1 = (Object)adaptor.nil();
 								root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 								adaptor.addChild(root_1, stream_Identifier.nextNode());
-								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:51: ( indexes )?
+								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:345:51: ( indexes )?
 								if ( stream_indexes.hasNext() ) {
 									adaptor.addChild(root_1, stream_indexes.nextTree());
 								}
@@ -10620,7 +10625,7 @@ public class PogoParser extends Parser {
 							}
 							break;
 						case 2 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:63: dotProperty
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:345:63: dotProperty
 							{
 							pushFollow(FOLLOW_dotProperty_in_lookup3456);
 							dotProperty464=dotProperty();
@@ -10638,9 +10643,9 @@ public class PogoParser extends Parser {
 							RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 							root_0 = (Object)adaptor.nil();
-							// 322:76: -> ^( DOTPROPERTY Identifier dotProperty )
+							// 345:76: -> ^( DOTPROPERTY Identifier dotProperty )
 							{
-								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:322:79: ^( DOTPROPERTY Identifier dotProperty )
+								// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:345:79: ^( DOTPROPERTY Identifier dotProperty )
 								{
 								Object root_1 = (Object)adaptor.nil();
 								root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DOTPROPERTY, "DOTPROPERTY"), root_1);
@@ -10662,12 +10667,12 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:6: String ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:346:6: String ( indexes )?
 					{
 					String465=(Token)match(input,String,FOLLOW_String_in_lookup3476);  
 					stream_String.add(String465);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:13: ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:346:13: ( indexes )?
 					int alt86=2;
 					int LA86_0 = input.LA(1);
 					if ( (LA86_0==OBracket) ) {
@@ -10675,7 +10680,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt86) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:13: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:346:13: indexes
 							{
 							pushFollow(FOLLOW_indexes_in_lookup3478);
 							indexes466=indexes();
@@ -10688,7 +10693,7 @@ public class PogoParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: indexes, String
+					// elements: String, indexes
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -10698,14 +10703,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 323:34: -> ^( LOOKUP String ( indexes )? )
+					// 346:34: -> ^( LOOKUP String ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:37: ^( LOOKUP String ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:346:37: ^( LOOKUP String ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_String.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:323:53: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:346:53: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -10722,7 +10727,7 @@ public class PogoParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:324:6: '(' expression ')' ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:347:6: '(' expression ')' ( indexes )?
 					{
 					char_literal467=(Token)match(input,OParen,FOLLOW_OParen_in_lookup3509);  
 					stream_OParen.add(char_literal467);
@@ -10735,7 +10740,7 @@ public class PogoParser extends Parser {
 					char_literal469=(Token)match(input,CParen,FOLLOW_CParen_in_lookup3513);  
 					stream_CParen.add(char_literal469);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:324:25: ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:347:25: ( indexes )?
 					int alt87=2;
 					int LA87_0 = input.LA(1);
 					if ( (LA87_0==OBracket) ) {
@@ -10743,7 +10748,7 @@ public class PogoParser extends Parser {
 					}
 					switch (alt87) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:324:25: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:347:25: indexes
 							{
 							pushFollow(FOLLOW_indexes_in_lookup3515);
 							indexes470=indexes();
@@ -10766,14 +10771,14 @@ public class PogoParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 324:34: -> ^( LOOKUP expression ( indexes )? )
+					// 347:34: -> ^( LOOKUP expression ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:324:37: ^( LOOKUP expression ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:347:37: ^( LOOKUP expression ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_expression.nextTree());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:324:57: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:347:57: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -10818,7 +10823,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "indexes"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:331:4: indexes : ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:354:4: indexes : ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) ;
 	public final PogoParser.indexes_return indexes() throws RecognitionException {
 		PogoParser.indexes_return retval = new PogoParser.indexes_return();
 		retval.start = input.LT(1);
@@ -10836,10 +10841,10 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:332:3: ( ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:332:6: ( '[' expression ']' )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:355:3: ( ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:355:6: ( '[' expression ']' )+
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:332:6: ( '[' expression ']' )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:355:6: ( '[' expression ']' )+
 			int cnt89=0;
 			loop89:
 			while (true) {
@@ -10851,7 +10856,7 @@ public class PogoParser extends Parser {
 
 				switch (alt89) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:332:7: '[' expression ']'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:355:7: '[' expression ']'
 					{
 					char_literal471=(Token)match(input,OBracket,FOLLOW_OBracket_in_indexes3559);  
 					stream_OBracket.add(char_literal471);
@@ -10886,9 +10891,9 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 332:28: -> ^( INDEXES ( expression )+ )
+			// 355:28: -> ^( INDEXES ( expression )+ )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:332:31: ^( INDEXES ( expression )+ )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:355:31: ^( INDEXES ( expression )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(INDEXES, "INDEXES"), root_1);
@@ -10937,7 +10942,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "dotProperty"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:335:3: dotProperty : ( dotExpression )+ -> ^( DOT ( dotExpression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:358:3: dotProperty : ( dotExpression )+ -> ^( DOT ( dotExpression )+ ) ;
 	public final PogoParser.dotProperty_return dotProperty() throws RecognitionException {
 		PogoParser.dotProperty_return retval = new PogoParser.dotProperty_return();
 		retval.start = input.LT(1);
@@ -10949,10 +10954,10 @@ public class PogoParser extends Parser {
 		RewriteRuleSubtreeStream stream_dotExpression=new RewriteRuleSubtreeStream(adaptor,"rule dotExpression");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:336:3: ( ( dotExpression )+ -> ^( DOT ( dotExpression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:336:6: ( dotExpression )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:359:3: ( ( dotExpression )+ -> ^( DOT ( dotExpression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:359:6: ( dotExpression )+
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:336:6: ( dotExpression )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:359:6: ( dotExpression )+
 			int cnt90=0;
 			loop90:
 			while (true) {
@@ -10964,7 +10969,7 @@ public class PogoParser extends Parser {
 
 				switch (alt90) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:336:7: dotExpression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:359:7: dotExpression
 					{
 					pushFollow(FOLLOW_dotExpression_in_dotProperty3594);
 					dotExpression474=dotExpression();
@@ -10993,9 +10998,9 @@ public class PogoParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 336:23: -> ^( DOT ( dotExpression )+ )
+			// 359:23: -> ^( DOT ( dotExpression )+ )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:336:26: ^( DOT ( dotExpression )+ )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:359:26: ^( DOT ( dotExpression )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(DOT, "DOT"), root_1);
@@ -11044,7 +11049,7 @@ public class PogoParser extends Parser {
 
 
 	// $ANTLR start "dotExpression"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:340:3: dotExpression : ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:363:3: dotExpression : ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight );
 	public final PogoParser.dotExpression_return dotExpression() throws RecognitionException {
 		PogoParser.dotExpression_return retval = new PogoParser.dotExpression_return();
 		retval.start = input.LT(1);
@@ -11056,7 +11061,7 @@ public class PogoParser extends Parser {
 		Object set475_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:341:3: ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:364:3: ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight )
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/Pogo.g:
 			{
 			root_0 = (Object)adaptor.nil();
@@ -11098,49 +11103,49 @@ public class PogoParser extends Parser {
 
 	public static final BitSet FOLLOW_block_in_parse183 = new BitSet(new long[]{0x0000000000000000L});
 	public static final BitSet FOLLOW_EOF_in_parse185 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_statement_in_block203 = new BitSet(new long[]{0xCE420000C7301A82L,0x0F80E37E65637FFFL,0x00002F63967FFE3FL});
-	public static final BitSet FOLLOW_functionDecl_in_block207 = new BitSet(new long[]{0xCE420000C7301A82L,0x0F80E37E65637FFFL,0x00002F63967FFE3FL});
-	public static final BitSet FOLLOW_Return_in_block212 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_expression_in_block214 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-	public static final BitSet FOLLOW_173_in_block216 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_assignment_in_statement258 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-	public static final BitSet FOLLOW_173_in_statement260 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_functionCall_in_statement273 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0000200000000000L});
-	public static final BitSet FOLLOW_173_in_statement275 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_statement_in_block203 = new BitSet(new long[]{0x9C84000187301A82L,0x7C070DF992C6FFFFL,0x0002F63967FFE1F8L});
+	public static final BitSet FOLLOW_functionDecl_in_block207 = new BitSet(new long[]{0x9C84000187301A82L,0x7C070DF992C6FFFFL,0x0002F63967FFE1F8L});
+	public static final BitSet FOLLOW_Return_in_block212 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_expression_in_block214 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0002000000000000L});
+	public static final BitSet FOLLOW_177_in_block216 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_assignment_in_statement258 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0002000000000000L});
+	public static final BitSet FOLLOW_177_in_statement260 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_functionCall_in_statement273 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000000L,0x0002000000000000L});
+	public static final BitSet FOLLOW_177_in_statement275 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_ifStatement_in_statement287 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_forStatement_in_statement294 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_whileStatement_in_statement301 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_repeatStatement_in_statement308 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_assignment322 = new BitSet(new long[]{0x0000000000002002L,0x0008000000000000L});
+	public static final BitSet FOLLOW_Identifier_in_assignment322 = new BitSet(new long[]{0x0000000000002002L,0x0040000000000000L});
 	public static final BitSet FOLLOW_indexes_in_assignment324 = new BitSet(new long[]{0x0000000000002002L});
-	public static final BitSet FOLLOW_Assign_in_assignment328 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Assign_in_assignment328 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_assignment330 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_functionCall366 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall368 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Identifier_in_functionCall366 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall368 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_functionCall370 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall373 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Println_in_functionCall391 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall393 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Println_in_functionCall391 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall393 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_functionCall395 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall398 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Print_in_functionCall417 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall419 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Print_in_functionCall417 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall419 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_functionCall421 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall423 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Assert_in_functionCall444 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall446 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Assert_in_functionCall444 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall446 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_functionCall448 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall450 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Size_in_functionCall470 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall472 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Size_in_functionCall470 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall472 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_functionCall474 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall476 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LAdd_in_functionCall498 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall500 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_LAdd_in_functionCall498 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall500 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_functionCall502 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall505 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LRemove_in_functionCall526 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall528 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_LRemove_in_functionCall526 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall528 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_functionCall530 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall533 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_primitiveCall_in_functionCall554 = new BitSet(new long[]{0x0000000000000002L});
@@ -11150,397 +11155,397 @@ public class PogoParser extends Parser {
 	public static final BitSet FOLLOW_getCall_in_functionCall581 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_uICall_in_functionCall587 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_templateCall_in_functionCall593 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Ellipse_in_primitiveCall613 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall615 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Ellipse_in_primitiveCall613 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall615 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall617 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall620 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Line_in_primitiveCall640 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall642 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Line_in_primitiveCall640 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall642 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall644 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall647 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Rect_in_primitiveCall667 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall669 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Rect_in_primitiveCall667 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall669 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall671 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall674 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Curve_in_primitiveCall694 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall696 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Curve_in_primitiveCall694 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall696 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall698 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall701 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Polygon_in_primitiveCall719 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall721 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Polygon_in_primitiveCall719 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall721 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall723 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall726 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Skirt_in_primitiveCall744 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall746 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Skirt_in_primitiveCall744 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall746 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall748 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall751 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SkirtBack_in_primitiveCall769 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall771 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_SkirtBack_in_primitiveCall769 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall771 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall773 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall776 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LShape_in_primitiveCall795 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall797 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_LShape_in_primitiveCall795 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall797 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall799 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall802 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Point_in_primitiveCall822 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall824 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Point_in_primitiveCall822 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall824 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall826 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall829 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Move_in_transformCall860 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall862 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Move_in_transformCall860 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall862 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall864 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall867 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_MoveBy_in_transformCall885 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall887 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_MoveBy_in_transformCall885 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall887 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall889 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall892 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Heading_in_transformCall911 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall913 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Heading_in_transformCall911 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall913 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall915 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall918 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Copy_in_transformCall937 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall939 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Copy_in_transformCall937 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall939 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_transformCall941 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall943 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Rotate_in_transformCall960 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall962 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Rotate_in_transformCall960 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall962 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall964 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall967 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Fill_in_transformCall984 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall986 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Fill_in_transformCall984 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall986 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall988 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall991 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Stroke_in_transformCall1008 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1010 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Stroke_in_transformCall1008 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1010 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1012 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1015 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_NoFill_in_transformCall1032 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1034 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_NoFill_in_transformCall1032 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1034 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_transformCall1036 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1038 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_NoStroke_in_transformCall1054 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1056 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_NoStroke_in_transformCall1054 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1056 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_transformCall1058 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1060 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Weight_in_transformCall1076 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1078 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Weight_in_transformCall1076 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1078 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1080 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1083 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Hide_in_transformCall1100 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1102 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Hide_in_transformCall1100 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1102 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_transformCall1104 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1106 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Show_in_transformCall1122 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1124 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Show_in_transformCall1122 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1124 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_transformCall1126 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1128 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Group_in_transformCall1144 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1146 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Group_in_transformCall1144 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1146 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1148 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1151 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Expand_in_transformCall1168 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1170 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Expand_in_transformCall1168 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1170 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_transformCall1172 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1174 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Merge_in_transformCall1190 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1192 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Merge_in_transformCall1190 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1192 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_transformCall1194 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1196 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Scale_in_transformCall1212 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1214 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Scale_in_transformCall1212 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1214 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1216 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1219 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_MirrorX_in_transformCall1236 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1238 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_MirrorX_in_transformCall1236 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1238 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_transformCall1240 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1242 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_MirrorY_in_transformCall1258 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1260 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_MirrorY_in_transformCall1258 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1260 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_transformCall1262 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1264 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Union_in_transformCall1280 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1282 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Union_in_transformCall1280 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1282 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1284 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1287 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Difference_in_transformCall1304 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1306 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Difference_in_transformCall1304 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1306 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1308 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1311 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Clip_in_transformCall1328 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1330 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Clip_in_transformCall1328 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1330 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1332 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1335 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Xor_in_transformCall1352 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1354 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Xor_in_transformCall1352 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1354 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1356 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1359 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Flatten_in_transformCall1376 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1378 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Flatten_in_transformCall1376 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1378 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_transformCall1380 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1382 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Grid_in_patternCall1412 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_patternCall1414 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Grid_in_patternCall1412 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_patternCall1414 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_patternCall1416 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_patternCall1419 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Wave_in_patternCall1437 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_patternCall1439 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Wave_in_patternCall1437 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_patternCall1439 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_patternCall1441 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_patternCall1444 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Arc_in_patternCall1462 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_patternCall1464 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Arc_in_patternCall1462 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_patternCall1464 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_patternCall1466 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_patternCall1469 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetWidth_in_getCall1500 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1502 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetWidth_in_getCall1500 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1502 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_getCall1504 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1506 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetHeight_in_getCall1520 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1522 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetHeight_in_getCall1520 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1522 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_getCall1524 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1526 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetX_in_getCall1540 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1542 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetX_in_getCall1540 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1542 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_getCall1544 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1546 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetY_in_getCall1560 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1562 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetY_in_getCall1560 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1562 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_getCall1564 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1566 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetOrigin_in_getCall1580 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1582 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetOrigin_in_getCall1580 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1582 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_getCall1584 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1586 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetRotation_in_getCall1600 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1602 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetRotation_in_getCall1600 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1602 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_getCall1604 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1606 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetFill_in_getCall1620 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1622 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetFill_in_getCall1620 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1622 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_getCall1624 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1626 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetStroke_in_getCall1640 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1642 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetStroke_in_getCall1640 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1642 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_getCall1644 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1646 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetStart_in_getCall1660 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1662 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetStart_in_getCall1660 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1662 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_getCall1664 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1666 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetEnd_in_getCall1680 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1682 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetEnd_in_getCall1680 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1682 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_getCall1684 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1686 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetDistance_in_getCall1701 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1703 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetDistance_in_getCall1701 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1703 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_getCall1705 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1709 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetIntersect_in_getCall1726 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1727 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetIntersect_in_getCall1726 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1727 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_getCall1729 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1733 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetAngle_in_getCall1750 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1751 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetAngle_in_getCall1750 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1751 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_getCall1753 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1757 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetRadius_in_getCall1774 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1775 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_GetRadius_in_getCall1774 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1775 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_getCall1777 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1781 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Cosine_in_mathCall1813 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1815 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Cosine_in_mathCall1813 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1815 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_mathCall1817 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall1819 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Sine_in_mathCall1838 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1840 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Sine_in_mathCall1838 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1840 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_mathCall1842 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall1844 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Tan_in_mathCall1863 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1865 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Tan_in_mathCall1863 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1865 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_mathCall1867 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall1869 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ATan_in_mathCall1888 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1890 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_ATan_in_mathCall1888 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1890 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_mathCall1892 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall1895 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Random_in_mathCall1915 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1917 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Random_in_mathCall1915 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1917 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_mathCall1919 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall1922 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Pow_in_mathCall1942 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1944 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Pow_in_mathCall1942 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1944 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_mathCall1946 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall1949 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Sqrt_in_mathCall1969 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1971 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Sqrt_in_mathCall1969 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1971 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_mathCall1973 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall1975 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Sq_in_mathCall1994 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1996 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Sq_in_mathCall1994 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1996 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_mathCall1998 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall2000 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Gaussian_in_mathCall2019 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2021 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Gaussian_in_mathCall2019 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2021 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_mathCall2023 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall2026 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Noise_in_mathCall2046 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2048 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Noise_in_mathCall2046 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2048 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_mathCall2050 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall2053 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Round_in_mathCall2073 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2074 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Round_in_mathCall2073 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2074 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_mathCall2076 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall2078 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Map_in_mathCall2097 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2098 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Map_in_mathCall2097 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2098 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_mathCall2100 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall2103 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Inch_in_mathCall2123 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2125 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Inch_in_mathCall2123 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2125 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_mathCall2127 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall2129 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Mm_in_mathCall2148 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2150 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Mm_in_mathCall2148 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2150 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_mathCall2152 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall2154 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Cm_in_mathCall2173 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2175 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Cm_in_mathCall2173 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2175 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_mathCall2177 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall2179 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Units_in_mathCall2198 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2199 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Units_in_mathCall2198 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2199 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_mathCall2201 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall2203 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Slider_in_uICall2234 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_uICall2236 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Slider_in_uICall2234 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_uICall2236 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_uICall2238 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_uICall2241 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Template_in_templateCall2274 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2276 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Template_in_templateCall2274 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2276 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_templateCall2278 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_templateCall2281 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetWidth_in_templateCall2300 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2302 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_SetWidth_in_templateCall2300 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2302 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_templateCall2304 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_templateCall2307 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetHeight_in_templateCall2326 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2328 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_SetHeight_in_templateCall2326 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2328 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_templateCall2330 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_templateCall2333 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetSeam_in_templateCall2352 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2354 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_SetSeam_in_templateCall2352 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2354 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_templateCall2356 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_templateCall2359 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetName_in_templateCall2378 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2380 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_SetName_in_templateCall2378 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2380 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_templateCall2382 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_templateCall2385 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetVFold_in_templateCall2404 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2406 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_SetVFold_in_templateCall2404 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2406 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_templateCall2408 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_templateCall2411 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetHFold_in_templateCall2430 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2432 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_SetHFold_in_templateCall2430 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2432 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_templateCall2434 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_templateCall2437 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetCorner_in_templateCall2456 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2458 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_SetCorner_in_templateCall2456 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2458 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_templateCall2460 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_templateCall2463 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TemplateCollection_in_templateCall2482 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2484 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_TemplateCollection_in_templateCall2482 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2484 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_templateCall2488 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_templateCall2491 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_AddDesign_in_templateCall2512 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2513 = new BitSet(new long[]{0xC6620000873C9A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_AddDesign_in_templateCall2512 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2513 = new BitSet(new long[]{0x8CC40001073C9A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_templateCall2515 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_templateCall2518 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ifStat_in_ifStatement2553 = new BitSet(new long[]{0x000C000000000000L});
-	public static final BitSet FOLLOW_elseIfStat_in_ifStatement2555 = new BitSet(new long[]{0x000C000000000000L});
-	public static final BitSet FOLLOW_elseStat_in_ifStatement2558 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_ifStat_in_ifStatement2553 = new BitSet(new long[]{0x0018000000000000L});
+	public static final BitSet FOLLOW_elseIfStat_in_ifStatement2555 = new BitSet(new long[]{0x0018000000000000L});
+	public static final BitSet FOLLOW_elseStat_in_ifStatement2558 = new BitSet(new long[]{0x0010000000000000L});
 	public static final BitSet FOLLOW_End_in_ifStatement2561 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_If_in_ifStat2590 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_expression_in_ifStat2592 = new BitSet(new long[]{0x0000000400000000L});
-	public static final BitSet FOLLOW_Do_in_ifStat2594 = new BitSet(new long[]{0xCE420000C7301A80L,0x0F80E37E65637FFFL,0x00002F63967FFE3FL});
+	public static final BitSet FOLLOW_If_in_ifStat2590 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_expression_in_ifStat2592 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_ifStat2594 = new BitSet(new long[]{0x9C84000187301A80L,0x7C070DF992C6FFFFL,0x0002F63967FFE1F8L});
 	public static final BitSet FOLLOW_block_in_ifStat2596 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Else_in_elseIfStat2620 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
-	public static final BitSet FOLLOW_If_in_elseIfStat2622 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_expression_in_elseIfStat2624 = new BitSet(new long[]{0x0000000400000000L});
-	public static final BitSet FOLLOW_Do_in_elseIfStat2626 = new BitSet(new long[]{0xCE420000C7301A80L,0x0F80E37E65637FFFL,0x00002F63967FFE3FL});
+	public static final BitSet FOLLOW_Else_in_elseIfStat2620 = new BitSet(new long[]{0x0000000000000000L,0x0000000000800000L});
+	public static final BitSet FOLLOW_If_in_elseIfStat2622 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_expression_in_elseIfStat2624 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_elseIfStat2626 = new BitSet(new long[]{0x9C84000187301A80L,0x7C070DF992C6FFFFL,0x0002F63967FFE1F8L});
 	public static final BitSet FOLLOW_block_in_elseIfStat2628 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Else_in_elseStat2652 = new BitSet(new long[]{0x0000000400000000L});
-	public static final BitSet FOLLOW_Do_in_elseStat2654 = new BitSet(new long[]{0xCE420000C7301A80L,0x0F80E37E65637FFFL,0x00002F63967FFE3FL});
+	public static final BitSet FOLLOW_Else_in_elseStat2652 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_elseStat2654 = new BitSet(new long[]{0x9C84000187301A80L,0x7C070DF992C6FFFFL,0x0002F63967FFE1F8L});
 	public static final BitSet FOLLOW_block_in_elseStat2656 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Def_in_functionDecl2678 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
-	public static final BitSet FOLLOW_Identifier_in_functionDecl2680 = new BitSet(new long[]{0x0000000000000000L,0x0010000000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionDecl2682 = new BitSet(new long[]{0x0000000000080000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_Def_in_functionDecl2678 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
+	public static final BitSet FOLLOW_Identifier_in_functionDecl2680 = new BitSet(new long[]{0x0000000000000000L,0x0080000000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionDecl2682 = new BitSet(new long[]{0x0000000000080000L,0x0000000000400000L});
 	public static final BitSet FOLLOW_idList_in_functionDecl2684 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_functionDecl2687 = new BitSet(new long[]{0x0000000400000000L});
-	public static final BitSet FOLLOW_Do_in_functionDecl2689 = new BitSet(new long[]{0xCE4A0000C7301A80L,0x0F80E37E65637FFFL,0x00002F63967FFE3FL});
-	public static final BitSet FOLLOW_block_in_functionDecl2691 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_CParen_in_functionDecl2687 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_functionDecl2689 = new BitSet(new long[]{0x9C94000187301A80L,0x7C070DF992C6FFFFL,0x0002F63967FFE1F8L});
+	public static final BitSet FOLLOW_block_in_functionDecl2691 = new BitSet(new long[]{0x0010000000000000L});
 	public static final BitSet FOLLOW_End_in_functionDecl2693 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_For_in_forStatement2715 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_For_in_forStatement2715 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
 	public static final BitSet FOLLOW_Identifier_in_forStatement2717 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_Assign_in_forStatement2719 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_expression_in_forStatement2721 = new BitSet(new long[]{0x0000000400000000L});
-	public static final BitSet FOLLOW_Do_in_forStatement2723 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_expression_in_forStatement2725 = new BitSet(new long[]{0x0000000400000000L});
-	public static final BitSet FOLLOW_Do_in_forStatement2727 = new BitSet(new long[]{0xCE4A0000C7301A80L,0x0F80E37E65637FFFL,0x00002F63967FFE3FL});
-	public static final BitSet FOLLOW_block_in_forStatement2729 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_Assign_in_forStatement2719 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_expression_in_forStatement2721 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_forStatement2723 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_expression_in_forStatement2725 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_forStatement2727 = new BitSet(new long[]{0x9C94000187301A80L,0x7C070DF992C6FFFFL,0x0002F63967FFE1F8L});
+	public static final BitSet FOLLOW_block_in_forStatement2729 = new BitSet(new long[]{0x0010000000000000L});
 	public static final BitSet FOLLOW_End_in_forStatement2731 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Repeat_in_repeatStatement2764 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_Repeat_in_repeatStatement2764 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
 	public static final BitSet FOLLOW_Identifier_in_repeatStatement2766 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_Assign_in_repeatStatement2768 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement2770 = new BitSet(new long[]{0x0000000400000000L});
-	public static final BitSet FOLLOW_Do_in_repeatStatement2772 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement2774 = new BitSet(new long[]{0x0000000400000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_LAdd_in_repeatStatement2777 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement2779 = new BitSet(new long[]{0x0000000400000000L,0x0000000004000000L});
-	public static final BitSet FOLLOW_Do_in_repeatStatement2783 = new BitSet(new long[]{0xCE4A0000C7301A80L,0x0F80E37E65637FFFL,0x00002F63967FFE3FL});
-	public static final BitSet FOLLOW_block_in_repeatStatement2785 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_Assign_in_repeatStatement2768 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement2770 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_repeatStatement2772 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement2774 = new BitSet(new long[]{0x0000000800000000L,0x0000000010000000L});
+	public static final BitSet FOLLOW_LAdd_in_repeatStatement2777 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement2779 = new BitSet(new long[]{0x0000000800000000L,0x0000000010000000L});
+	public static final BitSet FOLLOW_Do_in_repeatStatement2783 = new BitSet(new long[]{0x9C94000187301A80L,0x7C070DF992C6FFFFL,0x0002F63967FFE1F8L});
+	public static final BitSet FOLLOW_block_in_repeatStatement2785 = new BitSet(new long[]{0x0010000000000000L});
 	public static final BitSet FOLLOW_End_in_repeatStatement2787 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_While_in_whileStatement2820 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_expression_in_whileStatement2822 = new BitSet(new long[]{0x0000000400000000L});
-	public static final BitSet FOLLOW_Do_in_whileStatement2824 = new BitSet(new long[]{0xCE4A0000C7301A80L,0x0F80E37E65637FFFL,0x00002F63967FFE3FL});
-	public static final BitSet FOLLOW_block_in_whileStatement2826 = new BitSet(new long[]{0x0008000000000000L});
+	public static final BitSet FOLLOW_While_in_whileStatement2820 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_expression_in_whileStatement2822 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_whileStatement2824 = new BitSet(new long[]{0x9C94000187301A80L,0x7C070DF992C6FFFFL,0x0002F63967FFE1F8L});
+	public static final BitSet FOLLOW_block_in_whileStatement2826 = new BitSet(new long[]{0x0010000000000000L});
 	public static final BitSet FOLLOW_End_in_whileStatement2828 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_Identifier_in_idList2852 = new BitSet(new long[]{0x0000000000400002L});
-	public static final BitSet FOLLOW_Comma_in_idList2855 = new BitSet(new long[]{0x0000000000000000L,0x0000000000200000L});
+	public static final BitSet FOLLOW_Comma_in_idList2855 = new BitSet(new long[]{0x0000000000000000L,0x0000000000400000L});
 	public static final BitSet FOLLOW_Identifier_in_idList2857 = new BitSet(new long[]{0x0000000000400002L});
 	public static final BitSet FOLLOW_expression_in_exprList2882 = new BitSet(new long[]{0x0000000000400002L});
-	public static final BitSet FOLLOW_Comma_in_exprList2885 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_Comma_in_exprList2885 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_exprList2887 = new BitSet(new long[]{0x0000000000400002L});
 	public static final BitSet FOLLOW_condExpr_in_expression2912 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_orExpr_in_condExpr2927 = new BitSet(new long[]{0x0000000000000002L,0x2000000000800000L});
-	public static final BitSet FOLLOW_QMark_in_condExpr2942 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_expression_in_condExpr2946 = new BitSet(new long[]{0x0000000400000000L});
-	public static final BitSet FOLLOW_Do_in_condExpr2948 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_orExpr_in_condExpr2927 = new BitSet(new long[]{0x0000000000000002L,0x0000000001000000L,0x0000000000000001L});
+	public static final BitSet FOLLOW_QMark_in_condExpr2942 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_expression_in_condExpr2946 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_condExpr2948 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_condExpr2952 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_In_in_condExpr2975 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_In_in_condExpr2975 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_condExpr2977 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_andExpr_in_orExpr3029 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000400000000000L});
-	public static final BitSet FOLLOW_174_in_orExpr3032 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_andExpr_in_orExpr3035 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000400000000000L});
-	public static final BitSet FOLLOW_equExpr_in_andExpr3051 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_172_in_andExpr3054 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_equExpr_in_andExpr3057 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_relExpr_in_equExpr3073 = new BitSet(new long[]{0x0010000000000002L,0x0000100000000000L});
-	public static final BitSet FOLLOW_set_in_equExpr3076 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_relExpr_in_equExpr3085 = new BitSet(new long[]{0x0010000000000002L,0x0000100000000000L});
-	public static final BitSet FOLLOW_addExpr_in_relExpr3101 = new BitSet(new long[]{0x3000000000000002L,0x0000000180000000L});
-	public static final BitSet FOLLOW_set_in_relExpr3104 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_addExpr_in_relExpr3121 = new BitSet(new long[]{0x3000000000000002L,0x0000000180000000L});
-	public static final BitSet FOLLOW_mulExpr_in_addExpr3137 = new BitSet(new long[]{0x0000000000000102L,0x0000000000000000L,0x0000000020000000L});
-	public static final BitSet FOLLOW_set_in_addExpr3140 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_mulExpr_in_addExpr3149 = new BitSet(new long[]{0x0000000000000102L,0x0000000000000000L,0x0000000020000000L});
-	public static final BitSet FOLLOW_powExpr_in_mulExpr3165 = new BitSet(new long[]{0x0000000200000002L,0x0000048000000000L});
-	public static final BitSet FOLLOW_set_in_mulExpr3168 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_powExpr_in_mulExpr3181 = new BitSet(new long[]{0x0000000200000002L,0x0000048000000000L});
-	public static final BitSet FOLLOW_unaryExpr_in_powExpr3197 = new BitSet(new long[]{0x0000000000000002L,0x1000000000000000L});
-	public static final BitSet FOLLOW_Pw_in_powExpr3200 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
-	public static final BitSet FOLLOW_unaryExpr_in_powExpr3203 = new BitSet(new long[]{0x0000000000000002L,0x1000000000000000L});
-	public static final BitSet FOLLOW_Subtract_in_unaryExpr3221 = new BitSet(new long[]{0xC642000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE39E7FFE33L});
+	public static final BitSet FOLLOW_andExpr_in_orExpr3029 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0004000000000000L});
+	public static final BitSet FOLLOW_178_in_orExpr3032 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_andExpr_in_orExpr3035 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0004000000000000L});
+	public static final BitSet FOLLOW_equExpr_in_andExpr3051 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0001000000000000L});
+	public static final BitSet FOLLOW_176_in_andExpr3054 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_equExpr_in_andExpr3057 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0001000000000000L});
+	public static final BitSet FOLLOW_relExpr_in_equExpr3073 = new BitSet(new long[]{0x0020000000000002L,0x0000400000000000L});
+	public static final BitSet FOLLOW_set_in_equExpr3076 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_relExpr_in_equExpr3085 = new BitSet(new long[]{0x0020000000000002L,0x0000400000000000L});
+	public static final BitSet FOLLOW_addExpr_in_relExpr3101 = new BitSet(new long[]{0x6000000000000002L,0x0000000600000000L});
+	public static final BitSet FOLLOW_set_in_relExpr3104 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_addExpr_in_relExpr3121 = new BitSet(new long[]{0x6000000000000002L,0x0000000600000000L});
+	public static final BitSet FOLLOW_mulExpr_in_addExpr3137 = new BitSet(new long[]{0x0000000000000102L,0x0000000000000000L,0x0000000200000000L});
+	public static final BitSet FOLLOW_set_in_addExpr3140 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_mulExpr_in_addExpr3149 = new BitSet(new long[]{0x0000000000000102L,0x0000000000000000L,0x0000000200000000L});
+	public static final BitSet FOLLOW_powExpr_in_mulExpr3165 = new BitSet(new long[]{0x0000000400000002L,0x0000120000000000L});
+	public static final BitSet FOLLOW_set_in_mulExpr3168 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_powExpr_in_mulExpr3181 = new BitSet(new long[]{0x0000000400000002L,0x0000120000000000L});
+	public static final BitSet FOLLOW_unaryExpr_in_powExpr3197 = new BitSet(new long[]{0x0000000000000002L,0x8000000000000000L});
+	public static final BitSet FOLLOW_Pw_in_powExpr3200 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
+	public static final BitSet FOLLOW_unaryExpr_in_powExpr3203 = new BitSet(new long[]{0x0000000000000002L,0x8000000000000000L});
+	public static final BitSet FOLLOW_Subtract_in_unaryExpr3221 = new BitSet(new long[]{0x8C84000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE39E7FFE198L});
 	public static final BitSet FOLLOW_atom_in_unaryExpr3223 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Excl_in_unaryExpr3238 = new BitSet(new long[]{0xC642000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE39E7FFE33L});
+	public static final BitSet FOLLOW_Excl_in_unaryExpr3238 = new BitSet(new long[]{0x8C84000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE39E7FFE198L});
 	public static final BitSet FOLLOW_atom_in_unaryExpr3240 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_atom_in_unaryExpr3255 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_Number_in_atom3269 = new BitSet(new long[]{0x0000000000000002L});
@@ -11551,25 +11556,25 @@ public class PogoParser extends Parser {
 	public static final BitSet FOLLOW_PI_CONSTANT_in_atom3302 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_WIDTH_CONSTANT_in_atom3308 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_HEIGHT_CONSTANT_in_atom3314 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OBracket_in_list3328 = new BitSet(new long[]{0xC662000087369A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_OBracket_in_list3328 = new BitSet(new long[]{0x8CC4000107369A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_exprList_in_list3330 = new BitSet(new long[]{0x0000000000020000L});
 	public static final BitSet FOLLOW_CBracket_in_list3333 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_functionCall_in_lookup3356 = new BitSet(new long[]{0x00007FF000000002L,0x0008000000000000L});
+	public static final BitSet FOLLOW_functionCall_in_lookup3356 = new BitSet(new long[]{0x0000FFE000000002L,0x0040000000000000L});
 	public static final BitSet FOLLOW_indexes_in_lookup3359 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_dotProperty_in_lookup3376 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_list_in_lookup3401 = new BitSet(new long[]{0x0000000000000002L,0x0008000000000000L});
+	public static final BitSet FOLLOW_list_in_lookup3401 = new BitSet(new long[]{0x0000000000000002L,0x0040000000000000L});
 	public static final BitSet FOLLOW_indexes_in_lookup3403 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_lookup3436 = new BitSet(new long[]{0x00007FF000000002L,0x0008000000000000L});
+	public static final BitSet FOLLOW_Identifier_in_lookup3436 = new BitSet(new long[]{0x0000FFE000000002L,0x0040000000000000L});
 	public static final BitSet FOLLOW_indexes_in_lookup3439 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_dotProperty_in_lookup3456 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_String_in_lookup3476 = new BitSet(new long[]{0x0000000000000002L,0x0008000000000000L});
+	public static final BitSet FOLLOW_String_in_lookup3476 = new BitSet(new long[]{0x0000000000000002L,0x0040000000000000L});
 	public static final BitSet FOLLOW_indexes_in_lookup3478 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OParen_in_lookup3509 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_OParen_in_lookup3509 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_lookup3511 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_lookup3513 = new BitSet(new long[]{0x0000000000000002L,0x0008000000000000L});
+	public static final BitSet FOLLOW_CParen_in_lookup3513 = new BitSet(new long[]{0x0000000000000002L,0x0040000000000000L});
 	public static final BitSet FOLLOW_indexes_in_lookup3515 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OBracket_in_indexes3559 = new BitSet(new long[]{0xC662000087349A80L,0x0FDBE37E6523FFFFL,0x00000BE3BE7FFE33L});
+	public static final BitSet FOLLOW_OBracket_in_indexes3559 = new BitSet(new long[]{0x8CC4000107349A80L,0x7EDF0DF99247FFFFL,0x0000BE3BE7FFE198L});
 	public static final BitSet FOLLOW_expression_in_indexes3561 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_CBracket_in_indexes3563 = new BitSet(new long[]{0x0000000000000002L,0x0008000000000000L});
-	public static final BitSet FOLLOW_dotExpression_in_dotProperty3594 = new BitSet(new long[]{0x00007FF000000002L});
+	public static final BitSet FOLLOW_CBracket_in_indexes3563 = new BitSet(new long[]{0x0000000000000002L,0x0040000000000000L});
+	public static final BitSet FOLLOW_dotExpression_in_dotProperty3594 = new BitSet(new long[]{0x0000FFE000000002L});
 }
