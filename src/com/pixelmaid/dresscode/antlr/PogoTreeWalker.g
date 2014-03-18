@@ -33,7 +33,7 @@ options {
  DrawableManager drawableManager;
  UserUIManager uiManager;
   Scope currentScope = null;
-  
+  BlockNode currentFunction = null;
   
   private List<String> errors = new LinkedList<String>();
     public void displayRecognitionError(String[] tokenNames,
@@ -78,6 +78,7 @@ block returns [BlockNode node]
   node = bn;
   Scope local = new Scope(currentScope);
   currentScope = local;
+
 }
 @after {
   currentScope = currentScope.parent();

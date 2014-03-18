@@ -8,7 +8,7 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 
-import com.pixelmaid.dresscode.antlr.PogoTreeWalker;
+import com.pixelmaid.dresscode.antlr.PyEsqueTreeWalker;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.UserUIManager;
@@ -53,7 +53,7 @@ public class FunctionType {  //data object to store function declarations
 	    try {
 	      // Create a tree walker to evaluate this function's code block
 	      CommonTreeNodeStream nodes = new CommonTreeNodeStream(code);
-	      PogoTreeWalker walker = new  PogoTreeWalker(nodes, scope, functions, dm,ui, w, h, u);
+	      PyEsqueTreeWalker walker = new  PyEsqueTreeWalker(nodes, scope, functions, dm,ui, w, h, u);
 	      return walker.walk().evaluate();
 	    } catch (RecognitionException e) {
 	      // do not recover from this

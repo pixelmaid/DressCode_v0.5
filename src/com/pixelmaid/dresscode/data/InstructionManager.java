@@ -7,15 +7,19 @@ import java.util.List;
 import org.antlr.runtime.ANTLRStringStream;
 import org.antlr.runtime.CharStream;
 import org.antlr.runtime.CommonTokenStream;
+import org.antlr.runtime.Lexer;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 
-import com.pixelmaid.dresscode.antlr.PogoLexer;
-import com.pixelmaid.dresscode.antlr.PogoParser;
-import com.pixelmaid.dresscode.antlr.PogoTreeWalker;
+import antlr.Parser;
+
+//import com.pixelmaid.dresscode.antlr.PogoLexer;
+//import com.pixelmaid.dresscode.antlr.PogoParser;
+//import com.pixelmaid.dresscode.antlr.PogoTreeWalker;
 import com.pixelmaid.dresscode.antlr.PyEsqueLexer;
 import com.pixelmaid.dresscode.antlr.PyEsqueParser;
 import com.pixelmaid.dresscode.antlr.PyEsqueParser.block_return;
+import com.pixelmaid.dresscode.antlr.PyEsqueTreeWalker;
 import com.pixelmaid.dresscode.antlr.types.tree.BlockNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
@@ -78,9 +82,9 @@ public class InstructionManager extends NodeEvent{
 	    		
 	    		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
 	    		System.out.println(tree.toStringTree());
+	    		
 	    		// pass the reference to the Map of functions to the tree walker
-	    	/*	PogoTreeWalker walker = new PogoTreeWalker(nodes, parser.functions,drawableManager,uiManager,widthParam, heightParam, unitParam);
-
+	    		PyEsqueTreeWalker walker = new PyEsqueTreeWalker(nodes, parser.functions,drawableManager,uiManager,widthParam, heightParam, unitParam);
 	    		// get the returned node 
 	    		BlockNode returned = walker.walk();
 	    		System.out.println("num of statements="+returned.getNumStatements());
@@ -94,7 +98,7 @@ public class InstructionManager extends NodeEvent{
 	    				error = error+errors.get(i)+"\n";
 	    			}
 	    			this.fireEvent(CustomEvent.PARSE_ERROR);
-	    		}*/
+	    		}
 	    		this.fireEvent(CustomEvent.PARSE_COMPLETE);
 
 	    	} catch (Exception e) {
