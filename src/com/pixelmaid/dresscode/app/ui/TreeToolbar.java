@@ -28,7 +28,7 @@ public class TreeToolbar extends JPanel {
 		label.setFont(new Font("helvetica",10,10));
 		this.add(label);
 		 MatteBorder b = new MatteBorder(0,0,3,0,border);
-	        this.setBorder(b);      
+	     //   this.setBorder(b);      
 		
 		this.setVisible(true);
 		this.setBackground(background);

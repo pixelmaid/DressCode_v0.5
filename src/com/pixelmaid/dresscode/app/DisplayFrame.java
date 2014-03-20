@@ -39,8 +39,9 @@ import javax.swing.JScrollPane;
 import javax.swing.JSplitPane;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
+import javax.swing.event.ListSelectionEvent;
+import javax.swing.event.ListSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
-import javax.swing.event.TreeSelectionListener;
 import javax.swing.text.BadLocationException;
 
 
@@ -68,7 +69,7 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.events.CustomEventListener;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
-public class DisplayFrame extends javax.swing.JFrame implements CustomEventListener, KeyListener, ActionListener, MouseListener, WindowListener, WindowFocusListener,ComponentListener,TreeSelectionListener{
+public class DisplayFrame extends javax.swing.JFrame implements CustomEventListener, KeyListener, ActionListener, MouseListener, WindowListener, WindowFocusListener,ComponentListener,ListSelectionListener{
 
 	private static final long serialVersionUID = 1L;
 	
@@ -98,8 +99,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private CodingFrame codingFrame;
 	private  CodeField codeField;
 	private  CodeField hiddenCodeField; //secondary code field (depreciated) //TODO: get rid of hiddenCodeField
-	private TreeManager	treeManager; //declarative view UI component
-	private StampManager stampManager; //stamp manager UI component
+	private ListManager	treeManager; //declarative view UI component
+	private ListManager stampManager; //stamp manager UI component
 	private boolean fromMain = true; //boolean to manage stamp switching
 	private boolean fromTemplate = false; //boolean to manage stamp switching
 
@@ -117,6 +118,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private  Canvas canvas; //drawing canvas
 	public static DimensionDialog dimensionDialog; //dialog component for adjusting dimensions of canvas
 	public static StampDialog stampDialog; //dialog component for adjusting dimensions of canvas
+	public static IrregularShapeDialog shapeDialog; //dialog component for adjusting dimensions of canvas
+
 	//drawing panel buttons
 	private ImageButton selectButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton;
 	private ImageButton unionButton, diffButton, xorButton, clipButton;
@@ -341,23 +344,25 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		codingToolbar.init(defaultDrawingPaneWidth,DEFAULT_TOOLBAR_HEIGHT,BROWN);
 		
 		//setup treeManager for declarative view
-		treeManager = new TreeManager(OFF_WHITE,LIGHT_GREY);
-		treeManager.getTree().addKeyListener(this);
+		treeManager = new ListManager(OFF_WHITE,LIGHT_GREY);
+		treeManager.getList().addKeyListener(this);
 
-		stampManager = new StampManager(OFF_WHITE,LIGHT_GREY);
-		stampManager.getTree().addKeyListener(this);
-
+		stampManager = new ListManager(OFF_WHITE,LIGHT_GREY);
+		stampManager.getList().addKeyListener(this);
+	
 		
 		
 		//setup coding frame
 		codingFrame = new CodingFrame();
 		
-		JScrollPane stampView = new JScrollPane(stampManager.getTree());
+		JScrollPane stampView = new JScrollPane(stampManager.getList());
+		stampView.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		stampView.setBorder(null);
 		
-		JScrollPane treeView = new JScrollPane(treeManager.getTree());
+		JScrollPane treeView = new JScrollPane(treeManager.getList());
 		treeView.setBorder(null);
-		
+		treeView.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
 		
 
 		JPanel stampContainer = new JPanel();
@@ -367,7 +372,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		b.setVgap(10);
 		stampContainer.setLayout(b);
 		TreeToolbar stampToolbar = new TreeToolbar();
-		stampToolbar.init(400,20, "Stamps", BROWN,OFF_WHITE, PINK);
+		stampToolbar.init(400,DEFAULT_TOOLBAR_HEIGHT, "Stamps", BROWN,OFF_WHITE, PINK);
 		stampContainer.add(stampToolbar,BorderLayout.NORTH);
 		stampContainer.add(stampView,BorderLayout.CENTER);
 		
@@ -378,16 +383,16 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		b2.setVgap(10);
 		treeContainer.setLayout(b2);
 		TreeToolbar treeToolbar = new TreeToolbar();
-		treeToolbar.init(400,20, "Shapes", BROWN,OFF_WHITE, PINK);
+		treeToolbar.init(400,DEFAULT_TOOLBAR_HEIGHT, "Shapes", BROWN,OFF_WHITE, PINK);
 		treeContainer.add(treeToolbar,BorderLayout.NORTH);
 		treeContainer.add(treeView,BorderLayout.CENTER);
 		
 		leftSplitFrame = new JSplitPane();
 		leftSplitFrame.setBorder(null);
 		leftSplitFrame.setOrientation(JSplitPane.VERTICAL_SPLIT );
-		leftSplitFrame.setDividerLocation(height/2); 
-		leftSplitFrame.setTopComponent(stampContainer);
-		leftSplitFrame.setBottomComponent(treeContainer);
+		leftSplitFrame.setDividerLocation(height/4); 
+		leftSplitFrame.setBottomComponent(stampContainer);
+		leftSplitFrame.setTopComponent(treeContainer);
 		
 	
 		leftSplitFrame.setDividerSize(5);
@@ -528,7 +533,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	    sliderButton.addActionListener(this);
 	    patternDropdown.addActionListener(this);
 
-	    stampManager.getTree().addTreeSelectionListener(this);
+	    stampManager.getList().addListSelectionListener(this);
 
 		//setup key listeners
 		drawingToolbar.addKeyListener(this);
@@ -654,7 +659,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 *and passes them to canvas to be drawn
 	 */
 	 private void drawIntoCanvas(){
-		 treeManager.getNodes(drawableManager.getDrawables());
+		 //treeManager.getNodes(drawableManager.getDrawables());
 		 canvas.setDrawables(drawableManager.getDrawables());
 		 canvas.redraw();
 		// canvas.setUserUI(uiManager.getUserUIs());
@@ -672,7 +677,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			 if(stampDialog.getAnswer()){
 				 Stamp stamp = new Stamp();
 				 stamp.setDrawables(stampDialog.getName(),stampDialog.isStatic(),selected);
-				 stampManager.addChild(stamp);
+				 //stampManager.addChild(stamp);
 				 stampMap.put(stamp.getFunctionName(),stamp);
 			 	
 			 }
@@ -689,7 +694,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			 if(stampDialog.getAnswer()){
 				 DynamicStamp stamp = new DynamicStamp();
 				 stamp.setCode(stampDialog.getName(),selected);
-				 stampManager.addChild(stamp);
+				 //stampManager.addChild(stamp);
 				 stampMap.put(stamp.getFunctionName(),stamp);
 			 	
 			 }
@@ -713,16 +718,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				updateStampCode();
 			}
 			fromMain = false; //set from main to false (prevents incorrect saving of files)
-			String stampName = stampManager.getSelectedNode(); //get new stamp name from stampManager
+			/*String stampName = stampManager.getSelectedNode(); //get new stamp name from stampManager
 			currentStamp = stampName;
 			codingToolbar.updateLabel(stampName); //update label of coding window
 
 			Stamp stamp = stampMap.get(stampName); //locate new stamp based on name
 			this.codeField.setText(stamp.getFunctionDef()); //set code field text to stamp function
-			//if (!(stamp instanceof DynamicStamp)){
-			//this.codeField.startFilter(stamp.getFunctionCall().length()+4); //filter code field to prevent editing of function name
-	 
-			//}
+			*/
 		}
 	 
 	 /*called when template is selected*/
@@ -776,7 +778,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		currentStamp=""; //set current stamp to empty string
 		fromMain = true; //set from main to true (prevents incorrect saving of files)
 		fromTemplate = false; //set from main to true (prevents incorrect saving of files)
-		 stampManager.selectMainNode();
 
 		codingToolbar.updateLabel(this.currentProject.getName()); //set label back to main project name
 		this.codeField.setText(this.currentProject.getCode());//set code field text back to main project code
@@ -784,12 +785,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 /*inserts stamp function call into program*/
 	 private void insertStamp(){
-		 String stampName = stampManager.getSelectedNode();
+		 /*String stampName = stampManager.getSelectedNode();
 		 Stamp stamp = stampMap.get(stampName);
 		 selectMain();	
 		 codeField.addText("\n"+stamp.getFunctionCall());
 		this.currentProject.setCode(this.codeField.getCode()); //update project code to include added statements
-	
+		*/
 	 }
 	 
 	 /*updates the code of the current stamp with modifications made by user*/
@@ -800,9 +801,23 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 	 /*adds in an irregular polygon statement to the code field*/
 	 private void addPolyStatement(Polygon p){
-			String polyStatement = Stamp.addPolyStatement(p, false);
-			codeField.insertGesturalStatement(polyStatement);
-			this.currentProject.setCode(this.codeField.getCode());
+		 shapeDialog = new IrregularShapeDialog(this,true,stampMap);
+		 if(shapeDialog.getAnswer()){
+			 
+			 Stamp stamp = new Stamp();
+			 stamp.setDrawables(shapeDialog.getName(),true,p);
+			 stampManager.addItem(shapeDialog.getName());
+			 stampMap.put(stamp.getFunctionName(),stamp);
+		 	
+		 }
+	 
+	 else{
+		 IrregularShapeDialog.infoBox("No object is selected.", "", "Error creating stamp");
+	 }
+		 	
+			//String polyStatement = Stamp.addPolyStatement(p, false);
+			//codeField.insertGesturalStatement(polyStatement);
+			//this.currentProject.setCode(this.codeField.getCode());
 	 }
 	 
 	 /*sets code parse in motion*/
@@ -851,12 +866,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 selectMain();
 		 LinkedHashMap<String,Stamp> stmps = currentProject.openFile(file, this,codingFrame,canvas,instructionManager);
 			if(stmps!=null){
-				stampManager.clearChildren();
+				stampManager.clearItems();
 				stampMap.clear();
 				stampMap = stmps;
 				for (String key : stampMap.keySet())
 				{
-					stampManager.addChild(stampMap.get(key));
+					stampManager.addItem(key);
 				}
 			}
 			codeField.setUnsaved(false);
@@ -878,7 +893,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			 selectMain();
 			 codeField.setUnsaved(false);
 			 stampMap.clear();
-			 stampManager.clearChildren();
+			 stampManager.clearItems();
 			currentProject.newFile(codingFrame, codeField,canvas, drawableManager , instructionManager);
 			updateLabels();
 			}
@@ -887,7 +902,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			 selectMain();
 			codeField.setUnsaved(false);
 			 stampMap.clear();
-			 stampManager.clearChildren();
+			 stampManager.clearItems();
 			currentProject.newFile(codingFrame, codeField,canvas, drawableManager , instructionManager);
 			updateLabels();
 		 }
@@ -908,7 +923,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		if(fromMain){
 		 this.codingToolbar.updateLabel(currentProject.getName());
 		}
-		 this.stampManager.updateLabel(currentProject.getName());
 	 }
 	 
 	 //reports errors that occurred in parse
@@ -1026,17 +1040,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					this.currentProject.setCode(this.codeField.getCode());
 
 				break;
-				case CustomEvent.TREE_DRAWABLE_SELECTED:
-					try{
-						Drawable selected = treeManager.getSelectedDrawable();
-						codeField.highlightLine(selected.getInitLine());
-
-						canvas.redraw();
-					}
-					catch (BadLocationException e){
-						System.out.println(e);
-					}
-					break;
+				
+					
 				case CustomEvent.DRAWABLE_MOVED:
 					selectMain();
 					ArrayList<Drawable> dlist = selectTool.getSelected();
@@ -1539,11 +1544,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	}
 
 
-	@Override
-	public void valueChanged(TreeSelectionEvent arg0) {
-		// TODO Auto-generated method stub
-		
-	}
 	
 	
 	
@@ -1625,6 +1625,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	@Override
 	public void handleCustomUIEvent(Object source, int event) {
 	
+		
+	}
+
+
+	@Override
+	public void valueChanged(ListSelectionEvent arg0) {
+		System.out.println("value changed");
 		
 	}
 	

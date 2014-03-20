@@ -38,9 +38,9 @@ public class Stamp {
 
 	protected  final static String cm = ",";
 	protected  final static String end = ");";
-	protected  final String functionStart = "def ";
-	protected final String functionMiddle = "():";
-	protected final String functionEnd = "end";
+	protected  final String functionStart = "function ";
+	protected final String functionMiddle = "()";
+	protected final String functionEnd = "";
 	protected  String returnStatement = "return "+currentGroupId + ";";
 	public Stamp(){
 		
@@ -69,7 +69,7 @@ public class Stamp {
 			}
 		}*/
 		functionDef = functionStart+functionName+functionMiddle+"\n"+functionDef+"\n"+returnStatement+"\n"+functionEnd;
-		functionCall = functionName+"();";
+		functionCall = functionName+"()";
 		
 	}
 	/*recursive drawable sorting function

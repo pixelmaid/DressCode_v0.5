@@ -1,65 +1,57 @@
 package com.pixelmaid.dresscode.app.ui;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Dimension;
-import java.awt.FlowLayout;
-import java.awt.Font;
+//Imports
+import java.awt.*;
+import java.util.ArrayList;
 
-import javax.swing.JButton;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import javax.swing.JTree;
-import javax.swing.tree.TreeCellRenderer;
+import javax.swing.*;
+import javax.swing.ListCellRenderer.*;
 
-public class ButtonCellRenderer extends JPanel implements TreeCellRenderer
+public class ButtonCellRenderer extends JLabel implements	ListCellRenderer	
 {
-    /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	JButton button;
-    JLabel label;
-    JTree tree;
-    Color bg;
-    Color fg;
+	private	ArrayList<ImageIcon> images;
+	
+	public ButtonCellRenderer()
+	{
+		setOpaque(true);
+		this.setPreferredSize(new Dimension(140,32));
+		this.setBackground(new Color(190,184,184));
 
-    public ButtonCellRenderer(Color bg, Color fg){
-       
-    	super();
-    	this.bg = bg;
-    	this.fg = fg;
-    	 FlowLayout b = new FlowLayout();
-	  	  b.setAlignment(FlowLayout.RIGHT);
-	  	  b.setVgap(0);
-	      b.setHgap(5);
-
-	    this.setLayout(b);
-        button = new JButton("+");
-        button.setBackground(bg);
-        button.setPreferredSize(new Dimension(15,15));
-        label = new JLabel();
-        label.setFont(new Font("Helvetica", Font.PLAIN, 12));
-        
-        add(button, BorderLayout.EAST);
-        add(label);
-    }
-
-    @Override public Component getTreeCellRendererComponent(JTree tree, Object value, boolean selected, boolean expanded, boolean leaf, int row, boolean hasFocus){
-        
-    	
-    	label.setText(value.toString());
-       this.tree = tree;
-       if(selected){
-    	   this.setBackground(fg);
-       }
-       else{
-    	   this.setBackground(bg);
-
-       }
-        return this;
-    }
+		// Pre-load the graphics images to save time
+		images = new ArrayList<ImageIcon>();
+	
+	}
   
+	public void addImage(String name){
+		images.add( new ImageIcon(name));
+	}
+	
+	public Component getListCellRendererComponent(
+			JList list, Object value, int index, 
+			boolean isSelected, boolean cellHasFocus ) 
+	{
+		// Display the text for this item
+		setText(value.toString());
+		
+		// Set the correct image
+		setIcon( images.get(index) );
+		
+		// Draw the correct colors and font
+		if( isSelected )
+		{
+			// Set the color and font for a selected item
+			/*setBackground( Color.red );
+			setForeground( Color.white );
+			setFont( new Font( "Roman", Font.BOLD, 24 ) );*/
+		}
+		else
+		{
+			// Set the color and font for an unselected item
+		/*	setBackground( Color.white );
+			setForeground( Color.black );
+			setFont( new Font( "Roman", Font.PLAIN, 12 ) );*/
+		}
 
+		return this;
+	}
 }

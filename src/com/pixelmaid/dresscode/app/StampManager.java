@@ -18,6 +18,7 @@ import javax.swing.AbstractCellEditor;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JList;
 import javax.swing.JPanel;
 import javax.swing.JTree;
 import javax.swing.UIDefaults;
@@ -34,7 +35,7 @@ import com.pixelmaid.dresscode.data.Stamp;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class StampManager extends TreeManager {
+public class StampManager extends ListManager {
 	private String selectedNode;
 	public StampManager(Color bg, Color fg){
 		super(bg,fg);
