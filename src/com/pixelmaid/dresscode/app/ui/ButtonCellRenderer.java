@@ -40,12 +40,15 @@ public class ButtonCellRenderer extends JLabel implements	ListCellRenderer
 		if( isSelected )
 		{
 			// Set the color and font for a selected item
-			/*setBackground( Color.red );
-			setForeground( Color.white );
-			setFont( new Font( "Roman", Font.BOLD, 24 ) );*/
+			setBackground( new Color(140,129,129) );
+			setForeground( new Color(242,242,242));
+			//setFont( new Font( "Roman", Font.BOLD, 24 ) );*/
 		}
 		else
 		{
+			this.setBackground(new Color(190,184,184));
+			setForeground(Color.black);
+
 			// Set the color and font for an unselected item
 		/*	setBackground( Color.white );
 			setForeground( Color.black );

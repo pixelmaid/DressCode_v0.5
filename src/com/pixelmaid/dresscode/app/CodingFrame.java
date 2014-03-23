@@ -1,10 +1,12 @@
 package com.pixelmaid.dresscode.app;
 
 import java.awt.BorderLayout;
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import javax.swing.JViewport;
 
 import javax.swing.BoxLayout;
 import javax.swing.JPanel;
@@ -19,6 +21,7 @@ import com.pixelmaid.dresscode.app.ui.ConsoleToolbar;
 import com.pixelmaid.dresscode.app.ui.ImageButton;
 import com.pixelmaid.dresscode.app.ui.Toolbar;
 import com.pixelmaid.dresscode.app.ui.TreeToolbar;
+import com.pixelmaid.dresscode.data.Stamp;
 
 public class CodingFrame extends JPanel {
 	/**
@@ -27,15 +30,14 @@ public class CodingFrame extends JPanel {
 	private static final long serialVersionUID = 1L;
 	private CodeField codeField;
 	private ListManager drawingTree;
-	public CodeField hiddenCodeField;
 	private JSplitPane codeHolder;
-	private JPanel hiddenCodeHolder;
 
 	private Console output;
 	private ConsoleToolbar consoleToolbar;
 	private JPanel outputContainer;
 	private JPanel codeContainer;
 	private JPanel treeContainer;
+	private JPanel cardContainer;
 
 	private int outputHeight = 200;
 	private JScrollPane scrPane1,scrPane2,scrPane3;
@@ -49,7 +51,7 @@ public class CodingFrame extends JPanel {
 		
 	}
 	
-	 public void init(int w, int he, CodeField c, CodeField h, Console o, Toolbar t, Component d, Color bg,Color sb, Color brdr, ImageButton clearButton){
+	 public void init(int w, int he, CodeField c, Console o, Toolbar t, Component d, Color bg,Color sb, Color brdr, ImageButton clearButton){
 		this.setBorder(null);
 		BorderLayout layout = new BorderLayout();
 		layout.setHgap(0);
@@ -74,9 +76,7 @@ public class CodingFrame extends JPanel {
 
 		this.setPreferredSize(new Dimension(width,height));
 		codeField= c;
-		hiddenCodeField = h;
 		codeField.setPreferredSize(new Dimension(width,height-outputHeight));
-		hiddenCodeField.setPreferredSize(new Dimension(width,height-outputHeight));
 		output = o;
 
 		output.setPreferredSize(new Dimension(width,outputHeight));
@@ -84,6 +84,10 @@ public class CodingFrame extends JPanel {
 		consoleToolbar.init(width,25,bg,brdr,clearButton);
 
 		scrPane1 = new JScrollPane(codeField);
+		cardContainer = new JPanel();
+		cardContainer.setLayout( new CardLayout());
+		cardContainer.add(scrPane1, "main");
+		
 		
 		scrPane1.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
 		scrPane1.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
@@ -95,7 +99,6 @@ public class CodingFrame extends JPanel {
 
 		
 		scrPane2.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-		scrPane3 = new JScrollPane(hiddenCodeField);
 
 		output.setVisible(true);
 		outputContainer.setVisible(true);
@@ -105,7 +108,7 @@ public class CodingFrame extends JPanel {
 		outputContainer.add(scrPane2, BorderLayout.CENTER);
 		
 		codeContainer.add(t, BorderLayout.PAGE_START);
-		codeContainer.add(scrPane1);
+		codeContainer.add(cardContainer);
 		
 		codeHolder.setOrientation(JSplitPane.VERTICAL_SPLIT );
 		codeHolder.setTopComponent(codeContainer);
@@ -151,6 +154,52 @@ public class CodingFrame extends JPanel {
 		
 	}
 	 
+	 public void addCodeField(String id, String code, int fontSize){
+		 CodeField c = new CodeField(id);
+		 c.init(fontSize);
+		 JScrollPane scrPane = new JScrollPane(c);
+		 c.setText(code);
+		scrPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+		scrPane.getVerticalScrollBar().setPreferredSize(new Dimension(10, 0));
+		scrPane.getHorizontalScrollBar().setPreferredSize(new Dimension(0,10));
+		scrPane.setBorder(null);
+		
+		cardContainer.add(scrPane, id);
+			
+			
+		
+	 }
+	 
+	/* public void removeCodeField(String id){
+		 CardLayout cl = (CardLayout)(cardContainer.getLayout());
+		 cl.removeLayoutComponent(comp)
+		 //cl.removeLayoutComponent(
+	
+	 }*/
+	 
+	 public void switchCodeField(String id,int filterLength){
+		
+		getCurrentCard().stopFilter(); 
+		 CardLayout cl = (CardLayout)(cardContainer.getLayout());
+	     cl.show(cardContainer, id);
+	     getCurrentCard().startFilter(filterLength);
+	 }
+	 
+	 public CodeField getCurrentCard()
+	 {
+	     CodeField card = null;
+
+	     for (Component comp : cardContainer.getComponents() ) {
+	         if (comp.isVisible() == true) {
+	             card = (CodeField)(((JViewport)((JScrollPane)(comp)).getComponent(0)).getView());
+	        
+	         }
+	     }
+
+	     return card;
+	 }
+	 
+	 
 	public void setCode(String title,String code){
 		codeField.loadFile(code);
 		
@@ -160,38 +209,28 @@ public class CodingFrame extends JPanel {
 	 public void setTabTitle(int index, String title){
 		//codeTabs.setTitleAt(index, title);
 	 }
+
+	public String collectCode() {
+		
+		String parseCode = "";
+		for (Component comp : cardContainer.getComponents() ) {
+	      
+			CodeField card = (CodeField)(((JViewport)((JScrollPane)(comp)).getComponent(0)).getView());
+			if(card!= codeField){
+				parseCode +="\n"+card.getCode();
+			}
+	             
+	        
+	     }
+
+		
+		
+		parseCode = codeField.getCode()+parseCode;
+		return parseCode;
+	}
 	 
-	 public void showHiddenTab(String title, String code){
-		hiddenCodeField.setText(code);
-		//codeTabs.add(scrPane3 , "hidden");
-		//codeTabs.setEnabledAt(1, true);
-	 }
+	
+	
 	 
-	 public void hideHiddenTab(){
-		 
-		// codeTabs.remove(scrPane3);
-		//if(//codeTabs.getTabCount()>1){
-			//codeTabs.setEnabledAt(1, false);
-		//}
-			
-	 }
-	 
-	/* public void showHiddenField(){
-		 codeHolder.remove(scrPane1);
-		 codeField.setPreferredSize(new Dimension(width,(height-outputHeight)/2-20));
-		 hiddenCodeField.setPreferredSize(new Dimension(width,(height-outputHeight)/2-20));
-		 codeHolder.add(scrPane1,BorderLayout.PAGE_START);
-		 codeHolder.add(scrPane3,BorderLayout.CENTER);
-		 codeHolder.doLayout();
-		 this.doLayout();
-	 }
-	 
-	 public void hideHiddenField(){
-		 codeHolder.remove(scrPane1);
-		 codeHolder.remove(scrPane3);
-		 codeField.setPreferredSize(new Dimension(width,(height-outputHeight)));
-		 codeHolder.add(scrPane1,BorderLayout.CENTER);
-		 codeHolder.doLayout();
-	 }*/
 	
 }

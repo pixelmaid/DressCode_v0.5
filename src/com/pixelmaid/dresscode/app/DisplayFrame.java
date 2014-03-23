@@ -31,6 +31,7 @@ import java.util.Random;
 
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
+import javax.swing.JList;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
@@ -98,7 +99,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	//UI components for Coding
 	private CodingFrame codingFrame;
 	private  CodeField codeField;
-	private  CodeField hiddenCodeField; //secondary code field (depreciated) //TODO: get rid of hiddenCodeField
 	private ListManager	treeManager; //declarative view UI component
 	private ListManager stampManager; //stamp manager UI component
 	private boolean fromMain = true; //boolean to manage stamp switching
@@ -108,7 +108,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	private  Console console; //output console
 	private CodeToolbar codingToolbar;
-	private ImageButton openButton, saveButton, runButton, stopButton, newButton, importButton; //coding panel buttons
+	private ImageButton openButton, saveButton, runButton, stopButton, newButton, importButton, backButton; //coding panel buttons
 	
 	private PatternToolbar patternToolbar;
 	private JComboBox patternDropdown;
@@ -307,11 +307,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 		
 		//setup coding side of UI
-		codeField= new CodeField();
+		codeField= new CodeField("main");
 		codeField.init(fontSize);
 		
-		hiddenCodeField= new CodeField();
-		hiddenCodeField.init(fontSize);
 		
 		console = new Console();
 		console.addKeyListener(this);		
@@ -326,7 +324,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		newButton = new ImageButton("new","new", "create a new script", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 		saveButton = new ImageButton("save","save", "save your script", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 		openButton = new ImageButton("open","open", "open an existing script", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
-		
+		backButton = new ImageButton("back","back", "return to main script", 20,19);
 		//add buttons to coding toolbar
 		codingToolbar.addButton(runButton);
 		codingToolbar.addButton(stopButton);
@@ -341,7 +339,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		buttonList.add(saveButton);
 		buttonList.add(openButton);
 
-		codingToolbar.init(defaultDrawingPaneWidth,DEFAULT_TOOLBAR_HEIGHT,BROWN);
+		codingToolbar.init(defaultDrawingPaneWidth,DEFAULT_TOOLBAR_HEIGHT,BROWN, backButton);
 		
 		//setup treeManager for declarative view
 		treeManager = new ListManager(OFF_WHITE,LIGHT_GREY);
@@ -399,7 +397,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		leftSplitFrame.setBackground(GREY);
 		leftSplitFrame.addComponentListener(this);
 		
-		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, hiddenCodeField, console, codingToolbar, leftSplitFrame,BROWN,GREY,PINK,clearButton);
+		codingFrame.init(defaultDrawingPaneWidth,defaultDrawingPaneHeight, codeField, console, codingToolbar, leftSplitFrame,BROWN,GREY,PINK,clearButton);
 		//setup split frame
 		splitFrame = new JSplitPane();
 		splitFrame.setOrientation(JSplitPane.HORIZONTAL_SPLIT );
@@ -519,6 +517,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		openButton.addActionListener(this);
 		newAction.addActionListener(this);
 	    openAction.addActionListener(this);
+	    backButton.addActionListener(this);
 	    saveAction.addActionListener(this);
 	    saveAsAction.addActionListener(this);
 	    exitAction.addActionListener(this);
@@ -669,22 +668,19 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	  * creates a stamp out of the currently selected drawable
 	  * add stamp to stamp palette
 	  */
-	 private void createStaticStamp(){
+	 private void createStaticStamp(String name, Drawable s){
 		 //TODO: create groups from multiply selected shapes?
-		 Drawable selected = selectTool.getSelected().get(0);
-		 if(selected!=null){
-			 stampDialog = new StampDialog(this,true,stampMap);
-			 if(stampDialog.getAnswer()){
+		 if(s!=null){
+			
 				 Stamp stamp = new Stamp();
-				 stamp.setDrawables(stampDialog.getName(),stampDialog.isStatic(),selected);
-				 //stampManager.addChild(stamp);
+				 stamp.setDrawables(name,false,s);
+				 stampManager.addItem(name);
 				 stampMap.put(stamp.getFunctionName(),stamp);
+				 codingFrame.addCodeField(name, stamp.getFunctionDef(), this.fontSize);
 			 	
 			 }
-		 }
-		 else{
-			 StampDialog.infoBox("No object is selected.", "", "Error creating stamp");
-		 }
+		 
+		
 	 }
 	 
 	 private void createDynamicStamp(){
@@ -705,26 +701,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 }
 	 
 	 /*called when stamp is selected in stamp manager*/
-	 private void selectStamp(){
+	 private void selectStamp(String stampName){
 		 this.patternButton.setInactive();
 		 this.designButton.setActive();
 		 this.patternToolbar.updateLabel("Design View");
-		 this.codeField.stopFilter(); //remove the current document filter on the codefield
-
-			if(fromMain){//if current code is main code, save into current project
-				this.currentProject.setCode(this.codeField.getCode());
-			}
-			else{ //otherwise save current stamp code in correct stamp
-				updateStampCode();
-			}
-			fromMain = false; //set from main to false (prevents incorrect saving of files)
-			/*String stampName = stampManager.getSelectedNode(); //get new stamp name from stampManager
-			currentStamp = stampName;
-			codingToolbar.updateLabel(stampName); //update label of coding window
-
-			Stamp stamp = stampMap.get(stampName); //locate new stamp based on name
-			this.codeField.setText(stamp.getFunctionDef()); //set code field text to stamp function
-			*/
+		 Stamp stamp = stampMap.get(stampName);
+		 codingFrame.switchCodeField(stampName,stamp.getFunctionCall().length()+4);
+		 codingToolbar.showBackButton(stampName);
+			
 		}
 	 
 	 /*called when template is selected*/
@@ -760,27 +744,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 this.patternButton.setInactive();
 		 this.designButton.setActive();
 		 this.patternToolbar.updateLabel("Design View");
-		 if(this.fromMain){
-			this.currentProject.setCode(codeField.getCode());//set code field text back to main project code
-
-		 }
-		 if(this.fromTemplate){
-			 TemplateManager.setTemplateCode(codeField.getCode());
-		 }
-		 else{
-			 if(currentStamp!=""){
-					updateStampCode(); //save stamp modifications
-				}
-		 }
-		 this.codeField.stopFilter(); //remove the current document filter on the codefield
-		
-
-		currentStamp=""; //set current stamp to empty string
-		fromMain = true; //set from main to true (prevents incorrect saving of files)
-		fromTemplate = false; //set from main to true (prevents incorrect saving of files)
-
+		stampManager.getList().clearSelection();
 		codingToolbar.updateLabel(this.currentProject.getName()); //set label back to main project name
-		this.codeField.setText(this.currentProject.getCode());//set code field text back to main project code
+		codingFrame.switchCodeField("main",0);
+		codingToolbar.hideBackButton();
 	 }
 	 
 	 /*inserts stamp function call into program*/
@@ -803,11 +770,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 private void addPolyStatement(Polygon p){
 		 shapeDialog = new IrregularShapeDialog(this,true,stampMap);
 		 if(shapeDialog.getAnswer()){
+			 this.createStaticStamp(shapeDialog.getName(),p);
 			 
-			 Stamp stamp = new Stamp();
-			 stamp.setDrawables(shapeDialog.getName(),true,p);
-			 stampManager.addItem(shapeDialog.getName());
-			 stampMap.put(stamp.getFunctionName(),stamp);
 		 	
 		 }
 	 
@@ -841,14 +805,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			//removes existing drawables
 			//TODO: EVENTUALLY PARSE ONLY MODIFIED CODE
 			drawableManager.clearAllDrawables();
-			if(fromMain){
-				currentProject.setCode(codeField.getCode());
-			}
-			else{
-				updateStampCode();
-			}
+			
+			String code = codingFrame.collectCode();
+			
 			//runs code from current project
-			currentProject.run(currentProject.getCode(),stampMap,instructionManager);
+			instructionManager.parseText(code,currentProject.getUnits());
 			}
 			
 			/*if(currentProject.hiddenCode()){	
@@ -1129,10 +1090,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					drawableManager.deselectAll();
 					canvas.redraw();
 					break;
-				case CustomEvent.STAMP_SELECTED:	
-					selectStamp();
-
-					break;
+				
 				case CustomEvent.MAIN_SELECTED:
 					selectMain();
 					break;
@@ -1451,6 +1409,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 		}
 		
+		else if (e.getSource() == backButton ) {
+			selectMain();
+
+		}
+		
 		
 		else if (e.getSource()==newButton ||e.getSource() == newAction){
 			 sliderFrame.setVisible(false);
@@ -1483,7 +1446,16 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 		}
 		else if (e.getSource() == stampAction){
-			createStaticStamp();
+			 stampDialog = new StampDialog(this,true,stampMap);
+			 if(stampDialog.getAnswer()){
+				 createStaticStamp(stampDialog.getName(),selectTool.getSelected().get(0));
+				
+			 }
+		 
+		 else{
+			 StampDialog.infoBox("No object is selected.", "", "Error creating stamp");
+		 }
+			
 			run();
 			
 		}
@@ -1630,9 +1602,16 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 
 	@Override
-	public void valueChanged(ListSelectionEvent arg0) {
-		System.out.println("value changed");
+	public void valueChanged(ListSelectionEvent e) {
+		JList list = (JList)e.getSource();
+		if(!list.isSelectionEmpty()){
+			if(e.getSource() == stampManager.getList()){
+			
+				selectStamp(this.stampManager.getList().getSelectedValue().toString());
 		
-	}
+			}
+		}
 	
+	}
+
 }

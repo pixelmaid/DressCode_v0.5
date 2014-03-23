@@ -84,16 +84,22 @@ public class CodeField extends JTextPane implements DocumentListener, KeyListene
 	protected UndoAction undoAction = null;
 	protected RedoAction redoAction = null;
     private Filter filter;
+    private String id="";
     private boolean unsavedChanges= false;
     private Pattern p = Pattern.compile("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)");
     final StyleContext cont = StyleContext.getDefaultStyleContext();
     final AttributeSet attr = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.GRAY);
     final AttributeSet attrBlack = cont.addAttribute(cont.getEmptySet(), StyleConstants.Foreground, Color.BLACK);
     private DefaultStyledDocument doc;
-    public CodeField() {
+    public CodeField(String id) {
         super();
+        this.id=id;
     }
     
+    
+    public String getId(){
+    	return id;
+    }
     public void init(int size){
     	 this.setEditable(true);
     	this.setPreferredSize(new Dimension(550,500));
@@ -358,9 +364,11 @@ public JMenuItem getUndoMenu(){
 		this.insertText(pos, updateTxt);*/
 	}
 
+	//TODO: fix move statement insertion
 	public void insertMoveStatement(Drawable sD ) {
 		String identifier = sD.getIdentifier();
-		int lineNum = sD.getLine();
+		int lineNum = sD.getLine()-1;
+		System.out.println("linenum="+lineNum);
 		int endPos = sD.getEndPos();
 		double x = sD.getOrigin().getX();
 		double y = sD.getOrigin().getY();
@@ -373,6 +381,7 @@ public JMenuItem getUndoMenu(){
 		System.out.println("num of lines="+lines.length);
 		System.out.println("lineNum="+lineNum);
 		int pos =0;
+	
 		for(int i=0;i<lineNum; i++){
 			pos+=lines[i].length();
 			if(i!=0){
@@ -385,7 +394,7 @@ public JMenuItem getUndoMenu(){
 		
 		
 		if(identifier!=null){
-			String moveText = "\nmove("+identifier+","+String.format("%.1f", x)+","+String.format("%.1f", y)+");";
+			String moveText = "\nmoveTo("+identifier+","+String.format("%.0f", x)+","+String.format("%.0f", y)+");";
 
 		if(!over){
 			insertText(pos,moveText);
@@ -400,7 +409,7 @@ public JMenuItem getUndoMenu(){
 	}
 		else{
 			String moveText1 = "move(";
-			String moveText2 = ","+String.format("%.1f", x)+","+String.format("%.1f", y)+");";
+			String moveText2 = ","+String.format("%.0f", x)+","+String.format("%.0f", y)+");";
 			if(!over){
 				removeText(pos-1,pos); //remove semicolon
 				insertText(pos-lines[lineNum-1].length(),moveText1);	
@@ -498,7 +507,7 @@ public JMenuItem getUndoMenu(){
 	
 	
 	public void insertGesturalStatement(String polyStatement) {
-		int point = this.getText().length()-2;
+		int point = this.getText().length();
 		//		int point = 0;
 		if(point !=0){
 			polyStatement = "\n"+polyStatement;

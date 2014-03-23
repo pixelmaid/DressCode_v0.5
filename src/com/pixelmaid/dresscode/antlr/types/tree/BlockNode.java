@@ -64,6 +64,7 @@ public class BlockNode extends NodeEvent implements DCNode {
    
   }
 
+ 
   @Override
   public String toString() {
     StringBuilder b = new StringBuilder();

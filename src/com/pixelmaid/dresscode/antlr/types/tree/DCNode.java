@@ -5,5 +5,7 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 public interface DCNode {
 
 	VarType evaluate();
+	
+	
 }
 

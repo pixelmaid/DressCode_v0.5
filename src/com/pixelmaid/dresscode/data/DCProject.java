@@ -133,7 +133,6 @@ public class DCProject {
 
 	public void newFile(CodingFrame cf, CodeField codeField, Canvas canvas, DrawableManager dm, InstructionManager im){
 		
-		cf.hideHiddenTab();
 		codeField.clear();
 		this.name="untitled_"+inc;
 		inc++;

@@ -37,11 +37,13 @@ public class Stamp {
 	private String functionName="";
 
 	protected  final static String cm = ",";
-	protected  final static String end = ");";
+	protected  final static String end = ")";
 	protected  final String functionStart = "function ";
-	protected final String functionMiddle = "()";
+	protected final String functionMiddle = "():";
 	protected final String functionEnd = "";
-	protected  String returnStatement = "return "+currentGroupId + ";";
+	protected  String returnStatement = "return "+currentGroupId;
+	protected static int indentLevel = 0;
+	protected static int dCount = 0;
 	public Stamp(){
 		
 	}
@@ -52,11 +54,12 @@ public class Stamp {
 	
 	public void setDrawables(String fName, boolean isStatic, Drawable d){
 		functionName = fName;
-		
+		indentLevel++;
 		
 			functionDef += initGroup();
 			setDrawablesRecur(d,true);
-		
+			System.out.println(dCount);
+			dCount = 0;
 		
 	/*	if(drawables.size()==1 && drawables.get(0).numChildren()==0){
 			functionDef += initGroup();
@@ -68,15 +71,15 @@ public class Stamp {
 				setDrawablesRecur(drawables.get(i),true);
 			}
 		}*/
-		functionDef = functionStart+functionName+functionMiddle+"\n"+functionDef+"\n"+returnStatement+"\n"+functionEnd;
+		functionDef = functionStart+functionName+functionMiddle+"\n"+functionDef+"\n"+getIndents()+returnStatement+"\n"+functionEnd;
 		functionCall = functionName+"()";
-		
+		indentLevel--;
 	}
 	/*recursive drawable sorting function
 	 * called by setDrawables
 	 */
 	private void setDrawablesRecur(Drawable d, boolean toGroup){
-		
+		dCount++;
 		VarType v = new VarType(d);
 		if(v.isEllipse()){
 			d.setAbsolute();
@@ -124,7 +127,7 @@ public class Stamp {
 		
 		String statement = start+roundNum(x)+cm+roundNum(y)+cm+roundNum(w)+cm+roundNum(h)+end;
 	
-		statement = checkDefaults(e,id,statement);
+		statement = getIndents()+checkDefaults(e,id,statement);
 		if(toGroup){
 			statement = addGroupStatement(id, statement);
 		}
@@ -146,7 +149,7 @@ public class Stamp {
 		
 		String statement = start+roundNum(x)+cm+roundNum(y)+cm+roundNum(w)+cm+roundNum(h)+end;
 	
-		statement = checkDefaults(e,id,statement);
+		statement = getIndents()+checkDefaults(e,id,statement);
 		if(toGroup){
 			statement = addGroupStatement(id, statement);
 		}
@@ -160,7 +163,7 @@ public class Stamp {
 		//int point = 0;
 		String id ="p"+pId;
 		String rectStart;
-		String rectEnd = ");";
+		String rectEnd = ")";
 		String rotationStatement="";
 		if(rotation!=0){
 			rectStart = "rotate(poly(";
@@ -175,7 +178,7 @@ public class Stamp {
 		String rectStatement = id +" = "+rectStart+roundNum(origin.getX())+","+roundNum(origin.getY())+","+roundNum(created.numSides())+","+roundNum(created.sideLength())+rotationStatement+rectEnd;
 		
 		pId++;
-		return rectStatement;
+		return getIndents()+rectStatement;
 		
 	}
 	
@@ -184,18 +187,18 @@ public class Stamp {
 		public static String addPolyStatement(Polygon e, boolean toGroup){
 			
 			String id ="p"+pId;
-			String list  = "lst"+listId+" =[";
-			String listEnd = "];";
-			String start = id +" = poly("+"lst"+listId+end;
+			String list  = getIndents()+"lst"+listId+" =[\n";
+			String listEnd = "]";
+			String start = getIndents()+id +" = poly("+"lst"+listId+end;
 			
 			String statement = "";
 			Polygon eC = e.copy();
 			eC.setPointsAbsolute();
 			ArrayList<Point> points = eC.getPoints();
 			for(int i=0;i<points.size();i++){
-				String pointSt = "point("+roundNum(points.get(i).getX())+cm+roundNum(points.get(i).getY())+")";
+				String pointSt = getIndents()+"point("+roundNum(points.get(i).getX())+cm+roundNum(points.get(i).getY())+")";
 				if(i!=points.size()-1){
-					pointSt+=",";
+					pointSt+=",\n";
 				}
 				list+=pointSt;
 			}
@@ -408,7 +411,7 @@ public class Stamp {
 	
 	//returns a clean string from a rounded double
 	private static String roundNum(double n){
-		return String.format("%.2f", n);
+		return String.format("%.0f", n);
 	}
 	//returns function definition
 	public String getFunctionDef(){
@@ -432,13 +435,13 @@ public class Stamp {
 	public String initGroup(){
 		//System.out.println("init group statement");
 
-		String statement = currentGroupId +"= group();";
+		String statement = getIndents()+currentGroupId +"= group();";
 		return statement;
 	}
 	
 	public static String addGroupStatement(String id, String statement){
 		//System.out.println("add group statement");
-		String add =  "\nadd("+currentGroupId+cm+id+end;
+		String add =  "\n"+getIndents()+"add("+currentGroupId+cm+id+end;
 		return statement+=add;
 	}
 
@@ -446,6 +449,14 @@ public class Stamp {
 		functionCall = name+"();";
 		functionName = name;
 		
+	}
+	
+	public static String getIndents(){
+		String indent = "";
+		for (int i=0;i<indentLevel;i++){
+			indent+="\t";
+		}
+		return indent;
 	}
 
 	

@@ -45,6 +45,7 @@ public class FunctionCallNode  extends NodeEvent implements DCNode {
         	Drawable d = result.asDrawable();
         	d.setLine(line);
         	d.setIdentifier(null);
+        	System.out.println("function call drawable recognized");
         }
         return result;
     }

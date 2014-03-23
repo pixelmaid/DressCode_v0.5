@@ -27,18 +27,24 @@ public class CodeToolbar extends Toolbar {
 	   private JPanel buttonPanel =new JPanel();
 	   private JPanel labelPanel;
 	  private JLabel label;
+	  private JLabel slabel;
+
+	  private ImageButton backButton;
 	   private BufferedImage image = new BufferedImage(IMG_WIDTH, IMG_HEIGHT,
 	            BufferedImage.TYPE_INT_ARGB);
 	
-	public void init(int width, int height, Color background){
+	public void init(int width, int height, Color background, ImageButton bb){
 		Dimension masterDimension = new Dimension(width,height);
 		this.setPreferredSize(masterDimension);
-		
+		this.backButton = bb;
 		 SpringLayout layout = new SpringLayout();
 	     this.setLayout(layout);
 	     labelPanel = new JPanel();
 		label = new JLabel("untitled");//initialize the label
+		slabel = new JLabel("");//initialize the label
+		slabel.setForeground(new Color(242,242,242));
 		label.setForeground(new Color(242,242,242));
+		
 		this.add(label);
 		/*JTextField textField = new JTextField("Text field", 15);
 	    this.add(textField);
@@ -69,7 +75,7 @@ public class CodeToolbar extends Toolbar {
 		//(<label's right edge> + 5, 5).
 		layout.putConstraint(SpringLayout.EAST, buttonPanel,-15,SpringLayout.EAST,this);
 		layout.putConstraint(SpringLayout.NORTH, buttonPanel,-2,SpringLayout.NORTH, this);
-		 try {
+	 try {
 			 URL url = ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/flower.png");
 			 image = ImageIO.read(url);
 			} catch (IOException e) {
@@ -116,6 +122,42 @@ public class CodeToolbar extends Toolbar {
 		 */
 		
 	}
+	
+	public void showBackButton(String name){
+		this.add(backButton);
+		slabel.setText(name);
+		this.add(slabel);
+		label.setForeground(new Color(190,184,184));
+		this.updateUI();
+
+		SpringLayout layout = (SpringLayout)this.getLayout();
+		layout.putConstraint(SpringLayout.WEST, backButton, 60,SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.NORTH, backButton, 4,SpringLayout.NORTH, this);
+
+		layout.putConstraint(SpringLayout.WEST, label, 90,SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.NORTH, label,6,SpringLayout.NORTH, this);
+		
+		layout.putConstraint(SpringLayout.WEST, slabel, label.getSize().width+110,SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.NORTH, slabel,6,SpringLayout.NORTH, this);
+		this.doLayout();
+	}
+	
+	public void hideBackButton(){
+		this.remove(backButton);
+		this.remove(slabel);
+		label.setForeground(new Color(242,242,242));
+		this.updateUI();
+
+		SpringLayout layout = (SpringLayout)this.getLayout();
+	
+
+		layout.putConstraint(SpringLayout.WEST, label, 70,SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.NORTH, label,6,SpringLayout.NORTH, this);
+		
+	
+		this.doLayout();
+	}
+	
 	@Override
 	public void addButton(JButton b){
 		buttonList.add(b);	
@@ -154,5 +196,6 @@ public class CodeToolbar extends Toolbar {
 		   label.setText(l);
 		   
 	   }
+	
 
 }
