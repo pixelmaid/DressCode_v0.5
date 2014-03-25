@@ -17,7 +17,7 @@ public class LShapeNode extends DrawableNode implements DCNode {
 	@Override
 	public VarType evaluate() {
 		LShape e = new LShape();
-
+		System.out.println("params="+params.size());
 		try{
 			if(params.get(0).evaluate().isString()){
 				String path = params.get(0).evaluate().asString();

@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.LinkedHashMap;
 
 import javax.swing.JFileChooser;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.text.BadLocationException;
 
 import org.antlr.gunit.gUnitParser.file_return;
@@ -25,7 +26,6 @@ public class DCProject {
 	private double width, height, unitWidth, unitHeight, templateUnitWidth, templateUnitHeight; // default width and height of project
 	private int units, templateUnits; //units
 	
-	private String code = "";
 	private String path="";
 	private String name = "untitled";
 	private String extension = ".dc";
@@ -39,6 +39,9 @@ public class DCProject {
 
 	public DCProject(){
 		fc = new JFileChooser();
+		FileNameExtensionFilter filterdc = new FileNameExtensionFilter(  
+                "DressCodeFile (.dc)", "dc");  
+        fc.addChoosableFileFilter(filterdc);  
 		
 		this.unitHeight= 6.94;
 		this.unitWidth = 6.94;
@@ -100,13 +103,8 @@ public class DCProject {
 	}
 
 
-	public void setCode(String c){
-		this.code = c;
-	}
-	public String getCode(){
-		return this.code;
-	}
-
+	
+	
 	public void run(String code, LinkedHashMap<String, Stamp> stampMap, InstructionManager instructionManager){
 		String stampCode ="";
 		String parseCode = "";
@@ -158,8 +156,7 @@ public class DCProject {
 		
 		if( file!=null){
 			String filetxt= readFile(file);
-			setCode(filetxt);
-
+			cf.setCode(filetxt);
 			this.name =file.getName();
 			this.path= file.getAbsolutePath();
 			this.path = this.path.substring(0,path.length()-name.length());
@@ -183,7 +180,6 @@ public class DCProject {
 			setDimensions(w, h, units,canvas,  im);
 			setTemplateDimensions(tw,th,templateUnits);
 			template =((Double)(vars[3])).intValue();
-			cf.setCode(name,getCode());
 			canvas.setDrawingBoardDimensions(width, height,getUnits());
 			im.setDimensionParams(width, height,getUnits());
 
@@ -193,9 +189,11 @@ public class DCProject {
 			File templateFolder = new File(path+"/"+"template");
 			if(templateFolder.isDirectory()){
 				File[] tfiles = templateFolder.listFiles();
+				if(tfiles.length>0){
 				File templateFile = tfiles[0];
 				TemplateManager.setTemplateCode(readFile(templateFile));
 				TemplateManager.setName(templateFile.getName());
+				}
 			}
 			
 			stamps  = convertStamps(stampFile);
@@ -208,7 +206,6 @@ public class DCProject {
 	}
 
 	public void saveFile(Component component,String code,LinkedHashMap<String, Stamp> stampMap, CodingFrame cf, String templateCode){
-		setCode(code);
 		if (templateCode.trim().length() > 0){
 			template=1;
 		}
@@ -224,18 +221,18 @@ public class DCProject {
 			if (returnVal == JFileChooser.APPROVE_OPTION) {
 				File file = fc.getSelectedFile();
 
-				saveToFile(file,cf,stampMap, templateCode);
+				saveToFile(file,code,cf,stampMap, templateCode);
 			} 
 
 		}
 		else{
 			File file = new File(path+name);
-			saveToFile(file,cf,stampMap,templateCode);
+			saveToFile(file,code,cf,stampMap,templateCode);
 		}
 		
 	}
 
-	private void saveToFile(File file, CodingFrame cf,LinkedHashMap<String, Stamp> stampMap, String templateCode){
+	private void saveToFile(File file, String code, CodingFrame cf,LinkedHashMap<String, Stamp> stampMap, String templateCode){
 		this.name =file.getName();
 		this.path= file.getAbsolutePath();
 		this.path = this.path.substring(0,path.length()-name.length());
@@ -250,7 +247,7 @@ public class DCProject {
 		File fileNew = new File(path+name+"/"+name+extension);
 
 		System.out.println(path+name+"/"+name+extension);
-		writeFile(getCode(),fileNew);
+		writeFile(code,fileNew);
 		if(template!=0){
 			File templateFile = new File(path+name+"/"+"template"+"/"+TemplateManager.getName()+extension);
 			writeFile(templateCode,templateFile);
@@ -285,7 +282,6 @@ public class DCProject {
 		}
 		
 		this.saved=true;
-		cf.setTabTitle(0, name);
 
 	}
 

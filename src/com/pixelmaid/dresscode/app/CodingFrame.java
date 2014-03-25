@@ -6,6 +6,8 @@ import java.awt.Color;
 import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
+import java.util.ArrayList;
+
 import javax.swing.JViewport;
 
 import javax.swing.BoxLayout;
@@ -200,16 +202,26 @@ public class CodingFrame extends JPanel {
 	 }
 	 
 	 
-	public void setCode(String title,String code){
+	public void setCode(String code){
 		codeField.loadFile(code);
 		
-		setTabTitle(0, title);
 	}
 	 
-	 public void setTabTitle(int index, String title){
-		//codeTabs.setTitleAt(index, title);
-	 }
+	
 
+	public String getStampCode(String stampName){
+		for (Component comp : cardContainer.getComponents() ) {
+		      
+			CodeField card = (CodeField)(((JViewport)((JScrollPane)(comp)).getComponent(0)).getView());
+			if(card.getId().matches(stampName)){
+				return card.getCode();
+			}
+	             
+	        
+	     }
+		return null;
+	}
+	 
 	public String collectCode() {
 		
 		String parseCode = "";
@@ -228,6 +240,22 @@ public class CodingFrame extends JPanel {
 		parseCode = codeField.getCode()+parseCode;
 		return parseCode;
 	}
+	
+public void clearStamps() {
+		
+		String parseCode = "";
+		for (Component comp : cardContainer.getComponents() ) {
+	      
+			CodeField card = (CodeField)(((JViewport)((JScrollPane)(comp)).getComponent(0)).getView());
+			if(card!= codeField){
+				cardContainer.remove(comp);
+			}
+	             
+	        
+	     }
+
+	}
+	 
 	 
 	
 	

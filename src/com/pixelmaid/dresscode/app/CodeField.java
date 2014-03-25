@@ -408,13 +408,12 @@ public JMenuItem getUndoMenu(){
 		sD.setEndPos(pos+moveText.length());
 	}
 		else{
-			String moveText1 = "move(";
-			String moveText2 = ","+String.format("%.0f", x)+","+String.format("%.0f", y)+");";
+			String moveText1 = "moveTo(";
+			String moveText2 = ","+String.format("%.0f", x)+","+String.format("%.0f", y)+")";
 			if(!over){
-				removeText(pos-1,pos); //remove semicolon
 				insertText(pos-lines[lineNum-1].length(),moveText1);	
-				insertText(pos-1+moveText1.length(),moveText2);
-				sD.setEndPos(pos-1+moveText1.length()+moveText2.length());
+				insertText(pos+moveText1.length(),moveText2);
+				sD.setEndPos(pos+moveText1.length()+moveText2.length());
 
 			}
 			else{
@@ -586,6 +585,19 @@ public JMenuItem getUndoMenu(){
 	
 	public void setUnsaved(boolean u){
 		this.unsavedChanges=u;
+	}
+
+
+	public void insertStampStatement(String functionCall) {
+		String text = this.getText();
+		String[] lines = text.split("\r\n|\r|\n");
+		if(text.length()<1){
+			 addText(functionCall);
+		}
+		else{
+			addText("\n"+functionCall);
+		}
+		
 	}
 
 

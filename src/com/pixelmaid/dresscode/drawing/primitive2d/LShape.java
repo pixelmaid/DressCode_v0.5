@@ -17,6 +17,8 @@ public class LShape extends Polygon {
 	private double y= 0; //y coordinate of shape
 	private double width = 0;
 	private double height = 0;
+	private double scaleX=1;
+	private double scaleY=1;
 	    public LShape() {
 	    	this.setOrigin(new Point(0,0));
 	    }
@@ -68,7 +70,7 @@ public class LShape extends Polygon {
 			e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate((float)Math.toRadians(getRotation()));
-			e.scale((float)getScaleX(),(float)getScaleY());
+			e.scale((float)scaleX,(float)scaleY);
 			e.shape(shape,(float)(x-this.width/2),(float)(y-this.height/2));
 			
 			e.popMatrix();
@@ -81,6 +83,8 @@ public class LShape extends Polygon {
 		
 		@Override
 		public Drawable scale(double x, double y, Point focus, Boolean top){
+			scaleX= x;
+			scaleY=y;
 			return this;
 		}
 		

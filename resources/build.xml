@@ -26,7 +26,6 @@
             basedir="${build}"/>
     </target> -->
 
-
 	
 	<target name="dist" depends="clean, compile, example" description="generate the distribution" >
 		<mkdir dir="${build.dir}/jar"/>
@@ -92,7 +91,20 @@
 		
 	  </target>
 	 
+	<target name="appmaker" depends="dist" description="Build an example application">	
+		<mkdir dir="${build.dir}/release"/>
+		<taskdef name="jarbundler" 
+		         classname="net.sourceforge.jarbundler.JarBundler"
+				classpath="lib/jarbundler-2.2.0.jar"/>
 
+	
+		<jarbundler dir="${build.dir}/release"
+		            name="DressCode"
+		            mainclass="${main.class}"
+		            jar="${build.dir}/jar/${app.name}.jar"
+					icon="imgs/logo_brown.icns"/>
+		</target>
+	
 	<!-- ========== Clean Target ====================================
         The clean target deletes all files from the build directory
         and the dist directory. 

@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import javax.swing.*;
 import javax.swing.ListCellRenderer.*;
+import javax.swing.border.Border;
+import javax.swing.border.MatteBorder;
 
 public class ButtonCellRenderer extends JLabel implements	ListCellRenderer	
 {
@@ -35,13 +37,15 @@ public class ButtonCellRenderer extends JLabel implements	ListCellRenderer
 		
 		// Set the correct image
 		setIcon( images.get(index) );
-		
+		  MatteBorder b = new MatteBorder(0,0,3,0,Color.white);
+	        this.setBorder(b);       
 		// Draw the correct colors and font
 		if( isSelected )
 		{
 			// Set the color and font for a selected item
 			setBackground( new Color(140,129,129) );
 			setForeground( new Color(242,242,242));
+			
 			//setFont( new Font( "Roman", Font.BOLD, 24 ) );*/
 		}
 		else

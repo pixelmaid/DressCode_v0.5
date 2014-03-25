@@ -575,7 +575,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	       fileMenu = new JMenu("File");
 	       editMenu = new JMenu("Edit");
 	        exampleMenu = new JMenu("Examples");
-	        setupExampleMenu(exampleMenu);
+	        //setupExampleMenu(exampleMenu);
 	        //TODO:setup example menu
 	      
 	        menuBar.add(fileMenu);
@@ -677,6 +677,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				 stampManager.addItem(name);
 				 stampMap.put(stamp.getFunctionName(),stamp);
 				 codingFrame.addCodeField(name, stamp.getFunctionDef(), this.fontSize);
+				 insertStamp(stamp);
 			 	
 			 }
 		 
@@ -719,14 +720,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 if(!fromTemplate){
 			 this.codeField.stopFilter(); //remove the current document filter on the codefield
 		 
-		
-		   if(fromMain){//if current code is main code, save into current project
-				this.currentProject.setCode(this.codeField.getCode());
-			}
-		   else{
-			   System.out.println("updating stamp code");
-			   updateStampCode();
-		   }
 			
 			fromMain = false; //set from main to false (prevents incorrect saving of files)
 			codingToolbar.updateLabel(TemplateManager.getName()); //update label of coding window
@@ -751,19 +744,23 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 }
 	 
 	 /*inserts stamp function call into program*/
-	 private void insertStamp(){
-		 /*String stampName = stampManager.getSelectedNode();
-		 Stamp stamp = stampMap.get(stampName);
-		 selectMain();	
-		 codeField.addText("\n"+stamp.getFunctionCall());
-		this.currentProject.setCode(this.codeField.getCode()); //update project code to include added statements
-		*/
+	 private void insertStamp(Stamp stamp){
+		//String stampName = stampManager.getSelectedNode();
+		
+		 selectMain();
+		 codeField.insertStampStatement(stamp.getFunctionCall());
+		//this.currentProject.setCode(this.codeField.getCode()); //update project code to include added statements
+		
 	 }
 	 
 	 /*updates the code of the current stamp with modifications made by user*/
 	 private void updateStampCode(){
-		 Stamp pStamp =  stampMap.get(currentStamp);
-			pStamp.setFunctionDef(this.codeField.getCode());
+		for(int i=0;i<stampManager.getList().getModel().getSize();i++){
+			String stampName = stampManager.getList().getModel().getElementAt(i).toString();
+			Stamp pStamp =  stampMap.get(stampName);
+			pStamp.setFunctionDef(codingFrame.getStampCode(stampName));
+		}
+		
 	 }
 	
 	 /*adds in an irregular polygon statement to the code field*/
@@ -824,19 +821,24 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 //opens new file
 	 
 	 private void openFile(File file){
-		 selectMain();
+		
 		 LinkedHashMap<String,Stamp> stmps = currentProject.openFile(file, this,codingFrame,canvas,instructionManager);
 			if(stmps!=null){
+				selectMain();
+				codingFrame.clearStamps();
 				stampManager.clearItems();
 				stampMap.clear();
 				stampMap = stmps;
 				for (String key : stampMap.keySet())
 				{
 					stampManager.addItem(key);
+					codingFrame.addCodeField(key, stampMap.get(key).getFunctionDef(), this.fontSize);
+
 				}
 			}
 			codeField.setUnsaved(false);
 			updateLabels();
+			run();
 	 }
 	 
 	 //creates new file
@@ -872,7 +874,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 //saves the file
 	 private void saveFile(){
-		 selectMain();
+		 updateStampCode();
+		 
 		 currentProject.saveFile(this,codeField.getCode(),this.stampMap,codingFrame,TemplateManager.getTemplateCode());
 		 codeField.setUnsaved(false);
 		 updateLabels();
@@ -998,7 +1001,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					selectMain();
 					Point p = targetTool.getTarget();
 					this.codeField.insertCoordinate(p.getX(), p.getY());
-					this.currentProject.setCode(this.codeField.getCode());
 
 				break;
 				
@@ -1010,7 +1012,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					for(int i=0;i<dlist.size();i++){
 						Drawable d = dlist.get(i);
 						this.codeField.insertMoveStatement(d);
-						this.currentProject.setCode(this.codeField.getCode());
 					}
 
 				break;
@@ -1029,7 +1030,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					selectMain();
 					String rectStatement = Stamp.addRectStatement((Rectangle)rectTool.getCreated(), false);
 					codeField.insertGesturalStatement(rectStatement);
-					this.currentProject.setCode(this.codeField.getCode());
 					run();	
 					
 					break;
@@ -1037,7 +1037,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					selectMain();
 					String ellipseStatement = Stamp.addEllipseStatement((Ellipse)ellipseTool.getCreated(), false);
 					codeField.insertGesturalStatement(ellipseStatement);
-					this.currentProject.setCode(this.codeField.getCode());
 					run();	
 				case CustomEvent.BOOL_PERFORMED:
 					selectMain();
@@ -1045,7 +1044,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					String boolStatement = Stamp.addBoolStatement(selectTool.getSelected(), type, false);
 					codeField.insertGesturalStatement(boolStatement);
 					//codeField.insertShapeStatement(currentTool.getCreated(),"rect");
-					this.currentProject.setCode(this.codeField.getCode());
 					run();	
 					run();
 					break;	
@@ -1053,7 +1051,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					selectMain();
 					String polyStatement = Stamp.addRPolyStatement((Polygon)polyTool.getCreated(), polyTool.getRotation(),false);
 					codeField.insertGesturalStatement(polyStatement);
-					this.currentProject.setCode(this.codeField.getCode());
 					run();	
 					
 				case CustomEvent.IRREGULAR_POLY_ADDED:
@@ -1066,14 +1063,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					selectMain();
 					String lineStatement = Stamp.addLineStatement((Line)lineTool.getCreated(), false);
 					codeField.insertGesturalStatement(lineStatement);
-					this.currentProject.setCode(this.codeField.getCode());
 					run();		
 					break;
 				case CustomEvent.CURVE_ADDED:
 					selectMain();
 					String curveStatement = Stamp.addCurveStatement((Curve)curveTool.getCreated(), false);
 					codeField.insertGesturalStatement(curveStatement);
-					this.currentProject.setCode(this.codeField.getCode());
 					run();	
 				case CustomEvent.REDRAW_REQUEST:
 					 canvas.setDrawables(drawableManager.getDrawables());
@@ -1095,7 +1090,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					selectMain();
 					break;
 				case CustomEvent.STAMP_INSERTED:
-					insertStamp();
+					String stampName = this.stampManager.getList().getSelectedValue().toString();
+					Stamp s = stampMap.get(stampName);
+					insertStamp(s);
 					run();
 					break;
 				case CustomEvent.TEMPLATE_SELECTED:
@@ -1204,11 +1201,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	@Override
 	public void keyPressed(KeyEvent e) {
 		//zoom in when ctrl + is pressed
-		if(this.fromMain){
-			
-				this.currentProject.setCode(this.codeField.getCode());
-			
-		}
+				
 		if(e.getKeyCode()==61 && ctrlKey ==true){
 			canvas.zoomIn();
 			canvas.redraw();
