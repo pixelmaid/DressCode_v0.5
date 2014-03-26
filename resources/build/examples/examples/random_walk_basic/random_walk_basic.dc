@@ -1,0 +1,65 @@
+/*Random Walk Example
+* This example demonstrates a basic random walk algorithim.
+* a loop is used to create a pattern of random lines created
+* through a succession of random steps
+*/
+
+/*create variables for storing last x and y position 
+* initialize them to the center of the screen
+*/
+lastX = WIDTH/2;
+lastY = HEIGHT/2;
+
+/*create group to store all lines of the pattern in */
+g = group();
+
+/*number of lines in the pattern*/
+num = 800;
+
+/*length of each line */
+length = 30;
+
+/*start loop*/
+repeat i=0: num:
+
+/*
+* xDir and yDir are the directions your walk will go each loop. 
+* They are randomly generated to be either -1, 0, or 1 and 
+* are then  multiplied by the length
+* value to get the correct distance to travel
+*/
+
+xDir = round(random(-1,1))*length;
+yDir = round(random(-1,1))*length;
+
+/* these if statements keep the pattern within
+* the dimensions of the drawing board
+*/
+
+if xDir+lastX<0 || xDir+lastX>WIDTH:
+xDir=-xDir;
+end
+
+if yDir+lastY<0 || yDir+lastY>HEIGHT:
+yDir =-yDir;
+end
+
+/*newX and newY will be the end coordinates for the line 
+* They are created by adding the direction coordinates to
+* the last coordinates
+*/
+newX = xDir+lastX;
+newY = yDir+lastY;
+
+/*create a line with the new coordinates*/
+l = line(lastX,lastY,newX,newY);
+
+/*add the line to the group */
+add(g,l);
+
+/*set last coordinates to x and y*/
+lastX = newX;
+lastY= newY;
+
+end
+/*end loop*/

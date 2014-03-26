@@ -1,0 +1,3 @@
+numSides = 5
+base = createBase(numSides);
+

@@ -1,0 +1,18 @@
+<launch4jConfig>
+  <headerType>gui</headerType>
+  <jar>build/jar/DressCode.jar</jar>
+  <outfile>build/release/DressCode.exe</outfile>
+  <errTitle>DressCode</errTitle>
+  <chdir>.</chdir>
+ <icon>imgs/icon_brown.ico</icon>
+ <jre>
+    <minVersion>1.6.0</minVersion>
+  </jre>
+  <splash>
+    <file>imgs/launch_screen.bmp</file>
+    <waitForWindow>true</waitForWindow>
+    <timeout>60</timeout>
+    <timeoutErr>true</timeoutErr>
+  </splash>
+  
+</launch4jConfig>

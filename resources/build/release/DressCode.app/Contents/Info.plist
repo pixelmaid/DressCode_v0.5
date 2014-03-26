@@ -31,6 +31,8 @@
       <array>
         <string>$JAVAROOT/DressCode.jar</string>
       </array>
+      <key>SplashFile</key>
+      <string>imgs/launch_screen.bmp</string>
       <key>Properties</key>
       <dict>
         <key>com.apple.mrj.application.apple.menu.about.name</key>

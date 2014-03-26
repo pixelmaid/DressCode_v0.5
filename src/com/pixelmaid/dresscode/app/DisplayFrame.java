@@ -24,6 +24,12 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowFocusListener;
 import java.awt.event.WindowListener;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URISyntaxException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.LinkedHashMap;
@@ -575,8 +581,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	       fileMenu = new JMenu("File");
 	       editMenu = new JMenu("Edit");
 	        exampleMenu = new JMenu("Examples");
-	        //setupExampleMenu(exampleMenu);
-	        //TODO:setup example menu
+	      try{
+	        setupExampleMenu(exampleMenu);
+	      }
+	     catch(java.lang.NullPointerException e ){
+	    	 System.out.println("can't setup example menu, sorry :(");
+	     }
 	      
 	        menuBar.add(fileMenu);
 	        menuBar.add(editMenu);
@@ -626,10 +636,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 	
 	 private void setupExampleMenu(JMenu exampleMenu){
-		String path = (ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/examples")).getPath();
-		System.out.println("path="+path);
-		File exampleFolder = new File(path);
-		System.out.println("file="+path);
+		 String path = "../examples/examples";
+		 File exampleFolder = new File(path);
 			File[] files = exampleFolder.listFiles();
 			for (File file : files) {
 				if(file.isDirectory()){
@@ -640,12 +648,17 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				exampleMenu.add(exampleAction);
 				exampleAction.addActionListener(this);
 				}
-			} 		
+			} 
+		 
 	 }
+	 
+
+	
+
 	 
 	 //opens an example according to string
 	 private void openExample(String name){
-		String path = (ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/examples/"+name+"/"+name+".dc")).getPath();
+		String path = "../examples/examples/"+name+"/"+name+".dc";
 		File example = new File(path);
 		openFile(example);
 	 }

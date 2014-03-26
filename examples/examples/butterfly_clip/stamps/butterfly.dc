@@ -1,0 +1,35 @@
+def butterfly():
+r1 = rotate(ellipse(95.00,120.00,444.00,212.00),20);
+
+r2 = move(rotate(ellipse(269.00,201.00,100.00,262.00),45),208.0,276.0);
+
+
+r3 = move(rotate(ellipse(88.00,-13.00,348.00,166.00),45),170.0,103.0);
+
+
+
+r4 = move(ellipse(189.00,216.00,108.00,114.00),182.0,271.0);
+scale(r4,0.75,1.5);
+move(r4,182.0,247.0);
+move(rotate(r4,55),172.0,257.0);
+
+move(scale(r4,1.2,1.2),155.0,270.0);
+scale(r2,1.2,1.2);
+move(r2,184.0,301.0);
+
+
+
+bf = union(union(union(r1,r2),r3),r4);
+bf2 = copy(bf);
+bf2 = mirrorX(bf2);
+move(bf2,488.0,getY(bf));
+
+bfly= union(bf,bf2);
+move(bfly,WIDTH/2,HEIGHT/2);
+
+scale(bfly,0.75,0.75);
+return bfly;
+end
+
+
+

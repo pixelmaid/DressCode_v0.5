@@ -1,0 +1,31 @@
+/* This variable sets the number of sides of your lamp */
+numSides = 5
+
+/*this function creates the lamp outline with the number of sides you specified*/
+base = createBase(numSides);
+
+/*this sets the number of ellipses in the pattern*/
+numEllipses = 20
+
+/*a group to hold the ellipses*/
+g = group();
+
+/* a repeat loop that automatically generates multiple ellipses*/
+repeat i=0:numEllipses:
+e = ellipse(0,0,50,HEIGHT);
+e = expand(e);
+
+x=(WIDTH-60)/numEllipses*i;
+y = HEIGHT/2;
+
+move(e,x,y);
+add(g,e);
+end
+
+/*moves the group of ellipses to the center of the lamp outline*/
+move(g,WIDTH/2,HEIGHT/2);
+
+/*merges all of your parts together with the base*/
+g = merge(g);
+
+union(base,g);

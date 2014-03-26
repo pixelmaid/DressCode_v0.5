@@ -1,0 +1,33 @@
+/* This variable sets the number of sides of your lamp */
+numSides = 5
+
+/*this function creates the lamp outline with the number of sides you specified*/
+base = createBase(numSides);
+
+/*this sets the number of ellipses in the pattern*/
+numRadial = 3;
+
+/*a group to hold the radial patterns*/
+g = group();
+radial = radialPattern();
+
+/* a repeat loop that automatically generates multiple radial patterns*/
+repeat i=0:numRadial:
+r = copy(radial);
+
+
+x=(WIDTH-100)/numRadial*i;
+y = HEIGHT/2;
+
+move(r,x,y);
+add(g,r);
+end
+
+/*moves the group of radials to the center of the lamp outline*/
+move(g,WIDTH/2,HEIGHT/2);
+
+/*merges all of your parts together with the base*/
+g = merge(g);
+
+union(base,g);
+
