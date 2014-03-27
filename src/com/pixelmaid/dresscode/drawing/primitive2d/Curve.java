@@ -18,7 +18,8 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	public Point control2;
 	public Point start;
 	public Point end;
-
+	public Boolean open = true;
+	public Boolean showControl = true;
 
 	//TODO: implement two point curve
 	//public Curve(double sX, double sY, double eX, double eY ){
@@ -65,11 +66,32 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 			e.scale((float)getScaleX(),(float)getScaleY());
 			e.bezier((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()),(float)(control1.getX()-getOrigin().getX()), (float)(control1.getY()-getOrigin().getY()), (float)(control2.getX()-origin.getX()), (float)(control2.getY()-origin.getY()),(float)(end.getX()-origin.getX()), (float)(end.getY()-origin.getY()));
 			e.popMatrix();
+			if(showControl){
+				drawPoints(e);
+			}
 
 		}
 	}
 
 
+	public void drawPoints(Canvas e){
+		e.pushMatrix();
+		e.strokeWeight(1);
+		e.stroke(100,100,100);
+		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
+		e.rotate(PApplet.radians((float)getRotation()));
+		e.line((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()), (float)(control1.getX()-getOrigin().getX()), (float)(control1.getY()-getOrigin().getY()));
+		e.line((float)(control2.getX()-getOrigin().getX()), (float)(control2.getY()-getOrigin().getY()), (float)(end.getX()-getOrigin().getX()), (float)(end.getY()-getOrigin().getY()));
+		e.strokeWeight(5);
+		e.stroke(255,0,0);
+		e.point((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()));
+		e.point((float)(control1.getX()-getOrigin().getX()), (float)(control1.getY()-getOrigin().getY()));
+		e.point((float)(control2.getX()-getOrigin().getX()), (float)(control2.getY()-getOrigin().getY()));
+		e.point((float)(end.getX()-getOrigin().getX()), (float)(end.getY()-getOrigin().getY()));
+		e.popMatrix();
+
+	}
+	
 	@Override
 	public void drawOrigin(Canvas e){
 		e.stroke(0,0,0);

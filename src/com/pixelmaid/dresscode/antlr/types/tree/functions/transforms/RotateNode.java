@@ -16,15 +16,16 @@ public class RotateNode extends NodeEvent implements DCNode {
 	protected List<DCNode> params;
 
     protected int line;
-
+    protected int col;
   protected Scope scope;
 
 
     
-    public RotateNode(List<DCNode>  ps, Scope s, int l) {
+    public RotateNode(List<DCNode>  ps, Scope s, int l, int c) {
         params = ps;
         line = l;
         scope = s;
+        col=c;
        
     }
 
@@ -42,8 +43,7 @@ public class RotateNode extends NodeEvent implements DCNode {
     	
     	Drawable dNew = draw.rotateWithFocus(r,draw.getOrigin(),true);
     	this.fireDrawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
-    	dNew.setLine(line);
-
+    	//dNew.setLastTransform(TransformTypes.ROTATE,line, col);
     	VarType v=  new VarType(dNew);
 		if(draw.getIdentifier()!=null){
 		
@@ -61,7 +61,7 @@ public class RotateNode extends NodeEvent implements DCNode {
     		Drawable dNew = draw.rotateWithFocus(r, f, true);
     		//TODO: create swap event
     		this.fireDrawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
-        	dNew.setLine(line);
+    		//dNew.setLastTransform(TransformTypes.ROTATE_WITH_FOCUS,line,col);
 
     		VarType v=  new VarType(dNew);
     		if(draw.getIdentifier()!=null){
@@ -77,7 +77,7 @@ public class RotateNode extends NodeEvent implements DCNode {
     		double fY = params.get(3).evaluate().asDouble();
     		Drawable dNew=draw.rotateWithFocus(r, new Point(fX,fY),true);
     		this.fireDrawableEvent(CustomEvent.SWAP_DRAWABLE, draw,dNew);
-        	dNew.setLine(line);
+    		//dNew.setLastTransform(TransformTypes.ROTATE_WITH_FOCUS,line,col);
 
     		VarType v=  new VarType(dNew);
 

@@ -12,6 +12,7 @@ import processing.core.PConstants;
 import processing.core.PGraphics;
 
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
+import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.TransformTypes;
 import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.data.GraphNode;
 import com.pixelmaid.dresscode.drawing.datatype.CmpX;
@@ -48,7 +49,7 @@ public class Drawable extends GraphNode  {
 	private boolean codeCreated = true; //flag for if drawable was created with code or with graphic tool
 	private boolean gModified = false; //flag for if last line was modified in code or with graphic tool
 	protected final static int DEFAULT_WIDTH= 50;
-
+	private ArrayList<int[]> transforms= new ArrayList<int[]>();
 
 	public static final Color SELECTED = new Color(0,204,0);
 	protected boolean isHole = false;
@@ -112,6 +113,8 @@ public class Drawable extends GraphNode  {
 		setFillColor(255,255,255);
 		setStrokeColor(0,0,0);
 		strokeWeight = 1;
+		transforms = new ArrayList<int[]>();
+		this.setLastTransform(TransformTypes.NONE, -1,0);
 		
 	}
 
@@ -280,12 +283,16 @@ public void drawOrigin(Canvas embedded){
 		return gModified;
 	}
 	
-	public void setEndPos(int eP){
-		this.endPos = eP;
+	public void setLastTransform(int t,int line, int col){
+		int[] transform = new int[3];
+		transform[0]=t;
+		transform[1]=line;
+		transform[2]=col;
+		transforms.add(transform);
 	}
 	
-	public int getEndPos(){
-		return endPos;
+	public int[] getLastTransform(){
+		return transforms.get(transforms.size()-1);
 	}
 
 	

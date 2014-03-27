@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g 2014-03-25 18:17:04
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g 2014-03-26 12:55:25
 
  package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -1709,7 +1709,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new MoveNode(exprList45,FUNC_CALL46.getLine());
+					node = new MoveNode(exprList45,FUNC_CALL46.getLine(),FUNC_CALL46.getCharPositionInLine());
 					}
 					break;
 				case 2 :
@@ -1814,7 +1814,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new RotateNode(exprList53,currentScope,FUNC_CALL54.getLine());
+					node = new RotateNode(exprList53,currentScope,FUNC_CALL54.getLine(),FUNC_CALL54.getCharPositionInLine());
 					}
 					break;
 				case 6 :

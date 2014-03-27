@@ -251,7 +251,7 @@ public class Canvas extends PApplet implements EventInterface{
 
 	public void draw() {
 		
-			System.out.println("drawing");
+		//	System.out.println("drawing");
 			pushMatrix();
 			background(backgroundColor.getRed(),backgroundColor.getGreen(),backgroundColor.getBlue());
 			//translate(translateXAmount,translateYAmount,zoomAmount);

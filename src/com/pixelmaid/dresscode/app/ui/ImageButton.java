@@ -44,6 +44,7 @@ public class ImageButton  extends JButton {
 		  public void setActive(){
 			  this.setIcon(sIcon);
 			  active = true;
+			  
 		  }
 		  
 		  public void setInactive(){

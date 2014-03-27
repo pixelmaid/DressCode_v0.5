@@ -41,6 +41,7 @@ import javax.swing.undo.CannotRedoException;
 import javax.swing.undo.CannotUndoException;
 import javax.swing.undo.UndoManager;
 
+import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.TransformTypes;
 import com.pixelmaid.dresscode.app.ui.tools.BoolTool;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
@@ -225,7 +226,7 @@ public JMenuItem getUndoMenu(){
 
     //adds a line of code to import in a shape;
     public void insertPath(File f) throws BadLocationException{
-    	 String fileString = "import(\""+f.getAbsolutePath()+"\");";
+    	 String fileString = "import(\""+f.getAbsolutePath()+"\")";
     	 int caretPos = this.getCaretPosition();
     	 this.getDocument().insertString(caretPos, fileString, null);
     }
@@ -364,8 +365,104 @@ public JMenuItem getUndoMenu(){
 		this.insertText(pos, updateTxt);*/
 	}
 
+	
+	public boolean insertMoveStatement(Drawable sD ) {
+		int[] lastTransforms = sD.getLastTransform();
+		int tLine = lastTransforms[1]-2;
+		int tLast = lastTransforms[0];
+		int tCol = lastTransforms[2];
+		
+		System.out.println("last transform for attemptedMove="+tLast+","+tLine+","+tCol);
+		
+		switch(tLast){
+			case TransformTypes.MOVETO:
+				modifyExistingMove(sD,tLine,tCol);
+			break;
+			case TransformTypes.NONE:
+				return insertNewMove(sD,sD.getLine()-2,tCol);
+				
+			default:
+				return insertNewMove(sD,tLine,tCol);
+			
+		}
+		return false;
+	}
+	
+	public void modifyExistingMove(Drawable sD, int line,int col){
+		String text = this.getText();
+		double x = sD.getOrigin().getX();
+		double y = sD.getOrigin().getY();
+		
+		String[] lines = text.split("\r\n|\r|\n");
+		String replaceLine = lines[line];
+		
+		String start = replaceLine.substring(0,col);
+		String mEnd = replaceLine.substring(col,replaceLine.length());
+		String re1="(\\d+)";	// Float 1
+		String re2="(,)";	
+		String re3="(\\))";
+		
+		System.out.println("mEnd="+mEnd);
+	
+
+	    Pattern p = Pattern.compile(re1+re2+re1+re3);
+	    Matcher m = p.matcher(mEnd);
+	    int lastParamIndex = 0;
+	    int lastParamEnd = 0;
+	    while(m.find()) {
+	     lastParamIndex=m.start();
+	     lastParamEnd=m.end();
+	    }
+
+		String middle = mEnd.substring(0,lastParamIndex);
+		String end =  mEnd.substring(lastParamEnd,mEnd.length());
+		System.out.println("start="+start+"\nmiddle="+middle+"\nend="+end);
+		
+		lines[line]= start+middle+String.format("%.0f", x)+","+String.format("%.0f", y)+")"+end;
+		String newText = "";
+		for(int i=0;i<lines.length;i++){
+			newText +=lines[i];
+			if(i!=lines.length-1){
+				newText+="\n";
+			}
+		}
+		this.setText(newText);
+	}
+	
+	public boolean insertNewMove(Drawable sD, int line, int col){
+		boolean run = false;
+		String identifier = sD.getIdentifier();
+		double x = sD.getOrigin().getX();
+		double y = sD.getOrigin().getY();
+		String text = this.getText();
+		String[] lines = text.split("\r\n|\r|\n");
+		String replaceLine = lines[line];
+		String moveText ="";
+		if(identifier!=null){
+			moveText = replaceLine+"\nmoveTo("+identifier+","+String.format("%.0f", x)+","+String.format("%.0f", y)+")";
+			sD.setLastTransform(TransformTypes.MOVETO,line+3,col);
+			run = true;
+
+		}
+		else{
+			moveText = "moveTo("+replaceLine+","+String.format("%.0f", x)+","+String.format("%.0f", y)+")";
+			sD.setLastTransform(TransformTypes.MOVETO,line+2,col);
+		}
+		lines[line]=moveText;
+		String newText = "";
+		for(int i=0;i<lines.length;i++){
+			newText +=lines[i];
+			if(i!=lines.length-1){
+				newText+="\n";
+			}
+		}
+		this.setText(newText);
+		return run;
+		
+	}
+	
 	//TODO: fix move statement insertion
-	public void insertMoveStatement(Drawable sD ) {
+	/*public void insertMoveStatement(Drawable sD ) {
 		String identifier = sD.getIdentifier();
 		int lineNum = sD.getLine()-1;
 		System.out.println("linenum="+lineNum);
@@ -394,7 +491,7 @@ public JMenuItem getUndoMenu(){
 		
 		
 		if(identifier!=null){
-			String moveText = "\nmoveTo("+identifier+","+String.format("%.0f", x)+","+String.format("%.0f", y)+");";
+			String moveText = "\nmoveTo("+identifier+","+String.format("%.0f", x)+","+String.format("%.0f", y)+")";
 
 		if(!over){
 			insertText(pos,moveText);
@@ -435,7 +532,7 @@ public JMenuItem getUndoMenu(){
 		}
 		sD.setGModified(true);
 
-	}
+	}*/
 
 	public void insertShapeStatement(Drawable created, String shape) {
 		int point = this.getText().length()-2;
@@ -448,7 +545,7 @@ public JMenuItem getUndoMenu(){
 		else{
 			rectStart= "\n"+shape+"(";
 		}
-		String rectEnd =");";
+		String rectEnd =")";
 		Point origin = created.getOrigin();
 		String rectStatement = rectStart+roundNum(origin.getX())+","+roundNum(origin.getY())+","+roundNum(created.getWidth())+","+roundNum(created.getHeight())+rectEnd;
 		
@@ -475,7 +572,7 @@ public JMenuItem getUndoMenu(){
 		String c2Y = String.valueOf(roundNum(c2.getY()));
 		
 		String lineStart = "curve(";
-		String lineEnd = ");";
+		String lineEnd = ")";
 		String lineStatement = lineStart+startX+","+startY+","+c1X+","+c1Y+","+c2X+","+c2Y+","+endX+","+endY+lineEnd;
 		insertText(point,lineStatement);
 
@@ -494,7 +591,7 @@ public JMenuItem getUndoMenu(){
 		String endY = String.valueOf(roundNum(end.getY()));
 		
 		String lineStart = "line(";
-		String lineEnd = ");";
+		String lineEnd = ")";
 		String lineStatement = lineStart+startX+","+startY+","+endX+","+endY+lineEnd;
 		insertText(point,lineStatement);
 

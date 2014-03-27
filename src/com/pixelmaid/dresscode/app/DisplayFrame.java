@@ -777,7 +777,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 }
 	
 	 /*adds in an irregular polygon statement to the code field*/
-	 private void addPolyStatement(Polygon p){
+	 private void addPolyStatement(Drawable p){
 		 shapeDialog = new IrregularShapeDialog(this,true,stampMap);
 		 if(shapeDialog.getAnswer()){
 			 this.createStaticStamp(shapeDialog.getName(),p);
@@ -800,7 +800,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 	runButton.setActive(); //toggles run button to active visual state
 			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); //sets cursor to wait
 			console.clearText();
-			
+			curveTool.reset();
 			codeField.removeHighlights();
 			codeField.checkForComments();
 			uiManager.clearAllUserUIs();
@@ -1024,7 +1024,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					System.out.println("moved list size="+dlist.size());
 					for(int i=0;i<dlist.size();i++){
 						Drawable d = dlist.get(i);
-						this.codeField.insertMoveStatement(d);
+						if(this.codeField.insertMoveStatement(d)){
+							//run();
+						}
+						
 					}
 
 				break;
@@ -1080,9 +1083,16 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					break;
 				case CustomEvent.CURVE_ADDED:
 					selectMain();
-					String curveStatement = Stamp.addCurveStatement((Curve)curveTool.getCreated(), false);
-					codeField.insertGesturalStatement(curveStatement);
-					run();	
+					if(curveTool.curves.size()==1){
+						String curveStatement = Stamp.addCurveStatement((Curve)curveTool.getCreatedCurves(), false);
+						codeField.insertGesturalStatement(curveStatement);
+					}
+					else{
+						addPolyStatement(curveTool.getCreatedCurves());
+					}
+					curveTool.reset();
+					
+					//run();	
 				case CustomEvent.REDRAW_REQUEST:
 					 canvas.setDrawables(drawableManager.getDrawables());
 
@@ -1264,6 +1274,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				panButton.setInactive();
 				currentTool=defaultTool;
 				canvas.changeCursor(null);
+			}
+		}
+		if(e.getKeyCode() == KeyEvent.VK_ENTER){
+			if(curveButton.isActive()){
+				curveTool.finishCurve();
 			}
 		}
 

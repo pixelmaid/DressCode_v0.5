@@ -47,6 +47,7 @@ public class SelectTool extends Tool  {
 	
 	public void setDrawables(ArrayList<Drawable>tD){
 		tempDrawables = tD;
+		this.fireToolEvent(CustomEvent.REDRAW_REQUEST);
 	}
 	
 	@Override

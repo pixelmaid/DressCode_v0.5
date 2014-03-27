@@ -138,11 +138,11 @@ functionCall returns [DCNode node]
   	;
   
   transformCall returns [DCNode node]
-   :^(FUNC_CALL Move exprList?)   {node = new MoveNode($exprList.e,$FUNC_CALL.getLine());}
+   :^(FUNC_CALL Move exprList?)   {node = new MoveNode($exprList.e,$FUNC_CALL.getLine(), $FUNC_CALL.getCharPositionInLine());}
    | ^(FUNC_CALL MoveBy exprList?)   {node = new MoveByNode($exprList.e,$FUNC_CALL.getLine());}
    | ^(FUNC_CALL Heading exprList?)   {node = new HeadingNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Copy expression)  {node = new CopyNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Rotate exprList?) {node = new RotateNode($exprList.e,currentScope,$FUNC_CALL.getLine());}
+   |^(FUNC_CALL Rotate exprList?) {node = new RotateNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    |^(FUNC_CALL Fill exprList?)   {node = new FillNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL Stroke exprList?) {node = new StrokeNode($exprList.e,$FUNC_CALL.getLine());}
    |^(FUNC_CALL NoFill expression) {node = new NoFillNode($expression.node ,$FUNC_CALL.getLine());}

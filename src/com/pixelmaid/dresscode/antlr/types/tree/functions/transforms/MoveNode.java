@@ -14,12 +14,12 @@ public class MoveNode extends NodeEvent implements DCNode {
 	protected List<DCNode> params;
 
     protected int line;
-
-
+    protected int col;
     
-    public MoveNode(List<DCNode> ps, int l) {
+    public MoveNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+        col = c;
         //System.out.println("created new drawable node at line:"+line);
     }
 
@@ -45,7 +45,7 @@ public class MoveNode extends NodeEvent implements DCNode {
     		x= p.getX();
     		y= p.getY();
     	}
-    	d.setLine(line);
+    	d.setLastTransform(TransformTypes.MOVETO,line,col);
 
     	d.moveTo(x, y);
     	return new VarType(d);	

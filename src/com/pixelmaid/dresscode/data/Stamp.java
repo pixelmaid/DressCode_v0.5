@@ -215,6 +215,8 @@ public class Stamp {
 		
 		}
 		
+		
+		
 		// individual drawable type statement creators
 		public static String addCurveStatement(Curve e, boolean toGroup){
 			String id ="c"+cId;
@@ -232,7 +234,7 @@ public class Stamp {
 			String c1Y = roundNum(control1.getY());
 			String c2X = roundNum(control2.getX());
 			String c2Y = roundNum(control2.getY());
-			String statement = start+sX+cm+sY+cm+c1X+cm+c1Y+cm+c2X+cm+c2Y+cm+eX+cm+eY+end;
+			String statement =  getIndents()+start+sX+cm+sY+cm+c1X+cm+c1Y+cm+c2X+cm+c2Y+cm+eX+cm+eY+end;
 		
 			statement = checkDefaults(e,id,statement);
 			if(toGroup){
@@ -336,19 +338,19 @@ public class Stamp {
 	//checks for color and stroke settings of drawable and adds in necessary statements
 	private static String checkDefaults(Drawable e, String id, String statement){
 		if(!defaultFill(e.getFillColor())){
-			statement += "\n"+fillStatement(id,e.getFillColor());
+			statement += "\n"+getIndents()+fillStatement(id,e.getFillColor());
 		}
 		if(!defaultStroke(e.getStrokeColor())){
-			statement += "\n"+strokeStatement(id,e.getFillColor());
+			statement += "\n"+getIndents()+strokeStatement(id,e.getFillColor());
 		}
 		if(!defaultWeight(e.getStrokeWeight())){
-			statement += "\n"+weightStatement(id,e.getStrokeWeight());
+			statement += "\n"+getIndents()+weightStatement(id,e.getStrokeWeight());
 		}
 		if(!e.doFill()){
-			statement+="\n"+noFillStatement(id);
+			statement+="\n"+getIndents()+noFillStatement(id);
 		}
 		if(!e.doStroke()){
-			statement+="\n"+noStrokeStatement(id);
+			statement+="\n"+getIndents()+noStrokeStatement(id);
 		}
 		return statement;
 		
