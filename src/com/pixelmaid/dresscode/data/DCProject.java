@@ -36,11 +36,14 @@ public class DCProject {
 	private int template = 0;
 	private int inc=0;
 	protected boolean hasHiddenCode= false;
+	FileNameExtensionFilter filterdc;
+	FileNameExtensionFilter filtersvg;
 
 	public DCProject(){
 		fc = new JFileChooser();
-		FileNameExtensionFilter filterdc = new FileNameExtensionFilter(  
+		filterdc = new FileNameExtensionFilter(  
                 "DressCodeFile (.dc)", "dc");  
+		filtersvg = new FileNameExtensionFilter("SVG file (.svg)", "svg");
         fc.addChoosableFileFilter(filterdc);  
 		
 		this.unitHeight= 6.94;
@@ -424,6 +427,9 @@ public class DCProject {
 		
 	}
 	public void importFile(Component component, CodeField codeField) {
+		
+        fc.addChoosableFileFilter(filtersvg); 
+        fc.removeChoosableFileFilter(filterdc);
 		int returnVal = fc.showDialog(component, "Select");
 		if (returnVal == JFileChooser.APPROVE_OPTION) {
 			File file = fc.getSelectedFile();
@@ -434,6 +440,9 @@ public class DCProject {
 				e1.printStackTrace();
 			}
 		}
+		
+		 fc.removeChoosableFileFilter(filtersvg); 
+	     fc.addChoosableFileFilter(filterdc);
 
 		
 	}

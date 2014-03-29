@@ -6,80 +6,82 @@
 /**** setup starting variables and groups ***/
 
 /*number of rows for final pattern*/
-rowNum =5;
+rowNum =5
 
 /*number of columns for final pattern*/
-colNum = 5;
+colNum = 5
 
 /*empty group to store a row of designs */
-row = group();
+row = group()
 
 /*empty group to store the whole pattern */
-pattern = group();
+pattern = group()
 
 
 /****  create seed design for pattern  ***/
 /*create a design using the design stamp */
-d1 = design1();
+d1 = design1()
 
 /*mirror the design and position it */
-d2 = mirrorX(design1());
-move(d2,471.0,234.0);
+d2 = mirrorX(design1())
+moveTo(d2,471.0,234.0)
 
 /*group the two mirrored sides together and scale the group */
-sD = group(d1,d2);
-scale(sD,0.5,0.5);
+sD = group(d1,d2)
+scale(sD,0.5,0.5)
 
 
 /****  first loop: creates a single row  ***/
 repeat i=0:colNum:
-
+	
 	/*create a copy of the original design */
-	sCopy = copy(sD);
-
+	sCopy = copy(sD)
+	
 	/*if statement checks to see if i is even
 	* and mirrors each even numbered design along 
 	* the y-axis 
 	*/
 	if i%2==0:
-		moveBy(sCopy,205*i,0);
+		moveBy(sCopy,205*i,0)
 	else:
-		moveBy(sCopy,205*i,-220);
-	mirrorY(sCopy);
-	end
-
+		moveBy(sCopy,205*i,-220)
+		mirrorY(sCopy)
+	
+	
 	/*add copied design to row group*/
-	add(row,sCopy);
-end
+	add(row,sCopy)
+
+
 
 /*hide the original design*/
-hide(sD);
+hide(sD)
 
 
 /****  second loop: creates multiple rows  ***/
 
 repeat i=0:rowNum:
-
 	/*create a copy of the row group and position it*/
-	rCopy = copy(row);
-	moveBy(rCopy,0,300*i);
-
+	rCopy = copy(row)
+	moveBy(rCopy,0,300*i)
+	
 	/*fill the row with black if it is even*/
 	if i%2==0:
-		fill(rCopy,BLACK);
-	end
-
+		fill(rCopy,BLACK)
 	/*add the row to the pattern group */
-	add(pattern,rCopy);
-end
+	add(pattern,rCopy)
+
 
 /*hide the original row*/
-hide(row);
+hide(row)
 
 
 /*scale and position the final pattern */
-scale(pattern,0.47,0.47);
-move(pattern,310.3,404.7);
+scale(pattern,0.47,0.47)
+moveTo(pattern,310.3,404.7)
+
+
+
+
 
 
 

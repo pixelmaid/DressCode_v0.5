@@ -1,0 +1,47 @@
+/*creates a lamp with a repeating curve pattern*/
+
+/* This variable sets the number of sides of your lamp */
+numSides = 5
+
+/*this function creates the lamp outline with the number of sides you specified*/
+base = createBase(numSides);
+
+/*this sets the number of curves in the pattern*/
+numCurves = 20
+
+/*a group to hold the curves*/
+g = group();
+
+/*the original curve */
+c = curve(-4.00,124.00,2.00,10.00,114.00,117.00,91.00,6.00);
+
+/* a repeat loop that automatically generates multiple curves*/
+repeat i=0:numCurves:
+e = copy(c);
+e = expand(e);
+
+x=(WIDTH-100)/numCurves*i;
+y = HEIGHT/2;
+
+move(e,x,y);
+add(g,e);
+end
+
+/*moves the group of curves to the center of the lamp outline*/
+move(g,WIDTH/2,HEIGHT/2);
+
+/*create a mirror image copy */
+g2 = copy(g);
+mirrorX(g2);
+/*merges all of your parts together with the base*/
+//g = merge(g);
+
+base = union(base,g);
+base = union(base,g2);
+
+/*hide the original curve*/
+hide(c);
+
+
+
+

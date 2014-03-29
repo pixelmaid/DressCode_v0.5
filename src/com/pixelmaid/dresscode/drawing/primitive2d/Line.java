@@ -63,7 +63,7 @@ public class Line extends Polygon {
 	public void print(PGraphics e){
 		if(!this.getHide()){
 			appearance(e);
-			e.noFill();
+			//e.noFill();
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate(PApplet.radians((float)getRotation()));
@@ -201,6 +201,10 @@ public class Line extends Polygon {
 			}
 			return this;
 		}
+	
+	public double getAngle(){
+		return Geom.angleBetweenPoints(this.start, this.end);
+	}
 		
 	@Override
 	public void resetOriginRecur(){

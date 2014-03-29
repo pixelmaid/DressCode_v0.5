@@ -84,7 +84,7 @@ public class InstructionManager extends NodeEvent{
 	    		System.out.println(tree.toStringTree());
 	    		
 	    		// pass the reference to the Map of functions to the tree walker
-	    		PyEsqueTreeWalker walker = new PyEsqueTreeWalker(nodes, parser.functions,drawableManager,uiManager,widthParam, heightParam, unitParam);
+	    		PyEsqueTreeWalker walker = new PyEsqueTreeWalker(nodes,parser.functions,drawableManager,uiManager,widthParam, heightParam, unitParam);
 	    		// get the returned node 
 	    		BlockNode returned = walker.walk();
 	    		System.out.println("num of statements="+returned.getNumStatements());

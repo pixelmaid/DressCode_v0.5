@@ -266,7 +266,7 @@ public class Stamp {
 						statement = addGroupStatement(id, statement);
 					}
 					
-					cId++;
+					lId++;
 					return statement;
 				
 				}

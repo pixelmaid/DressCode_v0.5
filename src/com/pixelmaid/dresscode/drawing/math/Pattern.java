@@ -1,7 +1,11 @@
 package com.pixelmaid.dresscode.drawing.math;
 
+import java.util.ArrayList;
+
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
 public class Pattern {
 
@@ -31,7 +35,9 @@ public class Pattern {
 				Drawable t = target.copy();
 				t.moveTo(pX,pY);
 				if(rotate){
-					t= t.rotateWithFocus(theta*i+offset,t.getOrigin(),true);
+				
+						t= t.rotateWithFocus(theta*i+offset,t.getOrigin(),true);
+					
 				}
 				gridD.addToGroup(t);
 	
@@ -69,6 +75,62 @@ public class Pattern {
 
 		waveD.moveTo(posX, posY);
 		return waveD;
+	}
+	
+	public static Drawable followCurve(Drawable target, Drawable curveGroup, int dNum, boolean doAngle){
+		Drawable curveD = new Drawable();
+
+		if(curveGroup.numChildren()>0){
+			
+			//curveGroup = curveGroup.flatten(true, curveGroup);
+			
+			ArrayList<Drawable> curves = curveGroup.getChildren();	
+			double totalLength =0;
+			for(int i=0;i<curves.size();i++){
+				if(curves.get(i) instanceof Curve){
+				
+					double l = ((Curve)curves.get(i)).length();
+					totalLength+=l;
+				}
+			}
+			double pointDist = totalLength/dNum;
+			for(int i=0;i<curves.size();i++){
+				Point lastPoint = null;
+				if(curves.get(i) instanceof Curve){
+					Curve c = (Curve)curves.get(i);
+					int cNum = (int)Math.round(c.length()/pointDist);
+					
+					ArrayList<Point> cPoints;
+					if(i==curves.size()-1){
+						cPoints = c.toPoints(cNum,true);
+					}
+					else{
+						cPoints = c.toPoints(cNum,false);
+					}
+				
+					for(int j=0;j<cPoints.size();j++){
+						Drawable tc = target.copy();
+						
+						if(doAngle){
+							double angle=0;
+							if(lastPoint!=null){
+								 angle = Geom.angleBetweenPoints(lastPoint,cPoints.get(j));
+								
+							}
+							else{
+								 angle = Geom.angleBetweenPoints(cPoints.get(j),cPoints.get(j+1));
+							}
+							tc = tc.rotateWithFocus(angle,tc.getOrigin(),true);		
+						}
+						lastPoint = cPoints.get(j);
+						
+						tc.moveTo(cPoints.get(j).getX()+curveGroup.getX(),cPoints.get(j).getY()+curveGroup.getY());
+						curveD.addToGroup(tc);
+					}
+				}
+			}
+		}
+		return curveD;
 	}
 
 	//returns a wave pattern of drawables

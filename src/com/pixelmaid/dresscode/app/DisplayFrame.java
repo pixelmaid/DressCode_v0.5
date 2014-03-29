@@ -1344,6 +1344,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			selectTool.setDrawables(drawableManager.getDrawables());
 			
 			
+			
 		}
 		
 		else if (e.getSource()==rectButton){

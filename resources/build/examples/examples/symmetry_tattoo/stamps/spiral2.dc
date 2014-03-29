@@ -1,0 +1,24 @@
+function spiral2():
+	g= group();
+	lst1 =[
+	point(482,424),
+	point(487,234),
+	point(377,141),
+	point(286,85),
+	point(277,-1),
+	point(329,-58),
+	point(421,-65),
+	point(488,-4),
+	point(428,55),
+	point(452,8),
+	point(417,-40),
+	point(352,-32),
+	point(326,8),
+	point(374,76),
+	point(506,226),
+	point(497,437),
+	point(205,509)]
+	p1 = poly(lst1)
+	add(g,p1)
+	return g
+

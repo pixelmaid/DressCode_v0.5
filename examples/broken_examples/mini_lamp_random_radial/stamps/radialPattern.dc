@@ -1,0 +1,62 @@
+//creates a random radial pattern
+
+def radialPattern():
+/*setup the range for the number of shapes in the pattern */
+minNum = 4;
+maxNum = 10;
+
+/*randomly generated variable that determines number of shapes*/
+armNum = round(random(minNum,maxNum));
+
+/*make sure arm num is even */
+if(armNum%2!=0):
+	armNum = armNum+1;
+end
+
+/*radius of the pattern*/
+rad = 10;
+
+/* group to hold the finished pattern */
+rGroup = group();
+
+/*loop to create the pattern.*/
+repeat i=0:armNum:
+
+/*trig to calculate angle and position for each arm */
+	theta = 360/armNum*i; 
+	x = cos(theta)*rad;
+	y = sin(theta)*rad;
+
+	/* create arm using arm stamp */
+	a = arm();
+	/*move arm to x,y coordinates */
+	move(a,x,y);
+	
+	/* if arm number is even, scale it by 75% */
+	if i%2==0:
+		scale(a,0.75,0.75);
+	end
+
+	/*rotate arm by theta +90 degrees to orient it to the center*/
+	rotate(a,theta+90);
+
+	/*add arm to group*/
+	add(rGroup,a);
+	
+end
+
+rGroup = merge(rGroup);
+
+noFill(rGroup);
+stroke(rGroup,BLACK);
+
+/*move the finished design to the center of the drawing board*/
+move(rGroup,WIDTH/2,HEIGHT/2);
+return rGroup;
+end
+
+
+
+
+
+

@@ -104,7 +104,7 @@ public class Ellipse extends Polygon {
 	public void print(PGraphics e) {
 		if(!this.getHide()){
 		appearance(e);
-		e.noFill();
+		//e.noFill();
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 		e.rotate((float)Math.toRadians(getRotation()));

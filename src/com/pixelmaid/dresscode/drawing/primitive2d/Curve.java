@@ -1,6 +1,8 @@
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
 
+import java.util.ArrayList;
+
 import processing.core.PApplet;
 import processing.core.PGraphics;
 
@@ -19,7 +21,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	public Point start;
 	public Point end;
 	public Boolean open = true;
-	public Boolean showControl = true;
+	public Boolean showControl = false;
 
 	//TODO: implement two point curve
 	//public Curve(double sX, double sY, double eX, double eY ){
@@ -117,7 +119,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		//TODO: MAKE CURVE DRAW RELATIVE
 		if(!this.getHide()){
 			appearance(e);
-			e.noFill();
+			//e.noFill();
 			e.pushMatrix();
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate(PApplet.radians((float)getRotation()));
@@ -240,6 +242,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		Point p2 = this.start.copy();
 		Point c1 = this.control1.copy();
 		Point c2 = this.control2.copy();
+		
 		Vec2d vX = new Vec2d(p1.getX()-focus.getX(),p1.getY()-focus.getY());
 		vX = vX.mul(x);
 		p1.setX(vX.x+focus.getX());
@@ -247,7 +250,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		Vec2d vY = new Vec2d(p1.getX()-focus.getX(),p1.getY()-focus.getY());
 		vY = vY.mul(y);
 		p1.setY(vY.y+focus.getY());
-		start=p1;
+		start=p2;
 
 		vX = new Vec2d(p2.getX()-focus.getX(),p2.getY()-focus.getY());
 		vX = vX.mul(x);
@@ -257,7 +260,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		vY = new Vec2d(p2.getX()-focus.getX(),p2.getY()-focus.getY());
 		vY = vY.mul(y);
 		p2.setY(vY.y+focus.getY());
-		end=p2;
+		end=p1;
 
 		vX = new Vec2d(c1.getX()-focus.getX(),c1.getY()-focus.getY());
 		vX = vX.mul(x);
@@ -305,20 +308,55 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	}
 
 	@Override
-	//converts ellipse to polygon
+	//converts curve to polygon
 	public Polygon toPolygon() {
 		Polygon poly =  new Polygon();
 		copyParameters(this,poly);
 
 		for (int i = 0; i <= resolution; i++) {
 			float t = (float)i / (float)resolution;
-			PApplet p = new PApplet();
+			PGraphics p = new PGraphics();
 			double x = p.bezierPoint((float)start.getX(), (float)control1.getX(), (float)control2.getX(), (float)end.getX(), t);
 			double y = p.bezierPoint((float)start.getY(), (float)control1.getY(), (float)control2.getY(), (float)end.getY(), t);
 			poly.addPoint(x,y);
 		}
 		poly.setPointsRelativeTo(this.getOrigin());
 		return poly;
+	}
+	
+	public double length() {
+		//System.out.println(this.start.getX()+","+this.start.getY()+","+this.control1.getX()+","+this.control1.getY()+","+this.control2.getX()+","+this.control2.getY()+","+this.end.getX()+","+this.end.getY());
+		Polygon poly =  this.toPolygon();
+		ArrayList<Point> points = poly.getPoints();
+		double length = 0;
+		for (int i = 1; i < points.size(); i++) {
+			double dist = Geom.distance(points.get(i), points.get(i-1));
+			length+=dist;
+		}
+		return length;
+	}
+	
+	public ArrayList<Point> toPoints(int num, boolean getEnd) {
+		ArrayList<Point> points = new ArrayList<Point>();
+		points.add(start.copy());
+		if(getEnd){
+			num= num-2;
+		}
+		else{
+			num= num-1;
+		}
+		for (int i = 1; i < num; i++) {
+			float t = (float)i / (float)num;
+			PGraphics p = new PGraphics();
+			
+			double x = p.bezierPoint((float)start.getX(), (float)control1.getX(), (float)control2.getX(), (float)end.getX(), t);
+			double y = p.bezierPoint((float)start.getY(), (float)control1.getY(), (float)control2.getY(), (float)end.getY(), t);
+			points.add(new Point(x,y));
+		}
+		if(getEnd){
+			points.add(end.copy());
+		}
+		return points;
 	}
 
 	@Override
@@ -330,8 +368,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 		double yLast = 0;
 		for (int i = 0; i <= resolution; i++) {
 			float t = (float)i / (float)resolution;
-			PApplet a = new PApplet();
-			a.init();
+			PGraphics a = new PGraphics();
 			double x = a.bezierPoint((float)start.getX(), (float)control1.getX(), (float)control2.getX(), (float)end.getX(), t);
 			double y = a.bezierPoint((float)start.getY(), (float)control1.getY(), (float)control2.getY(), (float)end.getY(), t);
 			if(i>0){

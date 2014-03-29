@@ -3,84 +3,63 @@
 */
 
 /*starting weight of line */
-lineSize =9;
+lineSize =9
 
 /*call the first recursive function*/
-seed1(lineSize, 270, WIDTH/2, HEIGHT); 
+seed1(lineSize, 270, WIDTH/2, HEIGHT) 
 
 
 /* Recursive functions */
 
-def seed1(lineSize, angle, x, y):
-
-angleOffsetA = 2;
-angleOffsetB = 2;
-
+function seed1(lineSize, angle, x, y):
+	angleOffsetA = 2
+	angleOffsetB = 2
 	if(lineSize>1 && y>0 && y<=HEIGHT && x>0 && x<WIDTH):
-			r = random(0,1);
-  // 98% chance this will happen
-    if (r > 0.04):
-      
-      newx = x + cos(angle) * lineSize;
-      newy = y + sin(angle) * lineSize;
-						e = line(x, y, newx,newy);
-							weight(e,lineSize);
-      seed1(lineSize * 0.99, angle - angleOffsetA, newx, newy);   
-    else:
-			 		
-      newx = x + cos(angle);
-      newy = y + sin(angle);
-						e = line(x, y, newx,newy);
-					weight(e,lineSize);
-      seed2(lineSize * 0.99, angle + angleOffsetA, newx, newy);
-      seed1(lineSize * 0.60, angle + angleOffsetB, newx, newy);
-      seed2(lineSize * 0.50, angle - angleOffsetB, newx, newy);
-end
-else:
-	lf = leaf();
-	move(lf,x,y);
-	rotate(lf,angle+90);
-end
-end
+		r = random(0,1)
+		// 98% chance this will happen
+		if (r > 0.04):
+			newx = x + cos(angle) * lineSize
+			newy = y + sin(angle) * lineSize
+			e = line(x, y, newx,newy)
+			weight(e,lineSize)
+			seed1(lineSize * 0.99, angle - angleOffsetA, newx, newy)   
+		else:	 		
+			newx = x + cos(angle)
+			newy = y + sin(angle)
+			e = line(x, y, newx,newy)
+			weight(e,lineSize)
+			seed2(lineSize * 0.99, angle + angleOffsetA, newx, newy)
+			seed1(lineSize * 0.60, angle + angleOffsetB, newx, newy)
+			seed2(lineSize * 0.50, angle - angleOffsetB, newx, newy)
+	else:
+		lf = leaf()
+		moveTo(lf,x,y)
+		rotate(lf,angle+90)
 
-
-
-def seed2(lineSize, angle, x, y) :
-angleOffsetA = 2;
-angleOffsetB = 2;  
-  if (lineSize > 1.0 && y>0 && y<=HEIGHT && x>0 && x<WIDTH):
-    
-    // Create a random numbers between 0 and 1
-   	r = random(0, 1.0);
-    
-    // 95% chance this will happen
-    if (r > 0.05) :
-     
-      newx = x + cos(angle) * lineSize;
-     		newy = y + sin(angle) * lineSize;
-						e = line(x, y, newx,newy);
-	weight(e,lineSize);
-      seed2(lineSize * 0.99, angle + angleOffsetA, newx, newy);
-    
-    // 05% chance this will happen
-    else:
-      
-      newx = x + cos(angle);
-      newy = y + sin(angle);
-						e = line(x, y, newx,newy);
-						weight(e,lineSize);
-      seed1(lineSize * 0.99, angle + angleOffsetA, newx, newy);  
-      seed2(lineSize * 0.60, angle + angleOffsetB, newx, newy);
-      seed1(lineSize * 0.50, angle - angleOffsetB, newx, newy);
-
-end
-else:
-	lf = leaf();
-	move(lf,x,y);
-	rotate(lf,angle+90);
-end
-end
-
-
-
-
+function seed2(lineSize, angle, x, y) :
+	angleOffsetA = 2
+	angleOffsetB = 2  
+	if (lineSize > 1.0 && y>0 && y<=HEIGHT && x>0 && x<WIDTH):
+		// Create a random numbers between 0 and 1
+		r = random(0, 1.0)
+		// 95% chance this will happen
+		if (r > 0.05) :
+			newx = x + cos(angle) * lineSize
+			newy = y + sin(angle) * lineSize
+			e = line(x, y, newx,newy)
+			weight(e,lineSize)
+			seed2(lineSize * 0.99, angle + angleOffsetA, newx, newy)
+		
+		// 05% chance this will happen
+		else:
+			newx = x + cos(angle)
+			newy = y + sin(angle)
+			e = line(x, y, newx,newy)
+			weight(e,lineSize)
+			seed1(lineSize * 0.99, angle + angleOffsetA, newx, newy)  
+			seed2(lineSize * 0.60, angle + angleOffsetB, newx, newy)
+			seed1(lineSize * 0.50, angle - angleOffsetB, newx, newy)
+	else:
+		lf = leaf()
+		moveTo(lf,x,y)
+		rotate(lf,angle+90)

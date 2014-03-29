@@ -50,6 +50,7 @@ public class CurveTool extends Tool  {
 			
 		if(curves.size()==0){
 			Curve c = new Curve(new Point(mouseX+4, mouseY+6),new Point(mouseX+4, mouseY+6),new Point(mouseX+4, mouseY+6),new Point(mouseX+4, mouseY+6));
+			c.showControl=true;
 			curves.add(c);
 			this.fireToolEvent(CustomEvent.DRAWABLE_CREATED);
 			}
@@ -70,6 +71,7 @@ public class CurveTool extends Tool  {
 			Curve c = new Curve(lastEnd,pC,new Point(mouseX+4, mouseY+6),new Point(mouseX+4, mouseY+6));
 			curves.get(curves.size()-1).showControl=false;
 			curves.add(c);
+			c.showControl=true;
 			curves.get(curves.size()-1).open=false;
 			this.fireToolEvent(CustomEvent.DRAWABLE_CREATED);
 			}

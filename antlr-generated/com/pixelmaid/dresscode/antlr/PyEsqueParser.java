@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g 2014-03-26 12:55:22
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g 2014-03-28 17:51:58
 
   package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -24,27 +24,27 @@ public class PyEsqueParser extends Parser {
 		"Comma", "Comment", "Copy", "Cosine", "Curve", "DOT", "DOTLOOKUP", "DOTPROPERTY", 
 		"Dedent", "Def", "Difference", "Digit", "Divide", "Do", "Dot", "EXP", 
 		"EXP_LIST", "Ellipse", "Else", "Equals", "Excl", "Expand", "FUNCTION", 
-		"FUNC_CALL", "Fill", "Flatten", "GT", "GTEquals", "Gaussian", "GetAngle", 
-		"GetDistance", "GetEnd", "GetFill", "GetHeight", "GetIntersect", "GetOrigin", 
-		"GetRadius", "GetRotation", "GetStart", "GetStroke", "GetWidth", "GetX", 
-		"GetY", "Grid", "Group", "HEIGHT_CONSTANT", "Heading", "Hide", "ID_LIST", 
-		"IF", "INDEXES", "Identifier", "If", "In", "Inch", "Indent", "Int", "LAdd", 
-		"LIST", "LOOKUP", "LOOKUP_S", "LRemove", "LShape", "LT", "LTEquals", "Line", 
-		"Map", "Merge", "MirrorX", "MirrorY", "Mm", "Modulus", "Move", "MoveBy", 
-		"Multiply", "NEGATE", "NEquals", "NL", "NewLine", "NoFill", "NoStroke", 
-		"Noise", "Null", "Number", "OBrace", "OBracket", "OParen", "Or", "PI_CONSTANT", 
-		"Point", "Polygon", "Pow", "Print", "Println", "Pw", "QMark", "Quad", 
-		"RETURN", "Random", "Rect", "Repeat", "Return", "Rotate", "Round", "SP", 
-		"SPECIAL", "STATEMENTS", "SUB_CALL", "Scale", "SemiColon", "SetCorner", 
-		"SetHFold", "SetHeight", "SetName", "SetSeam", "SetVFold", "SetWidth", 
-		"Show", "Sine", "Size", "Skirt", "SkirtBack", "Slider", "SpaceChars", 
+		"FUNC_CALL", "Fill", "Flatten", "FollowCurve", "GT", "GTEquals", "Gaussian", 
+		"GetAngle", "GetDistance", "GetEnd", "GetFill", "GetHeight", "GetIntersect", 
+		"GetOrigin", "GetRadius", "GetRotation", "GetStart", "GetStroke", "GetWidth", 
+		"GetX", "GetY", "Grid", "Group", "HEIGHT_CONSTANT", "Heading", "Hide", 
+		"ID_LIST", "IF", "INDEXES", "Identifier", "If", "In", "Inch", "Indent", 
+		"Int", "LAdd", "LIST", "LOOKUP", "LOOKUP_S", "LRemove", "LShape", "LT", 
+		"LTEquals", "Line", "Map", "Merge", "MirrorX", "MirrorY", "Mm", "Modulus", 
+		"Move", "MoveBy", "Multiply", "NEGATE", "NEquals", "NL", "NewLine", "NoFill", 
+		"NoStroke", "Noise", "Null", "Number", "OBrace", "OBracket", "OParen", 
+		"Or", "PI_CONSTANT", "Point", "Polygon", "Pow", "Print", "Println", "Pw", 
+		"QMark", "Quad", "RETURN", "Random", "Rect", "Repeat", "Return", "Rotate", 
+		"Round", "SP", "SPECIAL", "STATEMENTS", "SUB_CALL", "Scale", "SemiColon", 
+		"SetCorner", "SetHFold", "SetHeight", "SetName", "SetSeam", "SetVFold", 
+		"SetWidth", "Show", "Sine", "Size", "Skirt", "SkirtBack", "Slider", "SpaceChars", 
 		"Spiral", "Sq", "Sqrt", "String", "Stroke", "Subtract", "TERNARY", "Tan", 
 		"Template", "TemplateCollection", "To", "Triangle", "UNARY_MIN", "Union", 
 		"Units", "WIDTH_CONSTANT", "Wave", "Weight", "While", "Xor", "'&&'", "'||'"
 	};
 	public static final int EOF=-1;
-	public static final int T__166=166;
 	public static final int T__167=167;
+	public static final int T__168=168;
 	public static final int ADD_CALL=4;
 	public static final int AND_CALL=5;
 	public static final int ASSIGNMENT=6;
@@ -89,124 +89,125 @@ public class PyEsqueParser extends Parser {
 	public static final int FUNC_CALL=45;
 	public static final int Fill=46;
 	public static final int Flatten=47;
-	public static final int GT=48;
-	public static final int GTEquals=49;
-	public static final int Gaussian=50;
-	public static final int GetAngle=51;
-	public static final int GetDistance=52;
-	public static final int GetEnd=53;
-	public static final int GetFill=54;
-	public static final int GetHeight=55;
-	public static final int GetIntersect=56;
-	public static final int GetOrigin=57;
-	public static final int GetRadius=58;
-	public static final int GetRotation=59;
-	public static final int GetStart=60;
-	public static final int GetStroke=61;
-	public static final int GetWidth=62;
-	public static final int GetX=63;
-	public static final int GetY=64;
-	public static final int Grid=65;
-	public static final int Group=66;
-	public static final int HEIGHT_CONSTANT=67;
-	public static final int Heading=68;
-	public static final int Hide=69;
-	public static final int ID_LIST=70;
-	public static final int IF=71;
-	public static final int INDEXES=72;
-	public static final int Identifier=73;
-	public static final int If=74;
-	public static final int In=75;
-	public static final int Inch=76;
-	public static final int Indent=77;
-	public static final int Int=78;
-	public static final int LAdd=79;
-	public static final int LIST=80;
-	public static final int LOOKUP=81;
-	public static final int LOOKUP_S=82;
-	public static final int LRemove=83;
-	public static final int LShape=84;
-	public static final int LT=85;
-	public static final int LTEquals=86;
-	public static final int Line=87;
-	public static final int Map=88;
-	public static final int Merge=89;
-	public static final int MirrorX=90;
-	public static final int MirrorY=91;
-	public static final int Mm=92;
-	public static final int Modulus=93;
-	public static final int Move=94;
-	public static final int MoveBy=95;
-	public static final int Multiply=96;
-	public static final int NEGATE=97;
-	public static final int NEquals=98;
-	public static final int NL=99;
-	public static final int NewLine=100;
-	public static final int NoFill=101;
-	public static final int NoStroke=102;
-	public static final int Noise=103;
-	public static final int Null=104;
-	public static final int Number=105;
-	public static final int OBrace=106;
-	public static final int OBracket=107;
-	public static final int OParen=108;
-	public static final int Or=109;
-	public static final int PI_CONSTANT=110;
-	public static final int Point=111;
-	public static final int Polygon=112;
-	public static final int Pow=113;
-	public static final int Print=114;
-	public static final int Println=115;
-	public static final int Pw=116;
-	public static final int QMark=117;
-	public static final int Quad=118;
-	public static final int RETURN=119;
-	public static final int Random=120;
-	public static final int Rect=121;
-	public static final int Repeat=122;
-	public static final int Return=123;
-	public static final int Rotate=124;
-	public static final int Round=125;
-	public static final int SP=126;
-	public static final int SPECIAL=127;
-	public static final int STATEMENTS=128;
-	public static final int SUB_CALL=129;
-	public static final int Scale=130;
-	public static final int SemiColon=131;
-	public static final int SetCorner=132;
-	public static final int SetHFold=133;
-	public static final int SetHeight=134;
-	public static final int SetName=135;
-	public static final int SetSeam=136;
-	public static final int SetVFold=137;
-	public static final int SetWidth=138;
-	public static final int Show=139;
-	public static final int Sine=140;
-	public static final int Size=141;
-	public static final int Skirt=142;
-	public static final int SkirtBack=143;
-	public static final int Slider=144;
-	public static final int SpaceChars=145;
-	public static final int Spiral=146;
-	public static final int Sq=147;
-	public static final int Sqrt=148;
-	public static final int String=149;
-	public static final int Stroke=150;
-	public static final int Subtract=151;
-	public static final int TERNARY=152;
-	public static final int Tan=153;
-	public static final int Template=154;
-	public static final int TemplateCollection=155;
-	public static final int To=156;
-	public static final int Triangle=157;
-	public static final int UNARY_MIN=158;
-	public static final int Union=159;
-	public static final int Units=160;
-	public static final int WIDTH_CONSTANT=161;
-	public static final int Wave=162;
-	public static final int Weight=163;
-	public static final int While=164;
-	public static final int Xor=165;
+	public static final int FollowCurve=48;
+	public static final int GT=49;
+	public static final int GTEquals=50;
+	public static final int Gaussian=51;
+	public static final int GetAngle=52;
+	public static final int GetDistance=53;
+	public static final int GetEnd=54;
+	public static final int GetFill=55;
+	public static final int GetHeight=56;
+	public static final int GetIntersect=57;
+	public static final int GetOrigin=58;
+	public static final int GetRadius=59;
+	public static final int GetRotation=60;
+	public static final int GetStart=61;
+	public static final int GetStroke=62;
+	public static final int GetWidth=63;
+	public static final int GetX=64;
+	public static final int GetY=65;
+	public static final int Grid=66;
+	public static final int Group=67;
+	public static final int HEIGHT_CONSTANT=68;
+	public static final int Heading=69;
+	public static final int Hide=70;
+	public static final int ID_LIST=71;
+	public static final int IF=72;
+	public static final int INDEXES=73;
+	public static final int Identifier=74;
+	public static final int If=75;
+	public static final int In=76;
+	public static final int Inch=77;
+	public static final int Indent=78;
+	public static final int Int=79;
+	public static final int LAdd=80;
+	public static final int LIST=81;
+	public static final int LOOKUP=82;
+	public static final int LOOKUP_S=83;
+	public static final int LRemove=84;
+	public static final int LShape=85;
+	public static final int LT=86;
+	public static final int LTEquals=87;
+	public static final int Line=88;
+	public static final int Map=89;
+	public static final int Merge=90;
+	public static final int MirrorX=91;
+	public static final int MirrorY=92;
+	public static final int Mm=93;
+	public static final int Modulus=94;
+	public static final int Move=95;
+	public static final int MoveBy=96;
+	public static final int Multiply=97;
+	public static final int NEGATE=98;
+	public static final int NEquals=99;
+	public static final int NL=100;
+	public static final int NewLine=101;
+	public static final int NoFill=102;
+	public static final int NoStroke=103;
+	public static final int Noise=104;
+	public static final int Null=105;
+	public static final int Number=106;
+	public static final int OBrace=107;
+	public static final int OBracket=108;
+	public static final int OParen=109;
+	public static final int Or=110;
+	public static final int PI_CONSTANT=111;
+	public static final int Point=112;
+	public static final int Polygon=113;
+	public static final int Pow=114;
+	public static final int Print=115;
+	public static final int Println=116;
+	public static final int Pw=117;
+	public static final int QMark=118;
+	public static final int Quad=119;
+	public static final int RETURN=120;
+	public static final int Random=121;
+	public static final int Rect=122;
+	public static final int Repeat=123;
+	public static final int Return=124;
+	public static final int Rotate=125;
+	public static final int Round=126;
+	public static final int SP=127;
+	public static final int SPECIAL=128;
+	public static final int STATEMENTS=129;
+	public static final int SUB_CALL=130;
+	public static final int Scale=131;
+	public static final int SemiColon=132;
+	public static final int SetCorner=133;
+	public static final int SetHFold=134;
+	public static final int SetHeight=135;
+	public static final int SetName=136;
+	public static final int SetSeam=137;
+	public static final int SetVFold=138;
+	public static final int SetWidth=139;
+	public static final int Show=140;
+	public static final int Sine=141;
+	public static final int Size=142;
+	public static final int Skirt=143;
+	public static final int SkirtBack=144;
+	public static final int Slider=145;
+	public static final int SpaceChars=146;
+	public static final int Spiral=147;
+	public static final int Sq=148;
+	public static final int Sqrt=149;
+	public static final int String=150;
+	public static final int Stroke=151;
+	public static final int Subtract=152;
+	public static final int TERNARY=153;
+	public static final int Tan=154;
+	public static final int Template=155;
+	public static final int TemplateCollection=156;
+	public static final int To=157;
+	public static final int Triangle=158;
+	public static final int UNARY_MIN=159;
+	public static final int Union=160;
+	public static final int Units=161;
+	public static final int WIDTH_CONSTANT=162;
+	public static final int Wave=163;
+	public static final int Weight=164;
+	public static final int While=165;
+	public static final int Xor=166;
 
 	// delegates
 	public Parser[] getDelegates() {
@@ -448,7 +449,7 @@ public class PyEsqueParser extends Parser {
 			while (true) {
 				int alt1=3;
 				int LA1_0 = input.LA(1);
-				if ( (LA1_0==ATan||LA1_0==AddDesign||(LA1_0 >= Arc && LA1_0 <= Assert)||(LA1_0 >= Clip && LA1_0 <= Cm)||(LA1_0 >= Copy && LA1_0 <= Curve)||LA1_0==Difference||LA1_0==Ellipse||LA1_0==Expand||(LA1_0 >= Fill && LA1_0 <= Flatten)||(LA1_0 >= Gaussian && LA1_0 <= Group)||(LA1_0 >= Heading && LA1_0 <= Hide)||(LA1_0 >= Identifier && LA1_0 <= If)||LA1_0==Inch||LA1_0==LAdd||(LA1_0 >= LRemove && LA1_0 <= LShape)||(LA1_0 >= Line && LA1_0 <= Mm)||(LA1_0 >= Move && LA1_0 <= MoveBy)||(LA1_0 >= NoFill && LA1_0 <= Noise)||(LA1_0 >= Point && LA1_0 <= Println)||(LA1_0 >= Random && LA1_0 <= Repeat)||(LA1_0 >= Rotate && LA1_0 <= Round)||LA1_0==Scale||(LA1_0 >= SetCorner && LA1_0 <= Slider)||(LA1_0 >= Sq && LA1_0 <= Sqrt)||LA1_0==Stroke||(LA1_0 >= Tan && LA1_0 <= TemplateCollection)||(LA1_0 >= Union && LA1_0 <= Units)||(LA1_0 >= Wave && LA1_0 <= Xor)) ) {
+				if ( (LA1_0==ATan||LA1_0==AddDesign||(LA1_0 >= Arc && LA1_0 <= Assert)||(LA1_0 >= Clip && LA1_0 <= Cm)||(LA1_0 >= Copy && LA1_0 <= Curve)||LA1_0==Difference||LA1_0==Ellipse||LA1_0==Expand||(LA1_0 >= Fill && LA1_0 <= FollowCurve)||(LA1_0 >= Gaussian && LA1_0 <= Group)||(LA1_0 >= Heading && LA1_0 <= Hide)||(LA1_0 >= Identifier && LA1_0 <= If)||LA1_0==Inch||LA1_0==LAdd||(LA1_0 >= LRemove && LA1_0 <= LShape)||(LA1_0 >= Line && LA1_0 <= Mm)||(LA1_0 >= Move && LA1_0 <= MoveBy)||(LA1_0 >= NoFill && LA1_0 <= Noise)||(LA1_0 >= Point && LA1_0 <= Println)||(LA1_0 >= Random && LA1_0 <= Repeat)||(LA1_0 >= Rotate && LA1_0 <= Round)||LA1_0==Scale||(LA1_0 >= SetCorner && LA1_0 <= Slider)||(LA1_0 >= Sq && LA1_0 <= Sqrt)||LA1_0==Stroke||(LA1_0 >= Tan && LA1_0 <= TemplateCollection)||(LA1_0 >= Union && LA1_0 <= Units)||(LA1_0 >= Wave && LA1_0 <= Xor)) ) {
 					alt1=1;
 				}
 				else if ( (LA1_0==Def) ) {
@@ -611,7 +612,7 @@ public class PyEsqueParser extends Parser {
 				if ( (LA3_1==OParen) ) {
 					alt3=2;
 				}
-				else if ( (LA3_1==ATan||LA3_1==AddDesign||(LA3_1 >= Arc && LA3_1 <= Assign)||(LA3_1 >= Clip && LA3_1 <= Cm)||(LA3_1 >= Copy && LA3_1 <= Curve)||(LA3_1 >= Dedent && LA3_1 <= Difference)||LA3_1==Ellipse||LA3_1==Expand||(LA3_1 >= Fill && LA3_1 <= Flatten)||(LA3_1 >= Gaussian && LA3_1 <= Group)||(LA3_1 >= Heading && LA3_1 <= Hide)||(LA3_1 >= Identifier && LA3_1 <= If)||LA3_1==Inch||LA3_1==LAdd||(LA3_1 >= LRemove && LA3_1 <= LShape)||(LA3_1 >= Line && LA3_1 <= Mm)||(LA3_1 >= Move && LA3_1 <= MoveBy)||(LA3_1 >= NoFill && LA3_1 <= Noise)||(LA3_1 >= Point && LA3_1 <= Println)||(LA3_1 >= Random && LA3_1 <= Round)||LA3_1==Scale||(LA3_1 >= SetCorner && LA3_1 <= Slider)||(LA3_1 >= Sq && LA3_1 <= Sqrt)||LA3_1==Stroke||(LA3_1 >= Tan && LA3_1 <= TemplateCollection)||(LA3_1 >= Union && LA3_1 <= Units)||(LA3_1 >= Wave && LA3_1 <= Xor)) ) {
+				else if ( (LA3_1==ATan||LA3_1==AddDesign||(LA3_1 >= Arc && LA3_1 <= Assign)||(LA3_1 >= Clip && LA3_1 <= Cm)||(LA3_1 >= Copy && LA3_1 <= Curve)||(LA3_1 >= Dedent && LA3_1 <= Difference)||LA3_1==Ellipse||LA3_1==Expand||(LA3_1 >= Fill && LA3_1 <= FollowCurve)||(LA3_1 >= Gaussian && LA3_1 <= Group)||(LA3_1 >= Heading && LA3_1 <= Hide)||(LA3_1 >= Identifier && LA3_1 <= If)||LA3_1==Inch||LA3_1==LAdd||(LA3_1 >= LRemove && LA3_1 <= LShape)||(LA3_1 >= Line && LA3_1 <= Mm)||(LA3_1 >= Move && LA3_1 <= MoveBy)||(LA3_1 >= NoFill && LA3_1 <= Noise)||(LA3_1 >= Point && LA3_1 <= Println)||(LA3_1 >= Random && LA3_1 <= Round)||LA3_1==Scale||(LA3_1 >= SetCorner && LA3_1 <= Slider)||(LA3_1 >= Sq && LA3_1 <= Sqrt)||LA3_1==Stroke||(LA3_1 >= Tan && LA3_1 <= TemplateCollection)||(LA3_1 >= Union && LA3_1 <= Units)||(LA3_1 >= Wave && LA3_1 <= Xor)) ) {
 					alt3=1;
 				}
 
@@ -643,6 +644,7 @@ public class PyEsqueParser extends Parser {
 			case Expand:
 			case Fill:
 			case Flatten:
+			case FollowCurve:
 			case Gaussian:
 			case GetAngle:
 			case GetDistance:
@@ -1234,6 +1236,7 @@ public class PyEsqueParser extends Parser {
 				}
 				break;
 			case Arc:
+			case FollowCurve:
 			case Grid:
 			case Wave:
 				{
@@ -1315,7 +1318,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:149:21: ( exprList )?
 					int alt6=2;
 					int LA6_0 = input.LA(1);
-					if ( (LA6_0==ATan||LA6_0==AddDesign||(LA6_0 >= Arc && LA6_0 <= Assert)||LA6_0==Bool||LA6_0==COLOR_CONSTANT||(LA6_0 >= Clip && LA6_0 <= Cm)||(LA6_0 >= Copy && LA6_0 <= Curve)||LA6_0==Difference||LA6_0==Ellipse||(LA6_0 >= Excl && LA6_0 <= Expand)||(LA6_0 >= Fill && LA6_0 <= Flatten)||(LA6_0 >= Gaussian && LA6_0 <= Hide)||LA6_0==Identifier||LA6_0==Inch||LA6_0==LAdd||(LA6_0 >= LRemove && LA6_0 <= LShape)||(LA6_0 >= Line && LA6_0 <= Mm)||(LA6_0 >= Move && LA6_0 <= MoveBy)||(LA6_0 >= NoFill && LA6_0 <= Number)||(LA6_0 >= OBracket && LA6_0 <= OParen)||(LA6_0 >= PI_CONSTANT && LA6_0 <= Println)||(LA6_0 >= Random && LA6_0 <= Rect)||(LA6_0 >= Rotate && LA6_0 <= Round)||LA6_0==Scale||(LA6_0 >= SetCorner && LA6_0 <= Slider)||(LA6_0 >= Sq && LA6_0 <= Subtract)||(LA6_0 >= Tan && LA6_0 <= TemplateCollection)||(LA6_0 >= Union && LA6_0 <= Weight)||LA6_0==Xor) ) {
+					if ( (LA6_0==ATan||LA6_0==AddDesign||(LA6_0 >= Arc && LA6_0 <= Assert)||LA6_0==Bool||LA6_0==COLOR_CONSTANT||(LA6_0 >= Clip && LA6_0 <= Cm)||(LA6_0 >= Copy && LA6_0 <= Curve)||LA6_0==Difference||LA6_0==Ellipse||(LA6_0 >= Excl && LA6_0 <= Expand)||(LA6_0 >= Fill && LA6_0 <= FollowCurve)||(LA6_0 >= Gaussian && LA6_0 <= Hide)||LA6_0==Identifier||LA6_0==Inch||LA6_0==LAdd||(LA6_0 >= LRemove && LA6_0 <= LShape)||(LA6_0 >= Line && LA6_0 <= Mm)||(LA6_0 >= Move && LA6_0 <= MoveBy)||(LA6_0 >= NoFill && LA6_0 <= Number)||(LA6_0 >= OBracket && LA6_0 <= OParen)||(LA6_0 >= PI_CONSTANT && LA6_0 <= Println)||(LA6_0 >= Random && LA6_0 <= Rect)||(LA6_0 >= Rotate && LA6_0 <= Round)||LA6_0==Scale||(LA6_0 >= SetCorner && LA6_0 <= Slider)||(LA6_0 >= Sq && LA6_0 <= Subtract)||(LA6_0 >= Tan && LA6_0 <= TemplateCollection)||(LA6_0 >= Union && LA6_0 <= Weight)||LA6_0==Xor) ) {
 						alt6=1;
 					}
 					switch (alt6) {
@@ -1381,7 +1384,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:150:18: ( expression )?
 					int alt7=2;
 					int LA7_0 = input.LA(1);
-					if ( (LA7_0==ATan||LA7_0==AddDesign||(LA7_0 >= Arc && LA7_0 <= Assert)||LA7_0==Bool||LA7_0==COLOR_CONSTANT||(LA7_0 >= Clip && LA7_0 <= Cm)||(LA7_0 >= Copy && LA7_0 <= Curve)||LA7_0==Difference||LA7_0==Ellipse||(LA7_0 >= Excl && LA7_0 <= Expand)||(LA7_0 >= Fill && LA7_0 <= Flatten)||(LA7_0 >= Gaussian && LA7_0 <= Hide)||LA7_0==Identifier||LA7_0==Inch||LA7_0==LAdd||(LA7_0 >= LRemove && LA7_0 <= LShape)||(LA7_0 >= Line && LA7_0 <= Mm)||(LA7_0 >= Move && LA7_0 <= MoveBy)||(LA7_0 >= NoFill && LA7_0 <= Number)||(LA7_0 >= OBracket && LA7_0 <= OParen)||(LA7_0 >= PI_CONSTANT && LA7_0 <= Println)||(LA7_0 >= Random && LA7_0 <= Rect)||(LA7_0 >= Rotate && LA7_0 <= Round)||LA7_0==Scale||(LA7_0 >= SetCorner && LA7_0 <= Slider)||(LA7_0 >= Sq && LA7_0 <= Subtract)||(LA7_0 >= Tan && LA7_0 <= TemplateCollection)||(LA7_0 >= Union && LA7_0 <= Weight)||LA7_0==Xor) ) {
+					if ( (LA7_0==ATan||LA7_0==AddDesign||(LA7_0 >= Arc && LA7_0 <= Assert)||LA7_0==Bool||LA7_0==COLOR_CONSTANT||(LA7_0 >= Clip && LA7_0 <= Cm)||(LA7_0 >= Copy && LA7_0 <= Curve)||LA7_0==Difference||LA7_0==Ellipse||(LA7_0 >= Excl && LA7_0 <= Expand)||(LA7_0 >= Fill && LA7_0 <= FollowCurve)||(LA7_0 >= Gaussian && LA7_0 <= Hide)||LA7_0==Identifier||LA7_0==Inch||LA7_0==LAdd||(LA7_0 >= LRemove && LA7_0 <= LShape)||(LA7_0 >= Line && LA7_0 <= Mm)||(LA7_0 >= Move && LA7_0 <= MoveBy)||(LA7_0 >= NoFill && LA7_0 <= Number)||(LA7_0 >= OBracket && LA7_0 <= OParen)||(LA7_0 >= PI_CONSTANT && LA7_0 <= Println)||(LA7_0 >= Random && LA7_0 <= Rect)||(LA7_0 >= Rotate && LA7_0 <= Round)||LA7_0==Scale||(LA7_0 >= SetCorner && LA7_0 <= Slider)||(LA7_0 >= Sq && LA7_0 <= Subtract)||(LA7_0 >= Tan && LA7_0 <= TemplateCollection)||(LA7_0 >= Union && LA7_0 <= Weight)||LA7_0==Xor) ) {
 						alt7=1;
 					}
 					switch (alt7) {
@@ -1585,7 +1588,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:154:15: ( exprList )?
 					int alt8=2;
 					int LA8_0 = input.LA(1);
-					if ( (LA8_0==ATan||LA8_0==AddDesign||(LA8_0 >= Arc && LA8_0 <= Assert)||LA8_0==Bool||LA8_0==COLOR_CONSTANT||(LA8_0 >= Clip && LA8_0 <= Cm)||(LA8_0 >= Copy && LA8_0 <= Curve)||LA8_0==Difference||LA8_0==Ellipse||(LA8_0 >= Excl && LA8_0 <= Expand)||(LA8_0 >= Fill && LA8_0 <= Flatten)||(LA8_0 >= Gaussian && LA8_0 <= Hide)||LA8_0==Identifier||LA8_0==Inch||LA8_0==LAdd||(LA8_0 >= LRemove && LA8_0 <= LShape)||(LA8_0 >= Line && LA8_0 <= Mm)||(LA8_0 >= Move && LA8_0 <= MoveBy)||(LA8_0 >= NoFill && LA8_0 <= Number)||(LA8_0 >= OBracket && LA8_0 <= OParen)||(LA8_0 >= PI_CONSTANT && LA8_0 <= Println)||(LA8_0 >= Random && LA8_0 <= Rect)||(LA8_0 >= Rotate && LA8_0 <= Round)||LA8_0==Scale||(LA8_0 >= SetCorner && LA8_0 <= Slider)||(LA8_0 >= Sq && LA8_0 <= Subtract)||(LA8_0 >= Tan && LA8_0 <= TemplateCollection)||(LA8_0 >= Union && LA8_0 <= Weight)||LA8_0==Xor) ) {
+					if ( (LA8_0==ATan||LA8_0==AddDesign||(LA8_0 >= Arc && LA8_0 <= Assert)||LA8_0==Bool||LA8_0==COLOR_CONSTANT||(LA8_0 >= Clip && LA8_0 <= Cm)||(LA8_0 >= Copy && LA8_0 <= Curve)||LA8_0==Difference||LA8_0==Ellipse||(LA8_0 >= Excl && LA8_0 <= Expand)||(LA8_0 >= Fill && LA8_0 <= FollowCurve)||(LA8_0 >= Gaussian && LA8_0 <= Hide)||LA8_0==Identifier||LA8_0==Inch||LA8_0==LAdd||(LA8_0 >= LRemove && LA8_0 <= LShape)||(LA8_0 >= Line && LA8_0 <= Mm)||(LA8_0 >= Move && LA8_0 <= MoveBy)||(LA8_0 >= NoFill && LA8_0 <= Number)||(LA8_0 >= OBracket && LA8_0 <= OParen)||(LA8_0 >= PI_CONSTANT && LA8_0 <= Println)||(LA8_0 >= Random && LA8_0 <= Rect)||(LA8_0 >= Rotate && LA8_0 <= Round)||LA8_0==Scale||(LA8_0 >= SetCorner && LA8_0 <= Slider)||(LA8_0 >= Sq && LA8_0 <= Subtract)||(LA8_0 >= Tan && LA8_0 <= TemplateCollection)||(LA8_0 >= Union && LA8_0 <= Weight)||LA8_0==Xor) ) {
 						alt8=1;
 					}
 					switch (alt8) {
@@ -1651,7 +1654,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:155:18: ( exprList )?
 					int alt9=2;
 					int LA9_0 = input.LA(1);
-					if ( (LA9_0==ATan||LA9_0==AddDesign||(LA9_0 >= Arc && LA9_0 <= Assert)||LA9_0==Bool||LA9_0==COLOR_CONSTANT||(LA9_0 >= Clip && LA9_0 <= Cm)||(LA9_0 >= Copy && LA9_0 <= Curve)||LA9_0==Difference||LA9_0==Ellipse||(LA9_0 >= Excl && LA9_0 <= Expand)||(LA9_0 >= Fill && LA9_0 <= Flatten)||(LA9_0 >= Gaussian && LA9_0 <= Hide)||LA9_0==Identifier||LA9_0==Inch||LA9_0==LAdd||(LA9_0 >= LRemove && LA9_0 <= LShape)||(LA9_0 >= Line && LA9_0 <= Mm)||(LA9_0 >= Move && LA9_0 <= MoveBy)||(LA9_0 >= NoFill && LA9_0 <= Number)||(LA9_0 >= OBracket && LA9_0 <= OParen)||(LA9_0 >= PI_CONSTANT && LA9_0 <= Println)||(LA9_0 >= Random && LA9_0 <= Rect)||(LA9_0 >= Rotate && LA9_0 <= Round)||LA9_0==Scale||(LA9_0 >= SetCorner && LA9_0 <= Slider)||(LA9_0 >= Sq && LA9_0 <= Subtract)||(LA9_0 >= Tan && LA9_0 <= TemplateCollection)||(LA9_0 >= Union && LA9_0 <= Weight)||LA9_0==Xor) ) {
+					if ( (LA9_0==ATan||LA9_0==AddDesign||(LA9_0 >= Arc && LA9_0 <= Assert)||LA9_0==Bool||LA9_0==COLOR_CONSTANT||(LA9_0 >= Clip && LA9_0 <= Cm)||(LA9_0 >= Copy && LA9_0 <= Curve)||LA9_0==Difference||LA9_0==Ellipse||(LA9_0 >= Excl && LA9_0 <= Expand)||(LA9_0 >= Fill && LA9_0 <= FollowCurve)||(LA9_0 >= Gaussian && LA9_0 <= Hide)||LA9_0==Identifier||LA9_0==Inch||LA9_0==LAdd||(LA9_0 >= LRemove && LA9_0 <= LShape)||(LA9_0 >= Line && LA9_0 <= Mm)||(LA9_0 >= Move && LA9_0 <= MoveBy)||(LA9_0 >= NoFill && LA9_0 <= Number)||(LA9_0 >= OBracket && LA9_0 <= OParen)||(LA9_0 >= PI_CONSTANT && LA9_0 <= Println)||(LA9_0 >= Random && LA9_0 <= Rect)||(LA9_0 >= Rotate && LA9_0 <= Round)||LA9_0==Scale||(LA9_0 >= SetCorner && LA9_0 <= Slider)||(LA9_0 >= Sq && LA9_0 <= Subtract)||(LA9_0 >= Tan && LA9_0 <= TemplateCollection)||(LA9_0 >= Union && LA9_0 <= Weight)||LA9_0==Xor) ) {
 						alt9=1;
 					}
 					switch (alt9) {
@@ -1983,7 +1986,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:167:17: ( exprList )?
 					int alt11=2;
 					int LA11_0 = input.LA(1);
-					if ( (LA11_0==ATan||LA11_0==AddDesign||(LA11_0 >= Arc && LA11_0 <= Assert)||LA11_0==Bool||LA11_0==COLOR_CONSTANT||(LA11_0 >= Clip && LA11_0 <= Cm)||(LA11_0 >= Copy && LA11_0 <= Curve)||LA11_0==Difference||LA11_0==Ellipse||(LA11_0 >= Excl && LA11_0 <= Expand)||(LA11_0 >= Fill && LA11_0 <= Flatten)||(LA11_0 >= Gaussian && LA11_0 <= Hide)||LA11_0==Identifier||LA11_0==Inch||LA11_0==LAdd||(LA11_0 >= LRemove && LA11_0 <= LShape)||(LA11_0 >= Line && LA11_0 <= Mm)||(LA11_0 >= Move && LA11_0 <= MoveBy)||(LA11_0 >= NoFill && LA11_0 <= Number)||(LA11_0 >= OBracket && LA11_0 <= OParen)||(LA11_0 >= PI_CONSTANT && LA11_0 <= Println)||(LA11_0 >= Random && LA11_0 <= Rect)||(LA11_0 >= Rotate && LA11_0 <= Round)||LA11_0==Scale||(LA11_0 >= SetCorner && LA11_0 <= Slider)||(LA11_0 >= Sq && LA11_0 <= Subtract)||(LA11_0 >= Tan && LA11_0 <= TemplateCollection)||(LA11_0 >= Union && LA11_0 <= Weight)||LA11_0==Xor) ) {
+					if ( (LA11_0==ATan||LA11_0==AddDesign||(LA11_0 >= Arc && LA11_0 <= Assert)||LA11_0==Bool||LA11_0==COLOR_CONSTANT||(LA11_0 >= Clip && LA11_0 <= Cm)||(LA11_0 >= Copy && LA11_0 <= Curve)||LA11_0==Difference||LA11_0==Ellipse||(LA11_0 >= Excl && LA11_0 <= Expand)||(LA11_0 >= Fill && LA11_0 <= FollowCurve)||(LA11_0 >= Gaussian && LA11_0 <= Hide)||LA11_0==Identifier||LA11_0==Inch||LA11_0==LAdd||(LA11_0 >= LRemove && LA11_0 <= LShape)||(LA11_0 >= Line && LA11_0 <= Mm)||(LA11_0 >= Move && LA11_0 <= MoveBy)||(LA11_0 >= NoFill && LA11_0 <= Number)||(LA11_0 >= OBracket && LA11_0 <= OParen)||(LA11_0 >= PI_CONSTANT && LA11_0 <= Println)||(LA11_0 >= Random && LA11_0 <= Rect)||(LA11_0 >= Rotate && LA11_0 <= Round)||LA11_0==Scale||(LA11_0 >= SetCorner && LA11_0 <= Slider)||(LA11_0 >= Sq && LA11_0 <= Subtract)||(LA11_0 >= Tan && LA11_0 <= TemplateCollection)||(LA11_0 >= Union && LA11_0 <= Weight)||LA11_0==Xor) ) {
 						alt11=1;
 					}
 					switch (alt11) {
@@ -2049,7 +2052,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:168:14: ( exprList )?
 					int alt12=2;
 					int LA12_0 = input.LA(1);
-					if ( (LA12_0==ATan||LA12_0==AddDesign||(LA12_0 >= Arc && LA12_0 <= Assert)||LA12_0==Bool||LA12_0==COLOR_CONSTANT||(LA12_0 >= Clip && LA12_0 <= Cm)||(LA12_0 >= Copy && LA12_0 <= Curve)||LA12_0==Difference||LA12_0==Ellipse||(LA12_0 >= Excl && LA12_0 <= Expand)||(LA12_0 >= Fill && LA12_0 <= Flatten)||(LA12_0 >= Gaussian && LA12_0 <= Hide)||LA12_0==Identifier||LA12_0==Inch||LA12_0==LAdd||(LA12_0 >= LRemove && LA12_0 <= LShape)||(LA12_0 >= Line && LA12_0 <= Mm)||(LA12_0 >= Move && LA12_0 <= MoveBy)||(LA12_0 >= NoFill && LA12_0 <= Number)||(LA12_0 >= OBracket && LA12_0 <= OParen)||(LA12_0 >= PI_CONSTANT && LA12_0 <= Println)||(LA12_0 >= Random && LA12_0 <= Rect)||(LA12_0 >= Rotate && LA12_0 <= Round)||LA12_0==Scale||(LA12_0 >= SetCorner && LA12_0 <= Slider)||(LA12_0 >= Sq && LA12_0 <= Subtract)||(LA12_0 >= Tan && LA12_0 <= TemplateCollection)||(LA12_0 >= Union && LA12_0 <= Weight)||LA12_0==Xor) ) {
+					if ( (LA12_0==ATan||LA12_0==AddDesign||(LA12_0 >= Arc && LA12_0 <= Assert)||LA12_0==Bool||LA12_0==COLOR_CONSTANT||(LA12_0 >= Clip && LA12_0 <= Cm)||(LA12_0 >= Copy && LA12_0 <= Curve)||LA12_0==Difference||LA12_0==Ellipse||(LA12_0 >= Excl && LA12_0 <= Expand)||(LA12_0 >= Fill && LA12_0 <= FollowCurve)||(LA12_0 >= Gaussian && LA12_0 <= Hide)||LA12_0==Identifier||LA12_0==Inch||LA12_0==LAdd||(LA12_0 >= LRemove && LA12_0 <= LShape)||(LA12_0 >= Line && LA12_0 <= Mm)||(LA12_0 >= Move && LA12_0 <= MoveBy)||(LA12_0 >= NoFill && LA12_0 <= Number)||(LA12_0 >= OBracket && LA12_0 <= OParen)||(LA12_0 >= PI_CONSTANT && LA12_0 <= Println)||(LA12_0 >= Random && LA12_0 <= Rect)||(LA12_0 >= Rotate && LA12_0 <= Round)||LA12_0==Scale||(LA12_0 >= SetCorner && LA12_0 <= Slider)||(LA12_0 >= Sq && LA12_0 <= Subtract)||(LA12_0 >= Tan && LA12_0 <= TemplateCollection)||(LA12_0 >= Union && LA12_0 <= Weight)||LA12_0==Xor) ) {
 						alt12=1;
 					}
 					switch (alt12) {
@@ -2115,7 +2118,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:169:14: ( exprList )?
 					int alt13=2;
 					int LA13_0 = input.LA(1);
-					if ( (LA13_0==ATan||LA13_0==AddDesign||(LA13_0 >= Arc && LA13_0 <= Assert)||LA13_0==Bool||LA13_0==COLOR_CONSTANT||(LA13_0 >= Clip && LA13_0 <= Cm)||(LA13_0 >= Copy && LA13_0 <= Curve)||LA13_0==Difference||LA13_0==Ellipse||(LA13_0 >= Excl && LA13_0 <= Expand)||(LA13_0 >= Fill && LA13_0 <= Flatten)||(LA13_0 >= Gaussian && LA13_0 <= Hide)||LA13_0==Identifier||LA13_0==Inch||LA13_0==LAdd||(LA13_0 >= LRemove && LA13_0 <= LShape)||(LA13_0 >= Line && LA13_0 <= Mm)||(LA13_0 >= Move && LA13_0 <= MoveBy)||(LA13_0 >= NoFill && LA13_0 <= Number)||(LA13_0 >= OBracket && LA13_0 <= OParen)||(LA13_0 >= PI_CONSTANT && LA13_0 <= Println)||(LA13_0 >= Random && LA13_0 <= Rect)||(LA13_0 >= Rotate && LA13_0 <= Round)||LA13_0==Scale||(LA13_0 >= SetCorner && LA13_0 <= Slider)||(LA13_0 >= Sq && LA13_0 <= Subtract)||(LA13_0 >= Tan && LA13_0 <= TemplateCollection)||(LA13_0 >= Union && LA13_0 <= Weight)||LA13_0==Xor) ) {
+					if ( (LA13_0==ATan||LA13_0==AddDesign||(LA13_0 >= Arc && LA13_0 <= Assert)||LA13_0==Bool||LA13_0==COLOR_CONSTANT||(LA13_0 >= Clip && LA13_0 <= Cm)||(LA13_0 >= Copy && LA13_0 <= Curve)||LA13_0==Difference||LA13_0==Ellipse||(LA13_0 >= Excl && LA13_0 <= Expand)||(LA13_0 >= Fill && LA13_0 <= FollowCurve)||(LA13_0 >= Gaussian && LA13_0 <= Hide)||LA13_0==Identifier||LA13_0==Inch||LA13_0==LAdd||(LA13_0 >= LRemove && LA13_0 <= LShape)||(LA13_0 >= Line && LA13_0 <= Mm)||(LA13_0 >= Move && LA13_0 <= MoveBy)||(LA13_0 >= NoFill && LA13_0 <= Number)||(LA13_0 >= OBracket && LA13_0 <= OParen)||(LA13_0 >= PI_CONSTANT && LA13_0 <= Println)||(LA13_0 >= Random && LA13_0 <= Rect)||(LA13_0 >= Rotate && LA13_0 <= Round)||LA13_0==Scale||(LA13_0 >= SetCorner && LA13_0 <= Slider)||(LA13_0 >= Sq && LA13_0 <= Subtract)||(LA13_0 >= Tan && LA13_0 <= TemplateCollection)||(LA13_0 >= Union && LA13_0 <= Weight)||LA13_0==Xor) ) {
 						alt13=1;
 					}
 					switch (alt13) {
@@ -2181,7 +2184,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:170:15: ( exprList )?
 					int alt14=2;
 					int LA14_0 = input.LA(1);
-					if ( (LA14_0==ATan||LA14_0==AddDesign||(LA14_0 >= Arc && LA14_0 <= Assert)||LA14_0==Bool||LA14_0==COLOR_CONSTANT||(LA14_0 >= Clip && LA14_0 <= Cm)||(LA14_0 >= Copy && LA14_0 <= Curve)||LA14_0==Difference||LA14_0==Ellipse||(LA14_0 >= Excl && LA14_0 <= Expand)||(LA14_0 >= Fill && LA14_0 <= Flatten)||(LA14_0 >= Gaussian && LA14_0 <= Hide)||LA14_0==Identifier||LA14_0==Inch||LA14_0==LAdd||(LA14_0 >= LRemove && LA14_0 <= LShape)||(LA14_0 >= Line && LA14_0 <= Mm)||(LA14_0 >= Move && LA14_0 <= MoveBy)||(LA14_0 >= NoFill && LA14_0 <= Number)||(LA14_0 >= OBracket && LA14_0 <= OParen)||(LA14_0 >= PI_CONSTANT && LA14_0 <= Println)||(LA14_0 >= Random && LA14_0 <= Rect)||(LA14_0 >= Rotate && LA14_0 <= Round)||LA14_0==Scale||(LA14_0 >= SetCorner && LA14_0 <= Slider)||(LA14_0 >= Sq && LA14_0 <= Subtract)||(LA14_0 >= Tan && LA14_0 <= TemplateCollection)||(LA14_0 >= Union && LA14_0 <= Weight)||LA14_0==Xor) ) {
+					if ( (LA14_0==ATan||LA14_0==AddDesign||(LA14_0 >= Arc && LA14_0 <= Assert)||LA14_0==Bool||LA14_0==COLOR_CONSTANT||(LA14_0 >= Clip && LA14_0 <= Cm)||(LA14_0 >= Copy && LA14_0 <= Curve)||LA14_0==Difference||LA14_0==Ellipse||(LA14_0 >= Excl && LA14_0 <= Expand)||(LA14_0 >= Fill && LA14_0 <= FollowCurve)||(LA14_0 >= Gaussian && LA14_0 <= Hide)||LA14_0==Identifier||LA14_0==Inch||LA14_0==LAdd||(LA14_0 >= LRemove && LA14_0 <= LShape)||(LA14_0 >= Line && LA14_0 <= Mm)||(LA14_0 >= Move && LA14_0 <= MoveBy)||(LA14_0 >= NoFill && LA14_0 <= Number)||(LA14_0 >= OBracket && LA14_0 <= OParen)||(LA14_0 >= PI_CONSTANT && LA14_0 <= Println)||(LA14_0 >= Random && LA14_0 <= Rect)||(LA14_0 >= Rotate && LA14_0 <= Round)||LA14_0==Scale||(LA14_0 >= SetCorner && LA14_0 <= Slider)||(LA14_0 >= Sq && LA14_0 <= Subtract)||(LA14_0 >= Tan && LA14_0 <= TemplateCollection)||(LA14_0 >= Union && LA14_0 <= Weight)||LA14_0==Xor) ) {
 						alt14=1;
 					}
 					switch (alt14) {
@@ -2247,7 +2250,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:171:17: ( exprList )?
 					int alt15=2;
 					int LA15_0 = input.LA(1);
-					if ( (LA15_0==ATan||LA15_0==AddDesign||(LA15_0 >= Arc && LA15_0 <= Assert)||LA15_0==Bool||LA15_0==COLOR_CONSTANT||(LA15_0 >= Clip && LA15_0 <= Cm)||(LA15_0 >= Copy && LA15_0 <= Curve)||LA15_0==Difference||LA15_0==Ellipse||(LA15_0 >= Excl && LA15_0 <= Expand)||(LA15_0 >= Fill && LA15_0 <= Flatten)||(LA15_0 >= Gaussian && LA15_0 <= Hide)||LA15_0==Identifier||LA15_0==Inch||LA15_0==LAdd||(LA15_0 >= LRemove && LA15_0 <= LShape)||(LA15_0 >= Line && LA15_0 <= Mm)||(LA15_0 >= Move && LA15_0 <= MoveBy)||(LA15_0 >= NoFill && LA15_0 <= Number)||(LA15_0 >= OBracket && LA15_0 <= OParen)||(LA15_0 >= PI_CONSTANT && LA15_0 <= Println)||(LA15_0 >= Random && LA15_0 <= Rect)||(LA15_0 >= Rotate && LA15_0 <= Round)||LA15_0==Scale||(LA15_0 >= SetCorner && LA15_0 <= Slider)||(LA15_0 >= Sq && LA15_0 <= Subtract)||(LA15_0 >= Tan && LA15_0 <= TemplateCollection)||(LA15_0 >= Union && LA15_0 <= Weight)||LA15_0==Xor) ) {
+					if ( (LA15_0==ATan||LA15_0==AddDesign||(LA15_0 >= Arc && LA15_0 <= Assert)||LA15_0==Bool||LA15_0==COLOR_CONSTANT||(LA15_0 >= Clip && LA15_0 <= Cm)||(LA15_0 >= Copy && LA15_0 <= Curve)||LA15_0==Difference||LA15_0==Ellipse||(LA15_0 >= Excl && LA15_0 <= Expand)||(LA15_0 >= Fill && LA15_0 <= FollowCurve)||(LA15_0 >= Gaussian && LA15_0 <= Hide)||LA15_0==Identifier||LA15_0==Inch||LA15_0==LAdd||(LA15_0 >= LRemove && LA15_0 <= LShape)||(LA15_0 >= Line && LA15_0 <= Mm)||(LA15_0 >= Move && LA15_0 <= MoveBy)||(LA15_0 >= NoFill && LA15_0 <= Number)||(LA15_0 >= OBracket && LA15_0 <= OParen)||(LA15_0 >= PI_CONSTANT && LA15_0 <= Println)||(LA15_0 >= Random && LA15_0 <= Rect)||(LA15_0 >= Rotate && LA15_0 <= Round)||LA15_0==Scale||(LA15_0 >= SetCorner && LA15_0 <= Slider)||(LA15_0 >= Sq && LA15_0 <= Subtract)||(LA15_0 >= Tan && LA15_0 <= TemplateCollection)||(LA15_0 >= Union && LA15_0 <= Weight)||LA15_0==Xor) ) {
 						alt15=1;
 					}
 					switch (alt15) {
@@ -2313,7 +2316,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:172:15: ( exprList )?
 					int alt16=2;
 					int LA16_0 = input.LA(1);
-					if ( (LA16_0==ATan||LA16_0==AddDesign||(LA16_0 >= Arc && LA16_0 <= Assert)||LA16_0==Bool||LA16_0==COLOR_CONSTANT||(LA16_0 >= Clip && LA16_0 <= Cm)||(LA16_0 >= Copy && LA16_0 <= Curve)||LA16_0==Difference||LA16_0==Ellipse||(LA16_0 >= Excl && LA16_0 <= Expand)||(LA16_0 >= Fill && LA16_0 <= Flatten)||(LA16_0 >= Gaussian && LA16_0 <= Hide)||LA16_0==Identifier||LA16_0==Inch||LA16_0==LAdd||(LA16_0 >= LRemove && LA16_0 <= LShape)||(LA16_0 >= Line && LA16_0 <= Mm)||(LA16_0 >= Move && LA16_0 <= MoveBy)||(LA16_0 >= NoFill && LA16_0 <= Number)||(LA16_0 >= OBracket && LA16_0 <= OParen)||(LA16_0 >= PI_CONSTANT && LA16_0 <= Println)||(LA16_0 >= Random && LA16_0 <= Rect)||(LA16_0 >= Rotate && LA16_0 <= Round)||LA16_0==Scale||(LA16_0 >= SetCorner && LA16_0 <= Slider)||(LA16_0 >= Sq && LA16_0 <= Subtract)||(LA16_0 >= Tan && LA16_0 <= TemplateCollection)||(LA16_0 >= Union && LA16_0 <= Weight)||LA16_0==Xor) ) {
+					if ( (LA16_0==ATan||LA16_0==AddDesign||(LA16_0 >= Arc && LA16_0 <= Assert)||LA16_0==Bool||LA16_0==COLOR_CONSTANT||(LA16_0 >= Clip && LA16_0 <= Cm)||(LA16_0 >= Copy && LA16_0 <= Curve)||LA16_0==Difference||LA16_0==Ellipse||(LA16_0 >= Excl && LA16_0 <= Expand)||(LA16_0 >= Fill && LA16_0 <= FollowCurve)||(LA16_0 >= Gaussian && LA16_0 <= Hide)||LA16_0==Identifier||LA16_0==Inch||LA16_0==LAdd||(LA16_0 >= LRemove && LA16_0 <= LShape)||(LA16_0 >= Line && LA16_0 <= Mm)||(LA16_0 >= Move && LA16_0 <= MoveBy)||(LA16_0 >= NoFill && LA16_0 <= Number)||(LA16_0 >= OBracket && LA16_0 <= OParen)||(LA16_0 >= PI_CONSTANT && LA16_0 <= Println)||(LA16_0 >= Random && LA16_0 <= Rect)||(LA16_0 >= Rotate && LA16_0 <= Round)||LA16_0==Scale||(LA16_0 >= SetCorner && LA16_0 <= Slider)||(LA16_0 >= Sq && LA16_0 <= Subtract)||(LA16_0 >= Tan && LA16_0 <= TemplateCollection)||(LA16_0 >= Union && LA16_0 <= Weight)||LA16_0==Xor) ) {
 						alt16=1;
 					}
 					switch (alt16) {
@@ -2379,7 +2382,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:173:19: ( exprList )?
 					int alt17=2;
 					int LA17_0 = input.LA(1);
-					if ( (LA17_0==ATan||LA17_0==AddDesign||(LA17_0 >= Arc && LA17_0 <= Assert)||LA17_0==Bool||LA17_0==COLOR_CONSTANT||(LA17_0 >= Clip && LA17_0 <= Cm)||(LA17_0 >= Copy && LA17_0 <= Curve)||LA17_0==Difference||LA17_0==Ellipse||(LA17_0 >= Excl && LA17_0 <= Expand)||(LA17_0 >= Fill && LA17_0 <= Flatten)||(LA17_0 >= Gaussian && LA17_0 <= Hide)||LA17_0==Identifier||LA17_0==Inch||LA17_0==LAdd||(LA17_0 >= LRemove && LA17_0 <= LShape)||(LA17_0 >= Line && LA17_0 <= Mm)||(LA17_0 >= Move && LA17_0 <= MoveBy)||(LA17_0 >= NoFill && LA17_0 <= Number)||(LA17_0 >= OBracket && LA17_0 <= OParen)||(LA17_0 >= PI_CONSTANT && LA17_0 <= Println)||(LA17_0 >= Random && LA17_0 <= Rect)||(LA17_0 >= Rotate && LA17_0 <= Round)||LA17_0==Scale||(LA17_0 >= SetCorner && LA17_0 <= Slider)||(LA17_0 >= Sq && LA17_0 <= Subtract)||(LA17_0 >= Tan && LA17_0 <= TemplateCollection)||(LA17_0 >= Union && LA17_0 <= Weight)||LA17_0==Xor) ) {
+					if ( (LA17_0==ATan||LA17_0==AddDesign||(LA17_0 >= Arc && LA17_0 <= Assert)||LA17_0==Bool||LA17_0==COLOR_CONSTANT||(LA17_0 >= Clip && LA17_0 <= Cm)||(LA17_0 >= Copy && LA17_0 <= Curve)||LA17_0==Difference||LA17_0==Ellipse||(LA17_0 >= Excl && LA17_0 <= Expand)||(LA17_0 >= Fill && LA17_0 <= FollowCurve)||(LA17_0 >= Gaussian && LA17_0 <= Hide)||LA17_0==Identifier||LA17_0==Inch||LA17_0==LAdd||(LA17_0 >= LRemove && LA17_0 <= LShape)||(LA17_0 >= Line && LA17_0 <= Mm)||(LA17_0 >= Move && LA17_0 <= MoveBy)||(LA17_0 >= NoFill && LA17_0 <= Number)||(LA17_0 >= OBracket && LA17_0 <= OParen)||(LA17_0 >= PI_CONSTANT && LA17_0 <= Println)||(LA17_0 >= Random && LA17_0 <= Rect)||(LA17_0 >= Rotate && LA17_0 <= Round)||LA17_0==Scale||(LA17_0 >= SetCorner && LA17_0 <= Slider)||(LA17_0 >= Sq && LA17_0 <= Subtract)||(LA17_0 >= Tan && LA17_0 <= TemplateCollection)||(LA17_0 >= Union && LA17_0 <= Weight)||LA17_0==Xor) ) {
 						alt17=1;
 					}
 					switch (alt17) {
@@ -2445,7 +2448,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:174:17: ( exprList )?
 					int alt18=2;
 					int LA18_0 = input.LA(1);
-					if ( (LA18_0==ATan||LA18_0==AddDesign||(LA18_0 >= Arc && LA18_0 <= Assert)||LA18_0==Bool||LA18_0==COLOR_CONSTANT||(LA18_0 >= Clip && LA18_0 <= Cm)||(LA18_0 >= Copy && LA18_0 <= Curve)||LA18_0==Difference||LA18_0==Ellipse||(LA18_0 >= Excl && LA18_0 <= Expand)||(LA18_0 >= Fill && LA18_0 <= Flatten)||(LA18_0 >= Gaussian && LA18_0 <= Hide)||LA18_0==Identifier||LA18_0==Inch||LA18_0==LAdd||(LA18_0 >= LRemove && LA18_0 <= LShape)||(LA18_0 >= Line && LA18_0 <= Mm)||(LA18_0 >= Move && LA18_0 <= MoveBy)||(LA18_0 >= NoFill && LA18_0 <= Number)||(LA18_0 >= OBracket && LA18_0 <= OParen)||(LA18_0 >= PI_CONSTANT && LA18_0 <= Println)||(LA18_0 >= Random && LA18_0 <= Rect)||(LA18_0 >= Rotate && LA18_0 <= Round)||LA18_0==Scale||(LA18_0 >= SetCorner && LA18_0 <= Slider)||(LA18_0 >= Sq && LA18_0 <= Subtract)||(LA18_0 >= Tan && LA18_0 <= TemplateCollection)||(LA18_0 >= Union && LA18_0 <= Weight)||LA18_0==Xor) ) {
+					if ( (LA18_0==ATan||LA18_0==AddDesign||(LA18_0 >= Arc && LA18_0 <= Assert)||LA18_0==Bool||LA18_0==COLOR_CONSTANT||(LA18_0 >= Clip && LA18_0 <= Cm)||(LA18_0 >= Copy && LA18_0 <= Curve)||LA18_0==Difference||LA18_0==Ellipse||(LA18_0 >= Excl && LA18_0 <= Expand)||(LA18_0 >= Fill && LA18_0 <= FollowCurve)||(LA18_0 >= Gaussian && LA18_0 <= Hide)||LA18_0==Identifier||LA18_0==Inch||LA18_0==LAdd||(LA18_0 >= LRemove && LA18_0 <= LShape)||(LA18_0 >= Line && LA18_0 <= Mm)||(LA18_0 >= Move && LA18_0 <= MoveBy)||(LA18_0 >= NoFill && LA18_0 <= Number)||(LA18_0 >= OBracket && LA18_0 <= OParen)||(LA18_0 >= PI_CONSTANT && LA18_0 <= Println)||(LA18_0 >= Random && LA18_0 <= Rect)||(LA18_0 >= Rotate && LA18_0 <= Round)||LA18_0==Scale||(LA18_0 >= SetCorner && LA18_0 <= Slider)||(LA18_0 >= Sq && LA18_0 <= Subtract)||(LA18_0 >= Tan && LA18_0 <= TemplateCollection)||(LA18_0 >= Union && LA18_0 <= Weight)||LA18_0==Xor) ) {
 						alt18=1;
 					}
 					switch (alt18) {
@@ -2511,7 +2514,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:175:17: ( exprList )?
 					int alt19=2;
 					int LA19_0 = input.LA(1);
-					if ( (LA19_0==ATan||LA19_0==AddDesign||(LA19_0 >= Arc && LA19_0 <= Assert)||LA19_0==Bool||LA19_0==COLOR_CONSTANT||(LA19_0 >= Clip && LA19_0 <= Cm)||(LA19_0 >= Copy && LA19_0 <= Curve)||LA19_0==Difference||LA19_0==Ellipse||(LA19_0 >= Excl && LA19_0 <= Expand)||(LA19_0 >= Fill && LA19_0 <= Flatten)||(LA19_0 >= Gaussian && LA19_0 <= Hide)||LA19_0==Identifier||LA19_0==Inch||LA19_0==LAdd||(LA19_0 >= LRemove && LA19_0 <= LShape)||(LA19_0 >= Line && LA19_0 <= Mm)||(LA19_0 >= Move && LA19_0 <= MoveBy)||(LA19_0 >= NoFill && LA19_0 <= Number)||(LA19_0 >= OBracket && LA19_0 <= OParen)||(LA19_0 >= PI_CONSTANT && LA19_0 <= Println)||(LA19_0 >= Random && LA19_0 <= Rect)||(LA19_0 >= Rotate && LA19_0 <= Round)||LA19_0==Scale||(LA19_0 >= SetCorner && LA19_0 <= Slider)||(LA19_0 >= Sq && LA19_0 <= Subtract)||(LA19_0 >= Tan && LA19_0 <= TemplateCollection)||(LA19_0 >= Union && LA19_0 <= Weight)||LA19_0==Xor) ) {
+					if ( (LA19_0==ATan||LA19_0==AddDesign||(LA19_0 >= Arc && LA19_0 <= Assert)||LA19_0==Bool||LA19_0==COLOR_CONSTANT||(LA19_0 >= Clip && LA19_0 <= Cm)||(LA19_0 >= Copy && LA19_0 <= Curve)||LA19_0==Difference||LA19_0==Ellipse||(LA19_0 >= Excl && LA19_0 <= Expand)||(LA19_0 >= Fill && LA19_0 <= FollowCurve)||(LA19_0 >= Gaussian && LA19_0 <= Hide)||LA19_0==Identifier||LA19_0==Inch||LA19_0==LAdd||(LA19_0 >= LRemove && LA19_0 <= LShape)||(LA19_0 >= Line && LA19_0 <= Mm)||(LA19_0 >= Move && LA19_0 <= MoveBy)||(LA19_0 >= NoFill && LA19_0 <= Number)||(LA19_0 >= OBracket && LA19_0 <= OParen)||(LA19_0 >= PI_CONSTANT && LA19_0 <= Println)||(LA19_0 >= Random && LA19_0 <= Rect)||(LA19_0 >= Rotate && LA19_0 <= Round)||LA19_0==Scale||(LA19_0 >= SetCorner && LA19_0 <= Slider)||(LA19_0 >= Sq && LA19_0 <= Subtract)||(LA19_0 >= Tan && LA19_0 <= TemplateCollection)||(LA19_0 >= Union && LA19_0 <= Weight)||LA19_0==Xor) ) {
 						alt19=1;
 					}
 					switch (alt19) {
@@ -2928,7 +2931,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:179:15: ( exprList )?
 					int alt21=2;
 					int LA21_0 = input.LA(1);
-					if ( (LA21_0==ATan||LA21_0==AddDesign||(LA21_0 >= Arc && LA21_0 <= Assert)||LA21_0==Bool||LA21_0==COLOR_CONSTANT||(LA21_0 >= Clip && LA21_0 <= Cm)||(LA21_0 >= Copy && LA21_0 <= Curve)||LA21_0==Difference||LA21_0==Ellipse||(LA21_0 >= Excl && LA21_0 <= Expand)||(LA21_0 >= Fill && LA21_0 <= Flatten)||(LA21_0 >= Gaussian && LA21_0 <= Hide)||LA21_0==Identifier||LA21_0==Inch||LA21_0==LAdd||(LA21_0 >= LRemove && LA21_0 <= LShape)||(LA21_0 >= Line && LA21_0 <= Mm)||(LA21_0 >= Move && LA21_0 <= MoveBy)||(LA21_0 >= NoFill && LA21_0 <= Number)||(LA21_0 >= OBracket && LA21_0 <= OParen)||(LA21_0 >= PI_CONSTANT && LA21_0 <= Println)||(LA21_0 >= Random && LA21_0 <= Rect)||(LA21_0 >= Rotate && LA21_0 <= Round)||LA21_0==Scale||(LA21_0 >= SetCorner && LA21_0 <= Slider)||(LA21_0 >= Sq && LA21_0 <= Subtract)||(LA21_0 >= Tan && LA21_0 <= TemplateCollection)||(LA21_0 >= Union && LA21_0 <= Weight)||LA21_0==Xor) ) {
+					if ( (LA21_0==ATan||LA21_0==AddDesign||(LA21_0 >= Arc && LA21_0 <= Assert)||LA21_0==Bool||LA21_0==COLOR_CONSTANT||(LA21_0 >= Clip && LA21_0 <= Cm)||(LA21_0 >= Copy && LA21_0 <= Curve)||LA21_0==Difference||LA21_0==Ellipse||(LA21_0 >= Excl && LA21_0 <= Expand)||(LA21_0 >= Fill && LA21_0 <= FollowCurve)||(LA21_0 >= Gaussian && LA21_0 <= Hide)||LA21_0==Identifier||LA21_0==Inch||LA21_0==LAdd||(LA21_0 >= LRemove && LA21_0 <= LShape)||(LA21_0 >= Line && LA21_0 <= Mm)||(LA21_0 >= Move && LA21_0 <= MoveBy)||(LA21_0 >= NoFill && LA21_0 <= Number)||(LA21_0 >= OBracket && LA21_0 <= OParen)||(LA21_0 >= PI_CONSTANT && LA21_0 <= Println)||(LA21_0 >= Random && LA21_0 <= Rect)||(LA21_0 >= Rotate && LA21_0 <= Round)||LA21_0==Scale||(LA21_0 >= SetCorner && LA21_0 <= Slider)||(LA21_0 >= Sq && LA21_0 <= Subtract)||(LA21_0 >= Tan && LA21_0 <= TemplateCollection)||(LA21_0 >= Union && LA21_0 <= Weight)||LA21_0==Xor) ) {
 						alt21=1;
 					}
 					switch (alt21) {
@@ -2994,7 +2997,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:180:17: ( exprList )?
 					int alt22=2;
 					int LA22_0 = input.LA(1);
-					if ( (LA22_0==ATan||LA22_0==AddDesign||(LA22_0 >= Arc && LA22_0 <= Assert)||LA22_0==Bool||LA22_0==COLOR_CONSTANT||(LA22_0 >= Clip && LA22_0 <= Cm)||(LA22_0 >= Copy && LA22_0 <= Curve)||LA22_0==Difference||LA22_0==Ellipse||(LA22_0 >= Excl && LA22_0 <= Expand)||(LA22_0 >= Fill && LA22_0 <= Flatten)||(LA22_0 >= Gaussian && LA22_0 <= Hide)||LA22_0==Identifier||LA22_0==Inch||LA22_0==LAdd||(LA22_0 >= LRemove && LA22_0 <= LShape)||(LA22_0 >= Line && LA22_0 <= Mm)||(LA22_0 >= Move && LA22_0 <= MoveBy)||(LA22_0 >= NoFill && LA22_0 <= Number)||(LA22_0 >= OBracket && LA22_0 <= OParen)||(LA22_0 >= PI_CONSTANT && LA22_0 <= Println)||(LA22_0 >= Random && LA22_0 <= Rect)||(LA22_0 >= Rotate && LA22_0 <= Round)||LA22_0==Scale||(LA22_0 >= SetCorner && LA22_0 <= Slider)||(LA22_0 >= Sq && LA22_0 <= Subtract)||(LA22_0 >= Tan && LA22_0 <= TemplateCollection)||(LA22_0 >= Union && LA22_0 <= Weight)||LA22_0==Xor) ) {
+					if ( (LA22_0==ATan||LA22_0==AddDesign||(LA22_0 >= Arc && LA22_0 <= Assert)||LA22_0==Bool||LA22_0==COLOR_CONSTANT||(LA22_0 >= Clip && LA22_0 <= Cm)||(LA22_0 >= Copy && LA22_0 <= Curve)||LA22_0==Difference||LA22_0==Ellipse||(LA22_0 >= Excl && LA22_0 <= Expand)||(LA22_0 >= Fill && LA22_0 <= FollowCurve)||(LA22_0 >= Gaussian && LA22_0 <= Hide)||LA22_0==Identifier||LA22_0==Inch||LA22_0==LAdd||(LA22_0 >= LRemove && LA22_0 <= LShape)||(LA22_0 >= Line && LA22_0 <= Mm)||(LA22_0 >= Move && LA22_0 <= MoveBy)||(LA22_0 >= NoFill && LA22_0 <= Number)||(LA22_0 >= OBracket && LA22_0 <= OParen)||(LA22_0 >= PI_CONSTANT && LA22_0 <= Println)||(LA22_0 >= Random && LA22_0 <= Rect)||(LA22_0 >= Rotate && LA22_0 <= Round)||LA22_0==Scale||(LA22_0 >= SetCorner && LA22_0 <= Slider)||(LA22_0 >= Sq && LA22_0 <= Subtract)||(LA22_0 >= Tan && LA22_0 <= TemplateCollection)||(LA22_0 >= Union && LA22_0 <= Weight)||LA22_0==Xor) ) {
 						alt22=1;
 					}
 					switch (alt22) {
@@ -3060,7 +3063,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:181:18: ( exprList )?
 					int alt23=2;
 					int LA23_0 = input.LA(1);
-					if ( (LA23_0==ATan||LA23_0==AddDesign||(LA23_0 >= Arc && LA23_0 <= Assert)||LA23_0==Bool||LA23_0==COLOR_CONSTANT||(LA23_0 >= Clip && LA23_0 <= Cm)||(LA23_0 >= Copy && LA23_0 <= Curve)||LA23_0==Difference||LA23_0==Ellipse||(LA23_0 >= Excl && LA23_0 <= Expand)||(LA23_0 >= Fill && LA23_0 <= Flatten)||(LA23_0 >= Gaussian && LA23_0 <= Hide)||LA23_0==Identifier||LA23_0==Inch||LA23_0==LAdd||(LA23_0 >= LRemove && LA23_0 <= LShape)||(LA23_0 >= Line && LA23_0 <= Mm)||(LA23_0 >= Move && LA23_0 <= MoveBy)||(LA23_0 >= NoFill && LA23_0 <= Number)||(LA23_0 >= OBracket && LA23_0 <= OParen)||(LA23_0 >= PI_CONSTANT && LA23_0 <= Println)||(LA23_0 >= Random && LA23_0 <= Rect)||(LA23_0 >= Rotate && LA23_0 <= Round)||LA23_0==Scale||(LA23_0 >= SetCorner && LA23_0 <= Slider)||(LA23_0 >= Sq && LA23_0 <= Subtract)||(LA23_0 >= Tan && LA23_0 <= TemplateCollection)||(LA23_0 >= Union && LA23_0 <= Weight)||LA23_0==Xor) ) {
+					if ( (LA23_0==ATan||LA23_0==AddDesign||(LA23_0 >= Arc && LA23_0 <= Assert)||LA23_0==Bool||LA23_0==COLOR_CONSTANT||(LA23_0 >= Clip && LA23_0 <= Cm)||(LA23_0 >= Copy && LA23_0 <= Curve)||LA23_0==Difference||LA23_0==Ellipse||(LA23_0 >= Excl && LA23_0 <= Expand)||(LA23_0 >= Fill && LA23_0 <= FollowCurve)||(LA23_0 >= Gaussian && LA23_0 <= Hide)||LA23_0==Identifier||LA23_0==Inch||LA23_0==LAdd||(LA23_0 >= LRemove && LA23_0 <= LShape)||(LA23_0 >= Line && LA23_0 <= Mm)||(LA23_0 >= Move && LA23_0 <= MoveBy)||(LA23_0 >= NoFill && LA23_0 <= Number)||(LA23_0 >= OBracket && LA23_0 <= OParen)||(LA23_0 >= PI_CONSTANT && LA23_0 <= Println)||(LA23_0 >= Random && LA23_0 <= Rect)||(LA23_0 >= Rotate && LA23_0 <= Round)||LA23_0==Scale||(LA23_0 >= SetCorner && LA23_0 <= Slider)||(LA23_0 >= Sq && LA23_0 <= Subtract)||(LA23_0 >= Tan && LA23_0 <= TemplateCollection)||(LA23_0 >= Union && LA23_0 <= Weight)||LA23_0==Xor) ) {
 						alt23=1;
 					}
 					switch (alt23) {
@@ -3172,7 +3175,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:183:17: ( exprList )?
 					int alt24=2;
 					int LA24_0 = input.LA(1);
-					if ( (LA24_0==ATan||LA24_0==AddDesign||(LA24_0 >= Arc && LA24_0 <= Assert)||LA24_0==Bool||LA24_0==COLOR_CONSTANT||(LA24_0 >= Clip && LA24_0 <= Cm)||(LA24_0 >= Copy && LA24_0 <= Curve)||LA24_0==Difference||LA24_0==Ellipse||(LA24_0 >= Excl && LA24_0 <= Expand)||(LA24_0 >= Fill && LA24_0 <= Flatten)||(LA24_0 >= Gaussian && LA24_0 <= Hide)||LA24_0==Identifier||LA24_0==Inch||LA24_0==LAdd||(LA24_0 >= LRemove && LA24_0 <= LShape)||(LA24_0 >= Line && LA24_0 <= Mm)||(LA24_0 >= Move && LA24_0 <= MoveBy)||(LA24_0 >= NoFill && LA24_0 <= Number)||(LA24_0 >= OBracket && LA24_0 <= OParen)||(LA24_0 >= PI_CONSTANT && LA24_0 <= Println)||(LA24_0 >= Random && LA24_0 <= Rect)||(LA24_0 >= Rotate && LA24_0 <= Round)||LA24_0==Scale||(LA24_0 >= SetCorner && LA24_0 <= Slider)||(LA24_0 >= Sq && LA24_0 <= Subtract)||(LA24_0 >= Tan && LA24_0 <= TemplateCollection)||(LA24_0 >= Union && LA24_0 <= Weight)||LA24_0==Xor) ) {
+					if ( (LA24_0==ATan||LA24_0==AddDesign||(LA24_0 >= Arc && LA24_0 <= Assert)||LA24_0==Bool||LA24_0==COLOR_CONSTANT||(LA24_0 >= Clip && LA24_0 <= Cm)||(LA24_0 >= Copy && LA24_0 <= Curve)||LA24_0==Difference||LA24_0==Ellipse||(LA24_0 >= Excl && LA24_0 <= Expand)||(LA24_0 >= Fill && LA24_0 <= FollowCurve)||(LA24_0 >= Gaussian && LA24_0 <= Hide)||LA24_0==Identifier||LA24_0==Inch||LA24_0==LAdd||(LA24_0 >= LRemove && LA24_0 <= LShape)||(LA24_0 >= Line && LA24_0 <= Mm)||(LA24_0 >= Move && LA24_0 <= MoveBy)||(LA24_0 >= NoFill && LA24_0 <= Number)||(LA24_0 >= OBracket && LA24_0 <= OParen)||(LA24_0 >= PI_CONSTANT && LA24_0 <= Println)||(LA24_0 >= Random && LA24_0 <= Rect)||(LA24_0 >= Rotate && LA24_0 <= Round)||LA24_0==Scale||(LA24_0 >= SetCorner && LA24_0 <= Slider)||(LA24_0 >= Sq && LA24_0 <= Subtract)||(LA24_0 >= Tan && LA24_0 <= TemplateCollection)||(LA24_0 >= Union && LA24_0 <= Weight)||LA24_0==Xor) ) {
 						alt24=1;
 					}
 					switch (alt24) {
@@ -3238,7 +3241,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:184:15: ( exprList )?
 					int alt25=2;
 					int LA25_0 = input.LA(1);
-					if ( (LA25_0==ATan||LA25_0==AddDesign||(LA25_0 >= Arc && LA25_0 <= Assert)||LA25_0==Bool||LA25_0==COLOR_CONSTANT||(LA25_0 >= Clip && LA25_0 <= Cm)||(LA25_0 >= Copy && LA25_0 <= Curve)||LA25_0==Difference||LA25_0==Ellipse||(LA25_0 >= Excl && LA25_0 <= Expand)||(LA25_0 >= Fill && LA25_0 <= Flatten)||(LA25_0 >= Gaussian && LA25_0 <= Hide)||LA25_0==Identifier||LA25_0==Inch||LA25_0==LAdd||(LA25_0 >= LRemove && LA25_0 <= LShape)||(LA25_0 >= Line && LA25_0 <= Mm)||(LA25_0 >= Move && LA25_0 <= MoveBy)||(LA25_0 >= NoFill && LA25_0 <= Number)||(LA25_0 >= OBracket && LA25_0 <= OParen)||(LA25_0 >= PI_CONSTANT && LA25_0 <= Println)||(LA25_0 >= Random && LA25_0 <= Rect)||(LA25_0 >= Rotate && LA25_0 <= Round)||LA25_0==Scale||(LA25_0 >= SetCorner && LA25_0 <= Slider)||(LA25_0 >= Sq && LA25_0 <= Subtract)||(LA25_0 >= Tan && LA25_0 <= TemplateCollection)||(LA25_0 >= Union && LA25_0 <= Weight)||LA25_0==Xor) ) {
+					if ( (LA25_0==ATan||LA25_0==AddDesign||(LA25_0 >= Arc && LA25_0 <= Assert)||LA25_0==Bool||LA25_0==COLOR_CONSTANT||(LA25_0 >= Clip && LA25_0 <= Cm)||(LA25_0 >= Copy && LA25_0 <= Curve)||LA25_0==Difference||LA25_0==Ellipse||(LA25_0 >= Excl && LA25_0 <= Expand)||(LA25_0 >= Fill && LA25_0 <= FollowCurve)||(LA25_0 >= Gaussian && LA25_0 <= Hide)||LA25_0==Identifier||LA25_0==Inch||LA25_0==LAdd||(LA25_0 >= LRemove && LA25_0 <= LShape)||(LA25_0 >= Line && LA25_0 <= Mm)||(LA25_0 >= Move && LA25_0 <= MoveBy)||(LA25_0 >= NoFill && LA25_0 <= Number)||(LA25_0 >= OBracket && LA25_0 <= OParen)||(LA25_0 >= PI_CONSTANT && LA25_0 <= Println)||(LA25_0 >= Random && LA25_0 <= Rect)||(LA25_0 >= Rotate && LA25_0 <= Round)||LA25_0==Scale||(LA25_0 >= SetCorner && LA25_0 <= Slider)||(LA25_0 >= Sq && LA25_0 <= Subtract)||(LA25_0 >= Tan && LA25_0 <= TemplateCollection)||(LA25_0 >= Union && LA25_0 <= Weight)||LA25_0==Xor) ) {
 						alt25=1;
 					}
 					switch (alt25) {
@@ -3304,7 +3307,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:185:17: ( exprList )?
 					int alt26=2;
 					int LA26_0 = input.LA(1);
-					if ( (LA26_0==ATan||LA26_0==AddDesign||(LA26_0 >= Arc && LA26_0 <= Assert)||LA26_0==Bool||LA26_0==COLOR_CONSTANT||(LA26_0 >= Clip && LA26_0 <= Cm)||(LA26_0 >= Copy && LA26_0 <= Curve)||LA26_0==Difference||LA26_0==Ellipse||(LA26_0 >= Excl && LA26_0 <= Expand)||(LA26_0 >= Fill && LA26_0 <= Flatten)||(LA26_0 >= Gaussian && LA26_0 <= Hide)||LA26_0==Identifier||LA26_0==Inch||LA26_0==LAdd||(LA26_0 >= LRemove && LA26_0 <= LShape)||(LA26_0 >= Line && LA26_0 <= Mm)||(LA26_0 >= Move && LA26_0 <= MoveBy)||(LA26_0 >= NoFill && LA26_0 <= Number)||(LA26_0 >= OBracket && LA26_0 <= OParen)||(LA26_0 >= PI_CONSTANT && LA26_0 <= Println)||(LA26_0 >= Random && LA26_0 <= Rect)||(LA26_0 >= Rotate && LA26_0 <= Round)||LA26_0==Scale||(LA26_0 >= SetCorner && LA26_0 <= Slider)||(LA26_0 >= Sq && LA26_0 <= Subtract)||(LA26_0 >= Tan && LA26_0 <= TemplateCollection)||(LA26_0 >= Union && LA26_0 <= Weight)||LA26_0==Xor) ) {
+					if ( (LA26_0==ATan||LA26_0==AddDesign||(LA26_0 >= Arc && LA26_0 <= Assert)||LA26_0==Bool||LA26_0==COLOR_CONSTANT||(LA26_0 >= Clip && LA26_0 <= Cm)||(LA26_0 >= Copy && LA26_0 <= Curve)||LA26_0==Difference||LA26_0==Ellipse||(LA26_0 >= Excl && LA26_0 <= Expand)||(LA26_0 >= Fill && LA26_0 <= FollowCurve)||(LA26_0 >= Gaussian && LA26_0 <= Hide)||LA26_0==Identifier||LA26_0==Inch||LA26_0==LAdd||(LA26_0 >= LRemove && LA26_0 <= LShape)||(LA26_0 >= Line && LA26_0 <= Mm)||(LA26_0 >= Move && LA26_0 <= MoveBy)||(LA26_0 >= NoFill && LA26_0 <= Number)||(LA26_0 >= OBracket && LA26_0 <= OParen)||(LA26_0 >= PI_CONSTANT && LA26_0 <= Println)||(LA26_0 >= Random && LA26_0 <= Rect)||(LA26_0 >= Rotate && LA26_0 <= Round)||LA26_0==Scale||(LA26_0 >= SetCorner && LA26_0 <= Slider)||(LA26_0 >= Sq && LA26_0 <= Subtract)||(LA26_0 >= Tan && LA26_0 <= TemplateCollection)||(LA26_0 >= Union && LA26_0 <= Weight)||LA26_0==Xor) ) {
 						alt26=1;
 					}
 					switch (alt26) {
@@ -3462,7 +3465,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:188:17: ( exprList )?
 					int alt27=2;
 					int LA27_0 = input.LA(1);
-					if ( (LA27_0==ATan||LA27_0==AddDesign||(LA27_0 >= Arc && LA27_0 <= Assert)||LA27_0==Bool||LA27_0==COLOR_CONSTANT||(LA27_0 >= Clip && LA27_0 <= Cm)||(LA27_0 >= Copy && LA27_0 <= Curve)||LA27_0==Difference||LA27_0==Ellipse||(LA27_0 >= Excl && LA27_0 <= Expand)||(LA27_0 >= Fill && LA27_0 <= Flatten)||(LA27_0 >= Gaussian && LA27_0 <= Hide)||LA27_0==Identifier||LA27_0==Inch||LA27_0==LAdd||(LA27_0 >= LRemove && LA27_0 <= LShape)||(LA27_0 >= Line && LA27_0 <= Mm)||(LA27_0 >= Move && LA27_0 <= MoveBy)||(LA27_0 >= NoFill && LA27_0 <= Number)||(LA27_0 >= OBracket && LA27_0 <= OParen)||(LA27_0 >= PI_CONSTANT && LA27_0 <= Println)||(LA27_0 >= Random && LA27_0 <= Rect)||(LA27_0 >= Rotate && LA27_0 <= Round)||LA27_0==Scale||(LA27_0 >= SetCorner && LA27_0 <= Slider)||(LA27_0 >= Sq && LA27_0 <= Subtract)||(LA27_0 >= Tan && LA27_0 <= TemplateCollection)||(LA27_0 >= Union && LA27_0 <= Weight)||LA27_0==Xor) ) {
+					if ( (LA27_0==ATan||LA27_0==AddDesign||(LA27_0 >= Arc && LA27_0 <= Assert)||LA27_0==Bool||LA27_0==COLOR_CONSTANT||(LA27_0 >= Clip && LA27_0 <= Cm)||(LA27_0 >= Copy && LA27_0 <= Curve)||LA27_0==Difference||LA27_0==Ellipse||(LA27_0 >= Excl && LA27_0 <= Expand)||(LA27_0 >= Fill && LA27_0 <= FollowCurve)||(LA27_0 >= Gaussian && LA27_0 <= Hide)||LA27_0==Identifier||LA27_0==Inch||LA27_0==LAdd||(LA27_0 >= LRemove && LA27_0 <= LShape)||(LA27_0 >= Line && LA27_0 <= Mm)||(LA27_0 >= Move && LA27_0 <= MoveBy)||(LA27_0 >= NoFill && LA27_0 <= Number)||(LA27_0 >= OBracket && LA27_0 <= OParen)||(LA27_0 >= PI_CONSTANT && LA27_0 <= Println)||(LA27_0 >= Random && LA27_0 <= Rect)||(LA27_0 >= Rotate && LA27_0 <= Round)||LA27_0==Scale||(LA27_0 >= SetCorner && LA27_0 <= Slider)||(LA27_0 >= Sq && LA27_0 <= Subtract)||(LA27_0 >= Tan && LA27_0 <= TemplateCollection)||(LA27_0 >= Union && LA27_0 <= Weight)||LA27_0==Xor) ) {
 						alt27=1;
 					}
 					switch (alt27) {
@@ -3620,7 +3623,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:191:16: ( exprList )?
 					int alt28=2;
 					int LA28_0 = input.LA(1);
-					if ( (LA28_0==ATan||LA28_0==AddDesign||(LA28_0 >= Arc && LA28_0 <= Assert)||LA28_0==Bool||LA28_0==COLOR_CONSTANT||(LA28_0 >= Clip && LA28_0 <= Cm)||(LA28_0 >= Copy && LA28_0 <= Curve)||LA28_0==Difference||LA28_0==Ellipse||(LA28_0 >= Excl && LA28_0 <= Expand)||(LA28_0 >= Fill && LA28_0 <= Flatten)||(LA28_0 >= Gaussian && LA28_0 <= Hide)||LA28_0==Identifier||LA28_0==Inch||LA28_0==LAdd||(LA28_0 >= LRemove && LA28_0 <= LShape)||(LA28_0 >= Line && LA28_0 <= Mm)||(LA28_0 >= Move && LA28_0 <= MoveBy)||(LA28_0 >= NoFill && LA28_0 <= Number)||(LA28_0 >= OBracket && LA28_0 <= OParen)||(LA28_0 >= PI_CONSTANT && LA28_0 <= Println)||(LA28_0 >= Random && LA28_0 <= Rect)||(LA28_0 >= Rotate && LA28_0 <= Round)||LA28_0==Scale||(LA28_0 >= SetCorner && LA28_0 <= Slider)||(LA28_0 >= Sq && LA28_0 <= Subtract)||(LA28_0 >= Tan && LA28_0 <= TemplateCollection)||(LA28_0 >= Union && LA28_0 <= Weight)||LA28_0==Xor) ) {
+					if ( (LA28_0==ATan||LA28_0==AddDesign||(LA28_0 >= Arc && LA28_0 <= Assert)||LA28_0==Bool||LA28_0==COLOR_CONSTANT||(LA28_0 >= Clip && LA28_0 <= Cm)||(LA28_0 >= Copy && LA28_0 <= Curve)||LA28_0==Difference||LA28_0==Ellipse||(LA28_0 >= Excl && LA28_0 <= Expand)||(LA28_0 >= Fill && LA28_0 <= FollowCurve)||(LA28_0 >= Gaussian && LA28_0 <= Hide)||LA28_0==Identifier||LA28_0==Inch||LA28_0==LAdd||(LA28_0 >= LRemove && LA28_0 <= LShape)||(LA28_0 >= Line && LA28_0 <= Mm)||(LA28_0 >= Move && LA28_0 <= MoveBy)||(LA28_0 >= NoFill && LA28_0 <= Number)||(LA28_0 >= OBracket && LA28_0 <= OParen)||(LA28_0 >= PI_CONSTANT && LA28_0 <= Println)||(LA28_0 >= Random && LA28_0 <= Rect)||(LA28_0 >= Rotate && LA28_0 <= Round)||LA28_0==Scale||(LA28_0 >= SetCorner && LA28_0 <= Slider)||(LA28_0 >= Sq && LA28_0 <= Subtract)||(LA28_0 >= Tan && LA28_0 <= TemplateCollection)||(LA28_0 >= Union && LA28_0 <= Weight)||LA28_0==Xor) ) {
 						alt28=1;
 					}
 					switch (alt28) {
@@ -3778,7 +3781,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:194:16: ( exprList )?
 					int alt29=2;
 					int LA29_0 = input.LA(1);
-					if ( (LA29_0==ATan||LA29_0==AddDesign||(LA29_0 >= Arc && LA29_0 <= Assert)||LA29_0==Bool||LA29_0==COLOR_CONSTANT||(LA29_0 >= Clip && LA29_0 <= Cm)||(LA29_0 >= Copy && LA29_0 <= Curve)||LA29_0==Difference||LA29_0==Ellipse||(LA29_0 >= Excl && LA29_0 <= Expand)||(LA29_0 >= Fill && LA29_0 <= Flatten)||(LA29_0 >= Gaussian && LA29_0 <= Hide)||LA29_0==Identifier||LA29_0==Inch||LA29_0==LAdd||(LA29_0 >= LRemove && LA29_0 <= LShape)||(LA29_0 >= Line && LA29_0 <= Mm)||(LA29_0 >= Move && LA29_0 <= MoveBy)||(LA29_0 >= NoFill && LA29_0 <= Number)||(LA29_0 >= OBracket && LA29_0 <= OParen)||(LA29_0 >= PI_CONSTANT && LA29_0 <= Println)||(LA29_0 >= Random && LA29_0 <= Rect)||(LA29_0 >= Rotate && LA29_0 <= Round)||LA29_0==Scale||(LA29_0 >= SetCorner && LA29_0 <= Slider)||(LA29_0 >= Sq && LA29_0 <= Subtract)||(LA29_0 >= Tan && LA29_0 <= TemplateCollection)||(LA29_0 >= Union && LA29_0 <= Weight)||LA29_0==Xor) ) {
+					if ( (LA29_0==ATan||LA29_0==AddDesign||(LA29_0 >= Arc && LA29_0 <= Assert)||LA29_0==Bool||LA29_0==COLOR_CONSTANT||(LA29_0 >= Clip && LA29_0 <= Cm)||(LA29_0 >= Copy && LA29_0 <= Curve)||LA29_0==Difference||LA29_0==Ellipse||(LA29_0 >= Excl && LA29_0 <= Expand)||(LA29_0 >= Fill && LA29_0 <= FollowCurve)||(LA29_0 >= Gaussian && LA29_0 <= Hide)||LA29_0==Identifier||LA29_0==Inch||LA29_0==LAdd||(LA29_0 >= LRemove && LA29_0 <= LShape)||(LA29_0 >= Line && LA29_0 <= Mm)||(LA29_0 >= Move && LA29_0 <= MoveBy)||(LA29_0 >= NoFill && LA29_0 <= Number)||(LA29_0 >= OBracket && LA29_0 <= OParen)||(LA29_0 >= PI_CONSTANT && LA29_0 <= Println)||(LA29_0 >= Random && LA29_0 <= Rect)||(LA29_0 >= Rotate && LA29_0 <= Round)||LA29_0==Scale||(LA29_0 >= SetCorner && LA29_0 <= Slider)||(LA29_0 >= Sq && LA29_0 <= Subtract)||(LA29_0 >= Tan && LA29_0 <= TemplateCollection)||(LA29_0 >= Union && LA29_0 <= Weight)||LA29_0==Xor) ) {
 						alt29=1;
 					}
 					switch (alt29) {
@@ -3936,7 +3939,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:197:16: ( exprList )?
 					int alt30=2;
 					int LA30_0 = input.LA(1);
-					if ( (LA30_0==ATan||LA30_0==AddDesign||(LA30_0 >= Arc && LA30_0 <= Assert)||LA30_0==Bool||LA30_0==COLOR_CONSTANT||(LA30_0 >= Clip && LA30_0 <= Cm)||(LA30_0 >= Copy && LA30_0 <= Curve)||LA30_0==Difference||LA30_0==Ellipse||(LA30_0 >= Excl && LA30_0 <= Expand)||(LA30_0 >= Fill && LA30_0 <= Flatten)||(LA30_0 >= Gaussian && LA30_0 <= Hide)||LA30_0==Identifier||LA30_0==Inch||LA30_0==LAdd||(LA30_0 >= LRemove && LA30_0 <= LShape)||(LA30_0 >= Line && LA30_0 <= Mm)||(LA30_0 >= Move && LA30_0 <= MoveBy)||(LA30_0 >= NoFill && LA30_0 <= Number)||(LA30_0 >= OBracket && LA30_0 <= OParen)||(LA30_0 >= PI_CONSTANT && LA30_0 <= Println)||(LA30_0 >= Random && LA30_0 <= Rect)||(LA30_0 >= Rotate && LA30_0 <= Round)||LA30_0==Scale||(LA30_0 >= SetCorner && LA30_0 <= Slider)||(LA30_0 >= Sq && LA30_0 <= Subtract)||(LA30_0 >= Tan && LA30_0 <= TemplateCollection)||(LA30_0 >= Union && LA30_0 <= Weight)||LA30_0==Xor) ) {
+					if ( (LA30_0==ATan||LA30_0==AddDesign||(LA30_0 >= Arc && LA30_0 <= Assert)||LA30_0==Bool||LA30_0==COLOR_CONSTANT||(LA30_0 >= Clip && LA30_0 <= Cm)||(LA30_0 >= Copy && LA30_0 <= Curve)||LA30_0==Difference||LA30_0==Ellipse||(LA30_0 >= Excl && LA30_0 <= Expand)||(LA30_0 >= Fill && LA30_0 <= FollowCurve)||(LA30_0 >= Gaussian && LA30_0 <= Hide)||LA30_0==Identifier||LA30_0==Inch||LA30_0==LAdd||(LA30_0 >= LRemove && LA30_0 <= LShape)||(LA30_0 >= Line && LA30_0 <= Mm)||(LA30_0 >= Move && LA30_0 <= MoveBy)||(LA30_0 >= NoFill && LA30_0 <= Number)||(LA30_0 >= OBracket && LA30_0 <= OParen)||(LA30_0 >= PI_CONSTANT && LA30_0 <= Println)||(LA30_0 >= Random && LA30_0 <= Rect)||(LA30_0 >= Rotate && LA30_0 <= Round)||LA30_0==Scale||(LA30_0 >= SetCorner && LA30_0 <= Slider)||(LA30_0 >= Sq && LA30_0 <= Subtract)||(LA30_0 >= Tan && LA30_0 <= TemplateCollection)||(LA30_0 >= Union && LA30_0 <= Weight)||LA30_0==Xor) ) {
 						alt30=1;
 					}
 					switch (alt30) {
@@ -4002,7 +4005,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:198:21: ( exprList )?
 					int alt31=2;
 					int LA31_0 = input.LA(1);
-					if ( (LA31_0==ATan||LA31_0==AddDesign||(LA31_0 >= Arc && LA31_0 <= Assert)||LA31_0==Bool||LA31_0==COLOR_CONSTANT||(LA31_0 >= Clip && LA31_0 <= Cm)||(LA31_0 >= Copy && LA31_0 <= Curve)||LA31_0==Difference||LA31_0==Ellipse||(LA31_0 >= Excl && LA31_0 <= Expand)||(LA31_0 >= Fill && LA31_0 <= Flatten)||(LA31_0 >= Gaussian && LA31_0 <= Hide)||LA31_0==Identifier||LA31_0==Inch||LA31_0==LAdd||(LA31_0 >= LRemove && LA31_0 <= LShape)||(LA31_0 >= Line && LA31_0 <= Mm)||(LA31_0 >= Move && LA31_0 <= MoveBy)||(LA31_0 >= NoFill && LA31_0 <= Number)||(LA31_0 >= OBracket && LA31_0 <= OParen)||(LA31_0 >= PI_CONSTANT && LA31_0 <= Println)||(LA31_0 >= Random && LA31_0 <= Rect)||(LA31_0 >= Rotate && LA31_0 <= Round)||LA31_0==Scale||(LA31_0 >= SetCorner && LA31_0 <= Slider)||(LA31_0 >= Sq && LA31_0 <= Subtract)||(LA31_0 >= Tan && LA31_0 <= TemplateCollection)||(LA31_0 >= Union && LA31_0 <= Weight)||LA31_0==Xor) ) {
+					if ( (LA31_0==ATan||LA31_0==AddDesign||(LA31_0 >= Arc && LA31_0 <= Assert)||LA31_0==Bool||LA31_0==COLOR_CONSTANT||(LA31_0 >= Clip && LA31_0 <= Cm)||(LA31_0 >= Copy && LA31_0 <= Curve)||LA31_0==Difference||LA31_0==Ellipse||(LA31_0 >= Excl && LA31_0 <= Expand)||(LA31_0 >= Fill && LA31_0 <= FollowCurve)||(LA31_0 >= Gaussian && LA31_0 <= Hide)||LA31_0==Identifier||LA31_0==Inch||LA31_0==LAdd||(LA31_0 >= LRemove && LA31_0 <= LShape)||(LA31_0 >= Line && LA31_0 <= Mm)||(LA31_0 >= Move && LA31_0 <= MoveBy)||(LA31_0 >= NoFill && LA31_0 <= Number)||(LA31_0 >= OBracket && LA31_0 <= OParen)||(LA31_0 >= PI_CONSTANT && LA31_0 <= Println)||(LA31_0 >= Random && LA31_0 <= Rect)||(LA31_0 >= Rotate && LA31_0 <= Round)||LA31_0==Scale||(LA31_0 >= SetCorner && LA31_0 <= Slider)||(LA31_0 >= Sq && LA31_0 <= Subtract)||(LA31_0 >= Tan && LA31_0 <= TemplateCollection)||(LA31_0 >= Union && LA31_0 <= Weight)||LA31_0==Xor) ) {
 						alt31=1;
 					}
 					switch (alt31) {
@@ -4068,7 +4071,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:199:15: ( exprList )?
 					int alt32=2;
 					int LA32_0 = input.LA(1);
-					if ( (LA32_0==ATan||LA32_0==AddDesign||(LA32_0 >= Arc && LA32_0 <= Assert)||LA32_0==Bool||LA32_0==COLOR_CONSTANT||(LA32_0 >= Clip && LA32_0 <= Cm)||(LA32_0 >= Copy && LA32_0 <= Curve)||LA32_0==Difference||LA32_0==Ellipse||(LA32_0 >= Excl && LA32_0 <= Expand)||(LA32_0 >= Fill && LA32_0 <= Flatten)||(LA32_0 >= Gaussian && LA32_0 <= Hide)||LA32_0==Identifier||LA32_0==Inch||LA32_0==LAdd||(LA32_0 >= LRemove && LA32_0 <= LShape)||(LA32_0 >= Line && LA32_0 <= Mm)||(LA32_0 >= Move && LA32_0 <= MoveBy)||(LA32_0 >= NoFill && LA32_0 <= Number)||(LA32_0 >= OBracket && LA32_0 <= OParen)||(LA32_0 >= PI_CONSTANT && LA32_0 <= Println)||(LA32_0 >= Random && LA32_0 <= Rect)||(LA32_0 >= Rotate && LA32_0 <= Round)||LA32_0==Scale||(LA32_0 >= SetCorner && LA32_0 <= Slider)||(LA32_0 >= Sq && LA32_0 <= Subtract)||(LA32_0 >= Tan && LA32_0 <= TemplateCollection)||(LA32_0 >= Union && LA32_0 <= Weight)||LA32_0==Xor) ) {
+					if ( (LA32_0==ATan||LA32_0==AddDesign||(LA32_0 >= Arc && LA32_0 <= Assert)||LA32_0==Bool||LA32_0==COLOR_CONSTANT||(LA32_0 >= Clip && LA32_0 <= Cm)||(LA32_0 >= Copy && LA32_0 <= Curve)||LA32_0==Difference||LA32_0==Ellipse||(LA32_0 >= Excl && LA32_0 <= Expand)||(LA32_0 >= Fill && LA32_0 <= FollowCurve)||(LA32_0 >= Gaussian && LA32_0 <= Hide)||LA32_0==Identifier||LA32_0==Inch||LA32_0==LAdd||(LA32_0 >= LRemove && LA32_0 <= LShape)||(LA32_0 >= Line && LA32_0 <= Mm)||(LA32_0 >= Move && LA32_0 <= MoveBy)||(LA32_0 >= NoFill && LA32_0 <= Number)||(LA32_0 >= OBracket && LA32_0 <= OParen)||(LA32_0 >= PI_CONSTANT && LA32_0 <= Println)||(LA32_0 >= Random && LA32_0 <= Rect)||(LA32_0 >= Rotate && LA32_0 <= Round)||LA32_0==Scale||(LA32_0 >= SetCorner && LA32_0 <= Slider)||(LA32_0 >= Sq && LA32_0 <= Subtract)||(LA32_0 >= Tan && LA32_0 <= TemplateCollection)||(LA32_0 >= Union && LA32_0 <= Weight)||LA32_0==Xor) ) {
 						alt32=1;
 					}
 					switch (alt32) {
@@ -4134,7 +4137,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:200:14: ( exprList )?
 					int alt33=2;
 					int LA33_0 = input.LA(1);
-					if ( (LA33_0==ATan||LA33_0==AddDesign||(LA33_0 >= Arc && LA33_0 <= Assert)||LA33_0==Bool||LA33_0==COLOR_CONSTANT||(LA33_0 >= Clip && LA33_0 <= Cm)||(LA33_0 >= Copy && LA33_0 <= Curve)||LA33_0==Difference||LA33_0==Ellipse||(LA33_0 >= Excl && LA33_0 <= Expand)||(LA33_0 >= Fill && LA33_0 <= Flatten)||(LA33_0 >= Gaussian && LA33_0 <= Hide)||LA33_0==Identifier||LA33_0==Inch||LA33_0==LAdd||(LA33_0 >= LRemove && LA33_0 <= LShape)||(LA33_0 >= Line && LA33_0 <= Mm)||(LA33_0 >= Move && LA33_0 <= MoveBy)||(LA33_0 >= NoFill && LA33_0 <= Number)||(LA33_0 >= OBracket && LA33_0 <= OParen)||(LA33_0 >= PI_CONSTANT && LA33_0 <= Println)||(LA33_0 >= Random && LA33_0 <= Rect)||(LA33_0 >= Rotate && LA33_0 <= Round)||LA33_0==Scale||(LA33_0 >= SetCorner && LA33_0 <= Slider)||(LA33_0 >= Sq && LA33_0 <= Subtract)||(LA33_0 >= Tan && LA33_0 <= TemplateCollection)||(LA33_0 >= Union && LA33_0 <= Weight)||LA33_0==Xor) ) {
+					if ( (LA33_0==ATan||LA33_0==AddDesign||(LA33_0 >= Arc && LA33_0 <= Assert)||LA33_0==Bool||LA33_0==COLOR_CONSTANT||(LA33_0 >= Clip && LA33_0 <= Cm)||(LA33_0 >= Copy && LA33_0 <= Curve)||LA33_0==Difference||LA33_0==Ellipse||(LA33_0 >= Excl && LA33_0 <= Expand)||(LA33_0 >= Fill && LA33_0 <= FollowCurve)||(LA33_0 >= Gaussian && LA33_0 <= Hide)||LA33_0==Identifier||LA33_0==Inch||LA33_0==LAdd||(LA33_0 >= LRemove && LA33_0 <= LShape)||(LA33_0 >= Line && LA33_0 <= Mm)||(LA33_0 >= Move && LA33_0 <= MoveBy)||(LA33_0 >= NoFill && LA33_0 <= Number)||(LA33_0 >= OBracket && LA33_0 <= OParen)||(LA33_0 >= PI_CONSTANT && LA33_0 <= Println)||(LA33_0 >= Random && LA33_0 <= Rect)||(LA33_0 >= Rotate && LA33_0 <= Round)||LA33_0==Scale||(LA33_0 >= SetCorner && LA33_0 <= Slider)||(LA33_0 >= Sq && LA33_0 <= Subtract)||(LA33_0 >= Tan && LA33_0 <= TemplateCollection)||(LA33_0 >= Union && LA33_0 <= Weight)||LA33_0==Xor) ) {
 						alt33=1;
 					}
 					switch (alt33) {
@@ -4263,7 +4266,7 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "patternCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:204:4: patternCall : ( Grid '(' ( exprList )? ')' -> ^( FUNC_CALL Grid ( exprList )? ) | Wave '(' ( exprList )? ')' -> ^( FUNC_CALL Wave ( exprList )? ) | Arc '(' ( exprList )? ')' -> ^( FUNC_CALL Arc ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:204:4: patternCall : ( Grid '(' ( exprList )? ')' -> ^( FUNC_CALL Grid ( exprList )? ) | Wave '(' ( exprList )? ')' -> ^( FUNC_CALL Wave ( exprList )? ) | Arc '(' ( exprList )? ')' -> ^( FUNC_CALL Arc ( exprList )? ) | FollowCurve '(' ( exprList )? ')' -> ^( FUNC_CALL FollowCurve ( exprList )? ) );
 	public final PyEsqueParser.patternCall_return patternCall() throws RecognitionException {
 		PyEsqueParser.patternCall_return retval = new PyEsqueParser.patternCall_return();
 		retval.start = input.LT(1);
@@ -4279,9 +4282,13 @@ public class PyEsqueParser extends Parser {
 		Token Arc196=null;
 		Token char_literal197=null;
 		Token char_literal199=null;
+		Token FollowCurve200=null;
+		Token char_literal201=null;
+		Token char_literal203=null;
 		ParserRuleReturnScope exprList190 =null;
 		ParserRuleReturnScope exprList194 =null;
 		ParserRuleReturnScope exprList198 =null;
+		ParserRuleReturnScope exprList202 =null;
 
 		Object Grid188_tree=null;
 		Object char_literal189_tree=null;
@@ -4292,6 +4299,10 @@ public class PyEsqueParser extends Parser {
 		Object Arc196_tree=null;
 		Object char_literal197_tree=null;
 		Object char_literal199_tree=null;
+		Object FollowCurve200_tree=null;
+		Object char_literal201_tree=null;
+		Object char_literal203_tree=null;
+		RewriteRuleTokenStream stream_FollowCurve=new RewriteRuleTokenStream(adaptor,"token FollowCurve");
 		RewriteRuleTokenStream stream_OParen=new RewriteRuleTokenStream(adaptor,"token OParen");
 		RewriteRuleTokenStream stream_Arc=new RewriteRuleTokenStream(adaptor,"token Arc");
 		RewriteRuleTokenStream stream_CParen=new RewriteRuleTokenStream(adaptor,"token CParen");
@@ -4300,30 +4311,35 @@ public class PyEsqueParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:205:4: ( Grid '(' ( exprList )? ')' -> ^( FUNC_CALL Grid ( exprList )? ) | Wave '(' ( exprList )? ')' -> ^( FUNC_CALL Wave ( exprList )? ) | Arc '(' ( exprList )? ')' -> ^( FUNC_CALL Arc ( exprList )? ) )
-			int alt38=3;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:205:4: ( Grid '(' ( exprList )? ')' -> ^( FUNC_CALL Grid ( exprList )? ) | Wave '(' ( exprList )? ')' -> ^( FUNC_CALL Wave ( exprList )? ) | Arc '(' ( exprList )? ')' -> ^( FUNC_CALL Arc ( exprList )? ) | FollowCurve '(' ( exprList )? ')' -> ^( FUNC_CALL FollowCurve ( exprList )? ) )
+			int alt39=4;
 			switch ( input.LA(1) ) {
 			case Grid:
 				{
-				alt38=1;
+				alt39=1;
 				}
 				break;
 			case Wave:
 				{
-				alt38=2;
+				alt39=2;
 				}
 				break;
 			case Arc:
 				{
-				alt38=3;
+				alt39=3;
+				}
+				break;
+			case FollowCurve:
+				{
+				alt39=4;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 38, 0, input);
+					new NoViableAltException("", 39, 0, input);
 				throw nvae;
 			}
-			switch (alt38) {
+			switch (alt39) {
 				case 1 :
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:205:6: Grid '(' ( exprList )? ')'
 					{
@@ -4336,7 +4352,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:205:15: ( exprList )?
 					int alt35=2;
 					int LA35_0 = input.LA(1);
-					if ( (LA35_0==ATan||LA35_0==AddDesign||(LA35_0 >= Arc && LA35_0 <= Assert)||LA35_0==Bool||LA35_0==COLOR_CONSTANT||(LA35_0 >= Clip && LA35_0 <= Cm)||(LA35_0 >= Copy && LA35_0 <= Curve)||LA35_0==Difference||LA35_0==Ellipse||(LA35_0 >= Excl && LA35_0 <= Expand)||(LA35_0 >= Fill && LA35_0 <= Flatten)||(LA35_0 >= Gaussian && LA35_0 <= Hide)||LA35_0==Identifier||LA35_0==Inch||LA35_0==LAdd||(LA35_0 >= LRemove && LA35_0 <= LShape)||(LA35_0 >= Line && LA35_0 <= Mm)||(LA35_0 >= Move && LA35_0 <= MoveBy)||(LA35_0 >= NoFill && LA35_0 <= Number)||(LA35_0 >= OBracket && LA35_0 <= OParen)||(LA35_0 >= PI_CONSTANT && LA35_0 <= Println)||(LA35_0 >= Random && LA35_0 <= Rect)||(LA35_0 >= Rotate && LA35_0 <= Round)||LA35_0==Scale||(LA35_0 >= SetCorner && LA35_0 <= Slider)||(LA35_0 >= Sq && LA35_0 <= Subtract)||(LA35_0 >= Tan && LA35_0 <= TemplateCollection)||(LA35_0 >= Union && LA35_0 <= Weight)||LA35_0==Xor) ) {
+					if ( (LA35_0==ATan||LA35_0==AddDesign||(LA35_0 >= Arc && LA35_0 <= Assert)||LA35_0==Bool||LA35_0==COLOR_CONSTANT||(LA35_0 >= Clip && LA35_0 <= Cm)||(LA35_0 >= Copy && LA35_0 <= Curve)||LA35_0==Difference||LA35_0==Ellipse||(LA35_0 >= Excl && LA35_0 <= Expand)||(LA35_0 >= Fill && LA35_0 <= FollowCurve)||(LA35_0 >= Gaussian && LA35_0 <= Hide)||LA35_0==Identifier||LA35_0==Inch||LA35_0==LAdd||(LA35_0 >= LRemove && LA35_0 <= LShape)||(LA35_0 >= Line && LA35_0 <= Mm)||(LA35_0 >= Move && LA35_0 <= MoveBy)||(LA35_0 >= NoFill && LA35_0 <= Number)||(LA35_0 >= OBracket && LA35_0 <= OParen)||(LA35_0 >= PI_CONSTANT && LA35_0 <= Println)||(LA35_0 >= Random && LA35_0 <= Rect)||(LA35_0 >= Rotate && LA35_0 <= Round)||LA35_0==Scale||(LA35_0 >= SetCorner && LA35_0 <= Slider)||(LA35_0 >= Sq && LA35_0 <= Subtract)||(LA35_0 >= Tan && LA35_0 <= TemplateCollection)||(LA35_0 >= Union && LA35_0 <= Weight)||LA35_0==Xor) ) {
 						alt35=1;
 					}
 					switch (alt35) {
@@ -4402,7 +4418,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:206:15: ( exprList )?
 					int alt36=2;
 					int LA36_0 = input.LA(1);
-					if ( (LA36_0==ATan||LA36_0==AddDesign||(LA36_0 >= Arc && LA36_0 <= Assert)||LA36_0==Bool||LA36_0==COLOR_CONSTANT||(LA36_0 >= Clip && LA36_0 <= Cm)||(LA36_0 >= Copy && LA36_0 <= Curve)||LA36_0==Difference||LA36_0==Ellipse||(LA36_0 >= Excl && LA36_0 <= Expand)||(LA36_0 >= Fill && LA36_0 <= Flatten)||(LA36_0 >= Gaussian && LA36_0 <= Hide)||LA36_0==Identifier||LA36_0==Inch||LA36_0==LAdd||(LA36_0 >= LRemove && LA36_0 <= LShape)||(LA36_0 >= Line && LA36_0 <= Mm)||(LA36_0 >= Move && LA36_0 <= MoveBy)||(LA36_0 >= NoFill && LA36_0 <= Number)||(LA36_0 >= OBracket && LA36_0 <= OParen)||(LA36_0 >= PI_CONSTANT && LA36_0 <= Println)||(LA36_0 >= Random && LA36_0 <= Rect)||(LA36_0 >= Rotate && LA36_0 <= Round)||LA36_0==Scale||(LA36_0 >= SetCorner && LA36_0 <= Slider)||(LA36_0 >= Sq && LA36_0 <= Subtract)||(LA36_0 >= Tan && LA36_0 <= TemplateCollection)||(LA36_0 >= Union && LA36_0 <= Weight)||LA36_0==Xor) ) {
+					if ( (LA36_0==ATan||LA36_0==AddDesign||(LA36_0 >= Arc && LA36_0 <= Assert)||LA36_0==Bool||LA36_0==COLOR_CONSTANT||(LA36_0 >= Clip && LA36_0 <= Cm)||(LA36_0 >= Copy && LA36_0 <= Curve)||LA36_0==Difference||LA36_0==Ellipse||(LA36_0 >= Excl && LA36_0 <= Expand)||(LA36_0 >= Fill && LA36_0 <= FollowCurve)||(LA36_0 >= Gaussian && LA36_0 <= Hide)||LA36_0==Identifier||LA36_0==Inch||LA36_0==LAdd||(LA36_0 >= LRemove && LA36_0 <= LShape)||(LA36_0 >= Line && LA36_0 <= Mm)||(LA36_0 >= Move && LA36_0 <= MoveBy)||(LA36_0 >= NoFill && LA36_0 <= Number)||(LA36_0 >= OBracket && LA36_0 <= OParen)||(LA36_0 >= PI_CONSTANT && LA36_0 <= Println)||(LA36_0 >= Random && LA36_0 <= Rect)||(LA36_0 >= Rotate && LA36_0 <= Round)||LA36_0==Scale||(LA36_0 >= SetCorner && LA36_0 <= Slider)||(LA36_0 >= Sq && LA36_0 <= Subtract)||(LA36_0 >= Tan && LA36_0 <= TemplateCollection)||(LA36_0 >= Union && LA36_0 <= Weight)||LA36_0==Xor) ) {
 						alt36=1;
 					}
 					switch (alt36) {
@@ -4468,7 +4484,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:207:14: ( exprList )?
 					int alt37=2;
 					int LA37_0 = input.LA(1);
-					if ( (LA37_0==ATan||LA37_0==AddDesign||(LA37_0 >= Arc && LA37_0 <= Assert)||LA37_0==Bool||LA37_0==COLOR_CONSTANT||(LA37_0 >= Clip && LA37_0 <= Cm)||(LA37_0 >= Copy && LA37_0 <= Curve)||LA37_0==Difference||LA37_0==Ellipse||(LA37_0 >= Excl && LA37_0 <= Expand)||(LA37_0 >= Fill && LA37_0 <= Flatten)||(LA37_0 >= Gaussian && LA37_0 <= Hide)||LA37_0==Identifier||LA37_0==Inch||LA37_0==LAdd||(LA37_0 >= LRemove && LA37_0 <= LShape)||(LA37_0 >= Line && LA37_0 <= Mm)||(LA37_0 >= Move && LA37_0 <= MoveBy)||(LA37_0 >= NoFill && LA37_0 <= Number)||(LA37_0 >= OBracket && LA37_0 <= OParen)||(LA37_0 >= PI_CONSTANT && LA37_0 <= Println)||(LA37_0 >= Random && LA37_0 <= Rect)||(LA37_0 >= Rotate && LA37_0 <= Round)||LA37_0==Scale||(LA37_0 >= SetCorner && LA37_0 <= Slider)||(LA37_0 >= Sq && LA37_0 <= Subtract)||(LA37_0 >= Tan && LA37_0 <= TemplateCollection)||(LA37_0 >= Union && LA37_0 <= Weight)||LA37_0==Xor) ) {
+					if ( (LA37_0==ATan||LA37_0==AddDesign||(LA37_0 >= Arc && LA37_0 <= Assert)||LA37_0==Bool||LA37_0==COLOR_CONSTANT||(LA37_0 >= Clip && LA37_0 <= Cm)||(LA37_0 >= Copy && LA37_0 <= Curve)||LA37_0==Difference||LA37_0==Ellipse||(LA37_0 >= Excl && LA37_0 <= Expand)||(LA37_0 >= Fill && LA37_0 <= FollowCurve)||(LA37_0 >= Gaussian && LA37_0 <= Hide)||LA37_0==Identifier||LA37_0==Inch||LA37_0==LAdd||(LA37_0 >= LRemove && LA37_0 <= LShape)||(LA37_0 >= Line && LA37_0 <= Mm)||(LA37_0 >= Move && LA37_0 <= MoveBy)||(LA37_0 >= NoFill && LA37_0 <= Number)||(LA37_0 >= OBracket && LA37_0 <= OParen)||(LA37_0 >= PI_CONSTANT && LA37_0 <= Println)||(LA37_0 >= Random && LA37_0 <= Rect)||(LA37_0 >= Rotate && LA37_0 <= Round)||LA37_0==Scale||(LA37_0 >= SetCorner && LA37_0 <= Slider)||(LA37_0 >= Sq && LA37_0 <= Subtract)||(LA37_0 >= Tan && LA37_0 <= TemplateCollection)||(LA37_0 >= Union && LA37_0 <= Weight)||LA37_0==Xor) ) {
 						alt37=1;
 					}
 					switch (alt37) {
@@ -4522,6 +4538,72 @@ public class PyEsqueParser extends Parser {
 
 					}
 					break;
+				case 4 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:208:6: FollowCurve '(' ( exprList )? ')'
+					{
+					FollowCurve200=(Token)match(input,FollowCurve,FOLLOW_FollowCurve_in_patternCall1548);  
+					stream_FollowCurve.add(FollowCurve200);
+
+					char_literal201=(Token)match(input,OParen,FOLLOW_OParen_in_patternCall1550);  
+					stream_OParen.add(char_literal201);
+
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:208:21: ( exprList )?
+					int alt38=2;
+					int LA38_0 = input.LA(1);
+					if ( (LA38_0==ATan||LA38_0==AddDesign||(LA38_0 >= Arc && LA38_0 <= Assert)||LA38_0==Bool||LA38_0==COLOR_CONSTANT||(LA38_0 >= Clip && LA38_0 <= Cm)||(LA38_0 >= Copy && LA38_0 <= Curve)||LA38_0==Difference||LA38_0==Ellipse||(LA38_0 >= Excl && LA38_0 <= Expand)||(LA38_0 >= Fill && LA38_0 <= FollowCurve)||(LA38_0 >= Gaussian && LA38_0 <= Hide)||LA38_0==Identifier||LA38_0==Inch||LA38_0==LAdd||(LA38_0 >= LRemove && LA38_0 <= LShape)||(LA38_0 >= Line && LA38_0 <= Mm)||(LA38_0 >= Move && LA38_0 <= MoveBy)||(LA38_0 >= NoFill && LA38_0 <= Number)||(LA38_0 >= OBracket && LA38_0 <= OParen)||(LA38_0 >= PI_CONSTANT && LA38_0 <= Println)||(LA38_0 >= Random && LA38_0 <= Rect)||(LA38_0 >= Rotate && LA38_0 <= Round)||LA38_0==Scale||(LA38_0 >= SetCorner && LA38_0 <= Slider)||(LA38_0 >= Sq && LA38_0 <= Subtract)||(LA38_0 >= Tan && LA38_0 <= TemplateCollection)||(LA38_0 >= Union && LA38_0 <= Weight)||LA38_0==Xor) ) {
+						alt38=1;
+					}
+					switch (alt38) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:208:21: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_patternCall1551);
+							exprList202=exprList();
+							state._fsp--;
+
+							stream_exprList.add(exprList202.getTree());
+							}
+							break;
+
+					}
+
+					char_literal203=(Token)match(input,CParen,FOLLOW_CParen_in_patternCall1554);  
+					stream_CParen.add(char_literal203);
+
+					// AST REWRITE
+					// elements: exprList, FollowCurve
+					// token labels: 
+					// rule labels: retval
+					// token list labels: 
+					// rule list labels: 
+					// wildcard labels: 
+					retval.tree = root_0;
+					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+					root_0 = (Object)adaptor.nil();
+					// 208:35: -> ^( FUNC_CALL FollowCurve ( exprList )? )
+					{
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:208:38: ^( FUNC_CALL FollowCurve ( exprList )? )
+						{
+						Object root_1 = (Object)adaptor.nil();
+						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
+						adaptor.addChild(root_1, stream_FollowCurve.nextNode());
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:208:62: ( exprList )?
+						if ( stream_exprList.hasNext() ) {
+							adaptor.addChild(root_1, stream_exprList.nextTree());
+						}
+						stream_exprList.reset();
+
+						adaptor.addChild(root_0, root_1);
+						}
+
+					}
+
+
+					retval.tree = root_0;
+
+					}
+					break;
 
 			}
 			retval.stop = input.LT(-1);
@@ -4551,56 +4633,55 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "getCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:210:4: getCall : ( GetWidth '(' expression ')' -> ^( FUNC_CALL GetWidth expression ) | GetHeight '(' expression ')' -> ^( FUNC_CALL GetHeight expression ) | GetX '(' expression ')' -> ^( FUNC_CALL GetX expression ) | GetY '(' expression ')' -> ^( FUNC_CALL GetY expression ) | GetOrigin '(' expression ')' -> ^( FUNC_CALL GetOrigin expression ) | GetRotation '(' expression ')' -> ^( FUNC_CALL GetRotation expression ) | GetFill '(' expression ')' -> ^( FUNC_CALL GetFill expression ) | GetStroke '(' expression ')' -> ^( FUNC_CALL GetStroke expression ) | GetStart '(' expression ')' -> ^( FUNC_CALL GetStart expression ) | GetEnd '(' expression ')' -> ^( FUNC_CALL GetEnd expression ) | GetDistance '(' ( exprList )? ')' -> ^( FUNC_CALL GetDistance ( exprList )? ) | GetIntersect '(' ( exprList )? ')' -> ^( FUNC_CALL GetIntersect ( exprList )? ) | GetAngle '(' ( exprList )? ')' -> ^( FUNC_CALL GetAngle ( exprList )? ) | GetRadius '(' ( exprList )? ')' -> ^( FUNC_CALL GetRadius ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:211:4: getCall : ( GetWidth '(' expression ')' -> ^( FUNC_CALL GetWidth expression ) | GetHeight '(' expression ')' -> ^( FUNC_CALL GetHeight expression ) | GetX '(' expression ')' -> ^( FUNC_CALL GetX expression ) | GetY '(' expression ')' -> ^( FUNC_CALL GetY expression ) | GetOrigin '(' expression ')' -> ^( FUNC_CALL GetOrigin expression ) | GetRotation '(' expression ')' -> ^( FUNC_CALL GetRotation expression ) | GetFill '(' expression ')' -> ^( FUNC_CALL GetFill expression ) | GetStroke '(' expression ')' -> ^( FUNC_CALL GetStroke expression ) | GetStart '(' expression ')' -> ^( FUNC_CALL GetStart expression ) | GetEnd '(' expression ')' -> ^( FUNC_CALL GetEnd expression ) | GetDistance '(' ( exprList )? ')' -> ^( FUNC_CALL GetDistance ( exprList )? ) | GetIntersect '(' ( exprList )? ')' -> ^( FUNC_CALL GetIntersect ( exprList )? ) | GetAngle '(' ( exprList )? ')' -> ^( FUNC_CALL GetAngle ( exprList )? ) | GetRadius '(' ( exprList )? ')' -> ^( FUNC_CALL GetRadius ( exprList )? ) );
 	public final PyEsqueParser.getCall_return getCall() throws RecognitionException {
 		PyEsqueParser.getCall_return retval = new PyEsqueParser.getCall_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token GetWidth200=null;
-		Token char_literal201=null;
-		Token char_literal203=null;
-		Token GetHeight204=null;
+		Token GetWidth204=null;
 		Token char_literal205=null;
 		Token char_literal207=null;
-		Token GetX208=null;
+		Token GetHeight208=null;
 		Token char_literal209=null;
 		Token char_literal211=null;
-		Token GetY212=null;
+		Token GetX212=null;
 		Token char_literal213=null;
 		Token char_literal215=null;
-		Token GetOrigin216=null;
+		Token GetY216=null;
 		Token char_literal217=null;
 		Token char_literal219=null;
-		Token GetRotation220=null;
+		Token GetOrigin220=null;
 		Token char_literal221=null;
 		Token char_literal223=null;
-		Token GetFill224=null;
+		Token GetRotation224=null;
 		Token char_literal225=null;
 		Token char_literal227=null;
-		Token GetStroke228=null;
+		Token GetFill228=null;
 		Token char_literal229=null;
 		Token char_literal231=null;
-		Token GetStart232=null;
+		Token GetStroke232=null;
 		Token char_literal233=null;
 		Token char_literal235=null;
-		Token GetEnd236=null;
+		Token GetStart236=null;
 		Token char_literal237=null;
 		Token char_literal239=null;
-		Token GetDistance240=null;
+		Token GetEnd240=null;
 		Token char_literal241=null;
 		Token char_literal243=null;
-		Token GetIntersect244=null;
+		Token GetDistance244=null;
 		Token char_literal245=null;
 		Token char_literal247=null;
-		Token GetAngle248=null;
+		Token GetIntersect248=null;
 		Token char_literal249=null;
 		Token char_literal251=null;
-		Token GetRadius252=null;
+		Token GetAngle252=null;
 		Token char_literal253=null;
 		Token char_literal255=null;
-		ParserRuleReturnScope expression202 =null;
+		Token GetRadius256=null;
+		Token char_literal257=null;
+		Token char_literal259=null;
 		ParserRuleReturnScope expression206 =null;
 		ParserRuleReturnScope expression210 =null;
 		ParserRuleReturnScope expression214 =null;
@@ -4610,53 +4691,54 @@ public class PyEsqueParser extends Parser {
 		ParserRuleReturnScope expression230 =null;
 		ParserRuleReturnScope expression234 =null;
 		ParserRuleReturnScope expression238 =null;
-		ParserRuleReturnScope exprList242 =null;
+		ParserRuleReturnScope expression242 =null;
 		ParserRuleReturnScope exprList246 =null;
 		ParserRuleReturnScope exprList250 =null;
 		ParserRuleReturnScope exprList254 =null;
+		ParserRuleReturnScope exprList258 =null;
 
-		Object GetWidth200_tree=null;
-		Object char_literal201_tree=null;
-		Object char_literal203_tree=null;
-		Object GetHeight204_tree=null;
+		Object GetWidth204_tree=null;
 		Object char_literal205_tree=null;
 		Object char_literal207_tree=null;
-		Object GetX208_tree=null;
+		Object GetHeight208_tree=null;
 		Object char_literal209_tree=null;
 		Object char_literal211_tree=null;
-		Object GetY212_tree=null;
+		Object GetX212_tree=null;
 		Object char_literal213_tree=null;
 		Object char_literal215_tree=null;
-		Object GetOrigin216_tree=null;
+		Object GetY216_tree=null;
 		Object char_literal217_tree=null;
 		Object char_literal219_tree=null;
-		Object GetRotation220_tree=null;
+		Object GetOrigin220_tree=null;
 		Object char_literal221_tree=null;
 		Object char_literal223_tree=null;
-		Object GetFill224_tree=null;
+		Object GetRotation224_tree=null;
 		Object char_literal225_tree=null;
 		Object char_literal227_tree=null;
-		Object GetStroke228_tree=null;
+		Object GetFill228_tree=null;
 		Object char_literal229_tree=null;
 		Object char_literal231_tree=null;
-		Object GetStart232_tree=null;
+		Object GetStroke232_tree=null;
 		Object char_literal233_tree=null;
 		Object char_literal235_tree=null;
-		Object GetEnd236_tree=null;
+		Object GetStart236_tree=null;
 		Object char_literal237_tree=null;
 		Object char_literal239_tree=null;
-		Object GetDistance240_tree=null;
+		Object GetEnd240_tree=null;
 		Object char_literal241_tree=null;
 		Object char_literal243_tree=null;
-		Object GetIntersect244_tree=null;
+		Object GetDistance244_tree=null;
 		Object char_literal245_tree=null;
 		Object char_literal247_tree=null;
-		Object GetAngle248_tree=null;
+		Object GetIntersect248_tree=null;
 		Object char_literal249_tree=null;
 		Object char_literal251_tree=null;
-		Object GetRadius252_tree=null;
+		Object GetAngle252_tree=null;
 		Object char_literal253_tree=null;
 		Object char_literal255_tree=null;
+		Object GetRadius256_tree=null;
+		Object char_literal257_tree=null;
+		Object char_literal259_tree=null;
 		RewriteRuleTokenStream stream_OParen=new RewriteRuleTokenStream(adaptor,"token OParen");
 		RewriteRuleTokenStream stream_CParen=new RewriteRuleTokenStream(adaptor,"token CParen");
 		RewriteRuleTokenStream stream_GetRadius=new RewriteRuleTokenStream(adaptor,"token GetRadius");
@@ -4677,104 +4759,104 @@ public class PyEsqueParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:211:3: ( GetWidth '(' expression ')' -> ^( FUNC_CALL GetWidth expression ) | GetHeight '(' expression ')' -> ^( FUNC_CALL GetHeight expression ) | GetX '(' expression ')' -> ^( FUNC_CALL GetX expression ) | GetY '(' expression ')' -> ^( FUNC_CALL GetY expression ) | GetOrigin '(' expression ')' -> ^( FUNC_CALL GetOrigin expression ) | GetRotation '(' expression ')' -> ^( FUNC_CALL GetRotation expression ) | GetFill '(' expression ')' -> ^( FUNC_CALL GetFill expression ) | GetStroke '(' expression ')' -> ^( FUNC_CALL GetStroke expression ) | GetStart '(' expression ')' -> ^( FUNC_CALL GetStart expression ) | GetEnd '(' expression ')' -> ^( FUNC_CALL GetEnd expression ) | GetDistance '(' ( exprList )? ')' -> ^( FUNC_CALL GetDistance ( exprList )? ) | GetIntersect '(' ( exprList )? ')' -> ^( FUNC_CALL GetIntersect ( exprList )? ) | GetAngle '(' ( exprList )? ')' -> ^( FUNC_CALL GetAngle ( exprList )? ) | GetRadius '(' ( exprList )? ')' -> ^( FUNC_CALL GetRadius ( exprList )? ) )
-			int alt43=14;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:212:3: ( GetWidth '(' expression ')' -> ^( FUNC_CALL GetWidth expression ) | GetHeight '(' expression ')' -> ^( FUNC_CALL GetHeight expression ) | GetX '(' expression ')' -> ^( FUNC_CALL GetX expression ) | GetY '(' expression ')' -> ^( FUNC_CALL GetY expression ) | GetOrigin '(' expression ')' -> ^( FUNC_CALL GetOrigin expression ) | GetRotation '(' expression ')' -> ^( FUNC_CALL GetRotation expression ) | GetFill '(' expression ')' -> ^( FUNC_CALL GetFill expression ) | GetStroke '(' expression ')' -> ^( FUNC_CALL GetStroke expression ) | GetStart '(' expression ')' -> ^( FUNC_CALL GetStart expression ) | GetEnd '(' expression ')' -> ^( FUNC_CALL GetEnd expression ) | GetDistance '(' ( exprList )? ')' -> ^( FUNC_CALL GetDistance ( exprList )? ) | GetIntersect '(' ( exprList )? ')' -> ^( FUNC_CALL GetIntersect ( exprList )? ) | GetAngle '(' ( exprList )? ')' -> ^( FUNC_CALL GetAngle ( exprList )? ) | GetRadius '(' ( exprList )? ')' -> ^( FUNC_CALL GetRadius ( exprList )? ) )
+			int alt44=14;
 			switch ( input.LA(1) ) {
 			case GetWidth:
 				{
-				alt43=1;
+				alt44=1;
 				}
 				break;
 			case GetHeight:
 				{
-				alt43=2;
+				alt44=2;
 				}
 				break;
 			case GetX:
 				{
-				alt43=3;
+				alt44=3;
 				}
 				break;
 			case GetY:
 				{
-				alt43=4;
+				alt44=4;
 				}
 				break;
 			case GetOrigin:
 				{
-				alt43=5;
+				alt44=5;
 				}
 				break;
 			case GetRotation:
 				{
-				alt43=6;
+				alt44=6;
 				}
 				break;
 			case GetFill:
 				{
-				alt43=7;
+				alt44=7;
 				}
 				break;
 			case GetStroke:
 				{
-				alt43=8;
+				alt44=8;
 				}
 				break;
 			case GetStart:
 				{
-				alt43=9;
+				alt44=9;
 				}
 				break;
 			case GetEnd:
 				{
-				alt43=10;
+				alt44=10;
 				}
 				break;
 			case GetDistance:
 				{
-				alt43=11;
+				alt44=11;
 				}
 				break;
 			case GetIntersect:
 				{
-				alt43=12;
+				alt44=12;
 				}
 				break;
 			case GetAngle:
 				{
-				alt43=13;
+				alt44=13;
 				}
 				break;
 			case GetRadius:
 				{
-				alt43=14;
+				alt44=14;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 43, 0, input);
+					new NoViableAltException("", 44, 0, input);
 				throw nvae;
 			}
-			switch (alt43) {
+			switch (alt44) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:211:5: GetWidth '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:212:5: GetWidth '(' expression ')'
 					{
-					GetWidth200=(Token)match(input,GetWidth,FOLLOW_GetWidth_in_getCall1561);  
-					stream_GetWidth.add(GetWidth200);
+					GetWidth204=(Token)match(input,GetWidth,FOLLOW_GetWidth_in_getCall1585);  
+					stream_GetWidth.add(GetWidth204);
 
-					char_literal201=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1563);  
-					stream_OParen.add(char_literal201);
+					char_literal205=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1587);  
+					stream_OParen.add(char_literal205);
 
-					pushFollow(FOLLOW_expression_in_getCall1565);
-					expression202=expression();
+					pushFollow(FOLLOW_expression_in_getCall1589);
+					expression206=expression();
 					state._fsp--;
 
-					stream_expression.add(expression202.getTree());
-					char_literal203=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1567);  
-					stream_CParen.add(char_literal203);
+					stream_expression.add(expression206.getTree());
+					char_literal207=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1591);  
+					stream_CParen.add(char_literal207);
 
 					// AST REWRITE
-					// elements: expression, GetWidth
+					// elements: GetWidth, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -4784,9 +4866,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 211:32: -> ^( FUNC_CALL GetWidth expression )
+					// 212:32: -> ^( FUNC_CALL GetWidth expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:211:35: ^( FUNC_CALL GetWidth expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:212:35: ^( FUNC_CALL GetWidth expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4803,21 +4885,21 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:212:4: GetHeight '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:213:4: GetHeight '(' expression ')'
 					{
-					GetHeight204=(Token)match(input,GetHeight,FOLLOW_GetHeight_in_getCall1581);  
-					stream_GetHeight.add(GetHeight204);
+					GetHeight208=(Token)match(input,GetHeight,FOLLOW_GetHeight_in_getCall1605);  
+					stream_GetHeight.add(GetHeight208);
 
-					char_literal205=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1583);  
-					stream_OParen.add(char_literal205);
+					char_literal209=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1607);  
+					stream_OParen.add(char_literal209);
 
-					pushFollow(FOLLOW_expression_in_getCall1585);
-					expression206=expression();
+					pushFollow(FOLLOW_expression_in_getCall1609);
+					expression210=expression();
 					state._fsp--;
 
-					stream_expression.add(expression206.getTree());
-					char_literal207=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1587);  
-					stream_CParen.add(char_literal207);
+					stream_expression.add(expression210.getTree());
+					char_literal211=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1611);  
+					stream_CParen.add(char_literal211);
 
 					// AST REWRITE
 					// elements: GetHeight, expression
@@ -4830,9 +4912,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 212:32: -> ^( FUNC_CALL GetHeight expression )
+					// 213:32: -> ^( FUNC_CALL GetHeight expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:212:35: ^( FUNC_CALL GetHeight expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:213:35: ^( FUNC_CALL GetHeight expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4849,24 +4931,24 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:213:4: GetX '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:214:4: GetX '(' expression ')'
 					{
-					GetX208=(Token)match(input,GetX,FOLLOW_GetX_in_getCall1601);  
-					stream_GetX.add(GetX208);
+					GetX212=(Token)match(input,GetX,FOLLOW_GetX_in_getCall1625);  
+					stream_GetX.add(GetX212);
 
-					char_literal209=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1603);  
-					stream_OParen.add(char_literal209);
+					char_literal213=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1627);  
+					stream_OParen.add(char_literal213);
 
-					pushFollow(FOLLOW_expression_in_getCall1605);
-					expression210=expression();
+					pushFollow(FOLLOW_expression_in_getCall1629);
+					expression214=expression();
 					state._fsp--;
 
-					stream_expression.add(expression210.getTree());
-					char_literal211=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1607);  
-					stream_CParen.add(char_literal211);
+					stream_expression.add(expression214.getTree());
+					char_literal215=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1631);  
+					stream_CParen.add(char_literal215);
 
 					// AST REWRITE
-					// elements: GetX, expression
+					// elements: expression, GetX
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -4876,9 +4958,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 213:27: -> ^( FUNC_CALL GetX expression )
+					// 214:27: -> ^( FUNC_CALL GetX expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:213:30: ^( FUNC_CALL GetX expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:214:30: ^( FUNC_CALL GetX expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4895,21 +4977,21 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:214:4: GetY '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:215:4: GetY '(' expression ')'
 					{
-					GetY212=(Token)match(input,GetY,FOLLOW_GetY_in_getCall1621);  
-					stream_GetY.add(GetY212);
+					GetY216=(Token)match(input,GetY,FOLLOW_GetY_in_getCall1645);  
+					stream_GetY.add(GetY216);
 
-					char_literal213=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1623);  
-					stream_OParen.add(char_literal213);
+					char_literal217=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1647);  
+					stream_OParen.add(char_literal217);
 
-					pushFollow(FOLLOW_expression_in_getCall1625);
-					expression214=expression();
+					pushFollow(FOLLOW_expression_in_getCall1649);
+					expression218=expression();
 					state._fsp--;
 
-					stream_expression.add(expression214.getTree());
-					char_literal215=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1627);  
-					stream_CParen.add(char_literal215);
+					stream_expression.add(expression218.getTree());
+					char_literal219=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1651);  
+					stream_CParen.add(char_literal219);
 
 					// AST REWRITE
 					// elements: expression, GetY
@@ -4922,9 +5004,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 214:27: -> ^( FUNC_CALL GetY expression )
+					// 215:27: -> ^( FUNC_CALL GetY expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:214:30: ^( FUNC_CALL GetY expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:215:30: ^( FUNC_CALL GetY expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4941,21 +5023,21 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:215:4: GetOrigin '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:216:4: GetOrigin '(' expression ')'
 					{
-					GetOrigin216=(Token)match(input,GetOrigin,FOLLOW_GetOrigin_in_getCall1641);  
-					stream_GetOrigin.add(GetOrigin216);
+					GetOrigin220=(Token)match(input,GetOrigin,FOLLOW_GetOrigin_in_getCall1665);  
+					stream_GetOrigin.add(GetOrigin220);
 
-					char_literal217=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1643);  
-					stream_OParen.add(char_literal217);
+					char_literal221=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1667);  
+					stream_OParen.add(char_literal221);
 
-					pushFollow(FOLLOW_expression_in_getCall1645);
-					expression218=expression();
+					pushFollow(FOLLOW_expression_in_getCall1669);
+					expression222=expression();
 					state._fsp--;
 
-					stream_expression.add(expression218.getTree());
-					char_literal219=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1647);  
-					stream_CParen.add(char_literal219);
+					stream_expression.add(expression222.getTree());
+					char_literal223=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1671);  
+					stream_CParen.add(char_literal223);
 
 					// AST REWRITE
 					// elements: expression, GetOrigin
@@ -4968,9 +5050,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 215:32: -> ^( FUNC_CALL GetOrigin expression )
+					// 216:32: -> ^( FUNC_CALL GetOrigin expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:215:35: ^( FUNC_CALL GetOrigin expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:216:35: ^( FUNC_CALL GetOrigin expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -4987,24 +5069,24 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:216:4: GetRotation '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:217:4: GetRotation '(' expression ')'
 					{
-					GetRotation220=(Token)match(input,GetRotation,FOLLOW_GetRotation_in_getCall1661);  
-					stream_GetRotation.add(GetRotation220);
+					GetRotation224=(Token)match(input,GetRotation,FOLLOW_GetRotation_in_getCall1685);  
+					stream_GetRotation.add(GetRotation224);
 
-					char_literal221=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1663);  
-					stream_OParen.add(char_literal221);
+					char_literal225=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1687);  
+					stream_OParen.add(char_literal225);
 
-					pushFollow(FOLLOW_expression_in_getCall1665);
-					expression222=expression();
+					pushFollow(FOLLOW_expression_in_getCall1689);
+					expression226=expression();
 					state._fsp--;
 
-					stream_expression.add(expression222.getTree());
-					char_literal223=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1667);  
-					stream_CParen.add(char_literal223);
+					stream_expression.add(expression226.getTree());
+					char_literal227=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1691);  
+					stream_CParen.add(char_literal227);
 
 					// AST REWRITE
-					// elements: expression, GetRotation
+					// elements: GetRotation, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5014,9 +5096,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 216:34: -> ^( FUNC_CALL GetRotation expression )
+					// 217:34: -> ^( FUNC_CALL GetRotation expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:216:37: ^( FUNC_CALL GetRotation expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:217:37: ^( FUNC_CALL GetRotation expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5033,21 +5115,21 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:217:4: GetFill '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:218:4: GetFill '(' expression ')'
 					{
-					GetFill224=(Token)match(input,GetFill,FOLLOW_GetFill_in_getCall1681);  
-					stream_GetFill.add(GetFill224);
+					GetFill228=(Token)match(input,GetFill,FOLLOW_GetFill_in_getCall1705);  
+					stream_GetFill.add(GetFill228);
 
-					char_literal225=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1683);  
-					stream_OParen.add(char_literal225);
+					char_literal229=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1707);  
+					stream_OParen.add(char_literal229);
 
-					pushFollow(FOLLOW_expression_in_getCall1685);
-					expression226=expression();
+					pushFollow(FOLLOW_expression_in_getCall1709);
+					expression230=expression();
 					state._fsp--;
 
-					stream_expression.add(expression226.getTree());
-					char_literal227=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1687);  
-					stream_CParen.add(char_literal227);
+					stream_expression.add(expression230.getTree());
+					char_literal231=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1711);  
+					stream_CParen.add(char_literal231);
 
 					// AST REWRITE
 					// elements: GetFill, expression
@@ -5060,9 +5142,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 217:30: -> ^( FUNC_CALL GetFill expression )
+					// 218:30: -> ^( FUNC_CALL GetFill expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:217:33: ^( FUNC_CALL GetFill expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:218:33: ^( FUNC_CALL GetFill expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5079,21 +5161,21 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:218:4: GetStroke '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:219:4: GetStroke '(' expression ')'
 					{
-					GetStroke228=(Token)match(input,GetStroke,FOLLOW_GetStroke_in_getCall1701);  
-					stream_GetStroke.add(GetStroke228);
+					GetStroke232=(Token)match(input,GetStroke,FOLLOW_GetStroke_in_getCall1725);  
+					stream_GetStroke.add(GetStroke232);
 
-					char_literal229=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1703);  
-					stream_OParen.add(char_literal229);
+					char_literal233=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1727);  
+					stream_OParen.add(char_literal233);
 
-					pushFollow(FOLLOW_expression_in_getCall1705);
-					expression230=expression();
+					pushFollow(FOLLOW_expression_in_getCall1729);
+					expression234=expression();
 					state._fsp--;
 
-					stream_expression.add(expression230.getTree());
-					char_literal231=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1707);  
-					stream_CParen.add(char_literal231);
+					stream_expression.add(expression234.getTree());
+					char_literal235=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1731);  
+					stream_CParen.add(char_literal235);
 
 					// AST REWRITE
 					// elements: GetStroke, expression
@@ -5106,9 +5188,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 218:32: -> ^( FUNC_CALL GetStroke expression )
+					// 219:32: -> ^( FUNC_CALL GetStroke expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:218:35: ^( FUNC_CALL GetStroke expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:219:35: ^( FUNC_CALL GetStroke expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5125,24 +5207,24 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:219:4: GetStart '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:220:4: GetStart '(' expression ')'
 					{
-					GetStart232=(Token)match(input,GetStart,FOLLOW_GetStart_in_getCall1721);  
-					stream_GetStart.add(GetStart232);
+					GetStart236=(Token)match(input,GetStart,FOLLOW_GetStart_in_getCall1745);  
+					stream_GetStart.add(GetStart236);
 
-					char_literal233=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1723);  
-					stream_OParen.add(char_literal233);
+					char_literal237=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1747);  
+					stream_OParen.add(char_literal237);
 
-					pushFollow(FOLLOW_expression_in_getCall1725);
-					expression234=expression();
+					pushFollow(FOLLOW_expression_in_getCall1749);
+					expression238=expression();
 					state._fsp--;
 
-					stream_expression.add(expression234.getTree());
-					char_literal235=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1727);  
-					stream_CParen.add(char_literal235);
+					stream_expression.add(expression238.getTree());
+					char_literal239=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1751);  
+					stream_CParen.add(char_literal239);
 
 					// AST REWRITE
-					// elements: GetStart, expression
+					// elements: expression, GetStart
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5152,9 +5234,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 219:31: -> ^( FUNC_CALL GetStart expression )
+					// 220:31: -> ^( FUNC_CALL GetStart expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:219:34: ^( FUNC_CALL GetStart expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:220:34: ^( FUNC_CALL GetStart expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5171,24 +5253,24 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:220:4: GetEnd '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:221:4: GetEnd '(' expression ')'
 					{
-					GetEnd236=(Token)match(input,GetEnd,FOLLOW_GetEnd_in_getCall1741);  
-					stream_GetEnd.add(GetEnd236);
+					GetEnd240=(Token)match(input,GetEnd,FOLLOW_GetEnd_in_getCall1765);  
+					stream_GetEnd.add(GetEnd240);
 
-					char_literal237=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1743);  
-					stream_OParen.add(char_literal237);
+					char_literal241=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1767);  
+					stream_OParen.add(char_literal241);
 
-					pushFollow(FOLLOW_expression_in_getCall1745);
-					expression238=expression();
+					pushFollow(FOLLOW_expression_in_getCall1769);
+					expression242=expression();
 					state._fsp--;
 
-					stream_expression.add(expression238.getTree());
-					char_literal239=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1747);  
-					stream_CParen.add(char_literal239);
+					stream_expression.add(expression242.getTree());
+					char_literal243=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1771);  
+					stream_CParen.add(char_literal243);
 
 					// AST REWRITE
-					// elements: expression, GetEnd
+					// elements: GetEnd, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5198,9 +5280,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 220:29: -> ^( FUNC_CALL GetEnd expression )
+					// 221:29: -> ^( FUNC_CALL GetEnd expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:220:32: ^( FUNC_CALL GetEnd expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:221:32: ^( FUNC_CALL GetEnd expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5217,76 +5299,10 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:221:4: GetDistance '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:222:4: GetDistance '(' ( exprList )? ')'
 					{
-					GetDistance240=(Token)match(input,GetDistance,FOLLOW_GetDistance_in_getCall1762);  
-					stream_GetDistance.add(GetDistance240);
-
-					char_literal241=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1764);  
-					stream_OParen.add(char_literal241);
-
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:221:20: ( exprList )?
-					int alt39=2;
-					int LA39_0 = input.LA(1);
-					if ( (LA39_0==ATan||LA39_0==AddDesign||(LA39_0 >= Arc && LA39_0 <= Assert)||LA39_0==Bool||LA39_0==COLOR_CONSTANT||(LA39_0 >= Clip && LA39_0 <= Cm)||(LA39_0 >= Copy && LA39_0 <= Curve)||LA39_0==Difference||LA39_0==Ellipse||(LA39_0 >= Excl && LA39_0 <= Expand)||(LA39_0 >= Fill && LA39_0 <= Flatten)||(LA39_0 >= Gaussian && LA39_0 <= Hide)||LA39_0==Identifier||LA39_0==Inch||LA39_0==LAdd||(LA39_0 >= LRemove && LA39_0 <= LShape)||(LA39_0 >= Line && LA39_0 <= Mm)||(LA39_0 >= Move && LA39_0 <= MoveBy)||(LA39_0 >= NoFill && LA39_0 <= Number)||(LA39_0 >= OBracket && LA39_0 <= OParen)||(LA39_0 >= PI_CONSTANT && LA39_0 <= Println)||(LA39_0 >= Random && LA39_0 <= Rect)||(LA39_0 >= Rotate && LA39_0 <= Round)||LA39_0==Scale||(LA39_0 >= SetCorner && LA39_0 <= Slider)||(LA39_0 >= Sq && LA39_0 <= Subtract)||(LA39_0 >= Tan && LA39_0 <= TemplateCollection)||(LA39_0 >= Union && LA39_0 <= Weight)||LA39_0==Xor) ) {
-						alt39=1;
-					}
-					switch (alt39) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:221:20: exprList
-							{
-							pushFollow(FOLLOW_exprList_in_getCall1766);
-							exprList242=exprList();
-							state._fsp--;
-
-							stream_exprList.add(exprList242.getTree());
-							}
-							break;
-
-					}
-
-					char_literal243=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1770);  
-					stream_CParen.add(char_literal243);
-
-					// AST REWRITE
-					// elements: GetDistance, exprList
-					// token labels: 
-					// rule labels: retval
-					// token list labels: 
-					// rule list labels: 
-					// wildcard labels: 
-					retval.tree = root_0;
-					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
-
-					root_0 = (Object)adaptor.nil();
-					// 221:34: -> ^( FUNC_CALL GetDistance ( exprList )? )
-					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:221:37: ^( FUNC_CALL GetDistance ( exprList )? )
-						{
-						Object root_1 = (Object)adaptor.nil();
-						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
-						adaptor.addChild(root_1, stream_GetDistance.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:221:61: ( exprList )?
-						if ( stream_exprList.hasNext() ) {
-							adaptor.addChild(root_1, stream_exprList.nextTree());
-						}
-						stream_exprList.reset();
-
-						adaptor.addChild(root_0, root_1);
-						}
-
-					}
-
-
-					retval.tree = root_0;
-
-					}
-					break;
-				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:222:4: GetIntersect '(' ( exprList )? ')'
-					{
-					GetIntersect244=(Token)match(input,GetIntersect,FOLLOW_GetIntersect_in_getCall1787);  
-					stream_GetIntersect.add(GetIntersect244);
+					GetDistance244=(Token)match(input,GetDistance,FOLLOW_GetDistance_in_getCall1786);  
+					stream_GetDistance.add(GetDistance244);
 
 					char_literal245=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1788);  
 					stream_OParen.add(char_literal245);
@@ -5294,7 +5310,7 @@ public class PyEsqueParser extends Parser {
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:222:20: ( exprList )?
 					int alt40=2;
 					int LA40_0 = input.LA(1);
-					if ( (LA40_0==ATan||LA40_0==AddDesign||(LA40_0 >= Arc && LA40_0 <= Assert)||LA40_0==Bool||LA40_0==COLOR_CONSTANT||(LA40_0 >= Clip && LA40_0 <= Cm)||(LA40_0 >= Copy && LA40_0 <= Curve)||LA40_0==Difference||LA40_0==Ellipse||(LA40_0 >= Excl && LA40_0 <= Expand)||(LA40_0 >= Fill && LA40_0 <= Flatten)||(LA40_0 >= Gaussian && LA40_0 <= Hide)||LA40_0==Identifier||LA40_0==Inch||LA40_0==LAdd||(LA40_0 >= LRemove && LA40_0 <= LShape)||(LA40_0 >= Line && LA40_0 <= Mm)||(LA40_0 >= Move && LA40_0 <= MoveBy)||(LA40_0 >= NoFill && LA40_0 <= Number)||(LA40_0 >= OBracket && LA40_0 <= OParen)||(LA40_0 >= PI_CONSTANT && LA40_0 <= Println)||(LA40_0 >= Random && LA40_0 <= Rect)||(LA40_0 >= Rotate && LA40_0 <= Round)||LA40_0==Scale||(LA40_0 >= SetCorner && LA40_0 <= Slider)||(LA40_0 >= Sq && LA40_0 <= Subtract)||(LA40_0 >= Tan && LA40_0 <= TemplateCollection)||(LA40_0 >= Union && LA40_0 <= Weight)||LA40_0==Xor) ) {
+					if ( (LA40_0==ATan||LA40_0==AddDesign||(LA40_0 >= Arc && LA40_0 <= Assert)||LA40_0==Bool||LA40_0==COLOR_CONSTANT||(LA40_0 >= Clip && LA40_0 <= Cm)||(LA40_0 >= Copy && LA40_0 <= Curve)||LA40_0==Difference||LA40_0==Ellipse||(LA40_0 >= Excl && LA40_0 <= Expand)||(LA40_0 >= Fill && LA40_0 <= FollowCurve)||(LA40_0 >= Gaussian && LA40_0 <= Hide)||LA40_0==Identifier||LA40_0==Inch||LA40_0==LAdd||(LA40_0 >= LRemove && LA40_0 <= LShape)||(LA40_0 >= Line && LA40_0 <= Mm)||(LA40_0 >= Move && LA40_0 <= MoveBy)||(LA40_0 >= NoFill && LA40_0 <= Number)||(LA40_0 >= OBracket && LA40_0 <= OParen)||(LA40_0 >= PI_CONSTANT && LA40_0 <= Println)||(LA40_0 >= Random && LA40_0 <= Rect)||(LA40_0 >= Rotate && LA40_0 <= Round)||LA40_0==Scale||(LA40_0 >= SetCorner && LA40_0 <= Slider)||(LA40_0 >= Sq && LA40_0 <= Subtract)||(LA40_0 >= Tan && LA40_0 <= TemplateCollection)||(LA40_0 >= Union && LA40_0 <= Weight)||LA40_0==Xor) ) {
 						alt40=1;
 					}
 					switch (alt40) {
@@ -5315,6 +5331,72 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(char_literal247);
 
 					// AST REWRITE
+					// elements: GetDistance, exprList
+					// token labels: 
+					// rule labels: retval
+					// token list labels: 
+					// rule list labels: 
+					// wildcard labels: 
+					retval.tree = root_0;
+					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+					root_0 = (Object)adaptor.nil();
+					// 222:34: -> ^( FUNC_CALL GetDistance ( exprList )? )
+					{
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:222:37: ^( FUNC_CALL GetDistance ( exprList )? )
+						{
+						Object root_1 = (Object)adaptor.nil();
+						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
+						adaptor.addChild(root_1, stream_GetDistance.nextNode());
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:222:61: ( exprList )?
+						if ( stream_exprList.hasNext() ) {
+							adaptor.addChild(root_1, stream_exprList.nextTree());
+						}
+						stream_exprList.reset();
+
+						adaptor.addChild(root_0, root_1);
+						}
+
+					}
+
+
+					retval.tree = root_0;
+
+					}
+					break;
+				case 12 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:223:4: GetIntersect '(' ( exprList )? ')'
+					{
+					GetIntersect248=(Token)match(input,GetIntersect,FOLLOW_GetIntersect_in_getCall1811);  
+					stream_GetIntersect.add(GetIntersect248);
+
+					char_literal249=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1812);  
+					stream_OParen.add(char_literal249);
+
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:223:20: ( exprList )?
+					int alt41=2;
+					int LA41_0 = input.LA(1);
+					if ( (LA41_0==ATan||LA41_0==AddDesign||(LA41_0 >= Arc && LA41_0 <= Assert)||LA41_0==Bool||LA41_0==COLOR_CONSTANT||(LA41_0 >= Clip && LA41_0 <= Cm)||(LA41_0 >= Copy && LA41_0 <= Curve)||LA41_0==Difference||LA41_0==Ellipse||(LA41_0 >= Excl && LA41_0 <= Expand)||(LA41_0 >= Fill && LA41_0 <= FollowCurve)||(LA41_0 >= Gaussian && LA41_0 <= Hide)||LA41_0==Identifier||LA41_0==Inch||LA41_0==LAdd||(LA41_0 >= LRemove && LA41_0 <= LShape)||(LA41_0 >= Line && LA41_0 <= Mm)||(LA41_0 >= Move && LA41_0 <= MoveBy)||(LA41_0 >= NoFill && LA41_0 <= Number)||(LA41_0 >= OBracket && LA41_0 <= OParen)||(LA41_0 >= PI_CONSTANT && LA41_0 <= Println)||(LA41_0 >= Random && LA41_0 <= Rect)||(LA41_0 >= Rotate && LA41_0 <= Round)||LA41_0==Scale||(LA41_0 >= SetCorner && LA41_0 <= Slider)||(LA41_0 >= Sq && LA41_0 <= Subtract)||(LA41_0 >= Tan && LA41_0 <= TemplateCollection)||(LA41_0 >= Union && LA41_0 <= Weight)||LA41_0==Xor) ) {
+						alt41=1;
+					}
+					switch (alt41) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:223:20: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_getCall1814);
+							exprList250=exprList();
+							state._fsp--;
+
+							stream_exprList.add(exprList250.getTree());
+							}
+							break;
+
+					}
+
+					char_literal251=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1818);  
+					stream_CParen.add(char_literal251);
+
+					// AST REWRITE
 					// elements: GetIntersect, exprList
 					// token labels: 
 					// rule labels: retval
@@ -5325,14 +5407,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 222:34: -> ^( FUNC_CALL GetIntersect ( exprList )? )
+					// 223:34: -> ^( FUNC_CALL GetIntersect ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:222:37: ^( FUNC_CALL GetIntersect ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:223:37: ^( FUNC_CALL GetIntersect ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_GetIntersect.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:222:62: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:223:62: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5349,36 +5431,36 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:223:4: GetAngle '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:224:4: GetAngle '(' ( exprList )? ')'
 					{
-					GetAngle248=(Token)match(input,GetAngle,FOLLOW_GetAngle_in_getCall1811);  
-					stream_GetAngle.add(GetAngle248);
+					GetAngle252=(Token)match(input,GetAngle,FOLLOW_GetAngle_in_getCall1835);  
+					stream_GetAngle.add(GetAngle252);
 
-					char_literal249=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1812);  
-					stream_OParen.add(char_literal249);
+					char_literal253=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1836);  
+					stream_OParen.add(char_literal253);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:223:16: ( exprList )?
-					int alt41=2;
-					int LA41_0 = input.LA(1);
-					if ( (LA41_0==ATan||LA41_0==AddDesign||(LA41_0 >= Arc && LA41_0 <= Assert)||LA41_0==Bool||LA41_0==COLOR_CONSTANT||(LA41_0 >= Clip && LA41_0 <= Cm)||(LA41_0 >= Copy && LA41_0 <= Curve)||LA41_0==Difference||LA41_0==Ellipse||(LA41_0 >= Excl && LA41_0 <= Expand)||(LA41_0 >= Fill && LA41_0 <= Flatten)||(LA41_0 >= Gaussian && LA41_0 <= Hide)||LA41_0==Identifier||LA41_0==Inch||LA41_0==LAdd||(LA41_0 >= LRemove && LA41_0 <= LShape)||(LA41_0 >= Line && LA41_0 <= Mm)||(LA41_0 >= Move && LA41_0 <= MoveBy)||(LA41_0 >= NoFill && LA41_0 <= Number)||(LA41_0 >= OBracket && LA41_0 <= OParen)||(LA41_0 >= PI_CONSTANT && LA41_0 <= Println)||(LA41_0 >= Random && LA41_0 <= Rect)||(LA41_0 >= Rotate && LA41_0 <= Round)||LA41_0==Scale||(LA41_0 >= SetCorner && LA41_0 <= Slider)||(LA41_0 >= Sq && LA41_0 <= Subtract)||(LA41_0 >= Tan && LA41_0 <= TemplateCollection)||(LA41_0 >= Union && LA41_0 <= Weight)||LA41_0==Xor) ) {
-						alt41=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:224:16: ( exprList )?
+					int alt42=2;
+					int LA42_0 = input.LA(1);
+					if ( (LA42_0==ATan||LA42_0==AddDesign||(LA42_0 >= Arc && LA42_0 <= Assert)||LA42_0==Bool||LA42_0==COLOR_CONSTANT||(LA42_0 >= Clip && LA42_0 <= Cm)||(LA42_0 >= Copy && LA42_0 <= Curve)||LA42_0==Difference||LA42_0==Ellipse||(LA42_0 >= Excl && LA42_0 <= Expand)||(LA42_0 >= Fill && LA42_0 <= FollowCurve)||(LA42_0 >= Gaussian && LA42_0 <= Hide)||LA42_0==Identifier||LA42_0==Inch||LA42_0==LAdd||(LA42_0 >= LRemove && LA42_0 <= LShape)||(LA42_0 >= Line && LA42_0 <= Mm)||(LA42_0 >= Move && LA42_0 <= MoveBy)||(LA42_0 >= NoFill && LA42_0 <= Number)||(LA42_0 >= OBracket && LA42_0 <= OParen)||(LA42_0 >= PI_CONSTANT && LA42_0 <= Println)||(LA42_0 >= Random && LA42_0 <= Rect)||(LA42_0 >= Rotate && LA42_0 <= Round)||LA42_0==Scale||(LA42_0 >= SetCorner && LA42_0 <= Slider)||(LA42_0 >= Sq && LA42_0 <= Subtract)||(LA42_0 >= Tan && LA42_0 <= TemplateCollection)||(LA42_0 >= Union && LA42_0 <= Weight)||LA42_0==Xor) ) {
+						alt42=1;
 					}
-					switch (alt41) {
+					switch (alt42) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:223:16: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:224:16: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_getCall1814);
-							exprList250=exprList();
+							pushFollow(FOLLOW_exprList_in_getCall1838);
+							exprList254=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList250.getTree());
+							stream_exprList.add(exprList254.getTree());
 							}
 							break;
 
 					}
 
-					char_literal251=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1818);  
-					stream_CParen.add(char_literal251);
+					char_literal255=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1842);  
+					stream_CParen.add(char_literal255);
 
 					// AST REWRITE
 					// elements: GetAngle, exprList
@@ -5391,14 +5473,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 223:30: -> ^( FUNC_CALL GetAngle ( exprList )? )
+					// 224:30: -> ^( FUNC_CALL GetAngle ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:223:33: ^( FUNC_CALL GetAngle ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:224:33: ^( FUNC_CALL GetAngle ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_GetAngle.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:223:54: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:224:54: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5415,39 +5497,39 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:224:4: GetRadius '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:225:4: GetRadius '(' ( exprList )? ')'
 					{
-					GetRadius252=(Token)match(input,GetRadius,FOLLOW_GetRadius_in_getCall1835);  
-					stream_GetRadius.add(GetRadius252);
+					GetRadius256=(Token)match(input,GetRadius,FOLLOW_GetRadius_in_getCall1859);  
+					stream_GetRadius.add(GetRadius256);
 
-					char_literal253=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1836);  
-					stream_OParen.add(char_literal253);
+					char_literal257=(Token)match(input,OParen,FOLLOW_OParen_in_getCall1860);  
+					stream_OParen.add(char_literal257);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:224:17: ( exprList )?
-					int alt42=2;
-					int LA42_0 = input.LA(1);
-					if ( (LA42_0==ATan||LA42_0==AddDesign||(LA42_0 >= Arc && LA42_0 <= Assert)||LA42_0==Bool||LA42_0==COLOR_CONSTANT||(LA42_0 >= Clip && LA42_0 <= Cm)||(LA42_0 >= Copy && LA42_0 <= Curve)||LA42_0==Difference||LA42_0==Ellipse||(LA42_0 >= Excl && LA42_0 <= Expand)||(LA42_0 >= Fill && LA42_0 <= Flatten)||(LA42_0 >= Gaussian && LA42_0 <= Hide)||LA42_0==Identifier||LA42_0==Inch||LA42_0==LAdd||(LA42_0 >= LRemove && LA42_0 <= LShape)||(LA42_0 >= Line && LA42_0 <= Mm)||(LA42_0 >= Move && LA42_0 <= MoveBy)||(LA42_0 >= NoFill && LA42_0 <= Number)||(LA42_0 >= OBracket && LA42_0 <= OParen)||(LA42_0 >= PI_CONSTANT && LA42_0 <= Println)||(LA42_0 >= Random && LA42_0 <= Rect)||(LA42_0 >= Rotate && LA42_0 <= Round)||LA42_0==Scale||(LA42_0 >= SetCorner && LA42_0 <= Slider)||(LA42_0 >= Sq && LA42_0 <= Subtract)||(LA42_0 >= Tan && LA42_0 <= TemplateCollection)||(LA42_0 >= Union && LA42_0 <= Weight)||LA42_0==Xor) ) {
-						alt42=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:225:17: ( exprList )?
+					int alt43=2;
+					int LA43_0 = input.LA(1);
+					if ( (LA43_0==ATan||LA43_0==AddDesign||(LA43_0 >= Arc && LA43_0 <= Assert)||LA43_0==Bool||LA43_0==COLOR_CONSTANT||(LA43_0 >= Clip && LA43_0 <= Cm)||(LA43_0 >= Copy && LA43_0 <= Curve)||LA43_0==Difference||LA43_0==Ellipse||(LA43_0 >= Excl && LA43_0 <= Expand)||(LA43_0 >= Fill && LA43_0 <= FollowCurve)||(LA43_0 >= Gaussian && LA43_0 <= Hide)||LA43_0==Identifier||LA43_0==Inch||LA43_0==LAdd||(LA43_0 >= LRemove && LA43_0 <= LShape)||(LA43_0 >= Line && LA43_0 <= Mm)||(LA43_0 >= Move && LA43_0 <= MoveBy)||(LA43_0 >= NoFill && LA43_0 <= Number)||(LA43_0 >= OBracket && LA43_0 <= OParen)||(LA43_0 >= PI_CONSTANT && LA43_0 <= Println)||(LA43_0 >= Random && LA43_0 <= Rect)||(LA43_0 >= Rotate && LA43_0 <= Round)||LA43_0==Scale||(LA43_0 >= SetCorner && LA43_0 <= Slider)||(LA43_0 >= Sq && LA43_0 <= Subtract)||(LA43_0 >= Tan && LA43_0 <= TemplateCollection)||(LA43_0 >= Union && LA43_0 <= Weight)||LA43_0==Xor) ) {
+						alt43=1;
 					}
-					switch (alt42) {
+					switch (alt43) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:224:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:225:17: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_getCall1838);
-							exprList254=exprList();
+							pushFollow(FOLLOW_exprList_in_getCall1862);
+							exprList258=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList254.getTree());
+							stream_exprList.add(exprList258.getTree());
 							}
 							break;
 
 					}
 
-					char_literal255=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1842);  
-					stream_CParen.add(char_literal255);
+					char_literal259=(Token)match(input,CParen,FOLLOW_CParen_in_getCall1866);  
+					stream_CParen.add(char_literal259);
 
 					// AST REWRITE
-					// elements: GetRadius, exprList
+					// elements: exprList, GetRadius
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5457,14 +5539,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 224:31: -> ^( FUNC_CALL GetRadius ( exprList )? )
+					// 225:31: -> ^( FUNC_CALL GetRadius ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:224:34: ^( FUNC_CALL GetRadius ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:225:34: ^( FUNC_CALL GetRadius ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_GetRadius.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:224:56: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:225:56: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5509,126 +5591,126 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "mathCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:227:4: mathCall : ( Cosine '(' expression ')' -> ^( FUNC_CALL Cosine expression ) | Sine '(' expression ')' -> ^( FUNC_CALL Sine expression ) | Tan '(' expression ')' -> ^( FUNC_CALL Tan expression ) | ATan '(' ( exprList )? ')' -> ^( FUNC_CALL ATan ( exprList )? ) | Random '(' ( exprList )? ')' -> ^( FUNC_CALL Random ( exprList )? ) | Pow '(' ( exprList )? ')' -> ^( FUNC_CALL Pow ( exprList )? ) | Sqrt '(' expression ')' -> ^( FUNC_CALL Sqrt expression ) | Sq '(' expression ')' -> ^( FUNC_CALL Sq expression ) | Gaussian '(' ( exprList )? ')' -> ^( FUNC_CALL Gaussian ( exprList )? ) | Noise '(' ( exprList )? ')' -> ^( FUNC_CALL Noise ( exprList )? ) | Round '(' expression ')' -> ^( FUNC_CALL Round expression ) | Map '(' ( exprList )? ')' -> ^( FUNC_CALL Map ( exprList )? ) | Inch '(' expression ')' -> ^( FUNC_CALL Inch expression ) | Mm '(' expression ')' -> ^( FUNC_CALL Mm expression ) | Cm '(' expression ')' -> ^( FUNC_CALL Cm expression ) | Units '(' expression ')' -> ^( FUNC_CALL Units expression ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:228:4: mathCall : ( Cosine '(' expression ')' -> ^( FUNC_CALL Cosine expression ) | Sine '(' expression ')' -> ^( FUNC_CALL Sine expression ) | Tan '(' expression ')' -> ^( FUNC_CALL Tan expression ) | ATan '(' ( exprList )? ')' -> ^( FUNC_CALL ATan ( exprList )? ) | Random '(' ( exprList )? ')' -> ^( FUNC_CALL Random ( exprList )? ) | Pow '(' ( exprList )? ')' -> ^( FUNC_CALL Pow ( exprList )? ) | Sqrt '(' expression ')' -> ^( FUNC_CALL Sqrt expression ) | Sq '(' expression ')' -> ^( FUNC_CALL Sq expression ) | Gaussian '(' ( exprList )? ')' -> ^( FUNC_CALL Gaussian ( exprList )? ) | Noise '(' ( exprList )? ')' -> ^( FUNC_CALL Noise ( exprList )? ) | Round '(' expression ')' -> ^( FUNC_CALL Round expression ) | Map '(' ( exprList )? ')' -> ^( FUNC_CALL Map ( exprList )? ) | Inch '(' expression ')' -> ^( FUNC_CALL Inch expression ) | Mm '(' expression ')' -> ^( FUNC_CALL Mm expression ) | Cm '(' expression ')' -> ^( FUNC_CALL Cm expression ) | Units '(' expression ')' -> ^( FUNC_CALL Units expression ) );
 	public final PyEsqueParser.mathCall_return mathCall() throws RecognitionException {
 		PyEsqueParser.mathCall_return retval = new PyEsqueParser.mathCall_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token Cosine256=null;
-		Token char_literal257=null;
-		Token char_literal259=null;
-		Token Sine260=null;
+		Token Cosine260=null;
 		Token char_literal261=null;
 		Token char_literal263=null;
-		Token Tan264=null;
+		Token Sine264=null;
 		Token char_literal265=null;
 		Token char_literal267=null;
-		Token ATan268=null;
+		Token Tan268=null;
 		Token char_literal269=null;
 		Token char_literal271=null;
-		Token Random272=null;
+		Token ATan272=null;
 		Token char_literal273=null;
 		Token char_literal275=null;
-		Token Pow276=null;
+		Token Random276=null;
 		Token char_literal277=null;
 		Token char_literal279=null;
-		Token Sqrt280=null;
+		Token Pow280=null;
 		Token char_literal281=null;
 		Token char_literal283=null;
-		Token Sq284=null;
+		Token Sqrt284=null;
 		Token char_literal285=null;
 		Token char_literal287=null;
-		Token Gaussian288=null;
+		Token Sq288=null;
 		Token char_literal289=null;
 		Token char_literal291=null;
-		Token Noise292=null;
+		Token Gaussian292=null;
 		Token char_literal293=null;
 		Token char_literal295=null;
-		Token Round296=null;
+		Token Noise296=null;
 		Token char_literal297=null;
 		Token char_literal299=null;
-		Token Map300=null;
+		Token Round300=null;
 		Token char_literal301=null;
 		Token char_literal303=null;
-		Token Inch304=null;
+		Token Map304=null;
 		Token char_literal305=null;
 		Token char_literal307=null;
-		Token Mm308=null;
+		Token Inch308=null;
 		Token char_literal309=null;
 		Token char_literal311=null;
-		Token Cm312=null;
+		Token Mm312=null;
 		Token char_literal313=null;
 		Token char_literal315=null;
-		Token Units316=null;
+		Token Cm316=null;
 		Token char_literal317=null;
 		Token char_literal319=null;
-		ParserRuleReturnScope expression258 =null;
+		Token Units320=null;
+		Token char_literal321=null;
+		Token char_literal323=null;
 		ParserRuleReturnScope expression262 =null;
 		ParserRuleReturnScope expression266 =null;
-		ParserRuleReturnScope exprList270 =null;
+		ParserRuleReturnScope expression270 =null;
 		ParserRuleReturnScope exprList274 =null;
 		ParserRuleReturnScope exprList278 =null;
-		ParserRuleReturnScope expression282 =null;
+		ParserRuleReturnScope exprList282 =null;
 		ParserRuleReturnScope expression286 =null;
-		ParserRuleReturnScope exprList290 =null;
+		ParserRuleReturnScope expression290 =null;
 		ParserRuleReturnScope exprList294 =null;
-		ParserRuleReturnScope expression298 =null;
-		ParserRuleReturnScope exprList302 =null;
-		ParserRuleReturnScope expression306 =null;
+		ParserRuleReturnScope exprList298 =null;
+		ParserRuleReturnScope expression302 =null;
+		ParserRuleReturnScope exprList306 =null;
 		ParserRuleReturnScope expression310 =null;
 		ParserRuleReturnScope expression314 =null;
 		ParserRuleReturnScope expression318 =null;
+		ParserRuleReturnScope expression322 =null;
 
-		Object Cosine256_tree=null;
-		Object char_literal257_tree=null;
-		Object char_literal259_tree=null;
-		Object Sine260_tree=null;
+		Object Cosine260_tree=null;
 		Object char_literal261_tree=null;
 		Object char_literal263_tree=null;
-		Object Tan264_tree=null;
+		Object Sine264_tree=null;
 		Object char_literal265_tree=null;
 		Object char_literal267_tree=null;
-		Object ATan268_tree=null;
+		Object Tan268_tree=null;
 		Object char_literal269_tree=null;
 		Object char_literal271_tree=null;
-		Object Random272_tree=null;
+		Object ATan272_tree=null;
 		Object char_literal273_tree=null;
 		Object char_literal275_tree=null;
-		Object Pow276_tree=null;
+		Object Random276_tree=null;
 		Object char_literal277_tree=null;
 		Object char_literal279_tree=null;
-		Object Sqrt280_tree=null;
+		Object Pow280_tree=null;
 		Object char_literal281_tree=null;
 		Object char_literal283_tree=null;
-		Object Sq284_tree=null;
+		Object Sqrt284_tree=null;
 		Object char_literal285_tree=null;
 		Object char_literal287_tree=null;
-		Object Gaussian288_tree=null;
+		Object Sq288_tree=null;
 		Object char_literal289_tree=null;
 		Object char_literal291_tree=null;
-		Object Noise292_tree=null;
+		Object Gaussian292_tree=null;
 		Object char_literal293_tree=null;
 		Object char_literal295_tree=null;
-		Object Round296_tree=null;
+		Object Noise296_tree=null;
 		Object char_literal297_tree=null;
 		Object char_literal299_tree=null;
-		Object Map300_tree=null;
+		Object Round300_tree=null;
 		Object char_literal301_tree=null;
 		Object char_literal303_tree=null;
-		Object Inch304_tree=null;
+		Object Map304_tree=null;
 		Object char_literal305_tree=null;
 		Object char_literal307_tree=null;
-		Object Mm308_tree=null;
+		Object Inch308_tree=null;
 		Object char_literal309_tree=null;
 		Object char_literal311_tree=null;
-		Object Cm312_tree=null;
+		Object Mm312_tree=null;
 		Object char_literal313_tree=null;
 		Object char_literal315_tree=null;
-		Object Units316_tree=null;
+		Object Cm316_tree=null;
 		Object char_literal317_tree=null;
 		Object char_literal319_tree=null;
+		Object Units320_tree=null;
+		Object char_literal321_tree=null;
+		Object char_literal323_tree=null;
 		RewriteRuleTokenStream stream_Sqrt=new RewriteRuleTokenStream(adaptor,"token Sqrt");
 		RewriteRuleTokenStream stream_OParen=new RewriteRuleTokenStream(adaptor,"token OParen");
 		RewriteRuleTokenStream stream_Tan=new RewriteRuleTokenStream(adaptor,"token Tan");
@@ -5651,111 +5733,111 @@ public class PyEsqueParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:228:5: ( Cosine '(' expression ')' -> ^( FUNC_CALL Cosine expression ) | Sine '(' expression ')' -> ^( FUNC_CALL Sine expression ) | Tan '(' expression ')' -> ^( FUNC_CALL Tan expression ) | ATan '(' ( exprList )? ')' -> ^( FUNC_CALL ATan ( exprList )? ) | Random '(' ( exprList )? ')' -> ^( FUNC_CALL Random ( exprList )? ) | Pow '(' ( exprList )? ')' -> ^( FUNC_CALL Pow ( exprList )? ) | Sqrt '(' expression ')' -> ^( FUNC_CALL Sqrt expression ) | Sq '(' expression ')' -> ^( FUNC_CALL Sq expression ) | Gaussian '(' ( exprList )? ')' -> ^( FUNC_CALL Gaussian ( exprList )? ) | Noise '(' ( exprList )? ')' -> ^( FUNC_CALL Noise ( exprList )? ) | Round '(' expression ')' -> ^( FUNC_CALL Round expression ) | Map '(' ( exprList )? ')' -> ^( FUNC_CALL Map ( exprList )? ) | Inch '(' expression ')' -> ^( FUNC_CALL Inch expression ) | Mm '(' expression ')' -> ^( FUNC_CALL Mm expression ) | Cm '(' expression ')' -> ^( FUNC_CALL Cm expression ) | Units '(' expression ')' -> ^( FUNC_CALL Units expression ) )
-			int alt50=16;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:229:5: ( Cosine '(' expression ')' -> ^( FUNC_CALL Cosine expression ) | Sine '(' expression ')' -> ^( FUNC_CALL Sine expression ) | Tan '(' expression ')' -> ^( FUNC_CALL Tan expression ) | ATan '(' ( exprList )? ')' -> ^( FUNC_CALL ATan ( exprList )? ) | Random '(' ( exprList )? ')' -> ^( FUNC_CALL Random ( exprList )? ) | Pow '(' ( exprList )? ')' -> ^( FUNC_CALL Pow ( exprList )? ) | Sqrt '(' expression ')' -> ^( FUNC_CALL Sqrt expression ) | Sq '(' expression ')' -> ^( FUNC_CALL Sq expression ) | Gaussian '(' ( exprList )? ')' -> ^( FUNC_CALL Gaussian ( exprList )? ) | Noise '(' ( exprList )? ')' -> ^( FUNC_CALL Noise ( exprList )? ) | Round '(' expression ')' -> ^( FUNC_CALL Round expression ) | Map '(' ( exprList )? ')' -> ^( FUNC_CALL Map ( exprList )? ) | Inch '(' expression ')' -> ^( FUNC_CALL Inch expression ) | Mm '(' expression ')' -> ^( FUNC_CALL Mm expression ) | Cm '(' expression ')' -> ^( FUNC_CALL Cm expression ) | Units '(' expression ')' -> ^( FUNC_CALL Units expression ) )
+			int alt51=16;
 			switch ( input.LA(1) ) {
 			case Cosine:
 				{
-				alt50=1;
+				alt51=1;
 				}
 				break;
 			case Sine:
 				{
-				alt50=2;
+				alt51=2;
 				}
 				break;
 			case Tan:
 				{
-				alt50=3;
+				alt51=3;
 				}
 				break;
 			case ATan:
 				{
-				alt50=4;
+				alt51=4;
 				}
 				break;
 			case Random:
 				{
-				alt50=5;
+				alt51=5;
 				}
 				break;
 			case Pow:
 				{
-				alt50=6;
+				alt51=6;
 				}
 				break;
 			case Sqrt:
 				{
-				alt50=7;
+				alt51=7;
 				}
 				break;
 			case Sq:
 				{
-				alt50=8;
+				alt51=8;
 				}
 				break;
 			case Gaussian:
 				{
-				alt50=9;
+				alt51=9;
 				}
 				break;
 			case Noise:
 				{
-				alt50=10;
+				alt51=10;
 				}
 				break;
 			case Round:
 				{
-				alt50=11;
+				alt51=11;
 				}
 				break;
 			case Map:
 				{
-				alt50=12;
+				alt51=12;
 				}
 				break;
 			case Inch:
 				{
-				alt50=13;
+				alt51=13;
 				}
 				break;
 			case Mm:
 				{
-				alt50=14;
+				alt51=14;
 				}
 				break;
 			case Cm:
 				{
-				alt50=15;
+				alt51=15;
 				}
 				break;
 			case Units:
 				{
-				alt50=16;
+				alt51=16;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 50, 0, input);
+					new NoViableAltException("", 51, 0, input);
 				throw nvae;
 			}
-			switch (alt50) {
+			switch (alt51) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:228:6: Cosine '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:229:6: Cosine '(' expression ')'
 					{
-					Cosine256=(Token)match(input,Cosine,FOLLOW_Cosine_in_mathCall1874);  
-					stream_Cosine.add(Cosine256);
+					Cosine260=(Token)match(input,Cosine,FOLLOW_Cosine_in_mathCall1898);  
+					stream_Cosine.add(Cosine260);
 
-					char_literal257=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1876);  
-					stream_OParen.add(char_literal257);
+					char_literal261=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1900);  
+					stream_OParen.add(char_literal261);
 
-					pushFollow(FOLLOW_expression_in_mathCall1878);
-					expression258=expression();
+					pushFollow(FOLLOW_expression_in_mathCall1902);
+					expression262=expression();
 					state._fsp--;
 
-					stream_expression.add(expression258.getTree());
-					char_literal259=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall1880);  
-					stream_CParen.add(char_literal259);
+					stream_expression.add(expression262.getTree());
+					char_literal263=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall1904);  
+					stream_CParen.add(char_literal263);
 
 					// AST REWRITE
 					// elements: expression, Cosine
@@ -5768,9 +5850,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 228:34: -> ^( FUNC_CALL Cosine expression )
+					// 229:34: -> ^( FUNC_CALL Cosine expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:228:37: ^( FUNC_CALL Cosine expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:229:37: ^( FUNC_CALL Cosine expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5787,21 +5869,21 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:229:6: Sine '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:230:6: Sine '(' expression ')'
 					{
-					Sine260=(Token)match(input,Sine,FOLLOW_Sine_in_mathCall1899);  
-					stream_Sine.add(Sine260);
+					Sine264=(Token)match(input,Sine,FOLLOW_Sine_in_mathCall1923);  
+					stream_Sine.add(Sine264);
 
-					char_literal261=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1901);  
-					stream_OParen.add(char_literal261);
+					char_literal265=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1925);  
+					stream_OParen.add(char_literal265);
 
-					pushFollow(FOLLOW_expression_in_mathCall1903);
-					expression262=expression();
+					pushFollow(FOLLOW_expression_in_mathCall1927);
+					expression266=expression();
 					state._fsp--;
 
-					stream_expression.add(expression262.getTree());
-					char_literal263=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall1905);  
-					stream_CParen.add(char_literal263);
+					stream_expression.add(expression266.getTree());
+					char_literal267=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall1929);  
+					stream_CParen.add(char_literal267);
 
 					// AST REWRITE
 					// elements: expression, Sine
@@ -5814,9 +5896,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 229:32: -> ^( FUNC_CALL Sine expression )
+					// 230:32: -> ^( FUNC_CALL Sine expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:229:35: ^( FUNC_CALL Sine expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:230:35: ^( FUNC_CALL Sine expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5833,21 +5915,21 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:230:6: Tan '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:231:6: Tan '(' expression ')'
 					{
-					Tan264=(Token)match(input,Tan,FOLLOW_Tan_in_mathCall1924);  
-					stream_Tan.add(Tan264);
+					Tan268=(Token)match(input,Tan,FOLLOW_Tan_in_mathCall1948);  
+					stream_Tan.add(Tan268);
 
-					char_literal265=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1926);  
-					stream_OParen.add(char_literal265);
+					char_literal269=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1950);  
+					stream_OParen.add(char_literal269);
 
-					pushFollow(FOLLOW_expression_in_mathCall1928);
-					expression266=expression();
+					pushFollow(FOLLOW_expression_in_mathCall1952);
+					expression270=expression();
 					state._fsp--;
 
-					stream_expression.add(expression266.getTree());
-					char_literal267=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall1930);  
-					stream_CParen.add(char_literal267);
+					stream_expression.add(expression270.getTree());
+					char_literal271=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall1954);  
+					stream_CParen.add(char_literal271);
 
 					// AST REWRITE
 					// elements: expression, Tan
@@ -5860,9 +5942,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 230:31: -> ^( FUNC_CALL Tan expression )
+					// 231:31: -> ^( FUNC_CALL Tan expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:230:34: ^( FUNC_CALL Tan expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:231:34: ^( FUNC_CALL Tan expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -5879,36 +5961,36 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:231:6: ATan '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:232:6: ATan '(' ( exprList )? ')'
 					{
-					ATan268=(Token)match(input,ATan,FOLLOW_ATan_in_mathCall1949);  
-					stream_ATan.add(ATan268);
+					ATan272=(Token)match(input,ATan,FOLLOW_ATan_in_mathCall1973);  
+					stream_ATan.add(ATan272);
 
-					char_literal269=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1951);  
-					stream_OParen.add(char_literal269);
+					char_literal273=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1975);  
+					stream_OParen.add(char_literal273);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:231:15: ( exprList )?
-					int alt44=2;
-					int LA44_0 = input.LA(1);
-					if ( (LA44_0==ATan||LA44_0==AddDesign||(LA44_0 >= Arc && LA44_0 <= Assert)||LA44_0==Bool||LA44_0==COLOR_CONSTANT||(LA44_0 >= Clip && LA44_0 <= Cm)||(LA44_0 >= Copy && LA44_0 <= Curve)||LA44_0==Difference||LA44_0==Ellipse||(LA44_0 >= Excl && LA44_0 <= Expand)||(LA44_0 >= Fill && LA44_0 <= Flatten)||(LA44_0 >= Gaussian && LA44_0 <= Hide)||LA44_0==Identifier||LA44_0==Inch||LA44_0==LAdd||(LA44_0 >= LRemove && LA44_0 <= LShape)||(LA44_0 >= Line && LA44_0 <= Mm)||(LA44_0 >= Move && LA44_0 <= MoveBy)||(LA44_0 >= NoFill && LA44_0 <= Number)||(LA44_0 >= OBracket && LA44_0 <= OParen)||(LA44_0 >= PI_CONSTANT && LA44_0 <= Println)||(LA44_0 >= Random && LA44_0 <= Rect)||(LA44_0 >= Rotate && LA44_0 <= Round)||LA44_0==Scale||(LA44_0 >= SetCorner && LA44_0 <= Slider)||(LA44_0 >= Sq && LA44_0 <= Subtract)||(LA44_0 >= Tan && LA44_0 <= TemplateCollection)||(LA44_0 >= Union && LA44_0 <= Weight)||LA44_0==Xor) ) {
-						alt44=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:232:15: ( exprList )?
+					int alt45=2;
+					int LA45_0 = input.LA(1);
+					if ( (LA45_0==ATan||LA45_0==AddDesign||(LA45_0 >= Arc && LA45_0 <= Assert)||LA45_0==Bool||LA45_0==COLOR_CONSTANT||(LA45_0 >= Clip && LA45_0 <= Cm)||(LA45_0 >= Copy && LA45_0 <= Curve)||LA45_0==Difference||LA45_0==Ellipse||(LA45_0 >= Excl && LA45_0 <= Expand)||(LA45_0 >= Fill && LA45_0 <= FollowCurve)||(LA45_0 >= Gaussian && LA45_0 <= Hide)||LA45_0==Identifier||LA45_0==Inch||LA45_0==LAdd||(LA45_0 >= LRemove && LA45_0 <= LShape)||(LA45_0 >= Line && LA45_0 <= Mm)||(LA45_0 >= Move && LA45_0 <= MoveBy)||(LA45_0 >= NoFill && LA45_0 <= Number)||(LA45_0 >= OBracket && LA45_0 <= OParen)||(LA45_0 >= PI_CONSTANT && LA45_0 <= Println)||(LA45_0 >= Random && LA45_0 <= Rect)||(LA45_0 >= Rotate && LA45_0 <= Round)||LA45_0==Scale||(LA45_0 >= SetCorner && LA45_0 <= Slider)||(LA45_0 >= Sq && LA45_0 <= Subtract)||(LA45_0 >= Tan && LA45_0 <= TemplateCollection)||(LA45_0 >= Union && LA45_0 <= Weight)||LA45_0==Xor) ) {
+						alt45=1;
 					}
-					switch (alt44) {
+					switch (alt45) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:231:15: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:232:15: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall1953);
-							exprList270=exprList();
+							pushFollow(FOLLOW_exprList_in_mathCall1977);
+							exprList274=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList270.getTree());
+							stream_exprList.add(exprList274.getTree());
 							}
 							break;
 
 					}
 
-					char_literal271=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall1956);  
-					stream_CParen.add(char_literal271);
+					char_literal275=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall1980);  
+					stream_CParen.add(char_literal275);
 
 					// AST REWRITE
 					// elements: exprList, ATan
@@ -5921,14 +6003,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 231:31: -> ^( FUNC_CALL ATan ( exprList )? )
+					// 232:31: -> ^( FUNC_CALL ATan ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:231:34: ^( FUNC_CALL ATan ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:232:34: ^( FUNC_CALL ATan ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_ATan.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:231:51: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:232:51: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -5945,39 +6027,39 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:232:6: Random '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:233:6: Random '(' ( exprList )? ')'
 					{
-					Random272=(Token)match(input,Random,FOLLOW_Random_in_mathCall1976);  
-					stream_Random.add(Random272);
+					Random276=(Token)match(input,Random,FOLLOW_Random_in_mathCall2000);  
+					stream_Random.add(Random276);
 
-					char_literal273=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall1978);  
-					stream_OParen.add(char_literal273);
+					char_literal277=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2002);  
+					stream_OParen.add(char_literal277);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:232:17: ( exprList )?
-					int alt45=2;
-					int LA45_0 = input.LA(1);
-					if ( (LA45_0==ATan||LA45_0==AddDesign||(LA45_0 >= Arc && LA45_0 <= Assert)||LA45_0==Bool||LA45_0==COLOR_CONSTANT||(LA45_0 >= Clip && LA45_0 <= Cm)||(LA45_0 >= Copy && LA45_0 <= Curve)||LA45_0==Difference||LA45_0==Ellipse||(LA45_0 >= Excl && LA45_0 <= Expand)||(LA45_0 >= Fill && LA45_0 <= Flatten)||(LA45_0 >= Gaussian && LA45_0 <= Hide)||LA45_0==Identifier||LA45_0==Inch||LA45_0==LAdd||(LA45_0 >= LRemove && LA45_0 <= LShape)||(LA45_0 >= Line && LA45_0 <= Mm)||(LA45_0 >= Move && LA45_0 <= MoveBy)||(LA45_0 >= NoFill && LA45_0 <= Number)||(LA45_0 >= OBracket && LA45_0 <= OParen)||(LA45_0 >= PI_CONSTANT && LA45_0 <= Println)||(LA45_0 >= Random && LA45_0 <= Rect)||(LA45_0 >= Rotate && LA45_0 <= Round)||LA45_0==Scale||(LA45_0 >= SetCorner && LA45_0 <= Slider)||(LA45_0 >= Sq && LA45_0 <= Subtract)||(LA45_0 >= Tan && LA45_0 <= TemplateCollection)||(LA45_0 >= Union && LA45_0 <= Weight)||LA45_0==Xor) ) {
-						alt45=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:233:17: ( exprList )?
+					int alt46=2;
+					int LA46_0 = input.LA(1);
+					if ( (LA46_0==ATan||LA46_0==AddDesign||(LA46_0 >= Arc && LA46_0 <= Assert)||LA46_0==Bool||LA46_0==COLOR_CONSTANT||(LA46_0 >= Clip && LA46_0 <= Cm)||(LA46_0 >= Copy && LA46_0 <= Curve)||LA46_0==Difference||LA46_0==Ellipse||(LA46_0 >= Excl && LA46_0 <= Expand)||(LA46_0 >= Fill && LA46_0 <= FollowCurve)||(LA46_0 >= Gaussian && LA46_0 <= Hide)||LA46_0==Identifier||LA46_0==Inch||LA46_0==LAdd||(LA46_0 >= LRemove && LA46_0 <= LShape)||(LA46_0 >= Line && LA46_0 <= Mm)||(LA46_0 >= Move && LA46_0 <= MoveBy)||(LA46_0 >= NoFill && LA46_0 <= Number)||(LA46_0 >= OBracket && LA46_0 <= OParen)||(LA46_0 >= PI_CONSTANT && LA46_0 <= Println)||(LA46_0 >= Random && LA46_0 <= Rect)||(LA46_0 >= Rotate && LA46_0 <= Round)||LA46_0==Scale||(LA46_0 >= SetCorner && LA46_0 <= Slider)||(LA46_0 >= Sq && LA46_0 <= Subtract)||(LA46_0 >= Tan && LA46_0 <= TemplateCollection)||(LA46_0 >= Union && LA46_0 <= Weight)||LA46_0==Xor) ) {
+						alt46=1;
 					}
-					switch (alt45) {
+					switch (alt46) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:232:17: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:233:17: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall1980);
-							exprList274=exprList();
+							pushFollow(FOLLOW_exprList_in_mathCall2004);
+							exprList278=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList274.getTree());
+							stream_exprList.add(exprList278.getTree());
 							}
 							break;
 
 					}
 
-					char_literal275=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall1983);  
-					stream_CParen.add(char_literal275);
+					char_literal279=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2007);  
+					stream_CParen.add(char_literal279);
 
 					// AST REWRITE
-					// elements: exprList, Random
+					// elements: Random, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5987,14 +6069,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 232:33: -> ^( FUNC_CALL Random ( exprList )? )
+					// 233:33: -> ^( FUNC_CALL Random ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:232:36: ^( FUNC_CALL Random ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:233:36: ^( FUNC_CALL Random ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Random.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:232:55: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:233:55: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -6011,39 +6093,39 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:233:6: Pow '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:234:6: Pow '(' ( exprList )? ')'
 					{
-					Pow276=(Token)match(input,Pow,FOLLOW_Pow_in_mathCall2003);  
-					stream_Pow.add(Pow276);
+					Pow280=(Token)match(input,Pow,FOLLOW_Pow_in_mathCall2027);  
+					stream_Pow.add(Pow280);
 
-					char_literal277=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2005);  
-					stream_OParen.add(char_literal277);
+					char_literal281=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2029);  
+					stream_OParen.add(char_literal281);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:233:14: ( exprList )?
-					int alt46=2;
-					int LA46_0 = input.LA(1);
-					if ( (LA46_0==ATan||LA46_0==AddDesign||(LA46_0 >= Arc && LA46_0 <= Assert)||LA46_0==Bool||LA46_0==COLOR_CONSTANT||(LA46_0 >= Clip && LA46_0 <= Cm)||(LA46_0 >= Copy && LA46_0 <= Curve)||LA46_0==Difference||LA46_0==Ellipse||(LA46_0 >= Excl && LA46_0 <= Expand)||(LA46_0 >= Fill && LA46_0 <= Flatten)||(LA46_0 >= Gaussian && LA46_0 <= Hide)||LA46_0==Identifier||LA46_0==Inch||LA46_0==LAdd||(LA46_0 >= LRemove && LA46_0 <= LShape)||(LA46_0 >= Line && LA46_0 <= Mm)||(LA46_0 >= Move && LA46_0 <= MoveBy)||(LA46_0 >= NoFill && LA46_0 <= Number)||(LA46_0 >= OBracket && LA46_0 <= OParen)||(LA46_0 >= PI_CONSTANT && LA46_0 <= Println)||(LA46_0 >= Random && LA46_0 <= Rect)||(LA46_0 >= Rotate && LA46_0 <= Round)||LA46_0==Scale||(LA46_0 >= SetCorner && LA46_0 <= Slider)||(LA46_0 >= Sq && LA46_0 <= Subtract)||(LA46_0 >= Tan && LA46_0 <= TemplateCollection)||(LA46_0 >= Union && LA46_0 <= Weight)||LA46_0==Xor) ) {
-						alt46=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:234:14: ( exprList )?
+					int alt47=2;
+					int LA47_0 = input.LA(1);
+					if ( (LA47_0==ATan||LA47_0==AddDesign||(LA47_0 >= Arc && LA47_0 <= Assert)||LA47_0==Bool||LA47_0==COLOR_CONSTANT||(LA47_0 >= Clip && LA47_0 <= Cm)||(LA47_0 >= Copy && LA47_0 <= Curve)||LA47_0==Difference||LA47_0==Ellipse||(LA47_0 >= Excl && LA47_0 <= Expand)||(LA47_0 >= Fill && LA47_0 <= FollowCurve)||(LA47_0 >= Gaussian && LA47_0 <= Hide)||LA47_0==Identifier||LA47_0==Inch||LA47_0==LAdd||(LA47_0 >= LRemove && LA47_0 <= LShape)||(LA47_0 >= Line && LA47_0 <= Mm)||(LA47_0 >= Move && LA47_0 <= MoveBy)||(LA47_0 >= NoFill && LA47_0 <= Number)||(LA47_0 >= OBracket && LA47_0 <= OParen)||(LA47_0 >= PI_CONSTANT && LA47_0 <= Println)||(LA47_0 >= Random && LA47_0 <= Rect)||(LA47_0 >= Rotate && LA47_0 <= Round)||LA47_0==Scale||(LA47_0 >= SetCorner && LA47_0 <= Slider)||(LA47_0 >= Sq && LA47_0 <= Subtract)||(LA47_0 >= Tan && LA47_0 <= TemplateCollection)||(LA47_0 >= Union && LA47_0 <= Weight)||LA47_0==Xor) ) {
+						alt47=1;
 					}
-					switch (alt46) {
+					switch (alt47) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:233:14: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:234:14: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall2007);
-							exprList278=exprList();
+							pushFollow(FOLLOW_exprList_in_mathCall2031);
+							exprList282=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList278.getTree());
+							stream_exprList.add(exprList282.getTree());
 							}
 							break;
 
 					}
 
-					char_literal279=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2010);  
-					stream_CParen.add(char_literal279);
+					char_literal283=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2034);  
+					stream_CParen.add(char_literal283);
 
 					// AST REWRITE
-					// elements: Pow, exprList
+					// elements: exprList, Pow
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6053,14 +6135,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 233:30: -> ^( FUNC_CALL Pow ( exprList )? )
+					// 234:30: -> ^( FUNC_CALL Pow ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:233:33: ^( FUNC_CALL Pow ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:234:33: ^( FUNC_CALL Pow ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Pow.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:233:49: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:234:49: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -6077,24 +6159,24 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:234:6: Sqrt '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:235:6: Sqrt '(' expression ')'
 					{
-					Sqrt280=(Token)match(input,Sqrt,FOLLOW_Sqrt_in_mathCall2030);  
-					stream_Sqrt.add(Sqrt280);
+					Sqrt284=(Token)match(input,Sqrt,FOLLOW_Sqrt_in_mathCall2054);  
+					stream_Sqrt.add(Sqrt284);
 
-					char_literal281=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2032);  
-					stream_OParen.add(char_literal281);
+					char_literal285=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2056);  
+					stream_OParen.add(char_literal285);
 
-					pushFollow(FOLLOW_expression_in_mathCall2034);
-					expression282=expression();
+					pushFollow(FOLLOW_expression_in_mathCall2058);
+					expression286=expression();
 					state._fsp--;
 
-					stream_expression.add(expression282.getTree());
-					char_literal283=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2036);  
-					stream_CParen.add(char_literal283);
+					stream_expression.add(expression286.getTree());
+					char_literal287=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2060);  
+					stream_CParen.add(char_literal287);
 
 					// AST REWRITE
-					// elements: expression, Sqrt
+					// elements: Sqrt, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6104,9 +6186,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 234:32: -> ^( FUNC_CALL Sqrt expression )
+					// 235:32: -> ^( FUNC_CALL Sqrt expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:234:35: ^( FUNC_CALL Sqrt expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:235:35: ^( FUNC_CALL Sqrt expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6123,24 +6205,24 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:235:6: Sq '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:236:6: Sq '(' expression ')'
 					{
-					Sq284=(Token)match(input,Sq,FOLLOW_Sq_in_mathCall2055);  
-					stream_Sq.add(Sq284);
+					Sq288=(Token)match(input,Sq,FOLLOW_Sq_in_mathCall2079);  
+					stream_Sq.add(Sq288);
 
-					char_literal285=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2057);  
-					stream_OParen.add(char_literal285);
+					char_literal289=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2081);  
+					stream_OParen.add(char_literal289);
 
-					pushFollow(FOLLOW_expression_in_mathCall2059);
-					expression286=expression();
+					pushFollow(FOLLOW_expression_in_mathCall2083);
+					expression290=expression();
 					state._fsp--;
 
-					stream_expression.add(expression286.getTree());
-					char_literal287=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2061);  
-					stream_CParen.add(char_literal287);
+					stream_expression.add(expression290.getTree());
+					char_literal291=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2085);  
+					stream_CParen.add(char_literal291);
 
 					// AST REWRITE
-					// elements: Sq, expression
+					// elements: expression, Sq
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6150,9 +6232,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 235:30: -> ^( FUNC_CALL Sq expression )
+					// 236:30: -> ^( FUNC_CALL Sq expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:235:33: ^( FUNC_CALL Sq expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:236:33: ^( FUNC_CALL Sq expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6169,39 +6251,39 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:236:6: Gaussian '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:237:6: Gaussian '(' ( exprList )? ')'
 					{
-					Gaussian288=(Token)match(input,Gaussian,FOLLOW_Gaussian_in_mathCall2080);  
-					stream_Gaussian.add(Gaussian288);
+					Gaussian292=(Token)match(input,Gaussian,FOLLOW_Gaussian_in_mathCall2104);  
+					stream_Gaussian.add(Gaussian292);
 
-					char_literal289=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2082);  
-					stream_OParen.add(char_literal289);
+					char_literal293=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2106);  
+					stream_OParen.add(char_literal293);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:236:19: ( exprList )?
-					int alt47=2;
-					int LA47_0 = input.LA(1);
-					if ( (LA47_0==ATan||LA47_0==AddDesign||(LA47_0 >= Arc && LA47_0 <= Assert)||LA47_0==Bool||LA47_0==COLOR_CONSTANT||(LA47_0 >= Clip && LA47_0 <= Cm)||(LA47_0 >= Copy && LA47_0 <= Curve)||LA47_0==Difference||LA47_0==Ellipse||(LA47_0 >= Excl && LA47_0 <= Expand)||(LA47_0 >= Fill && LA47_0 <= Flatten)||(LA47_0 >= Gaussian && LA47_0 <= Hide)||LA47_0==Identifier||LA47_0==Inch||LA47_0==LAdd||(LA47_0 >= LRemove && LA47_0 <= LShape)||(LA47_0 >= Line && LA47_0 <= Mm)||(LA47_0 >= Move && LA47_0 <= MoveBy)||(LA47_0 >= NoFill && LA47_0 <= Number)||(LA47_0 >= OBracket && LA47_0 <= OParen)||(LA47_0 >= PI_CONSTANT && LA47_0 <= Println)||(LA47_0 >= Random && LA47_0 <= Rect)||(LA47_0 >= Rotate && LA47_0 <= Round)||LA47_0==Scale||(LA47_0 >= SetCorner && LA47_0 <= Slider)||(LA47_0 >= Sq && LA47_0 <= Subtract)||(LA47_0 >= Tan && LA47_0 <= TemplateCollection)||(LA47_0 >= Union && LA47_0 <= Weight)||LA47_0==Xor) ) {
-						alt47=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:237:19: ( exprList )?
+					int alt48=2;
+					int LA48_0 = input.LA(1);
+					if ( (LA48_0==ATan||LA48_0==AddDesign||(LA48_0 >= Arc && LA48_0 <= Assert)||LA48_0==Bool||LA48_0==COLOR_CONSTANT||(LA48_0 >= Clip && LA48_0 <= Cm)||(LA48_0 >= Copy && LA48_0 <= Curve)||LA48_0==Difference||LA48_0==Ellipse||(LA48_0 >= Excl && LA48_0 <= Expand)||(LA48_0 >= Fill && LA48_0 <= FollowCurve)||(LA48_0 >= Gaussian && LA48_0 <= Hide)||LA48_0==Identifier||LA48_0==Inch||LA48_0==LAdd||(LA48_0 >= LRemove && LA48_0 <= LShape)||(LA48_0 >= Line && LA48_0 <= Mm)||(LA48_0 >= Move && LA48_0 <= MoveBy)||(LA48_0 >= NoFill && LA48_0 <= Number)||(LA48_0 >= OBracket && LA48_0 <= OParen)||(LA48_0 >= PI_CONSTANT && LA48_0 <= Println)||(LA48_0 >= Random && LA48_0 <= Rect)||(LA48_0 >= Rotate && LA48_0 <= Round)||LA48_0==Scale||(LA48_0 >= SetCorner && LA48_0 <= Slider)||(LA48_0 >= Sq && LA48_0 <= Subtract)||(LA48_0 >= Tan && LA48_0 <= TemplateCollection)||(LA48_0 >= Union && LA48_0 <= Weight)||LA48_0==Xor) ) {
+						alt48=1;
 					}
-					switch (alt47) {
+					switch (alt48) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:236:19: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:237:19: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall2084);
-							exprList290=exprList();
+							pushFollow(FOLLOW_exprList_in_mathCall2108);
+							exprList294=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList290.getTree());
+							stream_exprList.add(exprList294.getTree());
 							}
 							break;
 
 					}
 
-					char_literal291=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2087);  
-					stream_CParen.add(char_literal291);
+					char_literal295=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2111);  
+					stream_CParen.add(char_literal295);
 
 					// AST REWRITE
-					// elements: exprList, Gaussian
+					// elements: Gaussian, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6211,14 +6293,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 236:35: -> ^( FUNC_CALL Gaussian ( exprList )? )
+					// 237:35: -> ^( FUNC_CALL Gaussian ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:236:38: ^( FUNC_CALL Gaussian ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:237:38: ^( FUNC_CALL Gaussian ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Gaussian.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:236:59: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:237:59: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -6235,36 +6317,36 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:237:6: Noise '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:238:6: Noise '(' ( exprList )? ')'
 					{
-					Noise292=(Token)match(input,Noise,FOLLOW_Noise_in_mathCall2107);  
-					stream_Noise.add(Noise292);
+					Noise296=(Token)match(input,Noise,FOLLOW_Noise_in_mathCall2131);  
+					stream_Noise.add(Noise296);
 
-					char_literal293=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2109);  
-					stream_OParen.add(char_literal293);
+					char_literal297=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2133);  
+					stream_OParen.add(char_literal297);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:237:16: ( exprList )?
-					int alt48=2;
-					int LA48_0 = input.LA(1);
-					if ( (LA48_0==ATan||LA48_0==AddDesign||(LA48_0 >= Arc && LA48_0 <= Assert)||LA48_0==Bool||LA48_0==COLOR_CONSTANT||(LA48_0 >= Clip && LA48_0 <= Cm)||(LA48_0 >= Copy && LA48_0 <= Curve)||LA48_0==Difference||LA48_0==Ellipse||(LA48_0 >= Excl && LA48_0 <= Expand)||(LA48_0 >= Fill && LA48_0 <= Flatten)||(LA48_0 >= Gaussian && LA48_0 <= Hide)||LA48_0==Identifier||LA48_0==Inch||LA48_0==LAdd||(LA48_0 >= LRemove && LA48_0 <= LShape)||(LA48_0 >= Line && LA48_0 <= Mm)||(LA48_0 >= Move && LA48_0 <= MoveBy)||(LA48_0 >= NoFill && LA48_0 <= Number)||(LA48_0 >= OBracket && LA48_0 <= OParen)||(LA48_0 >= PI_CONSTANT && LA48_0 <= Println)||(LA48_0 >= Random && LA48_0 <= Rect)||(LA48_0 >= Rotate && LA48_0 <= Round)||LA48_0==Scale||(LA48_0 >= SetCorner && LA48_0 <= Slider)||(LA48_0 >= Sq && LA48_0 <= Subtract)||(LA48_0 >= Tan && LA48_0 <= TemplateCollection)||(LA48_0 >= Union && LA48_0 <= Weight)||LA48_0==Xor) ) {
-						alt48=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:238:16: ( exprList )?
+					int alt49=2;
+					int LA49_0 = input.LA(1);
+					if ( (LA49_0==ATan||LA49_0==AddDesign||(LA49_0 >= Arc && LA49_0 <= Assert)||LA49_0==Bool||LA49_0==COLOR_CONSTANT||(LA49_0 >= Clip && LA49_0 <= Cm)||(LA49_0 >= Copy && LA49_0 <= Curve)||LA49_0==Difference||LA49_0==Ellipse||(LA49_0 >= Excl && LA49_0 <= Expand)||(LA49_0 >= Fill && LA49_0 <= FollowCurve)||(LA49_0 >= Gaussian && LA49_0 <= Hide)||LA49_0==Identifier||LA49_0==Inch||LA49_0==LAdd||(LA49_0 >= LRemove && LA49_0 <= LShape)||(LA49_0 >= Line && LA49_0 <= Mm)||(LA49_0 >= Move && LA49_0 <= MoveBy)||(LA49_0 >= NoFill && LA49_0 <= Number)||(LA49_0 >= OBracket && LA49_0 <= OParen)||(LA49_0 >= PI_CONSTANT && LA49_0 <= Println)||(LA49_0 >= Random && LA49_0 <= Rect)||(LA49_0 >= Rotate && LA49_0 <= Round)||LA49_0==Scale||(LA49_0 >= SetCorner && LA49_0 <= Slider)||(LA49_0 >= Sq && LA49_0 <= Subtract)||(LA49_0 >= Tan && LA49_0 <= TemplateCollection)||(LA49_0 >= Union && LA49_0 <= Weight)||LA49_0==Xor) ) {
+						alt49=1;
 					}
-					switch (alt48) {
+					switch (alt49) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:237:16: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:238:16: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall2111);
-							exprList294=exprList();
+							pushFollow(FOLLOW_exprList_in_mathCall2135);
+							exprList298=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList294.getTree());
+							stream_exprList.add(exprList298.getTree());
 							}
 							break;
 
 					}
 
-					char_literal295=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2114);  
-					stream_CParen.add(char_literal295);
+					char_literal299=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2138);  
+					stream_CParen.add(char_literal299);
 
 					// AST REWRITE
 					// elements: Noise, exprList
@@ -6277,14 +6359,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 237:32: -> ^( FUNC_CALL Noise ( exprList )? )
+					// 238:32: -> ^( FUNC_CALL Noise ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:237:35: ^( FUNC_CALL Noise ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:238:35: ^( FUNC_CALL Noise ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Noise.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:237:53: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:238:53: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -6301,24 +6383,24 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:238:6: Round '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:239:6: Round '(' expression ')'
 					{
-					Round296=(Token)match(input,Round,FOLLOW_Round_in_mathCall2134);  
-					stream_Round.add(Round296);
+					Round300=(Token)match(input,Round,FOLLOW_Round_in_mathCall2158);  
+					stream_Round.add(Round300);
 
-					char_literal297=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2135);  
-					stream_OParen.add(char_literal297);
+					char_literal301=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2159);  
+					stream_OParen.add(char_literal301);
 
-					pushFollow(FOLLOW_expression_in_mathCall2137);
-					expression298=expression();
+					pushFollow(FOLLOW_expression_in_mathCall2161);
+					expression302=expression();
 					state._fsp--;
 
-					stream_expression.add(expression298.getTree());
-					char_literal299=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2139);  
-					stream_CParen.add(char_literal299);
+					stream_expression.add(expression302.getTree());
+					char_literal303=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2163);  
+					stream_CParen.add(char_literal303);
 
 					// AST REWRITE
-					// elements: Round, expression
+					// elements: expression, Round
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6328,9 +6410,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 238:32: -> ^( FUNC_CALL Round expression )
+					// 239:32: -> ^( FUNC_CALL Round expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:238:35: ^( FUNC_CALL Round expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:239:35: ^( FUNC_CALL Round expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6347,39 +6429,39 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:239:6: Map '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:240:6: Map '(' ( exprList )? ')'
 					{
-					Map300=(Token)match(input,Map,FOLLOW_Map_in_mathCall2158);  
-					stream_Map.add(Map300);
+					Map304=(Token)match(input,Map,FOLLOW_Map_in_mathCall2182);  
+					stream_Map.add(Map304);
 
-					char_literal301=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2159);  
-					stream_OParen.add(char_literal301);
+					char_literal305=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2183);  
+					stream_OParen.add(char_literal305);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:239:13: ( exprList )?
-					int alt49=2;
-					int LA49_0 = input.LA(1);
-					if ( (LA49_0==ATan||LA49_0==AddDesign||(LA49_0 >= Arc && LA49_0 <= Assert)||LA49_0==Bool||LA49_0==COLOR_CONSTANT||(LA49_0 >= Clip && LA49_0 <= Cm)||(LA49_0 >= Copy && LA49_0 <= Curve)||LA49_0==Difference||LA49_0==Ellipse||(LA49_0 >= Excl && LA49_0 <= Expand)||(LA49_0 >= Fill && LA49_0 <= Flatten)||(LA49_0 >= Gaussian && LA49_0 <= Hide)||LA49_0==Identifier||LA49_0==Inch||LA49_0==LAdd||(LA49_0 >= LRemove && LA49_0 <= LShape)||(LA49_0 >= Line && LA49_0 <= Mm)||(LA49_0 >= Move && LA49_0 <= MoveBy)||(LA49_0 >= NoFill && LA49_0 <= Number)||(LA49_0 >= OBracket && LA49_0 <= OParen)||(LA49_0 >= PI_CONSTANT && LA49_0 <= Println)||(LA49_0 >= Random && LA49_0 <= Rect)||(LA49_0 >= Rotate && LA49_0 <= Round)||LA49_0==Scale||(LA49_0 >= SetCorner && LA49_0 <= Slider)||(LA49_0 >= Sq && LA49_0 <= Subtract)||(LA49_0 >= Tan && LA49_0 <= TemplateCollection)||(LA49_0 >= Union && LA49_0 <= Weight)||LA49_0==Xor) ) {
-						alt49=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:240:13: ( exprList )?
+					int alt50=2;
+					int LA50_0 = input.LA(1);
+					if ( (LA50_0==ATan||LA50_0==AddDesign||(LA50_0 >= Arc && LA50_0 <= Assert)||LA50_0==Bool||LA50_0==COLOR_CONSTANT||(LA50_0 >= Clip && LA50_0 <= Cm)||(LA50_0 >= Copy && LA50_0 <= Curve)||LA50_0==Difference||LA50_0==Ellipse||(LA50_0 >= Excl && LA50_0 <= Expand)||(LA50_0 >= Fill && LA50_0 <= FollowCurve)||(LA50_0 >= Gaussian && LA50_0 <= Hide)||LA50_0==Identifier||LA50_0==Inch||LA50_0==LAdd||(LA50_0 >= LRemove && LA50_0 <= LShape)||(LA50_0 >= Line && LA50_0 <= Mm)||(LA50_0 >= Move && LA50_0 <= MoveBy)||(LA50_0 >= NoFill && LA50_0 <= Number)||(LA50_0 >= OBracket && LA50_0 <= OParen)||(LA50_0 >= PI_CONSTANT && LA50_0 <= Println)||(LA50_0 >= Random && LA50_0 <= Rect)||(LA50_0 >= Rotate && LA50_0 <= Round)||LA50_0==Scale||(LA50_0 >= SetCorner && LA50_0 <= Slider)||(LA50_0 >= Sq && LA50_0 <= Subtract)||(LA50_0 >= Tan && LA50_0 <= TemplateCollection)||(LA50_0 >= Union && LA50_0 <= Weight)||LA50_0==Xor) ) {
+						alt50=1;
 					}
-					switch (alt49) {
+					switch (alt50) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:239:13: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:240:13: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall2161);
-							exprList302=exprList();
+							pushFollow(FOLLOW_exprList_in_mathCall2185);
+							exprList306=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList302.getTree());
+							stream_exprList.add(exprList306.getTree());
 							}
 							break;
 
 					}
 
-					char_literal303=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2164);  
-					stream_CParen.add(char_literal303);
+					char_literal307=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2188);  
+					stream_CParen.add(char_literal307);
 
 					// AST REWRITE
-					// elements: exprList, Map
+					// elements: Map, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6389,14 +6471,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 239:29: -> ^( FUNC_CALL Map ( exprList )? )
+					// 240:29: -> ^( FUNC_CALL Map ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:239:32: ^( FUNC_CALL Map ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:240:32: ^( FUNC_CALL Map ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Map.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:239:48: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:240:48: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -6413,24 +6495,24 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:240:6: Inch '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:241:6: Inch '(' expression ')'
 					{
-					Inch304=(Token)match(input,Inch,FOLLOW_Inch_in_mathCall2184);  
-					stream_Inch.add(Inch304);
+					Inch308=(Token)match(input,Inch,FOLLOW_Inch_in_mathCall2208);  
+					stream_Inch.add(Inch308);
 
-					char_literal305=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2186);  
-					stream_OParen.add(char_literal305);
+					char_literal309=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2210);  
+					stream_OParen.add(char_literal309);
 
-					pushFollow(FOLLOW_expression_in_mathCall2188);
-					expression306=expression();
+					pushFollow(FOLLOW_expression_in_mathCall2212);
+					expression310=expression();
 					state._fsp--;
 
-					stream_expression.add(expression306.getTree());
-					char_literal307=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2190);  
-					stream_CParen.add(char_literal307);
+					stream_expression.add(expression310.getTree());
+					char_literal311=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2214);  
+					stream_CParen.add(char_literal311);
 
 					// AST REWRITE
-					// elements: Inch, expression
+					// elements: expression, Inch
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6440,9 +6522,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 240:32: -> ^( FUNC_CALL Inch expression )
+					// 241:32: -> ^( FUNC_CALL Inch expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:240:35: ^( FUNC_CALL Inch expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:241:35: ^( FUNC_CALL Inch expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6459,21 +6541,21 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:241:6: Mm '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:242:6: Mm '(' expression ')'
 					{
-					Mm308=(Token)match(input,Mm,FOLLOW_Mm_in_mathCall2209);  
-					stream_Mm.add(Mm308);
+					Mm312=(Token)match(input,Mm,FOLLOW_Mm_in_mathCall2233);  
+					stream_Mm.add(Mm312);
 
-					char_literal309=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2211);  
-					stream_OParen.add(char_literal309);
+					char_literal313=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2235);  
+					stream_OParen.add(char_literal313);
 
-					pushFollow(FOLLOW_expression_in_mathCall2213);
-					expression310=expression();
+					pushFollow(FOLLOW_expression_in_mathCall2237);
+					expression314=expression();
 					state._fsp--;
 
-					stream_expression.add(expression310.getTree());
-					char_literal311=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2215);  
-					stream_CParen.add(char_literal311);
+					stream_expression.add(expression314.getTree());
+					char_literal315=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2239);  
+					stream_CParen.add(char_literal315);
 
 					// AST REWRITE
 					// elements: expression, Mm
@@ -6486,9 +6568,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 241:30: -> ^( FUNC_CALL Mm expression )
+					// 242:30: -> ^( FUNC_CALL Mm expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:241:33: ^( FUNC_CALL Mm expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:242:33: ^( FUNC_CALL Mm expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6505,24 +6587,24 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 15 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:242:6: Cm '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:243:6: Cm '(' expression ')'
 					{
-					Cm312=(Token)match(input,Cm,FOLLOW_Cm_in_mathCall2234);  
-					stream_Cm.add(Cm312);
+					Cm316=(Token)match(input,Cm,FOLLOW_Cm_in_mathCall2258);  
+					stream_Cm.add(Cm316);
 
-					char_literal313=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2236);  
-					stream_OParen.add(char_literal313);
+					char_literal317=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2260);  
+					stream_OParen.add(char_literal317);
 
-					pushFollow(FOLLOW_expression_in_mathCall2238);
-					expression314=expression();
+					pushFollow(FOLLOW_expression_in_mathCall2262);
+					expression318=expression();
 					state._fsp--;
 
-					stream_expression.add(expression314.getTree());
-					char_literal315=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2240);  
-					stream_CParen.add(char_literal315);
+					stream_expression.add(expression318.getTree());
+					char_literal319=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2264);  
+					stream_CParen.add(char_literal319);
 
 					// AST REWRITE
-					// elements: expression, Cm
+					// elements: Cm, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6532,9 +6614,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 242:30: -> ^( FUNC_CALL Cm expression )
+					// 243:30: -> ^( FUNC_CALL Cm expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:242:33: ^( FUNC_CALL Cm expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:243:33: ^( FUNC_CALL Cm expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6551,21 +6633,21 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 16 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:243:6: Units '(' expression ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:244:6: Units '(' expression ')'
 					{
-					Units316=(Token)match(input,Units,FOLLOW_Units_in_mathCall2259);  
-					stream_Units.add(Units316);
+					Units320=(Token)match(input,Units,FOLLOW_Units_in_mathCall2283);  
+					stream_Units.add(Units320);
 
-					char_literal317=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2260);  
-					stream_OParen.add(char_literal317);
+					char_literal321=(Token)match(input,OParen,FOLLOW_OParen_in_mathCall2284);  
+					stream_OParen.add(char_literal321);
 
-					pushFollow(FOLLOW_expression_in_mathCall2262);
-					expression318=expression();
+					pushFollow(FOLLOW_expression_in_mathCall2286);
+					expression322=expression();
 					state._fsp--;
 
-					stream_expression.add(expression318.getTree());
-					char_literal319=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2264);  
-					stream_CParen.add(char_literal319);
+					stream_expression.add(expression322.getTree());
+					char_literal323=(Token)match(input,CParen,FOLLOW_CParen_in_mathCall2288);  
+					stream_CParen.add(char_literal323);
 
 					// AST REWRITE
 					// elements: Units, expression
@@ -6578,9 +6660,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 243:32: -> ^( FUNC_CALL Units expression )
+					// 244:32: -> ^( FUNC_CALL Units expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:243:35: ^( FUNC_CALL Units expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:244:35: ^( FUNC_CALL Units expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
@@ -6625,58 +6707,58 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "uICall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:246:3: uICall : Slider '(' ( exprList )? ')' -> ^( FUNC_CALL Slider ( exprList )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:247:3: uICall : Slider '(' ( exprList )? ')' -> ^( FUNC_CALL Slider ( exprList )? ) ;
 	public final PyEsqueParser.uICall_return uICall() throws RecognitionException {
 		PyEsqueParser.uICall_return retval = new PyEsqueParser.uICall_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token Slider320=null;
-		Token char_literal321=null;
-		Token char_literal323=null;
-		ParserRuleReturnScope exprList322 =null;
+		Token Slider324=null;
+		Token char_literal325=null;
+		Token char_literal327=null;
+		ParserRuleReturnScope exprList326 =null;
 
-		Object Slider320_tree=null;
-		Object char_literal321_tree=null;
-		Object char_literal323_tree=null;
+		Object Slider324_tree=null;
+		Object char_literal325_tree=null;
+		Object char_literal327_tree=null;
 		RewriteRuleTokenStream stream_OParen=new RewriteRuleTokenStream(adaptor,"token OParen");
 		RewriteRuleTokenStream stream_CParen=new RewriteRuleTokenStream(adaptor,"token CParen");
 		RewriteRuleTokenStream stream_Slider=new RewriteRuleTokenStream(adaptor,"token Slider");
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:247:4: ( Slider '(' ( exprList )? ')' -> ^( FUNC_CALL Slider ( exprList )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:247:5: Slider '(' ( exprList )? ')'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:248:4: ( Slider '(' ( exprList )? ')' -> ^( FUNC_CALL Slider ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:248:5: Slider '(' ( exprList )? ')'
 			{
-			Slider320=(Token)match(input,Slider,FOLLOW_Slider_in_uICall2295);  
-			stream_Slider.add(Slider320);
+			Slider324=(Token)match(input,Slider,FOLLOW_Slider_in_uICall2319);  
+			stream_Slider.add(Slider324);
 
-			char_literal321=(Token)match(input,OParen,FOLLOW_OParen_in_uICall2297);  
-			stream_OParen.add(char_literal321);
+			char_literal325=(Token)match(input,OParen,FOLLOW_OParen_in_uICall2321);  
+			stream_OParen.add(char_literal325);
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:247:16: ( exprList )?
-			int alt51=2;
-			int LA51_0 = input.LA(1);
-			if ( (LA51_0==ATan||LA51_0==AddDesign||(LA51_0 >= Arc && LA51_0 <= Assert)||LA51_0==Bool||LA51_0==COLOR_CONSTANT||(LA51_0 >= Clip && LA51_0 <= Cm)||(LA51_0 >= Copy && LA51_0 <= Curve)||LA51_0==Difference||LA51_0==Ellipse||(LA51_0 >= Excl && LA51_0 <= Expand)||(LA51_0 >= Fill && LA51_0 <= Flatten)||(LA51_0 >= Gaussian && LA51_0 <= Hide)||LA51_0==Identifier||LA51_0==Inch||LA51_0==LAdd||(LA51_0 >= LRemove && LA51_0 <= LShape)||(LA51_0 >= Line && LA51_0 <= Mm)||(LA51_0 >= Move && LA51_0 <= MoveBy)||(LA51_0 >= NoFill && LA51_0 <= Number)||(LA51_0 >= OBracket && LA51_0 <= OParen)||(LA51_0 >= PI_CONSTANT && LA51_0 <= Println)||(LA51_0 >= Random && LA51_0 <= Rect)||(LA51_0 >= Rotate && LA51_0 <= Round)||LA51_0==Scale||(LA51_0 >= SetCorner && LA51_0 <= Slider)||(LA51_0 >= Sq && LA51_0 <= Subtract)||(LA51_0 >= Tan && LA51_0 <= TemplateCollection)||(LA51_0 >= Union && LA51_0 <= Weight)||LA51_0==Xor) ) {
-				alt51=1;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:248:16: ( exprList )?
+			int alt52=2;
+			int LA52_0 = input.LA(1);
+			if ( (LA52_0==ATan||LA52_0==AddDesign||(LA52_0 >= Arc && LA52_0 <= Assert)||LA52_0==Bool||LA52_0==COLOR_CONSTANT||(LA52_0 >= Clip && LA52_0 <= Cm)||(LA52_0 >= Copy && LA52_0 <= Curve)||LA52_0==Difference||LA52_0==Ellipse||(LA52_0 >= Excl && LA52_0 <= Expand)||(LA52_0 >= Fill && LA52_0 <= FollowCurve)||(LA52_0 >= Gaussian && LA52_0 <= Hide)||LA52_0==Identifier||LA52_0==Inch||LA52_0==LAdd||(LA52_0 >= LRemove && LA52_0 <= LShape)||(LA52_0 >= Line && LA52_0 <= Mm)||(LA52_0 >= Move && LA52_0 <= MoveBy)||(LA52_0 >= NoFill && LA52_0 <= Number)||(LA52_0 >= OBracket && LA52_0 <= OParen)||(LA52_0 >= PI_CONSTANT && LA52_0 <= Println)||(LA52_0 >= Random && LA52_0 <= Rect)||(LA52_0 >= Rotate && LA52_0 <= Round)||LA52_0==Scale||(LA52_0 >= SetCorner && LA52_0 <= Slider)||(LA52_0 >= Sq && LA52_0 <= Subtract)||(LA52_0 >= Tan && LA52_0 <= TemplateCollection)||(LA52_0 >= Union && LA52_0 <= Weight)||LA52_0==Xor) ) {
+				alt52=1;
 			}
-			switch (alt51) {
+			switch (alt52) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:247:16: exprList
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:248:16: exprList
 					{
-					pushFollow(FOLLOW_exprList_in_uICall2299);
-					exprList322=exprList();
+					pushFollow(FOLLOW_exprList_in_uICall2323);
+					exprList326=exprList();
 					state._fsp--;
 
-					stream_exprList.add(exprList322.getTree());
+					stream_exprList.add(exprList326.getTree());
 					}
 					break;
 
 			}
 
-			char_literal323=(Token)match(input,CParen,FOLLOW_CParen_in_uICall2302);  
-			stream_CParen.add(char_literal323);
+			char_literal327=(Token)match(input,CParen,FOLLOW_CParen_in_uICall2326);  
+			stream_CParen.add(char_literal327);
 
 			// AST REWRITE
 			// elements: Slider, exprList
@@ -6689,14 +6771,14 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 247:32: -> ^( FUNC_CALL Slider ( exprList )? )
+			// 248:32: -> ^( FUNC_CALL Slider ( exprList )? )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:247:35: ^( FUNC_CALL Slider ( exprList )? )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:248:35: ^( FUNC_CALL Slider ( exprList )? )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 				adaptor.addChild(root_1, stream_Slider.nextNode());
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:247:54: ( exprList )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:248:54: ( exprList )?
 				if ( stream_exprList.hasNext() ) {
 					adaptor.addChild(root_1, stream_exprList.nextTree());
 				}
@@ -6739,44 +6821,43 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "templateCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:250:3: templateCall : ( Template '(' ( exprList )? ')' -> ^( FUNC_CALL Template ( exprList )? ) | SetWidth '(' ( exprList )? ')' -> ^( FUNC_CALL SetWidth ( exprList )? ) | SetHeight '(' ( exprList )? ')' -> ^( FUNC_CALL SetHeight ( exprList )? ) | SetSeam '(' ( exprList )? ')' -> ^( FUNC_CALL SetSeam ( exprList )? ) | SetName '(' ( exprList )? ')' -> ^( FUNC_CALL SetName ( exprList )? ) | SetVFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetVFold ( exprList )? ) | SetHFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetHFold ( exprList )? ) | SetCorner '(' ( exprList )? ')' -> ^( FUNC_CALL SetCorner ( exprList )? ) | TemplateCollection '(' ( exprList )? ')' -> ^( FUNC_CALL TemplateCollection ( exprList )? ) | AddDesign '(' ( exprList )? ')' -> ^( FUNC_CALL AddDesign ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:251:3: templateCall : ( Template '(' ( exprList )? ')' -> ^( FUNC_CALL Template ( exprList )? ) | SetWidth '(' ( exprList )? ')' -> ^( FUNC_CALL SetWidth ( exprList )? ) | SetHeight '(' ( exprList )? ')' -> ^( FUNC_CALL SetHeight ( exprList )? ) | SetSeam '(' ( exprList )? ')' -> ^( FUNC_CALL SetSeam ( exprList )? ) | SetName '(' ( exprList )? ')' -> ^( FUNC_CALL SetName ( exprList )? ) | SetVFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetVFold ( exprList )? ) | SetHFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetHFold ( exprList )? ) | SetCorner '(' ( exprList )? ')' -> ^( FUNC_CALL SetCorner ( exprList )? ) | TemplateCollection '(' ( exprList )? ')' -> ^( FUNC_CALL TemplateCollection ( exprList )? ) | AddDesign '(' ( exprList )? ')' -> ^( FUNC_CALL AddDesign ( exprList )? ) );
 	public final PyEsqueParser.templateCall_return templateCall() throws RecognitionException {
 		PyEsqueParser.templateCall_return retval = new PyEsqueParser.templateCall_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token Template324=null;
-		Token char_literal325=null;
-		Token char_literal327=null;
-		Token SetWidth328=null;
+		Token Template328=null;
 		Token char_literal329=null;
 		Token char_literal331=null;
-		Token SetHeight332=null;
+		Token SetWidth332=null;
 		Token char_literal333=null;
 		Token char_literal335=null;
-		Token SetSeam336=null;
+		Token SetHeight336=null;
 		Token char_literal337=null;
 		Token char_literal339=null;
-		Token SetName340=null;
+		Token SetSeam340=null;
 		Token char_literal341=null;
 		Token char_literal343=null;
-		Token SetVFold344=null;
+		Token SetName344=null;
 		Token char_literal345=null;
 		Token char_literal347=null;
-		Token SetHFold348=null;
+		Token SetVFold348=null;
 		Token char_literal349=null;
 		Token char_literal351=null;
-		Token SetCorner352=null;
+		Token SetHFold352=null;
 		Token char_literal353=null;
 		Token char_literal355=null;
-		Token TemplateCollection356=null;
+		Token SetCorner356=null;
 		Token char_literal357=null;
 		Token char_literal359=null;
-		Token AddDesign360=null;
+		Token TemplateCollection360=null;
 		Token char_literal361=null;
 		Token char_literal363=null;
-		ParserRuleReturnScope exprList326 =null;
+		Token AddDesign364=null;
+		Token char_literal365=null;
+		Token char_literal367=null;
 		ParserRuleReturnScope exprList330 =null;
 		ParserRuleReturnScope exprList334 =null;
 		ParserRuleReturnScope exprList338 =null;
@@ -6786,37 +6867,38 @@ public class PyEsqueParser extends Parser {
 		ParserRuleReturnScope exprList354 =null;
 		ParserRuleReturnScope exprList358 =null;
 		ParserRuleReturnScope exprList362 =null;
+		ParserRuleReturnScope exprList366 =null;
 
-		Object Template324_tree=null;
-		Object char_literal325_tree=null;
-		Object char_literal327_tree=null;
-		Object SetWidth328_tree=null;
+		Object Template328_tree=null;
 		Object char_literal329_tree=null;
 		Object char_literal331_tree=null;
-		Object SetHeight332_tree=null;
+		Object SetWidth332_tree=null;
 		Object char_literal333_tree=null;
 		Object char_literal335_tree=null;
-		Object SetSeam336_tree=null;
+		Object SetHeight336_tree=null;
 		Object char_literal337_tree=null;
 		Object char_literal339_tree=null;
-		Object SetName340_tree=null;
+		Object SetSeam340_tree=null;
 		Object char_literal341_tree=null;
 		Object char_literal343_tree=null;
-		Object SetVFold344_tree=null;
+		Object SetName344_tree=null;
 		Object char_literal345_tree=null;
 		Object char_literal347_tree=null;
-		Object SetHFold348_tree=null;
+		Object SetVFold348_tree=null;
 		Object char_literal349_tree=null;
 		Object char_literal351_tree=null;
-		Object SetCorner352_tree=null;
+		Object SetHFold352_tree=null;
 		Object char_literal353_tree=null;
 		Object char_literal355_tree=null;
-		Object TemplateCollection356_tree=null;
+		Object SetCorner356_tree=null;
 		Object char_literal357_tree=null;
 		Object char_literal359_tree=null;
-		Object AddDesign360_tree=null;
+		Object TemplateCollection360_tree=null;
 		Object char_literal361_tree=null;
 		Object char_literal363_tree=null;
+		Object AddDesign364_tree=null;
+		Object char_literal365_tree=null;
+		Object char_literal367_tree=null;
 		RewriteRuleTokenStream stream_SetWidth=new RewriteRuleTokenStream(adaptor,"token SetWidth");
 		RewriteRuleTokenStream stream_OParen=new RewriteRuleTokenStream(adaptor,"token OParen");
 		RewriteRuleTokenStream stream_SetVFold=new RewriteRuleTokenStream(adaptor,"token SetVFold");
@@ -6832,96 +6914,96 @@ public class PyEsqueParser extends Parser {
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:251:4: ( Template '(' ( exprList )? ')' -> ^( FUNC_CALL Template ( exprList )? ) | SetWidth '(' ( exprList )? ')' -> ^( FUNC_CALL SetWidth ( exprList )? ) | SetHeight '(' ( exprList )? ')' -> ^( FUNC_CALL SetHeight ( exprList )? ) | SetSeam '(' ( exprList )? ')' -> ^( FUNC_CALL SetSeam ( exprList )? ) | SetName '(' ( exprList )? ')' -> ^( FUNC_CALL SetName ( exprList )? ) | SetVFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetVFold ( exprList )? ) | SetHFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetHFold ( exprList )? ) | SetCorner '(' ( exprList )? ')' -> ^( FUNC_CALL SetCorner ( exprList )? ) | TemplateCollection '(' ( exprList )? ')' -> ^( FUNC_CALL TemplateCollection ( exprList )? ) | AddDesign '(' ( exprList )? ')' -> ^( FUNC_CALL AddDesign ( exprList )? ) )
-			int alt62=10;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:252:4: ( Template '(' ( exprList )? ')' -> ^( FUNC_CALL Template ( exprList )? ) | SetWidth '(' ( exprList )? ')' -> ^( FUNC_CALL SetWidth ( exprList )? ) | SetHeight '(' ( exprList )? ')' -> ^( FUNC_CALL SetHeight ( exprList )? ) | SetSeam '(' ( exprList )? ')' -> ^( FUNC_CALL SetSeam ( exprList )? ) | SetName '(' ( exprList )? ')' -> ^( FUNC_CALL SetName ( exprList )? ) | SetVFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetVFold ( exprList )? ) | SetHFold '(' ( exprList )? ')' -> ^( FUNC_CALL SetHFold ( exprList )? ) | SetCorner '(' ( exprList )? ')' -> ^( FUNC_CALL SetCorner ( exprList )? ) | TemplateCollection '(' ( exprList )? ')' -> ^( FUNC_CALL TemplateCollection ( exprList )? ) | AddDesign '(' ( exprList )? ')' -> ^( FUNC_CALL AddDesign ( exprList )? ) )
+			int alt63=10;
 			switch ( input.LA(1) ) {
 			case Template:
 				{
-				alt62=1;
+				alt63=1;
 				}
 				break;
 			case SetWidth:
 				{
-				alt62=2;
+				alt63=2;
 				}
 				break;
 			case SetHeight:
 				{
-				alt62=3;
+				alt63=3;
 				}
 				break;
 			case SetSeam:
 				{
-				alt62=4;
+				alt63=4;
 				}
 				break;
 			case SetName:
 				{
-				alt62=5;
+				alt63=5;
 				}
 				break;
 			case SetVFold:
 				{
-				alt62=6;
+				alt63=6;
 				}
 				break;
 			case SetHFold:
 				{
-				alt62=7;
+				alt63=7;
 				}
 				break;
 			case SetCorner:
 				{
-				alt62=8;
+				alt63=8;
 				}
 				break;
 			case TemplateCollection:
 				{
-				alt62=9;
+				alt63=9;
 				}
 				break;
 			case AddDesign:
 				{
-				alt62=10;
+				alt63=10;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 62, 0, input);
+					new NoViableAltException("", 63, 0, input);
 				throw nvae;
 			}
-			switch (alt62) {
+			switch (alt63) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:251:5: Template '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:252:5: Template '(' ( exprList )? ')'
 					{
-					Template324=(Token)match(input,Template,FOLLOW_Template_in_templateCall2335);  
-					stream_Template.add(Template324);
+					Template328=(Token)match(input,Template,FOLLOW_Template_in_templateCall2359);  
+					stream_Template.add(Template328);
 
-					char_literal325=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2337);  
-					stream_OParen.add(char_literal325);
+					char_literal329=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2361);  
+					stream_OParen.add(char_literal329);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:251:18: ( exprList )?
-					int alt52=2;
-					int LA52_0 = input.LA(1);
-					if ( (LA52_0==ATan||LA52_0==AddDesign||(LA52_0 >= Arc && LA52_0 <= Assert)||LA52_0==Bool||LA52_0==COLOR_CONSTANT||(LA52_0 >= Clip && LA52_0 <= Cm)||(LA52_0 >= Copy && LA52_0 <= Curve)||LA52_0==Difference||LA52_0==Ellipse||(LA52_0 >= Excl && LA52_0 <= Expand)||(LA52_0 >= Fill && LA52_0 <= Flatten)||(LA52_0 >= Gaussian && LA52_0 <= Hide)||LA52_0==Identifier||LA52_0==Inch||LA52_0==LAdd||(LA52_0 >= LRemove && LA52_0 <= LShape)||(LA52_0 >= Line && LA52_0 <= Mm)||(LA52_0 >= Move && LA52_0 <= MoveBy)||(LA52_0 >= NoFill && LA52_0 <= Number)||(LA52_0 >= OBracket && LA52_0 <= OParen)||(LA52_0 >= PI_CONSTANT && LA52_0 <= Println)||(LA52_0 >= Random && LA52_0 <= Rect)||(LA52_0 >= Rotate && LA52_0 <= Round)||LA52_0==Scale||(LA52_0 >= SetCorner && LA52_0 <= Slider)||(LA52_0 >= Sq && LA52_0 <= Subtract)||(LA52_0 >= Tan && LA52_0 <= TemplateCollection)||(LA52_0 >= Union && LA52_0 <= Weight)||LA52_0==Xor) ) {
-						alt52=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:252:18: ( exprList )?
+					int alt53=2;
+					int LA53_0 = input.LA(1);
+					if ( (LA53_0==ATan||LA53_0==AddDesign||(LA53_0 >= Arc && LA53_0 <= Assert)||LA53_0==Bool||LA53_0==COLOR_CONSTANT||(LA53_0 >= Clip && LA53_0 <= Cm)||(LA53_0 >= Copy && LA53_0 <= Curve)||LA53_0==Difference||LA53_0==Ellipse||(LA53_0 >= Excl && LA53_0 <= Expand)||(LA53_0 >= Fill && LA53_0 <= FollowCurve)||(LA53_0 >= Gaussian && LA53_0 <= Hide)||LA53_0==Identifier||LA53_0==Inch||LA53_0==LAdd||(LA53_0 >= LRemove && LA53_0 <= LShape)||(LA53_0 >= Line && LA53_0 <= Mm)||(LA53_0 >= Move && LA53_0 <= MoveBy)||(LA53_0 >= NoFill && LA53_0 <= Number)||(LA53_0 >= OBracket && LA53_0 <= OParen)||(LA53_0 >= PI_CONSTANT && LA53_0 <= Println)||(LA53_0 >= Random && LA53_0 <= Rect)||(LA53_0 >= Rotate && LA53_0 <= Round)||LA53_0==Scale||(LA53_0 >= SetCorner && LA53_0 <= Slider)||(LA53_0 >= Sq && LA53_0 <= Subtract)||(LA53_0 >= Tan && LA53_0 <= TemplateCollection)||(LA53_0 >= Union && LA53_0 <= Weight)||LA53_0==Xor) ) {
+						alt53=1;
 					}
-					switch (alt52) {
+					switch (alt53) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:251:18: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:252:18: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall2339);
-							exprList326=exprList();
+							pushFollow(FOLLOW_exprList_in_templateCall2363);
+							exprList330=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList326.getTree());
+							stream_exprList.add(exprList330.getTree());
 							}
 							break;
 
 					}
 
-					char_literal327=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2342);  
-					stream_CParen.add(char_literal327);
+					char_literal331=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2366);  
+					stream_CParen.add(char_literal331);
 
 					// AST REWRITE
 					// elements: Template, exprList
@@ -6934,79 +7016,13 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 251:34: -> ^( FUNC_CALL Template ( exprList )? )
+					// 252:34: -> ^( FUNC_CALL Template ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:251:37: ^( FUNC_CALL Template ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:252:37: ^( FUNC_CALL Template ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_Template.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:251:58: ( exprList )?
-						if ( stream_exprList.hasNext() ) {
-							adaptor.addChild(root_1, stream_exprList.nextTree());
-						}
-						stream_exprList.reset();
-
-						adaptor.addChild(root_0, root_1);
-						}
-
-					}
-
-
-					retval.tree = root_0;
-
-					}
-					break;
-				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:252:5: SetWidth '(' ( exprList )? ')'
-					{
-					SetWidth328=(Token)match(input,SetWidth,FOLLOW_SetWidth_in_templateCall2361);  
-					stream_SetWidth.add(SetWidth328);
-
-					char_literal329=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2363);  
-					stream_OParen.add(char_literal329);
-
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:252:18: ( exprList )?
-					int alt53=2;
-					int LA53_0 = input.LA(1);
-					if ( (LA53_0==ATan||LA53_0==AddDesign||(LA53_0 >= Arc && LA53_0 <= Assert)||LA53_0==Bool||LA53_0==COLOR_CONSTANT||(LA53_0 >= Clip && LA53_0 <= Cm)||(LA53_0 >= Copy && LA53_0 <= Curve)||LA53_0==Difference||LA53_0==Ellipse||(LA53_0 >= Excl && LA53_0 <= Expand)||(LA53_0 >= Fill && LA53_0 <= Flatten)||(LA53_0 >= Gaussian && LA53_0 <= Hide)||LA53_0==Identifier||LA53_0==Inch||LA53_0==LAdd||(LA53_0 >= LRemove && LA53_0 <= LShape)||(LA53_0 >= Line && LA53_0 <= Mm)||(LA53_0 >= Move && LA53_0 <= MoveBy)||(LA53_0 >= NoFill && LA53_0 <= Number)||(LA53_0 >= OBracket && LA53_0 <= OParen)||(LA53_0 >= PI_CONSTANT && LA53_0 <= Println)||(LA53_0 >= Random && LA53_0 <= Rect)||(LA53_0 >= Rotate && LA53_0 <= Round)||LA53_0==Scale||(LA53_0 >= SetCorner && LA53_0 <= Slider)||(LA53_0 >= Sq && LA53_0 <= Subtract)||(LA53_0 >= Tan && LA53_0 <= TemplateCollection)||(LA53_0 >= Union && LA53_0 <= Weight)||LA53_0==Xor) ) {
-						alt53=1;
-					}
-					switch (alt53) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:252:18: exprList
-							{
-							pushFollow(FOLLOW_exprList_in_templateCall2365);
-							exprList330=exprList();
-							state._fsp--;
-
-							stream_exprList.add(exprList330.getTree());
-							}
-							break;
-
-					}
-
-					char_literal331=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2368);  
-					stream_CParen.add(char_literal331);
-
-					// AST REWRITE
-					// elements: SetWidth, exprList
-					// token labels: 
-					// rule labels: retval
-					// token list labels: 
-					// rule list labels: 
-					// wildcard labels: 
-					retval.tree = root_0;
-					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
-
-					root_0 = (Object)adaptor.nil();
-					// 252:34: -> ^( FUNC_CALL SetWidth ( exprList )? )
-					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:252:37: ^( FUNC_CALL SetWidth ( exprList )? )
-						{
-						Object root_1 = (Object)adaptor.nil();
-						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
-						adaptor.addChild(root_1, stream_SetWidth.nextNode());
 						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:252:58: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
@@ -7023,26 +7039,26 @@ public class PyEsqueParser extends Parser {
 
 					}
 					break;
-				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:253:5: SetHeight '(' ( exprList )? ')'
+				case 2 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:253:5: SetWidth '(' ( exprList )? ')'
 					{
-					SetHeight332=(Token)match(input,SetHeight,FOLLOW_SetHeight_in_templateCall2387);  
-					stream_SetHeight.add(SetHeight332);
+					SetWidth332=(Token)match(input,SetWidth,FOLLOW_SetWidth_in_templateCall2385);  
+					stream_SetWidth.add(SetWidth332);
 
-					char_literal333=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2389);  
+					char_literal333=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2387);  
 					stream_OParen.add(char_literal333);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:253:19: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:253:18: ( exprList )?
 					int alt54=2;
 					int LA54_0 = input.LA(1);
-					if ( (LA54_0==ATan||LA54_0==AddDesign||(LA54_0 >= Arc && LA54_0 <= Assert)||LA54_0==Bool||LA54_0==COLOR_CONSTANT||(LA54_0 >= Clip && LA54_0 <= Cm)||(LA54_0 >= Copy && LA54_0 <= Curve)||LA54_0==Difference||LA54_0==Ellipse||(LA54_0 >= Excl && LA54_0 <= Expand)||(LA54_0 >= Fill && LA54_0 <= Flatten)||(LA54_0 >= Gaussian && LA54_0 <= Hide)||LA54_0==Identifier||LA54_0==Inch||LA54_0==LAdd||(LA54_0 >= LRemove && LA54_0 <= LShape)||(LA54_0 >= Line && LA54_0 <= Mm)||(LA54_0 >= Move && LA54_0 <= MoveBy)||(LA54_0 >= NoFill && LA54_0 <= Number)||(LA54_0 >= OBracket && LA54_0 <= OParen)||(LA54_0 >= PI_CONSTANT && LA54_0 <= Println)||(LA54_0 >= Random && LA54_0 <= Rect)||(LA54_0 >= Rotate && LA54_0 <= Round)||LA54_0==Scale||(LA54_0 >= SetCorner && LA54_0 <= Slider)||(LA54_0 >= Sq && LA54_0 <= Subtract)||(LA54_0 >= Tan && LA54_0 <= TemplateCollection)||(LA54_0 >= Union && LA54_0 <= Weight)||LA54_0==Xor) ) {
+					if ( (LA54_0==ATan||LA54_0==AddDesign||(LA54_0 >= Arc && LA54_0 <= Assert)||LA54_0==Bool||LA54_0==COLOR_CONSTANT||(LA54_0 >= Clip && LA54_0 <= Cm)||(LA54_0 >= Copy && LA54_0 <= Curve)||LA54_0==Difference||LA54_0==Ellipse||(LA54_0 >= Excl && LA54_0 <= Expand)||(LA54_0 >= Fill && LA54_0 <= FollowCurve)||(LA54_0 >= Gaussian && LA54_0 <= Hide)||LA54_0==Identifier||LA54_0==Inch||LA54_0==LAdd||(LA54_0 >= LRemove && LA54_0 <= LShape)||(LA54_0 >= Line && LA54_0 <= Mm)||(LA54_0 >= Move && LA54_0 <= MoveBy)||(LA54_0 >= NoFill && LA54_0 <= Number)||(LA54_0 >= OBracket && LA54_0 <= OParen)||(LA54_0 >= PI_CONSTANT && LA54_0 <= Println)||(LA54_0 >= Random && LA54_0 <= Rect)||(LA54_0 >= Rotate && LA54_0 <= Round)||LA54_0==Scale||(LA54_0 >= SetCorner && LA54_0 <= Slider)||(LA54_0 >= Sq && LA54_0 <= Subtract)||(LA54_0 >= Tan && LA54_0 <= TemplateCollection)||(LA54_0 >= Union && LA54_0 <= Weight)||LA54_0==Xor) ) {
 						alt54=1;
 					}
 					switch (alt54) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:253:19: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:253:18: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall2391);
+							pushFollow(FOLLOW_exprList_in_templateCall2389);
 							exprList334=exprList();
 							state._fsp--;
 
@@ -7052,11 +7068,11 @@ public class PyEsqueParser extends Parser {
 
 					}
 
-					char_literal335=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2394);  
+					char_literal335=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2392);  
 					stream_CParen.add(char_literal335);
 
 					// AST REWRITE
-					// elements: SetHeight, exprList
+					// elements: SetWidth, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7066,14 +7082,80 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 253:35: -> ^( FUNC_CALL SetHeight ( exprList )? )
+					// 253:34: -> ^( FUNC_CALL SetWidth ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:253:38: ^( FUNC_CALL SetHeight ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:253:37: ^( FUNC_CALL SetWidth ( exprList )? )
+						{
+						Object root_1 = (Object)adaptor.nil();
+						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
+						adaptor.addChild(root_1, stream_SetWidth.nextNode());
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:253:58: ( exprList )?
+						if ( stream_exprList.hasNext() ) {
+							adaptor.addChild(root_1, stream_exprList.nextTree());
+						}
+						stream_exprList.reset();
+
+						adaptor.addChild(root_0, root_1);
+						}
+
+					}
+
+
+					retval.tree = root_0;
+
+					}
+					break;
+				case 3 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:254:5: SetHeight '(' ( exprList )? ')'
+					{
+					SetHeight336=(Token)match(input,SetHeight,FOLLOW_SetHeight_in_templateCall2411);  
+					stream_SetHeight.add(SetHeight336);
+
+					char_literal337=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2413);  
+					stream_OParen.add(char_literal337);
+
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:254:19: ( exprList )?
+					int alt55=2;
+					int LA55_0 = input.LA(1);
+					if ( (LA55_0==ATan||LA55_0==AddDesign||(LA55_0 >= Arc && LA55_0 <= Assert)||LA55_0==Bool||LA55_0==COLOR_CONSTANT||(LA55_0 >= Clip && LA55_0 <= Cm)||(LA55_0 >= Copy && LA55_0 <= Curve)||LA55_0==Difference||LA55_0==Ellipse||(LA55_0 >= Excl && LA55_0 <= Expand)||(LA55_0 >= Fill && LA55_0 <= FollowCurve)||(LA55_0 >= Gaussian && LA55_0 <= Hide)||LA55_0==Identifier||LA55_0==Inch||LA55_0==LAdd||(LA55_0 >= LRemove && LA55_0 <= LShape)||(LA55_0 >= Line && LA55_0 <= Mm)||(LA55_0 >= Move && LA55_0 <= MoveBy)||(LA55_0 >= NoFill && LA55_0 <= Number)||(LA55_0 >= OBracket && LA55_0 <= OParen)||(LA55_0 >= PI_CONSTANT && LA55_0 <= Println)||(LA55_0 >= Random && LA55_0 <= Rect)||(LA55_0 >= Rotate && LA55_0 <= Round)||LA55_0==Scale||(LA55_0 >= SetCorner && LA55_0 <= Slider)||(LA55_0 >= Sq && LA55_0 <= Subtract)||(LA55_0 >= Tan && LA55_0 <= TemplateCollection)||(LA55_0 >= Union && LA55_0 <= Weight)||LA55_0==Xor) ) {
+						alt55=1;
+					}
+					switch (alt55) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:254:19: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_templateCall2415);
+							exprList338=exprList();
+							state._fsp--;
+
+							stream_exprList.add(exprList338.getTree());
+							}
+							break;
+
+					}
+
+					char_literal339=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2418);  
+					stream_CParen.add(char_literal339);
+
+					// AST REWRITE
+					// elements: exprList, SetHeight
+					// token labels: 
+					// rule labels: retval
+					// token list labels: 
+					// rule list labels: 
+					// wildcard labels: 
+					retval.tree = root_0;
+					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+					root_0 = (Object)adaptor.nil();
+					// 254:35: -> ^( FUNC_CALL SetHeight ( exprList )? )
+					{
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:254:38: ^( FUNC_CALL SetHeight ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_SetHeight.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:253:60: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:254:60: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7090,91 +7172,25 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:254:5: SetSeam '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:255:5: SetSeam '(' ( exprList )? ')'
 					{
-					SetSeam336=(Token)match(input,SetSeam,FOLLOW_SetSeam_in_templateCall2413);  
-					stream_SetSeam.add(SetSeam336);
+					SetSeam340=(Token)match(input,SetSeam,FOLLOW_SetSeam_in_templateCall2437);  
+					stream_SetSeam.add(SetSeam340);
 
-					char_literal337=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2415);  
-					stream_OParen.add(char_literal337);
-
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:254:17: ( exprList )?
-					int alt55=2;
-					int LA55_0 = input.LA(1);
-					if ( (LA55_0==ATan||LA55_0==AddDesign||(LA55_0 >= Arc && LA55_0 <= Assert)||LA55_0==Bool||LA55_0==COLOR_CONSTANT||(LA55_0 >= Clip && LA55_0 <= Cm)||(LA55_0 >= Copy && LA55_0 <= Curve)||LA55_0==Difference||LA55_0==Ellipse||(LA55_0 >= Excl && LA55_0 <= Expand)||(LA55_0 >= Fill && LA55_0 <= Flatten)||(LA55_0 >= Gaussian && LA55_0 <= Hide)||LA55_0==Identifier||LA55_0==Inch||LA55_0==LAdd||(LA55_0 >= LRemove && LA55_0 <= LShape)||(LA55_0 >= Line && LA55_0 <= Mm)||(LA55_0 >= Move && LA55_0 <= MoveBy)||(LA55_0 >= NoFill && LA55_0 <= Number)||(LA55_0 >= OBracket && LA55_0 <= OParen)||(LA55_0 >= PI_CONSTANT && LA55_0 <= Println)||(LA55_0 >= Random && LA55_0 <= Rect)||(LA55_0 >= Rotate && LA55_0 <= Round)||LA55_0==Scale||(LA55_0 >= SetCorner && LA55_0 <= Slider)||(LA55_0 >= Sq && LA55_0 <= Subtract)||(LA55_0 >= Tan && LA55_0 <= TemplateCollection)||(LA55_0 >= Union && LA55_0 <= Weight)||LA55_0==Xor) ) {
-						alt55=1;
-					}
-					switch (alt55) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:254:17: exprList
-							{
-							pushFollow(FOLLOW_exprList_in_templateCall2417);
-							exprList338=exprList();
-							state._fsp--;
-
-							stream_exprList.add(exprList338.getTree());
-							}
-							break;
-
-					}
-
-					char_literal339=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2420);  
-					stream_CParen.add(char_literal339);
-
-					// AST REWRITE
-					// elements: SetSeam, exprList
-					// token labels: 
-					// rule labels: retval
-					// token list labels: 
-					// rule list labels: 
-					// wildcard labels: 
-					retval.tree = root_0;
-					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
-
-					root_0 = (Object)adaptor.nil();
-					// 254:33: -> ^( FUNC_CALL SetSeam ( exprList )? )
-					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:254:36: ^( FUNC_CALL SetSeam ( exprList )? )
-						{
-						Object root_1 = (Object)adaptor.nil();
-						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
-						adaptor.addChild(root_1, stream_SetSeam.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:254:56: ( exprList )?
-						if ( stream_exprList.hasNext() ) {
-							adaptor.addChild(root_1, stream_exprList.nextTree());
-						}
-						stream_exprList.reset();
-
-						adaptor.addChild(root_0, root_1);
-						}
-
-					}
-
-
-					retval.tree = root_0;
-
-					}
-					break;
-				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:255:5: SetName '(' ( exprList )? ')'
-					{
-					SetName340=(Token)match(input,SetName,FOLLOW_SetName_in_templateCall2439);  
-					stream_SetName.add(SetName340);
-
-					char_literal341=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2441);  
+					char_literal341=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2439);  
 					stream_OParen.add(char_literal341);
 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:255:17: ( exprList )?
 					int alt56=2;
 					int LA56_0 = input.LA(1);
-					if ( (LA56_0==ATan||LA56_0==AddDesign||(LA56_0 >= Arc && LA56_0 <= Assert)||LA56_0==Bool||LA56_0==COLOR_CONSTANT||(LA56_0 >= Clip && LA56_0 <= Cm)||(LA56_0 >= Copy && LA56_0 <= Curve)||LA56_0==Difference||LA56_0==Ellipse||(LA56_0 >= Excl && LA56_0 <= Expand)||(LA56_0 >= Fill && LA56_0 <= Flatten)||(LA56_0 >= Gaussian && LA56_0 <= Hide)||LA56_0==Identifier||LA56_0==Inch||LA56_0==LAdd||(LA56_0 >= LRemove && LA56_0 <= LShape)||(LA56_0 >= Line && LA56_0 <= Mm)||(LA56_0 >= Move && LA56_0 <= MoveBy)||(LA56_0 >= NoFill && LA56_0 <= Number)||(LA56_0 >= OBracket && LA56_0 <= OParen)||(LA56_0 >= PI_CONSTANT && LA56_0 <= Println)||(LA56_0 >= Random && LA56_0 <= Rect)||(LA56_0 >= Rotate && LA56_0 <= Round)||LA56_0==Scale||(LA56_0 >= SetCorner && LA56_0 <= Slider)||(LA56_0 >= Sq && LA56_0 <= Subtract)||(LA56_0 >= Tan && LA56_0 <= TemplateCollection)||(LA56_0 >= Union && LA56_0 <= Weight)||LA56_0==Xor) ) {
+					if ( (LA56_0==ATan||LA56_0==AddDesign||(LA56_0 >= Arc && LA56_0 <= Assert)||LA56_0==Bool||LA56_0==COLOR_CONSTANT||(LA56_0 >= Clip && LA56_0 <= Cm)||(LA56_0 >= Copy && LA56_0 <= Curve)||LA56_0==Difference||LA56_0==Ellipse||(LA56_0 >= Excl && LA56_0 <= Expand)||(LA56_0 >= Fill && LA56_0 <= FollowCurve)||(LA56_0 >= Gaussian && LA56_0 <= Hide)||LA56_0==Identifier||LA56_0==Inch||LA56_0==LAdd||(LA56_0 >= LRemove && LA56_0 <= LShape)||(LA56_0 >= Line && LA56_0 <= Mm)||(LA56_0 >= Move && LA56_0 <= MoveBy)||(LA56_0 >= NoFill && LA56_0 <= Number)||(LA56_0 >= OBracket && LA56_0 <= OParen)||(LA56_0 >= PI_CONSTANT && LA56_0 <= Println)||(LA56_0 >= Random && LA56_0 <= Rect)||(LA56_0 >= Rotate && LA56_0 <= Round)||LA56_0==Scale||(LA56_0 >= SetCorner && LA56_0 <= Slider)||(LA56_0 >= Sq && LA56_0 <= Subtract)||(LA56_0 >= Tan && LA56_0 <= TemplateCollection)||(LA56_0 >= Union && LA56_0 <= Weight)||LA56_0==Xor) ) {
 						alt56=1;
 					}
 					switch (alt56) {
 						case 1 :
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:255:17: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall2443);
+							pushFollow(FOLLOW_exprList_in_templateCall2441);
 							exprList342=exprList();
 							state._fsp--;
 
@@ -7184,11 +7200,11 @@ public class PyEsqueParser extends Parser {
 
 					}
 
-					char_literal343=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2446);  
+					char_literal343=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2444);  
 					stream_CParen.add(char_literal343);
 
 					// AST REWRITE
-					// elements: exprList, SetName
+					// elements: exprList, SetSeam
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7198,13 +7214,13 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 255:33: -> ^( FUNC_CALL SetName ( exprList )? )
+					// 255:33: -> ^( FUNC_CALL SetSeam ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:255:36: ^( FUNC_CALL SetName ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:255:36: ^( FUNC_CALL SetSeam ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
-						adaptor.addChild(root_1, stream_SetName.nextNode());
+						adaptor.addChild(root_1, stream_SetSeam.nextNode());
 						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:255:56: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
@@ -7221,26 +7237,26 @@ public class PyEsqueParser extends Parser {
 
 					}
 					break;
-				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:256:5: SetVFold '(' ( exprList )? ')'
+				case 5 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:256:5: SetName '(' ( exprList )? ')'
 					{
-					SetVFold344=(Token)match(input,SetVFold,FOLLOW_SetVFold_in_templateCall2465);  
-					stream_SetVFold.add(SetVFold344);
+					SetName344=(Token)match(input,SetName,FOLLOW_SetName_in_templateCall2463);  
+					stream_SetName.add(SetName344);
 
-					char_literal345=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2467);  
+					char_literal345=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2465);  
 					stream_OParen.add(char_literal345);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:256:18: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:256:17: ( exprList )?
 					int alt57=2;
 					int LA57_0 = input.LA(1);
-					if ( (LA57_0==ATan||LA57_0==AddDesign||(LA57_0 >= Arc && LA57_0 <= Assert)||LA57_0==Bool||LA57_0==COLOR_CONSTANT||(LA57_0 >= Clip && LA57_0 <= Cm)||(LA57_0 >= Copy && LA57_0 <= Curve)||LA57_0==Difference||LA57_0==Ellipse||(LA57_0 >= Excl && LA57_0 <= Expand)||(LA57_0 >= Fill && LA57_0 <= Flatten)||(LA57_0 >= Gaussian && LA57_0 <= Hide)||LA57_0==Identifier||LA57_0==Inch||LA57_0==LAdd||(LA57_0 >= LRemove && LA57_0 <= LShape)||(LA57_0 >= Line && LA57_0 <= Mm)||(LA57_0 >= Move && LA57_0 <= MoveBy)||(LA57_0 >= NoFill && LA57_0 <= Number)||(LA57_0 >= OBracket && LA57_0 <= OParen)||(LA57_0 >= PI_CONSTANT && LA57_0 <= Println)||(LA57_0 >= Random && LA57_0 <= Rect)||(LA57_0 >= Rotate && LA57_0 <= Round)||LA57_0==Scale||(LA57_0 >= SetCorner && LA57_0 <= Slider)||(LA57_0 >= Sq && LA57_0 <= Subtract)||(LA57_0 >= Tan && LA57_0 <= TemplateCollection)||(LA57_0 >= Union && LA57_0 <= Weight)||LA57_0==Xor) ) {
+					if ( (LA57_0==ATan||LA57_0==AddDesign||(LA57_0 >= Arc && LA57_0 <= Assert)||LA57_0==Bool||LA57_0==COLOR_CONSTANT||(LA57_0 >= Clip && LA57_0 <= Cm)||(LA57_0 >= Copy && LA57_0 <= Curve)||LA57_0==Difference||LA57_0==Ellipse||(LA57_0 >= Excl && LA57_0 <= Expand)||(LA57_0 >= Fill && LA57_0 <= FollowCurve)||(LA57_0 >= Gaussian && LA57_0 <= Hide)||LA57_0==Identifier||LA57_0==Inch||LA57_0==LAdd||(LA57_0 >= LRemove && LA57_0 <= LShape)||(LA57_0 >= Line && LA57_0 <= Mm)||(LA57_0 >= Move && LA57_0 <= MoveBy)||(LA57_0 >= NoFill && LA57_0 <= Number)||(LA57_0 >= OBracket && LA57_0 <= OParen)||(LA57_0 >= PI_CONSTANT && LA57_0 <= Println)||(LA57_0 >= Random && LA57_0 <= Rect)||(LA57_0 >= Rotate && LA57_0 <= Round)||LA57_0==Scale||(LA57_0 >= SetCorner && LA57_0 <= Slider)||(LA57_0 >= Sq && LA57_0 <= Subtract)||(LA57_0 >= Tan && LA57_0 <= TemplateCollection)||(LA57_0 >= Union && LA57_0 <= Weight)||LA57_0==Xor) ) {
 						alt57=1;
 					}
 					switch (alt57) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:256:18: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:256:17: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall2469);
+							pushFollow(FOLLOW_exprList_in_templateCall2467);
 							exprList346=exprList();
 							state._fsp--;
 
@@ -7250,11 +7266,11 @@ public class PyEsqueParser extends Parser {
 
 					}
 
-					char_literal347=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2472);  
+					char_literal347=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2470);  
 					stream_CParen.add(char_literal347);
 
 					// AST REWRITE
-					// elements: exprList, SetVFold
+					// elements: exprList, SetName
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7264,14 +7280,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 256:34: -> ^( FUNC_CALL SetVFold ( exprList )? )
+					// 256:33: -> ^( FUNC_CALL SetName ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:256:37: ^( FUNC_CALL SetVFold ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:256:36: ^( FUNC_CALL SetName ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
-						adaptor.addChild(root_1, stream_SetVFold.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:256:58: ( exprList )?
+						adaptor.addChild(root_1, stream_SetName.nextNode());
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:256:56: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7287,26 +7303,26 @@ public class PyEsqueParser extends Parser {
 
 					}
 					break;
-				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:257:5: SetHFold '(' ( exprList )? ')'
+				case 6 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:257:5: SetVFold '(' ( exprList )? ')'
 					{
-					SetHFold348=(Token)match(input,SetHFold,FOLLOW_SetHFold_in_templateCall2491);  
-					stream_SetHFold.add(SetHFold348);
+					SetVFold348=(Token)match(input,SetVFold,FOLLOW_SetVFold_in_templateCall2489);  
+					stream_SetVFold.add(SetVFold348);
 
-					char_literal349=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2493);  
+					char_literal349=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2491);  
 					stream_OParen.add(char_literal349);
 
 					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:257:18: ( exprList )?
 					int alt58=2;
 					int LA58_0 = input.LA(1);
-					if ( (LA58_0==ATan||LA58_0==AddDesign||(LA58_0 >= Arc && LA58_0 <= Assert)||LA58_0==Bool||LA58_0==COLOR_CONSTANT||(LA58_0 >= Clip && LA58_0 <= Cm)||(LA58_0 >= Copy && LA58_0 <= Curve)||LA58_0==Difference||LA58_0==Ellipse||(LA58_0 >= Excl && LA58_0 <= Expand)||(LA58_0 >= Fill && LA58_0 <= Flatten)||(LA58_0 >= Gaussian && LA58_0 <= Hide)||LA58_0==Identifier||LA58_0==Inch||LA58_0==LAdd||(LA58_0 >= LRemove && LA58_0 <= LShape)||(LA58_0 >= Line && LA58_0 <= Mm)||(LA58_0 >= Move && LA58_0 <= MoveBy)||(LA58_0 >= NoFill && LA58_0 <= Number)||(LA58_0 >= OBracket && LA58_0 <= OParen)||(LA58_0 >= PI_CONSTANT && LA58_0 <= Println)||(LA58_0 >= Random && LA58_0 <= Rect)||(LA58_0 >= Rotate && LA58_0 <= Round)||LA58_0==Scale||(LA58_0 >= SetCorner && LA58_0 <= Slider)||(LA58_0 >= Sq && LA58_0 <= Subtract)||(LA58_0 >= Tan && LA58_0 <= TemplateCollection)||(LA58_0 >= Union && LA58_0 <= Weight)||LA58_0==Xor) ) {
+					if ( (LA58_0==ATan||LA58_0==AddDesign||(LA58_0 >= Arc && LA58_0 <= Assert)||LA58_0==Bool||LA58_0==COLOR_CONSTANT||(LA58_0 >= Clip && LA58_0 <= Cm)||(LA58_0 >= Copy && LA58_0 <= Curve)||LA58_0==Difference||LA58_0==Ellipse||(LA58_0 >= Excl && LA58_0 <= Expand)||(LA58_0 >= Fill && LA58_0 <= FollowCurve)||(LA58_0 >= Gaussian && LA58_0 <= Hide)||LA58_0==Identifier||LA58_0==Inch||LA58_0==LAdd||(LA58_0 >= LRemove && LA58_0 <= LShape)||(LA58_0 >= Line && LA58_0 <= Mm)||(LA58_0 >= Move && LA58_0 <= MoveBy)||(LA58_0 >= NoFill && LA58_0 <= Number)||(LA58_0 >= OBracket && LA58_0 <= OParen)||(LA58_0 >= PI_CONSTANT && LA58_0 <= Println)||(LA58_0 >= Random && LA58_0 <= Rect)||(LA58_0 >= Rotate && LA58_0 <= Round)||LA58_0==Scale||(LA58_0 >= SetCorner && LA58_0 <= Slider)||(LA58_0 >= Sq && LA58_0 <= Subtract)||(LA58_0 >= Tan && LA58_0 <= TemplateCollection)||(LA58_0 >= Union && LA58_0 <= Weight)||LA58_0==Xor) ) {
 						alt58=1;
 					}
 					switch (alt58) {
 						case 1 :
 							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:257:18: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall2495);
+							pushFollow(FOLLOW_exprList_in_templateCall2493);
 							exprList350=exprList();
 							state._fsp--;
 
@@ -7316,11 +7332,11 @@ public class PyEsqueParser extends Parser {
 
 					}
 
-					char_literal351=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2498);  
+					char_literal351=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2496);  
 					stream_CParen.add(char_literal351);
 
 					// AST REWRITE
-					// elements: exprList, SetHFold
+					// elements: exprList, SetVFold
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7330,13 +7346,13 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 257:34: -> ^( FUNC_CALL SetHFold ( exprList )? )
+					// 257:34: -> ^( FUNC_CALL SetVFold ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:257:37: ^( FUNC_CALL SetHFold ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:257:37: ^( FUNC_CALL SetVFold ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
-						adaptor.addChild(root_1, stream_SetHFold.nextNode());
+						adaptor.addChild(root_1, stream_SetVFold.nextNode());
 						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:257:58: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
@@ -7353,26 +7369,26 @@ public class PyEsqueParser extends Parser {
 
 					}
 					break;
-				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:258:5: SetCorner '(' ( exprList )? ')'
+				case 7 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:258:5: SetHFold '(' ( exprList )? ')'
 					{
-					SetCorner352=(Token)match(input,SetCorner,FOLLOW_SetCorner_in_templateCall2517);  
-					stream_SetCorner.add(SetCorner352);
+					SetHFold352=(Token)match(input,SetHFold,FOLLOW_SetHFold_in_templateCall2515);  
+					stream_SetHFold.add(SetHFold352);
 
-					char_literal353=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2519);  
+					char_literal353=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2517);  
 					stream_OParen.add(char_literal353);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:258:19: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:258:18: ( exprList )?
 					int alt59=2;
 					int LA59_0 = input.LA(1);
-					if ( (LA59_0==ATan||LA59_0==AddDesign||(LA59_0 >= Arc && LA59_0 <= Assert)||LA59_0==Bool||LA59_0==COLOR_CONSTANT||(LA59_0 >= Clip && LA59_0 <= Cm)||(LA59_0 >= Copy && LA59_0 <= Curve)||LA59_0==Difference||LA59_0==Ellipse||(LA59_0 >= Excl && LA59_0 <= Expand)||(LA59_0 >= Fill && LA59_0 <= Flatten)||(LA59_0 >= Gaussian && LA59_0 <= Hide)||LA59_0==Identifier||LA59_0==Inch||LA59_0==LAdd||(LA59_0 >= LRemove && LA59_0 <= LShape)||(LA59_0 >= Line && LA59_0 <= Mm)||(LA59_0 >= Move && LA59_0 <= MoveBy)||(LA59_0 >= NoFill && LA59_0 <= Number)||(LA59_0 >= OBracket && LA59_0 <= OParen)||(LA59_0 >= PI_CONSTANT && LA59_0 <= Println)||(LA59_0 >= Random && LA59_0 <= Rect)||(LA59_0 >= Rotate && LA59_0 <= Round)||LA59_0==Scale||(LA59_0 >= SetCorner && LA59_0 <= Slider)||(LA59_0 >= Sq && LA59_0 <= Subtract)||(LA59_0 >= Tan && LA59_0 <= TemplateCollection)||(LA59_0 >= Union && LA59_0 <= Weight)||LA59_0==Xor) ) {
+					if ( (LA59_0==ATan||LA59_0==AddDesign||(LA59_0 >= Arc && LA59_0 <= Assert)||LA59_0==Bool||LA59_0==COLOR_CONSTANT||(LA59_0 >= Clip && LA59_0 <= Cm)||(LA59_0 >= Copy && LA59_0 <= Curve)||LA59_0==Difference||LA59_0==Ellipse||(LA59_0 >= Excl && LA59_0 <= Expand)||(LA59_0 >= Fill && LA59_0 <= FollowCurve)||(LA59_0 >= Gaussian && LA59_0 <= Hide)||LA59_0==Identifier||LA59_0==Inch||LA59_0==LAdd||(LA59_0 >= LRemove && LA59_0 <= LShape)||(LA59_0 >= Line && LA59_0 <= Mm)||(LA59_0 >= Move && LA59_0 <= MoveBy)||(LA59_0 >= NoFill && LA59_0 <= Number)||(LA59_0 >= OBracket && LA59_0 <= OParen)||(LA59_0 >= PI_CONSTANT && LA59_0 <= Println)||(LA59_0 >= Random && LA59_0 <= Rect)||(LA59_0 >= Rotate && LA59_0 <= Round)||LA59_0==Scale||(LA59_0 >= SetCorner && LA59_0 <= Slider)||(LA59_0 >= Sq && LA59_0 <= Subtract)||(LA59_0 >= Tan && LA59_0 <= TemplateCollection)||(LA59_0 >= Union && LA59_0 <= Weight)||LA59_0==Xor) ) {
 						alt59=1;
 					}
 					switch (alt59) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:258:19: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:258:18: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall2521);
+							pushFollow(FOLLOW_exprList_in_templateCall2519);
 							exprList354=exprList();
 							state._fsp--;
 
@@ -7382,11 +7398,11 @@ public class PyEsqueParser extends Parser {
 
 					}
 
-					char_literal355=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2524);  
+					char_literal355=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2522);  
 					stream_CParen.add(char_literal355);
 
 					// AST REWRITE
-					// elements: SetCorner, exprList
+					// elements: SetHFold, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7396,14 +7412,80 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 258:35: -> ^( FUNC_CALL SetCorner ( exprList )? )
+					// 258:34: -> ^( FUNC_CALL SetHFold ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:258:38: ^( FUNC_CALL SetCorner ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:258:37: ^( FUNC_CALL SetHFold ( exprList )? )
+						{
+						Object root_1 = (Object)adaptor.nil();
+						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
+						adaptor.addChild(root_1, stream_SetHFold.nextNode());
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:258:58: ( exprList )?
+						if ( stream_exprList.hasNext() ) {
+							adaptor.addChild(root_1, stream_exprList.nextTree());
+						}
+						stream_exprList.reset();
+
+						adaptor.addChild(root_0, root_1);
+						}
+
+					}
+
+
+					retval.tree = root_0;
+
+					}
+					break;
+				case 8 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:259:5: SetCorner '(' ( exprList )? ')'
+					{
+					SetCorner356=(Token)match(input,SetCorner,FOLLOW_SetCorner_in_templateCall2541);  
+					stream_SetCorner.add(SetCorner356);
+
+					char_literal357=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2543);  
+					stream_OParen.add(char_literal357);
+
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:259:19: ( exprList )?
+					int alt60=2;
+					int LA60_0 = input.LA(1);
+					if ( (LA60_0==ATan||LA60_0==AddDesign||(LA60_0 >= Arc && LA60_0 <= Assert)||LA60_0==Bool||LA60_0==COLOR_CONSTANT||(LA60_0 >= Clip && LA60_0 <= Cm)||(LA60_0 >= Copy && LA60_0 <= Curve)||LA60_0==Difference||LA60_0==Ellipse||(LA60_0 >= Excl && LA60_0 <= Expand)||(LA60_0 >= Fill && LA60_0 <= FollowCurve)||(LA60_0 >= Gaussian && LA60_0 <= Hide)||LA60_0==Identifier||LA60_0==Inch||LA60_0==LAdd||(LA60_0 >= LRemove && LA60_0 <= LShape)||(LA60_0 >= Line && LA60_0 <= Mm)||(LA60_0 >= Move && LA60_0 <= MoveBy)||(LA60_0 >= NoFill && LA60_0 <= Number)||(LA60_0 >= OBracket && LA60_0 <= OParen)||(LA60_0 >= PI_CONSTANT && LA60_0 <= Println)||(LA60_0 >= Random && LA60_0 <= Rect)||(LA60_0 >= Rotate && LA60_0 <= Round)||LA60_0==Scale||(LA60_0 >= SetCorner && LA60_0 <= Slider)||(LA60_0 >= Sq && LA60_0 <= Subtract)||(LA60_0 >= Tan && LA60_0 <= TemplateCollection)||(LA60_0 >= Union && LA60_0 <= Weight)||LA60_0==Xor) ) {
+						alt60=1;
+					}
+					switch (alt60) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:259:19: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_templateCall2545);
+							exprList358=exprList();
+							state._fsp--;
+
+							stream_exprList.add(exprList358.getTree());
+							}
+							break;
+
+					}
+
+					char_literal359=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2548);  
+					stream_CParen.add(char_literal359);
+
+					// AST REWRITE
+					// elements: exprList, SetCorner
+					// token labels: 
+					// rule labels: retval
+					// token list labels: 
+					// rule list labels: 
+					// wildcard labels: 
+					retval.tree = root_0;
+					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
+
+					root_0 = (Object)adaptor.nil();
+					// 259:35: -> ^( FUNC_CALL SetCorner ( exprList )? )
+					{
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:259:38: ^( FUNC_CALL SetCorner ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_SetCorner.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:258:60: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:259:60: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7420,39 +7502,39 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:259:5: TemplateCollection '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:260:5: TemplateCollection '(' ( exprList )? ')'
 					{
-					TemplateCollection356=(Token)match(input,TemplateCollection,FOLLOW_TemplateCollection_in_templateCall2543);  
-					stream_TemplateCollection.add(TemplateCollection356);
+					TemplateCollection360=(Token)match(input,TemplateCollection,FOLLOW_TemplateCollection_in_templateCall2567);  
+					stream_TemplateCollection.add(TemplateCollection360);
 
-					char_literal357=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2545);  
-					stream_OParen.add(char_literal357);
+					char_literal361=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2569);  
+					stream_OParen.add(char_literal361);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:259:30: ( exprList )?
-					int alt60=2;
-					int LA60_0 = input.LA(1);
-					if ( (LA60_0==ATan||LA60_0==AddDesign||(LA60_0 >= Arc && LA60_0 <= Assert)||LA60_0==Bool||LA60_0==COLOR_CONSTANT||(LA60_0 >= Clip && LA60_0 <= Cm)||(LA60_0 >= Copy && LA60_0 <= Curve)||LA60_0==Difference||LA60_0==Ellipse||(LA60_0 >= Excl && LA60_0 <= Expand)||(LA60_0 >= Fill && LA60_0 <= Flatten)||(LA60_0 >= Gaussian && LA60_0 <= Hide)||LA60_0==Identifier||LA60_0==Inch||LA60_0==LAdd||(LA60_0 >= LRemove && LA60_0 <= LShape)||(LA60_0 >= Line && LA60_0 <= Mm)||(LA60_0 >= Move && LA60_0 <= MoveBy)||(LA60_0 >= NoFill && LA60_0 <= Number)||(LA60_0 >= OBracket && LA60_0 <= OParen)||(LA60_0 >= PI_CONSTANT && LA60_0 <= Println)||(LA60_0 >= Random && LA60_0 <= Rect)||(LA60_0 >= Rotate && LA60_0 <= Round)||LA60_0==Scale||(LA60_0 >= SetCorner && LA60_0 <= Slider)||(LA60_0 >= Sq && LA60_0 <= Subtract)||(LA60_0 >= Tan && LA60_0 <= TemplateCollection)||(LA60_0 >= Union && LA60_0 <= Weight)||LA60_0==Xor) ) {
-						alt60=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:260:30: ( exprList )?
+					int alt61=2;
+					int LA61_0 = input.LA(1);
+					if ( (LA61_0==ATan||LA61_0==AddDesign||(LA61_0 >= Arc && LA61_0 <= Assert)||LA61_0==Bool||LA61_0==COLOR_CONSTANT||(LA61_0 >= Clip && LA61_0 <= Cm)||(LA61_0 >= Copy && LA61_0 <= Curve)||LA61_0==Difference||LA61_0==Ellipse||(LA61_0 >= Excl && LA61_0 <= Expand)||(LA61_0 >= Fill && LA61_0 <= FollowCurve)||(LA61_0 >= Gaussian && LA61_0 <= Hide)||LA61_0==Identifier||LA61_0==Inch||LA61_0==LAdd||(LA61_0 >= LRemove && LA61_0 <= LShape)||(LA61_0 >= Line && LA61_0 <= Mm)||(LA61_0 >= Move && LA61_0 <= MoveBy)||(LA61_0 >= NoFill && LA61_0 <= Number)||(LA61_0 >= OBracket && LA61_0 <= OParen)||(LA61_0 >= PI_CONSTANT && LA61_0 <= Println)||(LA61_0 >= Random && LA61_0 <= Rect)||(LA61_0 >= Rotate && LA61_0 <= Round)||LA61_0==Scale||(LA61_0 >= SetCorner && LA61_0 <= Slider)||(LA61_0 >= Sq && LA61_0 <= Subtract)||(LA61_0 >= Tan && LA61_0 <= TemplateCollection)||(LA61_0 >= Union && LA61_0 <= Weight)||LA61_0==Xor) ) {
+						alt61=1;
 					}
-					switch (alt60) {
+					switch (alt61) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:259:30: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:260:30: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall2549);
-							exprList358=exprList();
+							pushFollow(FOLLOW_exprList_in_templateCall2573);
+							exprList362=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList358.getTree());
+							stream_exprList.add(exprList362.getTree());
 							}
 							break;
 
 					}
 
-					char_literal359=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2552);  
-					stream_CParen.add(char_literal359);
+					char_literal363=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2576);  
+					stream_CParen.add(char_literal363);
 
 					// AST REWRITE
-					// elements: exprList, TemplateCollection
+					// elements: TemplateCollection, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7462,14 +7544,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 259:46: -> ^( FUNC_CALL TemplateCollection ( exprList )? )
+					// 260:46: -> ^( FUNC_CALL TemplateCollection ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:259:49: ^( FUNC_CALL TemplateCollection ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:260:49: ^( FUNC_CALL TemplateCollection ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_TemplateCollection.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:259:82: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:260:82: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7486,39 +7568,39 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:260:5: AddDesign '(' ( exprList )? ')'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:261:5: AddDesign '(' ( exprList )? ')'
 					{
-					AddDesign360=(Token)match(input,AddDesign,FOLLOW_AddDesign_in_templateCall2573);  
-					stream_AddDesign.add(AddDesign360);
+					AddDesign364=(Token)match(input,AddDesign,FOLLOW_AddDesign_in_templateCall2597);  
+					stream_AddDesign.add(AddDesign364);
 
-					char_literal361=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2574);  
-					stream_OParen.add(char_literal361);
+					char_literal365=(Token)match(input,OParen,FOLLOW_OParen_in_templateCall2598);  
+					stream_OParen.add(char_literal365);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:260:18: ( exprList )?
-					int alt61=2;
-					int LA61_0 = input.LA(1);
-					if ( (LA61_0==ATan||LA61_0==AddDesign||(LA61_0 >= Arc && LA61_0 <= Assert)||LA61_0==Bool||LA61_0==COLOR_CONSTANT||(LA61_0 >= Clip && LA61_0 <= Cm)||(LA61_0 >= Copy && LA61_0 <= Curve)||LA61_0==Difference||LA61_0==Ellipse||(LA61_0 >= Excl && LA61_0 <= Expand)||(LA61_0 >= Fill && LA61_0 <= Flatten)||(LA61_0 >= Gaussian && LA61_0 <= Hide)||LA61_0==Identifier||LA61_0==Inch||LA61_0==LAdd||(LA61_0 >= LRemove && LA61_0 <= LShape)||(LA61_0 >= Line && LA61_0 <= Mm)||(LA61_0 >= Move && LA61_0 <= MoveBy)||(LA61_0 >= NoFill && LA61_0 <= Number)||(LA61_0 >= OBracket && LA61_0 <= OParen)||(LA61_0 >= PI_CONSTANT && LA61_0 <= Println)||(LA61_0 >= Random && LA61_0 <= Rect)||(LA61_0 >= Rotate && LA61_0 <= Round)||LA61_0==Scale||(LA61_0 >= SetCorner && LA61_0 <= Slider)||(LA61_0 >= Sq && LA61_0 <= Subtract)||(LA61_0 >= Tan && LA61_0 <= TemplateCollection)||(LA61_0 >= Union && LA61_0 <= Weight)||LA61_0==Xor) ) {
-						alt61=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:261:18: ( exprList )?
+					int alt62=2;
+					int LA62_0 = input.LA(1);
+					if ( (LA62_0==ATan||LA62_0==AddDesign||(LA62_0 >= Arc && LA62_0 <= Assert)||LA62_0==Bool||LA62_0==COLOR_CONSTANT||(LA62_0 >= Clip && LA62_0 <= Cm)||(LA62_0 >= Copy && LA62_0 <= Curve)||LA62_0==Difference||LA62_0==Ellipse||(LA62_0 >= Excl && LA62_0 <= Expand)||(LA62_0 >= Fill && LA62_0 <= FollowCurve)||(LA62_0 >= Gaussian && LA62_0 <= Hide)||LA62_0==Identifier||LA62_0==Inch||LA62_0==LAdd||(LA62_0 >= LRemove && LA62_0 <= LShape)||(LA62_0 >= Line && LA62_0 <= Mm)||(LA62_0 >= Move && LA62_0 <= MoveBy)||(LA62_0 >= NoFill && LA62_0 <= Number)||(LA62_0 >= OBracket && LA62_0 <= OParen)||(LA62_0 >= PI_CONSTANT && LA62_0 <= Println)||(LA62_0 >= Random && LA62_0 <= Rect)||(LA62_0 >= Rotate && LA62_0 <= Round)||LA62_0==Scale||(LA62_0 >= SetCorner && LA62_0 <= Slider)||(LA62_0 >= Sq && LA62_0 <= Subtract)||(LA62_0 >= Tan && LA62_0 <= TemplateCollection)||(LA62_0 >= Union && LA62_0 <= Weight)||LA62_0==Xor) ) {
+						alt62=1;
 					}
-					switch (alt61) {
+					switch (alt62) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:260:18: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:261:18: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall2576);
-							exprList362=exprList();
+							pushFollow(FOLLOW_exprList_in_templateCall2600);
+							exprList366=exprList();
 							state._fsp--;
 
-							stream_exprList.add(exprList362.getTree());
+							stream_exprList.add(exprList366.getTree());
 							}
 							break;
 
 					}
 
-					char_literal363=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2579);  
-					stream_CParen.add(char_literal363);
+					char_literal367=(Token)match(input,CParen,FOLLOW_CParen_in_templateCall2603);  
+					stream_CParen.add(char_literal367);
 
 					// AST REWRITE
-					// elements: AddDesign, exprList
+					// elements: exprList, AddDesign
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7528,14 +7610,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 260:34: -> ^( FUNC_CALL AddDesign ( exprList )? )
+					// 261:34: -> ^( FUNC_CALL AddDesign ( exprList )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:260:37: ^( FUNC_CALL AddDesign ( exprList )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:261:37: ^( FUNC_CALL AddDesign ( exprList )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(FUNC_CALL, "FUNC_CALL"), root_1);
 						adaptor.addChild(root_1, stream_AddDesign.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:260:59: ( exprList )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:261:59: ( exprList )?
 						if ( stream_exprList.hasNext() ) {
 							adaptor.addChild(root_1, stream_exprList.nextTree());
 						}
@@ -7580,82 +7662,82 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "ifStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:264:2: ifStatement : ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:265:2: ifStatement : ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) ;
 	public final PyEsqueParser.ifStatement_return ifStatement() throws RecognitionException {
 		PyEsqueParser.ifStatement_return retval = new PyEsqueParser.ifStatement_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		ParserRuleReturnScope ifStat364 =null;
-		ParserRuleReturnScope elseIfStat365 =null;
-		ParserRuleReturnScope elseStat366 =null;
+		ParserRuleReturnScope ifStat368 =null;
+		ParserRuleReturnScope elseIfStat369 =null;
+		ParserRuleReturnScope elseStat370 =null;
 
 		RewriteRuleSubtreeStream stream_elseIfStat=new RewriteRuleSubtreeStream(adaptor,"rule elseIfStat");
 		RewriteRuleSubtreeStream stream_ifStat=new RewriteRuleSubtreeStream(adaptor,"rule ifStat");
 		RewriteRuleSubtreeStream stream_elseStat=new RewriteRuleSubtreeStream(adaptor,"rule elseStat");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:265:3: ( ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:265:6: ifStat ( elseIfStat )* ( elseStat )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:266:3: ( ifStat ( elseIfStat )* ( elseStat )? -> ^( IF ifStat ( elseIfStat )* ( elseStat )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:266:6: ifStat ( elseIfStat )* ( elseStat )?
 			{
-			pushFollow(FOLLOW_ifStat_in_ifStatement2613);
-			ifStat364=ifStat();
+			pushFollow(FOLLOW_ifStat_in_ifStatement2637);
+			ifStat368=ifStat();
 			state._fsp--;
 
-			stream_ifStat.add(ifStat364.getTree());
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:265:13: ( elseIfStat )*
-			loop63:
+			stream_ifStat.add(ifStat368.getTree());
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:266:13: ( elseIfStat )*
+			loop64:
 			while (true) {
-				int alt63=2;
-				int LA63_0 = input.LA(1);
-				if ( (LA63_0==Else) ) {
-					int LA63_1 = input.LA(2);
-					if ( (LA63_1==If) ) {
-						alt63=1;
+				int alt64=2;
+				int LA64_0 = input.LA(1);
+				if ( (LA64_0==Else) ) {
+					int LA64_1 = input.LA(2);
+					if ( (LA64_1==If) ) {
+						alt64=1;
 					}
 
 				}
 
-				switch (alt63) {
+				switch (alt64) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:265:13: elseIfStat
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:266:13: elseIfStat
 					{
-					pushFollow(FOLLOW_elseIfStat_in_ifStatement2615);
-					elseIfStat365=elseIfStat();
+					pushFollow(FOLLOW_elseIfStat_in_ifStatement2639);
+					elseIfStat369=elseIfStat();
 					state._fsp--;
 
-					stream_elseIfStat.add(elseIfStat365.getTree());
+					stream_elseIfStat.add(elseIfStat369.getTree());
 					}
 					break;
 
 				default :
-					break loop63;
+					break loop64;
 				}
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:265:25: ( elseStat )?
-			int alt64=2;
-			int LA64_0 = input.LA(1);
-			if ( (LA64_0==Else) ) {
-				alt64=1;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:266:25: ( elseStat )?
+			int alt65=2;
+			int LA65_0 = input.LA(1);
+			if ( (LA65_0==Else) ) {
+				alt65=1;
 			}
-			switch (alt64) {
+			switch (alt65) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:265:25: elseStat
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:266:25: elseStat
 					{
-					pushFollow(FOLLOW_elseStat_in_ifStatement2618);
-					elseStat366=elseStat();
+					pushFollow(FOLLOW_elseStat_in_ifStatement2642);
+					elseStat370=elseStat();
 					state._fsp--;
 
-					stream_elseStat.add(elseStat366.getTree());
+					stream_elseStat.add(elseStat370.getTree());
 					}
 					break;
 
 			}
 
 			// AST REWRITE
-			// elements: elseIfStat, elseStat, ifStat
+			// elements: ifStat, elseStat, elseIfStat
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -7665,20 +7747,20 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 265:35: -> ^( IF ifStat ( elseIfStat )* ( elseStat )? )
+			// 266:35: -> ^( IF ifStat ( elseIfStat )* ( elseStat )? )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:265:38: ^( IF ifStat ( elseIfStat )* ( elseStat )? )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:266:38: ^( IF ifStat ( elseIfStat )* ( elseStat )? )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(IF, "IF"), root_1);
 				adaptor.addChild(root_1, stream_ifStat.nextTree());
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:265:50: ( elseIfStat )*
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:266:50: ( elseIfStat )*
 				while ( stream_elseIfStat.hasNext() ) {
 					adaptor.addChild(root_1, stream_elseIfStat.nextTree());
 				}
 				stream_elseIfStat.reset();
 
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:265:62: ( elseStat )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:266:62: ( elseStat )?
 				if ( stream_elseStat.hasNext() ) {
 					adaptor.addChild(root_1, stream_elseStat.nextTree());
 				}
@@ -7721,45 +7803,45 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "ifStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:270:1: ifStat : If expression Do block -> ^( EXP expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:271:1: ifStat : If expression Do block -> ^( EXP expression block ) ;
 	public final PyEsqueParser.ifStat_return ifStat() throws RecognitionException {
 		PyEsqueParser.ifStat_return retval = new PyEsqueParser.ifStat_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token If367=null;
-		Token Do369=null;
-		ParserRuleReturnScope expression368 =null;
-		ParserRuleReturnScope block370 =null;
+		Token If371=null;
+		Token Do373=null;
+		ParserRuleReturnScope expression372 =null;
+		ParserRuleReturnScope block374 =null;
 
-		Object If367_tree=null;
-		Object Do369_tree=null;
+		Object If371_tree=null;
+		Object Do373_tree=null;
 		RewriteRuleTokenStream stream_Do=new RewriteRuleTokenStream(adaptor,"token Do");
 		RewriteRuleTokenStream stream_If=new RewriteRuleTokenStream(adaptor,"token If");
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:271:3: ( If expression Do block -> ^( EXP expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:271:6: If expression Do block
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:272:3: ( If expression Do block -> ^( EXP expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:272:6: If expression Do block
 			{
-			If367=(Token)match(input,If,FOLLOW_If_in_ifStat2649);  
-			stream_If.add(If367);
+			If371=(Token)match(input,If,FOLLOW_If_in_ifStat2673);  
+			stream_If.add(If371);
 
-			pushFollow(FOLLOW_expression_in_ifStat2651);
-			expression368=expression();
+			pushFollow(FOLLOW_expression_in_ifStat2675);
+			expression372=expression();
 			state._fsp--;
 
-			stream_expression.add(expression368.getTree());
-			Do369=(Token)match(input,Do,FOLLOW_Do_in_ifStat2653);  
-			stream_Do.add(Do369);
+			stream_expression.add(expression372.getTree());
+			Do373=(Token)match(input,Do,FOLLOW_Do_in_ifStat2677);  
+			stream_Do.add(Do373);
 
-			pushFollow(FOLLOW_block_in_ifStat2655);
-			block370=block();
+			pushFollow(FOLLOW_block_in_ifStat2679);
+			block374=block();
 			state._fsp--;
 
-			stream_block.add(block370.getTree());
+			stream_block.add(block374.getTree());
 			// AST REWRITE
 			// elements: expression, block
 			// token labels: 
@@ -7771,9 +7853,9 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 271:29: -> ^( EXP expression block )
+			// 272:29: -> ^( EXP expression block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:271:32: ^( EXP expression block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:272:32: ^( EXP expression block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXP, "EXP"), root_1);
@@ -7816,22 +7898,22 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "elseIfStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:274:1: elseIfStat : Else If expression Do block -> ^( EXP expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:275:1: elseIfStat : Else If expression Do block -> ^( EXP expression block ) ;
 	public final PyEsqueParser.elseIfStat_return elseIfStat() throws RecognitionException {
 		PyEsqueParser.elseIfStat_return retval = new PyEsqueParser.elseIfStat_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token Else371=null;
-		Token If372=null;
-		Token Do374=null;
-		ParserRuleReturnScope expression373 =null;
-		ParserRuleReturnScope block375 =null;
+		Token Else375=null;
+		Token If376=null;
+		Token Do378=null;
+		ParserRuleReturnScope expression377 =null;
+		ParserRuleReturnScope block379 =null;
 
-		Object Else371_tree=null;
-		Object If372_tree=null;
-		Object Do374_tree=null;
+		Object Else375_tree=null;
+		Object If376_tree=null;
+		Object Do378_tree=null;
 		RewriteRuleTokenStream stream_Do=new RewriteRuleTokenStream(adaptor,"token Do");
 		RewriteRuleTokenStream stream_Else=new RewriteRuleTokenStream(adaptor,"token Else");
 		RewriteRuleTokenStream stream_If=new RewriteRuleTokenStream(adaptor,"token If");
@@ -7839,28 +7921,28 @@ public class PyEsqueParser extends Parser {
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:275:3: ( Else If expression Do block -> ^( EXP expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:275:6: Else If expression Do block
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:276:3: ( Else If expression Do block -> ^( EXP expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:276:6: Else If expression Do block
 			{
-			Else371=(Token)match(input,Else,FOLLOW_Else_in_elseIfStat2679);  
-			stream_Else.add(Else371);
+			Else375=(Token)match(input,Else,FOLLOW_Else_in_elseIfStat2703);  
+			stream_Else.add(Else375);
 
-			If372=(Token)match(input,If,FOLLOW_If_in_elseIfStat2681);  
-			stream_If.add(If372);
+			If376=(Token)match(input,If,FOLLOW_If_in_elseIfStat2705);  
+			stream_If.add(If376);
 
-			pushFollow(FOLLOW_expression_in_elseIfStat2683);
-			expression373=expression();
+			pushFollow(FOLLOW_expression_in_elseIfStat2707);
+			expression377=expression();
 			state._fsp--;
 
-			stream_expression.add(expression373.getTree());
-			Do374=(Token)match(input,Do,FOLLOW_Do_in_elseIfStat2685);  
-			stream_Do.add(Do374);
+			stream_expression.add(expression377.getTree());
+			Do378=(Token)match(input,Do,FOLLOW_Do_in_elseIfStat2709);  
+			stream_Do.add(Do378);
 
-			pushFollow(FOLLOW_block_in_elseIfStat2687);
-			block375=block();
+			pushFollow(FOLLOW_block_in_elseIfStat2711);
+			block379=block();
 			state._fsp--;
 
-			stream_block.add(block375.getTree());
+			stream_block.add(block379.getTree());
 			// AST REWRITE
 			// elements: block, expression
 			// token labels: 
@@ -7872,9 +7954,9 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 275:34: -> ^( EXP expression block )
+			// 276:34: -> ^( EXP expression block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:275:37: ^( EXP expression block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:276:37: ^( EXP expression block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXP, "EXP"), root_1);
@@ -7917,38 +7999,38 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "elseStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:278:1: elseStat : Else Do block -> ^( EXP block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:279:1: elseStat : Else Do block -> ^( EXP block ) ;
 	public final PyEsqueParser.elseStat_return elseStat() throws RecognitionException {
 		PyEsqueParser.elseStat_return retval = new PyEsqueParser.elseStat_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token Else376=null;
-		Token Do377=null;
-		ParserRuleReturnScope block378 =null;
+		Token Else380=null;
+		Token Do381=null;
+		ParserRuleReturnScope block382 =null;
 
-		Object Else376_tree=null;
-		Object Do377_tree=null;
+		Object Else380_tree=null;
+		Object Do381_tree=null;
 		RewriteRuleTokenStream stream_Do=new RewriteRuleTokenStream(adaptor,"token Do");
 		RewriteRuleTokenStream stream_Else=new RewriteRuleTokenStream(adaptor,"token Else");
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:279:3: ( Else Do block -> ^( EXP block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:279:6: Else Do block
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:280:3: ( Else Do block -> ^( EXP block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:280:6: Else Do block
 			{
-			Else376=(Token)match(input,Else,FOLLOW_Else_in_elseStat2711);  
-			stream_Else.add(Else376);
+			Else380=(Token)match(input,Else,FOLLOW_Else_in_elseStat2735);  
+			stream_Else.add(Else380);
 
-			Do377=(Token)match(input,Do,FOLLOW_Do_in_elseStat2713);  
-			stream_Do.add(Do377);
+			Do381=(Token)match(input,Do,FOLLOW_Do_in_elseStat2737);  
+			stream_Do.add(Do381);
 
-			pushFollow(FOLLOW_block_in_elseStat2715);
-			block378=block();
+			pushFollow(FOLLOW_block_in_elseStat2739);
+			block382=block();
 			state._fsp--;
 
-			stream_block.add(block378.getTree());
+			stream_block.add(block382.getTree());
 			// AST REWRITE
 			// elements: block
 			// token labels: 
@@ -7960,9 +8042,9 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 279:20: -> ^( EXP block )
+			// 280:20: -> ^( EXP block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:279:23: ^( EXP block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:280:23: ^( EXP block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXP, "EXP"), root_1);
@@ -8004,30 +8086,30 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "repeatStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:283:2: repeatStatement : Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block -> ^( Repeat Identifier expression expression ( expression )? block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:284:2: repeatStatement : Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block -> ^( Repeat Identifier expression expression ( expression )? block ) ;
 	public final PyEsqueParser.repeatStatement_return repeatStatement() throws RecognitionException {
 		PyEsqueParser.repeatStatement_return retval = new PyEsqueParser.repeatStatement_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token Repeat379=null;
-		Token Identifier380=null;
-		Token char_literal381=null;
-		Token Do383=null;
-		Token string_literal385=null;
+		Token Repeat383=null;
+		Token Identifier384=null;
+		Token char_literal385=null;
 		Token Do387=null;
-		ParserRuleReturnScope expression382 =null;
-		ParserRuleReturnScope expression384 =null;
+		Token string_literal389=null;
+		Token Do391=null;
 		ParserRuleReturnScope expression386 =null;
-		ParserRuleReturnScope block388 =null;
+		ParserRuleReturnScope expression388 =null;
+		ParserRuleReturnScope expression390 =null;
+		ParserRuleReturnScope block392 =null;
 
-		Object Repeat379_tree=null;
-		Object Identifier380_tree=null;
-		Object char_literal381_tree=null;
-		Object Do383_tree=null;
-		Object string_literal385_tree=null;
+		Object Repeat383_tree=null;
+		Object Identifier384_tree=null;
+		Object char_literal385_tree=null;
 		Object Do387_tree=null;
+		Object string_literal389_tree=null;
+		Object Do391_tree=null;
 		RewriteRuleTokenStream stream_Do=new RewriteRuleTokenStream(adaptor,"token Do");
 		RewriteRuleTokenStream stream_Assign=new RewriteRuleTokenStream(adaptor,"token Assign");
 		RewriteRuleTokenStream stream_LAdd=new RewriteRuleTokenStream(adaptor,"token LAdd");
@@ -8037,70 +8119,70 @@ public class PyEsqueParser extends Parser {
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:284:3: ( Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block -> ^( Repeat Identifier expression expression ( expression )? block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:284:5: Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:285:3: ( Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block -> ^( Repeat Identifier expression expression ( expression )? block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:285:5: Repeat Identifier '=' expression Do expression ( 'add' expression )* Do block
 			{
-			Repeat379=(Token)match(input,Repeat,FOLLOW_Repeat_in_repeatStatement2740);  
-			stream_Repeat.add(Repeat379);
+			Repeat383=(Token)match(input,Repeat,FOLLOW_Repeat_in_repeatStatement2764);  
+			stream_Repeat.add(Repeat383);
 
-			Identifier380=(Token)match(input,Identifier,FOLLOW_Identifier_in_repeatStatement2742);  
-			stream_Identifier.add(Identifier380);
+			Identifier384=(Token)match(input,Identifier,FOLLOW_Identifier_in_repeatStatement2766);  
+			stream_Identifier.add(Identifier384);
 
-			char_literal381=(Token)match(input,Assign,FOLLOW_Assign_in_repeatStatement2744);  
-			stream_Assign.add(char_literal381);
+			char_literal385=(Token)match(input,Assign,FOLLOW_Assign_in_repeatStatement2768);  
+			stream_Assign.add(char_literal385);
 
-			pushFollow(FOLLOW_expression_in_repeatStatement2746);
-			expression382=expression();
+			pushFollow(FOLLOW_expression_in_repeatStatement2770);
+			expression386=expression();
 			state._fsp--;
 
-			stream_expression.add(expression382.getTree());
-			Do383=(Token)match(input,Do,FOLLOW_Do_in_repeatStatement2748);  
-			stream_Do.add(Do383);
+			stream_expression.add(expression386.getTree());
+			Do387=(Token)match(input,Do,FOLLOW_Do_in_repeatStatement2772);  
+			stream_Do.add(Do387);
 
-			pushFollow(FOLLOW_expression_in_repeatStatement2750);
-			expression384=expression();
+			pushFollow(FOLLOW_expression_in_repeatStatement2774);
+			expression388=expression();
 			state._fsp--;
 
-			stream_expression.add(expression384.getTree());
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:284:52: ( 'add' expression )*
-			loop65:
+			stream_expression.add(expression388.getTree());
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:285:52: ( 'add' expression )*
+			loop66:
 			while (true) {
-				int alt65=2;
-				int LA65_0 = input.LA(1);
-				if ( (LA65_0==LAdd) ) {
-					alt65=1;
+				int alt66=2;
+				int LA66_0 = input.LA(1);
+				if ( (LA66_0==LAdd) ) {
+					alt66=1;
 				}
 
-				switch (alt65) {
+				switch (alt66) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:284:53: 'add' expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:285:53: 'add' expression
 					{
-					string_literal385=(Token)match(input,LAdd,FOLLOW_LAdd_in_repeatStatement2753);  
-					stream_LAdd.add(string_literal385);
+					string_literal389=(Token)match(input,LAdd,FOLLOW_LAdd_in_repeatStatement2777);  
+					stream_LAdd.add(string_literal389);
 
-					pushFollow(FOLLOW_expression_in_repeatStatement2755);
-					expression386=expression();
+					pushFollow(FOLLOW_expression_in_repeatStatement2779);
+					expression390=expression();
 					state._fsp--;
 
-					stream_expression.add(expression386.getTree());
+					stream_expression.add(expression390.getTree());
 					}
 					break;
 
 				default :
-					break loop65;
+					break loop66;
 				}
 			}
 
-			Do387=(Token)match(input,Do,FOLLOW_Do_in_repeatStatement2759);  
-			stream_Do.add(Do387);
+			Do391=(Token)match(input,Do,FOLLOW_Do_in_repeatStatement2783);  
+			stream_Do.add(Do391);
 
-			pushFollow(FOLLOW_block_in_repeatStatement2761);
-			block388=block();
+			pushFollow(FOLLOW_block_in_repeatStatement2785);
+			block392=block();
 			state._fsp--;
 
-			stream_block.add(block388.getTree());
+			stream_block.add(block392.getTree());
 			// AST REWRITE
-			// elements: block, expression, expression, expression, Repeat, Identifier
+			// elements: Identifier, expression, Repeat, expression, block, expression
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8110,16 +8192,16 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 284:81: -> ^( Repeat Identifier expression expression ( expression )? block )
+			// 285:81: -> ^( Repeat Identifier expression expression ( expression )? block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:284:84: ^( Repeat Identifier expression expression ( expression )? block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:285:84: ^( Repeat Identifier expression expression ( expression )? block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot(stream_Repeat.nextNode(), root_1);
 				adaptor.addChild(root_1, stream_Identifier.nextNode());
 				adaptor.addChild(root_1, stream_expression.nextTree());
 				adaptor.addChild(root_1, stream_expression.nextTree());
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:284:126: ( expression )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:285:126: ( expression )?
 				if ( stream_expression.hasNext() ) {
 					adaptor.addChild(root_1, stream_expression.nextTree());
 				}
@@ -8163,47 +8245,47 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "whileStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:287:1: whileStatement : While expression Do block -> ^( While expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:288:1: whileStatement : While expression Do block -> ^( While expression block ) ;
 	public final PyEsqueParser.whileStatement_return whileStatement() throws RecognitionException {
 		PyEsqueParser.whileStatement_return retval = new PyEsqueParser.whileStatement_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token While389=null;
-		Token Do391=null;
-		ParserRuleReturnScope expression390 =null;
-		ParserRuleReturnScope block392 =null;
+		Token While393=null;
+		Token Do395=null;
+		ParserRuleReturnScope expression394 =null;
+		ParserRuleReturnScope block396 =null;
 
-		Object While389_tree=null;
-		Object Do391_tree=null;
+		Object While393_tree=null;
+		Object Do395_tree=null;
 		RewriteRuleTokenStream stream_Do=new RewriteRuleTokenStream(adaptor,"token Do");
 		RewriteRuleTokenStream stream_While=new RewriteRuleTokenStream(adaptor,"token While");
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 		RewriteRuleSubtreeStream stream_block=new RewriteRuleSubtreeStream(adaptor,"rule block");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:288:3: ( While expression Do block -> ^( While expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:288:6: While expression Do block
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:289:3: ( While expression Do block -> ^( While expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:289:6: While expression Do block
 			{
-			While389=(Token)match(input,While,FOLLOW_While_in_whileStatement2794);  
-			stream_While.add(While389);
+			While393=(Token)match(input,While,FOLLOW_While_in_whileStatement2818);  
+			stream_While.add(While393);
 
-			pushFollow(FOLLOW_expression_in_whileStatement2796);
-			expression390=expression();
+			pushFollow(FOLLOW_expression_in_whileStatement2820);
+			expression394=expression();
 			state._fsp--;
 
-			stream_expression.add(expression390.getTree());
-			Do391=(Token)match(input,Do,FOLLOW_Do_in_whileStatement2798);  
-			stream_Do.add(Do391);
+			stream_expression.add(expression394.getTree());
+			Do395=(Token)match(input,Do,FOLLOW_Do_in_whileStatement2822);  
+			stream_Do.add(Do395);
 
-			pushFollow(FOLLOW_block_in_whileStatement2800);
-			block392=block();
+			pushFollow(FOLLOW_block_in_whileStatement2824);
+			block396=block();
 			state._fsp--;
 
-			stream_block.add(block392.getTree());
+			stream_block.add(block396.getTree());
 			// AST REWRITE
-			// elements: block, expression, While
+			// elements: block, While, expression
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8213,9 +8295,9 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 288:32: -> ^( While expression block )
+			// 289:32: -> ^( While expression block )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:288:35: ^( While expression block )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:289:35: ^( While expression block )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot(stream_While.nextNode(), root_1);
@@ -8258,28 +8340,28 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "expression"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:291:2: expression : condExpr ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:292:2: expression : condExpr ;
 	public final PyEsqueParser.expression_return expression() throws RecognitionException {
 		PyEsqueParser.expression_return retval = new PyEsqueParser.expression_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		ParserRuleReturnScope condExpr393 =null;
+		ParserRuleReturnScope condExpr397 =null;
 
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:292:3: ( condExpr )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:292:6: condExpr
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:293:3: ( condExpr )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:293:6: condExpr
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_condExpr_in_expression2826);
-			condExpr393=condExpr();
+			pushFollow(FOLLOW_condExpr_in_expression2850);
+			condExpr397=condExpr();
 			state._fsp--;
 
-			adaptor.addChild(root_0, condExpr393.getTree());
+			adaptor.addChild(root_0, condExpr397.getTree());
 
 			}
 
@@ -8310,56 +8392,56 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "exprList"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:295:3: exprList : expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:296:3: exprList : expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) ;
 	public final PyEsqueParser.exprList_return exprList() throws RecognitionException {
 		PyEsqueParser.exprList_return retval = new PyEsqueParser.exprList_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token char_literal395=null;
-		ParserRuleReturnScope expression394 =null;
-		ParserRuleReturnScope expression396 =null;
+		Token char_literal399=null;
+		ParserRuleReturnScope expression398 =null;
+		ParserRuleReturnScope expression400 =null;
 
-		Object char_literal395_tree=null;
+		Object char_literal399_tree=null;
 		RewriteRuleTokenStream stream_Comma=new RewriteRuleTokenStream(adaptor,"token Comma");
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:296:3: ( expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:296:6: expression ( ',' expression )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:297:3: ( expression ( ',' expression )* -> ^( EXP_LIST ( expression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:297:6: expression ( ',' expression )*
 			{
-			pushFollow(FOLLOW_expression_in_exprList2844);
-			expression394=expression();
+			pushFollow(FOLLOW_expression_in_exprList2868);
+			expression398=expression();
 			state._fsp--;
 
-			stream_expression.add(expression394.getTree());
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:296:17: ( ',' expression )*
-			loop66:
+			stream_expression.add(expression398.getTree());
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:297:17: ( ',' expression )*
+			loop67:
 			while (true) {
-				int alt66=2;
-				int LA66_0 = input.LA(1);
-				if ( (LA66_0==Comma) ) {
-					alt66=1;
+				int alt67=2;
+				int LA67_0 = input.LA(1);
+				if ( (LA67_0==Comma) ) {
+					alt67=1;
 				}
 
-				switch (alt66) {
+				switch (alt67) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:296:18: ',' expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:297:18: ',' expression
 					{
-					char_literal395=(Token)match(input,Comma,FOLLOW_Comma_in_exprList2847);  
-					stream_Comma.add(char_literal395);
+					char_literal399=(Token)match(input,Comma,FOLLOW_Comma_in_exprList2871);  
+					stream_Comma.add(char_literal399);
 
-					pushFollow(FOLLOW_expression_in_exprList2849);
-					expression396=expression();
+					pushFollow(FOLLOW_expression_in_exprList2873);
+					expression400=expression();
 					state._fsp--;
 
-					stream_expression.add(expression396.getTree());
+					stream_expression.add(expression400.getTree());
 					}
 					break;
 
 				default :
-					break loop66;
+					break loop67;
 				}
 			}
 
@@ -8374,9 +8456,9 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 296:35: -> ^( EXP_LIST ( expression )+ )
+			// 297:35: -> ^( EXP_LIST ( expression )+ )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:296:38: ^( EXP_LIST ( expression )+ )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:297:38: ^( EXP_LIST ( expression )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(EXP_LIST, "EXP_LIST"), root_1);
@@ -8425,24 +8507,24 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "condExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:300:1: condExpr : ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:301:1: condExpr : ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? ;
 	public final PyEsqueParser.condExpr_return condExpr() throws RecognitionException {
 		PyEsqueParser.condExpr_return retval = new PyEsqueParser.condExpr_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token char_literal398=null;
-		Token char_literal399=null;
-		Token In400=null;
+		Token char_literal402=null;
+		Token char_literal403=null;
+		Token In404=null;
 		ParserRuleReturnScope a =null;
 		ParserRuleReturnScope b =null;
-		ParserRuleReturnScope orExpr397 =null;
-		ParserRuleReturnScope expression401 =null;
+		ParserRuleReturnScope orExpr401 =null;
+		ParserRuleReturnScope expression405 =null;
 
-		Object char_literal398_tree=null;
-		Object char_literal399_tree=null;
-		Object In400_tree=null;
+		Object char_literal402_tree=null;
+		Object char_literal403_tree=null;
+		Object In404_tree=null;
 		RewriteRuleTokenStream stream_Do=new RewriteRuleTokenStream(adaptor,"token Do");
 		RewriteRuleTokenStream stream_In=new RewriteRuleTokenStream(adaptor,"token In");
 		RewriteRuleTokenStream stream_QMark=new RewriteRuleTokenStream(adaptor,"token QMark");
@@ -8450,17 +8532,17 @@ public class PyEsqueParser extends Parser {
 		RewriteRuleSubtreeStream stream_orExpr=new RewriteRuleSubtreeStream(adaptor,"rule orExpr");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:301:3: ( ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:301:6: ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:302:3: ( ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:302:6: ( orExpr -> orExpr ) ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:301:6: ( orExpr -> orExpr )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:301:7: orExpr
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:302:6: ( orExpr -> orExpr )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:302:7: orExpr
 			{
-			pushFollow(FOLLOW_orExpr_in_condExpr2878);
-			orExpr397=orExpr();
+			pushFollow(FOLLOW_orExpr_in_condExpr2902);
+			orExpr401=orExpr();
 			state._fsp--;
 
-			stream_orExpr.add(orExpr397.getTree());
+			stream_orExpr.add(orExpr401.getTree());
 			// AST REWRITE
 			// elements: orExpr
 			// token labels: 
@@ -8472,7 +8554,7 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 301:14: -> orExpr
+			// 302:14: -> orExpr
 			{
 				adaptor.addChild(root_0, stream_orExpr.nextTree());
 			}
@@ -8482,31 +8564,31 @@ public class PyEsqueParser extends Parser {
 
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:302:6: ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
-			int alt67=3;
-			int LA67_0 = input.LA(1);
-			if ( (LA67_0==QMark) ) {
-				alt67=1;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:303:6: ( '?' a= expression ':' b= expression -> ^( TERNARY orExpr $a $b) | In expression -> ^( In orExpr expression ) )?
+			int alt68=3;
+			int LA68_0 = input.LA(1);
+			if ( (LA68_0==QMark) ) {
+				alt68=1;
 			}
-			else if ( (LA67_0==In) ) {
-				alt67=2;
+			else if ( (LA68_0==In) ) {
+				alt68=2;
 			}
-			switch (alt67) {
+			switch (alt68) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:302:8: '?' a= expression ':' b= expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:303:8: '?' a= expression ':' b= expression
 					{
-					char_literal398=(Token)match(input,QMark,FOLLOW_QMark_in_condExpr2893);  
-					stream_QMark.add(char_literal398);
+					char_literal402=(Token)match(input,QMark,FOLLOW_QMark_in_condExpr2917);  
+					stream_QMark.add(char_literal402);
 
-					pushFollow(FOLLOW_expression_in_condExpr2897);
+					pushFollow(FOLLOW_expression_in_condExpr2921);
 					a=expression();
 					state._fsp--;
 
 					stream_expression.add(a.getTree());
-					char_literal399=(Token)match(input,Do,FOLLOW_Do_in_condExpr2899);  
-					stream_Do.add(char_literal399);
+					char_literal403=(Token)match(input,Do,FOLLOW_Do_in_condExpr2923);  
+					stream_Do.add(char_literal403);
 
-					pushFollow(FOLLOW_expression_in_condExpr2903);
+					pushFollow(FOLLOW_expression_in_condExpr2927);
 					b=expression();
 					state._fsp--;
 
@@ -8524,9 +8606,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_a=new RewriteRuleSubtreeStream(adaptor,"rule a",a!=null?a.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 302:42: -> ^( TERNARY orExpr $a $b)
+					// 303:42: -> ^( TERNARY orExpr $a $b)
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:302:45: ^( TERNARY orExpr $a $b)
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:303:45: ^( TERNARY orExpr $a $b)
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(TERNARY, "TERNARY"), root_1);
@@ -8544,18 +8626,18 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:303:8: In expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:304:8: In expression
 					{
-					In400=(Token)match(input,In,FOLLOW_In_in_condExpr2926);  
-					stream_In.add(In400);
+					In404=(Token)match(input,In,FOLLOW_In_in_condExpr2950);  
+					stream_In.add(In404);
 
-					pushFollow(FOLLOW_expression_in_condExpr2928);
-					expression401=expression();
+					pushFollow(FOLLOW_expression_in_condExpr2952);
+					expression405=expression();
 					state._fsp--;
 
-					stream_expression.add(expression401.getTree());
+					stream_expression.add(expression405.getTree());
 					// AST REWRITE
-					// elements: expression, orExpr, In
+					// elements: orExpr, expression, In
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -8565,9 +8647,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 303:42: -> ^( In orExpr expression )
+					// 304:42: -> ^( In orExpr expression )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:303:45: ^( In orExpr expression )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:304:45: ^( In orExpr expression )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot(stream_In.nextNode(), root_1);
@@ -8615,60 +8697,60 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "orExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:307:1: orExpr : andExpr ( '||' ^ andExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:308:1: orExpr : andExpr ( '||' ^ andExpr )* ;
 	public final PyEsqueParser.orExpr_return orExpr() throws RecognitionException {
 		PyEsqueParser.orExpr_return retval = new PyEsqueParser.orExpr_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token string_literal403=null;
-		ParserRuleReturnScope andExpr402 =null;
-		ParserRuleReturnScope andExpr404 =null;
+		Token string_literal407=null;
+		ParserRuleReturnScope andExpr406 =null;
+		ParserRuleReturnScope andExpr408 =null;
 
-		Object string_literal403_tree=null;
+		Object string_literal407_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:308:3: ( andExpr ( '||' ^ andExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:308:6: andExpr ( '||' ^ andExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:309:3: ( andExpr ( '||' ^ andExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:309:6: andExpr ( '||' ^ andExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_andExpr_in_orExpr2980);
-			andExpr402=andExpr();
+			pushFollow(FOLLOW_andExpr_in_orExpr3004);
+			andExpr406=andExpr();
 			state._fsp--;
 
-			adaptor.addChild(root_0, andExpr402.getTree());
+			adaptor.addChild(root_0, andExpr406.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:308:14: ( '||' ^ andExpr )*
-			loop68:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:309:14: ( '||' ^ andExpr )*
+			loop69:
 			while (true) {
-				int alt68=2;
-				int LA68_0 = input.LA(1);
-				if ( (LA68_0==167) ) {
-					alt68=1;
+				int alt69=2;
+				int LA69_0 = input.LA(1);
+				if ( (LA69_0==168) ) {
+					alt69=1;
 				}
 
-				switch (alt68) {
+				switch (alt69) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:308:15: '||' ^ andExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:309:15: '||' ^ andExpr
 					{
-					string_literal403=(Token)match(input,167,FOLLOW_167_in_orExpr2983); 
-					string_literal403_tree = (Object)adaptor.create(string_literal403);
-					root_0 = (Object)adaptor.becomeRoot(string_literal403_tree, root_0);
+					string_literal407=(Token)match(input,168,FOLLOW_168_in_orExpr3007); 
+					string_literal407_tree = (Object)adaptor.create(string_literal407);
+					root_0 = (Object)adaptor.becomeRoot(string_literal407_tree, root_0);
 
-					pushFollow(FOLLOW_andExpr_in_orExpr2986);
-					andExpr404=andExpr();
+					pushFollow(FOLLOW_andExpr_in_orExpr3010);
+					andExpr408=andExpr();
 					state._fsp--;
 
-					adaptor.addChild(root_0, andExpr404.getTree());
+					adaptor.addChild(root_0, andExpr408.getTree());
 
 					}
 					break;
 
 				default :
-					break loop68;
+					break loop69;
 				}
 			}
 
@@ -8701,60 +8783,60 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "andExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:311:1: andExpr : equExpr ( '&&' ^ equExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:312:1: andExpr : equExpr ( '&&' ^ equExpr )* ;
 	public final PyEsqueParser.andExpr_return andExpr() throws RecognitionException {
 		PyEsqueParser.andExpr_return retval = new PyEsqueParser.andExpr_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token string_literal406=null;
-		ParserRuleReturnScope equExpr405 =null;
-		ParserRuleReturnScope equExpr407 =null;
+		Token string_literal410=null;
+		ParserRuleReturnScope equExpr409 =null;
+		ParserRuleReturnScope equExpr411 =null;
 
-		Object string_literal406_tree=null;
+		Object string_literal410_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:312:3: ( equExpr ( '&&' ^ equExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:312:6: equExpr ( '&&' ^ equExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:313:3: ( equExpr ( '&&' ^ equExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:313:6: equExpr ( '&&' ^ equExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_equExpr_in_andExpr3002);
-			equExpr405=equExpr();
+			pushFollow(FOLLOW_equExpr_in_andExpr3026);
+			equExpr409=equExpr();
 			state._fsp--;
 
-			adaptor.addChild(root_0, equExpr405.getTree());
+			adaptor.addChild(root_0, equExpr409.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:312:14: ( '&&' ^ equExpr )*
-			loop69:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:313:14: ( '&&' ^ equExpr )*
+			loop70:
 			while (true) {
-				int alt69=2;
-				int LA69_0 = input.LA(1);
-				if ( (LA69_0==166) ) {
-					alt69=1;
+				int alt70=2;
+				int LA70_0 = input.LA(1);
+				if ( (LA70_0==167) ) {
+					alt70=1;
 				}
 
-				switch (alt69) {
+				switch (alt70) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:312:15: '&&' ^ equExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:313:15: '&&' ^ equExpr
 					{
-					string_literal406=(Token)match(input,166,FOLLOW_166_in_andExpr3005); 
-					string_literal406_tree = (Object)adaptor.create(string_literal406);
-					root_0 = (Object)adaptor.becomeRoot(string_literal406_tree, root_0);
+					string_literal410=(Token)match(input,167,FOLLOW_167_in_andExpr3029); 
+					string_literal410_tree = (Object)adaptor.create(string_literal410);
+					root_0 = (Object)adaptor.becomeRoot(string_literal410_tree, root_0);
 
-					pushFollow(FOLLOW_equExpr_in_andExpr3008);
-					equExpr407=equExpr();
+					pushFollow(FOLLOW_equExpr_in_andExpr3032);
+					equExpr411=equExpr();
 					state._fsp--;
 
-					adaptor.addChild(root_0, equExpr407.getTree());
+					adaptor.addChild(root_0, equExpr411.getTree());
 
 					}
 					break;
 
 				default :
-					break loop69;
+					break loop70;
 				}
 			}
 
@@ -8787,67 +8869,67 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "equExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:315:1: equExpr : relExpr ( ( '==' | '!=' ) ^ relExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:316:1: equExpr : relExpr ( ( '==' | '!=' ) ^ relExpr )* ;
 	public final PyEsqueParser.equExpr_return equExpr() throws RecognitionException {
 		PyEsqueParser.equExpr_return retval = new PyEsqueParser.equExpr_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token set409=null;
-		ParserRuleReturnScope relExpr408 =null;
-		ParserRuleReturnScope relExpr410 =null;
+		Token set413=null;
+		ParserRuleReturnScope relExpr412 =null;
+		ParserRuleReturnScope relExpr414 =null;
 
-		Object set409_tree=null;
+		Object set413_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:316:3: ( relExpr ( ( '==' | '!=' ) ^ relExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:316:6: relExpr ( ( '==' | '!=' ) ^ relExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:317:3: ( relExpr ( ( '==' | '!=' ) ^ relExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:317:6: relExpr ( ( '==' | '!=' ) ^ relExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_relExpr_in_equExpr3024);
-			relExpr408=relExpr();
+			pushFollow(FOLLOW_relExpr_in_equExpr3048);
+			relExpr412=relExpr();
 			state._fsp--;
 
-			adaptor.addChild(root_0, relExpr408.getTree());
+			adaptor.addChild(root_0, relExpr412.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:316:14: ( ( '==' | '!=' ) ^ relExpr )*
-			loop70:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:317:14: ( ( '==' | '!=' ) ^ relExpr )*
+			loop71:
 			while (true) {
-				int alt70=2;
-				int LA70_0 = input.LA(1);
-				if ( (LA70_0==Equals||LA70_0==NEquals) ) {
-					alt70=1;
+				int alt71=2;
+				int LA71_0 = input.LA(1);
+				if ( (LA71_0==Equals||LA71_0==NEquals) ) {
+					alt71=1;
 				}
 
-				switch (alt70) {
+				switch (alt71) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:316:15: ( '==' | '!=' ) ^ relExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:317:15: ( '==' | '!=' ) ^ relExpr
 					{
-					set409=input.LT(1);
-					set409=input.LT(1);
+					set413=input.LT(1);
+					set413=input.LT(1);
 					if ( input.LA(1)==Equals||input.LA(1)==NEquals ) {
 						input.consume();
-						root_0 = (Object)adaptor.becomeRoot((Object)adaptor.create(set409), root_0);
+						root_0 = (Object)adaptor.becomeRoot((Object)adaptor.create(set413), root_0);
 						state.errorRecovery=false;
 					}
 					else {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_relExpr_in_equExpr3036);
-					relExpr410=relExpr();
+					pushFollow(FOLLOW_relExpr_in_equExpr3060);
+					relExpr414=relExpr();
 					state._fsp--;
 
-					adaptor.addChild(root_0, relExpr410.getTree());
+					adaptor.addChild(root_0, relExpr414.getTree());
 
 					}
 					break;
 
 				default :
-					break loop70;
+					break loop71;
 				}
 			}
 
@@ -8880,67 +8962,67 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "relExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:319:1: relExpr : addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:320:1: relExpr : addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* ;
 	public final PyEsqueParser.relExpr_return relExpr() throws RecognitionException {
 		PyEsqueParser.relExpr_return retval = new PyEsqueParser.relExpr_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token set412=null;
-		ParserRuleReturnScope addExpr411 =null;
-		ParserRuleReturnScope addExpr413 =null;
+		Token set416=null;
+		ParserRuleReturnScope addExpr415 =null;
+		ParserRuleReturnScope addExpr417 =null;
 
-		Object set412_tree=null;
+		Object set416_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:320:3: ( addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:320:6: addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:321:3: ( addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:321:6: addExpr ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_addExpr_in_relExpr3052);
-			addExpr411=addExpr();
+			pushFollow(FOLLOW_addExpr_in_relExpr3076);
+			addExpr415=addExpr();
 			state._fsp--;
 
-			adaptor.addChild(root_0, addExpr411.getTree());
+			adaptor.addChild(root_0, addExpr415.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:320:14: ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
-			loop71:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:321:14: ( ( '>=' | '<=' | '>' | '<' ) ^ addExpr )*
+			loop72:
 			while (true) {
-				int alt71=2;
-				int LA71_0 = input.LA(1);
-				if ( ((LA71_0 >= GT && LA71_0 <= GTEquals)||(LA71_0 >= LT && LA71_0 <= LTEquals)) ) {
-					alt71=1;
+				int alt72=2;
+				int LA72_0 = input.LA(1);
+				if ( ((LA72_0 >= GT && LA72_0 <= GTEquals)||(LA72_0 >= LT && LA72_0 <= LTEquals)) ) {
+					alt72=1;
 				}
 
-				switch (alt71) {
+				switch (alt72) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:320:15: ( '>=' | '<=' | '>' | '<' ) ^ addExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:321:15: ( '>=' | '<=' | '>' | '<' ) ^ addExpr
 					{
-					set412=input.LT(1);
-					set412=input.LT(1);
+					set416=input.LT(1);
+					set416=input.LT(1);
 					if ( (input.LA(1) >= GT && input.LA(1) <= GTEquals)||(input.LA(1) >= LT && input.LA(1) <= LTEquals) ) {
 						input.consume();
-						root_0 = (Object)adaptor.becomeRoot((Object)adaptor.create(set412), root_0);
+						root_0 = (Object)adaptor.becomeRoot((Object)adaptor.create(set416), root_0);
 						state.errorRecovery=false;
 					}
 					else {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_addExpr_in_relExpr3072);
-					addExpr413=addExpr();
+					pushFollow(FOLLOW_addExpr_in_relExpr3096);
+					addExpr417=addExpr();
 					state._fsp--;
 
-					adaptor.addChild(root_0, addExpr413.getTree());
+					adaptor.addChild(root_0, addExpr417.getTree());
 
 					}
 					break;
 
 				default :
-					break loop71;
+					break loop72;
 				}
 			}
 
@@ -8973,67 +9055,67 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "addExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:323:1: addExpr : mulExpr ( ( '+' | '-' ) ^ mulExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:324:1: addExpr : mulExpr ( ( '+' | '-' ) ^ mulExpr )* ;
 	public final PyEsqueParser.addExpr_return addExpr() throws RecognitionException {
 		PyEsqueParser.addExpr_return retval = new PyEsqueParser.addExpr_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token set415=null;
-		ParserRuleReturnScope mulExpr414 =null;
-		ParserRuleReturnScope mulExpr416 =null;
+		Token set419=null;
+		ParserRuleReturnScope mulExpr418 =null;
+		ParserRuleReturnScope mulExpr420 =null;
 
-		Object set415_tree=null;
+		Object set419_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:324:3: ( mulExpr ( ( '+' | '-' ) ^ mulExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:324:6: mulExpr ( ( '+' | '-' ) ^ mulExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:325:3: ( mulExpr ( ( '+' | '-' ) ^ mulExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:325:6: mulExpr ( ( '+' | '-' ) ^ mulExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_mulExpr_in_addExpr3088);
-			mulExpr414=mulExpr();
+			pushFollow(FOLLOW_mulExpr_in_addExpr3112);
+			mulExpr418=mulExpr();
 			state._fsp--;
 
-			adaptor.addChild(root_0, mulExpr414.getTree());
+			adaptor.addChild(root_0, mulExpr418.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:324:14: ( ( '+' | '-' ) ^ mulExpr )*
-			loop72:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:325:14: ( ( '+' | '-' ) ^ mulExpr )*
+			loop73:
 			while (true) {
-				int alt72=2;
-				int LA72_0 = input.LA(1);
-				if ( (LA72_0==Add||LA72_0==Subtract) ) {
-					alt72=1;
+				int alt73=2;
+				int LA73_0 = input.LA(1);
+				if ( (LA73_0==Add||LA73_0==Subtract) ) {
+					alt73=1;
 				}
 
-				switch (alt72) {
+				switch (alt73) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:324:15: ( '+' | '-' ) ^ mulExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:325:15: ( '+' | '-' ) ^ mulExpr
 					{
-					set415=input.LT(1);
-					set415=input.LT(1);
+					set419=input.LT(1);
+					set419=input.LT(1);
 					if ( input.LA(1)==Add||input.LA(1)==Subtract ) {
 						input.consume();
-						root_0 = (Object)adaptor.becomeRoot((Object)adaptor.create(set415), root_0);
+						root_0 = (Object)adaptor.becomeRoot((Object)adaptor.create(set419), root_0);
 						state.errorRecovery=false;
 					}
 					else {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_mulExpr_in_addExpr3100);
-					mulExpr416=mulExpr();
+					pushFollow(FOLLOW_mulExpr_in_addExpr3124);
+					mulExpr420=mulExpr();
 					state._fsp--;
 
-					adaptor.addChild(root_0, mulExpr416.getTree());
+					adaptor.addChild(root_0, mulExpr420.getTree());
 
 					}
 					break;
 
 				default :
-					break loop72;
+					break loop73;
 				}
 			}
 
@@ -9066,67 +9148,67 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "mulExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:327:1: mulExpr : powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:328:1: mulExpr : powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* ;
 	public final PyEsqueParser.mulExpr_return mulExpr() throws RecognitionException {
 		PyEsqueParser.mulExpr_return retval = new PyEsqueParser.mulExpr_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token set418=null;
-		ParserRuleReturnScope powExpr417 =null;
-		ParserRuleReturnScope powExpr419 =null;
+		Token set422=null;
+		ParserRuleReturnScope powExpr421 =null;
+		ParserRuleReturnScope powExpr423 =null;
 
-		Object set418_tree=null;
+		Object set422_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:328:3: ( powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:328:6: powExpr ( ( '*' | '/' | '%' ) ^ powExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:329:3: ( powExpr ( ( '*' | '/' | '%' ) ^ powExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:329:6: powExpr ( ( '*' | '/' | '%' ) ^ powExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_powExpr_in_mulExpr3116);
-			powExpr417=powExpr();
+			pushFollow(FOLLOW_powExpr_in_mulExpr3140);
+			powExpr421=powExpr();
 			state._fsp--;
 
-			adaptor.addChild(root_0, powExpr417.getTree());
+			adaptor.addChild(root_0, powExpr421.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:328:14: ( ( '*' | '/' | '%' ) ^ powExpr )*
-			loop73:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:329:14: ( ( '*' | '/' | '%' ) ^ powExpr )*
+			loop74:
 			while (true) {
-				int alt73=2;
-				int LA73_0 = input.LA(1);
-				if ( (LA73_0==Divide||LA73_0==Modulus||LA73_0==Multiply) ) {
-					alt73=1;
+				int alt74=2;
+				int LA74_0 = input.LA(1);
+				if ( (LA74_0==Divide||LA74_0==Modulus||LA74_0==Multiply) ) {
+					alt74=1;
 				}
 
-				switch (alt73) {
+				switch (alt74) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:328:15: ( '*' | '/' | '%' ) ^ powExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:329:15: ( '*' | '/' | '%' ) ^ powExpr
 					{
-					set418=input.LT(1);
-					set418=input.LT(1);
+					set422=input.LT(1);
+					set422=input.LT(1);
 					if ( input.LA(1)==Divide||input.LA(1)==Modulus||input.LA(1)==Multiply ) {
 						input.consume();
-						root_0 = (Object)adaptor.becomeRoot((Object)adaptor.create(set418), root_0);
+						root_0 = (Object)adaptor.becomeRoot((Object)adaptor.create(set422), root_0);
 						state.errorRecovery=false;
 					}
 					else {
 						MismatchedSetException mse = new MismatchedSetException(null,input);
 						throw mse;
 					}
-					pushFollow(FOLLOW_powExpr_in_mulExpr3132);
-					powExpr419=powExpr();
+					pushFollow(FOLLOW_powExpr_in_mulExpr3156);
+					powExpr423=powExpr();
 					state._fsp--;
 
-					adaptor.addChild(root_0, powExpr419.getTree());
+					adaptor.addChild(root_0, powExpr423.getTree());
 
 					}
 					break;
 
 				default :
-					break loop73;
+					break loop74;
 				}
 			}
 
@@ -9159,60 +9241,60 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "powExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:331:1: powExpr : unaryExpr ( '^' ^ unaryExpr )* ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:332:1: powExpr : unaryExpr ( '^' ^ unaryExpr )* ;
 	public final PyEsqueParser.powExpr_return powExpr() throws RecognitionException {
 		PyEsqueParser.powExpr_return retval = new PyEsqueParser.powExpr_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token char_literal421=null;
-		ParserRuleReturnScope unaryExpr420 =null;
-		ParserRuleReturnScope unaryExpr422 =null;
+		Token char_literal425=null;
+		ParserRuleReturnScope unaryExpr424 =null;
+		ParserRuleReturnScope unaryExpr426 =null;
 
-		Object char_literal421_tree=null;
+		Object char_literal425_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:332:3: ( unaryExpr ( '^' ^ unaryExpr )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:332:6: unaryExpr ( '^' ^ unaryExpr )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:333:3: ( unaryExpr ( '^' ^ unaryExpr )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:333:6: unaryExpr ( '^' ^ unaryExpr )*
 			{
 			root_0 = (Object)adaptor.nil();
 
 
-			pushFollow(FOLLOW_unaryExpr_in_powExpr3148);
-			unaryExpr420=unaryExpr();
+			pushFollow(FOLLOW_unaryExpr_in_powExpr3172);
+			unaryExpr424=unaryExpr();
 			state._fsp--;
 
-			adaptor.addChild(root_0, unaryExpr420.getTree());
+			adaptor.addChild(root_0, unaryExpr424.getTree());
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:332:16: ( '^' ^ unaryExpr )*
-			loop74:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:333:16: ( '^' ^ unaryExpr )*
+			loop75:
 			while (true) {
-				int alt74=2;
-				int LA74_0 = input.LA(1);
-				if ( (LA74_0==Pw) ) {
-					alt74=1;
+				int alt75=2;
+				int LA75_0 = input.LA(1);
+				if ( (LA75_0==Pw) ) {
+					alt75=1;
 				}
 
-				switch (alt74) {
+				switch (alt75) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:332:17: '^' ^ unaryExpr
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:333:17: '^' ^ unaryExpr
 					{
-					char_literal421=(Token)match(input,Pw,FOLLOW_Pw_in_powExpr3151); 
-					char_literal421_tree = (Object)adaptor.create(char_literal421);
-					root_0 = (Object)adaptor.becomeRoot(char_literal421_tree, root_0);
+					char_literal425=(Token)match(input,Pw,FOLLOW_Pw_in_powExpr3175); 
+					char_literal425_tree = (Object)adaptor.create(char_literal425);
+					root_0 = (Object)adaptor.becomeRoot(char_literal425_tree, root_0);
 
-					pushFollow(FOLLOW_unaryExpr_in_powExpr3154);
-					unaryExpr422=unaryExpr();
+					pushFollow(FOLLOW_unaryExpr_in_powExpr3178);
+					unaryExpr426=unaryExpr();
 					state._fsp--;
 
-					adaptor.addChild(root_0, unaryExpr422.getTree());
+					adaptor.addChild(root_0, unaryExpr426.getTree());
 
 					}
 					break;
 
 				default :
-					break loop74;
+					break loop75;
 				}
 			}
 
@@ -9245,37 +9327,37 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "unaryExpr"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:335:1: unaryExpr : ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:336:1: unaryExpr : ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom );
 	public final PyEsqueParser.unaryExpr_return unaryExpr() throws RecognitionException {
 		PyEsqueParser.unaryExpr_return retval = new PyEsqueParser.unaryExpr_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token char_literal423=null;
-		Token char_literal425=null;
-		ParserRuleReturnScope atom424 =null;
-		ParserRuleReturnScope atom426 =null;
-		ParserRuleReturnScope atom427 =null;
+		Token char_literal427=null;
+		Token char_literal429=null;
+		ParserRuleReturnScope atom428 =null;
+		ParserRuleReturnScope atom430 =null;
+		ParserRuleReturnScope atom431 =null;
 
-		Object char_literal423_tree=null;
-		Object char_literal425_tree=null;
+		Object char_literal427_tree=null;
+		Object char_literal429_tree=null;
 		RewriteRuleTokenStream stream_Excl=new RewriteRuleTokenStream(adaptor,"token Excl");
 		RewriteRuleTokenStream stream_Subtract=new RewriteRuleTokenStream(adaptor,"token Subtract");
 		RewriteRuleSubtreeStream stream_atom=new RewriteRuleSubtreeStream(adaptor,"rule atom");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:336:3: ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom )
-			int alt75=3;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:337:3: ( '-' atom -> ^( UNARY_MIN atom ) | '!' atom -> ^( NEGATE atom ) | atom )
+			int alt76=3;
 			switch ( input.LA(1) ) {
 			case Subtract:
 				{
-				alt75=1;
+				alt76=1;
 				}
 				break;
 			case Excl:
 				{
-				alt75=2;
+				alt76=2;
 				}
 				break;
 			case ATan:
@@ -9294,6 +9376,7 @@ public class PyEsqueParser extends Parser {
 			case Expand:
 			case Fill:
 			case Flatten:
+			case FollowCurve:
 			case Gaussian:
 			case GetAngle:
 			case GetDistance:
@@ -9372,26 +9455,26 @@ public class PyEsqueParser extends Parser {
 			case Weight:
 			case Xor:
 				{
-				alt75=3;
+				alt76=3;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 75, 0, input);
+					new NoViableAltException("", 76, 0, input);
 				throw nvae;
 			}
-			switch (alt75) {
+			switch (alt76) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:336:6: '-' atom
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:337:6: '-' atom
 					{
-					char_literal423=(Token)match(input,Subtract,FOLLOW_Subtract_in_unaryExpr3172);  
-					stream_Subtract.add(char_literal423);
+					char_literal427=(Token)match(input,Subtract,FOLLOW_Subtract_in_unaryExpr3196);  
+					stream_Subtract.add(char_literal427);
 
-					pushFollow(FOLLOW_atom_in_unaryExpr3174);
-					atom424=atom();
+					pushFollow(FOLLOW_atom_in_unaryExpr3198);
+					atom428=atom();
 					state._fsp--;
 
-					stream_atom.add(atom424.getTree());
+					stream_atom.add(atom428.getTree());
 					// AST REWRITE
 					// elements: atom
 					// token labels: 
@@ -9403,9 +9486,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 336:15: -> ^( UNARY_MIN atom )
+					// 337:15: -> ^( UNARY_MIN atom )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:336:18: ^( UNARY_MIN atom )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:337:18: ^( UNARY_MIN atom )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(UNARY_MIN, "UNARY_MIN"), root_1);
@@ -9421,16 +9504,16 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:337:6: '!' atom
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:338:6: '!' atom
 					{
-					char_literal425=(Token)match(input,Excl,FOLLOW_Excl_in_unaryExpr3189);  
-					stream_Excl.add(char_literal425);
+					char_literal429=(Token)match(input,Excl,FOLLOW_Excl_in_unaryExpr3213);  
+					stream_Excl.add(char_literal429);
 
-					pushFollow(FOLLOW_atom_in_unaryExpr3191);
-					atom426=atom();
+					pushFollow(FOLLOW_atom_in_unaryExpr3215);
+					atom430=atom();
 					state._fsp--;
 
-					stream_atom.add(atom426.getTree());
+					stream_atom.add(atom430.getTree());
 					// AST REWRITE
 					// elements: atom
 					// token labels: 
@@ -9442,9 +9525,9 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 337:15: -> ^( NEGATE atom )
+					// 338:15: -> ^( NEGATE atom )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:337:18: ^( NEGATE atom )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:338:18: ^( NEGATE atom )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(NEGATE, "NEGATE"), root_1);
@@ -9460,16 +9543,16 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:338:6: atom
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:339:6: atom
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_atom_in_unaryExpr3206);
-					atom427=atom();
+					pushFollow(FOLLOW_atom_in_unaryExpr3230);
+					atom431=atom();
 					state._fsp--;
 
-					adaptor.addChild(root_0, atom427.getTree());
+					adaptor.addChild(root_0, atom431.getTree());
 
 					}
 					break;
@@ -9502,47 +9585,47 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "atom"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:341:1: atom : ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:342:1: atom : ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT );
 	public final PyEsqueParser.atom_return atom() throws RecognitionException {
 		PyEsqueParser.atom_return retval = new PyEsqueParser.atom_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token Number428=null;
-		Token Bool429=null;
-		Token Null430=null;
-		Token COLOR_CONSTANT432=null;
-		Token PI_CONSTANT433=null;
-		Token WIDTH_CONSTANT434=null;
-		Token HEIGHT_CONSTANT435=null;
-		ParserRuleReturnScope lookup431 =null;
+		Token Number432=null;
+		Token Bool433=null;
+		Token Null434=null;
+		Token COLOR_CONSTANT436=null;
+		Token PI_CONSTANT437=null;
+		Token WIDTH_CONSTANT438=null;
+		Token HEIGHT_CONSTANT439=null;
+		ParserRuleReturnScope lookup435 =null;
 
-		Object Number428_tree=null;
-		Object Bool429_tree=null;
-		Object Null430_tree=null;
-		Object COLOR_CONSTANT432_tree=null;
-		Object PI_CONSTANT433_tree=null;
-		Object WIDTH_CONSTANT434_tree=null;
-		Object HEIGHT_CONSTANT435_tree=null;
+		Object Number432_tree=null;
+		Object Bool433_tree=null;
+		Object Null434_tree=null;
+		Object COLOR_CONSTANT436_tree=null;
+		Object PI_CONSTANT437_tree=null;
+		Object WIDTH_CONSTANT438_tree=null;
+		Object HEIGHT_CONSTANT439_tree=null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:342:3: ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT )
-			int alt76=8;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:343:3: ( Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT )
+			int alt77=8;
 			switch ( input.LA(1) ) {
 			case Number:
 				{
-				alt76=1;
+				alt77=1;
 				}
 				break;
 			case Bool:
 				{
-				alt76=2;
+				alt77=2;
 				}
 				break;
 			case Null:
 				{
-				alt76=3;
+				alt77=3;
 				}
 				break;
 			case ATan:
@@ -9559,6 +9642,7 @@ public class PyEsqueParser extends Parser {
 			case Expand:
 			case Fill:
 			case Flatten:
+			case FollowCurve:
 			case Gaussian:
 			case GetAngle:
 			case GetDistance:
@@ -9632,130 +9716,130 @@ public class PyEsqueParser extends Parser {
 			case Weight:
 			case Xor:
 				{
-				alt76=4;
+				alt77=4;
 				}
 				break;
 			case COLOR_CONSTANT:
 				{
-				alt76=5;
+				alt77=5;
 				}
 				break;
 			case PI_CONSTANT:
 				{
-				alt76=6;
+				alt77=6;
 				}
 				break;
 			case WIDTH_CONSTANT:
 				{
-				alt76=7;
+				alt77=7;
 				}
 				break;
 			case HEIGHT_CONSTANT:
 				{
-				alt76=8;
+				alt77=8;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 76, 0, input);
+					new NoViableAltException("", 77, 0, input);
 				throw nvae;
 			}
-			switch (alt76) {
+			switch (alt77) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:342:6: Number
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:343:6: Number
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					Number428=(Token)match(input,Number,FOLLOW_Number_in_atom3220); 
-					Number428_tree = (Object)adaptor.create(Number428);
-					adaptor.addChild(root_0, Number428_tree);
+					Number432=(Token)match(input,Number,FOLLOW_Number_in_atom3244); 
+					Number432_tree = (Object)adaptor.create(Number432);
+					adaptor.addChild(root_0, Number432_tree);
 
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:343:6: Bool
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:344:6: Bool
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					Bool429=(Token)match(input,Bool,FOLLOW_Bool_in_atom3227); 
-					Bool429_tree = (Object)adaptor.create(Bool429);
-					adaptor.addChild(root_0, Bool429_tree);
+					Bool433=(Token)match(input,Bool,FOLLOW_Bool_in_atom3251); 
+					Bool433_tree = (Object)adaptor.create(Bool433);
+					adaptor.addChild(root_0, Bool433_tree);
 
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:344:6: Null
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:345:6: Null
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					Null430=(Token)match(input,Null,FOLLOW_Null_in_atom3234); 
-					Null430_tree = (Object)adaptor.create(Null430);
-					adaptor.addChild(root_0, Null430_tree);
+					Null434=(Token)match(input,Null,FOLLOW_Null_in_atom3258); 
+					Null434_tree = (Object)adaptor.create(Null434);
+					adaptor.addChild(root_0, Null434_tree);
 
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:345:6: lookup
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:346:6: lookup
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					pushFollow(FOLLOW_lookup_in_atom3241);
-					lookup431=lookup();
+					pushFollow(FOLLOW_lookup_in_atom3265);
+					lookup435=lookup();
 					state._fsp--;
 
-					adaptor.addChild(root_0, lookup431.getTree());
+					adaptor.addChild(root_0, lookup435.getTree());
 
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:346:5: COLOR_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:347:5: COLOR_CONSTANT
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					COLOR_CONSTANT432=(Token)match(input,COLOR_CONSTANT,FOLLOW_COLOR_CONSTANT_in_atom3247); 
-					COLOR_CONSTANT432_tree = (Object)adaptor.create(COLOR_CONSTANT432);
-					adaptor.addChild(root_0, COLOR_CONSTANT432_tree);
+					COLOR_CONSTANT436=(Token)match(input,COLOR_CONSTANT,FOLLOW_COLOR_CONSTANT_in_atom3271); 
+					COLOR_CONSTANT436_tree = (Object)adaptor.create(COLOR_CONSTANT436);
+					adaptor.addChild(root_0, COLOR_CONSTANT436_tree);
 
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:347:5: PI_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:348:5: PI_CONSTANT
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					PI_CONSTANT433=(Token)match(input,PI_CONSTANT,FOLLOW_PI_CONSTANT_in_atom3253); 
-					PI_CONSTANT433_tree = (Object)adaptor.create(PI_CONSTANT433);
-					adaptor.addChild(root_0, PI_CONSTANT433_tree);
+					PI_CONSTANT437=(Token)match(input,PI_CONSTANT,FOLLOW_PI_CONSTANT_in_atom3277); 
+					PI_CONSTANT437_tree = (Object)adaptor.create(PI_CONSTANT437);
+					adaptor.addChild(root_0, PI_CONSTANT437_tree);
 
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:348:5: WIDTH_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:349:5: WIDTH_CONSTANT
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					WIDTH_CONSTANT434=(Token)match(input,WIDTH_CONSTANT,FOLLOW_WIDTH_CONSTANT_in_atom3259); 
-					WIDTH_CONSTANT434_tree = (Object)adaptor.create(WIDTH_CONSTANT434);
-					adaptor.addChild(root_0, WIDTH_CONSTANT434_tree);
+					WIDTH_CONSTANT438=(Token)match(input,WIDTH_CONSTANT,FOLLOW_WIDTH_CONSTANT_in_atom3283); 
+					WIDTH_CONSTANT438_tree = (Object)adaptor.create(WIDTH_CONSTANT438);
+					adaptor.addChild(root_0, WIDTH_CONSTANT438_tree);
 
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:349:5: HEIGHT_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:350:5: HEIGHT_CONSTANT
 					{
 					root_0 = (Object)adaptor.nil();
 
 
-					HEIGHT_CONSTANT435=(Token)match(input,HEIGHT_CONSTANT,FOLLOW_HEIGHT_CONSTANT_in_atom3265); 
-					HEIGHT_CONSTANT435_tree = (Object)adaptor.create(HEIGHT_CONSTANT435);
-					adaptor.addChild(root_0, HEIGHT_CONSTANT435_tree);
+					HEIGHT_CONSTANT439=(Token)match(input,HEIGHT_CONSTANT,FOLLOW_HEIGHT_CONSTANT_in_atom3289); 
+					HEIGHT_CONSTANT439_tree = (Object)adaptor.create(HEIGHT_CONSTANT439);
+					adaptor.addChild(root_0, HEIGHT_CONSTANT439_tree);
 
 					}
 					break;
@@ -9788,52 +9872,52 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "list"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:352:2: list : '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:353:2: list : '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) ;
 	public final PyEsqueParser.list_return list() throws RecognitionException {
 		PyEsqueParser.list_return retval = new PyEsqueParser.list_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token char_literal436=null;
-		Token char_literal438=null;
-		ParserRuleReturnScope exprList437 =null;
+		Token char_literal440=null;
+		Token char_literal442=null;
+		ParserRuleReturnScope exprList441 =null;
 
-		Object char_literal436_tree=null;
-		Object char_literal438_tree=null;
+		Object char_literal440_tree=null;
+		Object char_literal442_tree=null;
 		RewriteRuleTokenStream stream_CBracket=new RewriteRuleTokenStream(adaptor,"token CBracket");
 		RewriteRuleTokenStream stream_OBracket=new RewriteRuleTokenStream(adaptor,"token OBracket");
 		RewriteRuleSubtreeStream stream_exprList=new RewriteRuleSubtreeStream(adaptor,"rule exprList");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:353:3: ( '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:353:6: '[' ( exprList )? ']'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:354:3: ( '[' ( exprList )? ']' -> ^( LIST ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:354:6: '[' ( exprList )? ']'
 			{
-			char_literal436=(Token)match(input,OBracket,FOLLOW_OBracket_in_list3282);  
-			stream_OBracket.add(char_literal436);
+			char_literal440=(Token)match(input,OBracket,FOLLOW_OBracket_in_list3306);  
+			stream_OBracket.add(char_literal440);
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:353:10: ( exprList )?
-			int alt77=2;
-			int LA77_0 = input.LA(1);
-			if ( (LA77_0==ATan||LA77_0==AddDesign||(LA77_0 >= Arc && LA77_0 <= Assert)||LA77_0==Bool||LA77_0==COLOR_CONSTANT||(LA77_0 >= Clip && LA77_0 <= Cm)||(LA77_0 >= Copy && LA77_0 <= Curve)||LA77_0==Difference||LA77_0==Ellipse||(LA77_0 >= Excl && LA77_0 <= Expand)||(LA77_0 >= Fill && LA77_0 <= Flatten)||(LA77_0 >= Gaussian && LA77_0 <= Hide)||LA77_0==Identifier||LA77_0==Inch||LA77_0==LAdd||(LA77_0 >= LRemove && LA77_0 <= LShape)||(LA77_0 >= Line && LA77_0 <= Mm)||(LA77_0 >= Move && LA77_0 <= MoveBy)||(LA77_0 >= NoFill && LA77_0 <= Number)||(LA77_0 >= OBracket && LA77_0 <= OParen)||(LA77_0 >= PI_CONSTANT && LA77_0 <= Println)||(LA77_0 >= Random && LA77_0 <= Rect)||(LA77_0 >= Rotate && LA77_0 <= Round)||LA77_0==Scale||(LA77_0 >= SetCorner && LA77_0 <= Slider)||(LA77_0 >= Sq && LA77_0 <= Subtract)||(LA77_0 >= Tan && LA77_0 <= TemplateCollection)||(LA77_0 >= Union && LA77_0 <= Weight)||LA77_0==Xor) ) {
-				alt77=1;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:354:10: ( exprList )?
+			int alt78=2;
+			int LA78_0 = input.LA(1);
+			if ( (LA78_0==ATan||LA78_0==AddDesign||(LA78_0 >= Arc && LA78_0 <= Assert)||LA78_0==Bool||LA78_0==COLOR_CONSTANT||(LA78_0 >= Clip && LA78_0 <= Cm)||(LA78_0 >= Copy && LA78_0 <= Curve)||LA78_0==Difference||LA78_0==Ellipse||(LA78_0 >= Excl && LA78_0 <= Expand)||(LA78_0 >= Fill && LA78_0 <= FollowCurve)||(LA78_0 >= Gaussian && LA78_0 <= Hide)||LA78_0==Identifier||LA78_0==Inch||LA78_0==LAdd||(LA78_0 >= LRemove && LA78_0 <= LShape)||(LA78_0 >= Line && LA78_0 <= Mm)||(LA78_0 >= Move && LA78_0 <= MoveBy)||(LA78_0 >= NoFill && LA78_0 <= Number)||(LA78_0 >= OBracket && LA78_0 <= OParen)||(LA78_0 >= PI_CONSTANT && LA78_0 <= Println)||(LA78_0 >= Random && LA78_0 <= Rect)||(LA78_0 >= Rotate && LA78_0 <= Round)||LA78_0==Scale||(LA78_0 >= SetCorner && LA78_0 <= Slider)||(LA78_0 >= Sq && LA78_0 <= Subtract)||(LA78_0 >= Tan && LA78_0 <= TemplateCollection)||(LA78_0 >= Union && LA78_0 <= Weight)||LA78_0==Xor) ) {
+				alt78=1;
 			}
-			switch (alt77) {
+			switch (alt78) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:353:10: exprList
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:354:10: exprList
 					{
-					pushFollow(FOLLOW_exprList_in_list3284);
-					exprList437=exprList();
+					pushFollow(FOLLOW_exprList_in_list3308);
+					exprList441=exprList();
 					state._fsp--;
 
-					stream_exprList.add(exprList437.getTree());
+					stream_exprList.add(exprList441.getTree());
 					}
 					break;
 
 			}
 
-			char_literal438=(Token)match(input,CBracket,FOLLOW_CBracket_in_list3287);  
-			stream_CBracket.add(char_literal438);
+			char_literal442=(Token)match(input,CBracket,FOLLOW_CBracket_in_list3311);  
+			stream_CBracket.add(char_literal442);
 
 			// AST REWRITE
 			// elements: exprList
@@ -9846,13 +9930,13 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 353:24: -> ^( LIST ( exprList )? )
+			// 354:24: -> ^( LIST ( exprList )? )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:353:27: ^( LIST ( exprList )? )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:354:27: ^( LIST ( exprList )? )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LIST, "LIST"), root_1);
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:353:34: ( exprList )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:354:34: ( exprList )?
 				if ( stream_exprList.hasNext() ) {
 					adaptor.addChild(root_1, stream_exprList.nextTree());
 				}
@@ -9895,61 +9979,61 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "indexes"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:356:3: indexes : ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:357:3: indexes : ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) ;
 	public final PyEsqueParser.indexes_return indexes() throws RecognitionException {
 		PyEsqueParser.indexes_return retval = new PyEsqueParser.indexes_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token char_literal439=null;
-		Token char_literal441=null;
-		ParserRuleReturnScope expression440 =null;
+		Token char_literal443=null;
+		Token char_literal445=null;
+		ParserRuleReturnScope expression444 =null;
 
-		Object char_literal439_tree=null;
-		Object char_literal441_tree=null;
+		Object char_literal443_tree=null;
+		Object char_literal445_tree=null;
 		RewriteRuleTokenStream stream_CBracket=new RewriteRuleTokenStream(adaptor,"token CBracket");
 		RewriteRuleTokenStream stream_OBracket=new RewriteRuleTokenStream(adaptor,"token OBracket");
 		RewriteRuleSubtreeStream stream_expression=new RewriteRuleSubtreeStream(adaptor,"rule expression");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:357:3: ( ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:357:6: ( '[' expression ']' )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:358:3: ( ( '[' expression ']' )+ -> ^( INDEXES ( expression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:358:6: ( '[' expression ']' )+
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:357:6: ( '[' expression ']' )+
-			int cnt78=0;
-			loop78:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:358:6: ( '[' expression ']' )+
+			int cnt79=0;
+			loop79:
 			while (true) {
-				int alt78=2;
-				int LA78_0 = input.LA(1);
-				if ( (LA78_0==OBracket) ) {
-					alt78=1;
+				int alt79=2;
+				int LA79_0 = input.LA(1);
+				if ( (LA79_0==OBracket) ) {
+					alt79=1;
 				}
 
-				switch (alt78) {
+				switch (alt79) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:357:7: '[' expression ']'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:358:7: '[' expression ']'
 					{
-					char_literal439=(Token)match(input,OBracket,FOLLOW_OBracket_in_indexes3314);  
-					stream_OBracket.add(char_literal439);
+					char_literal443=(Token)match(input,OBracket,FOLLOW_OBracket_in_indexes3338);  
+					stream_OBracket.add(char_literal443);
 
-					pushFollow(FOLLOW_expression_in_indexes3316);
-					expression440=expression();
+					pushFollow(FOLLOW_expression_in_indexes3340);
+					expression444=expression();
 					state._fsp--;
 
-					stream_expression.add(expression440.getTree());
-					char_literal441=(Token)match(input,CBracket,FOLLOW_CBracket_in_indexes3318);  
-					stream_CBracket.add(char_literal441);
+					stream_expression.add(expression444.getTree());
+					char_literal445=(Token)match(input,CBracket,FOLLOW_CBracket_in_indexes3342);  
+					stream_CBracket.add(char_literal445);
 
 					}
 					break;
 
 				default :
-					if ( cnt78 >= 1 ) break loop78;
-					EarlyExitException eee = new EarlyExitException(78, input);
+					if ( cnt79 >= 1 ) break loop79;
+					EarlyExitException eee = new EarlyExitException(79, input);
 					throw eee;
 				}
-				cnt78++;
+				cnt79++;
 			}
 
 			// AST REWRITE
@@ -9963,9 +10047,9 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 357:28: -> ^( INDEXES ( expression )+ )
+			// 358:28: -> ^( INDEXES ( expression )+ )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:357:31: ^( INDEXES ( expression )+ )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:358:31: ^( INDEXES ( expression )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(INDEXES, "INDEXES"), root_1);
@@ -10014,30 +10098,30 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "lookup"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:360:2: lookup : ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:361:2: lookup : ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) );
 	public final PyEsqueParser.lookup_return lookup() throws RecognitionException {
 		PyEsqueParser.lookup_return retval = new PyEsqueParser.lookup_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token Identifier446=null;
-		Token String448=null;
-		Token char_literal450=null;
-		Token char_literal452=null;
-		ParserRuleReturnScope functionCall442 =null;
-		ParserRuleReturnScope indexes443 =null;
-		ParserRuleReturnScope list444 =null;
-		ParserRuleReturnScope indexes445 =null;
+		Token Identifier450=null;
+		Token String452=null;
+		Token char_literal454=null;
+		Token char_literal456=null;
+		ParserRuleReturnScope functionCall446 =null;
 		ParserRuleReturnScope indexes447 =null;
+		ParserRuleReturnScope list448 =null;
 		ParserRuleReturnScope indexes449 =null;
-		ParserRuleReturnScope expression451 =null;
+		ParserRuleReturnScope indexes451 =null;
 		ParserRuleReturnScope indexes453 =null;
+		ParserRuleReturnScope expression455 =null;
+		ParserRuleReturnScope indexes457 =null;
 
-		Object Identifier446_tree=null;
-		Object String448_tree=null;
-		Object char_literal450_tree=null;
-		Object char_literal452_tree=null;
+		Object Identifier450_tree=null;
+		Object String452_tree=null;
+		Object char_literal454_tree=null;
+		Object char_literal456_tree=null;
 		RewriteRuleTokenStream stream_OParen=new RewriteRuleTokenStream(adaptor,"token OParen");
 		RewriteRuleTokenStream stream_CParen=new RewriteRuleTokenStream(adaptor,"token CParen");
 		RewriteRuleTokenStream stream_String=new RewriteRuleTokenStream(adaptor,"token String");
@@ -10048,17 +10132,17 @@ public class PyEsqueParser extends Parser {
 		RewriteRuleSubtreeStream stream_list=new RewriteRuleSubtreeStream(adaptor,"rule list");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:361:3: ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) )
-			int alt84=5;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:3: ( functionCall ( indexes )? -> ^( LOOKUP functionCall ( indexes )? ) | list ( indexes )? -> ^( LOOKUP list ( indexes )? ) | Identifier ( indexes )? -> ^( LOOKUP Identifier ( indexes )? ) | String ( indexes )? -> ^( LOOKUP String ( indexes )? ) | '(' expression ')' ( indexes )? -> ^( LOOKUP expression ( indexes )? ) )
+			int alt85=5;
 			switch ( input.LA(1) ) {
 			case Identifier:
 				{
-				int LA84_1 = input.LA(2);
-				if ( (LA84_1==OParen) ) {
-					alt84=1;
+				int LA85_1 = input.LA(2);
+				if ( (LA85_1==OParen) ) {
+					alt85=1;
 				}
-				else if ( ((LA84_1 >= ATan && LA84_1 <= AddDesign)||(LA84_1 >= Arc && LA84_1 <= Assert)||LA84_1==CBracket||(LA84_1 >= CParen && LA84_1 <= Comma)||(LA84_1 >= Copy && LA84_1 <= Curve)||(LA84_1 >= Dedent && LA84_1 <= Difference)||(LA84_1 >= Divide && LA84_1 <= Do)||LA84_1==Ellipse||LA84_1==Equals||LA84_1==Expand||(LA84_1 >= Fill && LA84_1 <= Group)||(LA84_1 >= Heading && LA84_1 <= Hide)||(LA84_1 >= Identifier && LA84_1 <= Inch)||LA84_1==LAdd||(LA84_1 >= LRemove && LA84_1 <= Multiply)||LA84_1==NEquals||(LA84_1 >= NoFill && LA84_1 <= Noise)||LA84_1==OBracket||(LA84_1 >= Point && LA84_1 <= QMark)||(LA84_1 >= Random && LA84_1 <= Round)||LA84_1==Scale||(LA84_1 >= SetCorner && LA84_1 <= Slider)||(LA84_1 >= Sq && LA84_1 <= Sqrt)||(LA84_1 >= Stroke && LA84_1 <= Subtract)||(LA84_1 >= Tan && LA84_1 <= TemplateCollection)||(LA84_1 >= Union && LA84_1 <= Units)||(LA84_1 >= Wave && LA84_1 <= 167)) ) {
-					alt84=3;
+				else if ( ((LA85_1 >= ATan && LA85_1 <= AddDesign)||(LA85_1 >= Arc && LA85_1 <= Assert)||LA85_1==CBracket||(LA85_1 >= CParen && LA85_1 <= Comma)||(LA85_1 >= Copy && LA85_1 <= Curve)||(LA85_1 >= Dedent && LA85_1 <= Difference)||(LA85_1 >= Divide && LA85_1 <= Do)||LA85_1==Ellipse||LA85_1==Equals||LA85_1==Expand||(LA85_1 >= Fill && LA85_1 <= Group)||(LA85_1 >= Heading && LA85_1 <= Hide)||(LA85_1 >= Identifier && LA85_1 <= Inch)||LA85_1==LAdd||(LA85_1 >= LRemove && LA85_1 <= Multiply)||LA85_1==NEquals||(LA85_1 >= NoFill && LA85_1 <= Noise)||LA85_1==OBracket||(LA85_1 >= Point && LA85_1 <= QMark)||(LA85_1 >= Random && LA85_1 <= Round)||LA85_1==Scale||(LA85_1 >= SetCorner && LA85_1 <= Slider)||(LA85_1 >= Sq && LA85_1 <= Sqrt)||(LA85_1 >= Stroke && LA85_1 <= Subtract)||(LA85_1 >= Tan && LA85_1 <= TemplateCollection)||(LA85_1 >= Union && LA85_1 <= Units)||(LA85_1 >= Wave && LA85_1 <= 168)) ) {
+					alt85=3;
 				}
 
 				else {
@@ -10066,7 +10150,7 @@ public class PyEsqueParser extends Parser {
 					try {
 						input.consume();
 						NoViableAltException nvae =
-							new NoViableAltException("", 84, 1, input);
+							new NoViableAltException("", 85, 1, input);
 						throw nvae;
 					} finally {
 						input.rewind(nvaeMark);
@@ -10089,6 +10173,7 @@ public class PyEsqueParser extends Parser {
 			case Expand:
 			case Fill:
 			case Flatten:
+			case FollowCurve:
 			case Gaussian:
 			case GetAngle:
 			case GetDistance:
@@ -10158,53 +10243,53 @@ public class PyEsqueParser extends Parser {
 			case Weight:
 			case Xor:
 				{
-				alt84=1;
+				alt85=1;
 				}
 				break;
 			case OBracket:
 				{
-				alt84=2;
+				alt85=2;
 				}
 				break;
 			case String:
 				{
-				alt84=4;
+				alt85=4;
 				}
 				break;
 			case OParen:
 				{
-				alt84=5;
+				alt85=5;
 				}
 				break;
 			default:
 				NoViableAltException nvae =
-					new NoViableAltException("", 84, 0, input);
+					new NoViableAltException("", 85, 0, input);
 				throw nvae;
 			}
-			switch (alt84) {
+			switch (alt85) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:361:5: functionCall ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:5: functionCall ( indexes )?
 					{
-					pushFollow(FOLLOW_functionCall_in_lookup3344);
-					functionCall442=functionCall();
+					pushFollow(FOLLOW_functionCall_in_lookup3368);
+					functionCall446=functionCall();
 					state._fsp--;
 
-					stream_functionCall.add(functionCall442.getTree());
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:361:18: ( indexes )?
-					int alt79=2;
-					int LA79_0 = input.LA(1);
-					if ( (LA79_0==OBracket) ) {
-						alt79=1;
+					stream_functionCall.add(functionCall446.getTree());
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:18: ( indexes )?
+					int alt80=2;
+					int LA80_0 = input.LA(1);
+					if ( (LA80_0==OBracket) ) {
+						alt80=1;
 					}
-					switch (alt79) {
+					switch (alt80) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:361:18: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:18: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup3346);
-							indexes443=indexes();
+							pushFollow(FOLLOW_indexes_in_lookup3370);
+							indexes447=indexes();
 							state._fsp--;
 
-							stream_indexes.add(indexes443.getTree());
+							stream_indexes.add(indexes447.getTree());
 							}
 							break;
 
@@ -10221,14 +10306,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 361:28: -> ^( LOOKUP functionCall ( indexes )? )
+					// 362:28: -> ^( LOOKUP functionCall ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:361:31: ^( LOOKUP functionCall ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:31: ^( LOOKUP functionCall ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_functionCall.nextTree());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:361:53: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:53: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -10245,28 +10330,28 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:4: list ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:363:4: list ( indexes )?
 					{
-					pushFollow(FOLLOW_list_in_lookup3370);
-					list444=list();
+					pushFollow(FOLLOW_list_in_lookup3394);
+					list448=list();
 					state._fsp--;
 
-					stream_list.add(list444.getTree());
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:9: ( indexes )?
-					int alt80=2;
-					int LA80_0 = input.LA(1);
-					if ( (LA80_0==OBracket) ) {
-						alt80=1;
+					stream_list.add(list448.getTree());
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:363:9: ( indexes )?
+					int alt81=2;
+					int LA81_0 = input.LA(1);
+					if ( (LA81_0==OBracket) ) {
+						alt81=1;
 					}
-					switch (alt80) {
+					switch (alt81) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:9: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:363:9: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup3372);
-							indexes445=indexes();
+							pushFollow(FOLLOW_indexes_in_lookup3396);
+							indexes449=indexes();
 							state._fsp--;
 
-							stream_indexes.add(indexes445.getTree());
+							stream_indexes.add(indexes449.getTree());
 							}
 							break;
 
@@ -10283,14 +10368,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 362:32: -> ^( LOOKUP list ( indexes )? )
+					// 363:32: -> ^( LOOKUP list ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:35: ^( LOOKUP list ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:363:35: ^( LOOKUP list ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_list.nextTree());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:362:49: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:363:49: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -10307,33 +10392,33 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:363:6: Identifier ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:364:6: Identifier ( indexes )?
 					{
-					Identifier446=(Token)match(input,Identifier,FOLLOW_Identifier_in_lookup3405);  
-					stream_Identifier.add(Identifier446);
+					Identifier450=(Token)match(input,Identifier,FOLLOW_Identifier_in_lookup3429);  
+					stream_Identifier.add(Identifier450);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:363:17: ( indexes )?
-					int alt81=2;
-					int LA81_0 = input.LA(1);
-					if ( (LA81_0==OBracket) ) {
-						alt81=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:364:17: ( indexes )?
+					int alt82=2;
+					int LA82_0 = input.LA(1);
+					if ( (LA82_0==OBracket) ) {
+						alt82=1;
 					}
-					switch (alt81) {
+					switch (alt82) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:363:17: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:364:17: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup3407);
-							indexes447=indexes();
+							pushFollow(FOLLOW_indexes_in_lookup3431);
+							indexes451=indexes();
 							state._fsp--;
 
-							stream_indexes.add(indexes447.getTree());
+							stream_indexes.add(indexes451.getTree());
 							}
 							break;
 
 					}
 
 					// AST REWRITE
-					// elements: Identifier, indexes
+					// elements: indexes, Identifier
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -10343,14 +10428,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 363:27: -> ^( LOOKUP Identifier ( indexes )? )
+					// 364:27: -> ^( LOOKUP Identifier ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:363:30: ^( LOOKUP Identifier ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:364:30: ^( LOOKUP Identifier ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_Identifier.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:363:50: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:364:50: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -10367,26 +10452,26 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:364:6: String ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:365:6: String ( indexes )?
 					{
-					String448=(Token)match(input,String,FOLLOW_String_in_lookup3427);  
-					stream_String.add(String448);
+					String452=(Token)match(input,String,FOLLOW_String_in_lookup3451);  
+					stream_String.add(String452);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:364:13: ( indexes )?
-					int alt82=2;
-					int LA82_0 = input.LA(1);
-					if ( (LA82_0==OBracket) ) {
-						alt82=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:365:13: ( indexes )?
+					int alt83=2;
+					int LA83_0 = input.LA(1);
+					if ( (LA83_0==OBracket) ) {
+						alt83=1;
 					}
-					switch (alt82) {
+					switch (alt83) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:364:13: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:365:13: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup3429);
-							indexes449=indexes();
+							pushFollow(FOLLOW_indexes_in_lookup3453);
+							indexes453=indexes();
 							state._fsp--;
 
-							stream_indexes.add(indexes449.getTree());
+							stream_indexes.add(indexes453.getTree());
 							}
 							break;
 
@@ -10403,14 +10488,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 364:34: -> ^( LOOKUP String ( indexes )? )
+					// 365:34: -> ^( LOOKUP String ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:364:37: ^( LOOKUP String ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:365:37: ^( LOOKUP String ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_String.nextNode());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:364:53: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:365:53: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -10427,41 +10512,41 @@ public class PyEsqueParser extends Parser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:365:6: '(' expression ')' ( indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:366:6: '(' expression ')' ( indexes )?
 					{
-					char_literal450=(Token)match(input,OParen,FOLLOW_OParen_in_lookup3460);  
-					stream_OParen.add(char_literal450);
+					char_literal454=(Token)match(input,OParen,FOLLOW_OParen_in_lookup3484);  
+					stream_OParen.add(char_literal454);
 
-					pushFollow(FOLLOW_expression_in_lookup3462);
-					expression451=expression();
+					pushFollow(FOLLOW_expression_in_lookup3486);
+					expression455=expression();
 					state._fsp--;
 
-					stream_expression.add(expression451.getTree());
-					char_literal452=(Token)match(input,CParen,FOLLOW_CParen_in_lookup3464);  
-					stream_CParen.add(char_literal452);
+					stream_expression.add(expression455.getTree());
+					char_literal456=(Token)match(input,CParen,FOLLOW_CParen_in_lookup3488);  
+					stream_CParen.add(char_literal456);
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:365:25: ( indexes )?
-					int alt83=2;
-					int LA83_0 = input.LA(1);
-					if ( (LA83_0==OBracket) ) {
-						alt83=1;
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:366:25: ( indexes )?
+					int alt84=2;
+					int LA84_0 = input.LA(1);
+					if ( (LA84_0==OBracket) ) {
+						alt84=1;
 					}
-					switch (alt83) {
+					switch (alt84) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:365:25: indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:366:25: indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup3466);
-							indexes453=indexes();
+							pushFollow(FOLLOW_indexes_in_lookup3490);
+							indexes457=indexes();
 							state._fsp--;
 
-							stream_indexes.add(indexes453.getTree());
+							stream_indexes.add(indexes457.getTree());
 							}
 							break;
 
 					}
 
 					// AST REWRITE
-					// elements: indexes, expression
+					// elements: expression, indexes
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -10471,14 +10556,14 @@ public class PyEsqueParser extends Parser {
 					RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 					root_0 = (Object)adaptor.nil();
-					// 365:34: -> ^( LOOKUP expression ( indexes )? )
+					// 366:34: -> ^( LOOKUP expression ( indexes )? )
 					{
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:365:37: ^( LOOKUP expression ( indexes )? )
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:366:37: ^( LOOKUP expression ( indexes )? )
 						{
 						Object root_1 = (Object)adaptor.nil();
 						root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(LOOKUP, "LOOKUP"), root_1);
 						adaptor.addChild(root_1, stream_expression.nextTree());
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:365:57: ( indexes )?
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:366:57: ( indexes )?
 						if ( stream_indexes.hasNext() ) {
 							adaptor.addChild(root_1, stream_indexes.nextTree());
 						}
@@ -10523,54 +10608,54 @@ public class PyEsqueParser extends Parser {
 
 
 	// $ANTLR start "idList"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:368:3: idList : Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:369:3: idList : Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) ;
 	public final PyEsqueParser.idList_return idList() throws RecognitionException {
 		PyEsqueParser.idList_return retval = new PyEsqueParser.idList_return();
 		retval.start = input.LT(1);
 
 		Object root_0 = null;
 
-		Token Identifier454=null;
-		Token char_literal455=null;
-		Token Identifier456=null;
+		Token Identifier458=null;
+		Token char_literal459=null;
+		Token Identifier460=null;
 
-		Object Identifier454_tree=null;
-		Object char_literal455_tree=null;
-		Object Identifier456_tree=null;
+		Object Identifier458_tree=null;
+		Object char_literal459_tree=null;
+		Object Identifier460_tree=null;
 		RewriteRuleTokenStream stream_Comma=new RewriteRuleTokenStream(adaptor,"token Comma");
 		RewriteRuleTokenStream stream_Identifier=new RewriteRuleTokenStream(adaptor,"token Identifier");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:369:3: ( Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:369:6: Identifier ( ',' Identifier )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:370:3: ( Identifier ( ',' Identifier )* -> ^( ID_LIST ( Identifier )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:370:6: Identifier ( ',' Identifier )*
 			{
-			Identifier454=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList3497);  
-			stream_Identifier.add(Identifier454);
+			Identifier458=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList3521);  
+			stream_Identifier.add(Identifier458);
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:369:17: ( ',' Identifier )*
-			loop85:
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:370:17: ( ',' Identifier )*
+			loop86:
 			while (true) {
-				int alt85=2;
-				int LA85_0 = input.LA(1);
-				if ( (LA85_0==Comma) ) {
-					alt85=1;
+				int alt86=2;
+				int LA86_0 = input.LA(1);
+				if ( (LA86_0==Comma) ) {
+					alt86=1;
 				}
 
-				switch (alt85) {
+				switch (alt86) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:369:18: ',' Identifier
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:370:18: ',' Identifier
 					{
-					char_literal455=(Token)match(input,Comma,FOLLOW_Comma_in_idList3500);  
-					stream_Comma.add(char_literal455);
+					char_literal459=(Token)match(input,Comma,FOLLOW_Comma_in_idList3524);  
+					stream_Comma.add(char_literal459);
 
-					Identifier456=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList3502);  
-					stream_Identifier.add(Identifier456);
+					Identifier460=(Token)match(input,Identifier,FOLLOW_Identifier_in_idList3526);  
+					stream_Identifier.add(Identifier460);
 
 					}
 					break;
 
 				default :
-					break loop85;
+					break loop86;
 				}
 			}
 
@@ -10585,9 +10670,9 @@ public class PyEsqueParser extends Parser {
 			RewriteRuleSubtreeStream stream_retval=new RewriteRuleSubtreeStream(adaptor,"rule retval",retval!=null?retval.getTree():null);
 
 			root_0 = (Object)adaptor.nil();
-			// 369:35: -> ^( ID_LIST ( Identifier )+ )
+			// 370:35: -> ^( ID_LIST ( Identifier )+ )
 			{
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:369:38: ^( ID_LIST ( Identifier )+ )
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:370:38: ^( ID_LIST ( Identifier )+ )
 				{
 				Object root_1 = (Object)adaptor.nil();
 				root_1 = (Object)adaptor.becomeRoot((Object)adaptor.create(ID_LIST, "ID_LIST"), root_1);
@@ -10633,12 +10718,12 @@ public class PyEsqueParser extends Parser {
 
 	public static final BitSet FOLLOW_block_in_parse195 = new BitSet(new long[]{0x0000000000000000L});
 	public static final BitSet FOLLOW_EOF_in_parse197 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Indent_in_block213 = new BitSet(new long[]{0xFFFCC881C7301A80L,0x3F0F80E0DF989637L,0x0000003D8E59FFF4L});
+	public static final BitSet FOLLOW_Indent_in_block213 = new BitSet(new long[]{0xFFF9C881C7301A80L,0x7E1F01C1BF312C6FL,0x0000007B1CB3FFE8L});
 	public static final BitSet FOLLOW_block_atoms_in_block215 = new BitSet(new long[]{0x0000000040000000L});
 	public static final BitSet FOLLOW_Dedent_in_block217 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_statement_in_block_atoms232 = new BitSet(new long[]{0xFFFCC88187301A82L,0x3F0F80E0DF989637L,0x0000003D8E59FFF4L});
-	public static final BitSet FOLLOW_functionDecl_in_block_atoms236 = new BitSet(new long[]{0xFFFCC88187301A82L,0x3F0F80E0DF989637L,0x0000003D8E59FFF4L});
-	public static final BitSet FOLLOW_Return_in_block_atoms241 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_statement_in_block_atoms232 = new BitSet(new long[]{0xFFF9C88187301A82L,0x7E1F01C1BF312C6FL,0x0000007B1CB3FFE8L});
+	public static final BitSet FOLLOW_functionDecl_in_block_atoms236 = new BitSet(new long[]{0xFFF9C88187301A82L,0x7E1F01C1BF312C6FL,0x0000007B1CB3FFE8L});
+	public static final BitSet FOLLOW_Return_in_block_atoms241 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_block_atoms243 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_assignment_in_statement282 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_functionCall_in_statement295 = new BitSet(new long[]{0x0000000000000002L});
@@ -10646,41 +10731,41 @@ public class PyEsqueParser extends Parser {
 	public static final BitSet FOLLOW_whileStatement_in_statement313 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_repeatStatement_in_statement320 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_Identifier_in_assignment348 = new BitSet(new long[]{0x0000000000002002L});
-	public static final BitSet FOLLOW_Assign_in_assignment351 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Assign_in_assignment351 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_assignment353 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Def_in_functionDecl385 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_functionDecl387 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionDecl389 = new BitSet(new long[]{0x0000000000080000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Def_in_functionDecl385 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+	public static final BitSet FOLLOW_Identifier_in_functionDecl387 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionDecl389 = new BitSet(new long[]{0x0000000000080000L,0x0000000000000400L});
 	public static final BitSet FOLLOW_idList_in_functionDecl391 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionDecl394 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Do_in_functionDecl396 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
+	public static final BitSet FOLLOW_Do_in_functionDecl396 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
 	public static final BitSet FOLLOW_block_in_functionDecl398 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_functionCall427 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall429 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Identifier_in_functionCall427 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall429 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_functionCall431 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall434 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Println_in_functionCall452 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall454 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Println_in_functionCall452 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall454 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_functionCall456 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall459 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Print_in_functionCall478 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall480 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Print_in_functionCall478 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall480 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_functionCall482 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall484 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Assert_in_functionCall505 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall507 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Assert_in_functionCall505 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall507 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_functionCall509 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall511 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Size_in_functionCall531 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall533 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Size_in_functionCall531 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall533 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_functionCall535 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall537 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LAdd_in_functionCall559 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall561 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_LAdd_in_functionCall559 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall561 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_functionCall563 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall566 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LRemove_in_functionCall587 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_functionCall589 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_LRemove_in_functionCall587 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_functionCall589 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_functionCall591 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_functionCall594 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_primitiveCall_in_functionCall615 = new BitSet(new long[]{0x0000000000000002L});
@@ -10690,403 +10775,407 @@ public class PyEsqueParser extends Parser {
 	public static final BitSet FOLLOW_getCall_in_functionCall642 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_uICall_in_functionCall648 = new BitSet(new long[]{0x0000000000000002L});
 	public static final BitSet FOLLOW_templateCall_in_functionCall654 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Ellipse_in_primitiveCall674 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall676 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Ellipse_in_primitiveCall674 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall676 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall678 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall681 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Line_in_primitiveCall701 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall703 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Line_in_primitiveCall701 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall703 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall705 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall708 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Rect_in_primitiveCall728 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall730 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Rect_in_primitiveCall728 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall730 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall732 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall735 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Curve_in_primitiveCall755 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall757 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Curve_in_primitiveCall755 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall757 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall759 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall762 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Polygon_in_primitiveCall780 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall782 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Polygon_in_primitiveCall780 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall782 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall784 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall787 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Skirt_in_primitiveCall805 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall807 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Skirt_in_primitiveCall805 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall807 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall809 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall812 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SkirtBack_in_primitiveCall830 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall832 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_SkirtBack_in_primitiveCall830 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall832 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall834 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall837 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LShape_in_primitiveCall856 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall858 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_LShape_in_primitiveCall856 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall858 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall860 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall863 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Point_in_primitiveCall883 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_primitiveCall885 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Point_in_primitiveCall883 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_primitiveCall885 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_primitiveCall887 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_primitiveCall890 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Move_in_transformCall921 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall923 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Move_in_transformCall921 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall923 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall925 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall928 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_MoveBy_in_transformCall946 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall948 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_MoveBy_in_transformCall946 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall948 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall950 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall953 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Heading_in_transformCall972 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall974 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Heading_in_transformCall972 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall974 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall976 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall979 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Copy_in_transformCall998 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1000 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Copy_in_transformCall998 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1000 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_transformCall1002 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1004 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Rotate_in_transformCall1021 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1023 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Rotate_in_transformCall1021 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1023 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1025 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1028 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Fill_in_transformCall1045 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1047 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Fill_in_transformCall1045 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1047 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1049 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1052 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Stroke_in_transformCall1069 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1071 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Stroke_in_transformCall1069 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1071 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1073 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1076 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_NoFill_in_transformCall1093 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1095 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_NoFill_in_transformCall1093 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1095 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_transformCall1097 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1099 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_NoStroke_in_transformCall1115 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1117 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_NoStroke_in_transformCall1115 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1117 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_transformCall1119 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1121 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Weight_in_transformCall1137 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1139 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Weight_in_transformCall1137 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1139 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1141 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1144 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Hide_in_transformCall1161 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1163 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Hide_in_transformCall1161 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1163 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_transformCall1165 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1167 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Show_in_transformCall1183 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1185 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Show_in_transformCall1183 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1185 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_transformCall1187 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1189 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Group_in_transformCall1205 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1207 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Group_in_transformCall1205 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1207 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1209 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1212 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Expand_in_transformCall1229 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1231 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Expand_in_transformCall1229 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1231 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_transformCall1233 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1235 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Merge_in_transformCall1251 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1253 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Merge_in_transformCall1251 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1253 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_transformCall1255 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1257 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Scale_in_transformCall1273 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1275 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Scale_in_transformCall1273 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1275 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1277 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1280 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_MirrorX_in_transformCall1297 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1299 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_MirrorX_in_transformCall1297 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1299 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_transformCall1301 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1303 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_MirrorY_in_transformCall1319 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1321 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_MirrorY_in_transformCall1319 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1321 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_transformCall1323 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1325 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Union_in_transformCall1341 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1343 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Union_in_transformCall1341 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1343 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1345 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1348 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Difference_in_transformCall1365 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1367 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Difference_in_transformCall1365 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1367 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1369 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1372 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Clip_in_transformCall1389 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1391 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Clip_in_transformCall1389 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1391 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1393 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1396 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Xor_in_transformCall1413 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1415 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Xor_in_transformCall1413 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1415 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_transformCall1417 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1420 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Flatten_in_transformCall1437 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_transformCall1439 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Flatten_in_transformCall1437 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall1439 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_transformCall1441 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_transformCall1443 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Grid_in_patternCall1473 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_patternCall1475 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Grid_in_patternCall1473 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_patternCall1475 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_patternCall1477 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_patternCall1480 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Wave_in_patternCall1498 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_patternCall1500 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Wave_in_patternCall1498 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_patternCall1500 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_patternCall1502 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_patternCall1505 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Arc_in_patternCall1523 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_patternCall1525 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_Arc_in_patternCall1523 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_patternCall1525 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_patternCall1527 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_patternCall1530 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetWidth_in_getCall1561 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1563 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_getCall1565 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1567 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetHeight_in_getCall1581 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1583 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_getCall1585 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1587 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetX_in_getCall1601 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1603 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_getCall1605 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1607 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetY_in_getCall1621 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1623 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_getCall1625 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1627 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetOrigin_in_getCall1641 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1643 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_getCall1645 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1647 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetRotation_in_getCall1661 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1663 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_getCall1665 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1667 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetFill_in_getCall1681 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1683 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_getCall1685 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1687 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetStroke_in_getCall1701 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1703 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_getCall1705 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1707 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetStart_in_getCall1721 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1723 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_getCall1725 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1727 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetEnd_in_getCall1741 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1743 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_getCall1745 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1747 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetDistance_in_getCall1762 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1764 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_getCall1766 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_getCall1770 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetIntersect_in_getCall1787 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1788 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_FollowCurve_in_patternCall1548 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_patternCall1550 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_patternCall1551 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_patternCall1554 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetWidth_in_getCall1585 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1587 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_getCall1589 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1591 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetHeight_in_getCall1605 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1607 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_getCall1609 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1611 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetX_in_getCall1625 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1627 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_getCall1629 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1631 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetY_in_getCall1645 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1647 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_getCall1649 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1651 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetOrigin_in_getCall1665 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1667 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_getCall1669 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1671 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetRotation_in_getCall1685 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1687 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_getCall1689 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1691 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetFill_in_getCall1705 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1707 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_getCall1709 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1711 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetStroke_in_getCall1725 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1727 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_getCall1729 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1731 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetStart_in_getCall1745 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1747 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_getCall1749 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1751 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetEnd_in_getCall1765 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1767 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_getCall1769 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1771 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_GetDistance_in_getCall1786 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1788 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_getCall1790 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1794 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetAngle_in_getCall1811 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1812 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_GetIntersect_in_getCall1811 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1812 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_getCall1814 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1818 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_GetRadius_in_getCall1835 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_getCall1836 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_GetAngle_in_getCall1835 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1836 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_exprList_in_getCall1838 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_getCall1842 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Cosine_in_mathCall1874 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1876 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_mathCall1878 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall1880 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Sine_in_mathCall1899 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1901 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_mathCall1903 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall1905 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Tan_in_mathCall1924 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1926 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_mathCall1928 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall1930 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ATan_in_mathCall1949 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1951 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_mathCall1953 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall1956 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Random_in_mathCall1976 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall1978 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_mathCall1980 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall1983 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Pow_in_mathCall2003 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2005 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_mathCall2007 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall2010 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Sqrt_in_mathCall2030 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2032 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_mathCall2034 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall2036 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Sq_in_mathCall2055 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2057 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_mathCall2059 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall2061 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Gaussian_in_mathCall2080 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2082 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_mathCall2084 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall2087 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Noise_in_mathCall2107 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2109 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_mathCall2111 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall2114 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Round_in_mathCall2134 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2135 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_mathCall2137 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall2139 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Map_in_mathCall2158 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2159 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_mathCall2161 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall2164 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Inch_in_mathCall2184 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2186 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_mathCall2188 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall2190 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Mm_in_mathCall2209 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2211 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_mathCall2213 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall2215 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Cm_in_mathCall2234 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2236 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_mathCall2238 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_mathCall2240 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Units_in_mathCall2259 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_mathCall2260 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
+	public static final BitSet FOLLOW_GetRadius_in_getCall1859 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_getCall1860 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_getCall1862 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_getCall1866 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Cosine_in_mathCall1898 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1900 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_mathCall1902 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall1904 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Sine_in_mathCall1923 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1925 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_mathCall1927 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall1929 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Tan_in_mathCall1948 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1950 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_mathCall1952 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall1954 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ATan_in_mathCall1973 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall1975 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1977 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall1980 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Random_in_mathCall2000 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2002 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_mathCall2004 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2007 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Pow_in_mathCall2027 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2029 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_mathCall2031 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2034 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Sqrt_in_mathCall2054 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2056 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_mathCall2058 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2060 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Sq_in_mathCall2079 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2081 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_mathCall2083 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2085 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Gaussian_in_mathCall2104 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2106 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_mathCall2108 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2111 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Noise_in_mathCall2131 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2133 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_mathCall2135 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2138 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Round_in_mathCall2158 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2159 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_mathCall2161 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2163 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Map_in_mathCall2182 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2183 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_mathCall2185 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2188 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Inch_in_mathCall2208 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2210 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_mathCall2212 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2214 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Mm_in_mathCall2233 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2235 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_mathCall2237 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2239 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Cm_in_mathCall2258 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2260 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
 	public static final BitSet FOLLOW_expression_in_mathCall2262 = new BitSet(new long[]{0x0000000000080000L});
 	public static final BitSet FOLLOW_CParen_in_mathCall2264 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Slider_in_uICall2295 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_uICall2297 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_uICall2299 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_uICall2302 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Template_in_templateCall2335 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2337 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_templateCall2339 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_templateCall2342 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetWidth_in_templateCall2361 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2363 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_templateCall2365 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_templateCall2368 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetHeight_in_templateCall2387 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2389 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_templateCall2391 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_templateCall2394 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetSeam_in_templateCall2413 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2415 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_templateCall2417 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_templateCall2420 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetName_in_templateCall2439 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2441 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_templateCall2443 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_templateCall2446 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetVFold_in_templateCall2465 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2467 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_templateCall2469 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_templateCall2472 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetHFold_in_templateCall2491 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2493 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_templateCall2495 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_templateCall2498 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_SetCorner_in_templateCall2517 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2519 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_templateCall2521 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_templateCall2524 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_TemplateCollection_in_templateCall2543 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2545 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_templateCall2549 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_templateCall2552 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_AddDesign_in_templateCall2573 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
-	public static final BitSet FOLLOW_OParen_in_templateCall2574 = new BitSet(new long[]{0xFFFCCC81073C9A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_templateCall2576 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_templateCall2579 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_ifStat_in_ifStatement2613 = new BitSet(new long[]{0x0000010000000002L});
-	public static final BitSet FOLLOW_elseIfStat_in_ifStatement2615 = new BitSet(new long[]{0x0000010000000002L});
-	public static final BitSet FOLLOW_elseStat_in_ifStatement2618 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_If_in_ifStat2649 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_ifStat2651 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Do_in_ifStat2653 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-	public static final BitSet FOLLOW_block_in_ifStat2655 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Else_in_elseIfStat2679 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
-	public static final BitSet FOLLOW_If_in_elseIfStat2681 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_elseIfStat2683 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Do_in_elseIfStat2685 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-	public static final BitSet FOLLOW_block_in_elseIfStat2687 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Else_in_elseStat2711 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Do_in_elseStat2713 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-	public static final BitSet FOLLOW_block_in_elseStat2715 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Repeat_in_repeatStatement2740 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_repeatStatement2742 = new BitSet(new long[]{0x0000000000002000L});
-	public static final BitSet FOLLOW_Assign_in_repeatStatement2744 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement2746 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Do_in_repeatStatement2748 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement2750 = new BitSet(new long[]{0x0000000800000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_LAdd_in_repeatStatement2753 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement2755 = new BitSet(new long[]{0x0000000800000000L,0x0000000000008000L});
-	public static final BitSet FOLLOW_Do_in_repeatStatement2759 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-	public static final BitSet FOLLOW_block_in_repeatStatement2761 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_While_in_whileStatement2794 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_whileStatement2796 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Do_in_whileStatement2798 = new BitSet(new long[]{0x0000000000000000L,0x0000000000002000L});
-	public static final BitSet FOLLOW_block_in_whileStatement2800 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_condExpr_in_expression2826 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_expression_in_exprList2844 = new BitSet(new long[]{0x0000000000400002L});
-	public static final BitSet FOLLOW_Comma_in_exprList2847 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_exprList2849 = new BitSet(new long[]{0x0000000000400002L});
-	public static final BitSet FOLLOW_orExpr_in_condExpr2878 = new BitSet(new long[]{0x0000000000000002L,0x0020000000000800L});
-	public static final BitSet FOLLOW_QMark_in_condExpr2893 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_condExpr2897 = new BitSet(new long[]{0x0000000800000000L});
-	public static final BitSet FOLLOW_Do_in_condExpr2899 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_condExpr2903 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_In_in_condExpr2926 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_condExpr2928 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_andExpr_in_orExpr2980 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000008000000000L});
-	public static final BitSet FOLLOW_167_in_orExpr2983 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_andExpr_in_orExpr2986 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000008000000000L});
-	public static final BitSet FOLLOW_equExpr_in_andExpr3002 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000004000000000L});
-	public static final BitSet FOLLOW_166_in_andExpr3005 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_equExpr_in_andExpr3008 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000004000000000L});
-	public static final BitSet FOLLOW_relExpr_in_equExpr3024 = new BitSet(new long[]{0x0000020000000002L,0x0000000400000000L});
-	public static final BitSet FOLLOW_set_in_equExpr3027 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_relExpr_in_equExpr3036 = new BitSet(new long[]{0x0000020000000002L,0x0000000400000000L});
-	public static final BitSet FOLLOW_addExpr_in_relExpr3052 = new BitSet(new long[]{0x0003000000000002L,0x0000000000600000L});
-	public static final BitSet FOLLOW_set_in_relExpr3055 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_addExpr_in_relExpr3072 = new BitSet(new long[]{0x0003000000000002L,0x0000000000600000L});
-	public static final BitSet FOLLOW_mulExpr_in_addExpr3088 = new BitSet(new long[]{0x0000000000000102L,0x0000000000000000L,0x0000000000800000L});
-	public static final BitSet FOLLOW_set_in_addExpr3091 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_mulExpr_in_addExpr3100 = new BitSet(new long[]{0x0000000000000102L,0x0000000000000000L,0x0000000000800000L});
-	public static final BitSet FOLLOW_powExpr_in_mulExpr3116 = new BitSet(new long[]{0x0000000400000002L,0x0000000120000000L});
-	public static final BitSet FOLLOW_set_in_mulExpr3119 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_powExpr_in_mulExpr3132 = new BitSet(new long[]{0x0000000400000002L,0x0000000120000000L});
-	public static final BitSet FOLLOW_unaryExpr_in_powExpr3148 = new BitSet(new long[]{0x0000000000000002L,0x0010000000000000L});
-	public static final BitSet FOLLOW_Pw_in_powExpr3151 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_unaryExpr_in_powExpr3154 = new BitSet(new long[]{0x0000000000000002L,0x0010000000000000L});
-	public static final BitSet FOLLOW_Subtract_in_unaryExpr3172 = new BitSet(new long[]{0xFFFCC88107349A80L,0x330FDBE0DF98923FL,0x0000002F8E79FFF4L});
-	public static final BitSet FOLLOW_atom_in_unaryExpr3174 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Excl_in_unaryExpr3189 = new BitSet(new long[]{0xFFFCC88107349A80L,0x330FDBE0DF98923FL,0x0000002F8E79FFF4L});
-	public static final BitSet FOLLOW_atom_in_unaryExpr3191 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_atom_in_unaryExpr3206 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Number_in_atom3220 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Bool_in_atom3227 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Null_in_atom3234 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_lookup_in_atom3241 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_COLOR_CONSTANT_in_atom3247 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_PI_CONSTANT_in_atom3253 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_WIDTH_CONSTANT_in_atom3259 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_HEIGHT_CONSTANT_in_atom3265 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OBracket_in_list3282 = new BitSet(new long[]{0xFFFCCC8107369A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_exprList_in_list3284 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_CBracket_in_list3287 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OBracket_in_indexes3314 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_indexes3316 = new BitSet(new long[]{0x0000000000020000L});
-	public static final BitSet FOLLOW_CBracket_in_indexes3318 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
-	public static final BitSet FOLLOW_functionCall_in_lookup3344 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
-	public static final BitSet FOLLOW_indexes_in_lookup3346 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_list_in_lookup3370 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
-	public static final BitSet FOLLOW_indexes_in_lookup3372 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_lookup3405 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
-	public static final BitSet FOLLOW_indexes_in_lookup3407 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_String_in_lookup3427 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
-	public static final BitSet FOLLOW_indexes_in_lookup3429 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_OParen_in_lookup3460 = new BitSet(new long[]{0xFFFCCC8107349A80L,0x330FDBE0DF98923FL,0x0000002F8EF9FFF4L});
-	public static final BitSet FOLLOW_expression_in_lookup3462 = new BitSet(new long[]{0x0000000000080000L});
-	public static final BitSet FOLLOW_CParen_in_lookup3464 = new BitSet(new long[]{0x0000000000000002L,0x0000080000000000L});
-	public static final BitSet FOLLOW_indexes_in_lookup3466 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Identifier_in_idList3497 = new BitSet(new long[]{0x0000000000400002L});
-	public static final BitSet FOLLOW_Comma_in_idList3500 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_idList3502 = new BitSet(new long[]{0x0000000000400002L});
+	public static final BitSet FOLLOW_Units_in_mathCall2283 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_mathCall2284 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_mathCall2286 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_mathCall2288 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Slider_in_uICall2319 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_uICall2321 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_uICall2323 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_uICall2326 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Template_in_templateCall2359 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2361 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_templateCall2363 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_templateCall2366 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SetWidth_in_templateCall2385 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2387 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_templateCall2389 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_templateCall2392 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SetHeight_in_templateCall2411 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2413 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_templateCall2415 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_templateCall2418 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SetSeam_in_templateCall2437 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2439 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_templateCall2441 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_templateCall2444 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SetName_in_templateCall2463 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2465 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_templateCall2467 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_templateCall2470 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SetVFold_in_templateCall2489 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2491 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_templateCall2493 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_templateCall2496 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SetHFold_in_templateCall2515 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2517 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_templateCall2519 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_templateCall2522 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_SetCorner_in_templateCall2541 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2543 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_templateCall2545 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_templateCall2548 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_TemplateCollection_in_templateCall2567 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2569 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_templateCall2573 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_templateCall2576 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_AddDesign_in_templateCall2597 = new BitSet(new long[]{0x0000000000000000L,0x0000200000000000L});
+	public static final BitSet FOLLOW_OParen_in_templateCall2598 = new BitSet(new long[]{0xFFF9CC81073C9A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_templateCall2600 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_templateCall2603 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_ifStat_in_ifStatement2637 = new BitSet(new long[]{0x0000010000000002L});
+	public static final BitSet FOLLOW_elseIfStat_in_ifStatement2639 = new BitSet(new long[]{0x0000010000000002L});
+	public static final BitSet FOLLOW_elseStat_in_ifStatement2642 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_If_in_ifStat2673 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_ifStat2675 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_ifStat2677 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_ifStat2679 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Else_in_elseIfStat2703 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000800L});
+	public static final BitSet FOLLOW_If_in_elseIfStat2705 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_elseIfStat2707 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_elseIfStat2709 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_elseIfStat2711 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Else_in_elseStat2735 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_elseStat2737 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_elseStat2739 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Repeat_in_repeatStatement2764 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+	public static final BitSet FOLLOW_Identifier_in_repeatStatement2766 = new BitSet(new long[]{0x0000000000002000L});
+	public static final BitSet FOLLOW_Assign_in_repeatStatement2768 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement2770 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_repeatStatement2772 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement2774 = new BitSet(new long[]{0x0000000800000000L,0x0000000000010000L});
+	public static final BitSet FOLLOW_LAdd_in_repeatStatement2777 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement2779 = new BitSet(new long[]{0x0000000800000000L,0x0000000000010000L});
+	public static final BitSet FOLLOW_Do_in_repeatStatement2783 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_repeatStatement2785 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_While_in_whileStatement2818 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_whileStatement2820 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_whileStatement2822 = new BitSet(new long[]{0x0000000000000000L,0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_whileStatement2824 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_condExpr_in_expression2850 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expression_in_exprList2868 = new BitSet(new long[]{0x0000000000400002L});
+	public static final BitSet FOLLOW_Comma_in_exprList2871 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_exprList2873 = new BitSet(new long[]{0x0000000000400002L});
+	public static final BitSet FOLLOW_orExpr_in_condExpr2902 = new BitSet(new long[]{0x0000000000000002L,0x0040000000001000L});
+	public static final BitSet FOLLOW_QMark_in_condExpr2917 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_condExpr2921 = new BitSet(new long[]{0x0000000800000000L});
+	public static final BitSet FOLLOW_Do_in_condExpr2923 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_condExpr2927 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_In_in_condExpr2950 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_condExpr2952 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_andExpr_in_orExpr3004 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000010000000000L});
+	public static final BitSet FOLLOW_168_in_orExpr3007 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_andExpr_in_orExpr3010 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000010000000000L});
+	public static final BitSet FOLLOW_equExpr_in_andExpr3026 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000008000000000L});
+	public static final BitSet FOLLOW_167_in_andExpr3029 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_equExpr_in_andExpr3032 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000000L,0x0000008000000000L});
+	public static final BitSet FOLLOW_relExpr_in_equExpr3048 = new BitSet(new long[]{0x0000020000000002L,0x0000000800000000L});
+	public static final BitSet FOLLOW_set_in_equExpr3051 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_relExpr_in_equExpr3060 = new BitSet(new long[]{0x0000020000000002L,0x0000000800000000L});
+	public static final BitSet FOLLOW_addExpr_in_relExpr3076 = new BitSet(new long[]{0x0006000000000002L,0x0000000000C00000L});
+	public static final BitSet FOLLOW_set_in_relExpr3079 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_addExpr_in_relExpr3096 = new BitSet(new long[]{0x0006000000000002L,0x0000000000C00000L});
+	public static final BitSet FOLLOW_mulExpr_in_addExpr3112 = new BitSet(new long[]{0x0000000000000102L,0x0000000000000000L,0x0000000001000000L});
+	public static final BitSet FOLLOW_set_in_addExpr3115 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_mulExpr_in_addExpr3124 = new BitSet(new long[]{0x0000000000000102L,0x0000000000000000L,0x0000000001000000L});
+	public static final BitSet FOLLOW_powExpr_in_mulExpr3140 = new BitSet(new long[]{0x0000000400000002L,0x0000000240000000L});
+	public static final BitSet FOLLOW_set_in_mulExpr3143 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_powExpr_in_mulExpr3156 = new BitSet(new long[]{0x0000000400000002L,0x0000000240000000L});
+	public static final BitSet FOLLOW_unaryExpr_in_powExpr3172 = new BitSet(new long[]{0x0000000000000002L,0x0020000000000000L});
+	public static final BitSet FOLLOW_Pw_in_powExpr3175 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_unaryExpr_in_powExpr3178 = new BitSet(new long[]{0x0000000000000002L,0x0020000000000000L});
+	public static final BitSet FOLLOW_Subtract_in_unaryExpr3196 = new BitSet(new long[]{0xFFF9C88107349A80L,0x661FB7C1BF31247FL,0x0000005F1CF3FFE8L});
+	public static final BitSet FOLLOW_atom_in_unaryExpr3198 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Excl_in_unaryExpr3213 = new BitSet(new long[]{0xFFF9C88107349A80L,0x661FB7C1BF31247FL,0x0000005F1CF3FFE8L});
+	public static final BitSet FOLLOW_atom_in_unaryExpr3215 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_atom_in_unaryExpr3230 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Number_in_atom3244 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Bool_in_atom3251 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Null_in_atom3258 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_lookup_in_atom3265 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_COLOR_CONSTANT_in_atom3271 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_PI_CONSTANT_in_atom3277 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_WIDTH_CONSTANT_in_atom3283 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_HEIGHT_CONSTANT_in_atom3289 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OBracket_in_list3306 = new BitSet(new long[]{0xFFF9CC8107369A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_exprList_in_list3308 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_CBracket_in_list3311 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OBracket_in_indexes3338 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_indexes3340 = new BitSet(new long[]{0x0000000000020000L});
+	public static final BitSet FOLLOW_CBracket_in_indexes3342 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
+	public static final BitSet FOLLOW_functionCall_in_lookup3368 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
+	public static final BitSet FOLLOW_indexes_in_lookup3370 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_list_in_lookup3394 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
+	public static final BitSet FOLLOW_indexes_in_lookup3396 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_lookup3429 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
+	public static final BitSet FOLLOW_indexes_in_lookup3431 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_String_in_lookup3451 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
+	public static final BitSet FOLLOW_indexes_in_lookup3453 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_OParen_in_lookup3484 = new BitSet(new long[]{0xFFF9CC8107349A80L,0x661FB7C1BF31247FL,0x0000005F1DF3FFE8L});
+	public static final BitSet FOLLOW_expression_in_lookup3486 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_lookup3488 = new BitSet(new long[]{0x0000000000000002L,0x0000100000000000L});
+	public static final BitSet FOLLOW_indexes_in_lookup3490 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Identifier_in_idList3521 = new BitSet(new long[]{0x0000000000400002L});
+	public static final BitSet FOLLOW_Comma_in_idList3524 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000400L});
+	public static final BitSet FOLLOW_Identifier_in_idList3526 = new BitSet(new long[]{0x0000000000400002L});
 }

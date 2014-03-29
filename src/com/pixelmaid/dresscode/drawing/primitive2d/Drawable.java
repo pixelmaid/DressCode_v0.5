@@ -154,7 +154,7 @@ public class Drawable extends GraphNode  {
 	public void print(PGraphics embedded) {
 		if(!this.getHide()){//only draws if child is not hidden
 			appearance(embedded);
-			embedded.noFill();
+			//embedded.noFill();
 			embedded.pushMatrix();
 			embedded.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			embedded.rotate(PApplet.radians((float)getRotation()));

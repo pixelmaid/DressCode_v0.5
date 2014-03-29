@@ -153,7 +153,15 @@ public UserUIManager(CodeField cf, SliderFrame sf){
 				s = (Slider)uis.get(i);
 				s.setSliderValue(js.getValue());
 				int line = s.getLine();
-				String insertStatement = s.getId()+"="+Math.round(s.getSliderValue())+";";
+				double val = s.getSliderValue();
+				String valString = "";
+				if(Math.round(val)==val){
+					valString = String.format("%.0f",val);
+				}
+				else{
+					valString =  String.format("%.2f",val);
+				}
+				String insertStatement = s.getId()+"="+valString;
 				codeField.updateVariable(insertStatement, line,0);
 				System.out.println("insertStatement:"+insertStatement);
 				break;

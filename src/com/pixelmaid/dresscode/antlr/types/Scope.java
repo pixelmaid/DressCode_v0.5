@@ -64,15 +64,23 @@ public class Scope {
 	  VarType value = variables.get(var);
     if(value != null) {
       // The variable resides in this scope
+    	 //System.out.println("local variable");
       return value;
     }
     else if(!isGlobalScope()) {
       // Let the parent scope look for the variable
+    	// System.out.println("global variable");
       return parent.resolve(var);
     }
     else {
       // Unknown variable
+    //System.out.println("unknown variable");
       return null;
     }
   }
+
+public void setParent(Scope s) {
+	this.parent=s;
+	
+}
 }

@@ -173,6 +173,7 @@ functionCall returns [DCNode node]
    : ^(FUNC_CALL Grid exprList?) {node = new GridNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
    | ^(FUNC_CALL Wave exprList?) {node = new WaveNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
    | ^(FUNC_CALL Arc exprList?) {node = new ArcNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
+   | ^(FUNC_CALL FollowCurve exprList?){node = new FollowCurveNode($exprList.e,currentScope,$FUNC_CALL.getLine());}
    ;
   
    

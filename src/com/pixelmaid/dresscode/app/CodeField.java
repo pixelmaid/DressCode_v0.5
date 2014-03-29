@@ -84,6 +84,7 @@ public class CodeField extends JTextPane implements DocumentListener, KeyListene
 	protected UndoManager undoManager = new UndoManager();
 	protected UndoAction undoAction = null;
 	protected RedoAction redoAction = null;
+	//protected TabAction tabAction = null;
     private Filter filter;
     private String id="";
     private boolean unsavedChanges= false;
@@ -105,9 +106,12 @@ public class CodeField extends JTextPane implements DocumentListener, KeyListene
     	 this.setEditable(true);
     	this.setPreferredSize(new Dimension(550,500));
 		this.setContentType("text/java");
+		Document doc = this.getDocument();
+		
 		this.setText("");
 		
-		doc = new DefaultStyledDocument();/* {
+		doc = new DefaultStyledDocument();
+		/* {
             public void insertString (int offset, String str, AttributeSet a) throws BadLocationException {
                 super.insertString(offset, str, a);
 
@@ -150,7 +154,7 @@ public class CodeField extends JTextPane implements DocumentListener, KeyListene
 		this.setDocument(doc);
 		
 		StyleContext sc = StyleContext.getDefaultStyleContext();
-		TabSet tabs = new TabSet(new TabStop[] { new TabStop(20) });
+		TabSet tabs = new TabSet(new TabStop[] { new TabStop(20),new TabStop(40),new TabStop(60),new TabStop(80),new TabStop(100),new TabStop(120),new TabStop(140),new TabStop(160),new TabStop(180) });
 		AttributeSet paraSet = sc.addAttribute(SimpleAttributeSet.EMPTY, StyleConstants.TabSet, tabs);
 		this.setParagraphAttributes(paraSet, false);
 		
@@ -160,6 +164,7 @@ public class CodeField extends JTextPane implements DocumentListener, KeyListene
 		editorPaneDocument.addUndoableEditListener(undoHandler);
 		KeyStroke undoKeystroke = KeyStroke.getKeyStroke(KeyEvent.VK_Z, Event.META_MASK);
 		KeyStroke redoKeystroke = KeyStroke.getKeyStroke(KeyEvent.VK_Y, Event.META_MASK);
+		KeyStroke tabKeystroke = KeyStroke.getKeyStroke(KeyEvent.VK_TAB, Event.META_MASK);
 
 		undoAction = new UndoAction();
 		this.getInputMap().put(undoKeystroke, "undoKeystroke");
@@ -167,6 +172,10 @@ public class CodeField extends JTextPane implements DocumentListener, KeyListene
 		redoAction = new RedoAction();
 		this.getInputMap().put(redoKeystroke, "redoKeystroke");
 		this.getActionMap().put("redoKeystroke", redoAction);
+		
+		//tabAction = new TabAction();
+		//this.getInputMap().put(tabKeystroke, "tabKeystroke");
+		//this.getActionMap().put("tabKeystroke", tabAction);
 		undoAction.setActions(undoManager,redoAction);
 		redoAction.setActions(undoManager,undoAction);
 		undoHandler.setActions(undoManager, undoAction, redoAction);
@@ -227,8 +236,7 @@ public JMenuItem getUndoMenu(){
     //adds a line of code to import in a shape;
     public void insertPath(File f) throws BadLocationException{
     	 String fileString = "import(\""+f.getAbsolutePath()+"\")";
-    	 int caretPos = this.getCaretPosition();
-    	 this.getDocument().insertString(caretPos, fileString, null);
+    	 this.insertGesturalStatement(fileString);
     }
 
 	//clears out the code window and all stored variables
@@ -331,12 +339,12 @@ public JMenuItem getUndoMenu(){
 	}
 	
 	public void updateVariable(String replaceText, int line, int c){
-	
+		
 		String text = this.getText();
 		String[] lines = text.split("\r\n|\r|\n");
 		System.out.print("length="+lines.length);
-		System.out.print("replace line="+lines[line-1]);
-		lines[line-1]=replaceText;
+		System.out.print("replace line="+lines[line-2]);
+		lines[line-2]=replaceText;
 		String newText = "";
 		for(int i=0;i<lines.length;i++){
 			newText +=lines[i];
@@ -745,6 +753,17 @@ public void undoableEditHappened(UndoableEditEvent e)
 	}
 }
 }
+
+/*class TabAction extends AbstractAction
+{
+
+	@Override
+	public void actionPerformed(ActionEvent arg0) {
+		tabIncrement++
+		
+	}
+	
+}*/
 
 class UndoAction extends AbstractAction
 {

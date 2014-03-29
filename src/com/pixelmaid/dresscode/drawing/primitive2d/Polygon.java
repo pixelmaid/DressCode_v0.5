@@ -85,6 +85,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 		this(new Point(0,0));
 		this.points=pts;
 		this.setOrigin(Geom.findCentroid(this));
+		System.out.println("polygon origin="+this.getOrigin().getX()+","+this.getOrigin().getY());
 		this.setPointsRelativeTo(this.getOrigin());
 		
 	}
@@ -279,7 +280,7 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	public void print(PGraphics e){
 		if(!this.getHide()){
 		appearance(e);
-		e.noFill();
+		//e.noFill();
 		//System.out.println("number of holes="+this.holes.size()+"number of points="+this.points.size());
 		e.pushMatrix();
 		e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));

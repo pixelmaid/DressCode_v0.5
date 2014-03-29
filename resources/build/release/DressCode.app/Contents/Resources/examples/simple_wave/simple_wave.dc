@@ -1,0 +1,34 @@
+w=36 //shape width
+h=23 //shape height
+n=59 //num shapes
+s=6 //line thickness of shape
+rot=68 //rotation of shape
+a=48 //amplitude of wave
+p=5 //period of wave
+nw=3 //number of waves
+
+//slider code
+slider(w,1,400,"shape width")
+slider(h,1,400,"shape height")
+slider(n,10,300,"num shapes")
+slider(s,3,10,"line thickness")
+slider(rot,0,360,"shape rotation")
+slider(a,0,200,"amplitude")
+slider(p,1,20,"period")
+slider(nw,1,10,"num waves")
+
+//code that generates shape
+e = ellipse(WIDTH/2,HEIGHT/2,w,h)
+
+//rotate shape
+rotate(e,rot)
+
+//style shape
+noFill(e)
+weight(e,s)
+hide(e)
+
+//loop that creates waves
+repeat i=0:nw:
+	w = wave(e,n,a,p)
+	moveTo(w,WIDTH/2,HEIGHT/nw*i+a*2)

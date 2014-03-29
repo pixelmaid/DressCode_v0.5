@@ -135,14 +135,14 @@ public class Canvas extends PApplet implements EventInterface{
 		gridUnits=10;
 		gridIncrement = 10;
 		counterIncrement = 100;
-		System.out.println("grid units="+gridUnits);
+		//System.out.println("grid units="+gridUnits);
 	}
 	
 	public void setGridtoIn(){
 		gridUnits=UnitManager.PIX_IN_INCH/8;
 		gridIncrement = 7;
 		counterIncrement = 1;
-		System.out.println("grid units="+gridUnits);
+		//System.out.println("grid units="+gridUnits);
 	}
 	
 	public void setGridtoMm(){

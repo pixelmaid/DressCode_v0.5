@@ -26,14 +26,22 @@ public class GetAngleNode  extends NodeEvent implements DCNode {
   public VarType evaluate() {
   	
   	try{
+  	if(params.size()==1){
+  		double angle = params.get(0).evaluate().asLine().getAngle();
+  		return new VarType(angle);
   		
-  	double d=Geom.cartToPolar(params.get(0).evaluate().asDouble(),params.get(1).evaluate().asDouble())[1];
+  	}
+  	if(params.size()>1){
+  		double d=Geom.cartToPolar(params.get(0).evaluate().asDouble(),params.get(1).evaluate().asDouble())[1];
   	
-  	return new VarType(d);
+  		return new VarType(d);
+  		
+  	}
   	}
   	catch (ClassCastException e){
   		throw new RuntimeException("Illegal getAngle function call at line:"+ line+" : " + this);
   	}
+  	return null;
   }
 
 }

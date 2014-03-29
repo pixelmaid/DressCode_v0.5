@@ -5,6 +5,7 @@ import processing.core.PShape;
 
 import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
+import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.math.Vec2d;
 
 //class used for importing in pre-defined svg vector objects
@@ -35,8 +36,11 @@ public class LShape extends Polygon {
 	    public void loadShape(){
 	    	this.shape = this.canvas.loadShape(this.shapePath);
 	    	System.out.println("loaded shape succesfully");
+	    	
 	    	this.width = this.shape.width;
 	    	this.height = this.shape.height;
+	    	
+	    	System.out.println("width="+this.shape.width+", height="+this.shape.height);
 	    	this.setOrigin(new Point(this.width/2,this.height/2));
 	    	
 	    }
@@ -60,6 +64,9 @@ public class LShape extends Polygon {
 	    	s.setCanvas(this.getCanvas());
 	    	s.loadShape();
 	    	copyParameters(this,s);
+	    	s.scaleX = this.scaleX;
+	    	s.scaleY= this.scaleY;
+	    	s.rotation = this.rotation;
 	    	return s;
 	    }
 
@@ -88,6 +95,10 @@ public class LShape extends Polygon {
 			return this;
 		}
 		
+		public void resetOriginRecur(){
+			
+		}
+		
 
 		@Override
 		public void print(PGraphics e) {
@@ -107,7 +118,7 @@ public class LShape extends Polygon {
 		public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
 			Point newOrigin = this.getOrigin().rotate(theta, focus);
 			this.setOrigin(newOrigin);
-			this.rotation=theta;
+			this.rotation=this.rotation+theta;
 			
 			return this;
 		

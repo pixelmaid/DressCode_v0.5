@@ -25,7 +25,11 @@ public class FunctionType {  //data object to store function declarations
 	    identifiers = toList(ids);
 	    code = block;
 	    scope = new Scope();
+	    
 	   
+	  }
+	  public void setParentScope(Scope s){
+		  scope.setParent(s);
 	  }
 
 	  public FunctionType(FunctionType original) {
@@ -35,9 +39,10 @@ public class FunctionType {  //data object to store function declarations
 	    code = original.code;
 	    scope = original.scope.copy();
 	  }
+	  
 
 	  public VarType invoke(List<DCNode> params, Map<String, FunctionType> functions ,DrawableManager dm, UserUIManager ui, double w, double h, int u) {
-		  System.out.println("function drawable manager 2 ="+dm);
+		 // System.out.println("function drawable manager 2 ="+dm);
 
 		  
 	    if(params.size() != identifiers.size()) {

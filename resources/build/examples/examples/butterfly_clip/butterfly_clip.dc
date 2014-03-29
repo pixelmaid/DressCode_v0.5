@@ -4,42 +4,40 @@
 */
 
 /*number of ellipses in the pattern*/
-num = 300;
+num = 300
 /*group to store the ellipses*/
-g = group();
+g = group()
 
 /*begin loop, repeat to value set by num var*/
 repeat i=0:num:
-
 	/*create random variables to set the and
 		*y position of the ellipse, 
-		*and the radius */
-
-	x = random(0,WIDTH);
-	y = random(0,HEIGHT);
-	s = random(10,100);
-
+		*and the radius */	
+	x = random(0,WIDTH)
+	y = random(0,HEIGHT)
+	s = random(10,100)
+	
 	/* create an ellipse */
-	e = ellipse(x,y,s);
+	e = ellipse(x,y,s)
 	
 	/* add the ellipse to the group */
-	add(g,e);
-
-end
+	add(g,e)
 
 /*set the style of the group */
-noFill(g);
-weight(g,4);
+noFill(g)
+weight(g,4)
 
 /*create a butterfly shaped object 
 * with the butterfly stamp */
-clipPath = butterfly();
+clipPath = butterfly()
 
 /*create a clipped shape with the clip method */
-cB = clip(clipPath,g);
+cB = clip(clipPath,g)
 
 /*scale the final clipped shape*/
-scale(cB,0.85,0.85);
+scale(cB,0.85,0.85)
+
+
 
 
 

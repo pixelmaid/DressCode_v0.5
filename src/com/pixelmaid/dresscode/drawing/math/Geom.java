@@ -699,6 +699,11 @@ public class Geom {
     
 public static Point findCentroid(Polygon polygon)
 {
+	if(!isClockwise(polygon)){
+		System.out.println("reversing points");
+		polygon.reversePoints();
+		
+	}
 	double cx=0,cy=0;
 	double A= SignedPolygonArea(polygon);
 	ArrayList<Point> verticies = polygon.getPoints();
@@ -729,12 +734,44 @@ public static Point findCentroid(Polygon polygon)
 	res = new Point(cx,cy);
 	//System.out.println("centroid="+cx+","+cy);
 	verticies.remove(verticies.size()-1);
+
 	return res;
 	}
 	else{
 		return null;
 	}
 } 
+
+	public static boolean isClockwise(Polygon polygon){
+		ArrayList<Point> verticies = polygon.getPoints();
+		double sum = 0;
+		for(int i=1;i<verticies.size();i++){
+			double p2X = verticies.get(i).getX();
+			double p1X = verticies.get(i-1).getX();
+			double p2Y = verticies.get(i).getY();
+			double p1Y = verticies.get(i-1).getY();
+			double eS = (p2X-p1X)*(p2Y+p1Y);
+			sum+=eS;
+		}
+		double p2X = verticies.get(0).getX();
+		double p1X = verticies.get(verticies.size()-1).getX();
+		double p2Y = verticies.get(0).getY();
+		double p1Y = verticies.get(verticies.size()-1).getY();
+		double eS = (p2X-p1X)*(p2Y+p1Y);
+		sum+=eS;
+		System.out.println("sum="+sum);
+		if(sum<=0){
+			System.out.println("is clockwise!");
+			return true;
+		}
+		else{
+			System.out.println("is counter clockwise!");
+			return false;
+		}
+		
+		
+	
+	}
     
     
     //remove duplicate vertices from a polygon (accepts a dcedge list)
@@ -769,4 +806,10 @@ public static Point findCentroid(Polygon polygon)
     	}*/
     	
     }
+
+	public static double angleBetweenPoints(Point point, Point point2) {
+		double x = point2.getX()-point.getX();
+		double y = point2.getY()-point.getY();
+		return cartToPolar(x,y)[1];
+	}
 }

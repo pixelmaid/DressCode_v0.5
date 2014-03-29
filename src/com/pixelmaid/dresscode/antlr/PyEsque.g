@@ -205,6 +205,7 @@ statement
    : Grid '(' exprList? ')' -> ^(FUNC_CALL Grid exprList?)
    | Wave '(' exprList? ')' -> ^(FUNC_CALL Wave exprList?)
    | Arc '(' exprList? ')' -> ^(FUNC_CALL Arc exprList?)
+   | FollowCurve '('exprList? ')' -> ^(FUNC_CALL FollowCurve exprList?)
    ;
    
    getCall
@@ -432,6 +433,7 @@ Grid	: 'grid';
 Wave	: 'wave';
 Spiral	: 'spiral';
 Arc	: 'arc';
+FollowCurve: 'followCurve';
 
 //UIcommands
 Slider	: 'slider';
@@ -550,7 +552,7 @@ Comment
 NewLine
  : NL SP?
    {
-   
+
      int n = $SP.text == null ? 0 : $SP.text.length();
      if(n > previousIndents) {
        jump(Indent);
