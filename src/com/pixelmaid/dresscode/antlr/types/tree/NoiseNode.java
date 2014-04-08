@@ -7,13 +7,13 @@ import java.util.List;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.app.DisplayFrame;
 
-public class NoiseNode  extends NodeEvent implements DCNode {
+public class NoiseNode  extends DCNode {
 	protected List<DCNode> params;
-    protected int line;
 
-    public NoiseNode(List<DCNode> ps, int l) {
+    public NoiseNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+        col=c;
         //System.out.println("created new drawable node at line:"+line);
     }
 

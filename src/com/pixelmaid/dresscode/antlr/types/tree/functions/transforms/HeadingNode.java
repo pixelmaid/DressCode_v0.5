@@ -9,17 +9,17 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class HeadingNode extends NodeEvent implements DCNode {
+public class HeadingNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
 
 
     
-    public HeadingNode(List<DCNode> ps, int l) {
+    public HeadingNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+        col=c;
         //System.out.println("created new drawable node at line:"+line);
     }
 

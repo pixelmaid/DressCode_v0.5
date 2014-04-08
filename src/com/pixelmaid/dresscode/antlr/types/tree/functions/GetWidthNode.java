@@ -9,13 +9,15 @@ import com.pixelmaid.dresscode.antlr.types.tree.PropertyNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class GetWidthNode extends NodeEvent implements DCNode{
+public class GetWidthNode extends DCNode{
 
 	
 	  private DCNode expression;
 
-	    public GetWidthNode(DCNode e) {
+	    public GetWidthNode(DCNode e, int l, int c) {
 	        expression = e;
+	        line = l;
+		    col=c;
 	    }
 
 	    @Override

@@ -4,16 +4,16 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class SqNode extends NodeEvent implements DCNode {
+public class SqNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
 
 
-  public SqNode(DCNode p, int l) {
+  public SqNode(DCNode p, int l, int c) {
       param = p;
       line = l;
+      col =c;
      
   }
 

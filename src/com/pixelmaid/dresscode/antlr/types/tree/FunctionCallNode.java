@@ -10,15 +10,14 @@ import com.pixelmaid.dresscode.data.DrawableManager;
 import com.pixelmaid.dresscode.data.UserUIManager;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
-public class FunctionCallNode  extends NodeEvent implements DCNode {
+public class FunctionCallNode  extends DCNode {
 
     private String identifier;
     private List<DCNode> params;
     private Map<String, FunctionType> functions;
     private double 	width,height;
     private int units;
-    int line;
-    public FunctionCallNode(String id, List<DCNode> ps, Map<String, FunctionType> fs,double w, double h, int u, int l) {
+    public FunctionCallNode(String id, List<DCNode> ps, Map<String, FunctionType> fs,double w, double h, int u, int l,int c) {
         identifier = id;
         params = ps == null ? new ArrayList<DCNode>() : ps;
         functions = fs;
@@ -26,6 +25,7 @@ public class FunctionCallNode  extends NodeEvent implements DCNode {
         height=h;
         units = u;
         line = l;
+        col=l;
     }
 
     @Override

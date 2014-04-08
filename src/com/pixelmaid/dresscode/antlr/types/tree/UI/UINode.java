@@ -10,16 +10,18 @@ import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
-public class UINode extends NodeEvent implements DCNode {
+public class UINode extends DCNode {
 
 	protected List<DCNode> params;
     protected int line;
     protected Scope scope;
  
     
-    public UINode(List<DCNode> n, Scope s) {
+    public UINode(List<DCNode> n, Scope s, int l, int c) {
         params = n;
         scope = s;
+        line = l;
+	    col=c;
         //System.out.println("created new drawable node at line:"+line);
     }
 

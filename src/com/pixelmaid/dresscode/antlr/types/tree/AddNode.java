@@ -8,7 +8,7 @@ import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
-public class AddNode extends NodeEvent implements DCNode {
+public class AddNode extends DCNode {
 
   private DCNode lhs;
   private DCNode rhs;
@@ -18,7 +18,7 @@ public class AddNode extends NodeEvent implements DCNode {
   public AddNode(DCNode lhs, DCNode rhs) {
     this.lhs = lhs;
     this.rhs = rhs;
-   // line = l;
+    
   }
 
   @Override

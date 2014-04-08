@@ -10,10 +10,10 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
-public class CurveNode extends DrawableNode implements DCNode {
+public class CurveNode extends DrawableNode {
 
-	public CurveNode(List<DCNode> ps, int l) {
-		super(ps,l);
+	public CurveNode(List<DCNode> ps, int l, int c) {
+		super(ps,l,c);
 
 	}
 

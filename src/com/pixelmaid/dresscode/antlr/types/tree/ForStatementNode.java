@@ -5,7 +5,7 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
-public class ForStatementNode extends NodeEvent implements DCNode {
+public class ForStatementNode extends DCNode {
 
     private String identifier;
     private DCNode startExpr;

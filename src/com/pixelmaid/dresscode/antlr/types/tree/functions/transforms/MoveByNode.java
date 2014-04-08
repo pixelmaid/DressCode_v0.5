@@ -9,17 +9,15 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class MoveByNode extends NodeEvent implements DCNode {
+public class MoveByNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
-
-
     
-    public MoveByNode(List<DCNode> ps, int l) {
+    public MoveByNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+        col=c;
         //System.out.println("created new drawable node at line:"+line);
     }
 

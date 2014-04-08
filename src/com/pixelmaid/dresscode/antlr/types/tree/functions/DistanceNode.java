@@ -11,13 +11,15 @@ import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class DistanceNode extends NodeEvent implements DCNode{
+public class DistanceNode extends DCNode{
 
 	
 	protected List<DCNode> params;
 
-	    public DistanceNode(List<DCNode> ps) {
+	    public DistanceNode(List<DCNode> ps, int l, int c) {
 	    	params = ps;
+	    	line = l;
+		    col=c;
 	    }
 
 	    @Override

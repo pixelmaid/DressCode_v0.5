@@ -8,10 +8,10 @@ import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
-public class EllipseNode extends DrawableNode implements DCNode {
+public class EllipseNode extends DrawableNode {
 
 	public EllipseNode(List<DCNode> ps, int l, int c) {
-		super(ps,l);
+		super(ps,l,c);
 		System.out.println("char position is:"+c);
 
 	}

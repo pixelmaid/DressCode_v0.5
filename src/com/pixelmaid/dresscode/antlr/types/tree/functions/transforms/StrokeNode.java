@@ -8,17 +8,17 @@ import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Color;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
-public class StrokeNode extends NodeEvent implements DCNode {
+public class StrokeNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
 
 
     
-    public StrokeNode(List<DCNode> ps, int l) {
+    public StrokeNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+        col=c;
        
     }
 

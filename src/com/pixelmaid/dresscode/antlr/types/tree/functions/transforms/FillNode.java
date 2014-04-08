@@ -9,17 +9,17 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Color;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class FillNode extends NodeEvent implements DCNode {
+public class FillNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
 
 
     
-    public FillNode(List<DCNode> ps, int l) {
+    public FillNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+        col=c;
        
     }
 

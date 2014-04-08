@@ -2,7 +2,7 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class WhileStatementNode extends NodeEvent implements DCNode {
+public class WhileStatementNode extends DCNode {
 
     private DCNode expression;
     private DCNode block;

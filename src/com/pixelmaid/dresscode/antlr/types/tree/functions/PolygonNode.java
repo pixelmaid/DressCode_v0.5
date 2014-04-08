@@ -11,10 +11,10 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class PolygonNode extends DrawableNode implements DCNode {
+public class PolygonNode extends DrawableNode{
 
-	public PolygonNode(List<DCNode> ps, int l) {
-		super(ps,l);
+	public PolygonNode(List<DCNode> ps, int l,int c) {
+		super(ps,l,c);
 
 	}
 

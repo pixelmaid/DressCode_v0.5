@@ -9,13 +9,15 @@ import com.pixelmaid.dresscode.antlr.types.tree.PropertyNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class GetRotationNode extends NodeEvent implements DCNode{
+public class GetRotationNode extends DCNode{
 
 	
 	  private DCNode expression;
 
-	    public GetRotationNode(DCNode e) {
+	    public GetRotationNode(DCNode e, int l, int c) {
 	        expression = e;
+	        line = l;
+		    col=c;
 	    }
 
 	    @Override

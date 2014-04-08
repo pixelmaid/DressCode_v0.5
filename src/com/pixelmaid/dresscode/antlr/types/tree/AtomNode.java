@@ -2,12 +2,13 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class AtomNode extends NodeEvent implements DCNode {
+public class AtomNode extends DCNode {
 
   private VarType value;
 
   public AtomNode(Object v) {
     value = (v == null) ? VarType.NULL : new VarType(v);
+  
   }
 
   @Override

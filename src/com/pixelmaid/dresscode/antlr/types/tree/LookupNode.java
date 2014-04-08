@@ -6,7 +6,7 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class LookupNode extends NodeEvent implements DCNode {
+public class LookupNode extends DCNode {
 
   private DCNode expression;
   private List<DCNode> indexes;

@@ -9,17 +9,17 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class FlattenNode extends NodeEvent implements DCNode {
+public class FlattenNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
     protected Scope scope;
 
     
-    public FlattenNode(DCNode p,Scope s, int l) {
+    public FlattenNode(DCNode p,Scope s, int l, int c) {
         param = p;
         line = l;
+        col=c;
         scope = s;
         //System.out.println("created new drawable node at line:"+line);
     }

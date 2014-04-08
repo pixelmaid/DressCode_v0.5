@@ -6,16 +6,17 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class ATanNode  extends NodeEvent implements DCNode {
+public class ATanNode extends DCNode {
 
 	protected List<DCNode> params;
 
     protected int line;
 
 
-  public ATanNode(List<DCNode> ps, int l) {
+  public ATanNode(List<DCNode> ps, int l, int c) {
       params = ps;
       line = l;
+      col=c;
      
   }
 

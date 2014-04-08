@@ -10,19 +10,19 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 
-public class LAddNode extends NodeEvent implements DCNode {
+public class LAddNode extends DCNode {
 
 	protected List<DCNode> params;
-	protected int line;
 
 
-	public LAddNode(List<DCNode> ps, int l) {
+	public LAddNode(List<DCNode> ps, int l, int c) {
 		params= ps;
 		line = l;
+	    col=c;
 
 	}
 
-	//TODO:address this with grouping of drawables and identifers.
+	//TODO:address this with grouping of drawables and identifiers.
 	@Override
 	public VarType evaluate() {
 		if(params.size()>=2){

@@ -5,18 +5,18 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.drawing.math.UnitManager;
 
-public class ConversionNode extends NodeEvent implements DCNode {
+public class ConversionNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
     private String type;
     private int unitParam;
 
 	
-  public ConversionNode(DCNode p, String t, int u, int l) {
+  public ConversionNode(DCNode p, String t, int u, int l, int c) {
       param = p;
       line = l;
+      col=c;
       type = t;
      unitParam = u;
   }

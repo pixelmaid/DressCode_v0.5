@@ -9,16 +9,17 @@ import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 
-public class GetAngleNode  extends NodeEvent implements DCNode {
+public class GetAngleNode  extends DCNode {
 
 	protected List<DCNode> params;
 
     protected int line;
 
 
-  public GetAngleNode(List<DCNode> ps) {
+  public GetAngleNode(List<DCNode> ps, int l, int c) {
       params = ps;
-  
+      line = l;
+	  col=c;
      
   }
 

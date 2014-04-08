@@ -10,13 +10,15 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class GetOriginNode extends NodeEvent implements DCNode{
+public class GetOriginNode extends DCNode{
 
 	
 	  private DCNode expression;
 
-	    public GetOriginNode(DCNode e) {
+	    public GetOriginNode(DCNode e, int l, int c) {
 	        expression = e;
+	        line = l;
+		    col=c;
 	    }
 
 	    @Override

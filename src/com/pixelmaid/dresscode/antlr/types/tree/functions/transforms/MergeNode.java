@@ -9,17 +9,17 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class MergeNode extends NodeEvent implements DCNode {
+public class MergeNode extends DCNode{
 
 	protected DCNode param;
 
-    protected int line;
     protected Scope scope;
 
     
-    public MergeNode(DCNode p, Scope s, int l) {
+    public MergeNode(DCNode p, Scope s, int l, int c) {
         param = p;
         line = l;
+        col=c;
         scope = s;
        
     }

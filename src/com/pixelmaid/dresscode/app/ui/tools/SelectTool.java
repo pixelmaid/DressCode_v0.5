@@ -26,12 +26,14 @@ public class SelectTool extends Tool  {
 	}
 	
 	public void reset(){
-		
-		for(int i=0;i<tempDrawables.size();i++){
-			tempDrawables.get(i).setSelected(false);
+		if(tempDrawables!=null){
+			for(int i=0;i<tempDrawables.size();i++){
+				tempDrawables.get(i).setSelected(false);
+			}
 		}
-		
-		selectedDrawable.clear();
+		if(selectedDrawable!=null){
+			selectedDrawable.clear();
+		}
 		group.removeAllChildren();
 		group = new Drawable();
 		selected = false;

@@ -16,4 +16,6 @@ public interface EventInterface {
 	  
 	  public void removeEventListener(CustomEventListener listener);
 
+	public void removeAllListeners();
+
 }

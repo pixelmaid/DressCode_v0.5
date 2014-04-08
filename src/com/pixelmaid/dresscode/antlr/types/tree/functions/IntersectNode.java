@@ -13,16 +13,17 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class IntersectNode extends NodeEvent implements DCNode {
+public class IntersectNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
     protected Scope scope;
 
     
-    public IntersectNode(List<DCNode> ps) {
+    public IntersectNode(List<DCNode> ps, int l, int c) {
         params = ps;
+        line = l;
+	    col=c;
        // line = l;
         //scope = s;
         //System.out.println("created new drawable node at line:"+line);

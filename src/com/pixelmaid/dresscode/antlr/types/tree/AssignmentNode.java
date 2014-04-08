@@ -8,20 +8,20 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class AssignmentNode extends NodeEvent implements DCNode {
+public class AssignmentNode extends DCNode {
 
   protected String identifier;
   protected List<DCNode> indexNodes;
   protected DCNode rhs;
   protected Scope scope;
-  protected int line;
 
-  public AssignmentNode(String i, List<DCNode> e, DCNode n, Scope s, int l) {
+  public AssignmentNode(String i, List<DCNode> e, DCNode n, Scope s, int l, int c) {
     identifier = i;
     indexNodes = (e == null) ? new ArrayList<DCNode>() : e;
     rhs = (n == null) ? null : n;
     scope = s;
     line = l;
+    col = c;
   }
 
   @Override
@@ -45,6 +45,7 @@ public class AssignmentNode extends NodeEvent implements DCNode {
       if(value.isDrawable()){
     	  Drawable d = value.asDrawable();
     	d.setIdentifier(identifier);
+    	 return new VarType(d);
       }
     }
     else { // a possible list-lookup and reassignment

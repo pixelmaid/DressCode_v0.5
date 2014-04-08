@@ -213,7 +213,8 @@ public JMenuItem getUndoMenu(){
     }
     
     public void checkForComments(){
-        String txt = this.getCode();
+    	//this.setText(this.getText().replaceAll("\u0009","\u2192"));
+    	String txt = this.getCode();
     	if(txt.length()!=0){
     	//String [] nonComments = getCode().split("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)");
         //ArrayList<String> comments = new ArrayList<String>();

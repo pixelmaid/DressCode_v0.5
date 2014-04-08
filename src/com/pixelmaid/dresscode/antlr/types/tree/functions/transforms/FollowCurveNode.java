@@ -12,18 +12,18 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class FollowCurveNode extends NodeEvent implements DCNode {
+public class FollowCurveNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
     protected Scope scope;
 ;
 
     
-    public FollowCurveNode(List<DCNode> ps, Scope s, int l) {
+    public FollowCurveNode(List<DCNode> ps, Scope s, int l, int c) {
         params = ps;
         line = l;
+        col=c;
         scope = s;
       
         //System.out.println("created new drawable node at line:"+line);

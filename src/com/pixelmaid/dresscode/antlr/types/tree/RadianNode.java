@@ -4,7 +4,7 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class RadianNode extends NodeEvent implements DCNode {
+public class RadianNode extends DCNode {
 
 	protected DCNode param;
 

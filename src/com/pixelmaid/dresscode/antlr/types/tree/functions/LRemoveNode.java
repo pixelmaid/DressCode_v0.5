@@ -8,15 +8,15 @@ import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
-public class LRemoveNode extends NodeEvent implements DCNode {
+public class LRemoveNode extends DCNode {
 
 	protected List<DCNode> params;
-	protected int line;
 
 
-	public LRemoveNode(List<DCNode> ps, int l) {
+	public LRemoveNode(List<DCNode> ps, int l, int c) {
 		params= ps;
 		line = l;
+	    col=c;
 
 	}
 

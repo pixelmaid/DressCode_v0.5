@@ -7,18 +7,20 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 
 import java.io.PrintStream;
 
-public class PrintlnNode extends NodeEvent implements DCNode {
+public class PrintlnNode extends DCNode {
 
   private DCNode expression;
   private PrintStream out;
 
-  public PrintlnNode(DCNode e) {
-    this(e, System.out);
+  public PrintlnNode(DCNode e,int l, int c) {
+    this(e, System.out,l,c);
   }
 
-  public PrintlnNode(DCNode e, PrintStream o) {
+  public PrintlnNode(DCNode e, PrintStream o, int l, int c) {
     expression = e;
     out = o;
+    line = l;
+    col=c;
   }
 
   @Override

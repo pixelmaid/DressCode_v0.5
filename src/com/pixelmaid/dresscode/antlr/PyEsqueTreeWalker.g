@@ -7,7 +7,6 @@ options {
 }
 
 
-
 @header {
  package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -15,9 +14,12 @@ options {
   import com.pixelmaid.dresscode.antlr.types.tree.functions.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.UI.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.templates.*;
+  import com.pixelmaid.dresscode.antlr.types.tree.repeats.*;
+  
   import com.pixelmaid.dresscode.antlr.types.tree.properties.*; 
   import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.*; 
   import com.pixelmaid.dresscode.data.*;
+  
   
   import java.util.Map;
   import java.util.HashMap;
@@ -78,6 +80,7 @@ block returns [BlockNode node]
   Scope local = new Scope(currentScope);
   currentScope = local;
   currentFunction = bn;
+  ((NodeEvent)node).addEventListener(drawableManager);
 }
 @after {
   currentScope = currentScope.parent();
@@ -94,13 +97,14 @@ statement returns [DCNode node]
   |  functionCall   {node = $functionCall.node;}
   |  ifStatement    {node = $ifStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |  whileStatement {node = $whileStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  | radialStatement {node = $radialStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   | repeatStatement {node = $repeatStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   /*| returnStatement {node = $returnStatement.node; currentFunction.addReturn($returnStatement.node);}*/
   ;
   
  
 assignment returns [DCNode node]
-  :  ^(ASSIGNMENT Identifier indexes? expression?) {node = new AssignmentNode($Identifier.text, $indexes.e, $expression.node, currentScope,$ASSIGNMENT.getLine());}
+  :  ^(ASSIGNMENT Identifier indexes? expression?) {node = new AssignmentNode($Identifier.text, $indexes.e, $expression.node, currentScope,$ASSIGNMENT.getLine(),$ASSIGNMENT.getCharPositionInLine());}
 
   ;
   
@@ -109,17 +113,18 @@ assignment returns [DCNode node]
  	;*/
  	
  	
+ 	
 functionCall returns [DCNode node]
 @init{
 	//System.out.println("function called");
 }
-  :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions, widthParam, heightParam, unitParam,$FUNC_CALL.getLine()); ((NodeEvent)node).addEventListener(drawableManager);((NodeEvent)node).addEventListener(uiManager);}
-  |  ^(FUNC_CALL Println expression?)  {node = new PrintlnNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
-  |  ^(FUNC_CALL Print expression)     {node = new PrintNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
-  |  ^(FUNC_CALL Assert expression)    {node = new AssertNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
-  |  ^(FUNC_CALL Size expression)      {node = new SizeNode($expression.node); ((NodeEvent)node).addEventListener(drawableManager);}
-  |  ^(FUNC_CALL LAdd exprList?) 	{node = new LAddNode($exprList.e,$FUNC_CALL.getLine()); ((NodeEvent)node).addEventListener(drawableManager);}
-  |  ^(FUNC_CALL LRemove exprList?) {node = new LRemoveNode($exprList.e,$FUNC_CALL.getLine()); ((NodeEvent)node).addEventListener(drawableManager);}
+  :  ^(FUNC_CALL Identifier exprList?) {node = new FunctionCallNode($Identifier.text, $exprList.e, functions, widthParam, heightParam, unitParam,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine()); ((NodeEvent)node).addEventListener(drawableManager);((NodeEvent)node).addEventListener(uiManager);}
+  |  ^(FUNC_CALL Println expression?)  {node = new PrintlnNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine()); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL Print expression)     {node = new PrintNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine()); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL Assert expression)    {node = new AssertNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine()); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL Size expression)      {node = new SizeNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine()); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL LAdd exprList?) 	{node = new LAddNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine()); ((NodeEvent)node).addEventListener(drawableManager);}
+  |  ^(FUNC_CALL LRemove exprList?) {node = new LRemoveNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine()); ((NodeEvent)node).addEventListener(drawableManager);}
   |	 primitiveCall {node = $primitiveCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |	 transformCall {node = $transformCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |	 patternCall {node = $patternCall.node; ((NodeEvent)node).addEventListener(drawableManager);}
@@ -132,92 +137,92 @@ functionCall returns [DCNode node]
   
   primitiveCall returns [DCNode node]
   	:^(FUNC_CALL Ellipse exprList?)  {node = new EllipseNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
-  	|^(FUNC_CALL Line exprList?) 	 {node = new LineNode($exprList.e,$FUNC_CALL.getLine());}
-  	|^(FUNC_CALL Rect exprList?) 	 {node = new RectangleNode($exprList.e,$FUNC_CALL.getLine());}
-  	| ^(FUNC_CALL Curve exprList?)   {node = new CurveNode($exprList.e,$FUNC_CALL.getLine());}
-  	| ^(FUNC_CALL Polygon exprList?) {node = new PolygonNode($exprList.e,$FUNC_CALL.getLine());}
-  	| ^(FUNC_CALL Skirt exprList?) //{node = new SkirtNode($exprList.e,$FUNC_CALL.getLine());}
-    | ^(FUNC_CALL SkirtBack exprList?) //{node = new SkirtBackNode($exprList.e,$FUNC_CALL.getLine());}
-    | ^(FUNC_CALL LShape exprList?) {node = new LShapeNode($exprList.e,$FUNC_CALL.getLine());}
-  	|  ^(FUNC_CALL Point exprList?) {node = new PointNode($exprList.e,$FUNC_CALL.getLine());}
+  	|^(FUNC_CALL Line exprList?) 	 {node = new LineNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	|^(FUNC_CALL Rect exprList?) 	 {node = new RectangleNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	| ^(FUNC_CALL Curve exprList?)   {node = new CurveNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	| ^(FUNC_CALL Polygon exprList?) {node = new PolygonNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	| ^(FUNC_CALL Skirt exprList?) //{node = new SkirtNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+    | ^(FUNC_CALL SkirtBack exprList?) //{node = new SkirtBackNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+    | ^(FUNC_CALL LShape exprList?) {node = new LShapeNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  	|  ^(FUNC_CALL Point exprList?) {node = new PointNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   	;
   
   transformCall returns [DCNode node]
    :^(FUNC_CALL Move exprList?)   {node = new MoveNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
-   | ^(FUNC_CALL MoveBy exprList?)   {node = new MoveByNode($exprList.e,$FUNC_CALL.getLine());}
-   | ^(FUNC_CALL Heading exprList?)   {node = new HeadingNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Copy expression)  {node = new CopyNode($expression.node,$FUNC_CALL.getLine());}
+   | ^(FUNC_CALL MoveBy exprList?)   {node = new MoveByNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   | ^(FUNC_CALL Heading exprList?)   {node = new HeadingNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Copy expression)  {node = new CopyNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    |^(FUNC_CALL Rotate exprList?) {node = new RotateNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
-   |^(FUNC_CALL Fill exprList?)   {node = new FillNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Stroke exprList?) {node = new StrokeNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL NoFill expression) {node = new NoFillNode($expression.node ,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL NoStroke expression) {node = new NoStrokeNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Weight exprList?) {node = new WeightNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Hide expression) {node = new HideNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Show expression) {node = new ShowNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Group exprList?) {node = new GroupNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Expand expression){node = new ExpandNode($expression.node, currentScope, $FUNC_CALL.getLine());}
-   |^(FUNC_CALL Merge expression){node = new MergeNode($expression.node,currentScope,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Scale exprList?){node = new ScaleNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL MirrorX expression){node = new MirrorXNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL MirrorY expression){node = new MirrorYNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Union exprList?){node = new UnionNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
-   |^(FUNC_CALL Difference exprList?){node = new DifferenceNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
-   |^(FUNC_CALL Clip exprList?){node = new ClipNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
-   |^(FUNC_CALL Xor exprList?){node = new XorNode($exprList.e, currentScope, $FUNC_CALL.getLine());}
-   |^(FUNC_CALL Flatten expression){node = new FlattenNode($expression.node,currentScope, $FUNC_CALL.getLine());}
+   |^(FUNC_CALL Fill exprList?)   {node = new FillNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Stroke exprList?) {node = new StrokeNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL NoFill expression) {node = new NoFillNode($expression.node ,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL NoStroke expression) {node = new NoStrokeNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Weight exprList?) {node = new WeightNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Hide expression) {node = new HideNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Show expression) {node = new ShowNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Group exprList?) {node = new GroupNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Expand expression){node = new ExpandNode($expression.node, currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Merge expression){node = new MergeNode($expression.node,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Scale exprList?){node = new ScaleNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL MirrorX expression){node = new MirrorXNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL MirrorY expression){node = new MirrorYNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Union exprList?){node = new UnionNode($exprList.e, currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Difference exprList?){node = new DifferenceNode($exprList.e, currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Clip exprList?){node = new ClipNode($exprList.e, currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Xor exprList?){node = new XorNode($exprList.e, currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Flatten expression){node = new FlattenNode($expression.node,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    ;
    
   
     patternCall returns [DCNode node]
-   : ^(FUNC_CALL Grid exprList?) {node = new GridNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
-   | ^(FUNC_CALL Wave exprList?) {node = new WaveNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
-   | ^(FUNC_CALL Arc exprList?) {node = new ArcNode($exprList.e,currentScope,$FUNC_CALL.getLine(),widthParam, heightParam);}
-   | ^(FUNC_CALL FollowCurve exprList?){node = new FollowCurveNode($exprList.e,currentScope,$FUNC_CALL.getLine());}
+   : ^(FUNC_CALL Grid exprList?) {node = new GridNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine(),widthParam, heightParam);}
+   | ^(FUNC_CALL Wave exprList?) {node = new WaveNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine(),widthParam, heightParam);}
+   | ^(FUNC_CALL Arc exprList?) {node = new ArcNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine(),widthParam, heightParam);}
+   | ^(FUNC_CALL FollowCurve exprList?){node = new FollowCurveNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    ;
   
    
    mathCall returns [DCNode node]
-   :^(FUNC_CALL Cosine expression) {node = new CosineNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Sine expression) {node = new SineNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Tan expression) {node = new TanNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL ATan exprList?) {node = new ATanNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Random exprList?) {node = new RandomNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Pow exprList?){node = new PowFNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Sqrt expression){node = new SqrtNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Sq expression){node = new SqNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Gaussian exprList?) {node = new GaussianNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Noise exprList?) {node = new NoiseNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Round expression) {node = new RoundNode($expression.node,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Map exprList?) {node = new MapNode($exprList.e,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Inch expression){node = new ConversionNode($expression.node,"inch",unitParam,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Mm expression){node = new ConversionNode($expression.node,"mm",unitParam,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Cm expression){node = new ConversionNode($expression.node,"cm",unitParam,$FUNC_CALL.getLine());}
-   |^(FUNC_CALL Units expression){node = new ConversionNode($expression.node,"units",unitParam,$FUNC_CALL.getLine());}
+   :^(FUNC_CALL Cosine expression) {node = new CosineNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Sine expression) {node = new SineNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Tan expression) {node = new TanNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL ATan exprList?) {node = new ATanNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Random exprList?) {node = new RandomNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Pow exprList?){node = new PowFNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Sqrt expression){node = new SqrtNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Sq expression){node = new SqNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Gaussian exprList?) {node = new GaussianNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Noise exprList?) {node = new NoiseNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Round expression) {node = new RoundNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Map exprList?) {node = new MapNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Inch expression){node = new ConversionNode($expression.node,"inch",unitParam,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Mm expression){node = new ConversionNode($expression.node,"mm",unitParam,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Cm expression){node = new ConversionNode($expression.node,"cm",unitParam,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Units expression){node = new ConversionNode($expression.node,"units",unitParam,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    
    ;
    
   
    
    getCall returns [DCNode node]
-  : ^(FUNC_CALL GetWidth expression) {node = new GetWidthNode($expression.node);}
-  | ^(FUNC_CALL GetHeight expression){node = new GetHeightNode($expression.node);}
-  | ^(FUNC_CALL GetX expression){node = new GetXNode($expression.node);}
-  | ^(FUNC_CALL GetY expression){node = new GetYNode($expression.node);}
-  | ^(FUNC_CALL GetOrigin expression){node = new GetOriginNode($expression.node);}
-  | ^(FUNC_CALL GetRotation expression){node = new GetRotationNode($expression.node);}
+  : ^(FUNC_CALL GetWidth expression) {node = new GetWidthNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  | ^(FUNC_CALL GetHeight expression){node = new GetHeightNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  | ^(FUNC_CALL GetX expression){node = new GetXNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  | ^(FUNC_CALL GetY expression){node = new GetYNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  | ^(FUNC_CALL GetOrigin expression){node = new GetOriginNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  | ^(FUNC_CALL GetRotation expression){node = new GetRotationNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   | ^(FUNC_CALL GetFill expression)
   | ^(FUNC_CALL GetStroke expression)
   | ^(FUNC_CALL GetStart expression)
   |^(FUNC_CALL GetEnd expression) 
-  |^(FUNC_CALL GetDistance exprList?) {node = new DistanceNode($exprList.e);}
-  |^(FUNC_CALL GetIntersect exprList?) {node = new IntersectNode($exprList.e);}
-  |^(FUNC_CALL GetAngle exprList? ) {node = new GetAngleNode($exprList.e);}
-  |^(FUNC_CALL GetRadius exprList? ) {node = new GetRadiusNode($exprList.e);}
+  |^(FUNC_CALL GetDistance exprList?) {node = new DistanceNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  |^(FUNC_CALL GetIntersect exprList?) {node = new IntersectNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  |^(FUNC_CALL GetAngle exprList? ) {node = new GetAngleNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  |^(FUNC_CALL GetRadius exprList? ) {node = new GetRadiusNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   ;
   
   uICall returns [DCNode node]
-  	: ^(FUNC_CALL Slider exprList?)  {node = new SliderNode($exprList.e,currentScope);}
+  	: ^(FUNC_CALL Slider exprList?)  {node = new SliderNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
   	;
   	
    templateCall returns [DCNode node]
@@ -257,9 +262,11 @@ forStatement returns [DCNode node]
   ;
   
 repeatStatement returns [DCNode node]
-  : ^(Repeat Identifier a=expression b=expression (c=expression)? block) {node = new RepeatStatementNode($Identifier.text, $a.node, $b.node, $c.node, $block.node, currentScope);}
+  : ^(Repeat Identifier a=expression b=expression (c=expression)? block) {node = new RepeatStatementNode($Identifier.text, $a.node, $b.node, $c.node, $block.node, currentScope, $Repeat.getLine(), $Repeat.getCharPositionInLine());}
   ;
-
+radialStatement returns [DCNode node]
+	: ^(Radial gId = Identifier id1=Identifier a= expression id2=Identifier b=expression block) {node = new RadialStatementNode($gId.text, $id1.text, $id2.text, $a.node, $b.node, $block.node, currentScope);}
+	;
 
 whileStatement returns [DCNode node]
   :  ^(While expression block) {node = new WhileStatementNode($expression.node, $block.node);}

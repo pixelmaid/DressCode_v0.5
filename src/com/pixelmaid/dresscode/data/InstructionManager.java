@@ -64,14 +64,26 @@ public class InstructionManager extends NodeEvent{
 
 	    	
 	    	CharStream charStream = new ANTLRStringStream("\n"+userCode+ "\n" + "");
-
+	    	try {
 	    	// create an instance of the lexer
 	    	lexer = new PyEsqueLexer();
 	    	lexer.setCharStream(charStream);
 	    	// wrap a token-stream around the lexer
 	    	tokens = new CommonTokenStream(lexer);
 	    	// create the parser
-	    	parser = new PyEsqueParser(tokens);
+	    	
+	    		parser = new PyEsqueParser(tokens);
+	    	}
+	    	catch(Exception e) {
+	    		System.out.println("lexer error");
+	    		e.printStackTrace();
+	    		error = e.getMessage();
+	    		
+	    		//registers a parse error event
+	    		this.fireEvent(CustomEvent.PARSE_ERROR);
+	    		//output.setText("error at" + error);
+
+	    	}
 
 	    	//System.out.println("running");
 	    	// walk the tree

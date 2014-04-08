@@ -8,13 +8,14 @@ import java.util.Random;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.app.DisplayFrame;
 
-public class GaussianNode  extends NodeEvent implements DCNode {
+public class GaussianNode  extends DCNode {
 	protected List<DCNode> params;
     protected int line;
 
-    public GaussianNode(List<DCNode> ps, int l) {
+    public GaussianNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+        col=c;
         System.out.println("created new gaussian node at line:"+line);
     }
 

@@ -1,20 +1,29 @@
 package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
+import com.pixelmaid.dresscode.antlr.types.tree.functions.DrawableNode;
+import com.pixelmaid.dresscode.antlr.types.tree.functions.RectangleNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
+import com.pixelmaid.dresscode.events.CustomEvent;
+import com.pixelmaid.dresscode.events.CustomEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlockNode extends NodeEvent implements DCNode {
+public class BlockNode extends DCNode {
 
-  private List<DCNode> statements;
-  private DCNode returnStatement;
+  protected List<DCNode> statements;
+  protected DCNode returnStatement;
 
   public BlockNode() {
     statements = new ArrayList<DCNode>();
     returnStatement = null;
   }
 
+  public DCNode getStatementAt(int i){
+	  return statements.get(i);
+  }
+  
   public void addReturn(DCNode stat) {
     returnStatement = stat;
   }
@@ -24,7 +33,6 @@ public class BlockNode extends NodeEvent implements DCNode {
     statements.add(stat);
     //System.out.println("added statement, size="+statements.size());
   }
-
 
  @Override  
   public VarType evaluate(){

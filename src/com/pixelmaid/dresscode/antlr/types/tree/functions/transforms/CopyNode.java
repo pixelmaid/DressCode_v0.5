@@ -7,17 +7,17 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class CopyNode extends NodeEvent implements DCNode {
+public class CopyNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
 
 
     
-    public CopyNode(DCNode p, int l) {
+    public CopyNode(DCNode p, int l,int c) {
         param = p;
         line = l;
+        col=c;
         //System.out.println("created new drawable node at line:"+line);
     }
 

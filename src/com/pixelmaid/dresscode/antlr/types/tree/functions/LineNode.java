@@ -12,10 +12,10 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 
 
-public class LineNode extends DrawableNode implements DCNode {
+public class LineNode extends DrawableNode {
 
-    public LineNode(List<DCNode> ps, int l) {
-       super(ps,l);
+    public LineNode(List<DCNode> ps, int l, int c) {
+       super(ps,l,c);
     	
     }
 

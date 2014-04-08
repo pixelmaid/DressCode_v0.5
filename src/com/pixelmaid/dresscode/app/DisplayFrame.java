@@ -100,7 +100,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	//font size for text in code field
 	//TODO: add in method for adjusting font size
-	private int fontSize = 12;
+	private int fontSize = 16;
 	
 	//UI components for Coding
 	private CodingFrame codingFrame;
@@ -111,7 +111,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private boolean fromTemplate = false; //boolean to manage stamp switching
 
 	private String currentStamp = ""; //boolean to manage stamp switching
-
+	private String startupMessage = "";
+	private String examplePath="";
 	private  Console console; //output console
 	private CodeToolbar codingToolbar;
 	private ImageButton openButton, saveButton, runButton, stopButton, newButton, importButton, backButton; //coding panel buttons
@@ -568,6 +569,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		currentProject.newFile(codingFrame, codeField,canvas, drawableManager , instructionManager);
 		updateLabels();
 		
+		//console.setText(startupMessage);
+		
 	}
 	
 	//creates main menu
@@ -581,11 +584,19 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	       fileMenu = new JMenu("File");
 	       editMenu = new JMenu("Edit");
 	        exampleMenu = new JMenu("Examples");
-	      try{
-	        setupExampleMenu(exampleMenu);
-	      }
-	     catch(java.lang.NullPointerException e ){
-	    	 System.out.println("can't setup example menu, sorry :(");
+	     
+	     try{
+		 setupExampleMenuWindows(exampleMenu); 
+	     }
+	     catch(java.lang.NullPointerException ew ){
+	    	 System.out.println("can't setup example menu in windows, sorry :(");
+	    	 try{
+		        setupExampleMenuMac(exampleMenu);
+		      }
+		     catch(java.lang.NullPointerException e ){
+		    	
+		    	 System.out.println("can't setup example menu in mac, sorry :(");
+		     }
 	     }
 	      
 	        menuBar.add(fileMenu);
@@ -635,9 +646,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	//}
 	
 	
-	 private void setupExampleMenu(JMenu exampleMenu){
-		 String path = "../examples/examples";
-		 File exampleFolder = new File(path);
+	 private void setupExampleMenuMac(JMenu exampleMenu){
+	examplePath = com.apple.eio.FileManager.getPathToApplicationBundle()+"/Contents/Resources/examples";
+		 startupMessage="path="+examplePath;
+		 File exampleFolder = new File(examplePath);
 			File[] files = exampleFolder.listFiles();
 			for (File file : files) {
 				if(file.isDirectory()){
@@ -652,14 +664,33 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 
 	 }
 	 
+	 private void setupExampleMenuWindows(JMenu exampleMenu){
+			examplePath = System.getProperty("user.dir")+"/examples";
+			 startupMessage="path="+examplePath;
+			 File exampleFolder = new File(examplePath);
+					File[] files = exampleFolder.listFiles();
+					for (File file : files) {
+						if(file.isDirectory()){
+						String name = file.getName().substring(0, file.getName().length());
+						System.out.println("name="+name+"\n");
+						exampleList.add(name);
+						JMenuItem exampleAction = new ExampleItem(name);
+						exampleMenu.add(exampleAction);
+						exampleAction.addActionListener(this);
+						}
+					} 
+				 
+			 }
 
 	
 
 	 
 	 //opens an example according to string
 	 private void openExample(String name){
-		String path = "../examples/examples/"+name+"/"+name+".dc";
-		File example = new File(path);
+		 
+		String path = name+"/"+name+".dc";
+		File example = new File(examplePath+"/"+path);
+		this.console.setText(examplePath+"/"+path);
 		openFile(example);
 	 }
 	 //=================End setup methods=======================//
@@ -1070,9 +1101,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					run();	
 					
 				case CustomEvent.IRREGULAR_POLY_ADDED:
-					selectMain();
-					addPolyStatement(((PenTool)currentTool).closePoly());
-					run();	
+					if(penTool.getCreated()!=null){
+						selectMain();
+						addPolyStatement(penTool.closePoly());
+						polyTool.reset();
+						run();
+					}
 					break;
 				
 				case CustomEvent.LINE_ADDED:
@@ -1234,6 +1268,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			canvas.zoomOut();
 			canvas.redraw();
 		}
+		if(e.getKeyCode() == KeyEvent.VK_ENTER && ctrlKey==true){
+			this.run();
+		}
 		//toggle for alt key
 		if(e.getKeyCode()==18){
 			altKey=true;
@@ -1280,6 +1317,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			if(curveButton.isActive()){
 				curveTool.finishCurve();
 			}
+			if(penButton.isActive()){
+				penTool.finishPoly();
+			}
 		}
 
 	}
@@ -1297,14 +1337,15 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		currentTool = defaultTool;
 		canvas.changeCursor(null);
 		if(e.getSource() !=penButton && penTool.isActive()){
-			Polygon p = penTool.closePoly();
-			if(p!=null){
-				addPolyStatement(p);
-			}
+			penTool.finishPoly();
 			penTool.setActive(false);
 			
 		}
 		
+		if(e.getSource() !=curveButton && curveTool.isActive()){
+			curveTool.finishCurve();
+			curveTool.setActive(false);
+		}
 		if (e.getSource() == runButton ) {
 			run();	
 		}
@@ -1341,20 +1382,20 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			selectButton.setActive();
 			canvas.showOrigins();
 			currentTool = selectTool;
-			selectTool.setDrawables(drawableManager.getDrawables());
-			
-			
-			
+			selectTool.setActive(true);
+			selectTool.setDrawables(drawableManager.getDrawables());	
 		}
 		
 		else if (e.getSource()==rectButton){
 			currentTool = rectTool;
 			rectButton.setActive();
+			rectTool.setActive(true);
 			canvas.changeCursor(rectTool.getImage());
 		}
 		else if (e.getSource()==ellipseButton){
 			currentTool = ellipseTool;
 			ellipseButton.setActive();
+			ellipseTool.setActive(true);
 			canvas.changeCursor(ellipseTool.getImage());
 		}
 		else if (e.getSource()==penButton){
@@ -1366,45 +1407,41 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		else if (e.getSource()==polyButton){
 			currentTool = polyTool;
 			polyButton.setActive();
+			polyTool.setActive(true);
 			canvas.changeCursor(polyTool.getImage());
 		}
 		else if (e.getSource()==lineButton){
 			currentTool = lineTool;
 			lineButton.setActive();
+			lineTool.setActive(true);
 			canvas.changeCursor(lineTool.getImage());
 		}
 		else if (e.getSource()==curveButton){
 			currentTool = curveTool;
 			curveButton.setActive();
+			curveTool.setActive(true);
 			canvas.changeCursor(curveTool.getImage());
 		}
 		else if (e.getSource()==unionButton){
 			currentTool = boolTool;
+			boolTool.setActive(true);
 			boolTool.doBool(selectTool.getSelected(),boolTool.UNION);
 		}
 		else if (e.getSource()==diffButton){
 			currentTool = boolTool;
+			boolTool.setActive(true);
 			boolTool.doBool(selectTool.getSelected(),boolTool.DIFF);
 		}
 		else if (e.getSource()==xorButton){
 			currentTool = boolTool;
+			boolTool.setActive(true);
 			boolTool.doBool(selectTool.getSelected(),boolTool.XOR);
 		}
 		else if (e.getSource()==clipButton){
 			currentTool = boolTool;
+			boolTool.setActive(true);
 			boolTool.doBool(selectTool.getSelected(),boolTool.CLIP);
 		}
-		else if (e.getSource()==curveButton){
-			currentTool = curveTool;
-			curveButton.setActive();
-			canvas.changeCursor(curveTool.getImage());
-		}
-		else if (e.getSource()==curveButton){
-			currentTool = curveTool;
-			curveButton.setActive();
-			canvas.changeCursor(curveTool.getImage());
-		}
-		
 		else if (e.getSource()==clearButton){
 			console.clearText();
 		}
@@ -1488,6 +1525,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		else if (e.getSource() instanceof ExampleItem){
 			ExampleItem eI = (ExampleItem)e.getSource();
+			console.setText(eI.getName());
 			System.out.println(eI.getName());
 			openExample(eI.getName());
 			

@@ -7,10 +7,10 @@ import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.LShape;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
-public class LShapeNode extends DrawableNode implements DCNode {
+public class LShapeNode extends DrawableNode{
 
-	public LShapeNode(List<DCNode> ps, int l) {
-		super(ps,l);
+	public LShapeNode(List<DCNode> ps, int l, int c) {
+		super(ps,l,c);
 
 	}
 

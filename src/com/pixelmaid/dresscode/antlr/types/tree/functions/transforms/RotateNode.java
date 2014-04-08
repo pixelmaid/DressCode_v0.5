@@ -11,7 +11,7 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class RotateNode extends NodeEvent implements DCNode {
+public class RotateNode extends DCNode {
 
 	protected List<DCNode> params;
 

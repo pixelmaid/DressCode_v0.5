@@ -6,13 +6,13 @@ import java.util.List;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class MapNode  extends NodeEvent implements DCNode {
+public class MapNode  extends DCNode {
 	protected List<DCNode> params;
-    protected int line;
 
-    public MapNode(List<DCNode> ps, int l) {
+    public MapNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+        col=c;
         //System.out.println("created new drawable node at line:"+line);
     }
 

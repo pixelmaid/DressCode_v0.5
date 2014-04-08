@@ -11,17 +11,17 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class DifferenceNode extends NodeEvent implements DCNode {
+public class DifferenceNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
     protected Scope scope;
 
     
-    public DifferenceNode(List<DCNode> ps, Scope s, int l) {
+    public DifferenceNode(List<DCNode> ps, Scope s, int l, int c) {
         params = ps;
         line = l;
+        col=c;
         scope = s;
         //System.out.println("created new drawable node at line:"+line);
     }

@@ -10,17 +10,14 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class GroupNode extends NodeEvent implements DCNode {
+public class GroupNode extends DCNode {
 
 	protected List<DCNode> params;
-
-    protected int line;
-
-
     
-    public GroupNode(List<DCNode> ps, int l) {
+    public GroupNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+        col=c;
        
     }
 

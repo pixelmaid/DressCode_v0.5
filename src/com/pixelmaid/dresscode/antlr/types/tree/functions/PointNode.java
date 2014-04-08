@@ -8,10 +8,10 @@ import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class PointNode extends DrawableNode implements DCNode {
+public class PointNode extends DrawableNode{
 
-	public PointNode(List<DCNode> ps, int l) {
-		super(ps,l);
+	public PointNode(List<DCNode> ps, int l, int c) {
+		super(ps,l,c);
 
 	}
 

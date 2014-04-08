@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g 2014-03-28 17:52:00
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g 2014-04-08 16:52:01
 
   package com.pixelmaid.dresscode.antlr;
   
@@ -12,8 +12,8 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class PyEsqueLexer extends Lexer {
 	public static final int EOF=-1;
-	public static final int T__167=167;
 	public static final int T__168=168;
+	public static final int T__169=169;
 	public static final int ADD_CALL=4;
 	public static final int AND_CALL=5;
 	public static final int ASSIGNMENT=6;
@@ -131,52 +131,53 @@ public class PyEsqueLexer extends Lexer {
 	public static final int QMark=118;
 	public static final int Quad=119;
 	public static final int RETURN=120;
-	public static final int Random=121;
-	public static final int Rect=122;
-	public static final int Repeat=123;
-	public static final int Return=124;
-	public static final int Rotate=125;
-	public static final int Round=126;
-	public static final int SP=127;
-	public static final int SPECIAL=128;
-	public static final int STATEMENTS=129;
-	public static final int SUB_CALL=130;
-	public static final int Scale=131;
-	public static final int SemiColon=132;
-	public static final int SetCorner=133;
-	public static final int SetHFold=134;
-	public static final int SetHeight=135;
-	public static final int SetName=136;
-	public static final int SetSeam=137;
-	public static final int SetVFold=138;
-	public static final int SetWidth=139;
-	public static final int Show=140;
-	public static final int Sine=141;
-	public static final int Size=142;
-	public static final int Skirt=143;
-	public static final int SkirtBack=144;
-	public static final int Slider=145;
-	public static final int SpaceChars=146;
-	public static final int Spiral=147;
-	public static final int Sq=148;
-	public static final int Sqrt=149;
-	public static final int String=150;
-	public static final int Stroke=151;
-	public static final int Subtract=152;
-	public static final int TERNARY=153;
-	public static final int Tan=154;
-	public static final int Template=155;
-	public static final int TemplateCollection=156;
-	public static final int To=157;
-	public static final int Triangle=158;
-	public static final int UNARY_MIN=159;
-	public static final int Union=160;
-	public static final int Units=161;
-	public static final int WIDTH_CONSTANT=162;
-	public static final int Wave=163;
-	public static final int Weight=164;
-	public static final int While=165;
-	public static final int Xor=166;
+	public static final int Radial=121;
+	public static final int Random=122;
+	public static final int Rect=123;
+	public static final int Repeat=124;
+	public static final int Return=125;
+	public static final int Rotate=126;
+	public static final int Round=127;
+	public static final int SP=128;
+	public static final int SPECIAL=129;
+	public static final int STATEMENTS=130;
+	public static final int SUB_CALL=131;
+	public static final int Scale=132;
+	public static final int SemiColon=133;
+	public static final int SetCorner=134;
+	public static final int SetHFold=135;
+	public static final int SetHeight=136;
+	public static final int SetName=137;
+	public static final int SetSeam=138;
+	public static final int SetVFold=139;
+	public static final int SetWidth=140;
+	public static final int Show=141;
+	public static final int Sine=142;
+	public static final int Size=143;
+	public static final int Skirt=144;
+	public static final int SkirtBack=145;
+	public static final int Slider=146;
+	public static final int SpaceChars=147;
+	public static final int Spiral=148;
+	public static final int Sq=149;
+	public static final int Sqrt=150;
+	public static final int String=151;
+	public static final int Stroke=152;
+	public static final int Subtract=153;
+	public static final int TERNARY=154;
+	public static final int Tan=155;
+	public static final int Template=156;
+	public static final int TemplateCollection=157;
+	public static final int To=158;
+	public static final int Triangle=159;
+	public static final int UNARY_MIN=160;
+	public static final int Union=161;
+	public static final int Units=162;
+	public static final int WIDTH_CONSTANT=163;
+	public static final int Wave=164;
+	public static final int Weight=165;
+	public static final int While=166;
+	public static final int Xor=167;
 
 
 	  private int previousIndents = -1;
@@ -216,10 +217,10 @@ public class PyEsqueLexer extends Lexer {
 	}
 	@Override public String getGrammarFileName() { return "/Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g"; }
 
-	// $ANTLR start "T__167"
-	public final void mT__167() throws RecognitionException {
+	// $ANTLR start "T__168"
+	public final void mT__168() throws RecognitionException {
 		try {
-			int _type = T__167;
+			int _type = T__168;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:35:8: ( '&&' )
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:35:10: '&&'
@@ -235,12 +236,12 @@ public class PyEsqueLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "T__167"
+	// $ANTLR end "T__168"
 
-	// $ANTLR start "T__168"
-	public final void mT__168() throws RecognitionException {
+	// $ANTLR start "T__169"
+	public final void mT__169() throws RecognitionException {
 		try {
-			int _type = T__168;
+			int _type = T__169;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:36:8: ( '||' )
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:36:10: '||'
@@ -256,15 +257,15 @@ public class PyEsqueLexer extends Lexer {
 			// do for sure before leaving
 		}
 	}
-	// $ANTLR end "T__168"
+	// $ANTLR end "T__169"
 
 	// $ANTLR start "Ellipse"
 	public final void mEllipse() throws RecognitionException {
 		try {
 			int _type = Ellipse;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:375:9: ( 'ellipse' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:375:11: 'ellipse'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:428:9: ( 'ellipse' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:428:11: 'ellipse'
 			{
 			match("ellipse"); 
 
@@ -284,8 +285,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Rect;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:376:6: ( 'rect' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:376:8: 'rect'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:429:6: ( 'rect' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:429:8: 'rect'
 			{
 			match("rect"); 
 
@@ -305,8 +306,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Line;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:377:6: ( 'line' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:377:8: 'line'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:430:6: ( 'line' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:430:8: 'line'
 			{
 			match("line"); 
 
@@ -326,8 +327,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Curve;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:378:7: ( 'curve' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:378:9: 'curve'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:431:7: ( 'curve' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:431:9: 'curve'
 			{
 			match("curve"); 
 
@@ -347,8 +348,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Quad;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:379:6: ( 'quad' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:379:8: 'quad'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:432:6: ( 'quad' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:432:8: 'quad'
 			{
 			match("quad"); 
 
@@ -368,8 +369,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Point;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:380:7: ( 'point' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:380:9: 'point'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:433:7: ( 'point' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:433:9: 'point'
 			{
 			match("point"); 
 
@@ -389,8 +390,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Triangle;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:381:9: ( 'triangle' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:381:11: 'triangle'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:434:9: ( 'triangle' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:434:11: 'triangle'
 			{
 			match("triangle"); 
 
@@ -410,8 +411,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Polygon;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:382:9: ( 'poly' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:382:11: 'poly'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:435:9: ( 'poly' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:435:11: 'poly'
 			{
 			match("poly"); 
 
@@ -431,8 +432,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Skirt;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:383:7: ( 'skirt' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:383:9: 'skirt'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:436:7: ( 'skirt' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:436:9: 'skirt'
 			{
 			match("skirt"); 
 
@@ -452,8 +453,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = SkirtBack;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:384:11: ( 'skirtback' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:384:13: 'skirtback'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:437:11: ( 'skirtback' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:437:13: 'skirtback'
 			{
 			match("skirtback"); 
 
@@ -473,8 +474,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = LShape;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:385:8: ( 'import' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:385:10: 'import'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:438:8: ( 'import' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:438:10: 'import'
 			{
 			match("import"); 
 
@@ -494,8 +495,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Cosine;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:388:8: ( 'cos' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:388:9: 'cos'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:441:8: ( 'cos' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:441:9: 'cos'
 			{
 			match("cos"); 
 
@@ -515,8 +516,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Sine;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:389:6: ( 'sin' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:389:8: 'sin'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:442:6: ( 'sin' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:442:8: 'sin'
 			{
 			match("sin"); 
 
@@ -536,8 +537,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Tan;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:390:6: ( 'tan' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:390:8: 'tan'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:443:6: ( 'tan' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:443:8: 'tan'
 			{
 			match("tan"); 
 
@@ -557,8 +558,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = ATan;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:391:6: ( 'atan' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:391:8: 'atan'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:444:6: ( 'atan' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:444:8: 'atan'
 			{
 			match("atan"); 
 
@@ -578,8 +579,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Sqrt;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:392:6: ( 'sqrt' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:392:8: 'sqrt'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:445:6: ( 'sqrt' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:445:8: 'sqrt'
 			{
 			match("sqrt"); 
 
@@ -599,8 +600,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Pow;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:393:6: ( 'pow' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:393:8: 'pow'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:446:6: ( 'pow' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:446:8: 'pow'
 			{
 			match("pow"); 
 
@@ -620,8 +621,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Sq;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:394:5: ( 'sq' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:394:7: 'sq'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:447:5: ( 'sq' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:447:7: 'sq'
 			{
 			match("sq"); 
 
@@ -641,8 +642,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Random;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:395:9: ( 'random' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:395:11: 'random'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:448:9: ( 'random' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:448:11: 'random'
 			{
 			match("random"); 
 
@@ -662,8 +663,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Round;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:396:7: ( 'round' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:396:9: 'round'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:449:7: ( 'round' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:449:9: 'round'
 			{
 			match("round"); 
 
@@ -683,8 +684,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Gaussian;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:397:9: ( 'gaussianNoise' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:397:11: 'gaussianNoise'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:450:9: ( 'gaussianNoise' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:450:11: 'gaussianNoise'
 			{
 			match("gaussianNoise"); 
 
@@ -704,8 +705,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Noise;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:398:7: ( 'noise' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:398:9: 'noise'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:451:7: ( 'noise' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:451:9: 'noise'
 			{
 			match("noise"); 
 
@@ -725,8 +726,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Map;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:399:6: ( 'map' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:399:8: 'map'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:452:6: ( 'map' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:452:8: 'map'
 			{
 			match("map"); 
 
@@ -746,8 +747,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Inch;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:400:11: ( 'inch' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:400:13: 'inch'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:453:11: ( 'inch' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:453:13: 'inch'
 			{
 			match("inch"); 
 
@@ -767,8 +768,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Mm;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:401:8: ( 'mm' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:401:10: 'mm'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:454:8: ( 'mm' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:454:10: 'mm'
 			{
 			match("mm"); 
 
@@ -788,8 +789,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Cm;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:402:8: ( 'cm' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:402:10: 'cm'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:455:8: ( 'cm' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:455:10: 'cm'
 			{
 			match("cm"); 
 
@@ -809,8 +810,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Units;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:403:7: ( 'units' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:403:9: 'units'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:456:7: ( 'units' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:456:9: 'units'
 			{
 			match("units"); 
 
@@ -830,8 +831,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Move;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:407:6: ( 'moveTo' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:407:8: 'moveTo'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:460:6: ( 'moveTo' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:460:8: 'moveTo'
 			{
 			match("moveTo"); 
 
@@ -851,8 +852,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = MoveBy;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:408:8: ( 'moveBy' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:408:10: 'moveBy'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:461:8: ( 'moveBy' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:461:10: 'moveBy'
 			{
 			match("moveBy"); 
 
@@ -872,8 +873,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Heading;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:409:9: ( 'headingBy' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:409:11: 'headingBy'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:462:9: ( 'headingBy' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:462:11: 'headingBy'
 			{
 			match("headingBy"); 
 
@@ -893,8 +894,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Copy;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:410:6: ( 'copy' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:410:8: 'copy'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:463:6: ( 'copy' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:463:8: 'copy'
 			{
 			match("copy"); 
 
@@ -914,8 +915,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Rotate;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:411:8: ( 'rotate' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:411:10: 'rotate'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:464:8: ( 'rotate' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:464:10: 'rotate'
 			{
 			match("rotate"); 
 
@@ -935,8 +936,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Scale;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:412:7: ( 'scale' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:412:9: 'scale'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:465:7: ( 'scale' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:465:9: 'scale'
 			{
 			match("scale"); 
 
@@ -956,8 +957,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Fill;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:413:6: ( 'fill' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:413:8: 'fill'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:466:6: ( 'fill' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:466:8: 'fill'
 			{
 			match("fill"); 
 
@@ -977,8 +978,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Stroke;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:414:8: ( 'stroke' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:414:10: 'stroke'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:467:8: ( 'stroke' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:467:10: 'stroke'
 			{
 			match("stroke"); 
 
@@ -998,8 +999,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = NoFill;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:415:8: ( 'noFill' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:415:10: 'noFill'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:468:8: ( 'noFill' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:468:10: 'noFill'
 			{
 			match("noFill"); 
 
@@ -1019,8 +1020,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = NoStroke;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:416:10: ( 'noStroke' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:416:12: 'noStroke'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:10: ( 'noStroke' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:12: 'noStroke'
 			{
 			match("noStroke"); 
 
@@ -1040,8 +1041,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Weight;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:417:8: ( 'weight' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:417:10: 'weight'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:470:8: ( 'weight' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:470:10: 'weight'
 			{
 			match("weight"); 
 
@@ -1061,8 +1062,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Hide;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:418:6: ( 'hide' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:418:8: 'hide'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:471:6: ( 'hide' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:471:8: 'hide'
 			{
 			match("hide"); 
 
@@ -1082,8 +1083,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Show;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:419:6: ( 'show' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:419:8: 'show'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:472:6: ( 'show' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:472:8: 'show'
 			{
 			match("show"); 
 
@@ -1103,8 +1104,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Group;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:420:7: ( 'group' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:420:9: 'group'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:473:7: ( 'group' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:473:9: 'group'
 			{
 			match("group"); 
 
@@ -1124,8 +1125,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Expand;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:421:9: ( 'expand' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:421:11: 'expand'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:474:9: ( 'expand' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:474:11: 'expand'
 			{
 			match("expand"); 
 
@@ -1145,8 +1146,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Merge;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:422:7: ( 'merge' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:422:9: 'merge'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:475:7: ( 'merge' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:475:9: 'merge'
 			{
 			match("merge"); 
 
@@ -1166,8 +1167,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = MirrorX;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:423:9: ( 'mirrorX' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:423:11: 'mirrorX'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:476:9: ( 'mirrorX' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:476:11: 'mirrorX'
 			{
 			match("mirrorX"); 
 
@@ -1187,8 +1188,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = MirrorY;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:424:8: ( 'mirrorY' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:424:10: 'mirrorY'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:477:8: ( 'mirrorY' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:477:10: 'mirrorY'
 			{
 			match("mirrorY"); 
 
@@ -1208,8 +1209,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Union;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:425:6: ( 'union' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:425:8: 'union'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:478:6: ( 'union' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:478:8: 'union'
 			{
 			match("union"); 
 
@@ -1229,8 +1230,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Difference;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:426:11: ( 'diff' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:426:13: 'diff'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:479:11: ( 'diff' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:479:13: 'diff'
 			{
 			match("diff"); 
 
@@ -1250,8 +1251,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Clip;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:427:6: ( 'clip' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:427:8: 'clip'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:480:6: ( 'clip' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:480:8: 'clip'
 			{
 			match("clip"); 
 
@@ -1271,8 +1272,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Xor;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:428:5: ( 'xor' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:428:6: 'xor'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:481:5: ( 'xor' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:481:6: 'xor'
 			{
 			match("xor"); 
 
@@ -1292,8 +1293,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Flatten;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:429:9: ( 'flatten' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:429:11: 'flatten'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:482:9: ( 'flatten' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:482:11: 'flatten'
 			{
 			match("flatten"); 
 
@@ -1313,8 +1314,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Grid;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:432:6: ( 'grid' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:432:8: 'grid'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:485:6: ( 'grid' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:485:8: 'grid'
 			{
 			match("grid"); 
 
@@ -1334,8 +1335,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Wave;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:433:6: ( 'wave' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:433:8: 'wave'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:486:6: ( 'wave' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:486:8: 'wave'
 			{
 			match("wave"); 
 
@@ -1355,8 +1356,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Spiral;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:434:8: ( 'spiral' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:434:10: 'spiral'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:487:8: ( 'spiral' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:487:10: 'spiral'
 			{
 			match("spiral"); 
 
@@ -1376,8 +1377,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Arc;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:435:5: ( 'arc' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:435:7: 'arc'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:488:5: ( 'arc' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:488:7: 'arc'
 			{
 			match("arc"); 
 
@@ -1397,8 +1398,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = FollowCurve;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:436:12: ( 'followCurve' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:436:14: 'followCurve'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:489:12: ( 'followCurve' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:489:14: 'followCurve'
 			{
 			match("followCurve"); 
 
@@ -1418,8 +1419,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Slider;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:439:8: ( 'slider' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:439:10: 'slider'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:492:8: ( 'slider' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:492:10: 'slider'
 			{
 			match("slider"); 
 
@@ -1439,8 +1440,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Template;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:442:10: ( 'template' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:442:12: 'template'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:495:10: ( 'template' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:495:12: 'template'
 			{
 			match("template"); 
 
@@ -1460,8 +1461,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = SetWidth;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:443:10: ( 'setWidth' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:443:12: 'setWidth'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:496:10: ( 'setWidth' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:496:12: 'setWidth'
 			{
 			match("setWidth"); 
 
@@ -1481,8 +1482,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = SetHeight;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:444:11: ( 'setHeight' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:444:13: 'setHeight'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:497:11: ( 'setHeight' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:497:13: 'setHeight'
 			{
 			match("setHeight"); 
 
@@ -1502,8 +1503,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = SetSeam;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:445:10: ( 'setSeam' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:445:12: 'setSeam'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:498:10: ( 'setSeam' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:498:12: 'setSeam'
 			{
 			match("setSeam"); 
 
@@ -1523,8 +1524,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = SetCorner;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:446:11: ( 'setCorner' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:446:13: 'setCorner'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:499:11: ( 'setCorner' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:499:13: 'setCorner'
 			{
 			match("setCorner"); 
 
@@ -1544,8 +1545,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = SetName;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:447:10: ( 'setName' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:447:12: 'setName'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:500:10: ( 'setName' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:500:12: 'setName'
 			{
 			match("setName"); 
 
@@ -1565,8 +1566,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = SetVFold;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:448:10: ( 'setVFold' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:448:12: 'setVFold'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:501:10: ( 'setVFold' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:501:12: 'setVFold'
 			{
 			match("setVFold"); 
 
@@ -1586,8 +1587,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = SetHFold;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:449:10: ( 'setHFold' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:449:12: 'setHFold'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:502:10: ( 'setHFold' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:502:12: 'setHFold'
 			{
 			match("setHFold"); 
 
@@ -1607,8 +1608,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = AddDesign;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:450:11: ( 'addDesign' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:450:13: 'addDesign'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:503:11: ( 'addDesign' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:503:13: 'addDesign'
 			{
 			match("addDesign"); 
 
@@ -1628,8 +1629,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = TemplateCollection;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:451:20: ( 'templateCollection' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:451:22: 'templateCollection'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:504:20: ( 'templateCollection' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:504:22: 'templateCollection'
 			{
 			match("templateCollection"); 
 
@@ -1649,8 +1650,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetWidth;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:454:9: ( 'getWidth' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:454:11: 'getWidth'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:507:9: ( 'getWidth' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:507:11: 'getWidth'
 			{
 			match("getWidth"); 
 
@@ -1670,8 +1671,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetHeight;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:455:10: ( 'getHeight' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:455:12: 'getHeight'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:508:10: ( 'getHeight' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:508:12: 'getHeight'
 			{
 			match("getHeight"); 
 
@@ -1691,8 +1692,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetX;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:456:5: ( 'getX' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:456:7: 'getX'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:509:5: ( 'getX' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:509:7: 'getX'
 			{
 			match("getX"); 
 
@@ -1712,8 +1713,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetY;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:457:5: ( 'getY' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:457:7: 'getY'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:510:5: ( 'getY' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:510:7: 'getY'
 			{
 			match("getY"); 
 
@@ -1733,8 +1734,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetOrigin;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:458:10: ( 'getOrigin' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:458:12: 'getOrigin'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:511:10: ( 'getOrigin' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:511:12: 'getOrigin'
 			{
 			match("getOrigin"); 
 
@@ -1754,8 +1755,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetRotation;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:459:12: ( 'getRotation' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:459:14: 'getRotation'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:512:12: ( 'getRotation' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:512:14: 'getRotation'
 			{
 			match("getRotation"); 
 
@@ -1775,8 +1776,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetAngle;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:460:10: ( 'getAngle' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:460:12: 'getAngle'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:513:10: ( 'getAngle' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:513:12: 'getAngle'
 			{
 			match("getAngle"); 
 
@@ -1796,8 +1797,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetRadius;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:461:11: ( 'getRadius' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:461:13: 'getRadius'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:514:11: ( 'getRadius' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:514:13: 'getRadius'
 			{
 			match("getRadius"); 
 
@@ -1817,8 +1818,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetFill;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:462:8: ( 'getFill' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:462:10: 'getFill'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:515:8: ( 'getFill' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:515:10: 'getFill'
 			{
 			match("getFill"); 
 
@@ -1838,8 +1839,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetStroke;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:463:10: ( 'getStroke' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:463:12: 'getStroke'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:516:10: ( 'getStroke' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:516:12: 'getStroke'
 			{
 			match("getStroke"); 
 
@@ -1859,8 +1860,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetStart;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:464:9: ( 'getStart' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:464:11: 'getStart'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:517:9: ( 'getStart' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:517:11: 'getStart'
 			{
 			match("getStart"); 
 
@@ -1880,8 +1881,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetEnd;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:465:7: ( 'getEnd' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:465:9: 'getEnd'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:518:7: ( 'getEnd' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:518:9: 'getEnd'
 			{
 			match("getEnd"); 
 
@@ -1901,8 +1902,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetDistance;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:466:12: ( 'getDist' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:466:14: 'getDist'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:519:12: ( 'getDist' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:519:14: 'getDist'
 			{
 			match("getDist"); 
 
@@ -1922,8 +1923,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GetIntersect;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:467:13: ( 'getIntersect' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:467:15: 'getIntersect'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:520:13: ( 'getIntersect' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:520:15: 'getIntersect'
 			{
 			match("getIntersect"); 
 
@@ -1943,7 +1944,7 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = COLOR_CONSTANT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:15: ( 'RED' | 'BLUE' | 'GREEN' | 'PURPLE' | 'YELLOW' | 'ORANGE' | 'PINK' | 'BLACK' | 'WHITE' | 'GREY' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:15: ( 'RED' | 'BLUE' | 'GREEN' | 'PURPLE' | 'YELLOW' | 'ORANGE' | 'PINK' | 'BLACK' | 'WHITE' | 'GREY' )
 			int alt1=10;
 			switch ( input.LA(1) ) {
 			case 'R':
@@ -2099,70 +2100,70 @@ public class PyEsqueLexer extends Lexer {
 			}
 			switch (alt1) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:17: 'RED'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:17: 'RED'
 					{
 					match("RED"); 
 
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:23: 'BLUE'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:23: 'BLUE'
 					{
 					match("BLUE"); 
 
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:30: 'GREEN'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:30: 'GREEN'
 					{
 					match("GREEN"); 
 
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:38: 'PURPLE'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:38: 'PURPLE'
 					{
 					match("PURPLE"); 
 
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:47: 'YELLOW'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:47: 'YELLOW'
 					{
 					match("YELLOW"); 
 
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:56: 'ORANGE'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:56: 'ORANGE'
 					{
 					match("ORANGE"); 
 
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:65: 'PINK'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:65: 'PINK'
 					{
 					match("PINK"); 
 
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:72: 'BLACK'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:72: 'BLACK'
 					{
 					match("BLACK"); 
 
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:80: 'WHITE'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:80: 'WHITE'
 					{
 					match("WHITE"); 
 
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:469:88: 'GREY'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:88: 'GREY'
 					{
 					match("GREY"); 
 
@@ -2184,8 +2185,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = WIDTH_CONSTANT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:471:15: ( 'WIDTH' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:471:17: 'WIDTH'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:524:15: ( 'WIDTH' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:524:17: 'WIDTH'
 			{
 			match("WIDTH"); 
 
@@ -2205,8 +2206,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = HEIGHT_CONSTANT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:472:16: ( 'HEIGHT' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:472:18: 'HEIGHT'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:525:16: ( 'HEIGHT' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:525:18: 'HEIGHT'
 			{
 			match("HEIGHT"); 
 
@@ -2226,8 +2227,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = PI_CONSTANT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:474:12: ( 'PI' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:474:14: 'PI'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:527:12: ( 'PI' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:527:14: 'PI'
 			{
 			match("PI"); 
 
@@ -2247,8 +2248,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = LAdd;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:477:6: ( 'add' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:477:8: 'add'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:530:6: ( 'add' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:530:8: 'add'
 			{
 			match("add"); 
 
@@ -2268,8 +2269,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = LRemove;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:478:9: ( 'remove' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:478:11: 'remove'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:531:9: ( 'remove' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:531:11: 'remove'
 			{
 			match("remove"); 
 
@@ -2289,8 +2290,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Println;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:480:10: ( 'println' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:480:12: 'println'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:533:10: ( 'println' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:533:12: 'println'
 			{
 			match("println"); 
 
@@ -2310,8 +2311,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Print;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:481:10: ( 'print' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:481:12: 'print'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:534:10: ( 'print' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:534:12: 'print'
 			{
 			match("print"); 
 
@@ -2331,8 +2332,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Assert;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:482:10: ( 'assert' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:482:12: 'assert'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:535:10: ( 'assert' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:535:12: 'assert'
 			{
 			match("assert"); 
 
@@ -2352,8 +2353,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Size;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:483:10: ( 'size' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:483:12: 'size'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:536:10: ( 'size' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:536:12: 'size'
 			{
 			match("size"); 
 
@@ -2373,10 +2374,13 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Def;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:484:10: ( 'function' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:484:12: 'function'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:539:10: ( 'function' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:539:13: 'function'
 			{
 			match("function"); 
+
+
+			System.out.println("entered function");
 
 			}
 
@@ -2394,8 +2398,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = If;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:485:10: ( 'if' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:485:12: 'if'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:543:10: ( 'if' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:543:12: 'if'
 			{
 			match("if"); 
 
@@ -2415,8 +2419,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Else;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:486:10: ( 'else' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:486:12: 'else'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:544:10: ( 'else' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:544:12: 'else'
 			{
 			match("else"); 
 
@@ -2436,8 +2440,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Return;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:487:10: ( 'return' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:487:12: 'return'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:545:10: ( 'return' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:545:12: 'return'
 			{
 			match("return"); 
 
@@ -2457,10 +2461,13 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Repeat;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:488:9: ( 'repeat' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:488:11: 'repeat'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:546:9: ( 'repeat' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:546:11: 'repeat'
 			{
 			match("repeat"); 
+
+
+			System.out.println("entered repeat");
 
 			}
 
@@ -2473,13 +2480,37 @@ public class PyEsqueLexer extends Lexer {
 	}
 	// $ANTLR end "Repeat"
 
+	// $ANTLR start "Radial"
+	public final void mRadial() throws RecognitionException {
+		try {
+			int _type = Radial;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:549:9: ( 'radial' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:549:11: 'radial'
+			{
+			match("radial"); 
+
+
+			System.out.println("entered repeat");
+
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "Radial"
+
 	// $ANTLR start "While"
 	public final void mWhile() throws RecognitionException {
 		try {
 			int _type = While;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:489:10: ( 'while' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:489:12: 'while'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:552:10: ( 'while' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:552:12: 'while'
 			{
 			match("while"); 
 
@@ -2499,8 +2530,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = To;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:490:10: ( 'to' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:490:12: 'to'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:553:10: ( 'to' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:553:12: 'to'
 			{
 			match("to"); 
 
@@ -2520,8 +2551,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Do;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:491:10: ( ':' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:491:12: ':'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:554:10: ( ':' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:554:12: ':'
 			{
 			match(':'); 
 			}
@@ -2540,8 +2571,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = In;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:492:10: ( 'in' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:492:12: 'in'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:555:10: ( 'in' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:555:12: 'in'
 			{
 			match("in"); 
 
@@ -2561,8 +2592,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Null;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:493:10: ( 'null' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:493:12: 'null'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:556:10: ( 'null' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:556:12: 'null'
 			{
 			match("null"); 
 
@@ -2582,8 +2613,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Or;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:496:10: ( 'or' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:496:12: 'or'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:559:10: ( 'or' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:559:12: 'or'
 			{
 			match("or"); 
 
@@ -2603,8 +2634,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = And;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:497:10: ( 'and' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:497:12: 'and'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:560:10: ( 'and' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:560:12: 'and'
 			{
 			match("and"); 
 
@@ -2624,8 +2655,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Equals;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:498:10: ( '==' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:498:12: '=='
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:561:10: ( '==' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:561:12: '=='
 			{
 			match("=="); 
 
@@ -2645,8 +2676,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = NEquals;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:499:10: ( '!=' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:499:12: '!='
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:562:10: ( '!=' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:562:12: '!='
 			{
 			match("!="); 
 
@@ -2666,8 +2697,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GTEquals;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:500:10: ( '>=' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:500:12: '>='
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:563:10: ( '>=' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:563:12: '>='
 			{
 			match(">="); 
 
@@ -2687,8 +2718,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = LTEquals;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:501:10: ( '<=' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:501:12: '<='
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:564:10: ( '<=' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:564:12: '<='
 			{
 			match("<="); 
 
@@ -2708,8 +2739,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Pw;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:502:10: ( '^' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:502:12: '^'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:565:10: ( '^' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:565:12: '^'
 			{
 			match('^'); 
 			}
@@ -2728,8 +2759,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Excl;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:503:10: ( '!' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:503:12: '!'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:566:10: ( '!' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:566:12: '!'
 			{
 			match('!'); 
 			}
@@ -2748,8 +2779,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = GT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:504:10: ( '>' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:504:12: '>'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:567:10: ( '>' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:567:12: '>'
 			{
 			match('>'); 
 			}
@@ -2768,8 +2799,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = LT;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:505:10: ( '<' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:505:12: '<'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:568:10: ( '<' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:568:12: '<'
 			{
 			match('<'); 
 			}
@@ -2788,8 +2819,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Add;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:506:10: ( '+' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:506:12: '+'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:569:10: ( '+' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:569:12: '+'
 			{
 			match('+'); 
 			}
@@ -2808,8 +2839,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Subtract;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:507:10: ( '-' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:507:12: '-'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:570:10: ( '-' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:570:12: '-'
 			{
 			match('-'); 
 			}
@@ -2828,8 +2859,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Multiply;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:508:10: ( '*' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:508:12: '*'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:571:10: ( '*' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:571:12: '*'
 			{
 			match('*'); 
 			}
@@ -2848,8 +2879,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Divide;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:509:10: ( '/' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:509:12: '/'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:572:10: ( '/' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:572:12: '/'
 			{
 			match('/'); 
 			}
@@ -2868,8 +2899,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Modulus;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:510:10: ( '%' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:510:12: '%'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:573:10: ( '%' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:573:12: '%'
 			{
 			match('%'); 
 			}
@@ -2888,8 +2919,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = OBrace;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:511:10: ( '{' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:511:12: '{'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:574:10: ( '{' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:574:12: '{'
 			{
 			match('{'); 
 			}
@@ -2908,8 +2939,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = CBrace;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:512:10: ( '}' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:512:12: '}'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:575:10: ( '}' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:575:12: '}'
 			{
 			match('}'); 
 			}
@@ -2928,8 +2959,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = OBracket;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:513:10: ( '[' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:513:12: '['
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:576:10: ( '[' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:576:12: '['
 			{
 			match('['); 
 			}
@@ -2948,8 +2979,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = CBracket;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:514:10: ( ']' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:514:12: ']'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:577:10: ( ']' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:577:12: ']'
 			{
 			match(']'); 
 			}
@@ -2968,8 +2999,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = OParen;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:515:10: ( '(' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:515:12: '('
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:578:10: ( '(' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:578:12: '('
 			{
 			match('('); 
 			}
@@ -2988,8 +3019,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = CParen;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:516:10: ( ')' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:516:12: ')'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:579:10: ( ')' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:579:12: ')'
 			{
 			match(')'); 
 			}
@@ -3008,8 +3039,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Assign;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:518:10: ( '=' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:518:12: '='
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:581:10: ( '=' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:581:12: '='
 			{
 			match('='); 
 			}
@@ -3028,8 +3059,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Comma;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:519:10: ( ',' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:519:12: ','
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:582:10: ( ',' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:582:12: ','
 			{
 			match(','); 
 			}
@@ -3048,8 +3079,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = QMark;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:520:10: ( '?' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:520:12: '?'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:583:10: ( '?' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:583:12: '?'
 			{
 			match('?'); 
 			}
@@ -3068,8 +3099,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Dot;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:5: ( '.' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:522:7: '.'
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:585:5: ( '.' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:585:7: '.'
 			{
 			match('.'); 
 			}
@@ -3088,7 +3119,7 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Bool;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:525:3: ( 'true' | 'false' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:588:3: ( 'true' | 'false' )
 			int alt2=2;
 			int LA2_0 = input.LA(1);
 			if ( (LA2_0=='t') ) {
@@ -3106,14 +3137,14 @@ public class PyEsqueLexer extends Lexer {
 
 			switch (alt2) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:525:6: 'true'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:588:6: 'true'
 					{
 					match("true"); 
 
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:526:6: 'false'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:589:6: 'false'
 					{
 					match("false"); 
 
@@ -3135,12 +3166,12 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Number;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:530:3: ( Int ( Dot ( Digit )* )? )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:530:6: Int ( Dot ( Digit )* )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:593:3: ( Int ( Dot ( Digit )* )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:593:6: Int ( Dot ( Digit )* )?
 			{
 			mInt(); 
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:530:10: ( Dot ( Digit )* )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:593:10: ( Dot ( Digit )* )?
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0=='.') ) {
@@ -3148,11 +3179,11 @@ public class PyEsqueLexer extends Lexer {
 			}
 			switch (alt4) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:530:11: Dot ( Digit )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:593:11: Dot ( Digit )*
 					{
 					mDot(); 
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:530:15: ( Digit )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:593:15: ( Digit )*
 					loop3:
 					while (true) {
 						int alt3=2;
@@ -3202,8 +3233,8 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Identifier;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:534:3: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )* )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:534:6: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:597:3: ( ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )* )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:597:6: ( 'a' .. 'z' | 'A' .. 'Z' | '_' ) ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )*
 			{
 			if ( (input.LA(1) >= 'A' && input.LA(1) <= 'Z')||input.LA(1)=='_'||(input.LA(1) >= 'a' && input.LA(1) <= 'z') ) {
 				input.consume();
@@ -3213,7 +3244,7 @@ public class PyEsqueLexer extends Lexer {
 				recover(mse);
 				throw mse;
 			}
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:534:34: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:597:34: ( 'a' .. 'z' | 'A' .. 'Z' | '_' | Digit )*
 			loop5:
 			while (true) {
 				int alt5=2;
@@ -3258,7 +3289,7 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = String;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:542:3: ( '\"' (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )* '\"' | '\\'' (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )* '\\'' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:605:3: ( '\"' (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )* '\"' | '\\'' (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )* '\\'' )
 			int alt8=2;
 			int LA8_0 = input.LA(1);
 			if ( (LA8_0=='\"') ) {
@@ -3276,10 +3307,10 @@ public class PyEsqueLexer extends Lexer {
 
 			switch (alt8) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:542:6: '\"' (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )* '\"'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:605:6: '\"' (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )* '\"'
 					{
 					match('\"'); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:542:11: (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:605:11: (~ ( '\"' | '\\\\' ) | '\\\\' ( '\\\\' | '\"' ) )*
 					loop6:
 					while (true) {
 						int alt6=3;
@@ -3293,7 +3324,7 @@ public class PyEsqueLexer extends Lexer {
 
 						switch (alt6) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:542:12: ~ ( '\"' | '\\\\' )
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:605:12: ~ ( '\"' | '\\\\' )
 							{
 							if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '!')||(input.LA(1) >= '#' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 								input.consume();
@@ -3306,7 +3337,7 @@ public class PyEsqueLexer extends Lexer {
 							}
 							break;
 						case 2 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:542:29: '\\\\' ( '\\\\' | '\"' )
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:605:29: '\\\\' ( '\\\\' | '\"' )
 							{
 							match('\\'); 
 							if ( input.LA(1)=='\"'||input.LA(1)=='\\' ) {
@@ -3329,10 +3360,10 @@ public class PyEsqueLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:543:6: '\\'' (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )* '\\''
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:606:6: '\\'' (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )* '\\''
 					{
 					match('\''); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:543:11: (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:606:11: (~ ( '\\'' | '\\\\' ) | '\\\\' ( '\\\\' | '\\'' ) )*
 					loop7:
 					while (true) {
 						int alt7=3;
@@ -3346,7 +3377,7 @@ public class PyEsqueLexer extends Lexer {
 
 						switch (alt7) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:543:12: ~ ( '\\'' | '\\\\' )
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:606:12: ~ ( '\\'' | '\\\\' )
 							{
 							if ( (input.LA(1) >= '\u0000' && input.LA(1) <= '&')||(input.LA(1) >= '(' && input.LA(1) <= '[')||(input.LA(1) >= ']' && input.LA(1) <= '\uFFFF') ) {
 								input.consume();
@@ -3359,7 +3390,7 @@ public class PyEsqueLexer extends Lexer {
 							}
 							break;
 						case 2 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:543:29: '\\\\' ( '\\\\' | '\\'' )
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:606:29: '\\\\' ( '\\\\' | '\\'' )
 							{
 							match('\\'); 
 							if ( input.LA(1)=='\''||input.LA(1)=='\\' ) {
@@ -3400,7 +3431,7 @@ public class PyEsqueLexer extends Lexer {
 		try {
 			int _type = Comment;
 			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:547:3: ( '//' (~ ( '\\n' | '\\r' ) )* | '/*' ( . )* '*/' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:610:3: ( '//' (~ ( '\\n' | '\\r' ) )* | '/*' ( . )* '*/' )
 			int alt11=2;
 			int LA11_0 = input.LA(1);
 			if ( (LA11_0=='/') ) {
@@ -3434,11 +3465,11 @@ public class PyEsqueLexer extends Lexer {
 
 			switch (alt11) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:547:6: '//' (~ ( '\\n' | '\\r' ) )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:610:6: '//' (~ ( '\\n' | '\\r' ) )*
 					{
 					match("//"); 
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:547:11: (~ ( '\\n' | '\\r' ) )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:610:11: (~ ( '\\n' | '\\r' ) )*
 					loop9:
 					while (true) {
 						int alt9=2;
@@ -3471,11 +3502,11 @@ public class PyEsqueLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:548:6: '/*' ( . )* '*/'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:611:6: '/*' ( . )* '*/'
 					{
 					match("/*"); 
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:548:11: ( . )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:611:11: ( . )*
 					loop10:
 					while (true) {
 						int alt10=2;
@@ -3496,7 +3527,7 @@ public class PyEsqueLexer extends Lexer {
 
 						switch (alt10) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:548:11: .
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:611:11: .
 							{
 							matchAny(); 
 							}
@@ -3523,6 +3554,49 @@ public class PyEsqueLexer extends Lexer {
 	}
 	// $ANTLR end "Comment"
 
+	// $ANTLR start "SemiColon"
+	public final void mSemiColon() throws RecognitionException {
+		try {
+			int _type = SemiColon;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:618:2: ( ';' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:618:3: ';'
+			{
+			match(';'); 
+			skip();
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "SemiColon"
+
+	// $ANTLR start "SpaceChars"
+	public final void mSpaceChars() throws RecognitionException {
+		try {
+			int _type = SpaceChars;
+			int _channel = DEFAULT_TOKEN_CHANNEL;
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:623:2: ( SP )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:623:4: SP
+			{
+			mSP(); 
+
+			skip();
+			}
+
+			state.type = _type;
+			state.channel = _channel;
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
+	// $ANTLR end "SpaceChars"
+
 	// $ANTLR start "NewLine"
 	public final void mNewLine() throws RecognitionException {
 		try {
@@ -3530,12 +3604,15 @@ public class PyEsqueLexer extends Lexer {
 			int _channel = DEFAULT_TOKEN_CHANNEL;
 			CommonToken SP1=null;
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:553:2: ( NL ( SP )? )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:553:4: NL ( SP )?
+
+			  //System.out.println("Newline new text= "+input.LA(2));
+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:631:2: ( NL ( SP )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:631:4: NL ( SP )?
 			{
 			mNL(); 
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:553:7: ( SP )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:631:7: ( SP )?
 			int alt12=2;
 			int LA12_0 = input.LA(1);
 			if ( (LA12_0=='\t'||LA12_0==' ') ) {
@@ -3543,21 +3620,20 @@ public class PyEsqueLexer extends Lexer {
 			}
 			switch (alt12) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:553:7: SP
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:631:7: SP
 					{
-					int SP1Start1274 = getCharIndex();
-					int SP1StartLine1274 = getLine();
-					int SP1StartCharPos1274 = getCharPositionInLine();
+					int SP1Start1319 = getCharIndex();
+					int SP1StartLine1319 = getLine();
+					int SP1StartCharPos1319 = getCharPositionInLine();
 					mSP(); 
-					SP1 = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, SP1Start1274, getCharIndex()-1);
-					SP1.setLine(SP1StartLine1274);
-					SP1.setCharPositionInLine(SP1StartCharPos1274);
+					SP1 = new CommonToken(input, Token.INVALID_TOKEN_TYPE, Token.DEFAULT_CHANNEL, SP1Start1319, getCharIndex()-1);
+					SP1.setLine(SP1StartLine1319);
+					SP1.setCharPositionInLine(SP1StartCharPos1319);
 
 					}
 					break;
 
 			}
-
 
 
 			     int n = (SP1!=null?SP1.getText():null) == null ? 0 : (SP1!=null?SP1.getText():null).length();
@@ -3589,53 +3665,10 @@ public class PyEsqueLexer extends Lexer {
 	}
 	// $ANTLR end "NewLine"
 
-	// $ANTLR start "SemiColon"
-	public final void mSemiColon() throws RecognitionException {
-		try {
-			int _type = SemiColon;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:577:2: ( ';' )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:577:3: ';'
-			{
-			match(';'); 
-			skip();
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "SemiColon"
-
-	// $ANTLR start "SpaceChars"
-	public final void mSpaceChars() throws RecognitionException {
-		try {
-			int _type = SpaceChars;
-			int _channel = DEFAULT_TOKEN_CHANNEL;
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:582:2: ( SP )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:582:4: SP
-			{
-			mSP(); 
-
-			skip();
-			}
-
-			state.type = _type;
-			state.channel = _channel;
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "SpaceChars"
-
 	// $ANTLR start "Int"
 	public final void mInt() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:586:3: ( '1' .. '9' ( Digit )* | '0' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:656:3: ( '1' .. '9' ( Digit )* | '0' )
 			int alt14=2;
 			int LA14_0 = input.LA(1);
 			if ( ((LA14_0 >= '1' && LA14_0 <= '9')) ) {
@@ -3653,10 +3686,10 @@ public class PyEsqueLexer extends Lexer {
 
 			switch (alt14) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:586:6: '1' .. '9' ( Digit )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:656:6: '1' .. '9' ( Digit )*
 					{
 					matchRange('1','9'); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:586:15: ( Digit )*
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:656:15: ( Digit )*
 					loop13:
 					while (true) {
 						int alt13=2;
@@ -3688,7 +3721,7 @@ public class PyEsqueLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:587:6: '0'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:657:6: '0'
 					{
 					match('0'); 
 					}
@@ -3705,7 +3738,7 @@ public class PyEsqueLexer extends Lexer {
 	// $ANTLR start "Digit"
 	public final void mDigit() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:591:3: ( '0' .. '9' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:661:3: ( '0' .. '9' )
 			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:
 			{
 			if ( (input.LA(1) >= '0' && input.LA(1) <= '9') ) {
@@ -3728,7 +3761,7 @@ public class PyEsqueLexer extends Lexer {
 	// $ANTLR start "NL"
 	public final void mNL() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:593:17: ( ( '\\r' )? '\\n' | '\\r' )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:663:17: ( ( '\\r' )? '\\n' | '\\r' )
 			int alt16=2;
 			int LA16_0 = input.LA(1);
 			if ( (LA16_0=='\r') ) {
@@ -3754,9 +3787,9 @@ public class PyEsqueLexer extends Lexer {
 
 			switch (alt16) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:593:19: ( '\\r' )? '\\n'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:663:19: ( '\\r' )? '\\n'
 					{
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:593:19: ( '\\r' )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:663:19: ( '\\r' )?
 					int alt15=2;
 					int LA15_0 = input.LA(1);
 					if ( (LA15_0=='\r') ) {
@@ -3764,7 +3797,7 @@ public class PyEsqueLexer extends Lexer {
 					}
 					switch (alt15) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:593:19: '\\r'
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:663:19: '\\r'
 							{
 							match('\r'); 
 							}
@@ -3776,7 +3809,7 @@ public class PyEsqueLexer extends Lexer {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:593:32: '\\r'
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:663:32: '\\r'
 					{
 					match('\r'); 
 					}
@@ -3793,10 +3826,10 @@ public class PyEsqueLexer extends Lexer {
 	// $ANTLR start "SP"
 	public final void mSP() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:594:17: ( ( ' ' | '\\t' )+ )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:594:19: ( ' ' | '\\t' )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:664:17: ( ( ' ' | '\\t' )+ )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:664:19: ( ' ' | '\\t' )+
 			{
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:594:19: ( ' ' | '\\t' )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:664:19: ( ' ' | '\\t' )+
 			int cnt17=0;
 			loop17:
 			while (true) {
@@ -3841,8 +3874,8 @@ public class PyEsqueLexer extends Lexer {
 	// $ANTLR start "Indent"
 	public final void mIndent() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:595:17: ()
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:595:19: 
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:665:17: ()
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:665:19: 
 			{
 			}
 
@@ -3856,8 +3889,8 @@ public class PyEsqueLexer extends Lexer {
 	// $ANTLR start "Dedent"
 	public final void mDedent() throws RecognitionException {
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:596:17: ()
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:596:19: 
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:666:17: ()
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:666:19: 
 			{
 			}
 
@@ -3870,21 +3903,21 @@ public class PyEsqueLexer extends Lexer {
 
 	@Override
 	public void mTokens() throws RecognitionException {
-		// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:8: ( T__167 | T__168 | Ellipse | Rect | Line | Curve | Quad | Point | Triangle | Polygon | Skirt | SkirtBack | LShape | Cosine | Sine | Tan | ATan | Sqrt | Pow | Sq | Random | Round | Gaussian | Noise | Map | Inch | Mm | Cm | Units | Move | MoveBy | Heading | Copy | Rotate | Scale | Fill | Stroke | NoFill | NoStroke | Weight | Hide | Show | Group | Expand | Merge | MirrorX | MirrorY | Union | Difference | Clip | Xor | Flatten | Grid | Wave | Spiral | Arc | FollowCurve | Slider | Template | SetWidth | SetHeight | SetSeam | SetCorner | SetName | SetVFold | SetHFold | AddDesign | TemplateCollection | GetWidth | GetHeight | GetX | GetY | GetOrigin | GetRotation | GetAngle | GetRadius | GetFill | GetStroke | GetStart | GetEnd | GetDistance | GetIntersect | COLOR_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT | PI_CONSTANT | LAdd | LRemove | Println | Print | Assert | Size | Def | If | Else | Return | Repeat | While | To | Do | In | Null | Or | And | Equals | NEquals | GTEquals | LTEquals | Pw | Excl | GT | LT | Add | Subtract | Multiply | Divide | Modulus | OBrace | CBrace | OBracket | CBracket | OParen | CParen | Assign | Comma | QMark | Dot | Bool | Number | Identifier | String | Comment | NewLine | SemiColon | SpaceChars )
-		int alt18=135;
+		// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:8: ( T__168 | T__169 | Ellipse | Rect | Line | Curve | Quad | Point | Triangle | Polygon | Skirt | SkirtBack | LShape | Cosine | Sine | Tan | ATan | Sqrt | Pow | Sq | Random | Round | Gaussian | Noise | Map | Inch | Mm | Cm | Units | Move | MoveBy | Heading | Copy | Rotate | Scale | Fill | Stroke | NoFill | NoStroke | Weight | Hide | Show | Group | Expand | Merge | MirrorX | MirrorY | Union | Difference | Clip | Xor | Flatten | Grid | Wave | Spiral | Arc | FollowCurve | Slider | Template | SetWidth | SetHeight | SetSeam | SetCorner | SetName | SetVFold | SetHFold | AddDesign | TemplateCollection | GetWidth | GetHeight | GetX | GetY | GetOrigin | GetRotation | GetAngle | GetRadius | GetFill | GetStroke | GetStart | GetEnd | GetDistance | GetIntersect | COLOR_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT | PI_CONSTANT | LAdd | LRemove | Println | Print | Assert | Size | Def | If | Else | Return | Repeat | Radial | While | To | Do | In | Null | Or | And | Equals | NEquals | GTEquals | LTEquals | Pw | Excl | GT | LT | Add | Subtract | Multiply | Divide | Modulus | OBrace | CBrace | OBracket | CBracket | OParen | CParen | Assign | Comma | QMark | Dot | Bool | Number | Identifier | String | Comment | SemiColon | SpaceChars | NewLine )
+		int alt18=136;
 		alt18 = dfa18.predict(input);
 		switch (alt18) {
 			case 1 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:10: T__167
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:10: T__168
 				{
-				mT__167(); 
+				mT__168(); 
 
 				}
 				break;
 			case 2 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:17: T__168
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:17: T__169
 				{
-				mT__168(); 
+				mT__169(); 
 
 				}
 				break;
@@ -4554,268 +4587,275 @@ public class PyEsqueLexer extends Lexer {
 				}
 				break;
 			case 98 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:726: While
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:726: Radial
+				{
+				mRadial(); 
+
+				}
+				break;
+			case 99 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:733: While
 				{
 				mWhile(); 
 
 				}
 				break;
-			case 99 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:732: To
+			case 100 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:739: To
 				{
 				mTo(); 
 
 				}
 				break;
-			case 100 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:735: Do
+			case 101 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:742: Do
 				{
 				mDo(); 
 
 				}
 				break;
-			case 101 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:738: In
+			case 102 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:745: In
 				{
 				mIn(); 
 
 				}
 				break;
-			case 102 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:741: Null
+			case 103 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:748: Null
 				{
 				mNull(); 
 
 				}
 				break;
-			case 103 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:746: Or
+			case 104 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:753: Or
 				{
 				mOr(); 
 
 				}
 				break;
-			case 104 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:749: And
+			case 105 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:756: And
 				{
 				mAnd(); 
 
 				}
 				break;
-			case 105 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:753: Equals
+			case 106 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:760: Equals
 				{
 				mEquals(); 
 
 				}
 				break;
-			case 106 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:760: NEquals
+			case 107 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:767: NEquals
 				{
 				mNEquals(); 
 
 				}
 				break;
-			case 107 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:768: GTEquals
+			case 108 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:775: GTEquals
 				{
 				mGTEquals(); 
 
 				}
 				break;
-			case 108 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:777: LTEquals
+			case 109 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:784: LTEquals
 				{
 				mLTEquals(); 
 
 				}
 				break;
-			case 109 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:786: Pw
+			case 110 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:793: Pw
 				{
 				mPw(); 
 
 				}
 				break;
-			case 110 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:789: Excl
+			case 111 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:796: Excl
 				{
 				mExcl(); 
 
 				}
 				break;
-			case 111 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:794: GT
+			case 112 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:801: GT
 				{
 				mGT(); 
 
 				}
 				break;
-			case 112 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:797: LT
+			case 113 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:804: LT
 				{
 				mLT(); 
 
 				}
 				break;
-			case 113 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:800: Add
+			case 114 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:807: Add
 				{
 				mAdd(); 
 
 				}
 				break;
-			case 114 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:804: Subtract
+			case 115 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:811: Subtract
 				{
 				mSubtract(); 
 
 				}
 				break;
-			case 115 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:813: Multiply
+			case 116 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:820: Multiply
 				{
 				mMultiply(); 
 
 				}
 				break;
-			case 116 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:822: Divide
+			case 117 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:829: Divide
 				{
 				mDivide(); 
 
 				}
 				break;
-			case 117 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:829: Modulus
+			case 118 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:836: Modulus
 				{
 				mModulus(); 
 
 				}
 				break;
-			case 118 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:837: OBrace
+			case 119 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:844: OBrace
 				{
 				mOBrace(); 
 
 				}
 				break;
-			case 119 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:844: CBrace
+			case 120 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:851: CBrace
 				{
 				mCBrace(); 
 
 				}
 				break;
-			case 120 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:851: OBracket
+			case 121 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:858: OBracket
 				{
 				mOBracket(); 
 
 				}
 				break;
-			case 121 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:860: CBracket
+			case 122 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:867: CBracket
 				{
 				mCBracket(); 
 
 				}
 				break;
-			case 122 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:869: OParen
+			case 123 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:876: OParen
 				{
 				mOParen(); 
 
 				}
 				break;
-			case 123 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:876: CParen
+			case 124 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:883: CParen
 				{
 				mCParen(); 
 
 				}
 				break;
-			case 124 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:883: Assign
+			case 125 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:890: Assign
 				{
 				mAssign(); 
 
 				}
 				break;
-			case 125 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:890: Comma
+			case 126 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:897: Comma
 				{
 				mComma(); 
 
 				}
 				break;
-			case 126 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:896: QMark
+			case 127 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:903: QMark
 				{
 				mQMark(); 
 
 				}
 				break;
-			case 127 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:902: Dot
+			case 128 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:909: Dot
 				{
 				mDot(); 
 
 				}
 				break;
-			case 128 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:906: Bool
+			case 129 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:913: Bool
 				{
 				mBool(); 
 
 				}
 				break;
-			case 129 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:911: Number
+			case 130 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:918: Number
 				{
 				mNumber(); 
 
 				}
 				break;
-			case 130 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:918: Identifier
+			case 131 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:925: Identifier
 				{
 				mIdentifier(); 
 
 				}
 				break;
-			case 131 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:929: String
+			case 132 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:936: String
 				{
 				mString(); 
 
 				}
 				break;
-			case 132 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:936: Comment
+			case 133 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:943: Comment
 				{
 				mComment(); 
 
 				}
 				break;
-			case 133 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:944: NewLine
-				{
-				mNewLine(); 
-
-				}
-				break;
 			case 134 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:952: SemiColon
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:951: SemiColon
 				{
 				mSemiColon(); 
 
 				}
 				break;
 			case 135 :
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:962: SpaceChars
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:961: SpaceChars
 				{
 				mSpaceChars(); 
+
+				}
+				break;
+			case 136 :
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g:1:972: NewLine
+				{
+				mNewLine(); 
 
 				}
 				break;
@@ -4827,83 +4867,83 @@ public class PyEsqueLexer extends Lexer {
 	protected DFA18 dfa18 = new DFA18(this);
 	static final String DFA18_eotS =
 		"\3\uffff\33\64\1\uffff\1\64\1\176\1\u0080\1\u0082\1\u0084\4\uffff\1\u0086"+
-		"\20\uffff\10\64\1\u0095\7\64\1\u00a0\2\64\1\u00a5\7\64\1\u00ae\1\u00af"+
-		"\13\64\1\u00be\24\64\1\u00d5\5\64\1\u00db\12\uffff\14\64\1\u00e8\1\64"+
-		"\1\uffff\4\64\1\u00ee\3\64\1\u00f2\1\64\1\uffff\1\64\1\u00f5\2\64\1\uffff"+
-		"\10\64\2\uffff\1\64\1\u0106\1\u0108\1\64\1\u010a\10\64\1\u011e\1\uffff"+
-		"\17\64\1\u012f\1\u0130\5\64\1\uffff\5\64\1\uffff\1\64\1\u013d\1\64\1\u013f"+
-		"\6\64\1\u0146\1\64\1\uffff\1\u0148\1\u0149\1\u014a\1\64\1\u014c\1\uffff"+
-		"\2\64\1\u014f\1\uffff\2\64\1\uffff\1\u0152\1\u0153\2\64\1\u0156\11\64"+
-		"\1\u0161\1\u0162\1\uffff\1\64\1\uffff\1\64\1\uffff\2\64\1\u0167\2\64\1"+
-		"\u016a\1\u016b\13\64\1\u0178\1\uffff\6\64\1\u0180\1\u0181\5\64\1\u0187"+
-		"\1\64\1\u0189\2\uffff\1\u0130\2\64\1\u0130\1\64\1\u0130\6\64\1\uffff\1"+
-		"\64\1\uffff\4\64\1\u0198\1\64\1\uffff\1\u019a\3\uffff\1\u019b\1\uffff"+
-		"\1\u019d\1\64\1\uffff\1\64\1\u01a1\2\uffff\1\u01a2\1\64\1\uffff\12\64"+
-		"\2\uffff\3\64\1\u01b1\1\uffff\2\64\2\uffff\11\64\1\u01be\2\64\1\uffff"+
-		"\2\64\1\u01c3\1\64\1\u01c5\1\u01c6\1\64\2\uffff\3\64\1\u014f\1\64\1\uffff"+
-		"\1\u01cc\1\uffff\2\u0130\3\64\1\u0130\1\u01d0\2\64\1\u01d3\1\u01d4\1\u01d5"+
-		"\1\u01d6\1\u01d7\1\uffff\1\u01d8\2\uffff\1\64\1\uffff\3\64\2\uffff\1\u01dd"+
-		"\1\u01de\1\u01df\7\64\1\u01e7\1\64\1\u01e9\1\64\1\uffff\11\64\1\u01f4"+
-		"\2\64\1\uffff\1\u01f7\1\64\1\u01f9\1\u01fa\1\uffff\1\64\2\uffff\4\64\1"+
-		"\u0201\1\uffff\3\u0130\1\uffff\1\u0202\1\u0203\6\uffff\1\u0204\3\64\3"+
-		"\uffff\3\64\1\u020b\1\64\1\u020d\1\64\1\uffff\1\64\1\uffff\7\64\1\u0217"+
-		"\2\64\1\uffff\1\u021a\1\64\1\uffff\1\64\2\uffff\1\u021d\1\u021e\1\64\1"+
-		"\u0220\2\64\4\uffff\1\u0223\1\u0225\1\64\1\u0227\1\64\1\u0229\1\uffff"+
-		"\1\64\1\uffff\1\u022b\2\64\1\u022e\4\64\1\u0233\1\uffff\1\64\1\u0235\1"+
-		"\uffff\1\64\1\u0237\2\uffff\1\64\1\uffff\1\64\1\u023a\1\uffff\1\64\1\uffff"+
-		"\1\u023c\1\uffff\1\u023d\1\uffff\1\u023e\1\uffff\1\u023f\1\64\1\uffff"+
-		"\1\u0241\1\u0242\1\64\1\u0244\1\uffff\1\u0245\1\uffff\1\64\1\uffff\1\u0247"+
-		"\1\64\1\uffff\1\64\4\uffff\1\64\2\uffff\1\64\2\uffff\1\64\1\uffff\3\64"+
-		"\1\u0250\1\64\1\u0252\2\64\1\uffff\1\u0255\1\uffff\1\64\1\u0257\1\uffff"+
-		"\1\64\1\uffff\3\64\1\u025c\1\uffff";
+		"\20\uffff\10\64\1\u0096\7\64\1\u00a1\2\64\1\u00a6\7\64\1\u00af\1\u00b0"+
+		"\13\64\1\u00bf\24\64\1\u00d6\5\64\1\u00dc\12\uffff\15\64\1\u00ea\1\64"+
+		"\1\uffff\4\64\1\u00f0\3\64\1\u00f4\1\64\1\uffff\1\64\1\u00f7\2\64\1\uffff"+
+		"\10\64\2\uffff\1\64\1\u0108\1\u010a\1\64\1\u010c\10\64\1\u0120\1\uffff"+
+		"\17\64\1\u0131\1\u0132\5\64\1\uffff\5\64\1\uffff\1\64\1\u013f\1\64\1\u0141"+
+		"\7\64\1\u0149\1\64\1\uffff\1\u014b\1\u014c\1\u014d\1\64\1\u014f\1\uffff"+
+		"\2\64\1\u0152\1\uffff\2\64\1\uffff\1\u0155\1\u0156\2\64\1\u0159\11\64"+
+		"\1\u0164\1\u0165\1\uffff\1\64\1\uffff\1\64\1\uffff\2\64\1\u016a\2\64\1"+
+		"\u016d\1\u016e\13\64\1\u017b\1\uffff\6\64\1\u0183\1\u0184\5\64\1\u018a"+
+		"\1\64\1\u018c\2\uffff\1\u0132\2\64\1\u0132\1\64\1\u0132\6\64\1\uffff\1"+
+		"\64\1\uffff\5\64\1\u019c\1\64\1\uffff\1\u019e\3\uffff\1\u019f\1\uffff"+
+		"\1\u01a1\1\64\1\uffff\1\64\1\u01a5\2\uffff\1\u01a6\1\64\1\uffff\12\64"+
+		"\2\uffff\3\64\1\u01b5\1\uffff\2\64\2\uffff\11\64\1\u01c2\2\64\1\uffff"+
+		"\2\64\1\u01c7\1\64\1\u01c9\1\u01ca\1\64\2\uffff\3\64\1\u0152\1\64\1\uffff"+
+		"\1\u01d0\1\uffff\2\u0132\3\64\1\u0132\1\u01d4\2\64\1\u01d7\1\u01d8\1\u01d9"+
+		"\1\u01da\1\u01db\1\u01dc\1\uffff\1\u01dd\2\uffff\1\64\1\uffff\3\64\2\uffff"+
+		"\1\u01e2\1\u01e3\1\u01e4\7\64\1\u01ec\1\64\1\u01ee\1\64\1\uffff\11\64"+
+		"\1\u01f9\2\64\1\uffff\1\u01fc\1\64\1\u01fe\1\u01ff\1\uffff\1\64\2\uffff"+
+		"\4\64\1\u0206\1\uffff\3\u0132\1\uffff\1\u0207\1\u0208\7\uffff\1\u0209"+
+		"\3\64\3\uffff\3\64\1\u0210\1\64\1\u0212\1\64\1\uffff\1\64\1\uffff\7\64"+
+		"\1\u021c\2\64\1\uffff\1\u021f\1\64\1\uffff\1\64\2\uffff\1\u0222\1\u0223"+
+		"\1\64\1\u0225\2\64\4\uffff\1\u0228\1\u022a\1\64\1\u022c\1\64\1\u022e\1"+
+		"\uffff\1\64\1\uffff\1\u0230\2\64\1\u0233\4\64\1\u0238\1\uffff\1\64\1\u023a"+
+		"\1\uffff\1\64\1\u023c\2\uffff\1\64\1\uffff\1\64\1\u023f\1\uffff\1\64\1"+
+		"\uffff\1\u0241\1\uffff\1\u0242\1\uffff\1\u0243\1\uffff\1\u0244\1\64\1"+
+		"\uffff\1\u0246\1\u0247\1\64\1\u0249\1\uffff\1\u024a\1\uffff\1\64\1\uffff"+
+		"\1\u024c\1\64\1\uffff\1\64\4\uffff\1\64\2\uffff\1\64\2\uffff\1\64\1\uffff"+
+		"\3\64\1\u0255\1\64\1\u0257\2\64\1\uffff\1\u025a\1\uffff\1\64\1\u025c\1"+
+		"\uffff\1\64\1\uffff\3\64\1\u0261\1\uffff";
 	static final String DFA18_eofS =
-		"\u025d\uffff";
+		"\u0262\uffff";
 	static final String DFA18_minS =
 		"\1\11\2\uffff\1\154\1\141\1\151\1\154\1\165\1\157\1\141\1\143\1\146\1"+
 		"\144\1\141\1\157\1\141\1\156\1\145\2\141\1\151\1\157\1\105\1\114\1\122"+
 		"\1\111\1\105\1\122\1\110\1\105\1\uffff\1\162\4\75\4\uffff\1\52\20\uffff"+
-		"\1\154\1\160\1\143\1\156\1\164\1\156\1\162\1\160\1\60\1\151\1\141\3\151"+
+		"\1\154\1\160\1\143\1\144\1\164\1\156\1\162\1\160\1\60\1\151\1\141\3\151"+
 		"\1\156\1\155\1\60\1\151\1\156\1\60\1\141\1\162\1\157\2\151\1\164\1\160"+
 		"\2\60\1\141\1\143\1\144\1\163\1\144\1\165\1\151\1\164\1\106\1\154\1\160"+
 		"\1\60\1\166\2\162\1\151\1\141\1\144\1\154\1\141\1\154\1\156\1\154\1\151"+
 		"\1\166\1\151\1\146\1\162\1\104\1\101\1\105\1\122\1\60\1\114\1\101\1\111"+
 		"\1\104\1\111\1\60\12\uffff\1\151\1\145\1\141\1\164\1\157\1\165\1\145\1"+
-		"\144\1\156\1\141\1\145\1\166\1\60\1\171\1\uffff\1\160\1\144\1\156\1\171"+
-		"\1\60\1\156\1\141\1\145\1\60\1\160\1\uffff\1\162\1\60\1\145\1\164\1\uffff"+
-		"\1\154\1\157\1\167\1\162\1\144\1\103\1\157\1\150\2\uffff\1\156\2\60\1"+
-		"\145\1\60\1\163\1\165\1\144\1\101\1\163\1\151\1\164\1\154\1\60\1\uffff"+
-		"\1\145\1\147\1\162\1\157\1\144\1\145\1\154\1\164\1\154\1\143\1\163\1\147"+
-		"\1\145\1\154\1\146\2\60\1\105\1\103\1\105\1\120\1\113\1\uffff\1\114\1"+
-		"\116\2\124\1\107\1\uffff\1\160\1\60\1\156\1\60\1\166\1\162\1\141\1\157"+
-		"\1\144\1\164\1\60\1\145\1\uffff\3\60\1\164\1\60\1\uffff\1\164\1\156\1"+
-		"\60\1\uffff\1\154\1\164\1\uffff\2\60\1\145\1\153\1\60\1\141\1\145\1\151"+
-		"\1\106\1\145\1\157\1\141\1\106\1\162\2\60\1\uffff\1\145\1\uffff\1\162"+
-		"\1\uffff\1\163\1\160\1\60\1\151\1\145\2\60\1\162\1\141\1\156\1\151\1\164"+
-		"\1\156\1\151\1\156\1\145\1\154\1\162\1\60\1\uffff\1\102\1\145\1\157\1"+
-		"\163\1\156\1\151\2\60\1\164\1\157\1\164\1\145\1\150\1\60\1\145\1\60\2"+
-		"\uffff\1\60\1\113\1\116\1\60\1\114\1\60\1\117\1\107\1\105\2\110\1\163"+
-		"\1\uffff\1\144\1\uffff\1\145\1\156\1\164\1\155\1\60\1\145\1\uffff\1\60"+
-		"\3\uffff\1\60\1\uffff\1\60\1\147\1\uffff\1\141\1\60\2\uffff\1\60\1\145"+
-		"\1\uffff\1\154\1\162\1\144\1\151\1\157\1\141\1\162\1\155\1\157\1\164\2"+
-		"\uffff\1\163\1\164\1\151\1\60\1\uffff\1\144\1\151\2\uffff\1\151\1\164"+
-		"\1\144\1\147\1\154\1\141\1\144\1\163\1\164\1\60\1\154\1\157\1\uffff\1"+
-		"\157\1\171\1\60\1\162\2\60\1\156\2\uffff\1\145\1\167\1\151\1\60\1\164"+
-		"\1\uffff\1\60\1\uffff\2\60\1\105\1\127\1\105\2\60\1\124\1\145\5\60\1\uffff"+
-		"\1\60\2\uffff\1\156\1\uffff\1\154\1\164\1\141\2\uffff\3\60\1\164\1\147"+
-		"\1\154\1\155\1\156\1\145\1\154\1\60\1\151\1\60\1\141\1\uffff\1\164\2\147"+
-		"\1\141\1\151\2\154\1\157\1\162\1\60\1\164\1\145\1\uffff\1\60\1\153\2\60"+
-		"\1\uffff\1\130\2\uffff\1\147\1\156\1\103\1\157\1\60\1\uffff\3\60\1\uffff"+
-		"\2\60\6\uffff\1\60\2\145\1\143\3\uffff\2\150\1\144\1\60\1\145\1\60\1\144"+
-		"\1\uffff\1\147\1\uffff\1\156\2\150\1\151\1\164\1\165\1\145\1\60\1\153"+
-		"\1\164\1\uffff\1\60\1\162\1\uffff\1\145\2\uffff\2\60\1\102\1\60\1\165"+
-		"\1\156\4\uffff\2\60\1\153\1\60\1\164\1\60\1\uffff\1\162\1\uffff\1\60\1"+
-		"\156\1\116\1\60\1\164\1\156\1\151\1\163\1\60\1\uffff\1\145\1\60\1\uffff"+
-		"\1\163\1\60\2\uffff\1\171\1\uffff\1\162\1\60\1\uffff\1\157\1\uffff\1\60"+
-		"\1\uffff\1\60\1\uffff\1\60\1\uffff\1\60\1\157\1\uffff\2\60\1\157\1\60"+
-		"\1\uffff\1\60\1\uffff\1\145\1\uffff\1\60\1\166\1\uffff\1\154\4\uffff\1"+
-		"\151\2\uffff\1\156\2\uffff\1\143\1\uffff\1\145\1\154\1\163\1\60\1\164"+
-		"\1\60\2\145\1\uffff\1\60\1\uffff\1\143\1\60\1\uffff\1\164\1\uffff\1\151"+
-		"\1\157\1\156\1\60\1\uffff";
+		"\144\1\151\1\156\1\141\1\145\1\166\1\60\1\171\1\uffff\1\160\1\144\1\156"+
+		"\1\171\1\60\1\156\1\141\1\145\1\60\1\160\1\uffff\1\162\1\60\1\145\1\164"+
+		"\1\uffff\1\154\1\157\1\167\1\162\1\144\1\103\1\157\1\150\2\uffff\1\156"+
+		"\2\60\1\145\1\60\1\163\1\165\1\144\1\101\1\163\1\151\1\164\1\154\1\60"+
+		"\1\uffff\1\145\1\147\1\162\1\157\1\144\1\145\1\154\1\164\1\154\1\143\1"+
+		"\163\1\147\1\145\1\154\1\146\2\60\1\105\1\103\1\105\1\120\1\113\1\uffff"+
+		"\1\114\1\116\2\124\1\107\1\uffff\1\160\1\60\1\156\1\60\1\166\1\162\1\141"+
+		"\1\157\1\141\1\144\1\164\1\60\1\145\1\uffff\3\60\1\164\1\60\1\uffff\1"+
+		"\164\1\156\1\60\1\uffff\1\154\1\164\1\uffff\2\60\1\145\1\153\1\60\1\141"+
+		"\1\145\1\151\1\106\1\145\1\157\1\141\1\106\1\162\2\60\1\uffff\1\145\1"+
+		"\uffff\1\162\1\uffff\1\163\1\160\1\60\1\151\1\145\2\60\1\162\1\141\1\156"+
+		"\1\151\1\164\1\156\1\151\1\156\1\145\1\154\1\162\1\60\1\uffff\1\102\1"+
+		"\145\1\157\1\163\1\156\1\151\2\60\1\164\1\157\1\164\1\145\1\150\1\60\1"+
+		"\145\1\60\2\uffff\1\60\1\113\1\116\1\60\1\114\1\60\1\117\1\107\1\105\2"+
+		"\110\1\163\1\uffff\1\144\1\uffff\1\145\1\156\1\164\1\155\1\154\1\60\1"+
+		"\145\1\uffff\1\60\3\uffff\1\60\1\uffff\1\60\1\147\1\uffff\1\141\1\60\2"+
+		"\uffff\1\60\1\145\1\uffff\1\154\1\162\1\144\1\151\1\157\1\141\1\162\1"+
+		"\155\1\157\1\164\2\uffff\1\163\1\164\1\151\1\60\1\uffff\1\144\1\151\2"+
+		"\uffff\1\151\1\164\1\144\1\147\1\154\1\141\1\144\1\163\1\164\1\60\1\154"+
+		"\1\157\1\uffff\1\157\1\171\1\60\1\162\2\60\1\156\2\uffff\1\145\1\167\1"+
+		"\151\1\60\1\164\1\uffff\1\60\1\uffff\2\60\1\105\1\127\1\105\2\60\1\124"+
+		"\1\145\6\60\1\uffff\1\60\2\uffff\1\156\1\uffff\1\154\1\164\1\141\2\uffff"+
+		"\3\60\1\164\1\147\1\154\1\155\1\156\1\145\1\154\1\60\1\151\1\60\1\141"+
+		"\1\uffff\1\164\2\147\1\141\1\151\2\154\1\157\1\162\1\60\1\164\1\145\1"+
+		"\uffff\1\60\1\153\2\60\1\uffff\1\130\2\uffff\1\147\1\156\1\103\1\157\1"+
+		"\60\1\uffff\3\60\1\uffff\2\60\7\uffff\1\60\2\145\1\143\3\uffff\2\150\1"+
+		"\144\1\60\1\145\1\60\1\144\1\uffff\1\147\1\uffff\1\156\2\150\1\151\1\164"+
+		"\1\165\1\145\1\60\1\153\1\164\1\uffff\1\60\1\162\1\uffff\1\145\2\uffff"+
+		"\2\60\1\102\1\60\1\165\1\156\4\uffff\2\60\1\153\1\60\1\164\1\60\1\uffff"+
+		"\1\162\1\uffff\1\60\1\156\1\116\1\60\1\164\1\156\1\151\1\163\1\60\1\uffff"+
+		"\1\145\1\60\1\uffff\1\163\1\60\2\uffff\1\171\1\uffff\1\162\1\60\1\uffff"+
+		"\1\157\1\uffff\1\60\1\uffff\1\60\1\uffff\1\60\1\uffff\1\60\1\157\1\uffff"+
+		"\2\60\1\157\1\60\1\uffff\1\60\1\uffff\1\145\1\uffff\1\60\1\166\1\uffff"+
+		"\1\154\4\uffff\1\151\2\uffff\1\156\2\uffff\1\143\1\uffff\1\145\1\154\1"+
+		"\163\1\60\1\164\1\60\2\145\1\uffff\1\60\1\uffff\1\143\1\60\1\uffff\1\164"+
+		"\1\uffff\1\151\1\157\1\156\1\60\1\uffff";
 	static final String DFA18_maxS =
 		"\1\175\2\uffff\1\170\1\157\1\151\2\165\2\162\1\164\1\156\1\164\1\162\1"+
 		"\165\1\157\1\156\1\151\1\165\1\150\1\151\1\157\1\105\1\114\1\122\1\125"+
@@ -4914,69 +4954,69 @@ public class PyEsqueLexer extends Lexer {
 		"\1\172\1\166\2\162\1\151\1\141\1\144\1\154\1\141\1\154\1\156\1\154\1\151"+
 		"\1\166\1\151\1\146\1\162\1\104\1\125\1\105\1\122\1\172\1\114\1\101\1\111"+
 		"\1\104\1\111\1\172\12\uffff\1\151\1\145\1\141\1\164\1\157\1\165\1\145"+
-		"\1\144\1\156\1\141\1\145\1\166\1\172\1\171\1\uffff\1\160\1\144\1\156\1"+
-		"\171\1\172\1\156\1\141\1\145\1\172\1\160\1\uffff\1\162\1\172\1\145\1\164"+
-		"\1\uffff\1\154\1\157\1\167\1\162\1\144\1\127\1\157\1\150\2\uffff\1\156"+
-		"\2\172\1\145\1\172\1\163\1\165\1\144\1\131\1\163\1\151\1\164\1\154\1\172"+
-		"\1\uffff\1\145\1\147\1\162\1\164\1\144\1\145\1\154\1\164\1\154\1\143\1"+
-		"\163\1\147\1\145\1\154\1\146\2\172\1\105\1\103\1\131\1\120\1\113\1\uffff"+
-		"\1\114\1\116\2\124\1\107\1\uffff\1\160\1\172\1\156\1\172\1\166\1\162\1"+
-		"\141\1\157\1\144\1\164\1\172\1\145\1\uffff\3\172\1\164\1\172\1\uffff\1"+
-		"\164\1\156\1\172\1\uffff\1\154\1\164\1\uffff\2\172\1\145\1\153\1\172\1"+
-		"\141\1\145\1\151\2\145\1\157\1\141\1\106\1\162\2\172\1\uffff\1\145\1\uffff"+
-		"\1\162\1\uffff\1\163\1\160\1\172\1\151\1\145\2\172\1\162\1\157\1\156\1"+
-		"\151\1\164\1\156\1\151\1\156\1\145\1\154\1\162\1\172\1\uffff\1\124\1\145"+
-		"\1\157\1\163\1\156\1\151\2\172\1\164\1\157\1\164\1\145\1\150\1\172\1\145"+
-		"\1\172\2\uffff\1\172\1\113\1\116\1\172\1\114\1\172\1\117\1\107\1\105\2"+
-		"\110\1\163\1\uffff\1\144\1\uffff\1\145\1\156\1\164\1\155\1\172\1\145\1"+
-		"\uffff\1\172\3\uffff\1\172\1\uffff\1\172\1\147\1\uffff\1\141\1\172\2\uffff"+
-		"\1\172\1\145\1\uffff\1\154\1\162\1\144\1\151\1\157\1\141\1\162\1\155\1"+
-		"\157\1\164\2\uffff\1\163\1\164\1\151\1\172\1\uffff\1\144\1\151\2\uffff"+
-		"\1\151\1\164\1\144\1\147\1\154\1\162\1\144\1\163\1\164\1\172\1\154\1\157"+
-		"\1\uffff\1\157\1\171\1\172\1\162\2\172\1\156\2\uffff\1\145\1\167\1\151"+
-		"\1\172\1\164\1\uffff\1\172\1\uffff\2\172\1\105\1\127\1\105\2\172\1\124"+
-		"\1\145\5\172\1\uffff\1\172\2\uffff\1\156\1\uffff\1\154\1\164\1\141\2\uffff"+
-		"\3\172\1\164\1\147\1\154\1\155\1\156\1\145\1\154\1\172\1\151\1\172\1\141"+
-		"\1\uffff\1\164\2\147\1\141\1\151\2\154\1\157\1\162\1\172\1\164\1\145\1"+
-		"\uffff\1\172\1\153\2\172\1\uffff\1\131\2\uffff\1\147\1\156\1\103\1\157"+
-		"\1\172\1\uffff\3\172\1\uffff\2\172\6\uffff\1\172\2\145\1\143\3\uffff\2"+
-		"\150\1\144\1\172\1\145\1\172\1\144\1\uffff\1\147\1\uffff\1\156\2\150\1"+
-		"\151\1\164\1\165\1\145\1\172\1\153\1\164\1\uffff\1\172\1\162\1\uffff\1"+
-		"\145\2\uffff\2\172\1\102\1\172\1\165\1\156\4\uffff\2\172\1\153\1\172\1"+
-		"\164\1\172\1\uffff\1\162\1\uffff\1\172\1\156\1\116\1\172\1\164\1\156\1"+
-		"\151\1\163\1\172\1\uffff\1\145\1\172\1\uffff\1\163\1\172\2\uffff\1\171"+
-		"\1\uffff\1\162\1\172\1\uffff\1\157\1\uffff\1\172\1\uffff\1\172\1\uffff"+
-		"\1\172\1\uffff\1\172\1\157\1\uffff\2\172\1\157\1\172\1\uffff\1\172\1\uffff"+
-		"\1\145\1\uffff\1\172\1\166\1\uffff\1\154\4\uffff\1\151\2\uffff\1\156\2"+
-		"\uffff\1\143\1\uffff\1\145\1\154\1\163\1\172\1\164\1\172\2\145\1\uffff"+
-		"\1\172\1\uffff\1\143\1\172\1\uffff\1\164\1\uffff\1\151\1\157\1\156\1\172"+
-		"\1\uffff";
+		"\1\144\1\151\1\156\1\141\1\145\1\166\1\172\1\171\1\uffff\1\160\1\144\1"+
+		"\156\1\171\1\172\1\156\1\141\1\145\1\172\1\160\1\uffff\1\162\1\172\1\145"+
+		"\1\164\1\uffff\1\154\1\157\1\167\1\162\1\144\1\127\1\157\1\150\2\uffff"+
+		"\1\156\2\172\1\145\1\172\1\163\1\165\1\144\1\131\1\163\1\151\1\164\1\154"+
+		"\1\172\1\uffff\1\145\1\147\1\162\1\164\1\144\1\145\1\154\1\164\1\154\1"+
+		"\143\1\163\1\147\1\145\1\154\1\146\2\172\1\105\1\103\1\131\1\120\1\113"+
+		"\1\uffff\1\114\1\116\2\124\1\107\1\uffff\1\160\1\172\1\156\1\172\1\166"+
+		"\1\162\1\141\1\157\1\141\1\144\1\164\1\172\1\145\1\uffff\3\172\1\164\1"+
+		"\172\1\uffff\1\164\1\156\1\172\1\uffff\1\154\1\164\1\uffff\2\172\1\145"+
+		"\1\153\1\172\1\141\1\145\1\151\2\145\1\157\1\141\1\106\1\162\2\172\1\uffff"+
+		"\1\145\1\uffff\1\162\1\uffff\1\163\1\160\1\172\1\151\1\145\2\172\1\162"+
+		"\1\157\1\156\1\151\1\164\1\156\1\151\1\156\1\145\1\154\1\162\1\172\1\uffff"+
+		"\1\124\1\145\1\157\1\163\1\156\1\151\2\172\1\164\1\157\1\164\1\145\1\150"+
+		"\1\172\1\145\1\172\2\uffff\1\172\1\113\1\116\1\172\1\114\1\172\1\117\1"+
+		"\107\1\105\2\110\1\163\1\uffff\1\144\1\uffff\1\145\1\156\1\164\1\155\1"+
+		"\154\1\172\1\145\1\uffff\1\172\3\uffff\1\172\1\uffff\1\172\1\147\1\uffff"+
+		"\1\141\1\172\2\uffff\1\172\1\145\1\uffff\1\154\1\162\1\144\1\151\1\157"+
+		"\1\141\1\162\1\155\1\157\1\164\2\uffff\1\163\1\164\1\151\1\172\1\uffff"+
+		"\1\144\1\151\2\uffff\1\151\1\164\1\144\1\147\1\154\1\162\1\144\1\163\1"+
+		"\164\1\172\1\154\1\157\1\uffff\1\157\1\171\1\172\1\162\2\172\1\156\2\uffff"+
+		"\1\145\1\167\1\151\1\172\1\164\1\uffff\1\172\1\uffff\2\172\1\105\1\127"+
+		"\1\105\2\172\1\124\1\145\6\172\1\uffff\1\172\2\uffff\1\156\1\uffff\1\154"+
+		"\1\164\1\141\2\uffff\3\172\1\164\1\147\1\154\1\155\1\156\1\145\1\154\1"+
+		"\172\1\151\1\172\1\141\1\uffff\1\164\2\147\1\141\1\151\2\154\1\157\1\162"+
+		"\1\172\1\164\1\145\1\uffff\1\172\1\153\2\172\1\uffff\1\131\2\uffff\1\147"+
+		"\1\156\1\103\1\157\1\172\1\uffff\3\172\1\uffff\2\172\7\uffff\1\172\2\145"+
+		"\1\143\3\uffff\2\150\1\144\1\172\1\145\1\172\1\144\1\uffff\1\147\1\uffff"+
+		"\1\156\2\150\1\151\1\164\1\165\1\145\1\172\1\153\1\164\1\uffff\1\172\1"+
+		"\162\1\uffff\1\145\2\uffff\2\172\1\102\1\172\1\165\1\156\4\uffff\2\172"+
+		"\1\153\1\172\1\164\1\172\1\uffff\1\162\1\uffff\1\172\1\156\1\116\1\172"+
+		"\1\164\1\156\1\151\1\163\1\172\1\uffff\1\145\1\172\1\uffff\1\163\1\172"+
+		"\2\uffff\1\171\1\uffff\1\162\1\172\1\uffff\1\157\1\uffff\1\172\1\uffff"+
+		"\1\172\1\uffff\1\172\1\uffff\1\172\1\157\1\uffff\2\172\1\157\1\172\1\uffff"+
+		"\1\172\1\uffff\1\145\1\uffff\1\172\1\166\1\uffff\1\154\4\uffff\1\151\2"+
+		"\uffff\1\156\2\uffff\1\143\1\uffff\1\145\1\154\1\163\1\172\1\164\1\172"+
+		"\2\145\1\uffff\1\172\1\uffff\1\143\1\172\1\uffff\1\164\1\uffff\1\151\1"+
+		"\157\1\156\1\172\1\uffff";
 	static final String DFA18_acceptS =
-		"\1\uffff\1\1\1\2\33\uffff\1\144\5\uffff\1\155\1\161\1\162\1\163\1\uffff"+
-		"\1\165\1\166\1\167\1\170\1\171\1\172\1\173\1\175\1\176\1\177\1\u0081\1"+
-		"\u0082\1\u0083\1\u0085\1\u0086\1\u0087\104\uffff\1\151\1\174\1\152\1\156"+
-		"\1\153\1\157\1\154\1\160\1\u0084\1\164\16\uffff\1\34\12\uffff\1\143\4"+
-		"\uffff\1\24\10\uffff\1\145\1\136\16\uffff\1\33\26\uffff\1\126\5\uffff"+
-		"\1\147\14\uffff\1\16\5\uffff\1\23\3\uffff\1\20\2\uffff\1\17\20\uffff\1"+
-		"\70\1\uffff\1\127\1\uffff\1\150\23\uffff\1\31\20\uffff\1\63\1\123\14\uffff"+
-		"\1\137\1\uffff\1\4\6\uffff\1\5\1\uffff\1\41\1\62\1\7\1\uffff\1\12\2\uffff"+
-		"\1\u0080\2\uffff\1\134\1\22\2\uffff\1\52\12\uffff\1\32\1\21\4\uffff\1"+
-		"\65\2\uffff\1\107\1\110\14\uffff\1\146\7\uffff\1\51\1\44\5\uffff\1\66"+
-		"\1\uffff\1\61\16\uffff\1\26\1\uffff\1\6\1\10\1\uffff\1\132\3\uffff\1\13"+
+		"\1\uffff\1\1\1\2\33\uffff\1\145\5\uffff\1\156\1\162\1\163\1\164\1\uffff"+
+		"\1\166\1\167\1\170\1\171\1\172\1\173\1\174\1\176\1\177\1\u0080\1\u0082"+
+		"\1\u0083\1\u0084\1\u0086\1\u0087\1\u0088\104\uffff\1\152\1\175\1\153\1"+
+		"\157\1\154\1\160\1\155\1\161\1\u0085\1\165\17\uffff\1\34\12\uffff\1\144"+
+		"\4\uffff\1\24\10\uffff\1\146\1\136\16\uffff\1\33\26\uffff\1\126\5\uffff"+
+		"\1\150\15\uffff\1\16\5\uffff\1\23\3\uffff\1\20\2\uffff\1\17\20\uffff\1"+
+		"\70\1\uffff\1\127\1\uffff\1\151\23\uffff\1\31\20\uffff\1\63\1\123\14\uffff"+
+		"\1\137\1\uffff\1\4\7\uffff\1\5\1\uffff\1\41\1\62\1\7\1\uffff\1\12\2\uffff"+
+		"\1\u0081\2\uffff\1\134\1\22\2\uffff\1\52\12\uffff\1\32\1\21\4\uffff\1"+
+		"\65\2\uffff\1\107\1\110\14\uffff\1\147\7\uffff\1\51\1\44\5\uffff\1\66"+
+		"\1\uffff\1\61\17\uffff\1\26\1\uffff\1\6\1\10\1\uffff\1\132\3\uffff\1\13"+
 		"\1\43\16\uffff\1\53\14\uffff\1\30\4\uffff\1\55\1\uffff\1\35\1\60\5\uffff"+
-		"\1\142\3\uffff\1\124\2\uffff\1\54\1\130\1\140\1\141\1\25\1\42\4\uffff"+
-		"\1\45\1\67\1\72\7\uffff\1\15\1\uffff\1\133\12\uffff\1\120\2\uffff\1\46"+
-		"\1\uffff\1\36\1\37\6\uffff\1\50\1\125\1\3\1\131\6\uffff\1\76\1\uffff\1"+
-		"\100\11\uffff\1\115\2\uffff\1\121\2\uffff\1\56\1\57\1\uffff\1\64\2\uffff"+
+		"\1\143\3\uffff\1\124\2\uffff\1\54\1\130\1\140\1\141\1\25\1\142\1\42\4"+
+		"\uffff\1\45\1\67\1\72\7\uffff\1\15\1\uffff\1\133\12\uffff\1\120\2\uffff"+
+		"\1\46\1\uffff\1\36\1\37\6\uffff\1\50\1\125\1\3\1\131\6\uffff\1\76\1\uffff"+
+		"\1\100\11\uffff\1\115\2\uffff\1\121\2\uffff\1\56\1\57\1\uffff\1\64\2\uffff"+
 		"\1\11\1\uffff\1\73\1\uffff\1\74\1\uffff\1\102\1\uffff\1\101\2\uffff\1"+
 		"\105\4\uffff\1\113\1\uffff\1\117\1\uffff\1\47\2\uffff\1\135\1\uffff\1"+
 		"\14\1\75\1\77\1\103\1\uffff\1\106\1\111\1\uffff\1\114\1\116\1\uffff\1"+
 		"\40\10\uffff\1\112\1\uffff\1\71\2\uffff\1\122\1\uffff\1\27\4\uffff\1\104";
 	static final String DFA18_specialS =
-		"\u025d\uffff}>";
+		"\u0262\uffff}>";
 	static final String[] DFA18_transitionS = {
-			"\1\70\1\66\2\uffff\1\66\22\uffff\1\70\1\41\1\65\2\uffff\1\51\1\1\1\65"+
-			"\1\56\1\57\1\47\1\45\1\60\1\46\1\62\1\50\12\63\1\36\1\67\1\43\1\40\1"+
+			"\1\67\1\70\2\uffff\1\70\22\uffff\1\67\1\41\1\65\2\uffff\1\51\1\1\1\65"+
+			"\1\56\1\57\1\47\1\45\1\60\1\46\1\62\1\50\12\63\1\36\1\66\1\43\1\40\1"+
 			"\42\1\61\1\uffff\1\64\1\27\4\64\1\30\1\35\6\64\1\33\1\31\1\64\1\26\4"+
 			"\64\1\34\1\64\1\32\1\64\1\54\1\uffff\1\55\1\44\1\64\1\uffff\1\14\1\64"+
 			"\1\6\1\24\1\3\1\22\1\15\1\21\1\13\2\64\1\5\1\17\1\16\1\37\1\10\1\7\1"+
@@ -5041,45 +5081,44 @@ public class PyEsqueLexer extends Lexer {
 			"\1\u0087\6\uffff\1\u0088",
 			"\1\u0089",
 			"\1\u008a\11\uffff\1\u008b\2\uffff\1\u008d\3\uffff\1\u008c",
-			"\1\u008e",
-			"\1\u0090\1\u008f",
-			"\1\u0091",
+			"\1\u008f\11\uffff\1\u008e",
+			"\1\u0091\1\u0090",
 			"\1\u0092",
-			"\1\u0094\2\uffff\1\u0093",
+			"\1\u0093",
+			"\1\u0095\2\uffff\1\u0094",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u0096",
 			"\1\u0097",
-			"\1\u0098\2\uffff\1\u0099\12\uffff\1\u009a",
-			"\1\u009b",
-			"\1\u009c\13\uffff\1\u009d",
-			"\1\u009e",
+			"\1\u0098",
+			"\1\u0099\2\uffff\1\u009a\12\uffff\1\u009b",
+			"\1\u009c",
+			"\1\u009d\13\uffff\1\u009e",
 			"\1\u009f",
+			"\1\u00a0",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u00a1",
-			"\1\u00a2\13\uffff\1\u00a3",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\21\64\1\u00a4\10\64",
-			"\1\u00a6",
+			"\1\u00a2",
+			"\1\u00a3\13\uffff\1\u00a4",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\21\64\1\u00a5\10\64",
 			"\1\u00a7",
 			"\1\u00a8",
 			"\1\u00a9",
 			"\1\u00aa",
 			"\1\u00ab",
 			"\1\u00ac",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\2\64\1\u00ad\27\64",
+			"\1\u00ad",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\2\64\1\u00ae\27\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u00b0",
 			"\1\u00b1",
 			"\1\u00b2",
 			"\1\u00b3",
 			"\1\u00b4",
 			"\1\u00b5",
-			"\1\u00b7\5\uffff\1\u00b6",
-			"\1\u00b8",
-			"\1\u00ba\14\uffff\1\u00bb\25\uffff\1\u00b9",
-			"\1\u00bc",
+			"\1\u00b6",
+			"\1\u00b8\5\uffff\1\u00b7",
+			"\1\u00b9",
+			"\1\u00bb\14\uffff\1\u00bc\25\uffff\1\u00ba",
 			"\1\u00bd",
+			"\1\u00be",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u00bf",
 			"\1\u00c0",
 			"\1\u00c1",
 			"\1\u00c2",
@@ -5096,15 +5135,16 @@ public class PyEsqueLexer extends Lexer {
 			"\1\u00cd",
 			"\1\u00ce",
 			"\1\u00cf",
-			"\1\u00d1\23\uffff\1\u00d0",
-			"\1\u00d2",
+			"\1\u00d0",
+			"\1\u00d2\23\uffff\1\u00d1",
 			"\1\u00d3",
-			"\12\64\7\uffff\15\64\1\u00d4\14\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u00d6",
+			"\1\u00d4",
+			"\12\64\7\uffff\15\64\1\u00d5\14\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u00d7",
 			"\1\u00d8",
 			"\1\u00d9",
 			"\1\u00da",
+			"\1\u00db",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
 			"",
@@ -5116,7 +5156,6 @@ public class PyEsqueLexer extends Lexer {
 			"",
 			"",
 			"",
-			"\1\u00dc",
 			"\1\u00dd",
 			"\1\u00de",
 			"\1\u00df",
@@ -5128,58 +5167,58 @@ public class PyEsqueLexer extends Lexer {
 			"\1\u00e5",
 			"\1\u00e6",
 			"\1\u00e7",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u00e8",
 			"\1\u00e9",
-			"",
-			"\1\u00ea",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u00eb",
+			"",
 			"\1\u00ec",
 			"\1\u00ed",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u00ee",
 			"\1\u00ef",
-			"\1\u00f0",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u00f1",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u00f2",
 			"\1\u00f3",
-			"",
-			"\1\u00f4",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u00f6",
-			"\1\u00f7",
+			"\1\u00f5",
 			"",
+			"\1\u00f6",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u00f8",
 			"\1\u00f9",
+			"",
 			"\1\u00fa",
 			"\1\u00fb",
 			"\1\u00fc",
-			"\1\u0100\4\uffff\1\u00fe\5\uffff\1\u0101\4\uffff\1\u00ff\2\uffff\1\u0102"+
 			"\1\u00fd",
-			"\1\u0103",
-			"\1\u0104",
-			"",
-			"",
+			"\1\u00fe",
+			"\1\u0102\4\uffff\1\u0100\5\uffff\1\u0103\4\uffff\1\u0101\2\uffff\1\u0104"+
+			"\1\u00ff",
 			"\1\u0105",
+			"\1\u0106",
+			"",
+			"",
+			"\1\u0107",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\3\64\1\u0107\26\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u0109",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\3\64\1\u0109\26\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u010b",
-			"\1\u010c",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u010d",
-			"\1\u0114\2\uffff\1\u0118\1\u0117\1\u0115\1\uffff\1\u010f\1\u0119\5\uffff"+
-			"\1\u0112\2\uffff\1\u0113\1\u0116\3\uffff\1\u010e\1\u0110\1\u0111",
-			"\1\u011a",
-			"\1\u011b",
+			"\1\u010e",
+			"\1\u010f",
+			"\1\u0116\2\uffff\1\u011a\1\u0119\1\u0117\1\uffff\1\u0111\1\u011b\5\uffff"+
+			"\1\u0114\2\uffff\1\u0115\1\u0118\3\uffff\1\u0110\1\u0112\1\u0113",
 			"\1\u011c",
 			"\1\u011d",
+			"\1\u011e",
+			"\1\u011f",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
-			"\1\u011f",
-			"\1\u0120",
 			"\1\u0121",
-			"\1\u0123\4\uffff\1\u0122",
-			"\1\u0124",
-			"\1\u0125",
+			"\1\u0122",
+			"\1\u0123",
+			"\1\u0125\4\uffff\1\u0124",
 			"\1\u0126",
 			"\1\u0127",
 			"\1\u0128",
@@ -5189,126 +5228,130 @@ public class PyEsqueLexer extends Lexer {
 			"\1\u012c",
 			"\1\u012d",
 			"\1\u012e",
+			"\1\u012f",
+			"\1\u0130",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u0131",
-			"\1\u0132",
-			"\1\u0133\23\uffff\1\u0134",
-			"\1\u0135",
-			"\1\u0136",
-			"",
+			"\1\u0133",
+			"\1\u0134",
+			"\1\u0135\23\uffff\1\u0136",
 			"\1\u0137",
 			"\1\u0138",
+			"",
 			"\1\u0139",
 			"\1\u013a",
 			"\1\u013b",
-			"",
 			"\1\u013c",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u013d",
+			"",
 			"\1\u013e",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0140",
-			"\1\u0141",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0142",
 			"\1\u0143",
 			"\1\u0144",
 			"\1\u0145",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0146",
 			"\1\u0147",
+			"\1\u0148",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u014a",
 			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u014b",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
-			"\1\u014d",
 			"\1\u014e",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
 			"\1\u0150",
 			"\1\u0151",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
+			"\1\u0153",
+			"\1\u0154",
 			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u0154",
-			"\1\u0155",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0157",
 			"\1\u0158",
-			"\1\u0159",
-			"\1\u015b\36\uffff\1\u015a",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u015a",
+			"\1\u015b",
 			"\1\u015c",
-			"\1\u015d",
-			"\1\u015e",
+			"\1\u015e\36\uffff\1\u015d",
 			"\1\u015f",
 			"\1\u0160",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
+			"\1\u0161",
+			"\1\u0162",
 			"\1\u0163",
-			"",
-			"\1\u0164",
-			"",
-			"\1\u0165",
-			"\1\u0166",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
+			"\1\u0166",
+			"",
+			"\1\u0167",
+			"",
 			"\1\u0168",
 			"\1\u0169",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u016b",
 			"\1\u016c",
-			"\1\u016e\15\uffff\1\u016d",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u016f",
-			"\1\u0170",
-			"\1\u0171",
+			"\1\u0171\15\uffff\1\u0170",
 			"\1\u0172",
 			"\1\u0173",
 			"\1\u0174",
 			"\1\u0175",
 			"\1\u0176",
 			"\1\u0177",
+			"\1\u0178",
+			"\1\u0179",
+			"\1\u017a",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
-			"\1\u017a\21\uffff\1\u0179",
-			"\1\u017b",
-			"\1\u017c",
-			"\1\u017d",
+			"\1\u017d\21\uffff\1\u017c",
 			"\1\u017e",
 			"\1\u017f",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0180",
+			"\1\u0181",
 			"\1\u0182",
-			"\1\u0183",
-			"\1\u0184",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0185",
 			"\1\u0186",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0187",
 			"\1\u0188",
+			"\1\u0189",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
-			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u018a",
 			"\1\u018b",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u018c",
+			"",
+			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u018d",
 			"\1\u018e",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u018f",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0190",
 			"\1\u0191",
 			"\1\u0192",
-			"",
 			"\1\u0193",
-			"",
 			"\1\u0194",
 			"\1\u0195",
+			"",
 			"\1\u0196",
+			"",
 			"\1\u0197",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0198",
 			"\1\u0199",
+			"\1\u019a",
+			"\1\u019b",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u019d",
 			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
@@ -5316,76 +5359,77 @@ public class PyEsqueLexer extends Lexer {
 			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\13\64\1\u019c\16\64",
-			"\1\u019e",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\13\64\1\u01a0\16\64",
+			"\1\u01a2",
 			"",
-			"\1\u019f",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\1\64\1\u01a0\30\64",
-			"",
-			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u01a3",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\1\64\1\u01a4\30\64",
 			"",
-			"\1\u01a4",
-			"\1\u01a5",
-			"\1\u01a6",
+			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u01a7",
+			"",
 			"\1\u01a8",
 			"\1\u01a9",
 			"\1\u01aa",
 			"\1\u01ab",
 			"\1\u01ac",
 			"\1\u01ad",
-			"",
-			"",
 			"\1\u01ae",
 			"\1\u01af",
 			"\1\u01b0",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01b1",
+			"",
 			"",
 			"\1\u01b2",
 			"\1\u01b3",
-			"",
-			"",
 			"\1\u01b4",
-			"\1\u01b5",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
 			"\1\u01b6",
 			"\1\u01b7",
+			"",
+			"",
 			"\1\u01b8",
-			"\1\u01ba\20\uffff\1\u01b9",
+			"\1\u01b9",
+			"\1\u01ba",
 			"\1\u01bb",
 			"\1\u01bc",
-			"\1\u01bd",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01be\20\uffff\1\u01bd",
 			"\1\u01bf",
 			"\1\u01c0",
-			"",
 			"\1\u01c1",
-			"\1\u01c2",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01c3",
 			"\1\u01c4",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u01c7",
 			"",
-			"",
+			"\1\u01c5",
+			"\1\u01c6",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u01c8",
-			"\1\u01c9",
-			"\1\u01ca",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u01cb",
 			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01cc",
 			"\1\u01cd",
 			"\1\u01ce",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u01cf",
+			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u01d1",
 			"\1\u01d2",
+			"\1\u01d3",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01d5",
+			"\1\u01d6",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
@@ -5395,197 +5439,198 @@ public class PyEsqueLexer extends Lexer {
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
 			"",
-			"\1\u01d9",
+			"\1\u01de",
 			"",
-			"\1\u01da",
-			"\1\u01db",
-			"\1\u01dc",
-			"",
-			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01df",
 			"\1\u01e0",
 			"\1\u01e1",
-			"\1\u01e2",
-			"\1\u01e3",
-			"\1\u01e4",
+			"",
+			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u01e5",
 			"\1\u01e6",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01e7",
 			"\1\u01e8",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01e9",
 			"\1\u01ea",
-			"",
 			"\1\u01eb",
-			"\1\u01ec",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u01ed",
-			"\1\u01ee",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u01ef",
+			"",
 			"\1\u01f0",
 			"\1\u01f1",
 			"\1\u01f2",
 			"\1\u01f3",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01f4",
 			"\1\u01f5",
 			"\1\u01f6",
-			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01f7",
 			"\1\u01f8",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u01fa",
+			"\1\u01fb",
+			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
-			"\1\u01fb\1\u01fc",
-			"",
-			"",
 			"\1\u01fd",
-			"\1\u01fe",
-			"\1\u01ff",
-			"\1\u0200",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0200\1\u0201",
 			"",
 			"",
-			"",
-			"",
-			"",
-			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0202",
+			"\1\u0203",
+			"\1\u0204",
 			"\1\u0205",
-			"\1\u0206",
-			"\1\u0207",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
 			"",
 			"",
-			"\1\u0208",
-			"\1\u0209",
+			"",
+			"",
+			"",
+			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u020a",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u020b",
 			"\1\u020c",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
+			"",
+			"",
+			"\1\u020d",
 			"\1\u020e",
-			"",
 			"\1\u020f",
-			"",
-			"\1\u0210",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0211",
-			"\1\u0212",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0213",
+			"",
 			"\1\u0214",
+			"",
 			"\1\u0215",
 			"\1\u0216",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0217",
 			"\1\u0218",
 			"\1\u0219",
-			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u021a",
 			"\1\u021b",
-			"",
-			"\1\u021c",
-			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u021d",
+			"\1\u021e",
 			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u021f",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0220",
+			"",
 			"\1\u0221",
-			"\1\u0222",
-			"",
-			"",
 			"",
 			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\2\64\1\u0224\27\64\4\uffff\1\64\1\uffff\32\64",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0224",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0226",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u0228",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0227",
 			"",
-			"\1\u022a",
+			"",
+			"",
 			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u022c",
+			"\12\64\7\uffff\2\64\1\u0229\27\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u022b",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u022d",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
 			"\1\u022f",
-			"\1\u0230",
+			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0231",
 			"\1\u0232",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
 			"\1\u0234",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
+			"\1\u0235",
 			"\1\u0236",
+			"\1\u0237",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
-			"",
-			"\1\u0238",
 			"",
 			"\1\u0239",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
 			"\1\u023b",
-			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
+			"",
+			"\1\u023d",
+			"",
+			"\1\u023e",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0240",
 			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"\1\u0243",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
-			"\1\u0246",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"\1\u0245",
+			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u0248",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
-			"\1\u0249",
-			"",
-			"",
-			"",
-			"",
-			"\1\u024a",
-			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"",
 			"\1\u024b",
 			"",
-			"",
-			"\1\u024c",
-			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			"\1\u024d",
+			"",
 			"\1\u024e",
+			"",
+			"",
+			"",
+			"",
 			"\1\u024f",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
+			"",
+			"\1\u0250",
+			"",
+			"",
 			"\1\u0251",
-			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
+			"\1\u0252",
 			"\1\u0253",
 			"\1\u0254",
-			"",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
 			"\1\u0256",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
-			"",
 			"\1\u0258",
-			"",
 			"\1\u0259",
-			"\1\u025a",
+			"",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
 			"\1\u025b",
+			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
+			"",
+			"\1\u025d",
+			"",
+			"\1\u025e",
+			"\1\u025f",
+			"\1\u0260",
 			"\12\64\7\uffff\32\64\4\uffff\1\64\1\uffff\32\64",
 			""
 	};
@@ -5621,7 +5666,7 @@ public class PyEsqueLexer extends Lexer {
 		}
 		@Override
 		public String getDescription() {
-			return "1:1: Tokens : ( T__167 | T__168 | Ellipse | Rect | Line | Curve | Quad | Point | Triangle | Polygon | Skirt | SkirtBack | LShape | Cosine | Sine | Tan | ATan | Sqrt | Pow | Sq | Random | Round | Gaussian | Noise | Map | Inch | Mm | Cm | Units | Move | MoveBy | Heading | Copy | Rotate | Scale | Fill | Stroke | NoFill | NoStroke | Weight | Hide | Show | Group | Expand | Merge | MirrorX | MirrorY | Union | Difference | Clip | Xor | Flatten | Grid | Wave | Spiral | Arc | FollowCurve | Slider | Template | SetWidth | SetHeight | SetSeam | SetCorner | SetName | SetVFold | SetHFold | AddDesign | TemplateCollection | GetWidth | GetHeight | GetX | GetY | GetOrigin | GetRotation | GetAngle | GetRadius | GetFill | GetStroke | GetStart | GetEnd | GetDistance | GetIntersect | COLOR_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT | PI_CONSTANT | LAdd | LRemove | Println | Print | Assert | Size | Def | If | Else | Return | Repeat | While | To | Do | In | Null | Or | And | Equals | NEquals | GTEquals | LTEquals | Pw | Excl | GT | LT | Add | Subtract | Multiply | Divide | Modulus | OBrace | CBrace | OBracket | CBracket | OParen | CParen | Assign | Comma | QMark | Dot | Bool | Number | Identifier | String | Comment | NewLine | SemiColon | SpaceChars );";
+			return "1:1: Tokens : ( T__168 | T__169 | Ellipse | Rect | Line | Curve | Quad | Point | Triangle | Polygon | Skirt | SkirtBack | LShape | Cosine | Sine | Tan | ATan | Sqrt | Pow | Sq | Random | Round | Gaussian | Noise | Map | Inch | Mm | Cm | Units | Move | MoveBy | Heading | Copy | Rotate | Scale | Fill | Stroke | NoFill | NoStroke | Weight | Hide | Show | Group | Expand | Merge | MirrorX | MirrorY | Union | Difference | Clip | Xor | Flatten | Grid | Wave | Spiral | Arc | FollowCurve | Slider | Template | SetWidth | SetHeight | SetSeam | SetCorner | SetName | SetVFold | SetHFold | AddDesign | TemplateCollection | GetWidth | GetHeight | GetX | GetY | GetOrigin | GetRotation | GetAngle | GetRadius | GetFill | GetStroke | GetStart | GetEnd | GetDistance | GetIntersect | COLOR_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT | PI_CONSTANT | LAdd | LRemove | Println | Print | Assert | Size | Def | If | Else | Return | Repeat | Radial | While | To | Do | In | Null | Or | And | Equals | NEquals | GTEquals | LTEquals | Pw | Excl | GT | LT | Add | Subtract | Multiply | Divide | Modulus | OBrace | CBrace | OBracket | CBracket | OParen | CParen | Assign | Comma | QMark | Dot | Bool | Number | Identifier | String | Comment | SemiColon | SpaceChars | NewLine );";
 		}
 	}
 

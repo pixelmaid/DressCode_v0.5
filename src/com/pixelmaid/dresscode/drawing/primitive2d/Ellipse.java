@@ -118,7 +118,8 @@ public class Ellipse extends Polygon {
 	//rotates around a focus. does not change the rotation property
 	public Drawable rotateWithFocus(double theta, Point focus, Boolean top){
 		Polygon p = this.toPolygon();
-		return p.rotateWithFocus(theta, focus,top);	
+		return p;
+		//return p.rotateWithFocus(theta, focus,top);	
 	}	
 	
 	@Override
@@ -173,7 +174,7 @@ public class Ellipse extends Polygon {
 			double x = wR* Math.cos(t);
 			double y = hR* Math.sin(t);
 			c.addPoint(x,y);
-
+			System.out.println("adding point at"+x+","+y);
 		}
 	
 		

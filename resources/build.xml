@@ -83,11 +83,12 @@
 	    -->
 	<target name="example">
 	    
-		<mkdir dir="${build.dir}/examples"/>
+		<mkdir dir="${build.dir}/examples/examples"/>
 
-		<copy todir="${build.dir}/examples">
-	      <fileset refid="exampleFileSet"/>
-	    </copy>
+				<copy todir="${build.dir}/examples/examples">
+			      <fileset refid="exampleFileSet"/>
+			    </copy>
+				
 		
 	  </target>
 	 
@@ -108,6 +109,12 @@
 				</jarbundler>
 		</target>
 	
+
+		<target name="removedupexample">
+			<delete dir="${build.dir}/examples/examples"/>
+			
+			
+	 </target>
 	<target name="exemaker" depends="appmaker" description="Build an example exe">	
 				
 			<property name="launch4j.dir" location="lib/launch4j" />

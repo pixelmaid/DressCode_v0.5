@@ -8,7 +8,7 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class MirrorYNode extends NodeEvent implements DCNode {
+public class MirrorYNode extends DCNode {
 
 	protected DCNode param;
 
@@ -16,9 +16,10 @@ public class MirrorYNode extends NodeEvent implements DCNode {
 
 
     
-    public MirrorYNode(DCNode p, int l) {
+    public MirrorYNode(DCNode p, int l, int c) {
         param = p;
         line = l;
+        col=c;
         //System.out.println("created new drawable node at line:"+line);
     }
 

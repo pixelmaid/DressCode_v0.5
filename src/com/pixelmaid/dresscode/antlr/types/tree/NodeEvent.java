@@ -95,6 +95,10 @@ public class NodeEvent implements EventInterface{
 	 public synchronized void removeEventListener(CustomEventListener listener)   {
 			    _listeners.remove(listener);
 			  }
+	 @Override
+	 public synchronized void removeAllListeners()   {
+		    _listeners.clear();
+		  }
 	
 	
 		

@@ -3,7 +3,7 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
 
-public class NotEqualsNode extends NodeEvent implements DCNode {
+public class NotEqualsNode extends DCNode {
 
     private DCNode lhs;
     private DCNode rhs;

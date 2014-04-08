@@ -2,7 +2,7 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class TernaryNode extends NodeEvent implements DCNode {
+public class TernaryNode extends DCNode {
 
     private DCNode condition;
     private DCNode ifTrue;

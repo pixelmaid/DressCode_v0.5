@@ -6,17 +6,17 @@ import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class ShowNode extends NodeEvent implements DCNode {
+public class ShowNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
 
 
     
-    public ShowNode(DCNode p, int l) {
+    public ShowNode(DCNode p, int l, int c) {
         param = p;
         line = l;
+	    col=c;
        
     }
 

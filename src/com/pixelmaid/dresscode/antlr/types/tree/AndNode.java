@@ -4,7 +4,7 @@ import com.pixelmaid.dresscode.antlr.types.*;
 import com.pixelmaid.dresscode.drawing.math.PolyBoolean;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
-public class AndNode extends NodeEvent implements DCNode {
+public class AndNode extends DCNode {
 
     private DCNode lhs;
     private DCNode rhs;
@@ -13,7 +13,7 @@ public class AndNode extends NodeEvent implements DCNode {
     public AndNode(DCNode lhs, DCNode rhs) {
         this.lhs = lhs;
         this.rhs = rhs;
-        //line = l;
+       
     }
 
     @Override

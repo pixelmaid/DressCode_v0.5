@@ -6,7 +6,7 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ListNode extends NodeEvent implements DCNode {
+public class ListNode extends DCNode {
 
     private List<DCNode> expressionNodes;
 

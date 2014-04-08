@@ -4,12 +4,14 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 
-public class AssertNode extends NodeEvent implements DCNode {
+public class AssertNode extends DCNode {
 
     private DCNode expression;
 
-    public AssertNode(DCNode e) {
+    public AssertNode(DCNode e, int l, int c) {
         expression = e;
+        line = l;
+        col=c;
     }
 
     @Override

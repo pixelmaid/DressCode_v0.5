@@ -1,6 +1,5 @@
 grammar PyEsque;
 
-
 options {
   output=AST;
   language = Java;
@@ -46,6 +45,7 @@ tokens {
   public Map<String, FunctionType> functions = new HashMap<String, FunctionType>();
   public DrawableManager drawableManager;
   private int widthParam, heightParam;
+  Stack paraphrases = new Stack();
   
   
   public PyEsqueParser(CommonTokenStream tokens){
@@ -65,6 +65,37 @@ tokens {
     functions.put(key, new FunctionType(id, idListTree, blockTree));
     System.out.println("defined function:"+id);
   }
+  //returns readable error message for user
+  public String getErrorMessage(RecognitionException e, String[] tokenNames){
+  	String msg = super.getErrorMessage(e, tokenNames);
+  	if (paraphrases.size()>0){
+  		String paraphrase = (String)paraphrases.peek();
+  		msg=msg+" "+paraphrase;
+  		}
+  	return msg;
+  }
+  
+  /*public String getErrorMessage(RecognitionException e, String[] tokenNames){
+  	List stack = getRuleInvocationStack(e, this.getClass().getName());
+  	String msg = null;
+  	if (e instanceof NoViableAltException){
+  		NoViableAltException nvae= (NoViableAltException)e;
+  		msg = " decision="+nvae.decisionNumber+
+  		" state "+nvae.stateNumber+")"+
+  		" decision=<<"+nvae.grammarDecisionDescription+">>";
+  	}
+  	else{
+  		msg=super.getErrorMessage(e,tokenNames);
+  		}
+  		
+  	return stack+""+msg;
+  
+  }*/
+  
+  public String getTokenErrorDisplay(Token t){
+  		return t.toString();
+  	}
+  
 }
 
 @lexer::header {
@@ -100,6 +131,8 @@ parse
  ;
 
 block
+@init{paraphrases.push("in block");}
+@after{paraphrases.pop();}
  : Indent block_atoms Dedent -> block_atoms
  ;
 
@@ -109,11 +142,14 @@ block_atoms
  ;
  
 statement
+@init{paraphrases.push("in statement");}
+@after{paraphrases.pop();}
   :  assignment   -> assignment
   |  functionCall -> functionCall
   |  ifStatement
   |  whileStatement
   |	 repeatStatement
+  |	 radialStatement
   //|  returnStatement
   ;
   
@@ -122,10 +158,14 @@ statement
   	;  */
   
    assignment
+   @init{paraphrases.push("in assignment");}
+   @after{paraphrases.pop();}
   :  Identifier ('=' expression)?  -> ^(ASSIGNMENT Identifier expression?)
   ;
   
   functionDecl
+  @init{paraphrases.push("in function declaration");}
+   @after{paraphrases.pop();}
   :  Def Identifier '(' idList? ')' Do block 
      {defineFunction($Identifier.text, $idList.tree, $block.tree);}
   ;
@@ -146,6 +186,8 @@ statement
   
  
  functionCall
+ @init{paraphrases.push("in function call");}
+ @after{paraphrases.pop();}
   :  Identifier '(' exprList? ')' -> ^(FUNC_CALL Identifier exprList?)
   |  Println '(' expression? ')'  -> ^(FUNC_CALL Println expression?)
   |  Print '(' expression ')'     -> ^(FUNC_CALL Print expression)
@@ -282,14 +324,24 @@ elseStat
  
  
  repeatStatement
+  @init{paraphrases.push("in repeat statement");}
+ @after{paraphrases.pop();}
   : Repeat Identifier '=' expression Do expression ('add' expression)* Do block -> ^(Repeat Identifier expression expression (expression)? block)
   ;
 
+
+ radialStatement
+  @init{paraphrases.push("in repeat statement");}
+ @after{paraphrases.pop();}
+  : Radial Identifier ',' Identifier '=' expression ',' Identifier '=' expression Do block -> ^(Radial Identifier Identifier expression Identifier expression block)
+  ;
 whileStatement
   :  While expression Do block -> ^(While expression block)
   ;
  
  expression
+  @init{paraphrases.push("in expression");}
+ @after{paraphrases.pop();}
   :  condExpr
   ;
   
@@ -370,7 +422,8 @@ atom
   :  Identifier (',' Identifier)* -> ^(ID_LIST Identifier+)
   ;
   
-  
+
+
    //shape primitives 
 Ellipse	: 'ellipse';
 Rect	: 'rect';
@@ -481,11 +534,21 @@ Println  : 'println';
 Print    : 'print';
 Assert   : 'assert';
 Size     : 'size';
-Def      : 'function';
+
+
+Def      :  'function'{
+System.out.println("entered function");
+}
+		;
 If       : 'if';
 Else     : 'else';
 Return   : 'return';
-Repeat	 : 'repeat';
+Repeat	 : 'repeat'{
+System.out.println("entered repeat");
+};
+Radial	 : 'radial'{
+System.out.println("entered repeat");
+};
 While    : 'while';
 To       : 'to';
 Do       : ':';
@@ -549,10 +612,24 @@ Comment
   ; 
  
 
-NewLine
- : NL SP?
-   {
 
+
+SemiColon
+	:';'{skip();}
+	;
+
+
+SpaceChars
+ : SP {skip();}
+ 
+ ;
+ 
+ NewLine
+ @init {
+  //System.out.println("Newline new text= "+input.LA(2));
+}
+ : NL SP? 
+   {
      int n = $SP.text == null ? 0 : $SP.text.length();
      if(n > previousIndents) {
        jump(Indent);
@@ -573,14 +650,7 @@ NewLine
    }
  ;
  
-SemiColon
-	:';'{skip();}
-	;
-
-
-SpaceChars
- : SP {skip();}
- ;
+ //WS  :   ('\r' | '\n' )+   { $channel = HIDDEN; } ;
 
 fragment Int
   :  '1'..'9' Digit*

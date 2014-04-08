@@ -12,19 +12,19 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class ArcNode extends NodeEvent implements DCNode {
+public class ArcNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
     protected Scope scope;
     private double width;
     private double height;
 
     
-    public ArcNode(List<DCNode> ps, Scope s, int l, double w, double h) {
+    public ArcNode(List<DCNode> ps, Scope s, int l, int c, double w, double h) {
         params = ps;
         line = l;
+        col=c;
         scope = s;
         width = w;
         height = h;

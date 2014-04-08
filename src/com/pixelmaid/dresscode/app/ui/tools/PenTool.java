@@ -58,7 +58,9 @@ public class PenTool extends Tool  {
 		this.fireToolEvent(CustomEvent.REDRAW_REQUEST);
 	}
 
-
+	public void finishPoly(){
+		this.fireToolEvent(CustomEvent.IRREGULAR_POLY_ADDED);
+	}
 
 	public void addPoint(double x, double y){
 		System.out.println("number of points ="+createdDrawable.getPoints().size());

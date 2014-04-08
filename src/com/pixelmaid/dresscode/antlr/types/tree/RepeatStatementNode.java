@@ -4,7 +4,7 @@ import com.pixelmaid.dresscode.antlr.types.Scope;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
-public class RepeatStatementNode extends NodeEvent implements DCNode {
+public class RepeatStatementNode extends DCNode {
 
     private String identifier;
     private DCNode startExpr;
@@ -16,13 +16,15 @@ public class RepeatStatementNode extends NodeEvent implements DCNode {
     private boolean lookup;
 
 
-    public RepeatStatementNode(String id, DCNode start, DCNode stop, DCNode increment, DCNode bl, Scope s) {
+    public RepeatStatementNode(String id, DCNode start, DCNode stop, DCNode increment, DCNode bl, Scope s, int l, int c) {
         identifier = id;
         startExpr = start;
         stopExpr = stop;
         incrementExpr=increment;
         block = bl;
         scope = s;
+        line = l;
+	    col=c;
         
         //System.out.println("lookup for repeat node ="+l);
     }

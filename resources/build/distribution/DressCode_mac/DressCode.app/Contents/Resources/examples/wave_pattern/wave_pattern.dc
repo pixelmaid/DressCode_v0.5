@@ -1,0 +1,65 @@
+/* Creates a sine wave pattern that varies in thickness, 
+*	to produce a Moiré effect. Inspired by Bridget Riley's 
+* painting, Polarity, 1964
+*/
+
+/*=======setup sine wave parameters=======*/
+
+/*frequency: number of cycles in the wave*/
+freq = 3
+/*amplitude: height between crest and trough of wave*/
+amp = 20
+/*phase: the intial offset in the wave cycle */
+phase = 95
+/*resolution: number of lines in the wave*/
+res = 100
+/*calculate vertical update amount for each point in the wave */
+vDUpdate = (360/res)*freq
+/*calculate the distance on the x axis between each point in the wave*/
+d = WIDTH/res
+/*starting x and y values for the wave */
+xLast=0
+yLast =0
+
+/*=======setup pattern parameters=======*/
+/*starting y position of first wave*/
+wavePos=amp
+
+/*distance between each wave in the pattern*/
+gapAmt=10
+/*starting thickness of wave pattern*/
+lineW = 1
+
+
+/*=========start loops ===============*/
+/*while loop continues until wavePos is greater 
+*than the height of the drawing board - the amp height
+*/
+while wavePos<HEIGHT-amp:
+	/*loop that creates a single wave*/
+	repeat i=0:res+1:
+		/*calculate x and y values of lines of wave*/
+		x = d*i	
+		y = sin(vDUpdate*i+phase)*amp
+		
+		/*only create a line after i is greater than 0*/
+		if i>0:	
+			/*create line at height set by wavePos*/
+			l = line(xLast,yLast+wavePos,x,y+wavePos)
+			/*set weight to lineW*/
+			weight(l,lineW)
+		/*set xLast and yLast to new x and y values*/
+		xLast= x
+		yLast = y	
+	
+	/*increment wavePos by gapAmt*/
+	wavePos = wavePos+gapAmt
+	
+	/*if the wave y position is greater than the height of the 
+	*	drawing boa	rd divided by 2, increase the line weight, 
+	*	otherwise, decrease it.
+	*/
+	if wavePos>HEIGHT/2:
+		lineW = lineW-0.15
+	else:
+ 		lineW = lineW+0.15

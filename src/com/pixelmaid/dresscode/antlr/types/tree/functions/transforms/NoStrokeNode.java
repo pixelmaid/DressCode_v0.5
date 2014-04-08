@@ -7,17 +7,15 @@ import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class NoStrokeNode extends NodeEvent implements DCNode {
+public class NoStrokeNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
-
-
     
-    public NoStrokeNode(DCNode p, int l) {
+    public NoStrokeNode(DCNode p, int l, int c) {
         param = p;
         line = l;
+        col=c;
        
     }
 

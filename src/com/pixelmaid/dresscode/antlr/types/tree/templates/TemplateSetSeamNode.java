@@ -12,10 +12,10 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class TemplateSetSeamNode extends DrawableNode implements DCNode {
+public class TemplateSetSeamNode extends DrawableNode {
 
     public TemplateSetSeamNode(List<DCNode> ps, int l, int c) {
-       super(ps,l);
+    	 super(ps,l,c);
     	
     }
 

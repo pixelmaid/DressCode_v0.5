@@ -71,6 +71,15 @@ public class Drawable extends GraphNode  {
 		children.add(index, d);
 		d.setParent(this);
 	}
+	public boolean contains(Drawable d){
+		for(int i=0;i<this.children.size();i++){
+			if(children.get(i).equals(d)){
+				return true;
+			}
+		}
+		return false;
+		
+	}
 
 	//removes a child from list of children and destroys reference to child's parent
 	private void remove(Drawable d){
@@ -436,6 +445,7 @@ public void drawOrigin(Canvas embedded){
 	
 	//removes drawable from canvas
 	public void removeFromCanvas(){
+		System.out.println("removing self from canvas");
 		this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE,this);
 	}
 
@@ -508,8 +518,8 @@ public void drawOrigin(Canvas embedded){
 			for(int i=0;i<this.children.size();i++){
 				Drawable d = this.children.get(i);
 				System.out.println("Drawable origin="+d.getOrigin().getX()+","+d.getOrigin().getY());
-				d = d.rotateWithFocus(theta, focus, false);
-				this.children.set(i, d);
+				Drawable dNew = d.rotateWithFocus(theta, focus, false);
+				this.children.set(i, dNew);
 				//origins.add(this.children.get(i).getOrigin());
 			}
 			
@@ -771,7 +781,7 @@ public void drawOrigin(Canvas embedded){
 	//----------------ORIGIN/CHILDREN/GROUPING MANIPULATION METHODS------------------//
 	
 	//gets the parent of the object
-	protected Drawable getParent(){
+	public Drawable getParent(){
 		return this.parent;
 	}
 	

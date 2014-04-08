@@ -6,17 +6,15 @@ import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class HideNode extends NodeEvent implements DCNode {
+public class HideNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
-
-
     
-    public HideNode(DCNode p, int l) {
+    public HideNode(DCNode p, int l, int c) {
         param = p;
         line = l;
+	    col=c;
        
     }
 

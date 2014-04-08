@@ -13,8 +13,8 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 public class SliderNode extends UINode {
-	public SliderNode(List<DCNode> n, Scope s) {
-		super(n,s);
+	public SliderNode(List<DCNode> n, Scope s, int l, int c) {
+		super(n,s, l,c);
 
 	}
 

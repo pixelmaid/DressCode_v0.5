@@ -56,11 +56,13 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 			this.addDrawable(d);
 			d.addEventListener(this);
 			//System.out.println("drawable created");
+			this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d);
 			break;
 			
 		case CustomEvent.REMOVE_DRAWABLE:
 			this.removeDrawable(d);
 			d.removeEventListener(this);
+			this.fireDrawableEvent(CustomEvent.REMOVE_DRAWABLE, d);
 			//System.out.println("drawable removed");
 			//System.out.println("condensing holes");
 			break;
@@ -74,6 +76,7 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 	}
 	
 	@Override
+	//TODO: has to be recursive switch to work on groups
 	public void handleCustomDrawableEvent(Object source, int eventType, Drawable d1, Drawable d2) {
 		//System.out.println("drawable event called");
 		switch (eventType){
@@ -81,6 +84,7 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 			int i = this.drawables.indexOf(d1);
 			drawables.set(i, d2);
 			d2.addEventListener(this);
+			this.fireDrawableEvent(CustomEvent.SWAP_DRAWABLE, d1, d2);
 			//System.out.println("drawable swapped");
 			
 			break;

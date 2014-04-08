@@ -4,12 +4,14 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 
-public class SizeNode extends NodeEvent implements DCNode {
+public class SizeNode extends DCNode {
 
     private DCNode expression;
 
-    public SizeNode(DCNode e) {
+    public SizeNode(DCNode e, int l, int c) {
         expression = e;
+        line = l;
+        col=c;
     }
 
     @Override

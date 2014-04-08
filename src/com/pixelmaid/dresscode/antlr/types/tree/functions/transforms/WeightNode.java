@@ -7,17 +7,17 @@ import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
-public class WeightNode extends NodeEvent implements DCNode {
+public class WeightNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
 
 
     
-    public WeightNode(List<DCNode> ps, int l) {
+    public WeightNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+	    col=c;
        
     }
 

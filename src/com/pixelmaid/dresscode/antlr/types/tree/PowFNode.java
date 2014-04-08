@@ -8,13 +8,13 @@ import java.util.Random;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.app.DisplayFrame;
 
-public class PowFNode  extends NodeEvent implements DCNode {
+public class PowFNode  extends DCNode {
 	protected List<DCNode> params;
-    protected int line;
 
-    public PowFNode(List<DCNode> ps, int l) {
+    public PowFNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
+        col=c;
         //System.out.println("created new drawable node at line:"+line);
     }
 

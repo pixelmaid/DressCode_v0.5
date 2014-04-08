@@ -12,7 +12,7 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 
-public class ClipNode extends NodeEvent implements DCNode {
+public class ClipNode extends DCNode {
 
 	protected List<DCNode> params;
 
@@ -20,9 +20,10 @@ public class ClipNode extends NodeEvent implements DCNode {
     protected Scope scope;
 
     
-    public ClipNode(List<DCNode> ps, Scope s, int l) {
+    public ClipNode(List<DCNode> ps, Scope s, int l, int c) {
         params = ps;
         line = l;
+        col = c;
         scope = s;
         //System.out.println("created new drawable node at line:"+line);
     }

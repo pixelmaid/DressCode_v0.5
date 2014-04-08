@@ -5,7 +5,7 @@ import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 
 
 
-public class PropertyNode extends NodeEvent implements DCNode {
+public class PropertyNode extends DCNode {
 
 	protected VarType value;
 

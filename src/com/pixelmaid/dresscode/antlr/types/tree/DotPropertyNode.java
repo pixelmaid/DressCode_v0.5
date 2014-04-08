@@ -3,7 +3,7 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import java.util.List;
 
-public class DotPropertyNode extends NodeEvent implements DCNode {
+public class DotPropertyNode extends DCNode {
 
   private DCNode expression;
   private List<PropertyNode> properties;

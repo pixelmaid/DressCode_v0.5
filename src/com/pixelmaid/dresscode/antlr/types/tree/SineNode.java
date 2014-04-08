@@ -4,16 +4,16 @@ package com.pixelmaid.dresscode.antlr.types.tree;
 
 import com.pixelmaid.dresscode.antlr.types.VarType;
 
-public class SineNode extends NodeEvent implements DCNode {
+public class SineNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
 
 
-  public SineNode(DCNode p, int l) {
+  public SineNode(DCNode p, int l, int c) {
       param = p;
       line = l;
+      col=c;
      
   }
 

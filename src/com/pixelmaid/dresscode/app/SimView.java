@@ -42,4 +42,10 @@ public class SimView extends PApplet implements EventInterface {
 		
 	}
 
+	@Override
+	public void removeAllListeners() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

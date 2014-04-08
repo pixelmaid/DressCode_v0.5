@@ -9,7 +9,7 @@ import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 
-public class MoveNode extends NodeEvent implements DCNode {
+public class MoveNode extends DCNode {
 
 	protected List<DCNode> params;
 
