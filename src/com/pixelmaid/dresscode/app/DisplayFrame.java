@@ -9,6 +9,7 @@ import com.pixelmaid.dresscode.app.ui.CodeToolbar;
 import com.pixelmaid.dresscode.app.ui.DrawingToolbar;
 import com.pixelmaid.dresscode.app.ui.ImageButton;
 import com.pixelmaid.dresscode.app.ui.PatternToolbar;
+import com.pixelmaid.dresscode.app.ui.RunButton;
 import com.pixelmaid.dresscode.app.ui.TreeToolbar;
 
 import java.awt.Dimension;
@@ -114,8 +115,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private String examplePath="";
 	private  Console console; //output console
 	private CodeToolbar codingToolbar;
-	private ImageButton openButton, saveButton, runButton, stopButton, newButton, importButton, backButton; //coding panel buttons
-	
+	private ImageButton openButton, saveButton, stopButton, newButton, importButton, backButton; //coding panel buttons
+	private RunButton runButton;
 	private PatternToolbar patternToolbar;
 	private JComboBox patternDropdown;
 	//UI components for Drawing
@@ -324,7 +325,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		codingToolbar = new CodeToolbar();
        
 		//setup coding buttons
-		runButton = new ImageButton("run","run", "run your script", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
+		runButton = new RunButton("run","run", "run your script", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
+		runButton.setAnimImg("play_animate_3");
 		stopButton = new ImageButton("stop","stop", "stop your script", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 		newButton = new ImageButton("new","new", "create a new script", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 		saveButton = new ImageButton("save","save", "save your script", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
@@ -569,6 +571,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		//console.setText(startupMessage);
 		
+
 	}
 	
 	//creates main menu
@@ -718,7 +721,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				 stamp.setDrawables(name,false,s);
 				 stampManager.addItem(name);
 				 stampMap.put(stamp.getFunctionName(),stamp);
-				 codingFrame.addCodeField(name, stamp.getFunctionDef(), this.fontSize);
+				 CodeField cf = codingFrame.addCodeField(name, stamp.getFunctionDef(), this.fontSize);
+				 cf.addKeyListener(this);
 				 insertStamp(stamp);
 			 	
 			 }
@@ -826,7 +830,8 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 /*sets code parse in motion*/
 	 private void run(){
 		 	//UI changes
-		 	runButton.setActive(); //toggles run button to active visual state
+		 	runButton.toggleStandard();
+		 	//runButton.setInactive(); //toggles run button to active visual state
 			this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR)); //sets cursor to wait
 			console.clearText();
 			curveTool.reset();
@@ -1259,7 +1264,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	@Override
 	public void keyPressed(KeyEvent e) {
 		//zoom in when ctrl + is pressed
-				
+		
 		if(e.getKeyCode()==61 && ctrlKey ==true){
 			canvas.zoomIn();
 			canvas.redraw();
@@ -1327,6 +1332,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	@Override
 	public void keyTyped(KeyEvent e) {
+		if(e.getSource() instanceof CodeField){
+			char c = e.getKeyChar();
+			System.out.println(c);
+			if(c!='\n' && c!=' ' && ctrlKey==false){
+				runButton.toggleAnimate();
+			}
+			 
+		}
 	}
 
 	//action handlers for buttons and menu

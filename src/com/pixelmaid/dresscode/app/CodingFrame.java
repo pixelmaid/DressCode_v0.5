@@ -156,7 +156,7 @@ public class CodingFrame extends JPanel {
 		
 	}
 	 
-	 public void addCodeField(String id, String code, int fontSize){
+	 public CodeField addCodeField(String id, String code, int fontSize){
 		 CodeField c = new CodeField(id);
 		 c.init(fontSize);
 		 JScrollPane scrPane = new JScrollPane(c);
@@ -167,6 +167,7 @@ public class CodingFrame extends JPanel {
 		scrPane.setBorder(null);
 		
 		cardContainer.add(scrPane, id);
+		return c;
 			
 			
 		

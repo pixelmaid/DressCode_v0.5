@@ -17,7 +17,7 @@ public class ImageButton  extends JButton {
 	private static final long serialVersionUID = 1L;
 	ImageIcon oIcon;
 	ImageIcon sIcon;
-	 private boolean active = false;
+	 boolean active = false;
 	 public ImageButton(String title,String img,String tip, int width, int height) {
 		 
 		 this(new ImageIcon(ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/"+img+".png")),new ImageIcon(ClassLoader.getSystemResource("com/pixelmaid/dresscode/resources/"+img+"_s.png")),tip,width,height);
