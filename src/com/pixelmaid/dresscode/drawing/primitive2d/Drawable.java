@@ -519,7 +519,9 @@ public void drawOrigin(Canvas embedded){
 				Drawable d = this.children.get(i);
 				System.out.println("Drawable origin="+d.getOrigin().getX()+","+d.getOrigin().getY());
 				Drawable dNew = d.rotateWithFocus(theta, focus, false);
-				this.children.set(i, dNew);
+				this.children.remove(d);
+				this.children.add(i, dNew);
+				//this.children.set(i, dNew);
 				//origins.add(this.children.get(i).getOrigin());
 			}
 			

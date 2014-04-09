@@ -110,8 +110,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private boolean fromMain = true; //boolean to manage stamp switching
 	private boolean fromTemplate = false; //boolean to manage stamp switching
 
-	private String currentStamp = ""; //boolean to manage stamp switching
-	private String startupMessage = "";
+	
 	private String examplePath="";
 	private  Console console; //output console
 	private CodeToolbar codingToolbar;
@@ -267,7 +266,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		buttonList.add(diffButton);
 		buttonList.add(xorButton);
 		buttonList.add(clipButton);
-
 		//add drawing buttons to drawing toolbar section 1
 		drawingToolbar.addButtonTo1(selectButton);
 		drawingToolbar.addButtonTo1(panButton);
@@ -388,7 +386,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		b2.setVgap(10);
 		treeContainer.setLayout(b2);
 		TreeToolbar treeToolbar = new TreeToolbar();
-		treeToolbar.init(400,DEFAULT_TOOLBAR_HEIGHT, "Shapes", BROWN,OFF_WHITE, PINK);
+		treeToolbar.init(400,DEFAULT_TOOLBAR_HEIGHT, "Logic", BROWN,OFF_WHITE, PINK);
 		treeContainer.add(treeToolbar,BorderLayout.NORTH);
 		treeContainer.add(treeView,BorderLayout.CENTER);
 		
@@ -648,7 +646,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	
 	 private void setupExampleMenuMac(JMenu exampleMenu){
 	examplePath = com.apple.eio.FileManager.getPathToApplicationBundle()+"/Contents/Resources/examples";
-		 startupMessage="path="+examplePath;
+		 //startupMessage="path="+examplePath;
 		 File exampleFolder = new File(examplePath);
 			File[] files = exampleFolder.listFiles();
 			for (File file : files) {
@@ -666,13 +664,13 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 
 	 private void setupExampleMenuWindows(JMenu exampleMenu){
 			examplePath = System.getProperty("user.dir")+"/examples";
-			 startupMessage="path="+examplePath;
+			// startupMessage="path="+examplePath;
 			 File exampleFolder = new File(examplePath);
 					File[] files = exampleFolder.listFiles();
 					for (File file : files) {
 						if(file.isDirectory()){
 						String name = file.getName().substring(0, file.getName().length());
-						System.out.println("name="+name+"\n");
+						//System.out.println("name="+name+"\n");
 						exampleList.add(name);
 						JMenuItem exampleAction = new ExampleItem(name);
 						exampleMenu.add(exampleAction);
@@ -1052,7 +1050,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				case CustomEvent.DRAWABLE_MOVED:
 					selectMain();
 					ArrayList<Drawable> dlist = selectTool.getSelected();
-					System.out.println("moved list size="+dlist.size());
+					//System.out.println("moved list size="+dlist.size());
 					for(int i=0;i<dlist.size();i++){
 						Drawable d = dlist.get(i);
 						if(this.codeField.insertMoveStatement(d)){
@@ -1070,7 +1068,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					selectMain();
 					Drawable r = currentTool.getCreated();
 					drawableManager.addDrawable(r);
-					System.out.println(drawableManager.getDrawables().size());
+					//System.out.println(drawableManager.getDrawables().size());
 					canvas.redraw();
 					break;
 				case CustomEvent.RECT_ADDED:
@@ -1168,13 +1166,16 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		@Override
 		public void handleCustomRuntimeErrorEventDrawableEvent(Object source,
 				int event, String message) {
-			System.out.println("error event ="+message);
+			System.out.println("error event ="+message+" "+source);
+			this.console.setText(message);
+			System.out.println("set error message");
+
 			
 		}
 
 		@Override
 		public void handleCustomPrintEvent(Object source, int event, String value) {
-			System.out.println("print event ="+value);
+			System.out.println("print event ="+value+" "+source);
 			this.console.setText(this.console.getText()+value);
 			
 		}

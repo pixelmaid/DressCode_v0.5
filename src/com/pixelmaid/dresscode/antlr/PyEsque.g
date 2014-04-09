@@ -150,6 +150,7 @@ statement
   |  whileStatement
   |	 repeatStatement
   |	 radialStatement
+  | followCurveStatement
   //|  returnStatement
   ;
   
@@ -247,7 +248,7 @@ statement
    : Grid '(' exprList? ')' -> ^(FUNC_CALL Grid exprList?)
    | Wave '(' exprList? ')' -> ^(FUNC_CALL Wave exprList?)
    | Arc '(' exprList? ')' -> ^(FUNC_CALL Arc exprList?)
-   | FollowCurve '('exprList? ')' -> ^(FUNC_CALL FollowCurve exprList?)
+   //| FollowCurve '('exprList? ')' -> ^(FUNC_CALL FollowCurve exprList?)
    ;
    
    getCall
@@ -331,10 +332,17 @@ elseStat
 
 
  radialStatement
-  @init{paraphrases.push("in repeat statement");}
+  @init{paraphrases.push("in radial statement");}
  @after{paraphrases.pop();}
   : Radial Identifier ',' Identifier '=' expression ',' Identifier '=' expression Do block -> ^(Radial Identifier Identifier expression Identifier expression block)
   ;
+  
+  followCurveStatement
+  @init{paraphrases.push("in curve statement");}
+ @after{paraphrases.pop();}
+  : FollowCurve Identifier ',' statement ',' Identifier '=' expression Do block -> ^(FollowCurve Identifier statement Identifier expression block)
+  ;
+  
 whileStatement
   :  While expression Do block -> ^(While expression block)
   ;

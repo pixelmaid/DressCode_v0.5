@@ -30,22 +30,37 @@ public class RectangleNode extends DrawableNode {
 				}
 				else if(params.size()==3){
 					double width = params.get(2).evaluate().asDouble();
-					e = new Rectangle(x,y,width,width);
+					if(width>0){
+						e = new Rectangle(x,y,width,width);
+					}
+					else{
+						System.err.println("cannot set rectangle width to less than zero at :"+line);
+						this.fireRuntimeErrorEvent(CustomEvent.RUNTIME_ERROR, "cannot set rectangle width to less than zero at :"+line);
+
+					}
 
 				}
 				else if(params.size()==4){
 					double width =  params.get(2).evaluate().asDouble();
 					double height = params.get(3).evaluate().asDouble();
-					e= new Rectangle(x,y,width,height);
+					if(width>0 && height>0){
+						e = new Rectangle(x,y,width,height);
+					}
+					else{
+						if(width<=0){
+						System.err.println("cannot set rectangle width to less than zero at :"+line);
+						this.fireRuntimeErrorEvent(CustomEvent.RUNTIME_ERROR, "cannot set rectangle width to less than zero at :"+line);
+
+						}
+						if(height<=0){
+							System.err.println("cannot set rectangle height to less than zero :"+line);
+							this.fireRuntimeErrorEvent(CustomEvent.RUNTIME_ERROR, "cannot set rectangle width to less than zero at :"+line);
+
+						}
+					}
 
 				}
-				else if(params.size()==5){
-					double width =  params.get(2).evaluate().asDouble();
-					double height = params.get(3).evaluate().asDouble();
-					e= new Rectangle(x,y,width,height);
-					e.setRad(params.get(4).evaluate().asDouble());
-
-				}
+				
 				else{
 					//Window.output.setText("incorrect parameters for rectangle call at line:"+line);
 
@@ -67,8 +82,13 @@ public class RectangleNode extends DrawableNode {
 			System.err.println("incorrect parameters for rectangle at line:"+line);
 
 		}
-		e.setLine(line);
-		return new VarType(e);	
+		if(e!=null){
+			e.setLine(line);
+			return new VarType(e);
+		}
+		else{
+			return VarType.VOID;
+		}
 		//throw new RuntimeException("Illegal function call: " + this);
 	}
 

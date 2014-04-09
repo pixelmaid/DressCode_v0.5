@@ -98,6 +98,7 @@ statement returns [DCNode node]
   |  ifStatement    {node = $ifStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |  whileStatement {node = $whileStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   | radialStatement {node = $radialStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  | followCurveStatement {node = $followCurveStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   | repeatStatement {node = $repeatStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   /*| returnStatement {node = $returnStatement.node; currentFunction.addReturn($returnStatement.node);}*/
   ;
@@ -178,7 +179,7 @@ functionCall returns [DCNode node]
    : ^(FUNC_CALL Grid exprList?) {node = new GridNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine(),widthParam, heightParam);}
    | ^(FUNC_CALL Wave exprList?) {node = new WaveNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine(),widthParam, heightParam);}
    | ^(FUNC_CALL Arc exprList?) {node = new ArcNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine(),widthParam, heightParam);}
-   | ^(FUNC_CALL FollowCurve exprList?){node = new FollowCurveNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+  // | ^(FUNC_CALL FollowCurve exprList?){node = new FollowCurveNode($exprList.e,currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    ;
   
    
@@ -265,7 +266,11 @@ repeatStatement returns [DCNode node]
   : ^(Repeat Identifier a=expression b=expression (c=expression)? block) {node = new RepeatStatementNode($Identifier.text, $a.node, $b.node, $c.node, $block.node, currentScope, $Repeat.getLine(), $Repeat.getCharPositionInLine());}
   ;
 radialStatement returns [DCNode node]
-	: ^(Radial gId = Identifier id1=Identifier a= expression id2=Identifier b=expression block) {node = new RadialStatementNode($gId.text, $id1.text, $id2.text, $a.node, $b.node, $block.node, currentScope);}
+	: ^(Radial gId = Identifier id1=Identifier a= expression id2=Identifier b=expression block) {node = new RadialStatementNode($gId.text, $id1.text, $id2.text, $a.node, $b.node, $block.node, currentScope,$Radial.getLine(), $Radial.getCharPositionInLine());}
+	;
+	
+followCurveStatement returns [DCNode node]
+	: ^(FollowCurve gId=Identifier c= statement id1=Identifier a=expression block) {node = new FollowCurveStatementNode($gId.text, $c.node, $id1.text, $a.node, $block.node, currentScope,$FollowCurve.getLine(), $FollowCurve.getCharPositionInLine());}
 	;
 
 whileStatement returns [DCNode node]

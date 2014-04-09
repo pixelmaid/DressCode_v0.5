@@ -6,6 +6,7 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.DCNode;
 import com.pixelmaid.dresscode.drawing.primitive2d.DrawablePoint;
 import com.pixelmaid.dresscode.drawing.primitive2d.Ellipse;
+import com.pixelmaid.dresscode.drawing.primitive2d.Rectangle;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 public class EllipseNode extends DrawableNode {
@@ -49,13 +50,35 @@ public class EllipseNode extends DrawableNode {
 			
 				else if(params.size()==3){
 					double width = params.get(2).evaluate().asDouble();
-					e = new Ellipse(x,y,width,width);
+					if(width>0){
+						e = new Ellipse(x,y,width,width);
+					}
+					else{
+						System.err.println("cannot set ellipse width to less than zero at :"+line);
+						this.fireRuntimeErrorEvent(CustomEvent.RUNTIME_ERROR, "cannot set ellipse width to less than zero at :"+line);
+
+					}
 
 				}
 				else if(params.size()==4){
 					double width =  params.get(2).evaluate().asDouble();
 					double height = params.get(3).evaluate().asDouble();
-					e= new Ellipse(x,y,width,height);
+					if(width>0 && height>0){
+						e = new Ellipse(x,y,width,height);
+					}
+					else{
+						if(width<=0){
+						System.err.println("cannot set ellipse width to less than zero at :"+line);
+						this.fireRuntimeErrorEvent(CustomEvent.RUNTIME_ERROR, "cannot set ellipse width to less than zero at :"+line);
+
+						}
+						if(height<=0){
+							System.err.println("cannot set ellipse height to less than zero :"+line);
+							this.fireRuntimeErrorEvent(CustomEvent.RUNTIME_ERROR, "cannot set ellipse height to less than zero at :"+line);
+
+						}
+					}
+
 
 				}
 				else{
@@ -82,8 +105,13 @@ public class EllipseNode extends DrawableNode {
 			this.fireRuntimeErrorEvent(CustomEvent.RUNTIME_ERROR, "incorrect parameters for ellipse");
 
 		}
-		e.setLine(line);
-		return new VarType(e);	
+		if(e!=null){
+			e.setLine(line);
+			return new VarType(e);
+		}
+		else{
+			return VarType.VOID;
+		}
 		//throw new RuntimeException("Illegal function call: " + this);
 	}
 

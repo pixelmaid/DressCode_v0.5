@@ -77,6 +77,45 @@ public class Pattern {
 		return waveD;
 	}
 	
+	public static ArrayList<Point> curvesToPoints(Drawable curveGroup, int dNum){
+		ArrayList<Point> curvePoints = new ArrayList<Point>();	
+		if(curveGroup.numChildren()>0){
+			
+			//curveGroup = curveGroup.flatten(true, curveGroup);
+			
+			ArrayList<Drawable> curves = curveGroup.getChildren();	
+			double totalLength =0;
+			for(int i=0;i<curves.size();i++){
+				if(curves.get(i) instanceof Curve){
+				
+					double l = ((Curve)curves.get(i)).length();
+					totalLength+=l;
+				}
+			}
+			double pointDist = totalLength/1;
+			for(int i=0;i<curves.size();i++){
+				if(curves.get(i) instanceof Curve){
+					Curve c = (Curve)curves.get(i);
+					int cNum = (int)Math.ceil(c.length()/pointDist);
+					
+					ArrayList<Point> cPoints;
+					if(i==curves.size()-1){
+						cPoints = c.toPoints(cNum,true);
+					}
+					else{
+						cPoints = c.toPoints(cNum,false);
+					}
+					curvePoints.addAll(cPoints);
+				}
+			}
+		}
+			
+			return curvePoints;
+					
+		
+		
+	}
+	
 	public static Drawable followCurve(Drawable target, Drawable curveGroup, int dNum, boolean doAngle){
 		Drawable curveD = new Drawable();
 
