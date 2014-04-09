@@ -36,7 +36,7 @@ public class CurveTool extends Tool  {
 	
 	public void finishCurve(){
 		this.fireToolEvent(CustomEvent.CURVE_ADDED);
-		this.reset();
+		this.setActive(false);
 	}
 	
 	@Override
@@ -46,7 +46,7 @@ public class CurveTool extends Tool  {
 	
 	@Override
 	public void mousePressed(double mouseX, double mouseY, boolean special) {
-		
+		this.active=true;
 			
 		if(curves.size()==0){
 			Curve c = new Curve(new Point(mouseX+4, mouseY+6),new Point(mouseX+4, mouseY+6),new Point(mouseX+4, mouseY+6),new Point(mouseX+4, mouseY+6));

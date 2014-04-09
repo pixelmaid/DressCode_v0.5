@@ -407,7 +407,7 @@ public JMenuItem getUndoMenu(){
 		
 		String start = replaceLine.substring(0,col);
 		String mEnd = replaceLine.substring(col,replaceLine.length());
-		String re1="(\\d+)";	// Float 1
+		String re1="([+-]?\\d*(\\.\\d)?+)(?![-+0-9\\.])";	// Float 1
 		String re2="(,)";	
 		String re3="(\\))";
 		

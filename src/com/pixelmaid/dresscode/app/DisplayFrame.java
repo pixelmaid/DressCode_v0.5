@@ -1320,7 +1320,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			}
 		}
 		if(e.getKeyCode() == KeyEvent.VK_ENTER){
-			if(curveButton.isActive()){
+			if(curveTool.isActive()){
 				curveTool.finishCurve();
 			}
 			if(penButton.isActive()){
