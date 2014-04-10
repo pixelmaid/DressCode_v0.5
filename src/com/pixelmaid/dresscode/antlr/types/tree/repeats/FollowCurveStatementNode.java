@@ -92,7 +92,7 @@ public class FollowCurveStatementNode extends DCNode {
 
 			master.removeEventListener(drawableManager);
 			group.setLine(block.getStatementAt(block.getNumStatements()-1).getLine());
-			group.setLastTransform(TransformTypes.NONE, block.getStatementAt(block.getNumStatements()-1).getLine(), 0);
+			group.setLastTransform(TransformTypes.NONE, block.getStatementAt(block.getNumStatements()-1).getLine(), 0,0,0);
 
 		}
 

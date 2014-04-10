@@ -167,11 +167,11 @@ statement
   functionDecl
   @init{paraphrases.push("in function declaration");}
    @after{paraphrases.pop();}
-  :  Def Identifier '(' idList? ')' Do block 
+  :  Def Identifier OParen idList? CParen Do block 
      {defineFunction($Identifier.text, $idList.tree, $block.tree);}
   ;
 /* functionDecl
-  :  Identifier '=' '(' idList? ')' Do (statement | block)
+  :  Identifier '=' '(' idList? CParen Do (statement | block)
      {if($block.text==null){
      	System.out.println("defining statement function");
      	defineFunction($Identifier.text, $idList.tree, $statement.tree);
@@ -189,13 +189,13 @@ statement
  functionCall
  @init{paraphrases.push("in function call");}
  @after{paraphrases.pop();}
-  :  Identifier '(' exprList? ')' -> ^(FUNC_CALL Identifier exprList?)
-  |  Println '(' expression? ')'  -> ^(FUNC_CALL Println expression?)
-  |  Print '(' expression ')'     -> ^(FUNC_CALL Print expression)
-  |  Assert '(' expression ')'    -> ^(FUNC_CALL Assert expression)
-  |  Size '(' expression ')'      -> ^(FUNC_CALL Size expression)
-  |  LAdd '(' exprList? ')'   -> ^(FUNC_CALL LAdd exprList?) 
-  |  LRemove '(' exprList? ')'   -> ^(FUNC_CALL LRemove exprList?) 
+  :  Identifier OParen exprList? CParen -> ^(FUNC_CALL Identifier exprList?)
+  |  Println OParen expression? CParen  -> ^(FUNC_CALL Println expression?)
+  |  Print OParen expression CParen     -> ^(FUNC_CALL Print expression)
+  |  Assert OParen expression CParen    -> ^(FUNC_CALL Assert expression)
+  |  Size OParen expression CParen      -> ^(FUNC_CALL Size expression)
+  |  LAdd OParen exprList? CParen   -> ^(FUNC_CALL LAdd exprList?) 
+  |  LRemove OParen exprList? CParen   -> ^(FUNC_CALL LRemove exprList?) 
   |	 primitiveCall
   |	 transformCall
   |	 patternCall
@@ -207,101 +207,101 @@ statement
   
   
   primitiveCall
-  	:Ellipse '(' exprList? ')'   -> ^(FUNC_CALL Ellipse exprList?) 
-  	|Line '(' exprList? ')'   -> ^(FUNC_CALL Line exprList?) 
-  	|Rect '(' exprList? ')'   -> ^(FUNC_CALL Rect exprList?) 
-  	|Curve '(' exprList? ')' ->  ^(FUNC_CALL Curve exprList?)
-  	|Polygon '(' exprList? ')' ->  ^(FUNC_CALL Polygon exprList?)
-  	|Skirt '(' exprList? ')' ->  ^(FUNC_CALL Skirt exprList?)
-  	|SkirtBack '(' exprList? ')' ->  ^(FUNC_CALL SkirtBack exprList?)
-    |LShape '(' exprList? ')' ->  ^(FUNC_CALL LShape exprList?)
-    | Point '(' exprList? ')' ->  ^(FUNC_CALL Point exprList?)
+  	:Ellipse OParen exprList? CParen   -> ^(FUNC_CALL Ellipse exprList?) 
+  	|Line OParen exprList? CParen   -> ^(FUNC_CALL Line exprList?) 
+  	|Rect OParen exprList? CParen   -> ^(FUNC_CALL Rect exprList?) 
+  	|Curve OParen exprList? CParen ->  ^(FUNC_CALL Curve exprList?)
+  	|Polygon OParen exprList? CParen ->  ^(FUNC_CALL Polygon exprList?)
+  	|Skirt OParen exprList? CParen ->  ^(FUNC_CALL Skirt exprList?)
+  	|SkirtBack OParen exprList? CParen ->  ^(FUNC_CALL SkirtBack exprList?)
+    |LShape OParen exprList? CParen ->  ^(FUNC_CALL LShape exprList?)
+    | Point OParen exprList? CParen ->  ^(FUNC_CALL Point exprList?)
   	;
   
   transformCall
-   : Move '(' exprList? ')' -> ^(FUNC_CALL Move exprList?)
-   | MoveBy '(' exprList? ')' -> ^(FUNC_CALL MoveBy exprList?) 
-   | Heading '(' exprList? ')' -> ^(FUNC_CALL Heading exprList?) 
-   | Copy '(' expression ')' -> ^(FUNC_CALL Copy expression)
-   | Rotate '(' exprList? ')'-> ^(FUNC_CALL Rotate exprList?)
-   | Fill '(' exprList? ')'-> ^(FUNC_CALL Fill exprList?)
-   | Stroke '(' exprList? ')'-> ^(FUNC_CALL Stroke exprList?)
-   | NoFill	'(' expression ')'-> ^(FUNC_CALL NoFill expression)
-   | NoStroke '(' expression ')'-> ^(FUNC_CALL NoStroke expression)
-   | Weight	'(' exprList? ')'-> ^(FUNC_CALL Weight exprList?)
-   | Hide	'(' expression ')'-> ^(FUNC_CALL Hide expression)
-   | Show	'(' expression ')'-> ^(FUNC_CALL Show expression)
-   | Group	'(' exprList? ')'-> ^(FUNC_CALL Group exprList?)
-   | Expand	'(' expression ')'-> ^(FUNC_CALL Expand expression)
-   | Merge	'(' expression ')'-> ^(FUNC_CALL Merge expression)
-   | Scale '(' exprList? ')'-> ^(FUNC_CALL Scale exprList?)
-   | MirrorX	'(' expression ')'-> ^(FUNC_CALL MirrorX expression)
-   | MirrorY	'(' expression ')'-> ^(FUNC_CALL MirrorY expression)
-   | Union	'(' exprList? ')'-> ^(FUNC_CALL Union exprList?)
-   | Difference	'(' exprList? ')'-> ^(FUNC_CALL Difference exprList?)
-   | Clip	'(' exprList? ')'-> ^(FUNC_CALL Clip exprList?)
-   | Xor	'(' exprList? ')'-> ^(FUNC_CALL Xor exprList?)
-   | Flatten	'(' expression ')'-> ^(FUNC_CALL Flatten expression)
+   : Move OParen expression Comma expression Comma expression CParen  -> ^(FUNC_CALL Move OParen expression Comma expression Comma expression CParen)
+   | MoveBy OParen exprList? CParen -> ^(FUNC_CALL MoveBy exprList?) 
+   | Heading OParen exprList? CParen -> ^(FUNC_CALL Heading exprList?) 
+   | Copy OParen expression CParen -> ^(FUNC_CALL Copy expression)
+   | Rotate OParen exprList? CParen-> ^(FUNC_CALL Rotate exprList?)
+   | Fill OParen exprList? CParen-> ^(FUNC_CALL Fill exprList?)
+   | Stroke OParen exprList? CParen-> ^(FUNC_CALL Stroke exprList?)
+   | NoFill	OParen expression CParen-> ^(FUNC_CALL NoFill expression)
+   | NoStroke OParen expression CParen-> ^(FUNC_CALL NoStroke expression)
+   | Weight	OParen exprList? CParen-> ^(FUNC_CALL Weight exprList?)
+   | Hide	OParen expression CParen-> ^(FUNC_CALL Hide expression)
+   | Show	OParen expression CParen-> ^(FUNC_CALL Show expression)
+   | Group	OParen exprList? CParen-> ^(FUNC_CALL Group exprList?)
+   | Expand	OParen expression CParen-> ^(FUNC_CALL Expand expression)
+   | Merge	OParen expression CParen-> ^(FUNC_CALL Merge expression)
+   | Scale OParen exprList? CParen-> ^(FUNC_CALL Scale exprList?)
+   | MirrorX	OParen expression CParen-> ^(FUNC_CALL MirrorX expression)
+   | MirrorY	OParen expression CParen-> ^(FUNC_CALL MirrorY expression)
+   | Union	OParen exprList? CParen-> ^(FUNC_CALL Union exprList?)
+   | Difference	OParen exprList? CParen-> ^(FUNC_CALL Difference exprList?)
+   | Clip	OParen exprList? CParen-> ^(FUNC_CALL Clip exprList?)
+   | Xor	OParen exprList? CParen-> ^(FUNC_CALL Xor exprList?)
+   | Flatten	OParen expression CParen-> ^(FUNC_CALL Flatten expression)
    ;
    
    patternCall
-   : Grid '(' exprList? ')' -> ^(FUNC_CALL Grid exprList?)
-   | Wave '(' exprList? ')' -> ^(FUNC_CALL Wave exprList?)
-   | Arc '(' exprList? ')' -> ^(FUNC_CALL Arc exprList?)
-   //| FollowCurve '('exprList? ')' -> ^(FUNC_CALL FollowCurve exprList?)
+   : Grid OParen exprList? CParen -> ^(FUNC_CALL Grid exprList?)
+   | Wave OParen exprList? CParen -> ^(FUNC_CALL Wave exprList?)
+   | Arc OParen exprList? CParen -> ^(FUNC_CALL Arc exprList?)
+   //| FollowCurve OParenexprList? CParen -> ^(FUNC_CALL FollowCurve exprList?)
    ;
    
    getCall
-  : GetWidth '(' expression ')'-> ^(FUNC_CALL GetWidth expression)
-  |GetHeight '(' expression ')'-> ^(FUNC_CALL GetHeight expression)
-  |GetX	'(' expression ')'-> ^(FUNC_CALL GetX expression)
-  |GetY '(' expression ')'-> ^(FUNC_CALL GetY expression)
-  |GetOrigin '(' expression ')'-> ^(FUNC_CALL GetOrigin expression)
-  |GetRotation '(' expression ')'-> ^(FUNC_CALL GetRotation expression)
-  |GetFill '(' expression ')'-> ^(FUNC_CALL GetFill expression)
-  |GetStroke '(' expression ')'-> ^(FUNC_CALL GetStroke expression)
-  |GetStart '(' expression ')'-> ^(FUNC_CALL GetStart expression)
-  |GetEnd '(' expression ')'-> ^(FUNC_CALL GetEnd expression) 
-  |GetDistance '(' exprList?  ')'-> ^(FUNC_CALL GetDistance exprList? ) 
-  |GetIntersect'(' exprList?  ')'-> ^(FUNC_CALL GetIntersect exprList? ) 
-  |GetAngle'(' exprList?  ')'-> ^(FUNC_CALL GetAngle exprList? ) 
-  |GetRadius'(' exprList?  ')'-> ^(FUNC_CALL GetRadius exprList? ) 
+  : GetWidth OParen expression CParen-> ^(FUNC_CALL GetWidth expression)
+  |GetHeight OParen expression CParen-> ^(FUNC_CALL GetHeight expression)
+  |GetX	OParen expression CParen-> ^(FUNC_CALL GetX expression)
+  |GetY OParen expression CParen-> ^(FUNC_CALL GetY expression)
+  |GetOrigin OParen expression CParen-> ^(FUNC_CALL GetOrigin expression)
+  |GetRotation OParen expression CParen-> ^(FUNC_CALL GetRotation expression)
+  |GetFill OParen expression CParen-> ^(FUNC_CALL GetFill expression)
+  |GetStroke OParen expression CParen-> ^(FUNC_CALL GetStroke expression)
+  |GetStart OParen expression CParen-> ^(FUNC_CALL GetStart expression)
+  |GetEnd OParen expression CParen-> ^(FUNC_CALL GetEnd expression) 
+  |GetDistance OParen exprList?  CParen-> ^(FUNC_CALL GetDistance exprList? ) 
+  |GetIntersect OParen exprList?  CParen-> ^(FUNC_CALL GetIntersect exprList? ) 
+  |GetAngle OParen exprList?  CParen-> ^(FUNC_CALL GetAngle exprList? ) 
+  |GetRadius OParen exprList?  CParen-> ^(FUNC_CALL GetRadius exprList? ) 
   ;
    
    mathCall
-   	:Cosine '(' expression ')'   -> ^(FUNC_CALL Cosine expression)
-   	|Sine '(' expression ')'   -> ^(FUNC_CALL Sine expression)
-   	|Tan '(' expression ')'   -> ^(FUNC_CALL Tan expression)
-   	|ATan '(' exprList? ')'   -> ^(FUNC_CALL ATan exprList?)
-   	|Random '(' exprList? ')'   -> ^(FUNC_CALL Random exprList?)
-   	|Pow '(' exprList? ')'   -> ^(FUNC_CALL Pow exprList?)
-   	|Sqrt '(' expression ')'   -> ^(FUNC_CALL Sqrt expression)
-   	|Sq '(' expression ')'   -> ^(FUNC_CALL Sq expression)
-   	|Gaussian '(' exprList? ')'   -> ^(FUNC_CALL Gaussian exprList?)
-   	|Noise '(' exprList? ')'   -> ^(FUNC_CALL Noise exprList?)
-   	|Round'(' expression ')'   -> ^(FUNC_CALL Round expression)
-   	|Map'(' exprList? ')'   -> ^(FUNC_CALL Map exprList?)
-   	|Inch '(' expression ')'   -> ^(FUNC_CALL Inch expression)
-   	|Mm '(' expression ')'   -> ^(FUNC_CALL Mm expression)
-   	|Cm '(' expression ')'   -> ^(FUNC_CALL Cm expression)
-   	|Units'(' expression ')'   -> ^(FUNC_CALL Units expression)
+   	:Cosine OParen expression CParen   -> ^(FUNC_CALL Cosine expression)
+   	|Sine OParen expression CParen   -> ^(FUNC_CALL Sine expression)
+   	|Tan OParen expression CParen   -> ^(FUNC_CALL Tan expression)
+   	|ATan OParen exprList? CParen   -> ^(FUNC_CALL ATan exprList?)
+   	|Random OParen exprList? CParen   -> ^(FUNC_CALL Random exprList?)
+   	|Pow OParen exprList? CParen   -> ^(FUNC_CALL Pow exprList?)
+   	|Sqrt OParen expression CParen   -> ^(FUNC_CALL Sqrt expression)
+   	|Sq OParen expression CParen   -> ^(FUNC_CALL Sq expression)
+   	|Gaussian OParen exprList? CParen   -> ^(FUNC_CALL Gaussian exprList?)
+   	|Noise OParen exprList? CParen   -> ^(FUNC_CALL Noise exprList?)
+   	|Round OParen expression CParen   -> ^(FUNC_CALL Round expression)
+   	|Map OParen exprList? CParen   -> ^(FUNC_CALL Map exprList?)
+   	|Inch OParen expression CParen   -> ^(FUNC_CALL Inch expression)
+   	|Mm OParen expression CParen   -> ^(FUNC_CALL Mm expression)
+   	|Cm OParen expression CParen   -> ^(FUNC_CALL Cm expression)
+   	|Units OParen expression CParen   -> ^(FUNC_CALL Units expression)
    	;
   
   uICall
-  	:Slider '(' exprList? ')'   -> ^(FUNC_CALL Slider exprList?) 
+  	:Slider OParen exprList? CParen   -> ^(FUNC_CALL Slider exprList?) 
   	;
   	
   templateCall
-  	:Template '(' exprList? ')'   -> ^(FUNC_CALL Template exprList?)
-  	|SetWidth '(' exprList? ')'   -> ^(FUNC_CALL SetWidth exprList?)
-  	|SetHeight '(' exprList? ')'   -> ^(FUNC_CALL SetHeight exprList?)
-  	|SetSeam '(' exprList? ')'   -> ^(FUNC_CALL SetSeam exprList?)
-  	|SetName '(' exprList? ')'   -> ^(FUNC_CALL SetName exprList?)
-  	|SetVFold '(' exprList? ')'   -> ^(FUNC_CALL SetVFold exprList?)
-  	|SetHFold '(' exprList? ')'   -> ^(FUNC_CALL SetHFold exprList?)
-  	|SetCorner '(' exprList? ')'   -> ^(FUNC_CALL SetCorner exprList?)
-  	|TemplateCollection '('   exprList? ')'   -> ^(FUNC_CALL TemplateCollection   exprList?)
-  	|AddDesign'(' exprList? ')'   -> ^(FUNC_CALL AddDesign exprList?)
+  	:Template OParen exprList? CParen   -> ^(FUNC_CALL Template exprList?)
+  	|SetWidth OParen exprList? CParen   -> ^(FUNC_CALL SetWidth exprList?)
+  	|SetHeight OParen exprList? CParen   -> ^(FUNC_CALL SetHeight exprList?)
+  	|SetSeam OParen exprList? CParen   -> ^(FUNC_CALL SetSeam exprList?)
+  	|SetName OParen exprList? CParen   -> ^(FUNC_CALL SetName exprList?)
+  	|SetVFold OParen exprList? CParen   -> ^(FUNC_CALL SetVFold exprList?)
+  	|SetHFold OParen exprList? CParen   -> ^(FUNC_CALL SetHFold exprList?)
+  	|SetCorner OParen exprList? CParen   -> ^(FUNC_CALL SetCorner exprList?)
+  	|TemplateCollection OParen   exprList? CParen   -> ^(FUNC_CALL TemplateCollection   exprList?)
+  	|AddDesign OParen exprList? CParen   -> ^(FUNC_CALL AddDesign exprList?)
   	;
   	
  
@@ -423,7 +423,7 @@ atom
   |list indexes?               -> ^(LOOKUP list indexes?)
   |  Identifier indexes?  -> ^(LOOKUP Identifier indexes?)
   |  String indexes?             -> ^(LOOKUP String indexes?)
-  |  '(' expression ')' indexes? -> ^(LOOKUP expression indexes?) 
+  |  OParen expression CParen indexes? -> ^(LOOKUP expression indexes?) 
   ;
   
   idList

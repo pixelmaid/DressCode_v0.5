@@ -11,13 +11,17 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 public class MoveNode extends DCNode {
 
-	protected List<DCNode> params;
 
     protected int line;
     protected int col;
+    private DCNode xExpr;
+    private DCNode yExpr;
+    private DCNode drawExpr;
     
-    public MoveNode(List<DCNode> ps, int l, int c) {
-        params = ps;
+    public MoveNode(DCNode d, DCNode x, DCNode y, int l, int c) {
+    	xExpr=x;
+    	yExpr=y;
+    	drawExpr=d;
         line = l;
         col = c;
         //System.out.println("created new drawable node at line:"+line);
@@ -25,10 +29,10 @@ public class MoveNode extends DCNode {
 
     @Override
     public VarType evaluate() {
-    	Drawable d;
-    	Double x;
-    	Double y;
-    	if(params.size()<2||params.size()>3){
+    	Drawable d = drawExpr.evaluate().asDrawable();
+    	Double x = xExpr.evaluate().asDouble();
+    	Double y =yExpr.evaluate().asDouble();;
+    	/*if(params.size()<2||params.size()>3){
     		
     		throw new RuntimeException("Incorrect number of parameters for move at line " + line);
     	}
@@ -44,8 +48,8 @@ public class MoveNode extends DCNode {
     		Point p=params.get(1).evaluate().asPoint();
     		x= p.getX();
     		y= p.getY();
-    	}
-    	d.setLastTransform(TransformTypes.MOVETO,line,col);
+    	}*/
+    	d.setLastTransform(TransformTypes.MOVETO,line,col,this.startArg,this.endArg);
 
     	d.moveTo(x, y);
     	return new VarType(d);	

@@ -149,7 +149,9 @@ functionCall returns [DCNode node]
   	;
   
   transformCall returns [DCNode node]
-   :^(FUNC_CALL Move exprList?)   {node = new MoveNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   :^(FUNC_CALL Move OParen d= expression fc = Comma x= expression Comma y=expression CParen)   
+   {node = new MoveNode($d.node,$x.node, $y.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());
+   node.setLimits($fc.getCharPositionInLine(),$CParen.getCharPositionInLine());}
    | ^(FUNC_CALL MoveBy exprList?)   {node = new MoveByNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    | ^(FUNC_CALL Heading exprList?)   {node = new HeadingNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    |^(FUNC_CALL Copy expression)  {node = new CopyNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}

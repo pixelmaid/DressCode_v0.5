@@ -1088,6 +1088,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					String ellipseStatement = Stamp.addEllipseStatement((Ellipse)ellipseTool.getCreated(), false);
 					codeField.insertGesturalStatement(ellipseStatement);
 					run();	
+					break;
 				case CustomEvent.BOOL_PERFORMED:
 					selectMain();
 					int type = boolTool.boolType;

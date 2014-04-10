@@ -123,7 +123,7 @@ public class Drawable extends GraphNode  {
 		setStrokeColor(0,0,0);
 		strokeWeight = 1;
 		transforms = new ArrayList<int[]>();
-		this.setLastTransform(TransformTypes.NONE, -1,0);
+		this.setLastTransform(TransformTypes.NONE, -1,0,0,0);
 		
 	}
 
@@ -292,11 +292,13 @@ public void drawOrigin(Canvas embedded){
 		return gModified;
 	}
 	
-	public void setLastTransform(int t,int line, int col){
-		int[] transform = new int[3];
+	public void setLastTransform(int t,int line, int col, int startArg, int endArg){
+		int[] transform = new int[5];
 		transform[0]=t;
 		transform[1]=line;
 		transform[2]=col;
+		transform[3] = startArg;
+		transform[4]=endArg;
 		transforms.add(transform);
 	}
 	

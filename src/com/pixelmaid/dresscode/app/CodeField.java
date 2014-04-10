@@ -380,12 +380,13 @@ public JMenuItem getUndoMenu(){
 		int tLine = lastTransforms[1]-2;
 		int tLast = lastTransforms[0];
 		int tCol = lastTransforms[2];
-		
+		int startArg = lastTransforms[3];
+		int endArg = lastTransforms[4];
 		System.out.println("last transform for attemptedMove="+tLast+","+tLine+","+tCol);
 		
 		switch(tLast){
 			case TransformTypes.MOVETO:
-				modifyExistingMove(sD,tLine,tCol);
+				modifyExistingMove(sD,tLine,tCol,startArg,endArg);
 			break;
 			case TransformTypes.NONE:
 				return insertNewMove(sD,sD.getLine()-2,tCol);
@@ -397,7 +398,7 @@ public JMenuItem getUndoMenu(){
 		return false;
 	}
 	
-	public void modifyExistingMove(Drawable sD, int line,int col){
+	public void modifyExistingMove(Drawable sD, int line,int col,int startArg,int endArg){
 		String text = this.getText();
 		double x = sD.getOrigin().getX();
 		double y = sD.getOrigin().getY();
@@ -405,29 +406,13 @@ public JMenuItem getUndoMenu(){
 		String[] lines = text.split("\r\n|\r|\n");
 		String replaceLine = lines[line];
 		
-		String start = replaceLine.substring(0,col);
-		String mEnd = replaceLine.substring(col,replaceLine.length());
-		String re1="([+-]?\\d*(\\.\\d)?+)(?![-+0-9\\.])";	// Float 1
-		String re2="(,)";	
-		String re3="(\\))";
-		
-		System.out.println("mEnd="+mEnd);
+		String start = replaceLine.substring(0,startArg+1);
 	
-
-	    Pattern p = Pattern.compile(re1+re2+re1+re3);
-	    Matcher m = p.matcher(mEnd);
-	    int lastParamIndex = 0;
-	    int lastParamEnd = 0;
-	    while(m.find()) {
-	     lastParamIndex=m.start();
-	     lastParamEnd=m.end();
-	    }
-
-		String middle = mEnd.substring(0,lastParamIndex);
-		String end =  mEnd.substring(lastParamEnd,mEnd.length());
+	    String middle = replaceLine.substring(startArg+1,endArg);
+	    String end =  replaceLine.substring(endArg,replaceLine.length());
 		System.out.println("start="+start+"\nmiddle="+middle+"\nend="+end);
 		
-		lines[line]= start+middle+String.format("%.0f", x)+","+String.format("%.0f", y)+")"+end;
+		lines[line]= start+String.format("%.0f", x)+","+String.format("%.0f", y)+end;
 		String newText = "";
 		for(int i=0;i<lines.length;i++){
 			newText +=lines[i];
@@ -436,6 +421,9 @@ public JMenuItem getUndoMenu(){
 			}
 		}
 		this.setText(newText);
+		int stringLength = (String.format("%.0f", x)+","+String.format("%.0f", y)).length();
+		System.out.println("startArg="+startArg+" endArg="+(startArg+stringLength+1)+ "line="+line+2);
+		sD.setLastTransform(TransformTypes.MOVETO,line+2,col,startArg,startArg+stringLength+1);
 	}
 	
 	public boolean insertNewMove(Drawable sD, int line, int col){
@@ -449,13 +437,19 @@ public JMenuItem getUndoMenu(){
 		String moveText ="";
 		if(identifier!=null){
 			moveText = replaceLine+"\nmoveTo("+identifier+","+String.format("%.0f", x)+","+String.format("%.0f", y)+")";
-			sD.setLastTransform(TransformTypes.MOVETO,line+3,col);
+			int startArg =("moveTo("+identifier).length();
+			int endArg = startArg+(String.format("%.0f", x)+","+String.format("%.0f", y)+")").length();
+			System.out.println("startArg="+startArg+" endArg="+endArg);
+			sD.setLastTransform(TransformTypes.MOVETO,line+3,col,startArg,endArg);
 			run = true;
 
 		}
 		else{
 			moveText = "moveTo("+replaceLine+","+String.format("%.0f", x)+","+String.format("%.0f", y)+")";
-			sD.setLastTransform(TransformTypes.MOVETO,line+2,col);
+			int startArg =("moveTo("+replaceLine).length();
+			int endArg = startArg+(String.format("%.0f", x)+","+String.format("%.0f", y)+")").length();
+			System.out.println("startArg="+startArg+" endArg="+endArg);
+			sD.setLastTransform(TransformTypes.MOVETO,line+2,col,startArg,endArg);
 		}
 		lines[line]=moveText;
 		String newText = "";

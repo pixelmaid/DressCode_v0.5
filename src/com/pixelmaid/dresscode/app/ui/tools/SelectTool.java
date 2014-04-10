@@ -76,7 +76,7 @@ public class SelectTool extends Tool  {
 				
 				selected=true;
 				sD.setSelected(true);
-				System.out.println("selected object at"+i);
+				//System.out.println("selected object at"+i);
 				break;
 		
 			}
@@ -117,8 +117,8 @@ public class SelectTool extends Tool  {
 			sD.moveTo(mouseX,mouseY);
 		
 			moved=true;
-			System.out.println("select drag");
-			System.out.println(sD.getOrigin().getX()+","+sD.getOrigin().getY());
+			//System.out.println("select drag");
+			//System.out.println(sD.getOrigin().getX()+","+sD.getOrigin().getY());
 		}
 		this.fireToolEvent(CustomEvent.REDRAW_REQUEST);
 		}
