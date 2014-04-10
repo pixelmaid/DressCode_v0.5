@@ -43,11 +43,7 @@ public class Drawable extends GraphNode  {
 	private boolean doStroke=true;
 	private boolean drawOrigin=true;
 	private String identifier = "";
-	private int line= 0; //last line of modification
-	private int initLine = -1;
-	private int endPos = -1;//if modified graphically, position where modification code ends
-	private boolean codeCreated = true; //flag for if drawable was created with code or with graphic tool
-	private boolean gModified = false; //flag for if last line was modified in code or with graphic tool
+	private int line= 0; //initialization line modification
 	protected final static int DEFAULT_WIDTH= 50;
 	private ArrayList<int[]> transforms= new ArrayList<int[]>();
 
@@ -266,31 +262,9 @@ public void drawOrigin(Canvas embedded){
 	
 	public void setLine(int l){
 		this.line = l;
-		if(initLine==-1){
-			initLine = l;
-		}
-	}
-	public int getInitLine() {
-		return this.line;
+		
 	}
 	
-	
-	
-	public void setCodeCreated(boolean cC){
-		codeCreated = cC;
-	}
-	
-	public boolean getCodeCreated(){
-		return codeCreated;
-	}
-	
-	public void setGModified(boolean gM){
-		gModified = gM;
-	}
-	
-	public boolean getGModified(){
-		return gModified;
-	}
 	
 	public void setLastTransform(int t,int line, int col, int startArg, int endArg){
 		int[] transform = new int[5];
@@ -764,6 +738,9 @@ public void drawOrigin(Canvas embedded){
 		c.rotate(o.getRotation());
 		c.rotate(o.getRotation());
 		c.setParent(o.getParent());
+		c.transforms=o.transforms;
+		c.line=o.line;
+		c.identifier=o.identifier;
 		copyStyleParams(o,c);
 	}
 	

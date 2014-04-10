@@ -383,15 +383,17 @@ public JMenuItem getUndoMenu(){
 		int startArg = lastTransforms[3];
 		int endArg = lastTransforms[4];
 		System.out.println("last transform for attemptedMove="+tLast+","+tLine+","+tCol);
-		
+		System.out.println("drawable init line="+sD.getLine());
 		switch(tLast){
 			case TransformTypes.MOVETO:
 				modifyExistingMove(sD,tLine,tCol,startArg,endArg);
 			break;
 			case TransformTypes.NONE:
+				System.out.println("no transformation");
 				return insertNewMove(sD,sD.getLine()-2,tCol);
 				
 			default:
+				System.out.println("non move transformation");
 				return insertNewMove(sD,tLine,tCol);
 			
 		}
