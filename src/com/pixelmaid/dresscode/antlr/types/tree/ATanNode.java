@@ -10,7 +10,7 @@ public class ATanNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
+
 
 
   public ATanNode(List<DCNode> ps, int l, int c) {

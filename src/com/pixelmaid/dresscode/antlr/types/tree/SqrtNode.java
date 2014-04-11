@@ -8,8 +8,6 @@ public class SqrtNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
-
 
   public SqrtNode(DCNode p, int l, int c) {
       param = p;

@@ -146,6 +146,17 @@ public class DrawableManager extends NodeEvent implements CustomEventListener {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	public boolean identifierExists(String id){
+		for (int i=0;i<drawables.size();i++){
+			if(drawables.get(i).getIdentifier()!=null){
+				if(id.matches(drawables.get(i).getIdentifier())){
+					return true;
+				}
+			}
+		}
+		return false;
+	}
 
 	
 	

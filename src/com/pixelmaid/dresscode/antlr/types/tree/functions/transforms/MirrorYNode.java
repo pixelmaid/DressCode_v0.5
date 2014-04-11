@@ -12,10 +12,6 @@ public class MirrorYNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
-
-
-    
     public MirrorYNode(DCNode p, int l, int c) {
         param = p;
         line = l;

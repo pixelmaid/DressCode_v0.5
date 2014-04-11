@@ -16,7 +16,6 @@ public class ClipNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
     protected Scope scope;
 
     

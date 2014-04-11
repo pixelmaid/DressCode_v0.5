@@ -40,7 +40,9 @@ public class BlockNode extends DCNode {
 	boolean drawAdded=false;
 	 for(int i=0;i<statements.size(); i++){
       VarType value = statements.get(i).evaluate();
-      
+      //System.out.println("statement at line="+statements.get(i).getLine());
+      //System.out.println("statement is ="+statements.get(i));
+
       if(value != VarType.VOID) {
         // return early from this block if value is a return statement
         //return value;

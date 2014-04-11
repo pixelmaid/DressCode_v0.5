@@ -1,0 +1,51 @@
+/* Radial Symmetry Example
+* creates a randomly generated pattern
+* with radial symmetry.
+*/
+
+/*setup the range for the number of shapes in the pattern */
+minNum = 8
+maxNum = 16
+
+/*randomly generated variable that determines number of shapes*/
+armNum = round(random(minNum,maxNum))
+
+/*make sure arm num is even */
+if(armNum%2!=0):
+	armNum = armNum+1
+
+
+/*setup the range for the radius of the pattern */
+minRad = 0
+maxRad = 75
+
+/*randomly generated variable that determines the radius*/
+rad = random(0,100)
+
+/* group to hold the finished pattern */
+rGroup = group()
+
+/*loop to create the pattern.*/
+repeat i=0:armNum:
+	/*trig to calculate angle and position for each arm */
+	theta = 360/armNum*i 
+	x = cos(theta)*rad
+	y = sin(theta)*rad
+	/* create arm using arm stamp */
+	a = arm()
+	/*move arm to x,y coordinates */
+	moveTo(a,x,y)
+	
+	/* if arm number is even, scale it by 75% */
+	if i%2==0:
+		scale(a,0.75,0.75)
+	
+	/*rotate arm by theta +90 degrees to orient it to the center*/
+	rotate(a,theta+90)
+	
+	/*add arm to group*/
+	add(rGroup,a)
+
+
+/*move the finished design to the center of the drawing board*/
+moveTo(rGroup,WIDTH/2,HEIGHT/2)

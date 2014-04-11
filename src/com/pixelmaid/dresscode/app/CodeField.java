@@ -703,9 +703,14 @@ public JMenuItem getUndoMenu(){
 	}
 
 
-
-	
-	
+	public void deleteSelectedText() {
+		int start = this.getSelectionStart();
+		int end = this.getSelectionEnd();
+		String startText = this.getText().substring(0,start);
+		String endText = this.getText().substring(end,this.getText().length());
+		this.setText(startText+endText);
+		
+	}
 	
 
  

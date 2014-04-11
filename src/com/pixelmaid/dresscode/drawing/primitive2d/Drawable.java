@@ -1,17 +1,12 @@
 package com.pixelmaid.dresscode.drawing.primitive2d;
 
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.List;
 
 import processing.core.PApplet;
 import processing.core.PConstants;
 import processing.core.PGraphics;
 
-import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.antlr.types.tree.functions.transforms.TransformTypes;
 import com.pixelmaid.dresscode.app.Canvas;
 import com.pixelmaid.dresscode.data.GraphNode;
@@ -20,7 +15,6 @@ import com.pixelmaid.dresscode.drawing.datatype.CmpY;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.CmpDist;
 import com.pixelmaid.dresscode.drawing.math.Geom;
-import com.pixelmaid.dresscode.drawing.math.Vec2d;
 import com.pixelmaid.dresscode.events.CustomEvent;
 
 

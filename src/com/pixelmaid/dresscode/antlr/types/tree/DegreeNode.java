@@ -8,8 +8,6 @@ public class DegreeNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
-
 
   public DegreeNode(DCNode p, int l) {
       param = p;

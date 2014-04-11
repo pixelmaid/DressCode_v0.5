@@ -8,7 +8,6 @@ public class AndNode extends DCNode {
 
     private DCNode lhs;
     private DCNode rhs;
-    //protected int line;
     
     public AndNode(DCNode lhs, DCNode rhs) {
         this.lhs = lhs;

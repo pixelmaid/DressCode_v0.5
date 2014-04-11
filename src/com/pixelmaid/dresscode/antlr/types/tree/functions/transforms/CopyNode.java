@@ -28,9 +28,8 @@ public class CopyNode extends DCNode {
     	
     	d= param.evaluate().asDrawable();
     	Drawable d2= d.copy();
-    	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d2);
-    	d.setLine(line);
     	d2.setLine(line);
+    	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, d2);
     	return new VarType(d2);	
         //throw new RuntimeException("Illegal function call: " + this);
     }

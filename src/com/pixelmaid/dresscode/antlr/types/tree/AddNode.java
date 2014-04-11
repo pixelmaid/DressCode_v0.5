@@ -12,8 +12,6 @@ public class AddNode extends DCNode {
 
   private DCNode lhs;
   private DCNode rhs;
-  //protected int line;
-
 
   public AddNode(DCNode lhs, DCNode rhs) {
     this.lhs = lhs;

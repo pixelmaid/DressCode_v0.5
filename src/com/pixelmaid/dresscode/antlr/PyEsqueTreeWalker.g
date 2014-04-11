@@ -98,6 +98,10 @@ statement returns [DCNode node]
   |  ifStatement    {node = $ifStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   |  whileStatement {node = $whileStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   | radialStatement {node = $radialStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  | spiralStatement {node = $spiralStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  | rowStatement {node = $rowStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  | arcStatement {node = $arcStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
+  | drawableRepeatStatement {node = $drawableRepeatStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   | followCurveStatement {node = $followCurveStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   | repeatStatement {node = $repeatStatement.node; ((NodeEvent)node).addEventListener(drawableManager);}
   /*| returnStatement {node = $returnStatement.node; currentFunction.addReturn($returnStatement.node);}*/
@@ -269,6 +273,21 @@ repeatStatement returns [DCNode node]
   ;
 radialStatement returns [DCNode node]
 	: ^(Radial gId = Identifier id1=Identifier a= expression id2=Identifier b=expression block) {node = new RadialStatementNode($gId.text, $id1.text, $id2.text, $a.node, $b.node, $block.node, currentScope,$Radial.getLine(), $Radial.getCharPositionInLine());}
+	;
+	
+spiralStatement returns [DCNode node]
+	: ^(Spiral gId = Identifier id1=Identifier a= expression id2=Identifier b=expression block) {node = new SpiralStatementNode($gId.text, $id1.text, $id2.text, $a.node, $b.node, $block.node, currentScope,$Spiral.getLine(), $Spiral.getCharPositionInLine());}
+	;
+	
+rowStatement returns [DCNode node]
+	: ^(Row gId = Identifier id1=Identifier a= expression id2=Identifier b=expression block) {node = new RowStatementNode($gId.text, $id1.text, $id2.text, $a.node, $b.node, $block.node, currentScope,$Row.getLine(), $Row.getCharPositionInLine());}
+	;
+	
+arcStatement returns [DCNode node]
+	: ^(Arc gId = Identifier id1=Identifier a= expression id2=Identifier b=expression id3=Identifier c=expression block) {node = new ArcStatementNode($gId.text, $id1.text, $id2.text, $id3.text, $a.node, $b.node,$c.node, $block.node, currentScope,$Arc.getLine(), $Arc.getCharPositionInLine());}
+	;
+drawableRepeatStatement returns [DCNode node]
+	: ^(Repeat gId = Identifier id1=Identifier a= expression block) {node = new DrawableRepeatStatementNode($gId.text, $id1.text, $a.node, $block.node, currentScope,$Repeat.getLine(), $Repeat.getCharPositionInLine());}
 	;
 	
 followCurveStatement returns [DCNode node]

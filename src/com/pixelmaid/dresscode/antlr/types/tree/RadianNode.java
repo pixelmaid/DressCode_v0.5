@@ -8,7 +8,6 @@ public class RadianNode extends DCNode {
 
 	protected DCNode param;
 
-    protected int line;
 
 
   public RadianNode(DCNode p, int l) {

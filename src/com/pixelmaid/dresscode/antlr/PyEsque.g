@@ -150,6 +150,10 @@ statement
   |  whileStatement
   |	 repeatStatement
   |	 radialStatement
+  |  spiralStatement
+  |  arcStatement
+  |	 rowStatement
+  |  drawableRepeatStatement
   | followCurveStatement
   //|  returnStatement
   ;
@@ -245,9 +249,9 @@ statement
    ;
    
    patternCall
-   : Grid OParen exprList? CParen -> ^(FUNC_CALL Grid exprList?)
-   | Wave OParen exprList? CParen -> ^(FUNC_CALL Wave exprList?)
-   | Arc OParen exprList? CParen -> ^(FUNC_CALL Arc exprList?)
+   //: Grid OParen exprList? CParen -> ^(FUNC_CALL Grid exprList?)
+   : Wave OParen exprList? CParen -> ^(FUNC_CALL Wave exprList?)
+   //| Arc OParen exprList? CParen -> ^(FUNC_CALL Arc exprList?)
    //| FollowCurve OParenexprList? CParen -> ^(FUNC_CALL FollowCurve exprList?)
    ;
    
@@ -329,12 +333,34 @@ elseStat
  @after{paraphrases.pop();}
   : Repeat Identifier '=' expression Do expression ('add' expression)* Do block -> ^(Repeat Identifier expression expression (expression)? block)
   ;
-
+  drawableRepeatStatement
+  @init{paraphrases.push("in drawable repeat statement");}
+  @after{paraphrases.pop();}
+  : Repeat Identifier ',' Identifier '=' expression Do block -> ^(Repeat Identifier Identifier expression block)
+  ;
 
  radialStatement
   @init{paraphrases.push("in radial statement");}
  @after{paraphrases.pop();}
   : Radial Identifier ',' Identifier '=' expression ',' Identifier '=' expression Do block -> ^(Radial Identifier Identifier expression Identifier expression block)
+  ;
+  
+   spiralStatement
+  @init{paraphrases.push("in radial statement");}
+ @after{paraphrases.pop();}
+  : Spiral Identifier ',' Identifier '=' expression ',' Identifier '=' expression Do block -> ^(Spiral Identifier Identifier expression Identifier expression block)
+  ;
+  
+   rowStatement
+  @init{paraphrases.push("in radial statement");}
+ @after{paraphrases.pop();}
+  : Row Identifier ',' Identifier '=' expression ',' Identifier '=' expression Do block -> ^(Row Identifier Identifier expression Identifier expression block)
+  ;
+  
+   arcStatement
+  @init{paraphrases.push("in radial statement");}
+ @after{paraphrases.pop();}
+  : Arc Identifier ',' Identifier '=' expression ',' Identifier '=' expression ',' Identifier '=' expression Do block -> ^(Arc Identifier Identifier expression Identifier expression Identifier expression block)
   ;
   
   followCurveStatement
@@ -490,10 +516,10 @@ Xor	:'xor';
 Flatten : 'flatten';
 
 //patterns
-Grid	: 'grid';
+//Grid	: 'grid';
 Wave	: 'wave';
-Spiral	: 'spiral';
-Arc	: 'arc';
+//Spiral	: 'spiral';
+
 FollowCurve: 'followCurve';
 
 //UIcommands
@@ -551,12 +577,11 @@ System.out.println("entered function");
 If       : 'if';
 Else     : 'else';
 Return   : 'return';
-Repeat	 : 'repeat'{
-System.out.println("entered repeat");
-};
-Radial	 : 'radial'{
-System.out.println("entered repeat");
-};
+Repeat	 : 'repeat';
+Radial	 : 'radial';
+Spiral	 : 'spiral';
+Row		 : 'row';
+Arc		: 'arc';
 While    : 'while';
 To       : 'to';
 Do       : ':';

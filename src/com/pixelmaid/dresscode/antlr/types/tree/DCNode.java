@@ -4,7 +4,7 @@ import com.pixelmaid.dresscode.antlr.types.VarType;
 
 
 public class DCNode extends NodeEvent {
-	protected int line;
+	protected int line=0;
 	protected int col;
 	protected int startArg;
 	protected int endArg;

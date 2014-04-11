@@ -460,6 +460,65 @@ public class Stamp {
 		}
 		return indent;
 	}
+	
+	public static String addRadialStatement(String gName, boolean gExists, ArrayList<Double> vals, String selectedCode){
+		String startStatement = "radial "+gName+", "+"rad="+ vals.get(1)+", "+"num="+Math.round(vals.get(0))+":";
+		return addRepeatTypeStatement(startStatement,gName,gExists,selectedCode);
+	}
+	
+	public static String addRowStatement(String gName, boolean gExists, ArrayList<Double> vals, String selectedCode){
+		String startStatement = "row "+gName+", "+"gap="+ vals.get(1)+", "+"num="+Math.round(vals.get(0))+":";
+		return addRepeatTypeStatement(startStatement,gName,gExists,selectedCode);
+	}
+	
+	public static String addSpiralStatement(String gName, boolean gExists, ArrayList<Double> vals, String selectedCode){
+		String startStatement = "spiral "+gName+", "+"theta="+ vals.get(1)+", "+"num="+Math.round(vals.get(0))+":";
+		return addRepeatTypeStatement(startStatement,gName,gExists,selectedCode);
+	}
+	
+	public static String addArcStatement(String gName, boolean gExists, ArrayList<Double> vals, String selectedCode){
+		String startStatement = "arc "+gName+", "+"width="+ vals.get(1)+", "+"height="+ vals.get(2)+", "+"num="+Math.round(vals.get(0))+":";
+		return addRepeatTypeStatement(startStatement,gName,gExists,selectedCode);
+	}
+	
+	public static String addRepeatStatement(String gName, boolean gExists, ArrayList<Double> vals, String selectedCode){
+		String startStatement = "repeat "+gName+","+"num="+Math.round(vals.get(0))+":";
+		return addRepeatTypeStatement(startStatement,gName,gExists,selectedCode);
+	}
+	
+	private static String addRepeatTypeStatement(String startStatement,String gName, boolean gExists, String selectedCode){
+		String statement ="";
+		if(!gExists){
+			statement+=gName+"= group()\n";
+		}
+		statement+=startStatement;
+		if(selectedCode==null){
+			statement+="\n\t//enter your code here";
+		}
+		else{
+			String[] lines=selectedCode.split("\t");
+			String statementNew = "";
+			//cut off the beginning of each one
+			for(int i=0;i<lines.length;i++){
+				if(lines[i].charAt(0)=='\t'){
+					lines[i]=lines[i].substring(1,lines[i].length());
+				}
+				statementNew+=lines[i];
+			}
+			lines=statementNew.split("\n");
+			String statementFinal= "";
+			//cut off the beginning of each one
+			for(int i=0;i<lines.length;i++){
+				if(lines[i].charAt(0)=='\n'){
+					lines[i]=lines[i].substring(1,lines[i].length());
+				}
+				statementFinal+="\n\t"+lines[i];
+			}
+			statement+=statementFinal;
+		}
+		return statement;
+		
+	}
 
 	
 	

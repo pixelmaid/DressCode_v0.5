@@ -9,7 +9,6 @@ public class PropertyNode extends DCNode {
 
 	protected VarType value;
 
-    protected int line;
 
 
     

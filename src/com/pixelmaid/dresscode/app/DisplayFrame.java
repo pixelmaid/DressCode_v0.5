@@ -101,7 +101,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	//font size for text in code field
 	//TODO: add in method for adjusting font size
-	private int fontSize = 16;
+	private int fontSize = 12;
 	
 	//UI components for Coding
 	private CodingFrame codingFrame;
@@ -300,9 +300,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		patternDropdown = new JComboBox();
 		patternDropdown.setEnabled(false);
 		
-		patternToolbar.addButton(designButton);
-		patternToolbar.addButton(patternButton);
-		patternToolbar.addButton(simButton);
+		//patternToolbar.addButton(designButton);
+		//patternToolbar.addButton(patternButton);
+		//patternToolbar.addButton(simButton);
 
 		patternToolbar.init(defaultDrawingPaneWidth,DEFAULT_TOOLBAR_HEIGHT,patternDropdown,BROWN,sliderButton);
 
@@ -351,6 +351,12 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		//setup treeManager for declarative view
 		treeManager = new ListManager(OFF_WHITE,LIGHT_GREY);
 		treeManager.getList().addKeyListener(this);
+		treeManager.addItem("repeat");
+		treeManager.addItem("radial");
+		treeManager.addItem("row");
+		treeManager.addItem("arc");
+		treeManager.addItem("spiral");
+		
 
 		stampManager = new ListManager(OFF_WHITE,LIGHT_GREY);
 		stampManager.getList().addKeyListener(this);
@@ -540,6 +546,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	    patternDropdown.addActionListener(this);
 
 	    stampManager.getList().addListSelectionListener(this);
+	    treeManager.getList().addListSelectionListener(this);
 
 		//setup key listeners
 		drawingToolbar.addKeyListener(this);
@@ -655,7 +662,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			for (File file : files) {
 				if(file.isDirectory()){
 				String name = file.getName().substring(0, file.getName().length());
-				System.out.println("name="+name+"\n");
+				//System.out.println("name="+name+"\n");
 				exampleList.add(name);
 				JMenuItem exampleAction = new ExampleItem(name);
 				exampleMenu.add(exampleAction);
@@ -755,6 +762,43 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 Stamp stamp = stampMap.get(stampName);
 		 codingFrame.switchCodeField(stampName,stamp.getFunctionCall().length()+4);
 		 codingToolbar.showBackButton(stampName);
+			
+		}
+	 
+	 /*called when logic icon is selected in logic manager*/
+	 private void selectLogic(int type){
+		 this.patternButton.setInactive();
+		 this.designButton.setActive();
+		 this.patternToolbar.updateLabel("Design View");
+		 LogicDialog lg = new LogicDialog(this, true,type);
+		 if(lg.getAnswer()){
+			 String groupName = lg.getName();
+			 ArrayList<Double>values = lg.getVals();
+			 String selectedCode = codeField.getSelectedText();
+			 codeField.deleteSelectedText();
+			 String statement ="";
+			 switch (type){
+			 	case LogicDialog.REPEAT_TYPE:
+			 		statement = Stamp.addRepeatStatement(groupName, drawableManager.identifierExists(groupName), values, selectedCode);
+			 	break;
+			 	case LogicDialog.RADIAL_TYPE:
+			 		statement = Stamp.addRadialStatement(groupName, drawableManager.identifierExists(groupName), values, selectedCode);
+				 break;
+			 	case LogicDialog.ROW_TYPE:
+			 		statement = Stamp.addRowStatement(groupName, drawableManager.identifierExists(groupName), values, selectedCode);
+				 break;
+			 	case LogicDialog.ARC_TYPE:
+			 		statement = Stamp.addArcStatement(groupName, drawableManager.identifierExists(groupName), values, selectedCode);
+				 break;
+			 	case LogicDialog.SPIRAL_TYPE:
+			 		statement = Stamp.addSpiralStatement(groupName, drawableManager.identifierExists(groupName), values, selectedCode);
+				 break;
+			 }
+			 codeField.insertStampStatement(statement);
+			 this.runButton.toggleAnimate();
+			
+		 	
+		 }
 			
 		}
 	 
@@ -894,7 +938,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 if(codeField.getUnsaved()){
 			 NewSaveDialog sd = new NewSaveDialog(this,true);
 			if(sd.getAnswer()==NewSaveDialog.CANCEL){
-				System.out.println("new file canceled");
+				//System.out.println("new file canceled");
 			}
 			else{
 			 if(sd.getAnswer()==NewSaveDialog.SAVED){
@@ -975,6 +1019,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		        	 }
 		        	 else{
 		        		 currentProject.setDimensions(widthVal,heightVal, unitsVal, canvas, instructionManager);
+		        		 canvas.redraw();
 		        	 }
 		    	
 		         }
@@ -991,14 +1036,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	//handles custom events from Dress Code classes
 		@Override
 		public void handleCustomInstructionEvent(Object source, int eventType) {
-			System.out.println("parse run");
+			//System.out.println("parse run");
 			switch (eventType){
 			case CustomEvent.PARSE_COMPLETE:
-				System.out.println("parse complete");
+				//System.out.println("parse complete");
 				drawIntoCanvas();
 				break;
 			case CustomEvent.PARSE_ERROR:
-				System.out.println("parse error");
+				//System.out.println("parse error");
 				reportErrors(instructionManager.getError());
 				break;
 			}
@@ -1015,7 +1060,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				((LShape)d).loadShape();
 				break;
 				case CustomEvent.TEMPLATE_CREATED:
-					System.out.println("template created");
+					//System.out.println("template created");
 					if(patternDropdown.getItemCount()==0){
 						patternDropdown.addItem("all templates");
 					}
@@ -1160,7 +1205,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					canvas.redraw();
 					patternDropdown.setSelectedIndex(TemplateManager.getSelected()+1);
 						
-					System.out.println("set selected");
+					//System.out.println("set selected");
 					
 				
 			}
@@ -1174,14 +1219,14 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 				int event, String message) {
 			System.out.println("error event ="+message+" "+source);
 			this.console.setText(message);
-			System.out.println("set error message");
+			//System.out.println("set error message");
 
 			
 		}
 
 		@Override
 		public void handleCustomPrintEvent(Object source, int event, String value) {
-			System.out.println("print event ="+value+" "+source);
+			//System.out.println("print event ="+value+" "+source);
 			this.console.setText(this.console.getText()+value);
 			
 		}
@@ -1192,7 +1237,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	@Override
 	public void windowActivated(WindowEvent arg0) {
-		System.out.println("window activated");
+		//System.out.println("window activated");
 	}
 
 	@Override
@@ -1265,7 +1310,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	@Override
 	public void keyPressed(KeyEvent e) {
 		//zoom in when ctrl + is pressed
-		
+		 if (e.getKeyCode()==KeyEvent.VK_ESCAPE) {
+			   e.setKeyCode(0);  // Fools! don't let them escape!
+			  }
 		if(e.getKeyCode()==61 && ctrlKey ==true){
 			canvas.zoomIn();
 			canvas.redraw();
@@ -1335,7 +1382,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public void keyTyped(KeyEvent e) {
 		if(e.getSource() instanceof CodeField){
 			char c = e.getKeyChar();
-			System.out.println(c);
+			//System.out.println(c);
 			if(c!='\n' && c!=' ' && ctrlKey==false){
 				runButton.toggleAnimate();
 			}
@@ -1367,6 +1414,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		else if (e.getSource() == gridButton ) {
 			canvas.setGrid();
+			canvas.redraw();
 		}
 		
 		else if (e.getSource()==targetButton){
@@ -1384,13 +1432,15 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		}
 		
 		else if (e.getSource() == zoomButton){
-			if(altKey==false ) {
+			if(ctrlKey==false ) {
 				canvas.zoomIn();
 			}
 			else{
 				canvas.zoomOut();
 			}
+			canvas.redraw();
 			zoomButton.setActive();
+		
 		}
 		
 		else if (e.getSource()==selectButton){
@@ -1541,7 +1591,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		else if (e.getSource() instanceof ExampleItem){
 			ExampleItem eI = (ExampleItem)e.getSource();
 			console.setText(eI.getName());
-			System.out.println(eI.getName());
+			//System.out.println(eI.getName());
 			openExample(eI.getName());
 			
 		}
@@ -1584,6 +1634,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			
 
 		}
+		
 			
 		
 		//canvas.redraw();
@@ -1618,7 +1669,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		if (e.getClickCount() == 2 && !e.isConsumed()) {
-		   System.out.println("double click event");
+		   //System.out.println("double click event");
 		   if(e.getSource()==polyButton){
 			   PolyDialog polyDialog = new PolyDialog(this,true,currentSides);
 			   if(polyDialog.getAnswer()){
@@ -1678,12 +1729,20 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 
 	@Override
 	public void valueChanged(ListSelectionEvent e) {
+		//System.out.println("value changed");
 		JList list = (JList)e.getSource();
 		if(!list.isSelectionEmpty()){
 			if(e.getSource() == stampManager.getList()){
 			
 				selectStamp(this.stampManager.getList().getSelectedValue().toString());
 		
+			}
+			else if(e.getSource() == treeManager.getList()){
+					int selected = list.getSelectedIndex();
+					this.selectLogic(selected);
+					treeManager.getList().clearSelection();
+					//System.out.println("selected tree manager");
+				
 			}
 		}
 	

@@ -173,7 +173,7 @@ public class Ellipse extends Polygon {
 			double x = wR* Math.cos(t);
 			double y = hR* Math.sin(t);
 			c.addPoint(x,y);
-			System.out.println("adding point at"+x+","+y);
+			//System.out.println("adding point at"+x+","+y);
 		}
 	
 		
@@ -247,7 +247,7 @@ public class Ellipse extends Polygon {
 		if(resolution>100){
 			resolution = 100;
 		}
-		System.out.println("resolution="+resolution);
+		//System.out.println("resolution="+resolution);
 	}
 
 }

@@ -15,9 +15,8 @@ public class RotateNode extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
     protected int col;
-  protected Scope scope;
+    protected Scope scope;
 
 
     

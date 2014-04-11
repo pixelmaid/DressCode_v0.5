@@ -13,7 +13,6 @@ public class GetAngleNode  extends DCNode {
 
 	protected List<DCNode> params;
 
-    protected int line;
 
 
   public GetAngleNode(List<DCNode> ps, int l, int c) {

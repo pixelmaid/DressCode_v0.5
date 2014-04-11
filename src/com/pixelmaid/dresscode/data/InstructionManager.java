@@ -93,17 +93,17 @@ public class InstructionManager extends NodeEvent{
 	    		tree = (CommonTree)result.getTree();
 	    		
 	    		CommonTreeNodeStream nodes = new CommonTreeNodeStream(tree);
-	    		System.out.println(tree.toStringTree());
+	    		//System.out.println(tree.toStringTree());
 	    		
 	    		// pass the reference to the Map of functions to the tree walker
 	    		PyEsqueTreeWalker walker = new PyEsqueTreeWalker(nodes,parser.functions,drawableManager,uiManager,widthParam, heightParam, unitParam);
 	    		// get the returned node 
 	    		BlockNode returned = walker.walk();
-	    		System.out.println("num of statements="+returned.getNumStatements());
+	    		//System.out.println("num of statements="+returned.getNumStatements());
 	    		returned.evaluate();
 	    		//registers a completed parse event
 	    		List<String> errors = walker.getErrors();
-	    		System.out.println("errors="+errors);
+	    		//System.out.println("errors="+errors);
 	    		if(errors.size()!=0){
 	    			error = "";
 	    			for(int i=0;i<errors.size();i++){

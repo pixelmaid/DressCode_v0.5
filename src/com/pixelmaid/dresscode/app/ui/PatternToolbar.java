@@ -40,8 +40,9 @@ public class PatternToolbar extends Toolbar {
 		dropdown= d;
 		d.setPreferredSize(new Dimension(160,25));
 	
-		this.add(label);
-		this.add(dropdown);
+		//this.add(label);
+		//this.add(dropdown);
+		
 		/*JTextField textField = new JTextField("Text field", 15);
 	    this.add(textField);
 	    */
@@ -69,7 +70,7 @@ public class PatternToolbar extends Toolbar {
 		layout.putConstraint(SpringLayout.NORTH, label,6,SpringLayout.NORTH, this);
 		layout.putConstraint(SpringLayout.WEST, dropdown, 220,SpringLayout.WEST, this);
 		layout.putConstraint(SpringLayout.NORTH, dropdown, 2,SpringLayout.NORTH, this);
-		layout.putConstraint(SpringLayout.WEST, sliderButton, 400,SpringLayout.WEST, this);
+		layout.putConstraint(SpringLayout.EAST, sliderButton,-5,SpringLayout.EAST, this);
 		layout.putConstraint(SpringLayout.NORTH, sliderButton, 2,SpringLayout.NORTH, this);
 
 		//Adjust constraints for the text field so it's at

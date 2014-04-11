@@ -11,8 +11,6 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 
 public class MoveNode extends DCNode {
 
-
-    protected int line;
     protected int col;
     private DCNode xExpr;
     private DCNode yExpr;

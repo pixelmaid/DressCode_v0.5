@@ -10,7 +10,6 @@ import com.pixelmaid.dresscode.app.DisplayFrame;
 
 public class GaussianNode  extends DCNode {
 	protected List<DCNode> params;
-    protected int line;
 
     public GaussianNode(List<DCNode> ps, int l, int c) {
         params = ps;

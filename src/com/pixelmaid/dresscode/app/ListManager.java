@@ -45,11 +45,7 @@ public class ListManager extends NodeEvent implements ListSelectionListener{
 	
 	public void addItem(String name){
 		renderer.addImage(name);
-
 		listModel.addElement(name);
-		
-		
-		
 	}
 	
 	public void clearItems(){

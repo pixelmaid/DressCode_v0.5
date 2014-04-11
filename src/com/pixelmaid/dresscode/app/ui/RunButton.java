@@ -27,13 +27,13 @@ public class RunButton  extends ImageButton {
 	 }
 		
 	public void toggleAnimate(){
-		System.out.println("toggle animate");
+		//System.out.println("toggle animate");
 			this.setIcon(aIcon);
 		
 	}
 	
 	public void toggleStandard(){
-		System.out.println("toggle standard");
+		//System.out.println("toggle standard");
 		this.setIcon(sIcon);
 	
 }

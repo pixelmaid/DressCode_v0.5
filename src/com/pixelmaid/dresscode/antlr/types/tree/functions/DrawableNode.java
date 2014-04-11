@@ -12,14 +12,13 @@ import com.pixelmaid.dresscode.events.CustomEvent;
 public class DrawableNode extends DCNode{
 
 	protected List<DCNode> params;
-    protected int line;
 
     
     public DrawableNode(List<DCNode> ps, int l, int c) {
         params = ps;
         line = l;
 	    col=c;
-        //System.out.println("created new drawable node at line:"+line);
+        System.out.println("created new drawable node at line:"+line);
     }
 
     @Override
