@@ -375,6 +375,99 @@ public JMenuItem getUndoMenu(){
 	}
 
 	
+	public boolean insertHideStatement(Drawable sD, boolean hide ) {
+		int[] lastTransforms = sD.getLastTransform();
+		int tLine = lastTransforms[1]-2;
+		int tLast = lastTransforms[0];
+		int tCol = lastTransforms[2];
+		int startArg = lastTransforms[3];
+		int endArg = lastTransforms[4];
+		
+		switch(tLast){
+			case TransformTypes.HIDE:
+				modifyExistingHide(sD,tLine,tCol,startArg,endArg, hide);
+			break;
+			case TransformTypes.NONE:
+				System.out.println("no hide");
+				return insertNewHide(sD,sD.getLine()-2,tCol);
+				
+			default:
+				System.out.println("non move transformation");
+				return insertNewHide(sD,tLine,tCol);
+			
+		}
+		return false;
+	}
+	
+	public void modifyExistingHide(Drawable sD, int line,int col,int startArg,int endArg,boolean hide){
+		String text = this.getText();
+		
+		String[] lines = text.split("\r\n|\r|\n");
+		String replaceLine = lines[line];
+		System.out.println("line to replace="+replaceLine);
+		String start = replaceLine.substring(0,startArg);
+		
+			String statement = replaceLine.substring(startArg,startArg+5);
+			String middle = replaceLine.substring(startArg+5,endArg);
+			String endP =  replaceLine.substring(endArg,endArg+1);
+			String last = replaceLine.substring(endArg+1,replaceLine.length());
+			System.out.println("start="+start+" statement="+statement+" middle="+middle+" endP="+endP+" last="+last);
+		if(sD.getIdentifier()==null){
+			lines[line]= start+middle+last;
+		}
+		else{
+			lines[line]="";
+			
+		}
+		
+		String newText = "";
+		for(int i=0;i<lines.length;i++){
+			newText +=lines[i];
+			if(i!=lines.length-1||lines[i]!=""){
+				newText+="\n";
+			}
+		}
+		this.setText(newText);
+		sD.removeLastTransform();
+	}
+	
+	public boolean insertNewHide(Drawable sD, int line, int col){
+		boolean run = false;
+		String identifier = sD.getIdentifier();
+		
+		String text = this.getText();
+		String[] lines = text.split("\r\n|\r|\n");
+		String replaceLine = lines[line];
+		String moveText ="";
+		if(identifier!=null){
+			moveText = replaceLine+"\nhide("+identifier+")";
+			int startArg =("hide("+identifier).length();
+			int endArg = startArg+1;
+			System.out.println("startArg="+startArg+" endArg="+endArg);
+			sD.setLastTransform(TransformTypes.HIDE,line+3,col,startArg,endArg);
+			run = true;
+
+		}
+		else{
+			moveText = "hide("+replaceLine+")";
+			int startArg =("hide("+replaceLine).length();
+			int endArg = startArg+1;
+			System.out.println("startArg="+startArg+" endArg="+endArg);
+			sD.setLastTransform(TransformTypes.HIDE,line+2,col,startArg,endArg);
+		}
+		lines[line]=moveText;
+		String newText = "";
+		for(int i=0;i<lines.length;i++){
+			newText +=lines[i];
+			if(i!=lines.length-1){
+				newText+="\n";
+			}
+		}
+		this.setText(newText);
+		return run;
+		
+	}
+	
 	public boolean insertMoveStatement(Drawable sD ) {
 		int[] lastTransforms = sD.getLastTransform();
 		int tLine = lastTransforms[1]-2;
@@ -466,79 +559,7 @@ public JMenuItem getUndoMenu(){
 		
 	}
 	
-	//TODO: fix move statement insertion
-	/*public void insertMoveStatement(Drawable sD ) {
-		String identifier = sD.getIdentifier();
-		int lineNum = sD.getLine()-1;
-		System.out.println("linenum="+lineNum);
-		int endPos = sD.getEndPos();
-		double x = sD.getOrigin().getX();
-		double y = sD.getOrigin().getY();
-		boolean over = sD.getGModified();
-		
-		System.out.println("identifer="+identifier);
-		System.out.println("lineNum="+lineNum);
-		String text = this.getText();
-		String[] lines = text.split("\r\n|\r|\n");
-		System.out.println("num of lines="+lines.length);
-		System.out.println("lineNum="+lineNum);
-		int pos =0;
 	
-		for(int i=0;i<lineNum; i++){
-			pos+=lines[i].length();
-			if(i!=0){
-				pos++;
-			}
-			
-			//System.out.println("line "+i+"="+lines[i]);
-		}
-		
-		
-		
-		if(identifier!=null){
-			String moveText = "\nmoveTo("+identifier+","+String.format("%.0f", x)+","+String.format("%.0f", y)+")";
-
-		if(!over){
-			insertText(pos,moveText);
-		
-		}
-		else{
-			
-			removeText(pos,endPos);
-			insertText(pos,moveText);
-		}
-		sD.setEndPos(pos+moveText.length());
-	}
-		else{
-			String moveText1 = "moveTo(";
-			String moveText2 = ","+String.format("%.0f", x)+","+String.format("%.0f", y)+")";
-			if(!over){
-				insertText(pos-lines[lineNum-1].length(),moveText1);	
-				insertText(pos+moveText1.length(),moveText2);
-				sD.setEndPos(pos+moveText1.length()+moveText2.length());
-
-			}
-			else{
-				
-				//removeText(pos-lines[lineNum-1].length(),pos-lines[lineNum-1].length()+moveText1.length());
-				String snip = this.getText().substring(pos-lines[lineNum-1].length(), pos);
-				System.out.println("snip="+snip);
-				int index = snip.lastIndexOf("),");
-				System.out.println("index="+index);
-				int toRemove = lines[lineNum-1].length()-index-1;
-				removeText(pos-toRemove,pos);
-				insertText(pos-toRemove,moveText2);
-				sD.setEndPos(pos-toRemove+moveText2.length());
-
-
-			}
-				
-
-		}
-		sD.setGModified(true);
-
-	}*/
-
 	public void insertShapeStatement(Drawable created, String shape) {
 		int point = this.getText().length()-2;
 		System.out.println("Point ="+point);

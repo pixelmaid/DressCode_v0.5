@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g 2014-04-10 22:37:30
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g 2014-04-16 18:48:52
 
  package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -260,7 +260,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 	 int unitParam;
 	 DrawableManager drawableManager;
 	 UserUIManager uiManager;
-	 Scope currentScope = null;
+	 public Scope currentScope = null;
 	 BlockNode currentFunction = null; 
 	  
 	  private List<String> errors = new LinkedList<String>();
@@ -342,19 +342,20 @@ public class PyEsqueTreeWalker extends TreeParser {
 		  node = bn;
 		  Scope local = new Scope(currentScope);
 		  currentScope = local;
+		  bn.scope = local;
 		  currentFunction = bn;
 		  ((NodeEvent)node).addEventListener(drawableManager);
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:88:3: ( ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:88:6: ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:89:3: ( ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:89:6: ^( BLOCK ^( STATEMENTS ( statement )* ) ^( RETURN ( expression )? ) )
 			{
 			match(input,BLOCK,FOLLOW_BLOCK_in_block95); 
 			match(input, Token.DOWN, null); 
 			match(input,STATEMENTS,FOLLOW_STATEMENTS_in_block98); 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:88:27: ( statement )*
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:89:27: ( statement )*
 				loop1:
 				while (true) {
 					int alt1=2;
@@ -365,7 +366,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					switch (alt1) {
 					case 1 :
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:88:28: statement
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:89:28: statement
 						{
 						pushFollow(FOLLOW_statement_in_block101);
 						statement2=statement();
@@ -386,7 +387,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 			match(input,RETURN,FOLLOW_RETURN_in_block109); 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:88:86: ( expression )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:89:86: ( expression )?
 				int alt2=2;
 				int LA2_0 = input.LA(1);
 				if ( (LA2_0==Add||LA2_0==Bool||LA2_0==COLOR_CONSTANT||LA2_0==DOTPROPERTY||LA2_0==Divide||LA2_0==Equals||(LA2_0 >= GT && LA2_0 <= GTEquals)||LA2_0==HEIGHT_CONSTANT||LA2_0==In||LA2_0==LOOKUP||(LA2_0 >= LT && LA2_0 <= LTEquals)||LA2_0==Modulus||(LA2_0 >= Multiply && LA2_0 <= NEquals)||(LA2_0 >= Null && LA2_0 <= Number)||LA2_0==PI_CONSTANT||LA2_0==Pw||(LA2_0 >= Subtract && LA2_0 <= TERNARY)||LA2_0==UNARY_MIN||LA2_0==WIDTH_CONSTANT||(LA2_0 >= 168 && LA2_0 <= 169)) ) {
@@ -394,7 +395,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 				}
 				switch (alt2) {
 					case 1 :
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:88:87: expression
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:89:87: expression
 						{
 						pushFollow(FOLLOW_expression_in_block112);
 						expression3=expression();
@@ -431,7 +432,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "statement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:92:1: statement returns [DCNode node] : ( assignment | functionCall | ifStatement | whileStatement | radialStatement | spiralStatement | rowStatement | arcStatement | drawableRepeatStatement | followCurveStatement | repeatStatement );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:93:1: statement returns [DCNode node] : ( assignment | functionCall | ifStatement | whileStatement | radialStatement | spiralStatement | rowStatement | arcStatement | drawableRepeatStatement | followCurveStatement | repeatStatement );
 	public final DCNode statement() throws RecognitionException {
 		DCNode node = null;
 
@@ -452,7 +453,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 			//System.out.println(" statement called");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:96:3: ( assignment | functionCall | ifStatement | whileStatement | radialStatement | spiralStatement | rowStatement | arcStatement | drawableRepeatStatement | followCurveStatement | repeatStatement )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:97:3: ( assignment | functionCall | ifStatement | whileStatement | radialStatement | spiralStatement | rowStatement | arcStatement | drawableRepeatStatement | followCurveStatement | repeatStatement )
 			int alt3=11;
 			switch ( input.LA(1) ) {
 			case ASSIGNMENT:
@@ -567,7 +568,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 			}
 			switch (alt3) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:96:6: assignment
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:97:6: assignment
 					{
 					pushFollow(FOLLOW_assignment_in_statement141);
 					assignment4=assignment();
@@ -577,7 +578,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:97:6: functionCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:98:6: functionCall
 					{
 					pushFollow(FOLLOW_functionCall_in_statement154);
 					functionCall5=functionCall();
@@ -587,7 +588,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:98:6: ifStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:99:6: ifStatement
 					{
 					pushFollow(FOLLOW_ifStatement_in_statement165);
 					ifStatement6=ifStatement();
@@ -597,7 +598,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:99:6: whileStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:100:6: whileStatement
 					{
 					pushFollow(FOLLOW_whileStatement_in_statement177);
 					whileStatement7=whileStatement();
@@ -607,7 +608,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:100:5: radialStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:101:5: radialStatement
 					{
 					pushFollow(FOLLOW_radialStatement_in_statement185);
 					radialStatement8=radialStatement();
@@ -617,7 +618,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:101:5: spiralStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:102:5: spiralStatement
 					{
 					pushFollow(FOLLOW_spiralStatement_in_statement193);
 					spiralStatement9=spiralStatement();
@@ -627,7 +628,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:102:5: rowStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:103:5: rowStatement
 					{
 					pushFollow(FOLLOW_rowStatement_in_statement201);
 					rowStatement10=rowStatement();
@@ -637,7 +638,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:103:5: arcStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:104:5: arcStatement
 					{
 					pushFollow(FOLLOW_arcStatement_in_statement209);
 					arcStatement11=arcStatement();
@@ -647,7 +648,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:104:5: drawableRepeatStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:105:5: drawableRepeatStatement
 					{
 					pushFollow(FOLLOW_drawableRepeatStatement_in_statement217);
 					drawableRepeatStatement12=drawableRepeatStatement();
@@ -657,7 +658,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:105:5: followCurveStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:106:5: followCurveStatement
 					{
 					pushFollow(FOLLOW_followCurveStatement_in_statement225);
 					followCurveStatement13=followCurveStatement();
@@ -667,7 +668,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:106:5: repeatStatement
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:107:5: repeatStatement
 					{
 					pushFollow(FOLLOW_repeatStatement_in_statement233);
 					repeatStatement14=repeatStatement();
@@ -693,7 +694,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "assignment"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:111:1: assignment returns [DCNode node] : ^( ASSIGNMENT Identifier ( indexes )? ( expression )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:112:1: assignment returns [DCNode node] : ^( ASSIGNMENT Identifier ( indexes )? ( expression )? ) ;
 	public final DCNode assignment() throws RecognitionException {
 		DCNode node = null;
 
@@ -704,13 +705,13 @@ public class PyEsqueTreeWalker extends TreeParser {
 		DCNode expression17 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:112:3: ( ^( ASSIGNMENT Identifier ( indexes )? ( expression )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:112:6: ^( ASSIGNMENT Identifier ( indexes )? ( expression )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:113:3: ( ^( ASSIGNMENT Identifier ( indexes )? ( expression )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:113:6: ^( ASSIGNMENT Identifier ( indexes )? ( expression )? )
 			{
 			ASSIGNMENT18=(CommonTree)match(input,ASSIGNMENT,FOLLOW_ASSIGNMENT_in_assignment262); 
 			match(input, Token.DOWN, null); 
 			Identifier15=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_assignment264); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:112:30: ( indexes )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:113:30: ( indexes )?
 			int alt4=2;
 			int LA4_0 = input.LA(1);
 			if ( (LA4_0==INDEXES) ) {
@@ -718,7 +719,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 			}
 			switch (alt4) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:112:30: indexes
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:113:30: indexes
 					{
 					pushFollow(FOLLOW_indexes_in_assignment266);
 					indexes16=indexes();
@@ -729,7 +730,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:112:39: ( expression )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:113:39: ( expression )?
 			int alt5=2;
 			int LA5_0 = input.LA(1);
 			if ( (LA5_0==Add||LA5_0==Bool||LA5_0==COLOR_CONSTANT||LA5_0==DOTPROPERTY||LA5_0==Divide||LA5_0==Equals||(LA5_0 >= GT && LA5_0 <= GTEquals)||LA5_0==HEIGHT_CONSTANT||LA5_0==In||LA5_0==LOOKUP||(LA5_0 >= LT && LA5_0 <= LTEquals)||LA5_0==Modulus||(LA5_0 >= Multiply && LA5_0 <= NEquals)||(LA5_0 >= Null && LA5_0 <= Number)||LA5_0==PI_CONSTANT||LA5_0==Pw||(LA5_0 >= Subtract && LA5_0 <= TERNARY)||LA5_0==UNARY_MIN||LA5_0==WIDTH_CONSTANT||(LA5_0 >= 168 && LA5_0 <= 169)) ) {
@@ -737,7 +738,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 			}
 			switch (alt5) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:112:39: expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:113:39: expression
 					{
 					pushFollow(FOLLOW_expression_in_assignment269);
 					expression17=expression();
@@ -768,7 +769,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "functionCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:122:1: functionCall returns [DCNode node] : ( ^( FUNC_CALL Identifier ( exprList )? ) | ^( FUNC_CALL Println ( expression )? ) | ^( FUNC_CALL Print expression ) | ^( FUNC_CALL Assert expression ) | ^( FUNC_CALL Size expression ) | ^( FUNC_CALL LAdd ( exprList )? ) | ^( FUNC_CALL LRemove ( exprList )? ) | primitiveCall | transformCall | patternCall | mathCall | getCall | uICall | templateCall );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:123:1: functionCall returns [DCNode node] : ( ^( FUNC_CALL Identifier ( exprList )? ) | ^( FUNC_CALL Println ( expression )? ) | ^( FUNC_CALL Print expression ) | ^( FUNC_CALL Assert expression ) | ^( FUNC_CALL Size expression ) | ^( FUNC_CALL LAdd ( exprList )? ) | ^( FUNC_CALL LRemove ( exprList )? ) | primitiveCall | transformCall | patternCall | mathCall | getCall | uICall | templateCall );
 	public final DCNode functionCall() throws RecognitionException {
 		DCNode node = null;
 
@@ -800,7 +801,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 			//System.out.println("function called");
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:126:3: ( ^( FUNC_CALL Identifier ( exprList )? ) | ^( FUNC_CALL Println ( expression )? ) | ^( FUNC_CALL Print expression ) | ^( FUNC_CALL Assert expression ) | ^( FUNC_CALL Size expression ) | ^( FUNC_CALL LAdd ( exprList )? ) | ^( FUNC_CALL LRemove ( exprList )? ) | primitiveCall | transformCall | patternCall | mathCall | getCall | uICall | templateCall )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:127:3: ( ^( FUNC_CALL Identifier ( exprList )? ) | ^( FUNC_CALL Println ( expression )? ) | ^( FUNC_CALL Print expression ) | ^( FUNC_CALL Assert expression ) | ^( FUNC_CALL Size expression ) | ^( FUNC_CALL LAdd ( exprList )? ) | ^( FUNC_CALL LRemove ( exprList )? ) | primitiveCall | transformCall | patternCall | mathCall | getCall | uICall | templateCall )
 			int alt10=14;
 			int LA10_0 = input.LA(1);
 			if ( (LA10_0==FUNC_CALL) ) {
@@ -983,12 +984,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			switch (alt10) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:126:6: ^( FUNC_CALL Identifier ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:127:6: ^( FUNC_CALL Identifier ( exprList )? )
 					{
 					FUNC_CALL21=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall311); 
 					match(input, Token.DOWN, null); 
 					Identifier19=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_functionCall313); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:126:29: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:127:29: ( exprList )?
 					int alt6=2;
 					int LA6_0 = input.LA(1);
 					if ( (LA6_0==EXP_LIST) ) {
@@ -996,7 +997,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt6) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:126:29: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:127:29: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_functionCall315);
 							exprList20=exprList();
@@ -1013,12 +1014,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:127:6: ^( FUNC_CALL Println ( expression )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:128:6: ^( FUNC_CALL Println ( expression )? )
 					{
 					FUNC_CALL23=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall327); 
 					match(input, Token.DOWN, null); 
 					match(input,Println,FOLLOW_Println_in_functionCall329); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:127:26: ( expression )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:128:26: ( expression )?
 					int alt7=2;
 					int LA7_0 = input.LA(1);
 					if ( (LA7_0==Add||LA7_0==Bool||LA7_0==COLOR_CONSTANT||LA7_0==DOTPROPERTY||LA7_0==Divide||LA7_0==Equals||(LA7_0 >= GT && LA7_0 <= GTEquals)||LA7_0==HEIGHT_CONSTANT||LA7_0==In||LA7_0==LOOKUP||(LA7_0 >= LT && LA7_0 <= LTEquals)||LA7_0==Modulus||(LA7_0 >= Multiply && LA7_0 <= NEquals)||(LA7_0 >= Null && LA7_0 <= Number)||LA7_0==PI_CONSTANT||LA7_0==Pw||(LA7_0 >= Subtract && LA7_0 <= TERNARY)||LA7_0==UNARY_MIN||LA7_0==WIDTH_CONSTANT||(LA7_0 >= 168 && LA7_0 <= 169)) ) {
@@ -1026,7 +1027,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt7) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:127:26: expression
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:128:26: expression
 							{
 							pushFollow(FOLLOW_expression_in_functionCall331);
 							expression22=expression();
@@ -1043,7 +1044,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:128:6: ^( FUNC_CALL Print expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:129:6: ^( FUNC_CALL Print expression )
 					{
 					FUNC_CALL25=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall344); 
 					match(input, Token.DOWN, null); 
@@ -1058,7 +1059,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:129:6: ^( FUNC_CALL Assert expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:130:6: ^( FUNC_CALL Assert expression )
 					{
 					FUNC_CALL27=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall363); 
 					match(input, Token.DOWN, null); 
@@ -1073,7 +1074,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:130:6: ^( FUNC_CALL Size expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:131:6: ^( FUNC_CALL Size expression )
 					{
 					FUNC_CALL29=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall381); 
 					match(input, Token.DOWN, null); 
@@ -1088,12 +1089,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:131:6: ^( FUNC_CALL LAdd ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:132:6: ^( FUNC_CALL LAdd ( exprList )? )
 					{
 					FUNC_CALL31=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall401); 
 					match(input, Token.DOWN, null); 
 					match(input,LAdd,FOLLOW_LAdd_in_functionCall403); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:131:23: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:132:23: ( exprList )?
 					int alt8=2;
 					int LA8_0 = input.LA(1);
 					if ( (LA8_0==EXP_LIST) ) {
@@ -1101,7 +1102,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt8) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:131:23: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:132:23: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_functionCall405);
 							exprList30=exprList();
@@ -1118,12 +1119,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:132:6: ^( FUNC_CALL LRemove ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:133:6: ^( FUNC_CALL LRemove ( exprList )? )
 					{
 					FUNC_CALL33=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_functionCall418); 
 					match(input, Token.DOWN, null); 
 					match(input,LRemove,FOLLOW_LRemove_in_functionCall420); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:132:26: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:133:26: ( exprList )?
 					int alt9=2;
 					int LA9_0 = input.LA(1);
 					if ( (LA9_0==EXP_LIST) ) {
@@ -1131,7 +1132,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt9) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:132:26: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:133:26: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_functionCall422);
 							exprList32=exprList();
@@ -1148,7 +1149,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:133:6: primitiveCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:134:6: primitiveCall
 					{
 					pushFollow(FOLLOW_primitiveCall_in_functionCall433);
 					primitiveCall34=primitiveCall();
@@ -1158,7 +1159,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:134:6: transformCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:135:6: transformCall
 					{
 					pushFollow(FOLLOW_transformCall_in_functionCall442);
 					transformCall35=transformCall();
@@ -1168,7 +1169,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:135:6: patternCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:136:6: patternCall
 					{
 					pushFollow(FOLLOW_patternCall_in_functionCall451);
 					patternCall36=patternCall();
@@ -1178,7 +1179,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:136:6: mathCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:137:6: mathCall
 					{
 					pushFollow(FOLLOW_mathCall_in_functionCall460);
 					mathCall37=mathCall();
@@ -1188,7 +1189,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:137:6: getCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:138:6: getCall
 					{
 					pushFollow(FOLLOW_getCall_in_functionCall469);
 					getCall38=getCall();
@@ -1198,7 +1199,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:138:5: uICall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:139:5: uICall
 					{
 					pushFollow(FOLLOW_uICall_in_functionCall477);
 					uICall39=uICall();
@@ -1208,7 +1209,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:139:5: templateCall
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:140:5: templateCall
 					{
 					pushFollow(FOLLOW_templateCall_in_functionCall485);
 					templateCall40=templateCall();
@@ -1234,7 +1235,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "primitiveCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:143:3: primitiveCall returns [DCNode node] : ( ^( FUNC_CALL Ellipse ( exprList )? ) | ^( FUNC_CALL Line ( exprList )? ) | ^( FUNC_CALL Rect ( exprList )? ) | ^( FUNC_CALL Curve ( exprList )? ) | ^( FUNC_CALL Polygon ( exprList )? ) | ^( FUNC_CALL Skirt ( exprList )? ) | ^( FUNC_CALL SkirtBack ( exprList )? ) | ^( FUNC_CALL LShape ( exprList )? ) | ^( FUNC_CALL Point ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:144:3: primitiveCall returns [DCNode node] : ( ^( FUNC_CALL Ellipse ( exprList )? ) | ^( FUNC_CALL Line ( exprList )? ) | ^( FUNC_CALL Rect ( exprList )? ) | ^( FUNC_CALL Curve ( exprList )? ) | ^( FUNC_CALL Polygon ( exprList )? ) | ^( FUNC_CALL Skirt ( exprList )? ) | ^( FUNC_CALL SkirtBack ( exprList )? ) | ^( FUNC_CALL LShape ( exprList )? ) | ^( FUNC_CALL Point ( exprList )? ) );
 	public final DCNode primitiveCall() throws RecognitionException {
 		DCNode node = null;
 
@@ -1255,7 +1256,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 		java.util.List<DCNode> exprList53 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:144:4: ( ^( FUNC_CALL Ellipse ( exprList )? ) | ^( FUNC_CALL Line ( exprList )? ) | ^( FUNC_CALL Rect ( exprList )? ) | ^( FUNC_CALL Curve ( exprList )? ) | ^( FUNC_CALL Polygon ( exprList )? ) | ^( FUNC_CALL Skirt ( exprList )? ) | ^( FUNC_CALL SkirtBack ( exprList )? ) | ^( FUNC_CALL LShape ( exprList )? ) | ^( FUNC_CALL Point ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:145:4: ( ^( FUNC_CALL Ellipse ( exprList )? ) | ^( FUNC_CALL Line ( exprList )? ) | ^( FUNC_CALL Rect ( exprList )? ) | ^( FUNC_CALL Curve ( exprList )? ) | ^( FUNC_CALL Polygon ( exprList )? ) | ^( FUNC_CALL Skirt ( exprList )? ) | ^( FUNC_CALL SkirtBack ( exprList )? ) | ^( FUNC_CALL LShape ( exprList )? ) | ^( FUNC_CALL Point ( exprList )? ) )
 			int alt20=9;
 			int LA20_0 = input.LA(1);
 			if ( (LA20_0==FUNC_CALL) ) {
@@ -1344,12 +1345,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			switch (alt20) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:144:5: ^( FUNC_CALL Ellipse ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:145:5: ^( FUNC_CALL Ellipse ( exprList )? )
 					{
 					FUNC_CALL42=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall512); 
 					match(input, Token.DOWN, null); 
 					match(input,Ellipse,FOLLOW_Ellipse_in_primitiveCall514); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:144:25: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:145:25: ( exprList )?
 					int alt11=2;
 					int LA11_0 = input.LA(1);
 					if ( (LA11_0==EXP_LIST) ) {
@@ -1357,7 +1358,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt11) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:144:25: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:145:25: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall516);
 							exprList41=exprList();
@@ -1374,12 +1375,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:145:5: ^( FUNC_CALL Line ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:146:5: ^( FUNC_CALL Line ( exprList )? )
 					{
 					FUNC_CALL44=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall528); 
 					match(input, Token.DOWN, null); 
 					match(input,Line,FOLLOW_Line_in_primitiveCall530); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:145:22: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:146:22: ( exprList )?
 					int alt12=2;
 					int LA12_0 = input.LA(1);
 					if ( (LA12_0==EXP_LIST) ) {
@@ -1387,7 +1388,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt12) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:145:22: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:146:22: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall532);
 							exprList43=exprList();
@@ -1404,12 +1405,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:146:5: ^( FUNC_CALL Rect ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:147:5: ^( FUNC_CALL Rect ( exprList )? )
 					{
 					FUNC_CALL46=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall545); 
 					match(input, Token.DOWN, null); 
 					match(input,Rect,FOLLOW_Rect_in_primitiveCall547); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:146:22: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:147:22: ( exprList )?
 					int alt13=2;
 					int LA13_0 = input.LA(1);
 					if ( (LA13_0==EXP_LIST) ) {
@@ -1417,7 +1418,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt13) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:146:22: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:147:22: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall549);
 							exprList45=exprList();
@@ -1434,12 +1435,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:147:6: ^( FUNC_CALL Curve ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:148:6: ^( FUNC_CALL Curve ( exprList )? )
 					{
 					FUNC_CALL48=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall563); 
 					match(input, Token.DOWN, null); 
 					match(input,Curve,FOLLOW_Curve_in_primitiveCall565); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:147:24: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:148:24: ( exprList )?
 					int alt14=2;
 					int LA14_0 = input.LA(1);
 					if ( (LA14_0==EXP_LIST) ) {
@@ -1447,7 +1448,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt14) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:147:24: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:148:24: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall567);
 							exprList47=exprList();
@@ -1464,12 +1465,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:148:6: ^( FUNC_CALL Polygon ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:149:6: ^( FUNC_CALL Polygon ( exprList )? )
 					{
 					FUNC_CALL50=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall581); 
 					match(input, Token.DOWN, null); 
 					match(input,Polygon,FOLLOW_Polygon_in_primitiveCall583); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:148:26: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:149:26: ( exprList )?
 					int alt15=2;
 					int LA15_0 = input.LA(1);
 					if ( (LA15_0==EXP_LIST) ) {
@@ -1477,7 +1478,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt15) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:148:26: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:149:26: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall585);
 							exprList49=exprList();
@@ -1494,12 +1495,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:149:6: ^( FUNC_CALL Skirt ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:150:6: ^( FUNC_CALL Skirt ( exprList )? )
 					{
 					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall597); 
 					match(input, Token.DOWN, null); 
 					match(input,Skirt,FOLLOW_Skirt_in_primitiveCall599); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:149:24: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:150:24: ( exprList )?
 					int alt16=2;
 					int LA16_0 = input.LA(1);
 					if ( (LA16_0==EXP_LIST) ) {
@@ -1507,7 +1508,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt16) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:149:24: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:150:24: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall601);
 							exprList();
@@ -1523,12 +1524,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:150:7: ^( FUNC_CALL SkirtBack ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:151:7: ^( FUNC_CALL SkirtBack ( exprList )? )
 					{
 					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall613); 
 					match(input, Token.DOWN, null); 
 					match(input,SkirtBack,FOLLOW_SkirtBack_in_primitiveCall615); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:150:29: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:151:29: ( exprList )?
 					int alt17=2;
 					int LA17_0 = input.LA(1);
 					if ( (LA17_0==EXP_LIST) ) {
@@ -1536,7 +1537,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt17) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:150:29: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:151:29: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall617);
 							exprList();
@@ -1552,12 +1553,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:151:7: ^( FUNC_CALL LShape ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:152:7: ^( FUNC_CALL LShape ( exprList )? )
 					{
 					FUNC_CALL52=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall629); 
 					match(input, Token.DOWN, null); 
 					match(input,LShape,FOLLOW_LShape_in_primitiveCall631); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:151:26: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:152:26: ( exprList )?
 					int alt18=2;
 					int LA18_0 = input.LA(1);
 					if ( (LA18_0==EXP_LIST) ) {
@@ -1565,7 +1566,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt18) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:151:26: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:152:26: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall633);
 							exprList51=exprList();
@@ -1582,12 +1583,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:152:7: ^( FUNC_CALL Point ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:153:7: ^( FUNC_CALL Point ( exprList )? )
 					{
 					FUNC_CALL54=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_primitiveCall646); 
 					match(input, Token.DOWN, null); 
 					match(input,Point,FOLLOW_Point_in_primitiveCall648); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:152:25: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:153:25: ( exprList )?
 					int alt19=2;
 					int LA19_0 = input.LA(1);
 					if ( (LA19_0==EXP_LIST) ) {
@@ -1595,7 +1596,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt19) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:152:25: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:153:25: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_primitiveCall650);
 							exprList53=exprList();
@@ -1628,7 +1629,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "transformCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:155:3: transformCall returns [DCNode node] : ( ^( FUNC_CALL Move OParen d= expression fc= Comma x= expression Comma y= expression CParen ) | ^( FUNC_CALL MoveBy ( exprList )? ) | ^( FUNC_CALL Heading ( exprList )? ) | ^( FUNC_CALL Copy expression ) | ^( FUNC_CALL Rotate ( exprList )? ) | ^( FUNC_CALL Fill ( exprList )? ) | ^( FUNC_CALL Stroke ( exprList )? ) | ^( FUNC_CALL NoFill expression ) | ^( FUNC_CALL NoStroke expression ) | ^( FUNC_CALL Weight ( exprList )? ) | ^( FUNC_CALL Hide expression ) | ^( FUNC_CALL Show expression ) | ^( FUNC_CALL Group ( exprList )? ) | ^( FUNC_CALL Expand expression ) | ^( FUNC_CALL Merge expression ) | ^( FUNC_CALL Scale ( exprList )? ) | ^( FUNC_CALL MirrorX expression ) | ^( FUNC_CALL MirrorY expression ) | ^( FUNC_CALL Union ( exprList )? ) | ^( FUNC_CALL Difference ( exprList )? ) | ^( FUNC_CALL Clip ( exprList )? ) | ^( FUNC_CALL Xor ( exprList )? ) | ^( FUNC_CALL Flatten expression ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:156:3: transformCall returns [DCNode node] : ( ^( FUNC_CALL Move OParen d= expression fc= Comma x= expression Comma y= expression CParen ) | ^( FUNC_CALL MoveBy ( exprList )? ) | ^( FUNC_CALL Heading ( exprList )? ) | ^( FUNC_CALL Copy expression ) | ^( FUNC_CALL Rotate ( exprList )? ) | ^( FUNC_CALL Fill ( exprList )? ) | ^( FUNC_CALL Stroke ( exprList )? ) | ^( FUNC_CALL NoFill expression ) | ^( FUNC_CALL NoStroke expression ) | ^( FUNC_CALL Weight ( exprList )? ) | ^( FUNC_CALL Hide OParen expression CParen ) | ^( FUNC_CALL Show expression ) | ^( FUNC_CALL Group ( exprList )? ) | ^( FUNC_CALL Expand expression ) | ^( FUNC_CALL Merge expression ) | ^( FUNC_CALL Scale ( exprList )? ) | ^( FUNC_CALL MirrorX expression ) | ^( FUNC_CALL MirrorY expression ) | ^( FUNC_CALL Union ( exprList )? ) | ^( FUNC_CALL Difference ( exprList )? ) | ^( FUNC_CALL Clip ( exprList )? ) | ^( FUNC_CALL Xor ( exprList )? ) | ^( FUNC_CALL Flatten expression ) );
 	public final DCNode transformCall() throws RecognitionException {
 		DCNode node = null;
 
@@ -1646,7 +1647,8 @@ public class PyEsqueTreeWalker extends TreeParser {
 		CommonTree FUNC_CALL72=null;
 		CommonTree FUNC_CALL74=null;
 		CommonTree FUNC_CALL76=null;
-		CommonTree FUNC_CALL78=null;
+		CommonTree Hide77=null;
+		CommonTree CParen78=null;
 		CommonTree FUNC_CALL80=null;
 		CommonTree FUNC_CALL82=null;
 		CommonTree FUNC_CALL84=null;
@@ -1658,6 +1660,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 		CommonTree FUNC_CALL96=null;
 		CommonTree FUNC_CALL98=null;
 		CommonTree FUNC_CALL100=null;
+		CommonTree FUNC_CALL102=null;
 		DCNode d =null;
 		DCNode x =null;
 		DCNode y =null;
@@ -1671,21 +1674,21 @@ public class PyEsqueTreeWalker extends TreeParser {
 		DCNode expression71 =null;
 		java.util.List<DCNode> exprList73 =null;
 		DCNode expression75 =null;
-		DCNode expression77 =null;
-		java.util.List<DCNode> exprList79 =null;
-		DCNode expression81 =null;
+		DCNode expression79 =null;
+		java.util.List<DCNode> exprList81 =null;
 		DCNode expression83 =null;
-		java.util.List<DCNode> exprList85 =null;
-		DCNode expression87 =null;
+		DCNode expression85 =null;
+		java.util.List<DCNode> exprList87 =null;
 		DCNode expression89 =null;
-		java.util.List<DCNode> exprList91 =null;
+		DCNode expression91 =null;
 		java.util.List<DCNode> exprList93 =null;
 		java.util.List<DCNode> exprList95 =null;
 		java.util.List<DCNode> exprList97 =null;
-		DCNode expression99 =null;
+		java.util.List<DCNode> exprList99 =null;
+		DCNode expression101 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:156:4: ( ^( FUNC_CALL Move OParen d= expression fc= Comma x= expression Comma y= expression CParen ) | ^( FUNC_CALL MoveBy ( exprList )? ) | ^( FUNC_CALL Heading ( exprList )? ) | ^( FUNC_CALL Copy expression ) | ^( FUNC_CALL Rotate ( exprList )? ) | ^( FUNC_CALL Fill ( exprList )? ) | ^( FUNC_CALL Stroke ( exprList )? ) | ^( FUNC_CALL NoFill expression ) | ^( FUNC_CALL NoStroke expression ) | ^( FUNC_CALL Weight ( exprList )? ) | ^( FUNC_CALL Hide expression ) | ^( FUNC_CALL Show expression ) | ^( FUNC_CALL Group ( exprList )? ) | ^( FUNC_CALL Expand expression ) | ^( FUNC_CALL Merge expression ) | ^( FUNC_CALL Scale ( exprList )? ) | ^( FUNC_CALL MirrorX expression ) | ^( FUNC_CALL MirrorY expression ) | ^( FUNC_CALL Union ( exprList )? ) | ^( FUNC_CALL Difference ( exprList )? ) | ^( FUNC_CALL Clip ( exprList )? ) | ^( FUNC_CALL Xor ( exprList )? ) | ^( FUNC_CALL Flatten expression ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:157:4: ( ^( FUNC_CALL Move OParen d= expression fc= Comma x= expression Comma y= expression CParen ) | ^( FUNC_CALL MoveBy ( exprList )? ) | ^( FUNC_CALL Heading ( exprList )? ) | ^( FUNC_CALL Copy expression ) | ^( FUNC_CALL Rotate ( exprList )? ) | ^( FUNC_CALL Fill ( exprList )? ) | ^( FUNC_CALL Stroke ( exprList )? ) | ^( FUNC_CALL NoFill expression ) | ^( FUNC_CALL NoStroke expression ) | ^( FUNC_CALL Weight ( exprList )? ) | ^( FUNC_CALL Hide OParen expression CParen ) | ^( FUNC_CALL Show expression ) | ^( FUNC_CALL Group ( exprList )? ) | ^( FUNC_CALL Expand expression ) | ^( FUNC_CALL Merge expression ) | ^( FUNC_CALL Scale ( exprList )? ) | ^( FUNC_CALL MirrorX expression ) | ^( FUNC_CALL MirrorY expression ) | ^( FUNC_CALL Union ( exprList )? ) | ^( FUNC_CALL Difference ( exprList )? ) | ^( FUNC_CALL Clip ( exprList )? ) | ^( FUNC_CALL Xor ( exprList )? ) | ^( FUNC_CALL Flatten expression ) )
 			int alt33=23;
 			int LA33_0 = input.LA(1);
 			if ( (LA33_0==FUNC_CALL) ) {
@@ -1844,7 +1847,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			switch (alt33) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:156:5: ^( FUNC_CALL Move OParen d= expression fc= Comma x= expression Comma y= expression CParen )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:157:5: ^( FUNC_CALL Move OParen d= expression fc= Comma x= expression Comma y= expression CParen )
 					{
 					FUNC_CALL55=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall677); 
 					match(input, Token.DOWN, null); 
@@ -1872,12 +1875,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:159:6: ^( FUNC_CALL MoveBy ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:160:6: ^( FUNC_CALL MoveBy ( exprList )? )
 					{
 					FUNC_CALL58=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall722); 
 					match(input, Token.DOWN, null); 
 					match(input,MoveBy,FOLLOW_MoveBy_in_transformCall724); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:159:25: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:160:25: ( exprList )?
 					int alt21=2;
 					int LA21_0 = input.LA(1);
 					if ( (LA21_0==EXP_LIST) ) {
@@ -1885,7 +1888,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt21) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:159:25: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:160:25: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall726);
 							exprList57=exprList();
@@ -1902,12 +1905,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:160:6: ^( FUNC_CALL Heading ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:161:6: ^( FUNC_CALL Heading ( exprList )? )
 					{
 					FUNC_CALL60=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall740); 
 					match(input, Token.DOWN, null); 
 					match(input,Heading,FOLLOW_Heading_in_transformCall742); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:160:26: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:161:26: ( exprList )?
 					int alt22=2;
 					int LA22_0 = input.LA(1);
 					if ( (LA22_0==EXP_LIST) ) {
@@ -1915,7 +1918,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt22) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:160:26: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:161:26: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall744);
 							exprList59=exprList();
@@ -1932,7 +1935,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:161:5: ^( FUNC_CALL Copy expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:162:5: ^( FUNC_CALL Copy expression )
 					{
 					FUNC_CALL62=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall757); 
 					match(input, Token.DOWN, null); 
@@ -1947,12 +1950,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:162:5: ^( FUNC_CALL Rotate ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:163:5: ^( FUNC_CALL Rotate ( exprList )? )
 					{
 					FUNC_CALL64=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall772); 
 					match(input, Token.DOWN, null); 
 					match(input,Rotate,FOLLOW_Rotate_in_transformCall774); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:162:24: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:163:24: ( exprList )?
 					int alt23=2;
 					int LA23_0 = input.LA(1);
 					if ( (LA23_0==EXP_LIST) ) {
@@ -1960,7 +1963,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt23) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:162:24: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:163:24: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall776);
 							exprList63=exprList();
@@ -1977,12 +1980,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:163:5: ^( FUNC_CALL Fill ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:164:5: ^( FUNC_CALL Fill ( exprList )? )
 					{
 					FUNC_CALL66=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall787); 
 					match(input, Token.DOWN, null); 
 					match(input,Fill,FOLLOW_Fill_in_transformCall789); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:163:22: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:164:22: ( exprList )?
 					int alt24=2;
 					int LA24_0 = input.LA(1);
 					if ( (LA24_0==EXP_LIST) ) {
@@ -1990,7 +1993,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt24) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:163:22: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:164:22: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall791);
 							exprList65=exprList();
@@ -2007,12 +2010,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:164:5: ^( FUNC_CALL Stroke ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:165:5: ^( FUNC_CALL Stroke ( exprList )? )
 					{
 					FUNC_CALL68=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall804); 
 					match(input, Token.DOWN, null); 
 					match(input,Stroke,FOLLOW_Stroke_in_transformCall806); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:164:24: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:165:24: ( exprList )?
 					int alt25=2;
 					int LA25_0 = input.LA(1);
 					if ( (LA25_0==EXP_LIST) ) {
@@ -2020,7 +2023,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt25) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:164:24: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:165:24: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall808);
 							exprList67=exprList();
@@ -2037,7 +2040,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:165:5: ^( FUNC_CALL NoFill expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:166:5: ^( FUNC_CALL NoFill expression )
 					{
 					FUNC_CALL70=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall819); 
 					match(input, Token.DOWN, null); 
@@ -2052,7 +2055,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:166:5: ^( FUNC_CALL NoStroke expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:167:5: ^( FUNC_CALL NoStroke expression )
 					{
 					FUNC_CALL72=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall833); 
 					match(input, Token.DOWN, null); 
@@ -2067,12 +2070,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:167:5: ^( FUNC_CALL Weight ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:168:5: ^( FUNC_CALL Weight ( exprList )? )
 					{
 					FUNC_CALL74=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall847); 
 					match(input, Token.DOWN, null); 
 					match(input,Weight,FOLLOW_Weight_in_transformCall849); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:167:24: ( exprList )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:168:24: ( exprList )?
 					int alt26=2;
 					int LA26_0 = input.LA(1);
 					if ( (LA26_0==EXP_LIST) ) {
@@ -2080,7 +2083,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt26) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:167:24: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:168:24: exprList
 							{
 							pushFollow(FOLLOW_exprList_in_transformCall851);
 							exprList73=exprList();
@@ -2097,42 +2100,45 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:168:5: ^( FUNC_CALL Hide expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:169:5: ^( FUNC_CALL Hide OParen expression CParen )
 					{
 					FUNC_CALL76=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall862); 
 					match(input, Token.DOWN, null); 
-					match(input,Hide,FOLLOW_Hide_in_transformCall864); 
-					pushFollow(FOLLOW_expression_in_transformCall866);
+					Hide77=(CommonTree)match(input,Hide,FOLLOW_Hide_in_transformCall864); 
+					match(input,OParen,FOLLOW_OParen_in_transformCall866); 
+					pushFollow(FOLLOW_expression_in_transformCall868);
 					expression75=expression();
 					state._fsp--;
 
+					CParen78=(CommonTree)match(input,CParen,FOLLOW_CParen_in_transformCall870); 
 					match(input, Token.UP, null); 
 
 					node = new HideNode(expression75,FUNC_CALL76.getLine(),FUNC_CALL76.getCharPositionInLine());
+					   	node.setLimits(Hide77.getCharPositionInLine(),CParen78.getCharPositionInLine());
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:169:5: ^( FUNC_CALL Show expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:171:5: ^( FUNC_CALL Show expression )
 					{
-					FUNC_CALL78=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall876); 
+					FUNC_CALL80=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall880); 
 					match(input, Token.DOWN, null); 
-					match(input,Show,FOLLOW_Show_in_transformCall878); 
-					pushFollow(FOLLOW_expression_in_transformCall880);
-					expression77=expression();
+					match(input,Show,FOLLOW_Show_in_transformCall882); 
+					pushFollow(FOLLOW_expression_in_transformCall884);
+					expression79=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ShowNode(expression77,FUNC_CALL78.getLine(),FUNC_CALL78.getCharPositionInLine());
+					node = new ShowNode(expression79,FUNC_CALL80.getLine(),FUNC_CALL80.getCharPositionInLine());
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:170:5: ^( FUNC_CALL Group ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:172:5: ^( FUNC_CALL Group ( exprList )? )
 					{
-					FUNC_CALL80=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall890); 
+					FUNC_CALL82=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall894); 
 					match(input, Token.DOWN, null); 
-					match(input,Group,FOLLOW_Group_in_transformCall892); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:170:23: ( exprList )?
+					match(input,Group,FOLLOW_Group_in_transformCall896); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:172:23: ( exprList )?
 					int alt27=2;
 					int LA27_0 = input.LA(1);
 					if ( (LA27_0==EXP_LIST) ) {
@@ -2140,10 +2146,10 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt27) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:170:23: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:172:23: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_transformCall894);
-							exprList79=exprList();
+							pushFollow(FOLLOW_exprList_in_transformCall898);
+							exprList81=exprList();
 							state._fsp--;
 
 							}
@@ -2153,46 +2159,46 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new GroupNode(exprList79,FUNC_CALL80.getLine(),FUNC_CALL80.getCharPositionInLine());
+					node = new GroupNode(exprList81,FUNC_CALL82.getLine(),FUNC_CALL82.getCharPositionInLine());
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:171:5: ^( FUNC_CALL Expand expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:173:5: ^( FUNC_CALL Expand expression )
 					{
-					FUNC_CALL82=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall905); 
+					FUNC_CALL84=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall909); 
 					match(input, Token.DOWN, null); 
-					match(input,Expand,FOLLOW_Expand_in_transformCall907); 
-					pushFollow(FOLLOW_expression_in_transformCall909);
-					expression81=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new ExpandNode(expression81, currentScope,FUNC_CALL82.getLine(),FUNC_CALL82.getCharPositionInLine());
-					}
-					break;
-				case 15 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:172:5: ^( FUNC_CALL Merge expression )
-					{
-					FUNC_CALL84=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall918); 
-					match(input, Token.DOWN, null); 
-					match(input,Merge,FOLLOW_Merge_in_transformCall920); 
-					pushFollow(FOLLOW_expression_in_transformCall922);
+					match(input,Expand,FOLLOW_Expand_in_transformCall911); 
+					pushFollow(FOLLOW_expression_in_transformCall913);
 					expression83=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new MergeNode(expression83,currentScope,FUNC_CALL84.getLine(),FUNC_CALL84.getCharPositionInLine());
+					node = new ExpandNode(expression83, currentScope,FUNC_CALL84.getLine(),FUNC_CALL84.getCharPositionInLine());
+					}
+					break;
+				case 15 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:174:5: ^( FUNC_CALL Merge expression )
+					{
+					FUNC_CALL86=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall922); 
+					match(input, Token.DOWN, null); 
+					match(input,Merge,FOLLOW_Merge_in_transformCall924); 
+					pushFollow(FOLLOW_expression_in_transformCall926);
+					expression85=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new MergeNode(expression85,currentScope,FUNC_CALL86.getLine(),FUNC_CALL86.getCharPositionInLine());
 					}
 					break;
 				case 16 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:173:5: ^( FUNC_CALL Scale ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:175:5: ^( FUNC_CALL Scale ( exprList )? )
 					{
-					FUNC_CALL86=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall931); 
+					FUNC_CALL88=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall935); 
 					match(input, Token.DOWN, null); 
-					match(input,Scale,FOLLOW_Scale_in_transformCall933); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:173:23: ( exprList )?
+					match(input,Scale,FOLLOW_Scale_in_transformCall937); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:175:23: ( exprList )?
 					int alt28=2;
 					int LA28_0 = input.LA(1);
 					if ( (LA28_0==EXP_LIST) ) {
@@ -2200,10 +2206,10 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt28) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:173:23: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:175:23: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_transformCall935);
-							exprList85=exprList();
+							pushFollow(FOLLOW_exprList_in_transformCall939);
+							exprList87=exprList();
 							state._fsp--;
 
 							}
@@ -2213,46 +2219,46 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new ScaleNode(exprList85,FUNC_CALL86.getLine(),FUNC_CALL86.getCharPositionInLine());
+					node = new ScaleNode(exprList87,FUNC_CALL88.getLine(),FUNC_CALL88.getCharPositionInLine());
 					}
 					break;
 				case 17 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:174:5: ^( FUNC_CALL MirrorX expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:176:5: ^( FUNC_CALL MirrorX expression )
 					{
-					FUNC_CALL88=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall945); 
+					FUNC_CALL90=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall949); 
 					match(input, Token.DOWN, null); 
-					match(input,MirrorX,FOLLOW_MirrorX_in_transformCall947); 
-					pushFollow(FOLLOW_expression_in_transformCall949);
-					expression87=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new MirrorXNode(expression87,FUNC_CALL88.getLine(),FUNC_CALL88.getCharPositionInLine());
-					}
-					break;
-				case 18 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:175:5: ^( FUNC_CALL MirrorY expression )
-					{
-					FUNC_CALL90=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall958); 
-					match(input, Token.DOWN, null); 
-					match(input,MirrorY,FOLLOW_MirrorY_in_transformCall960); 
-					pushFollow(FOLLOW_expression_in_transformCall962);
+					match(input,MirrorX,FOLLOW_MirrorX_in_transformCall951); 
+					pushFollow(FOLLOW_expression_in_transformCall953);
 					expression89=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new MirrorYNode(expression89,FUNC_CALL90.getLine(),FUNC_CALL90.getCharPositionInLine());
+					node = new MirrorXNode(expression89,FUNC_CALL90.getLine(),FUNC_CALL90.getCharPositionInLine());
+					}
+					break;
+				case 18 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:177:5: ^( FUNC_CALL MirrorY expression )
+					{
+					FUNC_CALL92=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall962); 
+					match(input, Token.DOWN, null); 
+					match(input,MirrorY,FOLLOW_MirrorY_in_transformCall964); 
+					pushFollow(FOLLOW_expression_in_transformCall966);
+					expression91=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new MirrorYNode(expression91,FUNC_CALL92.getLine(),FUNC_CALL92.getCharPositionInLine());
 					}
 					break;
 				case 19 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:176:5: ^( FUNC_CALL Union ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:178:5: ^( FUNC_CALL Union ( exprList )? )
 					{
-					FUNC_CALL92=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall971); 
+					FUNC_CALL94=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall975); 
 					match(input, Token.DOWN, null); 
-					match(input,Union,FOLLOW_Union_in_transformCall973); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:176:23: ( exprList )?
+					match(input,Union,FOLLOW_Union_in_transformCall977); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:178:23: ( exprList )?
 					int alt29=2;
 					int LA29_0 = input.LA(1);
 					if ( (LA29_0==EXP_LIST) ) {
@@ -2260,39 +2266,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt29) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:176:23: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:178:23: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_transformCall975);
-							exprList91=exprList();
-							state._fsp--;
-
-							}
-							break;
-
-					}
-
-					match(input, Token.UP, null); 
-
-					node = new UnionNode(exprList91, currentScope,FUNC_CALL92.getLine(),FUNC_CALL92.getCharPositionInLine());
-					}
-					break;
-				case 20 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:177:5: ^( FUNC_CALL Difference ( exprList )? )
-					{
-					FUNC_CALL94=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall985); 
-					match(input, Token.DOWN, null); 
-					match(input,Difference,FOLLOW_Difference_in_transformCall987); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:177:28: ( exprList )?
-					int alt30=2;
-					int LA30_0 = input.LA(1);
-					if ( (LA30_0==EXP_LIST) ) {
-						alt30=1;
-					}
-					switch (alt30) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:177:28: exprList
-							{
-							pushFollow(FOLLOW_exprList_in_transformCall989);
+							pushFollow(FOLLOW_exprList_in_transformCall979);
 							exprList93=exprList();
 							state._fsp--;
 
@@ -2303,26 +2279,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new DifferenceNode(exprList93, currentScope,FUNC_CALL94.getLine(),FUNC_CALL94.getCharPositionInLine());
+					node = new UnionNode(exprList93, currentScope,FUNC_CALL94.getLine(),FUNC_CALL94.getCharPositionInLine());
 					}
 					break;
-				case 21 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:178:5: ^( FUNC_CALL Clip ( exprList )? )
+				case 20 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:179:5: ^( FUNC_CALL Difference ( exprList )? )
 					{
-					FUNC_CALL96=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall999); 
+					FUNC_CALL96=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall989); 
 					match(input, Token.DOWN, null); 
-					match(input,Clip,FOLLOW_Clip_in_transformCall1001); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:178:22: ( exprList )?
-					int alt31=2;
-					int LA31_0 = input.LA(1);
-					if ( (LA31_0==EXP_LIST) ) {
-						alt31=1;
+					match(input,Difference,FOLLOW_Difference_in_transformCall991); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:179:28: ( exprList )?
+					int alt30=2;
+					int LA30_0 = input.LA(1);
+					if ( (LA30_0==EXP_LIST) ) {
+						alt30=1;
 					}
-					switch (alt31) {
+					switch (alt30) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:178:22: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:179:28: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_transformCall1003);
+							pushFollow(FOLLOW_exprList_in_transformCall993);
 							exprList95=exprList();
 							state._fsp--;
 
@@ -2333,26 +2309,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new ClipNode(exprList95, currentScope,FUNC_CALL96.getLine(),FUNC_CALL96.getCharPositionInLine());
+					node = new DifferenceNode(exprList95, currentScope,FUNC_CALL96.getLine(),FUNC_CALL96.getCharPositionInLine());
 					}
 					break;
-				case 22 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:179:5: ^( FUNC_CALL Xor ( exprList )? )
+				case 21 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:180:5: ^( FUNC_CALL Clip ( exprList )? )
 					{
-					FUNC_CALL98=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall1013); 
+					FUNC_CALL98=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall1003); 
 					match(input, Token.DOWN, null); 
-					match(input,Xor,FOLLOW_Xor_in_transformCall1015); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:179:21: ( exprList )?
-					int alt32=2;
-					int LA32_0 = input.LA(1);
-					if ( (LA32_0==EXP_LIST) ) {
-						alt32=1;
+					match(input,Clip,FOLLOW_Clip_in_transformCall1005); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:180:22: ( exprList )?
+					int alt31=2;
+					int LA31_0 = input.LA(1);
+					if ( (LA31_0==EXP_LIST) ) {
+						alt31=1;
 					}
-					switch (alt32) {
+					switch (alt31) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:179:21: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:180:22: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_transformCall1017);
+							pushFollow(FOLLOW_exprList_in_transformCall1007);
 							exprList97=exprList();
 							state._fsp--;
 
@@ -2363,22 +2339,52 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new XorNode(exprList97, currentScope,FUNC_CALL98.getLine(),FUNC_CALL98.getCharPositionInLine());
+					node = new ClipNode(exprList97, currentScope,FUNC_CALL98.getLine(),FUNC_CALL98.getCharPositionInLine());
+					}
+					break;
+				case 22 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:181:5: ^( FUNC_CALL Xor ( exprList )? )
+					{
+					FUNC_CALL100=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall1017); 
+					match(input, Token.DOWN, null); 
+					match(input,Xor,FOLLOW_Xor_in_transformCall1019); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:181:21: ( exprList )?
+					int alt32=2;
+					int LA32_0 = input.LA(1);
+					if ( (LA32_0==EXP_LIST) ) {
+						alt32=1;
+					}
+					switch (alt32) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:181:21: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_transformCall1021);
+							exprList99=exprList();
+							state._fsp--;
+
+							}
+							break;
+
+					}
+
+					match(input, Token.UP, null); 
+
+					node = new XorNode(exprList99, currentScope,FUNC_CALL100.getLine(),FUNC_CALL100.getCharPositionInLine());
 					}
 					break;
 				case 23 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:180:5: ^( FUNC_CALL Flatten expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:182:5: ^( FUNC_CALL Flatten expression )
 					{
-					FUNC_CALL100=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall1027); 
+					FUNC_CALL102=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_transformCall1031); 
 					match(input, Token.DOWN, null); 
-					match(input,Flatten,FOLLOW_Flatten_in_transformCall1029); 
-					pushFollow(FOLLOW_expression_in_transformCall1031);
-					expression99=expression();
+					match(input,Flatten,FOLLOW_Flatten_in_transformCall1033); 
+					pushFollow(FOLLOW_expression_in_transformCall1035);
+					expression101=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new FlattenNode(expression99,currentScope,FUNC_CALL100.getLine(),FUNC_CALL100.getCharPositionInLine());
+					node = new FlattenNode(expression101,currentScope,FUNC_CALL102.getLine(),FUNC_CALL102.getCharPositionInLine());
 					}
 					break;
 
@@ -2398,20 +2404,20 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "patternCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:184:5: patternCall returns [DCNode node] : ( ^( FUNC_CALL Grid ( exprList )? ) | ^( FUNC_CALL Wave ( exprList )? ) | ^( FUNC_CALL Arc ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:186:5: patternCall returns [DCNode node] : ( ^( FUNC_CALL Grid ( exprList )? ) | ^( FUNC_CALL Wave ( exprList )? ) | ^( FUNC_CALL Arc ( exprList )? ) );
 	public final DCNode patternCall() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree FUNC_CALL102=null;
 		CommonTree FUNC_CALL104=null;
 		CommonTree FUNC_CALL106=null;
-		java.util.List<DCNode> exprList101 =null;
+		CommonTree FUNC_CALL108=null;
 		java.util.List<DCNode> exprList103 =null;
 		java.util.List<DCNode> exprList105 =null;
+		java.util.List<DCNode> exprList107 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:185:4: ( ^( FUNC_CALL Grid ( exprList )? ) | ^( FUNC_CALL Wave ( exprList )? ) | ^( FUNC_CALL Arc ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:187:4: ( ^( FUNC_CALL Grid ( exprList )? ) | ^( FUNC_CALL Wave ( exprList )? ) | ^( FUNC_CALL Arc ( exprList )? ) )
 			int alt37=3;
 			int LA37_0 = input.LA(1);
 			if ( (LA37_0==FUNC_CALL) ) {
@@ -2470,12 +2476,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			switch (alt37) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:185:6: ^( FUNC_CALL Grid ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:187:6: ^( FUNC_CALL Grid ( exprList )? )
 					{
-					FUNC_CALL102=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall1063); 
+					FUNC_CALL104=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall1067); 
 					match(input, Token.DOWN, null); 
-					match(input,Grid,FOLLOW_Grid_in_patternCall1065); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:185:23: ( exprList )?
+					match(input,Grid,FOLLOW_Grid_in_patternCall1069); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:187:23: ( exprList )?
 					int alt34=2;
 					int LA34_0 = input.LA(1);
 					if ( (LA34_0==EXP_LIST) ) {
@@ -2483,39 +2489,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt34) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:185:23: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:187:23: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_patternCall1067);
-							exprList101=exprList();
-							state._fsp--;
-
-							}
-							break;
-
-					}
-
-					match(input, Token.UP, null); 
-
-					node = new GridNode(exprList101,currentScope,FUNC_CALL102.getLine(),FUNC_CALL102.getCharPositionInLine(),widthParam, heightParam);
-					}
-					break;
-				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:186:6: ^( FUNC_CALL Wave ( exprList )? )
-					{
-					FUNC_CALL104=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall1079); 
-					match(input, Token.DOWN, null); 
-					match(input,Wave,FOLLOW_Wave_in_patternCall1081); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:186:23: ( exprList )?
-					int alt35=2;
-					int LA35_0 = input.LA(1);
-					if ( (LA35_0==EXP_LIST) ) {
-						alt35=1;
-					}
-					switch (alt35) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:186:23: exprList
-							{
-							pushFollow(FOLLOW_exprList_in_patternCall1083);
+							pushFollow(FOLLOW_exprList_in_patternCall1071);
 							exprList103=exprList();
 							state._fsp--;
 
@@ -2526,26 +2502,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new WaveNode(exprList103,currentScope,FUNC_CALL104.getLine(),FUNC_CALL104.getCharPositionInLine(),widthParam, heightParam);
+					node = new GridNode(exprList103,currentScope,FUNC_CALL104.getLine(),FUNC_CALL104.getCharPositionInLine(),widthParam, heightParam);
 					}
 					break;
-				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:187:6: ^( FUNC_CALL Arc ( exprList )? )
+				case 2 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:188:6: ^( FUNC_CALL Wave ( exprList )? )
 					{
-					FUNC_CALL106=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall1095); 
+					FUNC_CALL106=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall1083); 
 					match(input, Token.DOWN, null); 
-					match(input,Arc,FOLLOW_Arc_in_patternCall1097); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:187:22: ( exprList )?
-					int alt36=2;
-					int LA36_0 = input.LA(1);
-					if ( (LA36_0==EXP_LIST) ) {
-						alt36=1;
+					match(input,Wave,FOLLOW_Wave_in_patternCall1085); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:188:23: ( exprList )?
+					int alt35=2;
+					int LA35_0 = input.LA(1);
+					if ( (LA35_0==EXP_LIST) ) {
+						alt35=1;
 					}
-					switch (alt36) {
+					switch (alt35) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:187:22: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:188:23: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_patternCall1099);
+							pushFollow(FOLLOW_exprList_in_patternCall1087);
 							exprList105=exprList();
 							state._fsp--;
 
@@ -2556,7 +2532,37 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new ArcNode(exprList105,currentScope,FUNC_CALL106.getLine(),FUNC_CALL106.getCharPositionInLine(),widthParam, heightParam);
+					node = new WaveNode(exprList105,currentScope,FUNC_CALL106.getLine(),FUNC_CALL106.getCharPositionInLine(),widthParam, heightParam);
+					}
+					break;
+				case 3 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:189:6: ^( FUNC_CALL Arc ( exprList )? )
+					{
+					FUNC_CALL108=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_patternCall1099); 
+					match(input, Token.DOWN, null); 
+					match(input,Arc,FOLLOW_Arc_in_patternCall1101); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:189:22: ( exprList )?
+					int alt36=2;
+					int LA36_0 = input.LA(1);
+					if ( (LA36_0==EXP_LIST) ) {
+						alt36=1;
+					}
+					switch (alt36) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:189:22: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_patternCall1103);
+							exprList107=exprList();
+							state._fsp--;
+
+							}
+							break;
+
+					}
+
+					match(input, Token.UP, null); 
+
+					node = new ArcNode(exprList107,currentScope,FUNC_CALL108.getLine(),FUNC_CALL108.getCharPositionInLine(),widthParam, heightParam);
 					}
 					break;
 
@@ -2576,12 +2582,11 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "mathCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:192:4: mathCall returns [DCNode node] : ( ^( FUNC_CALL Cosine expression ) | ^( FUNC_CALL Sine expression ) | ^( FUNC_CALL Tan expression ) | ^( FUNC_CALL ATan ( exprList )? ) | ^( FUNC_CALL Random ( exprList )? ) | ^( FUNC_CALL Pow ( exprList )? ) | ^( FUNC_CALL Sqrt expression ) | ^( FUNC_CALL Sq expression ) | ^( FUNC_CALL Gaussian ( exprList )? ) | ^( FUNC_CALL Noise ( exprList )? ) | ^( FUNC_CALL Round expression ) | ^( FUNC_CALL Map ( exprList )? ) | ^( FUNC_CALL Inch expression ) | ^( FUNC_CALL Mm expression ) | ^( FUNC_CALL Cm expression ) | ^( FUNC_CALL Units expression ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:194:4: mathCall returns [DCNode node] : ( ^( FUNC_CALL Cosine expression ) | ^( FUNC_CALL Sine expression ) | ^( FUNC_CALL Tan expression ) | ^( FUNC_CALL ATan ( exprList )? ) | ^( FUNC_CALL Random ( exprList )? ) | ^( FUNC_CALL Pow ( exprList )? ) | ^( FUNC_CALL Sqrt expression ) | ^( FUNC_CALL Sq expression ) | ^( FUNC_CALL Gaussian ( exprList )? ) | ^( FUNC_CALL Noise ( exprList )? ) | ^( FUNC_CALL Round expression ) | ^( FUNC_CALL Map ( exprList )? ) | ^( FUNC_CALL Inch expression ) | ^( FUNC_CALL Mm expression ) | ^( FUNC_CALL Cm expression ) | ^( FUNC_CALL Units expression ) );
 	public final DCNode mathCall() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree FUNC_CALL108=null;
 		CommonTree FUNC_CALL110=null;
 		CommonTree FUNC_CALL112=null;
 		CommonTree FUNC_CALL114=null;
@@ -2597,25 +2602,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 		CommonTree FUNC_CALL134=null;
 		CommonTree FUNC_CALL136=null;
 		CommonTree FUNC_CALL138=null;
-		DCNode expression107 =null;
+		CommonTree FUNC_CALL140=null;
 		DCNode expression109 =null;
 		DCNode expression111 =null;
-		java.util.List<DCNode> exprList113 =null;
+		DCNode expression113 =null;
 		java.util.List<DCNode> exprList115 =null;
 		java.util.List<DCNode> exprList117 =null;
-		DCNode expression119 =null;
+		java.util.List<DCNode> exprList119 =null;
 		DCNode expression121 =null;
-		java.util.List<DCNode> exprList123 =null;
+		DCNode expression123 =null;
 		java.util.List<DCNode> exprList125 =null;
-		DCNode expression127 =null;
-		java.util.List<DCNode> exprList129 =null;
-		DCNode expression131 =null;
+		java.util.List<DCNode> exprList127 =null;
+		DCNode expression129 =null;
+		java.util.List<DCNode> exprList131 =null;
 		DCNode expression133 =null;
 		DCNode expression135 =null;
 		DCNode expression137 =null;
+		DCNode expression139 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:193:4: ( ^( FUNC_CALL Cosine expression ) | ^( FUNC_CALL Sine expression ) | ^( FUNC_CALL Tan expression ) | ^( FUNC_CALL ATan ( exprList )? ) | ^( FUNC_CALL Random ( exprList )? ) | ^( FUNC_CALL Pow ( exprList )? ) | ^( FUNC_CALL Sqrt expression ) | ^( FUNC_CALL Sq expression ) | ^( FUNC_CALL Gaussian ( exprList )? ) | ^( FUNC_CALL Noise ( exprList )? ) | ^( FUNC_CALL Round expression ) | ^( FUNC_CALL Map ( exprList )? ) | ^( FUNC_CALL Inch expression ) | ^( FUNC_CALL Mm expression ) | ^( FUNC_CALL Cm expression ) | ^( FUNC_CALL Units expression ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:195:4: ( ^( FUNC_CALL Cosine expression ) | ^( FUNC_CALL Sine expression ) | ^( FUNC_CALL Tan expression ) | ^( FUNC_CALL ATan ( exprList )? ) | ^( FUNC_CALL Random ( exprList )? ) | ^( FUNC_CALL Pow ( exprList )? ) | ^( FUNC_CALL Sqrt expression ) | ^( FUNC_CALL Sq expression ) | ^( FUNC_CALL Gaussian ( exprList )? ) | ^( FUNC_CALL Noise ( exprList )? ) | ^( FUNC_CALL Round expression ) | ^( FUNC_CALL Map ( exprList )? ) | ^( FUNC_CALL Inch expression ) | ^( FUNC_CALL Mm expression ) | ^( FUNC_CALL Cm expression ) | ^( FUNC_CALL Units expression ) )
 			int alt44=16;
 			int LA44_0 = input.LA(1);
 			if ( (LA44_0==FUNC_CALL) ) {
@@ -2739,57 +2745,57 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			switch (alt44) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:193:5: ^( FUNC_CALL Cosine expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:195:5: ^( FUNC_CALL Cosine expression )
 					{
-					FUNC_CALL108=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1134); 
+					FUNC_CALL110=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1138); 
 					match(input, Token.DOWN, null); 
-					match(input,Cosine,FOLLOW_Cosine_in_mathCall1136); 
-					pushFollow(FOLLOW_expression_in_mathCall1138);
-					expression107=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new CosineNode(expression107,FUNC_CALL108.getLine(),FUNC_CALL108.getCharPositionInLine());
-					}
-					break;
-				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:194:5: ^( FUNC_CALL Sine expression )
-					{
-					FUNC_CALL110=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1148); 
-					match(input, Token.DOWN, null); 
-					match(input,Sine,FOLLOW_Sine_in_mathCall1150); 
-					pushFollow(FOLLOW_expression_in_mathCall1152);
+					match(input,Cosine,FOLLOW_Cosine_in_mathCall1140); 
+					pushFollow(FOLLOW_expression_in_mathCall1142);
 					expression109=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new SineNode(expression109,FUNC_CALL110.getLine(),FUNC_CALL110.getCharPositionInLine());
+					node = new CosineNode(expression109,FUNC_CALL110.getLine(),FUNC_CALL110.getCharPositionInLine());
 					}
 					break;
-				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:195:5: ^( FUNC_CALL Tan expression )
+				case 2 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:196:5: ^( FUNC_CALL Sine expression )
 					{
-					FUNC_CALL112=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1162); 
+					FUNC_CALL112=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1152); 
 					match(input, Token.DOWN, null); 
-					match(input,Tan,FOLLOW_Tan_in_mathCall1164); 
-					pushFollow(FOLLOW_expression_in_mathCall1166);
+					match(input,Sine,FOLLOW_Sine_in_mathCall1154); 
+					pushFollow(FOLLOW_expression_in_mathCall1156);
 					expression111=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new TanNode(expression111,FUNC_CALL112.getLine(),FUNC_CALL112.getCharPositionInLine());
+					node = new SineNode(expression111,FUNC_CALL112.getLine(),FUNC_CALL112.getCharPositionInLine());
+					}
+					break;
+				case 3 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:197:5: ^( FUNC_CALL Tan expression )
+					{
+					FUNC_CALL114=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1166); 
+					match(input, Token.DOWN, null); 
+					match(input,Tan,FOLLOW_Tan_in_mathCall1168); 
+					pushFollow(FOLLOW_expression_in_mathCall1170);
+					expression113=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new TanNode(expression113,FUNC_CALL114.getLine(),FUNC_CALL114.getCharPositionInLine());
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:196:5: ^( FUNC_CALL ATan ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:198:5: ^( FUNC_CALL ATan ( exprList )? )
 					{
-					FUNC_CALL114=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1176); 
+					FUNC_CALL116=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1180); 
 					match(input, Token.DOWN, null); 
-					match(input,ATan,FOLLOW_ATan_in_mathCall1178); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:196:22: ( exprList )?
+					match(input,ATan,FOLLOW_ATan_in_mathCall1182); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:198:22: ( exprList )?
 					int alt38=2;
 					int LA38_0 = input.LA(1);
 					if ( (LA38_0==EXP_LIST) ) {
@@ -2797,39 +2803,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt38) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:196:22: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:198:22: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall1180);
-							exprList113=exprList();
-							state._fsp--;
-
-							}
-							break;
-
-					}
-
-					match(input, Token.UP, null); 
-
-					node = new ATanNode(exprList113,FUNC_CALL114.getLine(),FUNC_CALL114.getCharPositionInLine());
-					}
-					break;
-				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:197:5: ^( FUNC_CALL Random ( exprList )? )
-					{
-					FUNC_CALL116=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1191); 
-					match(input, Token.DOWN, null); 
-					match(input,Random,FOLLOW_Random_in_mathCall1193); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:197:24: ( exprList )?
-					int alt39=2;
-					int LA39_0 = input.LA(1);
-					if ( (LA39_0==EXP_LIST) ) {
-						alt39=1;
-					}
-					switch (alt39) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:197:24: exprList
-							{
-							pushFollow(FOLLOW_exprList_in_mathCall1195);
+							pushFollow(FOLLOW_exprList_in_mathCall1184);
 							exprList115=exprList();
 							state._fsp--;
 
@@ -2840,26 +2816,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new RandomNode(exprList115,FUNC_CALL116.getLine(),FUNC_CALL116.getCharPositionInLine());
+					node = new ATanNode(exprList115,FUNC_CALL116.getLine(),FUNC_CALL116.getCharPositionInLine());
 					}
 					break;
-				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:198:5: ^( FUNC_CALL Pow ( exprList )? )
+				case 5 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:199:5: ^( FUNC_CALL Random ( exprList )? )
 					{
-					FUNC_CALL118=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1206); 
+					FUNC_CALL118=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1195); 
 					match(input, Token.DOWN, null); 
-					match(input,Pow,FOLLOW_Pow_in_mathCall1208); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:198:21: ( exprList )?
-					int alt40=2;
-					int LA40_0 = input.LA(1);
-					if ( (LA40_0==EXP_LIST) ) {
-						alt40=1;
+					match(input,Random,FOLLOW_Random_in_mathCall1197); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:199:24: ( exprList )?
+					int alt39=2;
+					int LA39_0 = input.LA(1);
+					if ( (LA39_0==EXP_LIST) ) {
+						alt39=1;
 					}
-					switch (alt40) {
+					switch (alt39) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:198:21: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:199:24: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall1210);
+							pushFollow(FOLLOW_exprList_in_mathCall1199);
 							exprList117=exprList();
 							state._fsp--;
 
@@ -2870,57 +2846,27 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new PowFNode(exprList117,FUNC_CALL118.getLine(),FUNC_CALL118.getCharPositionInLine());
+					node = new RandomNode(exprList117,FUNC_CALL118.getLine(),FUNC_CALL118.getCharPositionInLine());
 					}
 					break;
-				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:199:5: ^( FUNC_CALL Sqrt expression )
+				case 6 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:200:5: ^( FUNC_CALL Pow ( exprList )? )
 					{
-					FUNC_CALL120=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1220); 
+					FUNC_CALL120=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1210); 
 					match(input, Token.DOWN, null); 
-					match(input,Sqrt,FOLLOW_Sqrt_in_mathCall1222); 
-					pushFollow(FOLLOW_expression_in_mathCall1224);
-					expression119=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new SqrtNode(expression119,FUNC_CALL120.getLine(),FUNC_CALL120.getCharPositionInLine());
+					match(input,Pow,FOLLOW_Pow_in_mathCall1212); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:200:21: ( exprList )?
+					int alt40=2;
+					int LA40_0 = input.LA(1);
+					if ( (LA40_0==EXP_LIST) ) {
+						alt40=1;
 					}
-					break;
-				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:200:5: ^( FUNC_CALL Sq expression )
-					{
-					FUNC_CALL122=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1233); 
-					match(input, Token.DOWN, null); 
-					match(input,Sq,FOLLOW_Sq_in_mathCall1235); 
-					pushFollow(FOLLOW_expression_in_mathCall1237);
-					expression121=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new SqNode(expression121,FUNC_CALL122.getLine(),FUNC_CALL122.getCharPositionInLine());
-					}
-					break;
-				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:201:5: ^( FUNC_CALL Gaussian ( exprList )? )
-					{
-					FUNC_CALL124=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1246); 
-					match(input, Token.DOWN, null); 
-					match(input,Gaussian,FOLLOW_Gaussian_in_mathCall1248); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:201:26: ( exprList )?
-					int alt41=2;
-					int LA41_0 = input.LA(1);
-					if ( (LA41_0==EXP_LIST) ) {
-						alt41=1;
-					}
-					switch (alt41) {
+					switch (alt40) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:201:26: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:200:21: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall1250);
-							exprList123=exprList();
+							pushFollow(FOLLOW_exprList_in_mathCall1214);
+							exprList119=exprList();
 							state._fsp--;
 
 							}
@@ -2930,26 +2876,56 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new GaussianNode(exprList123,FUNC_CALL124.getLine(),FUNC_CALL124.getCharPositionInLine());
+					node = new PowFNode(exprList119,FUNC_CALL120.getLine(),FUNC_CALL120.getCharPositionInLine());
 					}
 					break;
-				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:202:5: ^( FUNC_CALL Noise ( exprList )? )
+				case 7 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:201:5: ^( FUNC_CALL Sqrt expression )
 					{
-					FUNC_CALL126=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1261); 
+					FUNC_CALL122=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1224); 
 					match(input, Token.DOWN, null); 
-					match(input,Noise,FOLLOW_Noise_in_mathCall1263); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:202:23: ( exprList )?
-					int alt42=2;
-					int LA42_0 = input.LA(1);
-					if ( (LA42_0==EXP_LIST) ) {
-						alt42=1;
+					match(input,Sqrt,FOLLOW_Sqrt_in_mathCall1226); 
+					pushFollow(FOLLOW_expression_in_mathCall1228);
+					expression121=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new SqrtNode(expression121,FUNC_CALL122.getLine(),FUNC_CALL122.getCharPositionInLine());
 					}
-					switch (alt42) {
+					break;
+				case 8 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:202:5: ^( FUNC_CALL Sq expression )
+					{
+					FUNC_CALL124=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1237); 
+					match(input, Token.DOWN, null); 
+					match(input,Sq,FOLLOW_Sq_in_mathCall1239); 
+					pushFollow(FOLLOW_expression_in_mathCall1241);
+					expression123=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new SqNode(expression123,FUNC_CALL124.getLine(),FUNC_CALL124.getCharPositionInLine());
+					}
+					break;
+				case 9 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:203:5: ^( FUNC_CALL Gaussian ( exprList )? )
+					{
+					FUNC_CALL126=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1250); 
+					match(input, Token.DOWN, null); 
+					match(input,Gaussian,FOLLOW_Gaussian_in_mathCall1252); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:203:26: ( exprList )?
+					int alt41=2;
+					int LA41_0 = input.LA(1);
+					if ( (LA41_0==EXP_LIST) ) {
+						alt41=1;
+					}
+					switch (alt41) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:202:23: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:203:26: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall1265);
+							pushFollow(FOLLOW_exprList_in_mathCall1254);
 							exprList125=exprList();
 							state._fsp--;
 
@@ -2960,42 +2936,27 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new NoiseNode(exprList125,FUNC_CALL126.getLine(),FUNC_CALL126.getCharPositionInLine());
+					node = new GaussianNode(exprList125,FUNC_CALL126.getLine(),FUNC_CALL126.getCharPositionInLine());
 					}
 					break;
-				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:203:5: ^( FUNC_CALL Round expression )
+				case 10 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:204:5: ^( FUNC_CALL Noise ( exprList )? )
 					{
-					FUNC_CALL128=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1276); 
+					FUNC_CALL128=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1265); 
 					match(input, Token.DOWN, null); 
-					match(input,Round,FOLLOW_Round_in_mathCall1278); 
-					pushFollow(FOLLOW_expression_in_mathCall1280);
-					expression127=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new RoundNode(expression127,FUNC_CALL128.getLine(),FUNC_CALL128.getCharPositionInLine());
+					match(input,Noise,FOLLOW_Noise_in_mathCall1267); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:204:23: ( exprList )?
+					int alt42=2;
+					int LA42_0 = input.LA(1);
+					if ( (LA42_0==EXP_LIST) ) {
+						alt42=1;
 					}
-					break;
-				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:204:5: ^( FUNC_CALL Map ( exprList )? )
-					{
-					FUNC_CALL130=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1290); 
-					match(input, Token.DOWN, null); 
-					match(input,Map,FOLLOW_Map_in_mathCall1292); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:204:21: ( exprList )?
-					int alt43=2;
-					int LA43_0 = input.LA(1);
-					if ( (LA43_0==EXP_LIST) ) {
-						alt43=1;
-					}
-					switch (alt43) {
+					switch (alt42) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:204:21: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:204:23: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_mathCall1294);
-							exprList129=exprList();
+							pushFollow(FOLLOW_exprList_in_mathCall1269);
+							exprList127=exprList();
 							state._fsp--;
 
 							}
@@ -3005,67 +2966,112 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new MapNode(exprList129,FUNC_CALL130.getLine(),FUNC_CALL130.getCharPositionInLine());
+					node = new NoiseNode(exprList127,FUNC_CALL128.getLine(),FUNC_CALL128.getCharPositionInLine());
 					}
 					break;
-				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:205:5: ^( FUNC_CALL Inch expression )
+				case 11 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:205:5: ^( FUNC_CALL Round expression )
 					{
-					FUNC_CALL132=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1305); 
+					FUNC_CALL130=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1280); 
 					match(input, Token.DOWN, null); 
-					match(input,Inch,FOLLOW_Inch_in_mathCall1307); 
-					pushFollow(FOLLOW_expression_in_mathCall1309);
-					expression131=expression();
+					match(input,Round,FOLLOW_Round_in_mathCall1282); 
+					pushFollow(FOLLOW_expression_in_mathCall1284);
+					expression129=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression131,"inch",unitParam,FUNC_CALL132.getLine(),FUNC_CALL132.getCharPositionInLine());
+					node = new RoundNode(expression129,FUNC_CALL130.getLine(),FUNC_CALL130.getCharPositionInLine());
 					}
 					break;
-				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:206:5: ^( FUNC_CALL Mm expression )
+				case 12 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:206:5: ^( FUNC_CALL Map ( exprList )? )
 					{
-					FUNC_CALL134=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1318); 
+					FUNC_CALL132=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1294); 
 					match(input, Token.DOWN, null); 
-					match(input,Mm,FOLLOW_Mm_in_mathCall1320); 
-					pushFollow(FOLLOW_expression_in_mathCall1322);
+					match(input,Map,FOLLOW_Map_in_mathCall1296); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:206:21: ( exprList )?
+					int alt43=2;
+					int LA43_0 = input.LA(1);
+					if ( (LA43_0==EXP_LIST) ) {
+						alt43=1;
+					}
+					switch (alt43) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:206:21: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_mathCall1298);
+							exprList131=exprList();
+							state._fsp--;
+
+							}
+							break;
+
+					}
+
+					match(input, Token.UP, null); 
+
+					node = new MapNode(exprList131,FUNC_CALL132.getLine(),FUNC_CALL132.getCharPositionInLine());
+					}
+					break;
+				case 13 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:207:5: ^( FUNC_CALL Inch expression )
+					{
+					FUNC_CALL134=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1309); 
+					match(input, Token.DOWN, null); 
+					match(input,Inch,FOLLOW_Inch_in_mathCall1311); 
+					pushFollow(FOLLOW_expression_in_mathCall1313);
 					expression133=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression133,"mm",unitParam,FUNC_CALL134.getLine(),FUNC_CALL134.getCharPositionInLine());
+					node = new ConversionNode(expression133,"inch",unitParam,FUNC_CALL134.getLine(),FUNC_CALL134.getCharPositionInLine());
 					}
 					break;
-				case 15 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:207:5: ^( FUNC_CALL Cm expression )
+				case 14 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:208:5: ^( FUNC_CALL Mm expression )
 					{
-					FUNC_CALL136=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1331); 
+					FUNC_CALL136=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1322); 
 					match(input, Token.DOWN, null); 
-					match(input,Cm,FOLLOW_Cm_in_mathCall1333); 
-					pushFollow(FOLLOW_expression_in_mathCall1335);
+					match(input,Mm,FOLLOW_Mm_in_mathCall1324); 
+					pushFollow(FOLLOW_expression_in_mathCall1326);
 					expression135=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression135,"cm",unitParam,FUNC_CALL136.getLine(),FUNC_CALL136.getCharPositionInLine());
+					node = new ConversionNode(expression135,"mm",unitParam,FUNC_CALL136.getLine(),FUNC_CALL136.getCharPositionInLine());
 					}
 					break;
-				case 16 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:208:5: ^( FUNC_CALL Units expression )
+				case 15 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:209:5: ^( FUNC_CALL Cm expression )
 					{
-					FUNC_CALL138=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1344); 
+					FUNC_CALL138=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1335); 
 					match(input, Token.DOWN, null); 
-					match(input,Units,FOLLOW_Units_in_mathCall1346); 
-					pushFollow(FOLLOW_expression_in_mathCall1348);
+					match(input,Cm,FOLLOW_Cm_in_mathCall1337); 
+					pushFollow(FOLLOW_expression_in_mathCall1339);
 					expression137=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new ConversionNode(expression137,"units",unitParam,FUNC_CALL138.getLine(),FUNC_CALL138.getCharPositionInLine());
+					node = new ConversionNode(expression137,"cm",unitParam,FUNC_CALL138.getLine(),FUNC_CALL138.getCharPositionInLine());
+					}
+					break;
+				case 16 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:210:5: ^( FUNC_CALL Units expression )
+					{
+					FUNC_CALL140=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_mathCall1348); 
+					match(input, Token.DOWN, null); 
+					match(input,Units,FOLLOW_Units_in_mathCall1350); 
+					pushFollow(FOLLOW_expression_in_mathCall1352);
+					expression139=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new ConversionNode(expression139,"units",unitParam,FUNC_CALL140.getLine(),FUNC_CALL140.getCharPositionInLine());
 					}
 					break;
 
@@ -3085,12 +3091,11 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "getCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:214:4: getCall returns [DCNode node] : ( ^( FUNC_CALL GetWidth expression ) | ^( FUNC_CALL GetHeight expression ) | ^( FUNC_CALL GetX expression ) | ^( FUNC_CALL GetY expression ) | ^( FUNC_CALL GetOrigin expression ) | ^( FUNC_CALL GetRotation expression ) | ^( FUNC_CALL GetFill expression ) | ^( FUNC_CALL GetStroke expression ) | ^( FUNC_CALL GetStart expression ) | ^( FUNC_CALL GetEnd expression ) | ^( FUNC_CALL GetDistance ( exprList )? ) | ^( FUNC_CALL GetIntersect ( exprList )? ) | ^( FUNC_CALL GetAngle ( exprList )? ) | ^( FUNC_CALL GetRadius ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:216:4: getCall returns [DCNode node] : ( ^( FUNC_CALL GetWidth expression ) | ^( FUNC_CALL GetHeight expression ) | ^( FUNC_CALL GetX expression ) | ^( FUNC_CALL GetY expression ) | ^( FUNC_CALL GetOrigin expression ) | ^( FUNC_CALL GetRotation expression ) | ^( FUNC_CALL GetFill expression ) | ^( FUNC_CALL GetStroke expression ) | ^( FUNC_CALL GetStart expression ) | ^( FUNC_CALL GetEnd expression ) | ^( FUNC_CALL GetDistance ( exprList )? ) | ^( FUNC_CALL GetIntersect ( exprList )? ) | ^( FUNC_CALL GetAngle ( exprList )? ) | ^( FUNC_CALL GetRadius ( exprList )? ) );
 	public final DCNode getCall() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree FUNC_CALL140=null;
 		CommonTree FUNC_CALL142=null;
 		CommonTree FUNC_CALL144=null;
 		CommonTree FUNC_CALL146=null;
@@ -3100,19 +3105,20 @@ public class PyEsqueTreeWalker extends TreeParser {
 		CommonTree FUNC_CALL154=null;
 		CommonTree FUNC_CALL156=null;
 		CommonTree FUNC_CALL158=null;
-		DCNode expression139 =null;
+		CommonTree FUNC_CALL160=null;
 		DCNode expression141 =null;
 		DCNode expression143 =null;
 		DCNode expression145 =null;
 		DCNode expression147 =null;
 		DCNode expression149 =null;
-		java.util.List<DCNode> exprList151 =null;
+		DCNode expression151 =null;
 		java.util.List<DCNode> exprList153 =null;
 		java.util.List<DCNode> exprList155 =null;
 		java.util.List<DCNode> exprList157 =null;
+		java.util.List<DCNode> exprList159 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:215:3: ( ^( FUNC_CALL GetWidth expression ) | ^( FUNC_CALL GetHeight expression ) | ^( FUNC_CALL GetX expression ) | ^( FUNC_CALL GetY expression ) | ^( FUNC_CALL GetOrigin expression ) | ^( FUNC_CALL GetRotation expression ) | ^( FUNC_CALL GetFill expression ) | ^( FUNC_CALL GetStroke expression ) | ^( FUNC_CALL GetStart expression ) | ^( FUNC_CALL GetEnd expression ) | ^( FUNC_CALL GetDistance ( exprList )? ) | ^( FUNC_CALL GetIntersect ( exprList )? ) | ^( FUNC_CALL GetAngle ( exprList )? ) | ^( FUNC_CALL GetRadius ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:217:3: ( ^( FUNC_CALL GetWidth expression ) | ^( FUNC_CALL GetHeight expression ) | ^( FUNC_CALL GetX expression ) | ^( FUNC_CALL GetY expression ) | ^( FUNC_CALL GetOrigin expression ) | ^( FUNC_CALL GetRotation expression ) | ^( FUNC_CALL GetFill expression ) | ^( FUNC_CALL GetStroke expression ) | ^( FUNC_CALL GetStart expression ) | ^( FUNC_CALL GetEnd expression ) | ^( FUNC_CALL GetDistance ( exprList )? ) | ^( FUNC_CALL GetIntersect ( exprList )? ) | ^( FUNC_CALL GetAngle ( exprList )? ) | ^( FUNC_CALL GetRadius ( exprList )? ) )
 			int alt49=14;
 			int LA49_0 = input.LA(1);
 			if ( (LA49_0==FUNC_CALL) ) {
@@ -3226,102 +3232,102 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			switch (alt49) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:215:5: ^( FUNC_CALL GetWidth expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:217:5: ^( FUNC_CALL GetWidth expression )
 					{
-					FUNC_CALL140=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1386); 
+					FUNC_CALL142=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1390); 
 					match(input, Token.DOWN, null); 
-					match(input,GetWidth,FOLLOW_GetWidth_in_getCall1388); 
-					pushFollow(FOLLOW_expression_in_getCall1390);
-					expression139=expression();
-					state._fsp--;
-
-					match(input, Token.UP, null); 
-
-					node = new GetWidthNode(expression139,FUNC_CALL140.getLine(),FUNC_CALL140.getCharPositionInLine());
-					}
-					break;
-				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:216:5: ^( FUNC_CALL GetHeight expression )
-					{
-					FUNC_CALL142=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1400); 
-					match(input, Token.DOWN, null); 
-					match(input,GetHeight,FOLLOW_GetHeight_in_getCall1402); 
-					pushFollow(FOLLOW_expression_in_getCall1404);
+					match(input,GetWidth,FOLLOW_GetWidth_in_getCall1392); 
+					pushFollow(FOLLOW_expression_in_getCall1394);
 					expression141=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetHeightNode(expression141,FUNC_CALL142.getLine(),FUNC_CALL142.getCharPositionInLine());
+					node = new GetWidthNode(expression141,FUNC_CALL142.getLine(),FUNC_CALL142.getCharPositionInLine());
 					}
 					break;
-				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:217:5: ^( FUNC_CALL GetX expression )
+				case 2 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:218:5: ^( FUNC_CALL GetHeight expression )
 					{
-					FUNC_CALL144=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1413); 
+					FUNC_CALL144=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1404); 
 					match(input, Token.DOWN, null); 
-					match(input,GetX,FOLLOW_GetX_in_getCall1415); 
-					pushFollow(FOLLOW_expression_in_getCall1417);
+					match(input,GetHeight,FOLLOW_GetHeight_in_getCall1406); 
+					pushFollow(FOLLOW_expression_in_getCall1408);
 					expression143=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetXNode(expression143,FUNC_CALL144.getLine(),FUNC_CALL144.getCharPositionInLine());
+					node = new GetHeightNode(expression143,FUNC_CALL144.getLine(),FUNC_CALL144.getCharPositionInLine());
 					}
 					break;
-				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:218:5: ^( FUNC_CALL GetY expression )
+				case 3 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:219:5: ^( FUNC_CALL GetX expression )
 					{
-					FUNC_CALL146=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1426); 
+					FUNC_CALL146=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1417); 
 					match(input, Token.DOWN, null); 
-					match(input,GetY,FOLLOW_GetY_in_getCall1428); 
-					pushFollow(FOLLOW_expression_in_getCall1430);
+					match(input,GetX,FOLLOW_GetX_in_getCall1419); 
+					pushFollow(FOLLOW_expression_in_getCall1421);
 					expression145=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetYNode(expression145,FUNC_CALL146.getLine(),FUNC_CALL146.getCharPositionInLine());
+					node = new GetXNode(expression145,FUNC_CALL146.getLine(),FUNC_CALL146.getCharPositionInLine());
 					}
 					break;
-				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:219:5: ^( FUNC_CALL GetOrigin expression )
+				case 4 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:220:5: ^( FUNC_CALL GetY expression )
 					{
-					FUNC_CALL148=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1439); 
+					FUNC_CALL148=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1430); 
 					match(input, Token.DOWN, null); 
-					match(input,GetOrigin,FOLLOW_GetOrigin_in_getCall1441); 
-					pushFollow(FOLLOW_expression_in_getCall1443);
+					match(input,GetY,FOLLOW_GetY_in_getCall1432); 
+					pushFollow(FOLLOW_expression_in_getCall1434);
 					expression147=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetOriginNode(expression147,FUNC_CALL148.getLine(),FUNC_CALL148.getCharPositionInLine());
+					node = new GetYNode(expression147,FUNC_CALL148.getLine(),FUNC_CALL148.getCharPositionInLine());
 					}
 					break;
-				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:220:5: ^( FUNC_CALL GetRotation expression )
+				case 5 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:221:5: ^( FUNC_CALL GetOrigin expression )
 					{
-					FUNC_CALL150=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1452); 
+					FUNC_CALL150=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1443); 
 					match(input, Token.DOWN, null); 
-					match(input,GetRotation,FOLLOW_GetRotation_in_getCall1454); 
-					pushFollow(FOLLOW_expression_in_getCall1456);
+					match(input,GetOrigin,FOLLOW_GetOrigin_in_getCall1445); 
+					pushFollow(FOLLOW_expression_in_getCall1447);
 					expression149=expression();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new GetRotationNode(expression149,FUNC_CALL150.getLine(),FUNC_CALL150.getCharPositionInLine());
+					node = new GetOriginNode(expression149,FUNC_CALL150.getLine(),FUNC_CALL150.getCharPositionInLine());
+					}
+					break;
+				case 6 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:222:5: ^( FUNC_CALL GetRotation expression )
+					{
+					FUNC_CALL152=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1456); 
+					match(input, Token.DOWN, null); 
+					match(input,GetRotation,FOLLOW_GetRotation_in_getCall1458); 
+					pushFollow(FOLLOW_expression_in_getCall1460);
+					expression151=expression();
+					state._fsp--;
+
+					match(input, Token.UP, null); 
+
+					node = new GetRotationNode(expression151,FUNC_CALL152.getLine(),FUNC_CALL152.getCharPositionInLine());
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:221:5: ^( FUNC_CALL GetFill expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:223:5: ^( FUNC_CALL GetFill expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1465); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1469); 
 					match(input, Token.DOWN, null); 
-					match(input,GetFill,FOLLOW_GetFill_in_getCall1467); 
-					pushFollow(FOLLOW_expression_in_getCall1469);
+					match(input,GetFill,FOLLOW_GetFill_in_getCall1471); 
+					pushFollow(FOLLOW_expression_in_getCall1473);
 					expression();
 					state._fsp--;
 
@@ -3330,12 +3336,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:222:5: ^( FUNC_CALL GetStroke expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:224:5: ^( FUNC_CALL GetStroke expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1477); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1481); 
 					match(input, Token.DOWN, null); 
-					match(input,GetStroke,FOLLOW_GetStroke_in_getCall1479); 
-					pushFollow(FOLLOW_expression_in_getCall1481);
+					match(input,GetStroke,FOLLOW_GetStroke_in_getCall1483); 
+					pushFollow(FOLLOW_expression_in_getCall1485);
 					expression();
 					state._fsp--;
 
@@ -3344,12 +3350,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:223:5: ^( FUNC_CALL GetStart expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:225:5: ^( FUNC_CALL GetStart expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1489); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1493); 
 					match(input, Token.DOWN, null); 
-					match(input,GetStart,FOLLOW_GetStart_in_getCall1491); 
-					pushFollow(FOLLOW_expression_in_getCall1493);
+					match(input,GetStart,FOLLOW_GetStart_in_getCall1495); 
+					pushFollow(FOLLOW_expression_in_getCall1497);
 					expression();
 					state._fsp--;
 
@@ -3358,12 +3364,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:224:4: ^( FUNC_CALL GetEnd expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:226:4: ^( FUNC_CALL GetEnd expression )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1500); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1504); 
 					match(input, Token.DOWN, null); 
-					match(input,GetEnd,FOLLOW_GetEnd_in_getCall1502); 
-					pushFollow(FOLLOW_expression_in_getCall1504);
+					match(input,GetEnd,FOLLOW_GetEnd_in_getCall1506); 
+					pushFollow(FOLLOW_expression_in_getCall1508);
 					expression();
 					state._fsp--;
 
@@ -3372,12 +3378,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:225:4: ^( FUNC_CALL GetDistance ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:227:4: ^( FUNC_CALL GetDistance ( exprList )? )
 					{
-					FUNC_CALL152=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1512); 
+					FUNC_CALL154=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1516); 
 					match(input, Token.DOWN, null); 
-					match(input,GetDistance,FOLLOW_GetDistance_in_getCall1514); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:225:28: ( exprList )?
+					match(input,GetDistance,FOLLOW_GetDistance_in_getCall1518); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:227:28: ( exprList )?
 					int alt45=2;
 					int LA45_0 = input.LA(1);
 					if ( (LA45_0==EXP_LIST) ) {
@@ -3385,39 +3391,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt45) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:225:28: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:227:28: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_getCall1516);
-							exprList151=exprList();
-							state._fsp--;
-
-							}
-							break;
-
-					}
-
-					match(input, Token.UP, null); 
-
-					node = new DistanceNode(exprList151,FUNC_CALL152.getLine(),FUNC_CALL152.getCharPositionInLine());
-					}
-					break;
-				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:226:4: ^( FUNC_CALL GetIntersect ( exprList )? )
-					{
-					FUNC_CALL154=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1526); 
-					match(input, Token.DOWN, null); 
-					match(input,GetIntersect,FOLLOW_GetIntersect_in_getCall1528); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:226:29: ( exprList )?
-					int alt46=2;
-					int LA46_0 = input.LA(1);
-					if ( (LA46_0==EXP_LIST) ) {
-						alt46=1;
-					}
-					switch (alt46) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:226:29: exprList
-							{
-							pushFollow(FOLLOW_exprList_in_getCall1530);
+							pushFollow(FOLLOW_exprList_in_getCall1520);
 							exprList153=exprList();
 							state._fsp--;
 
@@ -3428,26 +3404,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new IntersectNode(exprList153,FUNC_CALL154.getLine(),FUNC_CALL154.getCharPositionInLine());
+					node = new DistanceNode(exprList153,FUNC_CALL154.getLine(),FUNC_CALL154.getCharPositionInLine());
 					}
 					break;
-				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:227:4: ^( FUNC_CALL GetAngle ( exprList )? )
+				case 12 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:228:4: ^( FUNC_CALL GetIntersect ( exprList )? )
 					{
-					FUNC_CALL156=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1540); 
+					FUNC_CALL156=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1530); 
 					match(input, Token.DOWN, null); 
-					match(input,GetAngle,FOLLOW_GetAngle_in_getCall1542); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:227:25: ( exprList )?
-					int alt47=2;
-					int LA47_0 = input.LA(1);
-					if ( (LA47_0==EXP_LIST) ) {
-						alt47=1;
+					match(input,GetIntersect,FOLLOW_GetIntersect_in_getCall1532); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:228:29: ( exprList )?
+					int alt46=2;
+					int LA46_0 = input.LA(1);
+					if ( (LA46_0==EXP_LIST) ) {
+						alt46=1;
 					}
-					switch (alt47) {
+					switch (alt46) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:227:25: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:228:29: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_getCall1544);
+							pushFollow(FOLLOW_exprList_in_getCall1534);
 							exprList155=exprList();
 							state._fsp--;
 
@@ -3458,26 +3434,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new GetAngleNode(exprList155,FUNC_CALL156.getLine(),FUNC_CALL156.getCharPositionInLine());
+					node = new IntersectNode(exprList155,FUNC_CALL156.getLine(),FUNC_CALL156.getCharPositionInLine());
 					}
 					break;
-				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:228:4: ^( FUNC_CALL GetRadius ( exprList )? )
+				case 13 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:229:4: ^( FUNC_CALL GetAngle ( exprList )? )
 					{
-					FUNC_CALL158=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1555); 
+					FUNC_CALL158=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1544); 
 					match(input, Token.DOWN, null); 
-					match(input,GetRadius,FOLLOW_GetRadius_in_getCall1557); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:228:26: ( exprList )?
-					int alt48=2;
-					int LA48_0 = input.LA(1);
-					if ( (LA48_0==EXP_LIST) ) {
-						alt48=1;
+					match(input,GetAngle,FOLLOW_GetAngle_in_getCall1546); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:229:25: ( exprList )?
+					int alt47=2;
+					int LA47_0 = input.LA(1);
+					if ( (LA47_0==EXP_LIST) ) {
+						alt47=1;
 					}
-					switch (alt48) {
+					switch (alt47) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:228:26: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:229:25: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_getCall1559);
+							pushFollow(FOLLOW_exprList_in_getCall1548);
 							exprList157=exprList();
 							state._fsp--;
 
@@ -3488,7 +3464,37 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new GetRadiusNode(exprList157,FUNC_CALL158.getLine(),FUNC_CALL158.getCharPositionInLine());
+					node = new GetAngleNode(exprList157,FUNC_CALL158.getLine(),FUNC_CALL158.getCharPositionInLine());
+					}
+					break;
+				case 14 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:230:4: ^( FUNC_CALL GetRadius ( exprList )? )
+					{
+					FUNC_CALL160=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_getCall1559); 
+					match(input, Token.DOWN, null); 
+					match(input,GetRadius,FOLLOW_GetRadius_in_getCall1561); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:230:26: ( exprList )?
+					int alt48=2;
+					int LA48_0 = input.LA(1);
+					if ( (LA48_0==EXP_LIST) ) {
+						alt48=1;
+					}
+					switch (alt48) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:230:26: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_getCall1563);
+							exprList159=exprList();
+							state._fsp--;
+
+							}
+							break;
+
+					}
+
+					match(input, Token.UP, null); 
+
+					node = new GetRadiusNode(exprList159,FUNC_CALL160.getLine(),FUNC_CALL160.getCharPositionInLine());
 					}
 					break;
 
@@ -3508,22 +3514,22 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "uICall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:231:3: uICall returns [DCNode node] : ^( FUNC_CALL Slider ( exprList )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:233:3: uICall returns [DCNode node] : ^( FUNC_CALL Slider ( exprList )? ) ;
 	public final DCNode uICall() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree FUNC_CALL160=null;
-		java.util.List<DCNode> exprList159 =null;
+		CommonTree FUNC_CALL162=null;
+		java.util.List<DCNode> exprList161 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:232:4: ( ^( FUNC_CALL Slider ( exprList )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:232:6: ^( FUNC_CALL Slider ( exprList )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:234:4: ( ^( FUNC_CALL Slider ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:234:6: ^( FUNC_CALL Slider ( exprList )? )
 			{
-			FUNC_CALL160=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_uICall1587); 
+			FUNC_CALL162=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_uICall1591); 
 			match(input, Token.DOWN, null); 
-			match(input,Slider,FOLLOW_Slider_in_uICall1589); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:232:25: ( exprList )?
+			match(input,Slider,FOLLOW_Slider_in_uICall1593); 
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:234:25: ( exprList )?
 			int alt50=2;
 			int LA50_0 = input.LA(1);
 			if ( (LA50_0==EXP_LIST) ) {
@@ -3531,10 +3537,10 @@ public class PyEsqueTreeWalker extends TreeParser {
 			}
 			switch (alt50) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:232:25: exprList
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:234:25: exprList
 					{
-					pushFollow(FOLLOW_exprList_in_uICall1591);
-					exprList159=exprList();
+					pushFollow(FOLLOW_exprList_in_uICall1595);
+					exprList161=exprList();
 					state._fsp--;
 
 					}
@@ -3544,7 +3550,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			match(input, Token.UP, null); 
 
-			node = new SliderNode(exprList159,currentScope,FUNC_CALL160.getLine(),FUNC_CALL160.getCharPositionInLine());
+			node = new SliderNode(exprList161,currentScope,FUNC_CALL162.getLine(),FUNC_CALL162.getCharPositionInLine());
 			}
 
 		}
@@ -3562,12 +3568,11 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "templateCall"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:235:4: templateCall returns [DCNode node] : ( ^( FUNC_CALL Template ( exprList )? ) | ^( FUNC_CALL SetWidth ( exprList )? ) | ^( FUNC_CALL SetHeight ( exprList )? ) | ^( FUNC_CALL SetSeam ( exprList )? ) | ^( FUNC_CALL SetName ( exprList )? ) | ^( FUNC_CALL SetVFold ( exprList )? ) | ^( FUNC_CALL SetHFold ( exprList )? ) | ^( FUNC_CALL SetCorner ( exprList )? ) | ^( FUNC_CALL TemplateCollection ( exprList )? ) | ^( FUNC_CALL AddDesign ( exprList )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:237:4: templateCall returns [DCNode node] : ( ^( FUNC_CALL Template ( exprList )? ) | ^( FUNC_CALL SetWidth ( exprList )? ) | ^( FUNC_CALL SetHeight ( exprList )? ) | ^( FUNC_CALL SetSeam ( exprList )? ) | ^( FUNC_CALL SetName ( exprList )? ) | ^( FUNC_CALL SetVFold ( exprList )? ) | ^( FUNC_CALL SetHFold ( exprList )? ) | ^( FUNC_CALL SetCorner ( exprList )? ) | ^( FUNC_CALL TemplateCollection ( exprList )? ) | ^( FUNC_CALL AddDesign ( exprList )? ) );
 	public final DCNode templateCall() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree FUNC_CALL162=null;
 		CommonTree FUNC_CALL164=null;
 		CommonTree FUNC_CALL166=null;
 		CommonTree FUNC_CALL168=null;
@@ -3576,7 +3581,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 		CommonTree FUNC_CALL174=null;
 		CommonTree FUNC_CALL176=null;
 		CommonTree FUNC_CALL178=null;
-		java.util.List<DCNode> exprList161 =null;
+		CommonTree FUNC_CALL180=null;
 		java.util.List<DCNode> exprList163 =null;
 		java.util.List<DCNode> exprList165 =null;
 		java.util.List<DCNode> exprList167 =null;
@@ -3585,9 +3590,10 @@ public class PyEsqueTreeWalker extends TreeParser {
 		java.util.List<DCNode> exprList173 =null;
 		java.util.List<DCNode> exprList175 =null;
 		java.util.List<DCNode> exprList177 =null;
+		java.util.List<DCNode> exprList179 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:236:4: ( ^( FUNC_CALL Template ( exprList )? ) | ^( FUNC_CALL SetWidth ( exprList )? ) | ^( FUNC_CALL SetHeight ( exprList )? ) | ^( FUNC_CALL SetSeam ( exprList )? ) | ^( FUNC_CALL SetName ( exprList )? ) | ^( FUNC_CALL SetVFold ( exprList )? ) | ^( FUNC_CALL SetHFold ( exprList )? ) | ^( FUNC_CALL SetCorner ( exprList )? ) | ^( FUNC_CALL TemplateCollection ( exprList )? ) | ^( FUNC_CALL AddDesign ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:238:4: ( ^( FUNC_CALL Template ( exprList )? ) | ^( FUNC_CALL SetWidth ( exprList )? ) | ^( FUNC_CALL SetHeight ( exprList )? ) | ^( FUNC_CALL SetSeam ( exprList )? ) | ^( FUNC_CALL SetName ( exprList )? ) | ^( FUNC_CALL SetVFold ( exprList )? ) | ^( FUNC_CALL SetHFold ( exprList )? ) | ^( FUNC_CALL SetCorner ( exprList )? ) | ^( FUNC_CALL TemplateCollection ( exprList )? ) | ^( FUNC_CALL AddDesign ( exprList )? ) )
 			int alt61=10;
 			int LA61_0 = input.LA(1);
 			if ( (LA61_0==FUNC_CALL) ) {
@@ -3681,12 +3687,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			switch (alt61) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:236:6: ^( FUNC_CALL Template ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:238:6: ^( FUNC_CALL Template ( exprList )? )
 					{
-					FUNC_CALL162=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1622); 
+					FUNC_CALL164=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1626); 
 					match(input, Token.DOWN, null); 
-					match(input,Template,FOLLOW_Template_in_templateCall1624); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:236:27: ( exprList )?
+					match(input,Template,FOLLOW_Template_in_templateCall1628); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:238:27: ( exprList )?
 					int alt51=2;
 					int LA51_0 = input.LA(1);
 					if ( (LA51_0==EXP_LIST) ) {
@@ -3694,39 +3700,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt51) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:236:27: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:238:27: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall1626);
-							exprList161=exprList();
-							state._fsp--;
-
-							}
-							break;
-
-					}
-
-					match(input, Token.UP, null); 
-
-					node = new TemplateNode(exprList161,FUNC_CALL162.getLine(),FUNC_CALL162.getCharPositionInLine());
-					}
-					break;
-				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:237:5: ^( FUNC_CALL SetWidth ( exprList )? )
-					{
-					FUNC_CALL164=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1637); 
-					match(input, Token.DOWN, null); 
-					match(input,SetWidth,FOLLOW_SetWidth_in_templateCall1639); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:237:26: ( exprList )?
-					int alt52=2;
-					int LA52_0 = input.LA(1);
-					if ( (LA52_0==EXP_LIST) ) {
-						alt52=1;
-					}
-					switch (alt52) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:237:26: exprList
-							{
-							pushFollow(FOLLOW_exprList_in_templateCall1641);
+							pushFollow(FOLLOW_exprList_in_templateCall1630);
 							exprList163=exprList();
 							state._fsp--;
 
@@ -3737,26 +3713,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new TemplateSetWidthNode(exprList163,FUNC_CALL164.getLine(),FUNC_CALL164.getCharPositionInLine());
+					node = new TemplateNode(exprList163,FUNC_CALL164.getLine(),FUNC_CALL164.getCharPositionInLine());
 					}
 					break;
-				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:238:5: ^( FUNC_CALL SetHeight ( exprList )? )
+				case 2 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:239:5: ^( FUNC_CALL SetWidth ( exprList )? )
 					{
-					FUNC_CALL166=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1652); 
+					FUNC_CALL166=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1641); 
 					match(input, Token.DOWN, null); 
-					match(input,SetHeight,FOLLOW_SetHeight_in_templateCall1654); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:238:27: ( exprList )?
-					int alt53=2;
-					int LA53_0 = input.LA(1);
-					if ( (LA53_0==EXP_LIST) ) {
-						alt53=1;
+					match(input,SetWidth,FOLLOW_SetWidth_in_templateCall1643); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:239:26: ( exprList )?
+					int alt52=2;
+					int LA52_0 = input.LA(1);
+					if ( (LA52_0==EXP_LIST) ) {
+						alt52=1;
 					}
-					switch (alt53) {
+					switch (alt52) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:238:27: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:239:26: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall1656);
+							pushFollow(FOLLOW_exprList_in_templateCall1645);
 							exprList165=exprList();
 							state._fsp--;
 
@@ -3767,26 +3743,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new TemplateSetHeightNode(exprList165,FUNC_CALL166.getLine(),FUNC_CALL166.getCharPositionInLine());
+					node = new TemplateSetWidthNode(exprList165,FUNC_CALL166.getLine(),FUNC_CALL166.getCharPositionInLine());
 					}
 					break;
-				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:239:5: ^( FUNC_CALL SetSeam ( exprList )? )
+				case 3 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:240:5: ^( FUNC_CALL SetHeight ( exprList )? )
 					{
-					FUNC_CALL168=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1666); 
+					FUNC_CALL168=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1656); 
 					match(input, Token.DOWN, null); 
-					match(input,SetSeam,FOLLOW_SetSeam_in_templateCall1668); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:239:25: ( exprList )?
-					int alt54=2;
-					int LA54_0 = input.LA(1);
-					if ( (LA54_0==EXP_LIST) ) {
-						alt54=1;
+					match(input,SetHeight,FOLLOW_SetHeight_in_templateCall1658); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:240:27: ( exprList )?
+					int alt53=2;
+					int LA53_0 = input.LA(1);
+					if ( (LA53_0==EXP_LIST) ) {
+						alt53=1;
 					}
-					switch (alt54) {
+					switch (alt53) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:239:25: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:240:27: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall1670);
+							pushFollow(FOLLOW_exprList_in_templateCall1660);
 							exprList167=exprList();
 							state._fsp--;
 
@@ -3797,16 +3773,46 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new TemplateSetSeamNode(exprList167,FUNC_CALL168.getLine(),FUNC_CALL168.getCharPositionInLine());
+					node = new TemplateSetHeightNode(exprList167,FUNC_CALL168.getLine(),FUNC_CALL168.getCharPositionInLine());
+					}
+					break;
+				case 4 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:241:5: ^( FUNC_CALL SetSeam ( exprList )? )
+					{
+					FUNC_CALL170=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1670); 
+					match(input, Token.DOWN, null); 
+					match(input,SetSeam,FOLLOW_SetSeam_in_templateCall1672); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:241:25: ( exprList )?
+					int alt54=2;
+					int LA54_0 = input.LA(1);
+					if ( (LA54_0==EXP_LIST) ) {
+						alt54=1;
+					}
+					switch (alt54) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:241:25: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_templateCall1674);
+							exprList169=exprList();
+							state._fsp--;
+
+							}
+							break;
+
+					}
+
+					match(input, Token.UP, null); 
+
+					node = new TemplateSetSeamNode(exprList169,FUNC_CALL170.getLine(),FUNC_CALL170.getCharPositionInLine());
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:240:5: ^( FUNC_CALL SetName ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:242:5: ^( FUNC_CALL SetName ( exprList )? )
 					{
-					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1680); 
+					match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1684); 
 					match(input, Token.DOWN, null); 
-					match(input,SetName,FOLLOW_SetName_in_templateCall1682); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:240:25: ( exprList )?
+					match(input,SetName,FOLLOW_SetName_in_templateCall1686); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:242:25: ( exprList )?
 					int alt55=2;
 					int LA55_0 = input.LA(1);
 					if ( (LA55_0==EXP_LIST) ) {
@@ -3814,9 +3820,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt55) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:240:25: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:242:25: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall1684);
+							pushFollow(FOLLOW_exprList_in_templateCall1688);
 							exprList();
 							state._fsp--;
 
@@ -3830,12 +3836,12 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:241:5: ^( FUNC_CALL SetVFold ( exprList )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:243:5: ^( FUNC_CALL SetVFold ( exprList )? )
 					{
-					FUNC_CALL170=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1693); 
+					FUNC_CALL172=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1697); 
 					match(input, Token.DOWN, null); 
-					match(input,SetVFold,FOLLOW_SetVFold_in_templateCall1695); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:241:26: ( exprList )?
+					match(input,SetVFold,FOLLOW_SetVFold_in_templateCall1699); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:243:26: ( exprList )?
 					int alt56=2;
 					int LA56_0 = input.LA(1);
 					if ( (LA56_0==EXP_LIST) ) {
@@ -3843,39 +3849,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt56) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:241:26: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:243:26: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall1697);
-							exprList169=exprList();
-							state._fsp--;
-
-							}
-							break;
-
-					}
-
-					match(input, Token.UP, null); 
-
-					node = new TemplateSetVFoldNode(exprList169,FUNC_CALL170.getLine(),FUNC_CALL170.getCharPositionInLine());
-					}
-					break;
-				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:242:5: ^( FUNC_CALL SetHFold ( exprList )? )
-					{
-					FUNC_CALL172=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1707); 
-					match(input, Token.DOWN, null); 
-					match(input,SetHFold,FOLLOW_SetHFold_in_templateCall1709); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:242:26: ( exprList )?
-					int alt57=2;
-					int LA57_0 = input.LA(1);
-					if ( (LA57_0==EXP_LIST) ) {
-						alt57=1;
-					}
-					switch (alt57) {
-						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:242:26: exprList
-							{
-							pushFollow(FOLLOW_exprList_in_templateCall1711);
+							pushFollow(FOLLOW_exprList_in_templateCall1701);
 							exprList171=exprList();
 							state._fsp--;
 
@@ -3886,26 +3862,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new TemplateSetHFoldNode(exprList171,FUNC_CALL172.getLine(),FUNC_CALL172.getCharPositionInLine());
+					node = new TemplateSetVFoldNode(exprList171,FUNC_CALL172.getLine(),FUNC_CALL172.getCharPositionInLine());
 					}
 					break;
-				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:243:5: ^( FUNC_CALL SetCorner ( exprList )? )
+				case 7 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:244:5: ^( FUNC_CALL SetHFold ( exprList )? )
 					{
-					FUNC_CALL174=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1721); 
+					FUNC_CALL174=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1711); 
 					match(input, Token.DOWN, null); 
-					match(input,SetCorner,FOLLOW_SetCorner_in_templateCall1723); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:243:27: ( exprList )?
-					int alt58=2;
-					int LA58_0 = input.LA(1);
-					if ( (LA58_0==EXP_LIST) ) {
-						alt58=1;
+					match(input,SetHFold,FOLLOW_SetHFold_in_templateCall1713); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:244:26: ( exprList )?
+					int alt57=2;
+					int LA57_0 = input.LA(1);
+					if ( (LA57_0==EXP_LIST) ) {
+						alt57=1;
 					}
-					switch (alt58) {
+					switch (alt57) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:243:27: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:244:26: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall1725);
+							pushFollow(FOLLOW_exprList_in_templateCall1715);
 							exprList173=exprList();
 							state._fsp--;
 
@@ -3916,26 +3892,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new TemplateSetCornerNode(exprList173,FUNC_CALL174.getLine(),FUNC_CALL174.getCharPositionInLine());
+					node = new TemplateSetHFoldNode(exprList173,FUNC_CALL174.getLine(),FUNC_CALL174.getCharPositionInLine());
 					}
 					break;
-				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:244:5: ^( FUNC_CALL TemplateCollection ( exprList )? )
+				case 8 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:245:5: ^( FUNC_CALL SetCorner ( exprList )? )
 					{
-					FUNC_CALL176=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1736); 
+					FUNC_CALL176=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1725); 
 					match(input, Token.DOWN, null); 
-					match(input,TemplateCollection,FOLLOW_TemplateCollection_in_templateCall1738); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:244:38: ( exprList )?
-					int alt59=2;
-					int LA59_0 = input.LA(1);
-					if ( (LA59_0==EXP_LIST) ) {
-						alt59=1;
+					match(input,SetCorner,FOLLOW_SetCorner_in_templateCall1727); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:245:27: ( exprList )?
+					int alt58=2;
+					int LA58_0 = input.LA(1);
+					if ( (LA58_0==EXP_LIST) ) {
+						alt58=1;
 					}
-					switch (alt59) {
+					switch (alt58) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:244:38: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:245:27: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall1742);
+							pushFollow(FOLLOW_exprList_in_templateCall1729);
 							exprList175=exprList();
 							state._fsp--;
 
@@ -3946,26 +3922,26 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new TemplateSetCollectionNode(exprList175,FUNC_CALL176.getLine(),FUNC_CALL176.getCharPositionInLine());
+					node = new TemplateSetCornerNode(exprList175,FUNC_CALL176.getLine(),FUNC_CALL176.getCharPositionInLine());
 					}
 					break;
-				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:245:5: ^( FUNC_CALL AddDesign ( exprList )? )
+				case 9 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:246:5: ^( FUNC_CALL TemplateCollection ( exprList )? )
 					{
-					FUNC_CALL178=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1752); 
+					FUNC_CALL178=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1740); 
 					match(input, Token.DOWN, null); 
-					match(input,AddDesign,FOLLOW_AddDesign_in_templateCall1754); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:245:27: ( exprList )?
-					int alt60=2;
-					int LA60_0 = input.LA(1);
-					if ( (LA60_0==EXP_LIST) ) {
-						alt60=1;
+					match(input,TemplateCollection,FOLLOW_TemplateCollection_in_templateCall1742); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:246:38: ( exprList )?
+					int alt59=2;
+					int LA59_0 = input.LA(1);
+					if ( (LA59_0==EXP_LIST) ) {
+						alt59=1;
 					}
-					switch (alt60) {
+					switch (alt59) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:245:27: exprList
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:246:38: exprList
 							{
-							pushFollow(FOLLOW_exprList_in_templateCall1756);
+							pushFollow(FOLLOW_exprList_in_templateCall1746);
 							exprList177=exprList();
 							state._fsp--;
 
@@ -3976,7 +3952,37 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = new TemplateAddDesignNode(exprList177,FUNC_CALL178.getLine(),FUNC_CALL178.getCharPositionInLine());
+					node = new TemplateSetCollectionNode(exprList177,FUNC_CALL178.getLine(),FUNC_CALL178.getCharPositionInLine());
+					}
+					break;
+				case 10 :
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:247:5: ^( FUNC_CALL AddDesign ( exprList )? )
+					{
+					FUNC_CALL180=(CommonTree)match(input,FUNC_CALL,FOLLOW_FUNC_CALL_in_templateCall1756); 
+					match(input, Token.DOWN, null); 
+					match(input,AddDesign,FOLLOW_AddDesign_in_templateCall1758); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:247:27: ( exprList )?
+					int alt60=2;
+					int LA60_0 = input.LA(1);
+					if ( (LA60_0==EXP_LIST) ) {
+						alt60=1;
+					}
+					switch (alt60) {
+						case 1 :
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:247:27: exprList
+							{
+							pushFollow(FOLLOW_exprList_in_templateCall1760);
+							exprList179=exprList();
+							state._fsp--;
+
+							}
+							break;
+
+					}
+
+					match(input, Token.UP, null); 
+
+					node = new TemplateAddDesignNode(exprList179,FUNC_CALL180.getLine(),FUNC_CALL180.getCharPositionInLine());
 					}
 					break;
 
@@ -3996,23 +4002,23 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "ifStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:249:1: ifStatement returns [DCNode node] : ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:251:1: ifStatement returns [DCNode node] : ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? ) ;
 	public final DCNode ifStatement() throws RecognitionException {
 		DCNode node = null;
 
 
 		IfNode ifNode = new IfNode();
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:252:3: ( ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:252:6: ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:254:3: ( ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:254:6: ^( IF ifStat[ifNode] ( elseIfStat[ifNode] )* ( elseStat[ifNode] )? )
 			{
-			match(input,IF,FOLLOW_IF_in_ifStatement1793); 
+			match(input,IF,FOLLOW_IF_in_ifStatement1797); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_ifStat_in_ifStatement1795);
+			pushFollow(FOLLOW_ifStat_in_ifStatement1799);
 			ifStat(ifNode);
 			state._fsp--;
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:252:26: ( elseIfStat[ifNode] )*
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:254:26: ( elseIfStat[ifNode] )*
 			loop62:
 			while (true) {
 				int alt62=2;
@@ -4031,9 +4037,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 				switch (alt62) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:252:27: elseIfStat[ifNode]
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:254:27: elseIfStat[ifNode]
 					{
-					pushFollow(FOLLOW_elseIfStat_in_ifStatement1799);
+					pushFollow(FOLLOW_elseIfStat_in_ifStatement1803);
 					elseIfStat(ifNode);
 					state._fsp--;
 
@@ -4045,7 +4051,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 				}
 			}
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:252:48: ( elseStat[ifNode] )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:254:48: ( elseStat[ifNode] )?
 			int alt63=2;
 			int LA63_0 = input.LA(1);
 			if ( (LA63_0==EXP) ) {
@@ -4053,9 +4059,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 			}
 			switch (alt63) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:252:49: elseStat[ifNode]
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:254:49: elseStat[ifNode]
 					{
-					pushFollow(FOLLOW_elseStat_in_ifStatement1805);
+					pushFollow(FOLLOW_elseStat_in_ifStatement1809);
 					elseStat(ifNode);
 					state._fsp--;
 
@@ -4084,60 +4090,22 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "ifStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:255:1: ifStat[IfNode parent] : ^( EXP expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:257:1: ifStat[IfNode parent] : ^( EXP expression block ) ;
 	public final void ifStat(IfNode parent) throws RecognitionException {
-		DCNode expression179 =null;
-		BlockNode block180 =null;
-
-		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:256:3: ( ^( EXP expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:256:6: ^( EXP expression block )
-			{
-			match(input,EXP,FOLLOW_EXP_in_ifStat1825); 
-			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_expression_in_ifStat1827);
-			expression179=expression();
-			state._fsp--;
-
-			pushFollow(FOLLOW_block_in_ifStat1829);
-			block180=block();
-			state._fsp--;
-
-			match(input, Token.UP, null); 
-
-			parent.addChoice(expression179, block180);
-			}
-
-		}
-		catch (RecognitionException re) {
-			reportError(re);
-			recover(input,re);
-		}
-		finally {
-			// do for sure before leaving
-		}
-	}
-	// $ANTLR end "ifStat"
-
-
-
-	// $ANTLR start "elseIfStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:259:1: elseIfStat[IfNode parent] : ^( EXP expression block ) ;
-	public final void elseIfStat(IfNode parent) throws RecognitionException {
 		DCNode expression181 =null;
 		BlockNode block182 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:260:3: ( ^( EXP expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:260:6: ^( EXP expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:258:3: ( ^( EXP expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:258:6: ^( EXP expression block )
 			{
-			match(input,EXP,FOLLOW_EXP_in_elseIfStat1848); 
+			match(input,EXP,FOLLOW_EXP_in_ifStat1829); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_expression_in_elseIfStat1850);
+			pushFollow(FOLLOW_expression_in_ifStat1831);
 			expression181=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_elseIfStat1852);
+			pushFollow(FOLLOW_block_in_ifStat1833);
 			block182=block();
 			state._fsp--;
 
@@ -4155,28 +4123,66 @@ public class PyEsqueTreeWalker extends TreeParser {
 			// do for sure before leaving
 		}
 	}
+	// $ANTLR end "ifStat"
+
+
+
+	// $ANTLR start "elseIfStat"
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:261:1: elseIfStat[IfNode parent] : ^( EXP expression block ) ;
+	public final void elseIfStat(IfNode parent) throws RecognitionException {
+		DCNode expression183 =null;
+		BlockNode block184 =null;
+
+		try {
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:262:3: ( ^( EXP expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:262:6: ^( EXP expression block )
+			{
+			match(input,EXP,FOLLOW_EXP_in_elseIfStat1852); 
+			match(input, Token.DOWN, null); 
+			pushFollow(FOLLOW_expression_in_elseIfStat1854);
+			expression183=expression();
+			state._fsp--;
+
+			pushFollow(FOLLOW_block_in_elseIfStat1856);
+			block184=block();
+			state._fsp--;
+
+			match(input, Token.UP, null); 
+
+			parent.addChoice(expression183, block184);
+			}
+
+		}
+		catch (RecognitionException re) {
+			reportError(re);
+			recover(input,re);
+		}
+		finally {
+			// do for sure before leaving
+		}
+	}
 	// $ANTLR end "elseIfStat"
 
 
 
 	// $ANTLR start "elseStat"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:263:1: elseStat[IfNode parent] : ^( EXP block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:265:1: elseStat[IfNode parent] : ^( EXP block ) ;
 	public final void elseStat(IfNode parent) throws RecognitionException {
-		BlockNode block183 =null;
+		BlockNode block185 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:264:3: ( ^( EXP block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:264:6: ^( EXP block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:266:3: ( ^( EXP block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:266:6: ^( EXP block )
 			{
-			match(input,EXP,FOLLOW_EXP_in_elseStat1871); 
+			match(input,EXP,FOLLOW_EXP_in_elseStat1875); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_block_in_elseStat1873);
-			block183=block();
+			pushFollow(FOLLOW_block_in_elseStat1877);
+			block185=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			parent.addChoice(new AtomNode(true), block183);
+			parent.addChoice(new AtomNode(true), block185);
 			}
 
 		}
@@ -4193,38 +4199,38 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "forStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:267:1: forStatement returns [DCNode node] : ^( For Identifier a= expression b= expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:269:1: forStatement returns [DCNode node] : ^( For Identifier a= expression b= expression block ) ;
 	public final DCNode forStatement() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree Identifier184=null;
+		CommonTree Identifier186=null;
 		DCNode a =null;
 		DCNode b =null;
-		BlockNode block185 =null;
+		BlockNode block187 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:268:3: ( ^( For Identifier a= expression b= expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:268:6: ^( For Identifier a= expression b= expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:270:3: ( ^( For Identifier a= expression b= expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:270:6: ^( For Identifier a= expression b= expression block )
 			{
-			match(input,For,FOLLOW_For_in_forStatement1898); 
+			match(input,For,FOLLOW_For_in_forStatement1902); 
 			match(input, Token.DOWN, null); 
-			Identifier184=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_forStatement1900); 
-			pushFollow(FOLLOW_expression_in_forStatement1904);
+			Identifier186=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_forStatement1904); 
+			pushFollow(FOLLOW_expression_in_forStatement1908);
 			a=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_expression_in_forStatement1908);
+			pushFollow(FOLLOW_expression_in_forStatement1912);
 			b=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_forStatement1910);
-			block185=block();
+			pushFollow(FOLLOW_block_in_forStatement1914);
+			block187=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new ForStatementNode((Identifier184!=null?Identifier184.getText():null), a, b, block185, currentScope);
+			node = new ForStatementNode((Identifier186!=null?Identifier186.getText():null), a, b, block187, currentScope);
 			}
 
 		}
@@ -4242,34 +4248,34 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "repeatStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:271:1: repeatStatement returns [DCNode node] : ^( Repeat Identifier a= expression b= expression (c= expression )? block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:273:1: repeatStatement returns [DCNode node] : ^( Repeat Identifier a= expression b= expression (c= expression )? block ) ;
 	public final DCNode repeatStatement() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree Identifier186=null;
-		CommonTree Repeat188=null;
+		CommonTree Identifier188=null;
+		CommonTree Repeat190=null;
 		DCNode a =null;
 		DCNode b =null;
 		DCNode c =null;
-		BlockNode block187 =null;
+		BlockNode block189 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:272:3: ( ^( Repeat Identifier a= expression b= expression (c= expression )? block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:272:5: ^( Repeat Identifier a= expression b= expression (c= expression )? block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:274:3: ( ^( Repeat Identifier a= expression b= expression (c= expression )? block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:274:5: ^( Repeat Identifier a= expression b= expression (c= expression )? block )
 			{
-			Repeat188=(CommonTree)match(input,Repeat,FOLLOW_Repeat_in_repeatStatement1933); 
+			Repeat190=(CommonTree)match(input,Repeat,FOLLOW_Repeat_in_repeatStatement1937); 
 			match(input, Token.DOWN, null); 
-			Identifier186=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_repeatStatement1935); 
-			pushFollow(FOLLOW_expression_in_repeatStatement1939);
+			Identifier188=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_repeatStatement1939); 
+			pushFollow(FOLLOW_expression_in_repeatStatement1943);
 			a=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_expression_in_repeatStatement1943);
+			pushFollow(FOLLOW_expression_in_repeatStatement1947);
 			b=expression();
 			state._fsp--;
 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:272:51: (c= expression )?
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:274:51: (c= expression )?
 			int alt64=2;
 			int LA64_0 = input.LA(1);
 			if ( (LA64_0==Add||LA64_0==Bool||LA64_0==COLOR_CONSTANT||LA64_0==DOTPROPERTY||LA64_0==Divide||LA64_0==Equals||(LA64_0 >= GT && LA64_0 <= GTEquals)||LA64_0==HEIGHT_CONSTANT||LA64_0==In||LA64_0==LOOKUP||(LA64_0 >= LT && LA64_0 <= LTEquals)||LA64_0==Modulus||(LA64_0 >= Multiply && LA64_0 <= NEquals)||(LA64_0 >= Null && LA64_0 <= Number)||LA64_0==PI_CONSTANT||LA64_0==Pw||(LA64_0 >= Subtract && LA64_0 <= TERNARY)||LA64_0==UNARY_MIN||LA64_0==WIDTH_CONSTANT||(LA64_0 >= 168 && LA64_0 <= 169)) ) {
@@ -4277,9 +4283,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 			}
 			switch (alt64) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:272:52: c= expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:274:52: c= expression
 					{
-					pushFollow(FOLLOW_expression_in_repeatStatement1948);
+					pushFollow(FOLLOW_expression_in_repeatStatement1952);
 					c=expression();
 					state._fsp--;
 
@@ -4288,13 +4294,13 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			}
 
-			pushFollow(FOLLOW_block_in_repeatStatement1952);
-			block187=block();
+			pushFollow(FOLLOW_block_in_repeatStatement1956);
+			block189=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new RepeatStatementNode((Identifier186!=null?Identifier186.getText():null), a, b, c, block187, currentScope, Repeat188.getLine(), Repeat188.getCharPositionInLine());
+			node = new RepeatStatementNode((Identifier188!=null?Identifier188.getText():null), a, b, c, block189, currentScope, Repeat190.getLine(), Repeat190.getCharPositionInLine());
 			}
 
 		}
@@ -4312,7 +4318,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "radialStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:274:1: radialStatement returns [DCNode node] : ^( Radial gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:276:1: radialStatement returns [DCNode node] : ^( Radial gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) ;
 	public final DCNode radialStatement() throws RecognitionException {
 		DCNode node = null;
 
@@ -4320,35 +4326,35 @@ public class PyEsqueTreeWalker extends TreeParser {
 		CommonTree gId=null;
 		CommonTree id1=null;
 		CommonTree id2=null;
-		CommonTree Radial190=null;
+		CommonTree Radial192=null;
 		DCNode a =null;
 		DCNode b =null;
-		BlockNode block189 =null;
+		BlockNode block191 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:275:2: ( ^( Radial gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:275:4: ^( Radial gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:277:2: ( ^( Radial gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:277:4: ^( Radial gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block )
 			{
-			Radial190=(CommonTree)match(input,Radial,FOLLOW_Radial_in_radialStatement1971); 
+			Radial192=(CommonTree)match(input,Radial,FOLLOW_Radial_in_radialStatement1975); 
 			match(input, Token.DOWN, null); 
-			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_radialStatement1977); 
-			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_radialStatement1981); 
-			pushFollow(FOLLOW_expression_in_radialStatement1986);
+			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_radialStatement1981); 
+			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_radialStatement1985); 
+			pushFollow(FOLLOW_expression_in_radialStatement1990);
 			a=expression();
 			state._fsp--;
 
-			id2=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_radialStatement1990); 
-			pushFollow(FOLLOW_expression_in_radialStatement1994);
+			id2=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_radialStatement1994); 
+			pushFollow(FOLLOW_expression_in_radialStatement1998);
 			b=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_radialStatement1996);
-			block189=block();
+			pushFollow(FOLLOW_block_in_radialStatement2000);
+			block191=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new RadialStatementNode((gId!=null?gId.getText():null), (id1!=null?id1.getText():null), (id2!=null?id2.getText():null), a, b, block189, currentScope,Radial190.getLine(), Radial190.getCharPositionInLine());
+			node = new RadialStatementNode((gId!=null?gId.getText():null), (id1!=null?id1.getText():null), (id2!=null?id2.getText():null), a, b, block191, currentScope,Radial192.getLine(), Radial192.getCharPositionInLine());
 			}
 
 		}
@@ -4366,7 +4372,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "spiralStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:278:1: spiralStatement returns [DCNode node] : ^( Spiral gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:280:1: spiralStatement returns [DCNode node] : ^( Spiral gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) ;
 	public final DCNode spiralStatement() throws RecognitionException {
 		DCNode node = null;
 
@@ -4374,35 +4380,35 @@ public class PyEsqueTreeWalker extends TreeParser {
 		CommonTree gId=null;
 		CommonTree id1=null;
 		CommonTree id2=null;
-		CommonTree Spiral192=null;
+		CommonTree Spiral194=null;
 		DCNode a =null;
 		DCNode b =null;
-		BlockNode block191 =null;
+		BlockNode block193 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:279:2: ( ^( Spiral gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:279:4: ^( Spiral gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:281:2: ( ^( Spiral gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:281:4: ^( Spiral gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block )
 			{
-			Spiral192=(CommonTree)match(input,Spiral,FOLLOW_Spiral_in_spiralStatement2016); 
+			Spiral194=(CommonTree)match(input,Spiral,FOLLOW_Spiral_in_spiralStatement2020); 
 			match(input, Token.DOWN, null); 
-			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_spiralStatement2022); 
-			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_spiralStatement2026); 
-			pushFollow(FOLLOW_expression_in_spiralStatement2031);
+			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_spiralStatement2026); 
+			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_spiralStatement2030); 
+			pushFollow(FOLLOW_expression_in_spiralStatement2035);
 			a=expression();
 			state._fsp--;
 
-			id2=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_spiralStatement2035); 
-			pushFollow(FOLLOW_expression_in_spiralStatement2039);
+			id2=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_spiralStatement2039); 
+			pushFollow(FOLLOW_expression_in_spiralStatement2043);
 			b=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_spiralStatement2041);
-			block191=block();
+			pushFollow(FOLLOW_block_in_spiralStatement2045);
+			block193=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new SpiralStatementNode((gId!=null?gId.getText():null), (id1!=null?id1.getText():null), (id2!=null?id2.getText():null), a, b, block191, currentScope,Spiral192.getLine(), Spiral192.getCharPositionInLine());
+			node = new SpiralStatementNode((gId!=null?gId.getText():null), (id1!=null?id1.getText():null), (id2!=null?id2.getText():null), a, b, block193, currentScope,Spiral194.getLine(), Spiral194.getCharPositionInLine());
 			}
 
 		}
@@ -4420,7 +4426,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "rowStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:282:1: rowStatement returns [DCNode node] : ^( Row gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:284:1: rowStatement returns [DCNode node] : ^( Row gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) ;
 	public final DCNode rowStatement() throws RecognitionException {
 		DCNode node = null;
 
@@ -4428,35 +4434,35 @@ public class PyEsqueTreeWalker extends TreeParser {
 		CommonTree gId=null;
 		CommonTree id1=null;
 		CommonTree id2=null;
-		CommonTree Row194=null;
+		CommonTree Row196=null;
 		DCNode a =null;
 		DCNode b =null;
-		BlockNode block193 =null;
+		BlockNode block195 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:283:2: ( ^( Row gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:283:4: ^( Row gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:285:2: ( ^( Row gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:285:4: ^( Row gId= Identifier id1= Identifier a= expression id2= Identifier b= expression block )
 			{
-			Row194=(CommonTree)match(input,Row,FOLLOW_Row_in_rowStatement2061); 
+			Row196=(CommonTree)match(input,Row,FOLLOW_Row_in_rowStatement2065); 
 			match(input, Token.DOWN, null); 
-			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_rowStatement2067); 
-			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_rowStatement2071); 
-			pushFollow(FOLLOW_expression_in_rowStatement2076);
+			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_rowStatement2071); 
+			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_rowStatement2075); 
+			pushFollow(FOLLOW_expression_in_rowStatement2080);
 			a=expression();
 			state._fsp--;
 
-			id2=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_rowStatement2080); 
-			pushFollow(FOLLOW_expression_in_rowStatement2084);
+			id2=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_rowStatement2084); 
+			pushFollow(FOLLOW_expression_in_rowStatement2088);
 			b=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_rowStatement2086);
-			block193=block();
+			pushFollow(FOLLOW_block_in_rowStatement2090);
+			block195=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new RowStatementNode((gId!=null?gId.getText():null), (id1!=null?id1.getText():null), (id2!=null?id2.getText():null), a, b, block193, currentScope,Row194.getLine(), Row194.getCharPositionInLine());
+			node = new RowStatementNode((gId!=null?gId.getText():null), (id1!=null?id1.getText():null), (id2!=null?id2.getText():null), a, b, block195, currentScope,Row196.getLine(), Row196.getCharPositionInLine());
 			}
 
 		}
@@ -4474,7 +4480,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "arcStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:286:1: arcStatement returns [DCNode node] : ^( Arc gId= Identifier id1= Identifier a= expression id2= Identifier b= expression id3= Identifier c= expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:288:1: arcStatement returns [DCNode node] : ^( Arc gId= Identifier id1= Identifier a= expression id2= Identifier b= expression id3= Identifier c= expression block ) ;
 	public final DCNode arcStatement() throws RecognitionException {
 		DCNode node = null;
 
@@ -4483,41 +4489,41 @@ public class PyEsqueTreeWalker extends TreeParser {
 		CommonTree id1=null;
 		CommonTree id2=null;
 		CommonTree id3=null;
-		CommonTree Arc196=null;
+		CommonTree Arc198=null;
 		DCNode a =null;
 		DCNode b =null;
 		DCNode c =null;
-		BlockNode block195 =null;
+		BlockNode block197 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:287:2: ( ^( Arc gId= Identifier id1= Identifier a= expression id2= Identifier b= expression id3= Identifier c= expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:287:4: ^( Arc gId= Identifier id1= Identifier a= expression id2= Identifier b= expression id3= Identifier c= expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:289:2: ( ^( Arc gId= Identifier id1= Identifier a= expression id2= Identifier b= expression id3= Identifier c= expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:289:4: ^( Arc gId= Identifier id1= Identifier a= expression id2= Identifier b= expression id3= Identifier c= expression block )
 			{
-			Arc196=(CommonTree)match(input,Arc,FOLLOW_Arc_in_arcStatement2106); 
+			Arc198=(CommonTree)match(input,Arc,FOLLOW_Arc_in_arcStatement2110); 
 			match(input, Token.DOWN, null); 
-			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_arcStatement2112); 
-			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_arcStatement2116); 
-			pushFollow(FOLLOW_expression_in_arcStatement2121);
+			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_arcStatement2116); 
+			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_arcStatement2120); 
+			pushFollow(FOLLOW_expression_in_arcStatement2125);
 			a=expression();
 			state._fsp--;
 
-			id2=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_arcStatement2125); 
-			pushFollow(FOLLOW_expression_in_arcStatement2129);
+			id2=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_arcStatement2129); 
+			pushFollow(FOLLOW_expression_in_arcStatement2133);
 			b=expression();
 			state._fsp--;
 
-			id3=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_arcStatement2133); 
-			pushFollow(FOLLOW_expression_in_arcStatement2137);
+			id3=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_arcStatement2137); 
+			pushFollow(FOLLOW_expression_in_arcStatement2141);
 			c=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_arcStatement2139);
-			block195=block();
+			pushFollow(FOLLOW_block_in_arcStatement2143);
+			block197=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new ArcStatementNode((gId!=null?gId.getText():null), (id1!=null?id1.getText():null), (id2!=null?id2.getText():null), (id3!=null?id3.getText():null), a, b,c, block195, currentScope,Arc196.getLine(), Arc196.getCharPositionInLine());
+			node = new ArcStatementNode((gId!=null?gId.getText():null), (id1!=null?id1.getText():null), (id2!=null?id2.getText():null), (id3!=null?id3.getText():null), a, b,c, block197, currentScope,Arc198.getLine(), Arc198.getCharPositionInLine());
 			}
 
 		}
@@ -4535,36 +4541,36 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "drawableRepeatStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:289:1: drawableRepeatStatement returns [DCNode node] : ^( Repeat gId= Identifier id1= Identifier a= expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:291:1: drawableRepeatStatement returns [DCNode node] : ^( Repeat gId= Identifier id1= Identifier a= expression block ) ;
 	public final DCNode drawableRepeatStatement() throws RecognitionException {
 		DCNode node = null;
 
 
 		CommonTree gId=null;
 		CommonTree id1=null;
-		CommonTree Repeat198=null;
+		CommonTree Repeat200=null;
 		DCNode a =null;
-		BlockNode block197 =null;
+		BlockNode block199 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:290:2: ( ^( Repeat gId= Identifier id1= Identifier a= expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:290:4: ^( Repeat gId= Identifier id1= Identifier a= expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:292:2: ( ^( Repeat gId= Identifier id1= Identifier a= expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:292:4: ^( Repeat gId= Identifier id1= Identifier a= expression block )
 			{
-			Repeat198=(CommonTree)match(input,Repeat,FOLLOW_Repeat_in_drawableRepeatStatement2157); 
+			Repeat200=(CommonTree)match(input,Repeat,FOLLOW_Repeat_in_drawableRepeatStatement2161); 
 			match(input, Token.DOWN, null); 
-			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_drawableRepeatStatement2163); 
-			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_drawableRepeatStatement2167); 
-			pushFollow(FOLLOW_expression_in_drawableRepeatStatement2172);
+			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_drawableRepeatStatement2167); 
+			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_drawableRepeatStatement2171); 
+			pushFollow(FOLLOW_expression_in_drawableRepeatStatement2176);
 			a=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_drawableRepeatStatement2174);
-			block197=block();
+			pushFollow(FOLLOW_block_in_drawableRepeatStatement2178);
+			block199=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new DrawableRepeatStatementNode((gId!=null?gId.getText():null), (id1!=null?id1.getText():null), a, block197, currentScope,Repeat198.getLine(), Repeat198.getCharPositionInLine());
+			node = new DrawableRepeatStatementNode((gId!=null?gId.getText():null), (id1!=null?id1.getText():null), a, block199, currentScope,Repeat200.getLine(), Repeat200.getCharPositionInLine());
 			}
 
 		}
@@ -4582,41 +4588,41 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "followCurveStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:293:1: followCurveStatement returns [DCNode node] : ^( FollowCurve gId= Identifier c= statement id1= Identifier a= expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:295:1: followCurveStatement returns [DCNode node] : ^( FollowCurve gId= Identifier c= statement id1= Identifier a= expression block ) ;
 	public final DCNode followCurveStatement() throws RecognitionException {
 		DCNode node = null;
 
 
 		CommonTree gId=null;
 		CommonTree id1=null;
-		CommonTree FollowCurve200=null;
+		CommonTree FollowCurve202=null;
 		DCNode c =null;
 		DCNode a =null;
-		BlockNode block199 =null;
+		BlockNode block201 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:294:2: ( ^( FollowCurve gId= Identifier c= statement id1= Identifier a= expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:294:4: ^( FollowCurve gId= Identifier c= statement id1= Identifier a= expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:296:2: ( ^( FollowCurve gId= Identifier c= statement id1= Identifier a= expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:296:4: ^( FollowCurve gId= Identifier c= statement id1= Identifier a= expression block )
 			{
-			FollowCurve200=(CommonTree)match(input,FollowCurve,FOLLOW_FollowCurve_in_followCurveStatement2194); 
+			FollowCurve202=(CommonTree)match(input,FollowCurve,FOLLOW_FollowCurve_in_followCurveStatement2198); 
 			match(input, Token.DOWN, null); 
-			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_followCurveStatement2198); 
-			pushFollow(FOLLOW_statement_in_followCurveStatement2203);
+			gId=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_followCurveStatement2202); 
+			pushFollow(FOLLOW_statement_in_followCurveStatement2207);
 			c=statement();
 			state._fsp--;
 
-			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_followCurveStatement2207); 
-			pushFollow(FOLLOW_expression_in_followCurveStatement2211);
+			id1=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_followCurveStatement2211); 
+			pushFollow(FOLLOW_expression_in_followCurveStatement2215);
 			a=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_followCurveStatement2213);
-			block199=block();
+			pushFollow(FOLLOW_block_in_followCurveStatement2217);
+			block201=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new FollowCurveStatementNode((gId!=null?gId.getText():null), c, (id1!=null?id1.getText():null), a, block199, currentScope,FollowCurve200.getLine(), FollowCurve200.getCharPositionInLine());
+			node = new FollowCurveStatementNode((gId!=null?gId.getText():null), c, (id1!=null?id1.getText():null), a, block201, currentScope,FollowCurve202.getLine(), FollowCurve202.getCharPositionInLine());
 			}
 
 		}
@@ -4634,31 +4640,31 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "whileStatement"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:297:1: whileStatement returns [DCNode node] : ^( While expression block ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:299:1: whileStatement returns [DCNode node] : ^( While expression block ) ;
 	public final DCNode whileStatement() throws RecognitionException {
 		DCNode node = null;
 
 
-		DCNode expression201 =null;
-		BlockNode block202 =null;
+		DCNode expression203 =null;
+		BlockNode block204 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:298:3: ( ^( While expression block ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:298:6: ^( While expression block )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:300:3: ( ^( While expression block ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:300:6: ^( While expression block )
 			{
-			match(input,While,FOLLOW_While_in_whileStatement2234); 
+			match(input,While,FOLLOW_While_in_whileStatement2238); 
 			match(input, Token.DOWN, null); 
-			pushFollow(FOLLOW_expression_in_whileStatement2236);
-			expression201=expression();
+			pushFollow(FOLLOW_expression_in_whileStatement2240);
+			expression203=expression();
 			state._fsp--;
 
-			pushFollow(FOLLOW_block_in_whileStatement2238);
-			block202=block();
+			pushFollow(FOLLOW_block_in_whileStatement2242);
+			block204=block();
 			state._fsp--;
 
 			match(input, Token.UP, null); 
 
-			node = new WhileStatementNode(expression201, block202);
+			node = new WhileStatementNode(expression203, block204);
 			}
 
 		}
@@ -4676,21 +4682,21 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "idList"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:301:1: idList returns [java.util.List<String> i] : ^( ID_LIST ( Identifier )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:303:1: idList returns [java.util.List<String> i] : ^( ID_LIST ( Identifier )+ ) ;
 	public final java.util.List<String> idList() throws RecognitionException {
 		java.util.List<String> i = null;
 
 
-		CommonTree Identifier203=null;
+		CommonTree Identifier205=null;
 
 		i = new java.util.ArrayList<String>();
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:303:3: ( ^( ID_LIST ( Identifier )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:303:6: ^( ID_LIST ( Identifier )+ )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:305:3: ( ^( ID_LIST ( Identifier )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:305:6: ^( ID_LIST ( Identifier )+ )
 			{
-			match(input,ID_LIST,FOLLOW_ID_LIST_in_idList2265); 
+			match(input,ID_LIST,FOLLOW_ID_LIST_in_idList2269); 
 			match(input, Token.DOWN, null); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:303:16: ( Identifier )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:305:16: ( Identifier )+
 			int cnt65=0;
 			loop65:
 			while (true) {
@@ -4702,10 +4708,10 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 				switch (alt65) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:303:17: Identifier
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:305:17: Identifier
 					{
-					Identifier203=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_idList2268); 
-					i.add((Identifier203!=null?Identifier203.getText():null));
+					Identifier205=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_idList2272); 
+					i.add((Identifier205!=null?Identifier205.getText():null));
 					}
 					break;
 
@@ -4736,21 +4742,21 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "exprList"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:306:1: exprList returns [java.util.List<DCNode> e] : ^( EXP_LIST ( expression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:308:1: exprList returns [java.util.List<DCNode> e] : ^( EXP_LIST ( expression )+ ) ;
 	public final java.util.List<DCNode> exprList() throws RecognitionException {
 		java.util.List<DCNode> e = null;
 
 
-		DCNode expression204 =null;
+		DCNode expression206 =null;
 
 		e = new java.util.ArrayList<DCNode>();
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:308:3: ( ^( EXP_LIST ( expression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:308:6: ^( EXP_LIST ( expression )+ )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:310:3: ( ^( EXP_LIST ( expression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:310:6: ^( EXP_LIST ( expression )+ )
 			{
-			match(input,EXP_LIST,FOLLOW_EXP_LIST_in_exprList2298); 
+			match(input,EXP_LIST,FOLLOW_EXP_LIST_in_exprList2302); 
 			match(input, Token.DOWN, null); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:308:17: ( expression )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:310:17: ( expression )+
 			int cnt66=0;
 			loop66:
 			while (true) {
@@ -4762,13 +4768,13 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 				switch (alt66) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:308:18: expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:310:18: expression
 					{
-					pushFollow(FOLLOW_expression_in_exprList2301);
-					expression204=expression();
+					pushFollow(FOLLOW_expression_in_exprList2305);
+					expression206=expression();
 					state._fsp--;
 
-					e.add(expression204);
+					e.add(expression206);
 					}
 					break;
 
@@ -4799,21 +4805,21 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "expression"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:312:1: expression returns [DCNode node] : ( ^( TERNARY a= expression b= expression c= expression ) | ^( In a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:314:1: expression returns [DCNode node] : ( ^( TERNARY a= expression b= expression c= expression ) | ^( In a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT );
 	public final DCNode expression() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree Number205=null;
-		CommonTree Bool206=null;
-		CommonTree COLOR_CONSTANT208=null;
+		CommonTree Number207=null;
+		CommonTree Bool208=null;
+		CommonTree COLOR_CONSTANT210=null;
 		DCNode a =null;
 		DCNode b =null;
 		DCNode c =null;
-		DCNode lookup207 =null;
+		DCNode lookup209 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:313:3: ( ^( TERNARY a= expression b= expression c= expression ) | ^( In a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:315:3: ( ^( TERNARY a= expression b= expression c= expression ) | ^( In a= expression b= expression ) | ^( '||' a= expression b= expression ) | ^( '&&' a= expression b= expression ) | ^( '==' a= expression b= expression ) | ^( '!=' a= expression b= expression ) | ^( '>=' a= expression b= expression ) | ^( '<=' a= expression b= expression ) | ^( '>' a= expression b= expression ) | ^( '<' a= expression b= expression ) | ^( '+' a= expression b= expression ) | ^( '-' a= expression b= expression ) | ^( '*' a= expression b= expression ) | ^( '/' a= expression b= expression ) | ^( '%' a= expression b= expression ) | ^( '^' a= expression b= expression ) | ^( UNARY_MIN a= expression ) | ^( NEGATE a= expression ) | Number | Bool | Null | lookup | COLOR_CONSTANT | PI_CONSTANT | WIDTH_CONSTANT | HEIGHT_CONSTANT )
 			int alt67=26;
 			switch ( input.LA(1) ) {
 			case TERNARY:
@@ -4954,19 +4960,19 @@ public class PyEsqueTreeWalker extends TreeParser {
 			}
 			switch (alt67) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:313:6: ^( TERNARY a= expression b= expression c= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:315:6: ^( TERNARY a= expression b= expression c= expression )
 					{
-					match(input,TERNARY,FOLLOW_TERNARY_in_expression2326); 
+					match(input,TERNARY,FOLLOW_TERNARY_in_expression2330); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2330);
+					pushFollow(FOLLOW_expression_in_expression2334);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2334);
+					pushFollow(FOLLOW_expression_in_expression2338);
 					b=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2338);
+					pushFollow(FOLLOW_expression_in_expression2342);
 					c=expression();
 					state._fsp--;
 
@@ -4976,15 +4982,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:314:6: ^( In a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:316:6: ^( In a= expression b= expression )
 					{
-					match(input,In,FOLLOW_In_in_expression2349); 
+					match(input,In,FOLLOW_In_in_expression2353); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2353);
+					pushFollow(FOLLOW_expression_in_expression2357);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2357);
+					pushFollow(FOLLOW_expression_in_expression2361);
 					b=expression();
 					state._fsp--;
 
@@ -4994,15 +5000,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:315:6: ^( '||' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:317:6: ^( '||' a= expression b= expression )
 					{
-					match(input,169,FOLLOW_169_in_expression2386); 
+					match(input,169,FOLLOW_169_in_expression2390); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2390);
+					pushFollow(FOLLOW_expression_in_expression2394);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2394);
+					pushFollow(FOLLOW_expression_in_expression2398);
 					b=expression();
 					state._fsp--;
 
@@ -5012,15 +5018,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:316:6: ^( '&&' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:318:6: ^( '&&' a= expression b= expression )
 					{
-					match(input,168,FOLLOW_168_in_expression2421); 
+					match(input,168,FOLLOW_168_in_expression2425); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2425);
+					pushFollow(FOLLOW_expression_in_expression2429);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2429);
+					pushFollow(FOLLOW_expression_in_expression2433);
 					b=expression();
 					state._fsp--;
 
@@ -5030,15 +5036,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:317:6: ^( '==' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:319:6: ^( '==' a= expression b= expression )
 					{
-					match(input,Equals,FOLLOW_Equals_in_expression2456); 
+					match(input,Equals,FOLLOW_Equals_in_expression2460); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2460);
+					pushFollow(FOLLOW_expression_in_expression2464);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2464);
+					pushFollow(FOLLOW_expression_in_expression2468);
 					b=expression();
 					state._fsp--;
 
@@ -5048,15 +5054,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:318:6: ^( '!=' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:320:6: ^( '!=' a= expression b= expression )
 					{
-					match(input,NEquals,FOLLOW_NEquals_in_expression2491); 
+					match(input,NEquals,FOLLOW_NEquals_in_expression2495); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2495);
+					pushFollow(FOLLOW_expression_in_expression2499);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2499);
+					pushFollow(FOLLOW_expression_in_expression2503);
 					b=expression();
 					state._fsp--;
 
@@ -5066,15 +5072,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:319:6: ^( '>=' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:321:6: ^( '>=' a= expression b= expression )
 					{
-					match(input,GTEquals,FOLLOW_GTEquals_in_expression2526); 
+					match(input,GTEquals,FOLLOW_GTEquals_in_expression2530); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2530);
+					pushFollow(FOLLOW_expression_in_expression2534);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2534);
+					pushFollow(FOLLOW_expression_in_expression2538);
 					b=expression();
 					state._fsp--;
 
@@ -5084,15 +5090,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:320:6: ^( '<=' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:322:6: ^( '<=' a= expression b= expression )
 					{
-					match(input,LTEquals,FOLLOW_LTEquals_in_expression2561); 
+					match(input,LTEquals,FOLLOW_LTEquals_in_expression2565); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2565);
+					pushFollow(FOLLOW_expression_in_expression2569);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2569);
+					pushFollow(FOLLOW_expression_in_expression2573);
 					b=expression();
 					state._fsp--;
 
@@ -5102,15 +5108,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:321:6: ^( '>' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:323:6: ^( '>' a= expression b= expression )
 					{
-					match(input,GT,FOLLOW_GT_in_expression2596); 
+					match(input,GT,FOLLOW_GT_in_expression2600); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2600);
+					pushFollow(FOLLOW_expression_in_expression2604);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2604);
+					pushFollow(FOLLOW_expression_in_expression2608);
 					b=expression();
 					state._fsp--;
 
@@ -5120,15 +5126,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:322:6: ^( '<' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:324:6: ^( '<' a= expression b= expression )
 					{
-					match(input,LT,FOLLOW_LT_in_expression2632); 
+					match(input,LT,FOLLOW_LT_in_expression2636); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2636);
+					pushFollow(FOLLOW_expression_in_expression2640);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2640);
+					pushFollow(FOLLOW_expression_in_expression2644);
 					b=expression();
 					state._fsp--;
 
@@ -5138,15 +5144,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:323:6: ^( '+' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:325:6: ^( '+' a= expression b= expression )
 					{
-					match(input,Add,FOLLOW_Add_in_expression2668); 
+					match(input,Add,FOLLOW_Add_in_expression2672); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2672);
+					pushFollow(FOLLOW_expression_in_expression2676);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2676);
+					pushFollow(FOLLOW_expression_in_expression2680);
 					b=expression();
 					state._fsp--;
 
@@ -5156,15 +5162,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 12 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:324:6: ^( '-' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:326:6: ^( '-' a= expression b= expression )
 					{
-					match(input,Subtract,FOLLOW_Subtract_in_expression2704); 
+					match(input,Subtract,FOLLOW_Subtract_in_expression2708); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2708);
+					pushFollow(FOLLOW_expression_in_expression2712);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2712);
+					pushFollow(FOLLOW_expression_in_expression2716);
 					b=expression();
 					state._fsp--;
 
@@ -5174,15 +5180,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 13 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:325:6: ^( '*' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:327:6: ^( '*' a= expression b= expression )
 					{
-					match(input,Multiply,FOLLOW_Multiply_in_expression2740); 
+					match(input,Multiply,FOLLOW_Multiply_in_expression2744); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2744);
+					pushFollow(FOLLOW_expression_in_expression2748);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2748);
+					pushFollow(FOLLOW_expression_in_expression2752);
 					b=expression();
 					state._fsp--;
 
@@ -5192,15 +5198,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 14 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:326:6: ^( '/' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:328:6: ^( '/' a= expression b= expression )
 					{
-					match(input,Divide,FOLLOW_Divide_in_expression2776); 
+					match(input,Divide,FOLLOW_Divide_in_expression2780); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2780);
+					pushFollow(FOLLOW_expression_in_expression2784);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2784);
+					pushFollow(FOLLOW_expression_in_expression2788);
 					b=expression();
 					state._fsp--;
 
@@ -5210,15 +5216,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 15 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:327:6: ^( '%' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:329:6: ^( '%' a= expression b= expression )
 					{
-					match(input,Modulus,FOLLOW_Modulus_in_expression2812); 
+					match(input,Modulus,FOLLOW_Modulus_in_expression2816); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2816);
+					pushFollow(FOLLOW_expression_in_expression2820);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2820);
+					pushFollow(FOLLOW_expression_in_expression2824);
 					b=expression();
 					state._fsp--;
 
@@ -5228,15 +5234,15 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 16 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:328:6: ^( '^' a= expression b= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:330:6: ^( '^' a= expression b= expression )
 					{
-					match(input,Pw,FOLLOW_Pw_in_expression2848); 
+					match(input,Pw,FOLLOW_Pw_in_expression2852); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2852);
+					pushFollow(FOLLOW_expression_in_expression2856);
 					a=expression();
 					state._fsp--;
 
-					pushFollow(FOLLOW_expression_in_expression2856);
+					pushFollow(FOLLOW_expression_in_expression2860);
 					b=expression();
 					state._fsp--;
 
@@ -5246,11 +5252,11 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 17 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:329:6: ^( UNARY_MIN a= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:331:6: ^( UNARY_MIN a= expression )
 					{
-					match(input,UNARY_MIN,FOLLOW_UNARY_MIN_in_expression2884); 
+					match(input,UNARY_MIN,FOLLOW_UNARY_MIN_in_expression2888); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2888);
+					pushFollow(FOLLOW_expression_in_expression2892);
 					a=expression();
 					state._fsp--;
 
@@ -5260,11 +5266,11 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 18 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:330:6: ^( NEGATE a= expression )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:332:6: ^( NEGATE a= expression )
 					{
-					match(input,NEGATE,FOLLOW_NEGATE_in_expression2923); 
+					match(input,NEGATE,FOLLOW_NEGATE_in_expression2927); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_expression2927);
+					pushFollow(FOLLOW_expression_in_expression2931);
 					a=expression();
 					state._fsp--;
 
@@ -5274,61 +5280,61 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					break;
 				case 19 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:331:6: Number
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:333:6: Number
 					{
-					Number205=(CommonTree)match(input,Number,FOLLOW_Number_in_expression2964); 
-					node = new AtomNode(Double.parseDouble((Number205!=null?Number205.getText():null)));
+					Number207=(CommonTree)match(input,Number,FOLLOW_Number_in_expression2968); 
+					node = new AtomNode(Double.parseDouble((Number207!=null?Number207.getText():null)));
 					}
 					break;
 				case 20 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:332:6: Bool
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:334:6: Bool
 					{
-					Bool206=(CommonTree)match(input,Bool,FOLLOW_Bool_in_expression3016); 
-					node = new AtomNode(Boolean.parseBoolean((Bool206!=null?Bool206.getText():null)));
+					Bool208=(CommonTree)match(input,Bool,FOLLOW_Bool_in_expression3020); 
+					node = new AtomNode(Boolean.parseBoolean((Bool208!=null?Bool208.getText():null)));
 					}
 					break;
 				case 21 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:333:6: Null
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:335:6: Null
 					{
-					match(input,Null,FOLLOW_Null_in_expression3070); 
+					match(input,Null,FOLLOW_Null_in_expression3074); 
 					node = new AtomNode(null);
 					}
 					break;
 				case 22 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:334:6: lookup
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:336:6: lookup
 					{
-					pushFollow(FOLLOW_lookup_in_expression3124);
-					lookup207=lookup();
+					pushFollow(FOLLOW_lookup_in_expression3128);
+					lookup209=lookup();
 					state._fsp--;
 
-					node = lookup207;
+					node = lookup209;
 					}
 					break;
 				case 23 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:335:6: COLOR_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:337:6: COLOR_CONSTANT
 					{
-					COLOR_CONSTANT208=(CommonTree)match(input,COLOR_CONSTANT,FOLLOW_COLOR_CONSTANT_in_expression3176); 
-					node = new AtomNode((COLOR_CONSTANT208!=null?COLOR_CONSTANT208.getText():null));
+					COLOR_CONSTANT210=(CommonTree)match(input,COLOR_CONSTANT,FOLLOW_COLOR_CONSTANT_in_expression3180); 
+					node = new AtomNode((COLOR_CONSTANT210!=null?COLOR_CONSTANT210.getText():null));
 					}
 					break;
 				case 24 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:336:5: PI_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:338:5: PI_CONSTANT
 					{
-					match(input,PI_CONSTANT,FOLLOW_PI_CONSTANT_in_expression3195); 
+					match(input,PI_CONSTANT,FOLLOW_PI_CONSTANT_in_expression3199); 
 					node = new AtomNode(Math.PI);
 					}
 					break;
 				case 25 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:337:4: WIDTH_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:339:4: WIDTH_CONSTANT
 					{
-					match(input,WIDTH_CONSTANT,FOLLOW_WIDTH_CONSTANT_in_expression3241); 
+					match(input,WIDTH_CONSTANT,FOLLOW_WIDTH_CONSTANT_in_expression3245); 
 					node = new AtomNode(widthParam);
 					}
 					break;
 				case 26 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:338:4: HEIGHT_CONSTANT
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:340:4: HEIGHT_CONSTANT
 					{
-					match(input,HEIGHT_CONSTANT,FOLLOW_HEIGHT_CONSTANT_in_expression3286); 
+					match(input,HEIGHT_CONSTANT,FOLLOW_HEIGHT_CONSTANT_in_expression3290); 
 					node = new AtomNode(heightParam);
 					}
 					break;
@@ -5349,21 +5355,21 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "list"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:341:1: list returns [DCNode node] : ^( LIST ( exprList )? ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:343:1: list returns [DCNode node] : ^( LIST ( exprList )? ) ;
 	public final DCNode list() throws RecognitionException {
 		DCNode node = null;
 
 
-		java.util.List<DCNode> exprList209 =null;
+		java.util.List<DCNode> exprList211 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:342:3: ( ^( LIST ( exprList )? ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:342:6: ^( LIST ( exprList )? )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:344:3: ( ^( LIST ( exprList )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:344:6: ^( LIST ( exprList )? )
 			{
-			match(input,LIST,FOLLOW_LIST_in_list3345); 
+			match(input,LIST,FOLLOW_LIST_in_list3349); 
 			if ( input.LA(1)==Token.DOWN ) {
 				match(input, Token.DOWN, null); 
-				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:342:13: ( exprList )?
+				// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:344:13: ( exprList )?
 				int alt68=2;
 				int LA68_0 = input.LA(1);
 				if ( (LA68_0==EXP_LIST) ) {
@@ -5371,10 +5377,10 @@ public class PyEsqueTreeWalker extends TreeParser {
 				}
 				switch (alt68) {
 					case 1 :
-						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:342:13: exprList
+						// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:344:13: exprList
 						{
-						pushFollow(FOLLOW_exprList_in_list3347);
-						exprList209=exprList();
+						pushFollow(FOLLOW_exprList_in_list3351);
+						exprList211=exprList();
 						state._fsp--;
 
 						}
@@ -5385,7 +5391,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 				match(input, Token.UP, null); 
 			}
 
-			node = new ListNode(exprList209);
+			node = new ListNode(exprList211);
 			}
 
 		}
@@ -5403,30 +5409,30 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "lookup"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:347:1: lookup returns [DCNode node] : ( ^( DOTPROPERTY functionCall dotProperty ) | ^( DOTPROPERTY Identifier dotProperty ) | ^( LOOKUP functionCall (i= indexes )? ) | ^( LOOKUP list (i= indexes )? ) | ^( LOOKUP expression (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP String (i= indexes )? ) );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:349:1: lookup returns [DCNode node] : ( ^( DOTPROPERTY functionCall dotProperty ) | ^( DOTPROPERTY Identifier dotProperty ) | ^( LOOKUP functionCall (i= indexes )? ) | ^( LOOKUP list (i= indexes )? ) | ^( LOOKUP expression (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP String (i= indexes )? ) );
 	public final DCNode lookup() throws RecognitionException {
 		DCNode node = null;
 
 
-		CommonTree Identifier212=null;
-		CommonTree DOTPROPERTY213=null;
-		CommonTree LOOKUP216=null;
+		CommonTree Identifier214=null;
+		CommonTree DOTPROPERTY215=null;
 		CommonTree LOOKUP218=null;
 		CommonTree LOOKUP220=null;
-		CommonTree Identifier221=null;
 		CommonTree LOOKUP222=null;
-		CommonTree String223=null;
+		CommonTree Identifier223=null;
 		CommonTree LOOKUP224=null;
+		CommonTree String225=null;
+		CommonTree LOOKUP226=null;
 		java.util.List<DCNode> i =null;
-		DCNode functionCall210 =null;
-		java.util.List<PropertyNode> dotProperty211 =null;
-		java.util.List<PropertyNode> dotProperty214 =null;
-		DCNode functionCall215 =null;
-		DCNode list217 =null;
-		DCNode expression219 =null;
+		DCNode functionCall212 =null;
+		java.util.List<PropertyNode> dotProperty213 =null;
+		java.util.List<PropertyNode> dotProperty216 =null;
+		DCNode functionCall217 =null;
+		DCNode list219 =null;
+		DCNode expression221 =null;
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:348:3: ( ^( DOTPROPERTY functionCall dotProperty ) | ^( DOTPROPERTY Identifier dotProperty ) | ^( LOOKUP functionCall (i= indexes )? ) | ^( LOOKUP list (i= indexes )? ) | ^( LOOKUP expression (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP String (i= indexes )? ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:350:3: ( ^( DOTPROPERTY functionCall dotProperty ) | ^( DOTPROPERTY Identifier dotProperty ) | ^( LOOKUP functionCall (i= indexes )? ) | ^( LOOKUP list (i= indexes )? ) | ^( LOOKUP expression (i= indexes )? ) | ^( LOOKUP Identifier (i= indexes )? ) | ^( LOOKUP String (i= indexes )? ) )
 			int alt74=7;
 			int LA74_0 = input.LA(1);
 			if ( (LA74_0==DOTPROPERTY) ) {
@@ -5561,48 +5567,48 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 			switch (alt74) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:348:4: ^( DOTPROPERTY functionCall dotProperty )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:350:4: ^( DOTPROPERTY functionCall dotProperty )
 					{
-					match(input,DOTPROPERTY,FOLLOW_DOTPROPERTY_in_lookup3370); 
+					match(input,DOTPROPERTY,FOLLOW_DOTPROPERTY_in_lookup3374); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_functionCall_in_lookup3372);
-					functionCall210=functionCall();
+					pushFollow(FOLLOW_functionCall_in_lookup3376);
+					functionCall212=functionCall();
 					state._fsp--;
 
-					pushFollow(FOLLOW_dotProperty_in_lookup3374);
-					dotProperty211=dotProperty();
+					pushFollow(FOLLOW_dotProperty_in_lookup3378);
+					dotProperty213=dotProperty();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new DotPropertyNode(functionCall210, dotProperty211);
+					node = new DotPropertyNode(functionCall212, dotProperty213);
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:349:4: ^( DOTPROPERTY Identifier dotProperty )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:351:4: ^( DOTPROPERTY Identifier dotProperty )
 					{
-					DOTPROPERTY213=(CommonTree)match(input,DOTPROPERTY,FOLLOW_DOTPROPERTY_in_lookup3382); 
+					DOTPROPERTY215=(CommonTree)match(input,DOTPROPERTY,FOLLOW_DOTPROPERTY_in_lookup3386); 
 					match(input, Token.DOWN, null); 
-					Identifier212=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup3384); 
-					pushFollow(FOLLOW_dotProperty_in_lookup3386);
-					dotProperty214=dotProperty();
+					Identifier214=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup3388); 
+					pushFollow(FOLLOW_dotProperty_in_lookup3390);
+					dotProperty216=dotProperty();
 					state._fsp--;
 
 					match(input, Token.UP, null); 
 
-					node = new DotPropertyNode(new IdentifierNode((Identifier212!=null?Identifier212.getText():null), currentScope,DOTPROPERTY213.getLine()), dotProperty214);
+					node = new DotPropertyNode(new IdentifierNode((Identifier214!=null?Identifier214.getText():null), currentScope,DOTPROPERTY215.getLine()), dotProperty216);
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:355:5: ^( LOOKUP functionCall (i= indexes )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:357:5: ^( LOOKUP functionCall (i= indexes )? )
 					{
-					LOOKUP216=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup3410); 
+					LOOKUP218=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup3414); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_functionCall_in_lookup3412);
-					functionCall215=functionCall();
+					pushFollow(FOLLOW_functionCall_in_lookup3416);
+					functionCall217=functionCall();
 					state._fsp--;
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:355:28: (i= indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:357:28: (i= indexes )?
 					int alt69=2;
 					int LA69_0 = input.LA(1);
 					if ( (LA69_0==INDEXES) ) {
@@ -5610,9 +5616,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt69) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:355:28: i= indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:357:28: i= indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup3416);
+							pushFollow(FOLLOW_indexes_in_lookup3420);
 							i=indexes();
 							state._fsp--;
 
@@ -5623,19 +5629,19 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(functionCall215, i,LOOKUP216.getLine()) : functionCall215;
+					node = i != null ? new LookupNode(functionCall217, i,LOOKUP218.getLine()) : functionCall217;
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:356:6: ^( LOOKUP list (i= indexes )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:358:6: ^( LOOKUP list (i= indexes )? )
 					{
-					LOOKUP218=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup3428); 
+					LOOKUP220=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup3432); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_list_in_lookup3430);
-					list217=list();
+					pushFollow(FOLLOW_list_in_lookup3434);
+					list219=list();
 					state._fsp--;
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:356:21: (i= indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:358:21: (i= indexes )?
 					int alt70=2;
 					int LA70_0 = input.LA(1);
 					if ( (LA70_0==INDEXES) ) {
@@ -5643,9 +5649,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt70) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:356:21: i= indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:358:21: i= indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup3434);
+							pushFollow(FOLLOW_indexes_in_lookup3438);
 							i=indexes();
 							state._fsp--;
 
@@ -5656,19 +5662,19 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(list217, i, LOOKUP218.getLine()) : list217;
+					node = i != null ? new LookupNode(list219, i, LOOKUP220.getLine()) : list219;
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:357:6: ^( LOOKUP expression (i= indexes )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:359:6: ^( LOOKUP expression (i= indexes )? )
 					{
-					LOOKUP220=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup3454); 
+					LOOKUP222=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup3458); 
 					match(input, Token.DOWN, null); 
-					pushFollow(FOLLOW_expression_in_lookup3456);
-					expression219=expression();
+					pushFollow(FOLLOW_expression_in_lookup3460);
+					expression221=expression();
 					state._fsp--;
 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:357:27: (i= indexes )?
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:359:27: (i= indexes )?
 					int alt71=2;
 					int LA71_0 = input.LA(1);
 					if ( (LA71_0==INDEXES) ) {
@@ -5676,9 +5682,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt71) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:357:27: i= indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:359:27: i= indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup3460);
+							pushFollow(FOLLOW_indexes_in_lookup3464);
 							i=indexes();
 							state._fsp--;
 
@@ -5689,16 +5695,16 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(expression219, i,LOOKUP220.getLine()) : expression219;
+					node = i != null ? new LookupNode(expression221, i,LOOKUP222.getLine()) : expression221;
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:358:6: ^( LOOKUP Identifier (i= indexes )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:360:6: ^( LOOKUP Identifier (i= indexes )? )
 					{
-					LOOKUP222=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup3474); 
+					LOOKUP224=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup3478); 
 					match(input, Token.DOWN, null); 
-					Identifier221=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup3476); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:358:27: (i= indexes )?
+					Identifier223=(CommonTree)match(input,Identifier,FOLLOW_Identifier_in_lookup3480); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:360:27: (i= indexes )?
 					int alt72=2;
 					int LA72_0 = input.LA(1);
 					if ( (LA72_0==INDEXES) ) {
@@ -5706,9 +5712,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt72) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:358:27: i= indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:360:27: i= indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup3480);
+							pushFollow(FOLLOW_indexes_in_lookup3484);
 							i=indexes();
 							state._fsp--;
 
@@ -5719,16 +5725,16 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(new IdentifierNode((Identifier221!=null?Identifier221.getText():null), currentScope,LOOKUP222.getLine()), i,LOOKUP222.getLine()) : new IdentifierNode((Identifier221!=null?Identifier221.getText():null), currentScope,LOOKUP222.getLine());
+					node = i != null ? new LookupNode(new IdentifierNode((Identifier223!=null?Identifier223.getText():null), currentScope,LOOKUP224.getLine()), i,LOOKUP224.getLine()) : new IdentifierNode((Identifier223!=null?Identifier223.getText():null), currentScope,LOOKUP224.getLine());
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:359:6: ^( LOOKUP String (i= indexes )? )
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:361:6: ^( LOOKUP String (i= indexes )? )
 					{
-					LOOKUP224=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup3494); 
+					LOOKUP226=(CommonTree)match(input,LOOKUP,FOLLOW_LOOKUP_in_lookup3498); 
 					match(input, Token.DOWN, null); 
-					String223=(CommonTree)match(input,String,FOLLOW_String_in_lookup3496); 
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:359:23: (i= indexes )?
+					String225=(CommonTree)match(input,String,FOLLOW_String_in_lookup3500); 
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:361:23: (i= indexes )?
 					int alt73=2;
 					int LA73_0 = input.LA(1);
 					if ( (LA73_0==INDEXES) ) {
@@ -5736,9 +5742,9 @@ public class PyEsqueTreeWalker extends TreeParser {
 					}
 					switch (alt73) {
 						case 1 :
-							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:359:23: i= indexes
+							// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:361:23: i= indexes
 							{
-							pushFollow(FOLLOW_indexes_in_lookup3500);
+							pushFollow(FOLLOW_indexes_in_lookup3504);
 							i=indexes();
 							state._fsp--;
 
@@ -5749,7 +5755,7 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 					match(input, Token.UP, null); 
 
-					node = i != null ? new LookupNode(new AtomNode((String223!=null?String223.getText():null)), i,LOOKUP224.getLine()) : new AtomNode((String223!=null?String223.getText():null));
+					node = i != null ? new LookupNode(new AtomNode((String225!=null?String225.getText():null)), i,LOOKUP226.getLine()) : new AtomNode((String225!=null?String225.getText():null));
 					}
 					break;
 
@@ -5769,21 +5775,21 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "indexes"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:369:1: indexes returns [java.util.List<DCNode> e] : ^( INDEXES ( expression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:371:1: indexes returns [java.util.List<DCNode> e] : ^( INDEXES ( expression )+ ) ;
 	public final java.util.List<DCNode> indexes() throws RecognitionException {
 		java.util.List<DCNode> e = null;
 
 
-		DCNode expression225 =null;
+		DCNode expression227 =null;
 
 		e = new java.util.ArrayList<DCNode>();
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:371:3: ( ^( INDEXES ( expression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:371:6: ^( INDEXES ( expression )+ )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:373:3: ( ^( INDEXES ( expression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:373:6: ^( INDEXES ( expression )+ )
 			{
-			match(input,INDEXES,FOLLOW_INDEXES_in_indexes3549); 
+			match(input,INDEXES,FOLLOW_INDEXES_in_indexes3553); 
 			match(input, Token.DOWN, null); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:371:16: ( expression )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:373:16: ( expression )+
 			int cnt75=0;
 			loop75:
 			while (true) {
@@ -5795,13 +5801,13 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 				switch (alt75) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:371:17: expression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:373:17: expression
 					{
-					pushFollow(FOLLOW_expression_in_indexes3552);
-					expression225=expression();
+					pushFollow(FOLLOW_expression_in_indexes3556);
+					expression227=expression();
 					state._fsp--;
 
-					e.add(expression225);
+					e.add(expression227);
 					}
 					break;
 
@@ -5832,21 +5838,21 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "dotProperty"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:376:2: dotProperty returns [java.util.List<PropertyNode> e] : ^( DOT ( dotExpression )+ ) ;
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:378:2: dotProperty returns [java.util.List<PropertyNode> e] : ^( DOT ( dotExpression )+ ) ;
 	public final java.util.List<PropertyNode> dotProperty() throws RecognitionException {
 		java.util.List<PropertyNode> e = null;
 
 
-		PropertyNode dotExpression226 =null;
+		PropertyNode dotExpression228 =null;
 
 		e = new java.util.ArrayList<PropertyNode>();
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:378:3: ( ^( DOT ( dotExpression )+ ) )
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:378:6: ^( DOT ( dotExpression )+ )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:380:3: ( ^( DOT ( dotExpression )+ ) )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:380:6: ^( DOT ( dotExpression )+ )
 			{
-			match(input,DOT,FOLLOW_DOT_in_dotProperty3590); 
+			match(input,DOT,FOLLOW_DOT_in_dotProperty3594); 
 			match(input, Token.DOWN, null); 
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:378:12: ( dotExpression )+
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:380:12: ( dotExpression )+
 			int cnt76=0;
 			loop76:
 			while (true) {
@@ -5858,13 +5864,13 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 				switch (alt76) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:378:13: dotExpression
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:380:13: dotExpression
 					{
-					pushFollow(FOLLOW_dotExpression_in_dotProperty3593);
-					dotExpression226=dotExpression();
+					pushFollow(FOLLOW_dotExpression_in_dotProperty3597);
+					dotExpression228=dotExpression();
 					state._fsp--;
 
-					e.add(dotExpression226);
+					e.add(dotExpression228);
 					}
 					break;
 
@@ -5895,13 +5901,13 @@ public class PyEsqueTreeWalker extends TreeParser {
 
 
 	// $ANTLR start "dotExpression"
-	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:381:3: dotExpression returns [PropertyNode node] : ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight );
+	// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:383:3: dotExpression returns [PropertyNode node] : ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight );
 	public final PropertyNode dotExpression() throws RecognitionException {
 		PropertyNode node = null;
 
 
 		try {
-			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:382:3: ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight )
+			// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:384:3: ( DotX | DotY | DotStart | DotEnd | DotOrigin | DotRotation | DotWidth | DotHeight | DotFill | DotStroke | DotWeight )
 			int alt77=11;
 			switch ( input.LA(1) ) {
 			case DotX:
@@ -5966,77 +5972,77 @@ public class PyEsqueTreeWalker extends TreeParser {
 			}
 			switch (alt77) {
 				case 1 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:382:5: DotX
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:384:5: DotX
 					{
-					match(input,DotX,FOLLOW_DotX_in_dotExpression3621); 
+					match(input,DotX,FOLLOW_DotX_in_dotExpression3625); 
 					node = new XPropertyNode();
 					}
 					break;
 				case 2 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:383:5: DotY
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:385:5: DotY
 					{
-					match(input,DotY,FOLLOW_DotY_in_dotExpression3629); 
+					match(input,DotY,FOLLOW_DotY_in_dotExpression3633); 
 					node = new YPropertyNode();
 					}
 					break;
 				case 3 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:384:5: DotStart
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:386:5: DotStart
 					{
-					match(input,DotStart,FOLLOW_DotStart_in_dotExpression3637); 
+					match(input,DotStart,FOLLOW_DotStart_in_dotExpression3641); 
 					node = new StartPropertyNode();
 					}
 					break;
 				case 4 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:385:5: DotEnd
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:387:5: DotEnd
 					{
-					match(input,DotEnd,FOLLOW_DotEnd_in_dotExpression3645); 
+					match(input,DotEnd,FOLLOW_DotEnd_in_dotExpression3649); 
 					node = new EndPropertyNode();
 					}
 					break;
 				case 5 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:386:5: DotOrigin
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:388:5: DotOrigin
 					{
-					match(input,DotOrigin,FOLLOW_DotOrigin_in_dotExpression3653); 
+					match(input,DotOrigin,FOLLOW_DotOrigin_in_dotExpression3657); 
 					node = new OriginPropertyNode();
 					}
 					break;
 				case 6 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:387:5: DotRotation
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:389:5: DotRotation
 					{
-					match(input,DotRotation,FOLLOW_DotRotation_in_dotExpression3661); 
+					match(input,DotRotation,FOLLOW_DotRotation_in_dotExpression3665); 
 					node = new RotationPropertyNode();
 					}
 					break;
 				case 7 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:388:5: DotWidth
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:390:5: DotWidth
 					{
-					match(input,DotWidth,FOLLOW_DotWidth_in_dotExpression3669); 
+					match(input,DotWidth,FOLLOW_DotWidth_in_dotExpression3673); 
 					node = new WidthPropertyNode();
 					}
 					break;
 				case 8 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:389:5: DotHeight
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:391:5: DotHeight
 					{
-					match(input,DotHeight,FOLLOW_DotHeight_in_dotExpression3677); 
+					match(input,DotHeight,FOLLOW_DotHeight_in_dotExpression3681); 
 					node = new HeightPropertyNode();
 					}
 					break;
 				case 9 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:390:5: DotFill
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:392:5: DotFill
 					{
-					match(input,DotFill,FOLLOW_DotFill_in_dotExpression3685); 
+					match(input,DotFill,FOLLOW_DotFill_in_dotExpression3689); 
 					}
 					break;
 				case 10 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:391:5: DotStroke
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:393:5: DotStroke
 					{
-					match(input,DotStroke,FOLLOW_DotStroke_in_dotExpression3692); 
+					match(input,DotStroke,FOLLOW_DotStroke_in_dotExpression3696); 
 					}
 					break;
 				case 11 :
-					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:392:5: DotWeight
+					// /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsqueTreeWalker.g:394:5: DotWeight
 					{
-					match(input,DotWeight,FOLLOW_DotWeight_in_dotExpression3699); 
+					match(input,DotWeight,FOLLOW_DotWeight_in_dotExpression3703); 
 					}
 					break;
 
@@ -6170,344 +6176,346 @@ public class PyEsqueTreeWalker extends TreeParser {
 	public static final BitSet FOLLOW_Weight_in_transformCall849 = new BitSet(new long[]{0x0000004000000008L});
 	public static final BitSet FOLLOW_exprList_in_transformCall851 = new BitSet(new long[]{0x0000000000000008L});
 	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall862 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Hide_in_transformCall864 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_transformCall866 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall876 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Show_in_transformCall878 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_transformCall880 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall890 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Group_in_transformCall892 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_transformCall894 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall905 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Expand_in_transformCall907 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_transformCall909 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall918 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Merge_in_transformCall920 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_transformCall922 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall931 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Scale_in_transformCall933 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_transformCall935 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall945 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_MirrorX_in_transformCall947 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_transformCall949 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall958 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_MirrorY_in_transformCall960 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_transformCall962 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall971 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Union_in_transformCall973 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_transformCall975 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall985 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Difference_in_transformCall987 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_transformCall989 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall999 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Clip_in_transformCall1001 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_transformCall1003 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall1013 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Xor_in_transformCall1015 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_transformCall1017 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall1027 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Flatten_in_transformCall1029 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_transformCall1031 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_patternCall1063 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Grid_in_patternCall1065 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_patternCall1067 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_patternCall1079 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Wave_in_patternCall1081 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_patternCall1083 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_patternCall1095 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Arc_in_patternCall1097 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_patternCall1099 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1134 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Cosine_in_mathCall1136 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1138 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1148 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Sine_in_mathCall1150 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1152 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1162 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Tan_in_mathCall1164 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1166 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1176 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ATan_in_mathCall1178 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_mathCall1180 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1191 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Random_in_mathCall1193 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_mathCall1195 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1206 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Pow_in_mathCall1208 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_mathCall1210 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1220 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Sqrt_in_mathCall1222 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1224 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1233 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Sq_in_mathCall1235 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1237 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1246 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Gaussian_in_mathCall1248 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_mathCall1250 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1261 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Noise_in_mathCall1263 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_mathCall1265 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1276 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Round_in_mathCall1278 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1280 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1290 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Map_in_mathCall1292 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_mathCall1294 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1305 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Inch_in_mathCall1307 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1309 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1318 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Mm_in_mathCall1320 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1322 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1331 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Cm_in_mathCall1333 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1335 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1344 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Units_in_mathCall1346 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_mathCall1348 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1386 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetWidth_in_getCall1388 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_getCall1390 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1400 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetHeight_in_getCall1402 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_getCall1404 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1413 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetX_in_getCall1415 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_getCall1417 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1426 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetY_in_getCall1428 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_getCall1430 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1439 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetOrigin_in_getCall1441 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_getCall1443 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1452 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetRotation_in_getCall1454 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_getCall1456 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1465 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetFill_in_getCall1467 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_getCall1469 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1477 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetStroke_in_getCall1479 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_getCall1481 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1489 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetStart_in_getCall1491 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_getCall1493 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1500 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetEnd_in_getCall1502 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_getCall1504 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1512 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetDistance_in_getCall1514 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_getCall1516 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1526 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetIntersect_in_getCall1528 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_getCall1530 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1540 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetAngle_in_getCall1542 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_getCall1544 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1555 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_GetRadius_in_getCall1557 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_getCall1559 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_uICall1587 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Slider_in_uICall1589 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_uICall1591 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1622 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Template_in_templateCall1624 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_templateCall1626 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1637 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_SetWidth_in_templateCall1639 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_templateCall1641 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1652 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_SetHeight_in_templateCall1654 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_templateCall1656 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1666 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_SetSeam_in_templateCall1668 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_templateCall1670 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1680 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_SetName_in_templateCall1682 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_templateCall1684 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1693 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_SetVFold_in_templateCall1695 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_templateCall1697 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1707 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_SetHFold_in_templateCall1709 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_templateCall1711 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1721 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_SetCorner_in_templateCall1723 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_templateCall1725 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1736 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_TemplateCollection_in_templateCall1738 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_templateCall1742 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1752 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_AddDesign_in_templateCall1754 = new BitSet(new long[]{0x0000004000000008L});
-	public static final BitSet FOLLOW_exprList_in_templateCall1756 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_IF_in_ifStatement1793 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_ifStat_in_ifStatement1795 = new BitSet(new long[]{0x0000002000000008L});
-	public static final BitSet FOLLOW_elseIfStat_in_ifStatement1799 = new BitSet(new long[]{0x0000002000000008L});
-	public static final BitSet FOLLOW_elseStat_in_ifStatement1805 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_EXP_in_ifStat1825 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_ifStat1827 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_ifStat1829 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_EXP_in_elseIfStat1848 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_elseIfStat1850 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_elseIfStat1852 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_EXP_in_elseStat1871 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_block_in_elseStat1873 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_For_in_forStatement1898 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_forStatement1900 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_forStatement1904 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_forStatement1908 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_forStatement1910 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Repeat_in_repeatStatement1933 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_repeatStatement1935 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement1939 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement1943 = new BitSet(new long[]{0x000602042004C100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_repeatStatement1948 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_repeatStatement1952 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Radial_in_radialStatement1971 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_radialStatement1977 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_radialStatement1981 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_radialStatement1986 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_radialStatement1990 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_radialStatement1994 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_radialStatement1996 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Spiral_in_spiralStatement2016 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_spiralStatement2022 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_spiralStatement2026 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_spiralStatement2031 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_spiralStatement2035 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_spiralStatement2039 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_spiralStatement2041 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Row_in_rowStatement2061 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_rowStatement2067 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_rowStatement2071 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_rowStatement2076 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_rowStatement2080 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_rowStatement2084 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_rowStatement2086 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Arc_in_arcStatement2106 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_arcStatement2112 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_arcStatement2116 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_arcStatement2121 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_arcStatement2125 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_arcStatement2129 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_arcStatement2133 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_arcStatement2137 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_arcStatement2139 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Repeat_in_drawableRepeatStatement2157 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_drawableRepeatStatement2163 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_drawableRepeatStatement2167 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_drawableRepeatStatement2172 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_drawableRepeatStatement2174 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_FollowCurve_in_followCurveStatement2194 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_followCurveStatement2198 = new BitSet(new long[]{0x0001200000000840L,0x8900000000000080L,0x0000004000100000L});
-	public static final BitSet FOLLOW_statement_in_followCurveStatement2203 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
-	public static final BitSet FOLLOW_Identifier_in_followCurveStatement2207 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_followCurveStatement2211 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_followCurveStatement2213 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_While_in_whileStatement2234 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_whileStatement2236 = new BitSet(new long[]{0x0000000000004000L});
-	public static final BitSet FOLLOW_block_in_whileStatement2238 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_ID_LIST_in_idList2265 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_idList2268 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000200L});
-	public static final BitSet FOLLOW_EXP_LIST_in_exprList2298 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_exprList2301 = new BitSet(new long[]{0x0006020420048108L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_TERNARY_in_expression2326 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2330 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_Hide_in_transformCall864 = new BitSet(new long[]{0x0000000000000000L,0x0000100000000000L});
+	public static final BitSet FOLLOW_OParen_in_transformCall866 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_transformCall868 = new BitSet(new long[]{0x0000000000080000L});
+	public static final BitSet FOLLOW_CParen_in_transformCall870 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall880 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Show_in_transformCall882 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_transformCall884 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall894 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Group_in_transformCall896 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_transformCall898 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall909 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Expand_in_transformCall911 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_transformCall913 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall922 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Merge_in_transformCall924 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_transformCall926 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall935 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Scale_in_transformCall937 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_transformCall939 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall949 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_MirrorX_in_transformCall951 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_transformCall953 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall962 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_MirrorY_in_transformCall964 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_transformCall966 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall975 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Union_in_transformCall977 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_transformCall979 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall989 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Difference_in_transformCall991 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_transformCall993 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall1003 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Clip_in_transformCall1005 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_transformCall1007 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall1017 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Xor_in_transformCall1019 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_transformCall1021 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_transformCall1031 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Flatten_in_transformCall1033 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_transformCall1035 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_patternCall1067 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Grid_in_patternCall1069 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_patternCall1071 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_patternCall1083 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Wave_in_patternCall1085 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_patternCall1087 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_patternCall1099 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Arc_in_patternCall1101 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_patternCall1103 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1138 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Cosine_in_mathCall1140 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1142 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1152 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Sine_in_mathCall1154 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1156 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1166 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Tan_in_mathCall1168 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1170 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1180 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ATan_in_mathCall1182 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1184 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1195 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Random_in_mathCall1197 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1199 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1210 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Pow_in_mathCall1212 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1214 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1224 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Sqrt_in_mathCall1226 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1228 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1237 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Sq_in_mathCall1239 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1241 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1250 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Gaussian_in_mathCall1252 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1254 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1265 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Noise_in_mathCall1267 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1269 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1280 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Round_in_mathCall1282 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1284 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1294 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Map_in_mathCall1296 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_mathCall1298 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1309 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Inch_in_mathCall1311 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1313 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1322 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Mm_in_mathCall1324 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1326 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1335 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Cm_in_mathCall1337 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1339 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_mathCall1348 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Units_in_mathCall1350 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_mathCall1352 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1390 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetWidth_in_getCall1392 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_getCall1394 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1404 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetHeight_in_getCall1406 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_getCall1408 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1417 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetX_in_getCall1419 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_getCall1421 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1430 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetY_in_getCall1432 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_getCall1434 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1443 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetOrigin_in_getCall1445 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_getCall1447 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1456 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetRotation_in_getCall1458 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_getCall1460 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1469 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetFill_in_getCall1471 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_getCall1473 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1481 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetStroke_in_getCall1483 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_getCall1485 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1493 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetStart_in_getCall1495 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_getCall1497 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1504 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetEnd_in_getCall1506 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_getCall1508 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1516 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetDistance_in_getCall1518 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_getCall1520 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1530 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetIntersect_in_getCall1532 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_getCall1534 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1544 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetAngle_in_getCall1546 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_getCall1548 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_getCall1559 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_GetRadius_in_getCall1561 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_getCall1563 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_uICall1591 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Slider_in_uICall1593 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_uICall1595 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1626 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Template_in_templateCall1628 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_templateCall1630 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1641 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_SetWidth_in_templateCall1643 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_templateCall1645 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1656 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_SetHeight_in_templateCall1658 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_templateCall1660 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1670 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_SetSeam_in_templateCall1672 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_templateCall1674 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1684 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_SetName_in_templateCall1686 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_templateCall1688 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1697 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_SetVFold_in_templateCall1699 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_templateCall1701 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1711 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_SetHFold_in_templateCall1713 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_templateCall1715 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1725 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_SetCorner_in_templateCall1727 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_templateCall1729 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1740 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_TemplateCollection_in_templateCall1742 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_templateCall1746 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FUNC_CALL_in_templateCall1756 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_AddDesign_in_templateCall1758 = new BitSet(new long[]{0x0000004000000008L});
+	public static final BitSet FOLLOW_exprList_in_templateCall1760 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_IF_in_ifStatement1797 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_ifStat_in_ifStatement1799 = new BitSet(new long[]{0x0000002000000008L});
+	public static final BitSet FOLLOW_elseIfStat_in_ifStatement1803 = new BitSet(new long[]{0x0000002000000008L});
+	public static final BitSet FOLLOW_elseStat_in_ifStatement1809 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_EXP_in_ifStat1829 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_ifStat1831 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_ifStat1833 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_EXP_in_elseIfStat1852 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_elseIfStat1854 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_elseIfStat1856 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_EXP_in_elseStat1875 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_block_in_elseStat1877 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_For_in_forStatement1902 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_forStatement1904 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_forStatement1908 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_forStatement1912 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_forStatement1914 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Repeat_in_repeatStatement1937 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_repeatStatement1939 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement1943 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement1947 = new BitSet(new long[]{0x000602042004C100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_repeatStatement1952 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_repeatStatement1956 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Radial_in_radialStatement1975 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_radialStatement1981 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_radialStatement1985 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_radialStatement1990 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_radialStatement1994 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_radialStatement1998 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_radialStatement2000 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Spiral_in_spiralStatement2020 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_spiralStatement2026 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_spiralStatement2030 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_spiralStatement2035 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_spiralStatement2039 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_spiralStatement2043 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_spiralStatement2045 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Row_in_rowStatement2065 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_rowStatement2071 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_rowStatement2075 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_rowStatement2080 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_rowStatement2084 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_rowStatement2088 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_rowStatement2090 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Arc_in_arcStatement2110 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_arcStatement2116 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_arcStatement2120 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_arcStatement2125 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_arcStatement2129 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_arcStatement2133 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_arcStatement2137 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_arcStatement2141 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_arcStatement2143 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Repeat_in_drawableRepeatStatement2161 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_drawableRepeatStatement2167 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_drawableRepeatStatement2171 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_drawableRepeatStatement2176 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_drawableRepeatStatement2178 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_FollowCurve_in_followCurveStatement2198 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_followCurveStatement2202 = new BitSet(new long[]{0x0001200000000840L,0x8900000000000080L,0x0000004000100000L});
+	public static final BitSet FOLLOW_statement_in_followCurveStatement2207 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000200L});
+	public static final BitSet FOLLOW_Identifier_in_followCurveStatement2211 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_followCurveStatement2215 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_followCurveStatement2217 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_While_in_whileStatement2238 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_whileStatement2240 = new BitSet(new long[]{0x0000000000004000L});
+	public static final BitSet FOLLOW_block_in_whileStatement2242 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_ID_LIST_in_idList2269 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_idList2272 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000200L});
+	public static final BitSet FOLLOW_EXP_LIST_in_exprList2302 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_exprList2305 = new BitSet(new long[]{0x0006020420048108L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_TERNARY_in_expression2330 = new BitSet(new long[]{0x0000000000000004L});
 	public static final BitSet FOLLOW_expression_in_expression2334 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2338 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_In_in_expression2349 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2353 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2357 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_169_in_expression2386 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2390 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2394 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_168_in_expression2421 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2425 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2429 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Equals_in_expression2456 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2460 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2464 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_NEquals_in_expression2491 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2495 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2499 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_GTEquals_in_expression2526 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2530 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2534 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LTEquals_in_expression2561 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2565 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2569 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_GT_in_expression2596 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2600 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2604 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LT_in_expression2632 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2636 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2640 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Add_in_expression2668 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2672 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2676 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Subtract_in_expression2704 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2708 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2712 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Multiply_in_expression2740 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2744 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2748 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Divide_in_expression2776 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2780 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2784 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Modulus_in_expression2812 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2816 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2820 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Pw_in_expression2848 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2852 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_expression_in_expression2856 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_UNARY_MIN_in_expression2884 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2888 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_NEGATE_in_expression2923 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_expression2927 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_Number_in_expression2964 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Bool_in_expression3016 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_Null_in_expression3070 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_lookup_in_expression3124 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_COLOR_CONSTANT_in_expression3176 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_PI_CONSTANT_in_expression3195 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_WIDTH_CONSTANT_in_expression3241 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_HEIGHT_CONSTANT_in_expression3286 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_LIST_in_list3345 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_exprList_in_list3347 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_DOTPROPERTY_in_lookup3370 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_functionCall_in_lookup3372 = new BitSet(new long[]{0x0000000008000000L});
-	public static final BitSet FOLLOW_dotProperty_in_lookup3374 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_DOTPROPERTY_in_lookup3382 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_lookup3384 = new BitSet(new long[]{0x0000000008000000L});
-	public static final BitSet FOLLOW_dotProperty_in_lookup3386 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup3410 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_functionCall_in_lookup3412 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000100L});
-	public static final BitSet FOLLOW_indexes_in_lookup3416 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup3428 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_list_in_lookup3430 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000100L});
-	public static final BitSet FOLLOW_indexes_in_lookup3434 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup3454 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_lookup3456 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000100L});
-	public static final BitSet FOLLOW_indexes_in_lookup3460 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup3474 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_Identifier_in_lookup3476 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000100L});
-	public static final BitSet FOLLOW_indexes_in_lookup3480 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_LOOKUP_in_lookup3494 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_String_in_lookup3496 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000100L});
-	public static final BitSet FOLLOW_indexes_in_lookup3500 = new BitSet(new long[]{0x0000000000000008L});
-	public static final BitSet FOLLOW_INDEXES_in_indexes3549 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_expression_in_indexes3552 = new BitSet(new long[]{0x0006020420048108L,0x0010430720620808L,0x0000030906000000L});
-	public static final BitSet FOLLOW_DOT_in_dotProperty3590 = new BitSet(new long[]{0x0000000000000004L});
-	public static final BitSet FOLLOW_dotExpression_in_dotProperty3593 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x001FFC0000000000L});
-	public static final BitSet FOLLOW_DotX_in_dotExpression3621 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotY_in_dotExpression3629 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotStart_in_dotExpression3637 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotEnd_in_dotExpression3645 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotOrigin_in_dotExpression3653 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotRotation_in_dotExpression3661 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotWidth_in_dotExpression3669 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotHeight_in_dotExpression3677 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotFill_in_dotExpression3685 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotStroke_in_dotExpression3692 = new BitSet(new long[]{0x0000000000000002L});
-	public static final BitSet FOLLOW_DotWeight_in_dotExpression3699 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_expression_in_expression2338 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2342 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_In_in_expression2353 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2357 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2361 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_169_in_expression2390 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2394 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2398 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_168_in_expression2425 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2429 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2433 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Equals_in_expression2460 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2464 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2468 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_NEquals_in_expression2495 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2499 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2503 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_GTEquals_in_expression2530 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2534 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2538 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LTEquals_in_expression2565 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2569 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2573 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_GT_in_expression2600 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2604 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2608 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LT_in_expression2636 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2640 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2644 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Add_in_expression2672 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2676 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2680 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Subtract_in_expression2708 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2712 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2716 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Multiply_in_expression2744 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2748 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2752 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Divide_in_expression2780 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2784 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2788 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Modulus_in_expression2816 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2820 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2824 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Pw_in_expression2852 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2856 = new BitSet(new long[]{0x0006020420048100L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_expression_in_expression2860 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_UNARY_MIN_in_expression2888 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2892 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_NEGATE_in_expression2927 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_expression2931 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_Number_in_expression2968 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Bool_in_expression3020 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_Null_in_expression3074 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_lookup_in_expression3128 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_COLOR_CONSTANT_in_expression3180 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_PI_CONSTANT_in_expression3199 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_WIDTH_CONSTANT_in_expression3245 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_HEIGHT_CONSTANT_in_expression3290 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_LIST_in_list3349 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_exprList_in_list3351 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_DOTPROPERTY_in_lookup3374 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_functionCall_in_lookup3376 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_dotProperty_in_lookup3378 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_DOTPROPERTY_in_lookup3386 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_lookup3388 = new BitSet(new long[]{0x0000000008000000L});
+	public static final BitSet FOLLOW_dotProperty_in_lookup3390 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup3414 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_functionCall_in_lookup3416 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000100L});
+	public static final BitSet FOLLOW_indexes_in_lookup3420 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup3432 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_list_in_lookup3434 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000100L});
+	public static final BitSet FOLLOW_indexes_in_lookup3438 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup3458 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_lookup3460 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000100L});
+	public static final BitSet FOLLOW_indexes_in_lookup3464 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup3478 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_Identifier_in_lookup3480 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000100L});
+	public static final BitSet FOLLOW_indexes_in_lookup3484 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_LOOKUP_in_lookup3498 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_String_in_lookup3500 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000100L});
+	public static final BitSet FOLLOW_indexes_in_lookup3504 = new BitSet(new long[]{0x0000000000000008L});
+	public static final BitSet FOLLOW_INDEXES_in_indexes3553 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_expression_in_indexes3556 = new BitSet(new long[]{0x0006020420048108L,0x0010430720620808L,0x0000030906000000L});
+	public static final BitSet FOLLOW_DOT_in_dotProperty3594 = new BitSet(new long[]{0x0000000000000004L});
+	public static final BitSet FOLLOW_dotExpression_in_dotProperty3597 = new BitSet(new long[]{0x0000000000000008L,0x0000000000000000L,0x001FFC0000000000L});
+	public static final BitSet FOLLOW_DotX_in_dotExpression3625 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotY_in_dotExpression3633 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotStart_in_dotExpression3641 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotEnd_in_dotExpression3649 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotOrigin_in_dotExpression3657 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotRotation_in_dotExpression3665 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotWidth_in_dotExpression3673 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotHeight_in_dotExpression3681 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotFill_in_dotExpression3689 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotStroke_in_dotExpression3696 = new BitSet(new long[]{0x0000000000000002L});
+	public static final BitSet FOLLOW_DotWeight_in_dotExpression3703 = new BitSet(new long[]{0x0000000000000002L});
 }

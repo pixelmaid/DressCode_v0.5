@@ -360,7 +360,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 	}
 
 	@Override
-	public Drawable expand(){
+	public Drawable expand(boolean top){
 
 		Polygon poly =  new Polygon();
 
@@ -374,7 +374,7 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 			if(i>0){
 				Line l = new Line(xLast,yLast,x,y);
 				l.setStrokeWeight(this.getStrokeWeight());
-				Polygon p = (Polygon)l.expand();
+				Polygon p = (Polygon)l.expand(top);
 				if(i==1){
 					poly = p;
 				}

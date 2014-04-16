@@ -94,11 +94,11 @@ public class Slider extends UserUI {
     }
 
     public double getSliderValue() {
-        return Basic.map(value, 0, 1, minTarget, maxTarget);
+        return Basic.map(value, 0d, 1d, minTarget, maxTarget);
     }
 
     public void setSliderValue(double val) {
-        value = Basic.map(val, minTarget, maxTarget, 0, 1);
+        value = Basic.map(val, minTarget, maxTarget, 0d, 1d);
     }
 
     

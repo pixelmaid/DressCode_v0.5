@@ -1,5 +1,6 @@
 package com.pixelmaid.dresscode.antlr.types.tree;
 
+import com.pixelmaid.dresscode.antlr.types.Scope;
 import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.functions.DrawableNode;
 import com.pixelmaid.dresscode.antlr.types.tree.functions.RectangleNode;
@@ -14,6 +15,7 @@ public class BlockNode extends DCNode {
 
   protected List<DCNode> statements;
   protected DCNode returnStatement;
+  public Scope scope;
 
   public BlockNode() {
     statements = new ArrayList<DCNode>();

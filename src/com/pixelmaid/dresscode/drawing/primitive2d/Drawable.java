@@ -270,6 +270,10 @@ public void drawOrigin(Canvas embedded){
 		transforms.add(transform);
 	}
 	
+	public void removeLastTransform(){
+		transforms.remove(transforms.size()-1);
+	}
+	
 	public int[] getLastTransform(){
 		return transforms.get(transforms.size()-1);
 	}
@@ -854,14 +858,48 @@ public void drawOrigin(Canvas embedded){
 	}
 	
 	//expands all children of drawable;
-	public Drawable expand(){
-		for(int j =0;j<this.children.size();j++){
-			Drawable poly = this.children.get(j).expand();
-			this.children.set(j, poly);
+	public Drawable expand(boolean top){
+		this.setAbsolute();
+		for(int i=0;i<this.children.size();i++){
+			Drawable d = this.children.get(i);
+			Drawable dNew = d.expand(false);
+			this.children.remove(d);
+			this.children.add(i, dNew);
 		}
-	
+		if(top){
+			
+			resetOriginRecur();
+		}
+		
+		
+		
 		return this;
 	}
+	/*
+	//rotates around a focus. does not change the rotation property
+	public Drawable expand( Boolean top){
+				this.setAbsolute();
+				//ArrayList<Point> origins = new ArrayList<Point>();
+								
+				for(int i=0;i<this.children.size();i++){
+					Drawable d = this.children.get(i);
+					Drawable dNew = d.expand(false);
+					this.children.remove(d);
+					this.children.add(i, dNew);
+					//this.children.set(i, dNew);
+					//origins.add(this.children.get(i).getOrigin());
+				}
+				
+				
+				if(top){
+				
+					
+					resetOriginRecur();
+				}
+				
+				return this;
+				
+			}*/
 
 	
 	//adds new child and resets origin of drawable to accommodate child (must be overridden by subclasses)

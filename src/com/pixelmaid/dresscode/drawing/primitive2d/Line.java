@@ -232,8 +232,9 @@ public class Line extends Polygon {
 	}
 	
 	
-	
-	public Drawable expand(){
+	@Override
+	public Drawable expand(boolean top){
+		System.out.println("line expand called");
 		if(this.getStrokeWeight()<1){
 			this.setStrokeWeight(1);
 		}
@@ -253,11 +254,14 @@ public class Line extends Polygon {
 		p.setPointsRelativeTo(this.getMidPoint());
 		Ellipse e1 = new Ellipse(this.start,this.getStrokeWeight(),this.getStrokeWeight());
 		Ellipse e2 = new Ellipse(this.end,this.getStrokeWeight(),this.getStrokeWeight());
-		Drawable d = PolyBoolean.union(e2,PolyBoolean.union(p,e1));
-		
+		Polygon d = (Polygon)PolyBoolean.union(e2,PolyBoolean.union(p,e1));
+		d.copyParameters(this,d);
 		d.setFillColor(this.getStrokeColor());
 		d.doStroke(false);
-		
+		d.setPointsAbsolute();
+		if(top){
+			d.resetOriginRecur();
+		}
 		return d;
 		
 

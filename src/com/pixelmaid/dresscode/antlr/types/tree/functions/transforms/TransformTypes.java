@@ -12,6 +12,7 @@ public class TransformTypes {
 	public static final int ROTATE = 3;
 	public static final int ROTATE_WITH_FOCUS=4;
 	public static final int SCALE = 5;
+	public static final int HIDE = 6;
 	
 
 

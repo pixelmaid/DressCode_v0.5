@@ -27,6 +27,7 @@ public class HideNode extends DCNode {
     	d= (param.evaluate().asDrawable());
     	d.hide();
     	d.setLine(line);
+    	d.setLastTransform(TransformTypes.HIDE,line,col,this.startArg,this.endArg);
 
     	return new VarType(d);
     	}

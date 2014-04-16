@@ -22,7 +22,7 @@ public class DrawingToolbar extends Toolbar {
 		this.setPreferredSize(masterDimension);
 		
 	
-		btnPanel1.setPreferredSize(new Dimension(24,152));
+		btnPanel1.setPreferredSize(new Dimension(24,175));
 		btnPanel2.setPreferredSize(new Dimension(24,175));
 		btnPanel3.setPreferredSize(new Dimension(24,100));
 		btnPanel4.setPreferredSize(new Dimension(24,175));

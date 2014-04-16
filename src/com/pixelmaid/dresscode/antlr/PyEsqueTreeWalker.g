@@ -34,7 +34,7 @@ options {
  int unitParam;
  DrawableManager drawableManager;
  UserUIManager uiManager;
- Scope currentScope = null;
+ public Scope currentScope = null;
  BlockNode currentFunction = null; 
   
   private List<String> errors = new LinkedList<String>();
@@ -79,6 +79,7 @@ block returns [BlockNode node]
   node = bn;
   Scope local = new Scope(currentScope);
   currentScope = local;
+  bn.scope = local;
   currentFunction = bn;
   ((NodeEvent)node).addEventListener(drawableManager);
 }
@@ -165,7 +166,8 @@ functionCall returns [DCNode node]
    |^(FUNC_CALL NoFill expression) {node = new NoFillNode($expression.node ,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    |^(FUNC_CALL NoStroke expression) {node = new NoStrokeNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    |^(FUNC_CALL Weight exprList?) {node = new WeightNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
-   |^(FUNC_CALL Hide expression) {node = new HideNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
+   |^(FUNC_CALL Hide OParen expression CParen) {node = new HideNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());
+   	node.setLimits($Hide.getCharPositionInLine(),$CParen.getCharPositionInLine());}
    |^(FUNC_CALL Show expression) {node = new ShowNode($expression.node,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    |^(FUNC_CALL Group exprList?) {node = new GroupNode($exprList.e,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}
    |^(FUNC_CALL Expand expression){node = new ExpandNode($expression.node, currentScope,$FUNC_CALL.getLine(),$FUNC_CALL.getCharPositionInLine());}

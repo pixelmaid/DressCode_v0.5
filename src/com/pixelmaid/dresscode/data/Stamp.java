@@ -461,28 +461,28 @@ public class Stamp {
 		return indent;
 	}
 	
-	public static String addRadialStatement(String gName, boolean gExists, ArrayList<Double> vals, String selectedCode){
-		String startStatement = "radial "+gName+", "+"rad="+ vals.get(1)+", "+"num="+Math.round(vals.get(0))+":";
+	public static String addRadialStatement(String gName, boolean gExists, ArrayList<String> vals, String selectedCode){
+		String startStatement = "radial "+gName+", "+"rad="+ vals.get(1)+", "+"num="+vals.get(0)+":";
 		return addRepeatTypeStatement(startStatement,gName,gExists,selectedCode);
 	}
 	
-	public static String addRowStatement(String gName, boolean gExists, ArrayList<Double> vals, String selectedCode){
-		String startStatement = "row "+gName+", "+"gap="+ vals.get(1)+", "+"num="+Math.round(vals.get(0))+":";
+	public static String addRowStatement(String gName, boolean gExists, ArrayList<String> vals, String selectedCode){
+		String startStatement = "row "+gName+", "+"gap="+ vals.get(1)+", "+"num="+vals.get(0)+":";
 		return addRepeatTypeStatement(startStatement,gName,gExists,selectedCode);
 	}
 	
-	public static String addSpiralStatement(String gName, boolean gExists, ArrayList<Double> vals, String selectedCode){
-		String startStatement = "spiral "+gName+", "+"theta="+ vals.get(1)+", "+"num="+Math.round(vals.get(0))+":";
+	public static String addSpiralStatement(String gName, boolean gExists, ArrayList<String> vals, String selectedCode){
+		String startStatement = "spiral "+gName+", "+"theta="+ vals.get(1)+", "+"num="+vals.get(0)+":";
 		return addRepeatTypeStatement(startStatement,gName,gExists,selectedCode);
 	}
 	
-	public static String addArcStatement(String gName, boolean gExists, ArrayList<Double> vals, String selectedCode){
-		String startStatement = "arc "+gName+", "+"width="+ vals.get(1)+", "+"height="+ vals.get(2)+", "+"num="+Math.round(vals.get(0))+":";
+	public static String addArcStatement(String gName, boolean gExists, ArrayList<String> vals, String selectedCode){
+		String startStatement = "arc "+gName+", "+"width="+ vals.get(1)+", "+"height="+ vals.get(2)+", "+"num="+vals.get(0)+":";
 		return addRepeatTypeStatement(startStatement,gName,gExists,selectedCode);
 	}
 	
-	public static String addRepeatStatement(String gName, boolean gExists, ArrayList<Double> vals, String selectedCode){
-		String startStatement = "repeat "+gName+","+"num="+Math.round(vals.get(0))+":";
+	public static String addRepeatStatement(String gName, boolean gExists, ArrayList<String> vals, String selectedCode){
+		String startStatement = "repeat "+gName+","+"num="+vals.get(0)+":";
 		return addRepeatTypeStatement(startStatement,gName,gExists,selectedCode);
 	}
 	

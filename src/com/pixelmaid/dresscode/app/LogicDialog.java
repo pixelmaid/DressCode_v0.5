@@ -21,6 +21,7 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 import javax.swing.SwingConstants;
 
+import com.pixelmaid.dresscode.data.InstructionManager;
 import com.pixelmaid.dresscode.data.Stamp;
 
 import java.awt.event.ActionEvent; 
@@ -43,19 +44,21 @@ public class LogicDialog extends JDialog implements ActionListener{
 	   
 	    private JTextField nameF;
 	    private String groupName;
-	    private ArrayList<Double> vals;
+	    private ArrayList<String> vals;
 	    private ArrayList<JTextField> nums;
 		public static final int REPEAT_TYPE =0;
 	    public static final int RADIAL_TYPE =1;
 	    public static final int ROW_TYPE =2;
 	    public static final int ARC_TYPE =3;
 	    public static final int SPIRAL_TYPE =4;
+	    private InstructionManager instructionManager;
 
 	    public boolean getAnswer() { return answer; }
 	    
-	    public LogicDialog(JFrame frame, boolean modal, int type) {
+	    public LogicDialog(JFrame frame, boolean modal, int type, InstructionManager iM) {
 	        super(frame, modal);
-	        vals = new ArrayList<Double>();
+	        instructionManager = iM;
+	        vals = new ArrayList<String>();
 	        nums = new ArrayList<JTextField>();
 	        this.setPreferredSize(new Dimension(300,200));
 	        myPanel = new JPanel();
@@ -286,11 +289,19 @@ public class LogicDialog extends JDialog implements ActionListener{
 	            for(int i=0;i<nums.size();i++){
 	            	try{
 	            		double d = Double.parseDouble(nums.get(i).getText());
-	            		this.vals.add(d);
+	            		this.vals.add(Double.toString(d));
 	            	}
 	            	catch (NumberFormatException nfe){
-	            		LogicDialog.infoBox("value at "+nums.get(i).getName()+" must be a number", "","error in number");
-	            		return;
+	            		String n = nums.get(i).getText();
+	            		boolean exists = instructionManager.lookup(n);
+	            		if(!exists){
+	            			LogicDialog.infoBox("value at "+nums.get(i).getName()+" must be a number", "","error in number");
+	            			return;
+	            		}
+	            		else{
+	            			this.vals.add(n);	
+	            		}
+	            		
 	            		
 	            	}
 	            	
@@ -324,7 +335,7 @@ public class LogicDialog extends JDialog implements ActionListener{
 	    	return groupName;
 	    }
 	    
-	    public ArrayList<Double> getVals(){
+	    public ArrayList<String> getVals(){
 	    	return vals;
 	    }
 	  

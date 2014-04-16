@@ -85,6 +85,7 @@ public class PolyBoolean{
 			d1 = unionRecur(d1,child1);
 		}
 		if(d2.numChildren()!=0&& !(d2 instanceof ComplexPolygon)){
+			
 			Drawable child1 = d2.removeFromGroup(0);
 			d2 = unionRecur(d2,child1);
 		}

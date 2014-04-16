@@ -233,7 +233,7 @@ statement
    | NoFill	OParen expression CParen-> ^(FUNC_CALL NoFill expression)
    | NoStroke OParen expression CParen-> ^(FUNC_CALL NoStroke expression)
    | Weight	OParen exprList? CParen-> ^(FUNC_CALL Weight exprList?)
-   | Hide	OParen expression CParen-> ^(FUNC_CALL Hide expression)
+   | Hide	OParen expression CParen-> ^(FUNC_CALL Hide OParen expression CParen)
    | Show	OParen expression CParen-> ^(FUNC_CALL Show expression)
    | Group	OParen exprList? CParen-> ^(FUNC_CALL Group exprList?)
    | Expand	OParen expression CParen-> ^(FUNC_CALL Expand expression)

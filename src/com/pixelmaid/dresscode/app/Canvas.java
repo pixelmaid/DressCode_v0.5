@@ -273,9 +273,9 @@ public class Canvas extends PApplet implements EventInterface{
 			for (int i=0;i<tempDrawables.size();i++){
 				tempDrawables.get(i).draw(this);
 				if(showOrigin){
-					if(!tempDrawables.get(i).getHide()){
+					//if(!tempDrawables.get(i).getHide()){
 						tempDrawables.get(i).drawOrigin(this);
-					}
+					//}
 					//	tempDrawables.get(i).drawBoundingBox(this);
 				}
 				

@@ -128,7 +128,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	public static IrregularShapeDialog shapeDialog; //dialog component for adjusting dimensions of canvas
 
 	//drawing panel buttons
-	private ImageButton selectButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton;
+	private ImageButton selectButton, hideButton, targetButton, printButton, zoomButton, panButton, penButton, gridButton, dimensionButton,rectButton, ellipseButton,polyButton,lineButton,curveButton,clearButton;
 	private ImageButton unionButton, diffButton, xorButton, clipButton;
 	private ImageButton simButton, patternButton, designButton, sliderButton;
 	private JSplitPane splitFrame; //split frame that holds drawing frame and coding frame
@@ -219,6 +219,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		//setup drawing buttons
 		selectButton = new ImageButton("select","arrow", "selection tool", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
+		hideButton = new ImageButton("hide","hide", "hide tool", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);
 		panButton = new ImageButton("pan","pan", "hand tool", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT );
 		zoomButton = new ImageButton("zoom","zoom", "zoom", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT );
 		targetButton = new ImageButton("target","target", "get the coordinates from a given location", DEFAULT_BUTTON_WIDTH,DEFAULT_BUTTON_HEIGHT);	
@@ -269,6 +270,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		buttonList.add(clipButton);
 		//add drawing buttons to drawing toolbar section 1
 		drawingToolbar.addButtonTo1(selectButton);
+		drawingToolbar.addButtonTo1(hideButton);
 		drawingToolbar.addButtonTo1(panButton);
 		drawingToolbar.addButtonTo1(zoomButton);
 		drawingToolbar.addButtonTo1(targetButton);
@@ -503,6 +505,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		//setup action listeners
 		selectButton.addActionListener(this);
+		hideButton.addActionListener(this);
 		panButton.addActionListener(this);
 		zoomButton.addActionListener(this);
 		targetButton.addActionListener(this);
@@ -770,10 +773,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 this.patternButton.setInactive();
 		 this.designButton.setActive();
 		 this.patternToolbar.updateLabel("Design View");
-		 LogicDialog lg = new LogicDialog(this, true,type);
+		 LogicDialog lg = new LogicDialog(this, true,type, instructionManager);
 		 if(lg.getAnswer()){
 			 String groupName = lg.getName();
-			 ArrayList<Double>values = lg.getVals();
+			 ArrayList<String>values = lg.getVals();
 			 String selectedCode = codeField.getSelectedText();
 			 codeField.deleteSelectedText();
 			 String statement ="";
@@ -1449,6 +1452,22 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			currentTool = selectTool;
 			selectTool.setActive(true);
 			selectTool.setDrawables(drawableManager.getDrawables());	
+		}
+		
+		else if (e.getSource()==hideButton){
+			ArrayList<Drawable> d = selectTool.getSelected();	
+			for(int i=0;i<d.size();i++){
+				if(!d.get(i).getHide()){
+					d.get(i).hide();
+					this.codeField.insertHideStatement(d.get(i),true);
+				}
+				else{
+					d.get(i).show();
+					this.codeField.insertHideStatement(d.get(i),false);
+				}
+			}
+			
+			canvas.redraw();
 		}
 		
 		else if (e.getSource()==rectButton){

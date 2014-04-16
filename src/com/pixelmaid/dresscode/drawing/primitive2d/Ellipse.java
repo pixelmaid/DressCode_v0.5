@@ -224,9 +224,9 @@ public class Ellipse extends Polygon {
 	
 	
 	@Override
-	public Drawable expand(){
+	public Drawable expand(boolean top){
 		Polygon ep = this.toPolygon();
-		return ep.expand();
+		return ep.expand(top);
 	}
 	
 	@Override

@@ -370,10 +370,10 @@ public class Polygon extends Drawable implements PrimitiveInterface, Turtle{
 	}
 	
 @Override	
-public Drawable expand(){
+public Drawable expand(boolean top){
 		
 		Drawable poly =  new Drawable();
-			this.setPointsAbsolute();
+		this.setPointsAbsolute();
 			double xLast =points.get(0).getX();
 			double yLast = points.get(0).getY();
 			for (int i = 1; i <= points.size(); i++) {
@@ -391,7 +391,7 @@ public Drawable expand(){
 				
 					Line l = new Line(xLast,yLast,x,y);
 					l.setStrokeWeight(this.getStrokeWeight());
-					Polygon p = (Polygon)l.expand();
+					Polygon p = (Polygon)l.expand(top);
 					
 				
 						poly.addToGroup(p);
@@ -405,7 +405,15 @@ public Drawable expand(){
 			//poly.setFillColor(this.getStrokeColor());
 			//poly.doStroke(false);
 			//return poly;
-			return PolyBoolean.merge(poly);
+			Drawable d = PolyBoolean.merge(poly);
+			d.copyParameters(this,d);
+			d.setFillColor(this.getStrokeColor());
+			d.doStroke(false);
+			/*d.setAbsolute();
+			if(top){
+				d.resetOriginRecur();
+			}*/
+			return d;
 
 	}
 	

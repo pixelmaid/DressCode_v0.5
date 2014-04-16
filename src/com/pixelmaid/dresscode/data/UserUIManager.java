@@ -31,7 +31,7 @@ public UserUIManager(CodeField cf, SliderFrame sf){
 	public void addUI(UserUI d) {
 		uis.add(d);
 		Slider s = (Slider)d;
-		JSlider js = sliderFrame.addSlider(s.getName(), s.getMin(), s.getMax(), s.getSliderValue());
+		JSlider js = sliderFrame.addSlider(s.getName(), s.getMin()*100d, s.getMax()*100d, s.getSliderValue()*100d);
 		js.addChangeListener(this);
 		js.addMouseListener(this);
 	
@@ -125,12 +125,18 @@ public UserUIManager(CodeField cf, SliderFrame sf){
 	@Override
 	public void handleCustomUIEvent(Object source, int event) {
 		switch (event){
-		
 		case CustomEvent.UI_MODIFIED:
 			Slider s = (Slider)(source);
 			int line = s.getLine();
-		
-			String insertStatement = s.getId()+"="+Math.round(s.getSliderValue())+";";
+			double sliderValue = s.getSliderValue();
+			String sliderT = "";
+			if(Math.round(sliderValue)==sliderValue){
+				sliderT= Double.toString(Math.round(sliderValue));
+			}
+			else{
+				sliderT = String.format("%.2f", sliderValue);
+			}
+			String insertStatement = s.getId()+"="+sliderT+";";
 			codeField.updateVariable(insertStatement, line,0);
 			System.out.println("insertStatement:"+insertStatement);
 			
@@ -151,7 +157,7 @@ public UserUIManager(CodeField cf, SliderFrame sf){
 		for(int i=0;i<uis.size();i++){
 			if(uis.get(i).getName().matches(name)){
 				s = (Slider)uis.get(i);
-				s.setSliderValue(js.getValue());
+				s.setSliderValue(js.getValue()/100d);
 				int line = s.getLine();
 				double val = s.getSliderValue();
 				String valString = "";

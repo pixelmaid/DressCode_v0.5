@@ -20,6 +20,8 @@ import com.pixelmaid.dresscode.antlr.PyEsqueLexer;
 import com.pixelmaid.dresscode.antlr.PyEsqueParser;
 import com.pixelmaid.dresscode.antlr.PyEsqueParser.block_return;
 import com.pixelmaid.dresscode.antlr.PyEsqueTreeWalker;
+import com.pixelmaid.dresscode.antlr.types.Scope;
+import com.pixelmaid.dresscode.antlr.types.VarType;
 import com.pixelmaid.dresscode.antlr.types.tree.BlockNode;
 import com.pixelmaid.dresscode.antlr.types.tree.NodeEvent;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
@@ -31,6 +33,8 @@ public class InstructionManager extends NodeEvent{
 	private PyEsqueLexer lexer;
 	private CommonTokenStream tokens;
 	private PyEsqueParser parser;
+	private PyEsqueTreeWalker walker;
+	private Scope currentScope;
 	private CommonTree tree;
 	private String error = "";
 	private DrawableManager drawableManager;
@@ -96,11 +100,13 @@ public class InstructionManager extends NodeEvent{
 	    		//System.out.println(tree.toStringTree());
 	    		
 	    		// pass the reference to the Map of functions to the tree walker
-	    		PyEsqueTreeWalker walker = new PyEsqueTreeWalker(nodes,parser.functions,drawableManager,uiManager,widthParam, heightParam, unitParam);
+	    		walker = new PyEsqueTreeWalker(nodes,parser.functions,drawableManager,uiManager,widthParam, heightParam, unitParam);
 	    		// get the returned node 
 	    		BlockNode returned = walker.walk();
+	    		
 	    		//System.out.println("num of statements="+returned.getNumStatements());
 	    		returned.evaluate();
+	    		currentScope =returned.scope;
 	    		//registers a completed parse event
 	    		List<String> errors = walker.getErrors();
 	    		//System.out.println("errors="+errors);
@@ -131,6 +137,21 @@ public class InstructionManager extends NodeEvent{
 		  return this.error;
 	  }
 
+	  
+	  public boolean lookup(String varName){
+		  if(currentScope!=null){
+			 
+			  VarType v = currentScope.resolve(varName);
+			  if(v==null){
+				  return false;
+			  }
+			  else{
+				 return true;
+			  }
+		  }
+		  System.out.println("scope is null");
+		  return false;
+	  }
 
 
 

@@ -39,18 +39,16 @@ public class ExpandNode extends DCNode {
     		if(draw.getStrokeWeight()<4){
     			draw.setStrokeWeight(4);
     		}
-    		dNew = draw.expand();
-    		//this.drawableEvent(CustomEvent.REMOVE_DRAWABLE, draw);
-    		//this.drawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
+    		dNew = draw.expand(true);
+        	this.fireDrawableEvent(CustomEvent.SWAP_DRAWABLE, d1,dNew);
+        	//dNew.setLastTransform(TransformTypes.ROTATE,line, col);
+        	VarType v=  new VarType(dNew);
+    		if(d1.getIdentifier()!=null){
     		
-        	dNew.setLine(line);
+    			scope.assign(d1.getIdentifier(), v);
+    		}
 
-           // d.setIdentifier(aP.getIdentifier());
-
-        	this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, dNew);
-    		VarType v=  new VarType(dNew);
-    		
-    		return v;
+    		return v;	
     		}
     	//}
     	
@@ -58,7 +56,7 @@ public class ExpandNode extends DCNode {
     		//throw new RuntimeException("Illegal expand function call at line:"+ line+" : " + this);
     	//}
     	
-    	return new VarType(dNew);
+    	return null;
     }
     
 
