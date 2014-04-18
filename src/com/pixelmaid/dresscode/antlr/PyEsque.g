@@ -32,7 +32,6 @@ tokens {
   SPECIAL;
   DOT;
 }
-
 @parser::header {
   package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 

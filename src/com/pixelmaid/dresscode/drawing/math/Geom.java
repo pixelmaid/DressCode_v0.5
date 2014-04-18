@@ -744,6 +744,10 @@ public static Point findCentroid(Polygon polygon)
 
 	public static boolean isClockwise(Polygon polygon){
 		ArrayList<Point> verticies = polygon.getPoints();
+		if(verticies.size()==0){
+			return true;
+		}
+		System.out.println("number of points = "+verticies.size());
 		double sum = 0;
 		for(int i=1;i<verticies.size();i++){
 			double p2X = verticies.get(i).getX();

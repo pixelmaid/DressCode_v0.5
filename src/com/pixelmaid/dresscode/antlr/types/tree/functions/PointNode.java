@@ -54,7 +54,7 @@ public class PointNode extends DrawableNode{
 
 		}	
 		
-		this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, e);
+		//this.fireDrawableEvent(CustomEvent.DRAWABLE_CREATED, e);
 		e.setLine(line);
 		return new VarType(e);	
 		//throw new RuntimeException("Illegal function call: " + this);

@@ -1,0 +1,34 @@
+//ellipse(x, y, width, height);
+//x: x coordinate of shape center
+//y: y coordinate of shape center
+//width: width of the ellipse 
+//height: height of the ellipse 
+
+//these are variables that control the pattern
+
+width=135
+slider(width,10,300)
+
+height=138
+slider(height,10,300)
+
+myNum=5
+slider(myNum,0,50)
+
+myRadius=52
+slider(myRadius,0,100)
+
+thickness=8
+slider(thickness,5,12)
+
+
+//myGroup is the name of the group that will store your design
+myGroup= group()
+
+//this is a repeat method that creates a design with the shape above
+radial myGroup, r=myRadius, n=myNum:
+	//this method draws a single shape based on the variables
+	e = ellipse(180,180,width,height)
+	//this method removes the fill of the shape
+	noFill(e)
+	weight(e,thickness)

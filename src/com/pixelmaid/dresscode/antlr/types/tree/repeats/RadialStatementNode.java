@@ -81,7 +81,7 @@ public class RadialStatementNode extends DCNode {
 				drawableManager.clearAllDrawables();
 				double theta = 360/stop*i;
 				g.heading(theta, rad);
-				g.rotate(theta);
+				g.rotateWithFocus(theta,g.getOrigin(),true);
 				group.addToGroup(g);
 				
 			}

@@ -107,6 +107,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	private CodingFrame codingFrame;
 	private  CodeField codeField;
 	private ListManager	treeManager; //declarative view UI component
+	
 	private ListManager stampManager; //stamp manager UI component
 	private boolean fromMain = true; //boolean to manage stamp switching
 	private boolean fromTemplate = false; //boolean to manage stamp switching
