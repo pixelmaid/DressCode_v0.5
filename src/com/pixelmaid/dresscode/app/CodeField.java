@@ -644,13 +644,10 @@ public JMenuItem getUndoMenu(){
 		this.getHighlighter().removeAllHighlights();
 	}
 	
-	//TODO: CLEAN THIS UP- seriously this is sad code. 
-	public void highlightLine(int lineNumber) throws BadLocationException{
-		this.getHighlighter().removeAllHighlights();
-		int lineNum = lineNumber-1;
-		System.out.println("lineNumber="+lineNumber);
-	
+	public void highlightLine(int lineNumber){
 		
+		int lineNum = lineNumber-2;
+		System.out.println("lineNumber:"+lineNum);
 		String text = this.getText();
 		ArrayList<String> lines = new ArrayList<String>();
 		final BufferedReader br = new BufferedReader(new StringReader(text));
@@ -686,9 +683,14 @@ public JMenuItem getUndoMenu(){
 		else{
 			endPos++;
 		}
-		
+		System.out.println("pos="+pos+" endPos="+endPos);
 		DefaultHighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(Color.GREEN);
-        this.getHighlighter().addHighlight(pos,pos+endPos, painter);
+        try {
+			this.getHighlighter().addHighlight(pos,pos+endPos, painter);
+		} catch (BadLocationException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
 
 	}

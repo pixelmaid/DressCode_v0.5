@@ -2,6 +2,9 @@ package com.pixelmaid.dresscode.app.ui.tools;
 
 import java.util.ArrayList;
 
+import javax.swing.JTextPane;
+
+import com.pixelmaid.dresscode.app.CodeField;
 import com.pixelmaid.dresscode.drawing.datatype.Point;
 import com.pixelmaid.dresscode.drawing.math.Geom;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
@@ -16,6 +19,7 @@ public class SelectTool extends Tool  {
 	private boolean moved;
 	private ArrayList<Drawable> tempDrawables;
 	private double selectDist = 5;
+	private CodeField textField;
 	
 	public SelectTool(){
 		selectedDrawable= new ArrayList<Drawable>();
@@ -23,6 +27,10 @@ public class SelectTool extends Tool  {
 	}
 	
 	public void init(){
+	}
+	
+	public void setTextField(CodeField tf){
+		textField = tf;
 	}
 	
 	public void reset(){
@@ -38,6 +46,7 @@ public class SelectTool extends Tool  {
 		group = new Drawable();
 		selected = false;
 		moved = false;
+		textField.removeHighlights();
 	}
 	
 	@Override 
@@ -61,6 +70,8 @@ public class SelectTool extends Tool  {
 		
 	}
 	
+	
+	
 	@Override
 	public void mousePressed(double mouseX, double mouseY, boolean special) {
 		
@@ -73,15 +84,19 @@ public class SelectTool extends Tool  {
 			if((Math.abs(mouseX-origin.getX())<selectDist)&&(Math.abs(mouseY-origin.getY())<selectDist)){
 				Drawable sD = tempDrawables.get(i);
 				selectedDrawable.add(sD);
-				
+				textField.grabFocus();
+				textField.highlightLine(sD.getLine());
 				selected=true;
 				sD.setSelected(true);
-				//System.out.println("selected object at"+i);
+				
+
 				break;
 		
 			}
 		}
+
 		this.fireToolEvent(CustomEvent.REDRAW_REQUEST);
+		
 
 		
 		

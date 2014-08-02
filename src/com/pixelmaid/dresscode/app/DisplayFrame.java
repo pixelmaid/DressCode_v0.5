@@ -468,7 +468,9 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		targetTool = new TargetTool();
 		targetTool.setImage("target_t");
 		selectTool = new SelectTool();
+		
 		selectTool.init();
+		selectTool.setTextField(this.codeField);
 		panTool = new PanTool();
 		panTool.setImage("pan_t");
 		rectTool = new RectTool();
@@ -714,9 +716,18 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 	 *and passes them to canvas to be drawn
 	 */
 	 private void drawIntoCanvas(){
+		
 		 //treeManager.getNodes(drawableManager.getDrawables());
-		 canvas.setDrawables(drawableManager.getDrawables());
-		 canvas.redraw();
+		 ArrayList<Drawable> drawables =drawableManager.getDrawables();
+		
+			for(int i=0;i<drawables.size();i++){
+				if(drawables.get(i).getSelected()){
+				codeField.highlightLine(drawables.get(i).getLine());
+				System.out.println("highlighted at"+ i);
+				}
+			}
+			 canvas.setDrawables(drawables);
+			 canvas.redraw();
 		// canvas.setUserUI(uiManager.getUserUIs());
 	 }
 	 
@@ -884,6 +895,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			console.clearText();
 			curveTool.reset();
 			codeField.removeHighlights();
+			
 			codeField.checkForComments();
 			uiManager.clearAllUserUIs();
 			
@@ -1112,6 +1124,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 						}
 						
 					}
+					this.drawIntoCanvas();
 
 				break;
 				case CustomEvent.PAN_ACTIVE:
@@ -1181,10 +1194,23 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 					
 					//run();	
 				case CustomEvent.REDRAW_REQUEST:
-					 canvas.setDrawables(drawableManager.getDrawables());
-
-					canvas.redraw();
+					System.out.println("redraw request called");
+					
+					this.drawIntoCanvas();
 					break;
+				case CustomEvent.HIGHLIGHT_REQUEST:
+					System.out.println("highlight request called");
+					ArrayList<Drawable> list = selectTool.getSelected();
+					System.out.println("num drawbles="+list.size());
+
+					for(int i=0;i<list.size();i++){
+						int line = list.get(i).getLine();
+						System.out.println("attempting to highlight line"+line);
+					/*	try{codeField.highlightLine(line);}
+						catch(Exception e){
+							System.out.println("line does not exist"+e);
+						}*/
+					}
 				case CustomEvent.RUN_REQUEST:
 					run();
 					

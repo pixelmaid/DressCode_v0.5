@@ -1,4 +1,4 @@
-// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g 2014-04-17 17:46:05
+// $ANTLR 3.5 /Users/jenniferjacobs/Documents/MIT/HighLow_Tech/thesis/code/workspace/DressCode_v0.5/src/com/pixelmaid/dresscode/antlr/PyEsque.g 2014-08-02 14:38:54
 
   package com.pixelmaid.dresscode.antlr;
   import com.pixelmaid.dresscode.antlr.types.*; 
@@ -1593,7 +1593,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen38);
 
 					// AST REWRITE
-					// elements: Println, expression
+					// elements: expression, Println
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1644,7 +1644,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen42);
 
 					// AST REWRITE
-					// elements: expression, Print
+					// elements: Print, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1736,7 +1736,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen50);
 
 					// AST REWRITE
-					// elements: expression, Size
+					// elements: Size, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -1863,7 +1863,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen58);
 
 					// AST REWRITE
-					// elements: LRemove, exprList
+					// elements: exprList, LRemove
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2196,7 +2196,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen69);
 
 					// AST REWRITE
-					// elements: exprList, Ellipse
+					// elements: Ellipse, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2262,7 +2262,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen73);
 
 					// AST REWRITE
-					// elements: exprList, Line
+					// elements: Line, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -2724,7 +2724,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen101);
 
 					// AST REWRITE
-					// elements: exprList, Point
+					// elements: Point, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3149,7 +3149,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen109);
 
 					// AST REWRITE
-					// elements: expression, CParen, Comma, expression, Comma, Move, expression, OParen
+					// elements: expression, Move, CParen, expression, Comma, expression, Comma, OParen
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3216,7 +3216,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen113);
 
 					// AST REWRITE
-					// elements: exprList, MoveBy
+					// elements: MoveBy, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3282,7 +3282,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen117);
 
 					// AST REWRITE
-					// elements: Heading, exprList
+					// elements: exprList, Heading
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3333,7 +3333,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen121);
 
 					// AST REWRITE
-					// elements: Copy, expression
+					// elements: expression, Copy
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3394,7 +3394,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen125);
 
 					// AST REWRITE
-					// elements: exprList, Rotate
+					// elements: Rotate, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3526,7 +3526,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen133);
 
 					// AST REWRITE
-					// elements: exprList, Stroke
+					// elements: Stroke, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3577,7 +3577,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen137);
 
 					// AST REWRITE
-					// elements: expression, NoFill
+					// elements: NoFill, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3735,7 +3735,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen149);
 
 					// AST REWRITE
-					// elements: Hide, expression, CParen, OParen
+					// elements: expression, Hide, OParen, CParen
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3844,7 +3844,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen157);
 
 					// AST REWRITE
-					// elements: Group, exprList
+					// elements: exprList, Group
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -3941,7 +3941,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen165);
 
 					// AST REWRITE
-					// elements: Merge, expression
+					// elements: expression, Merge
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -4002,7 +4002,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen169);
 
 					// AST REWRITE
-					// elements: Scale, exprList
+					// elements: exprList, Scale
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -4053,7 +4053,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen173);
 
 					// AST REWRITE
-					// elements: expression, MirrorX
+					// elements: MirrorX, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -4226,7 +4226,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen185);
 
 					// AST REWRITE
-					// elements: exprList, Difference
+					// elements: Difference, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -4520,7 +4520,7 @@ public class PyEsqueParser extends Parser {
 			stream_CParen.add(CParen201);
 
 			// AST REWRITE
-			// elements: exprList, Wave
+			// elements: Wave, exprList
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -4941,7 +4941,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen217);
 
 					// AST REWRITE
-					// elements: GetY, expression
+					// elements: expression, GetY
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -4987,7 +4987,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen221);
 
 					// AST REWRITE
-					// elements: GetOrigin, expression
+					// elements: expression, GetOrigin
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5033,7 +5033,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen225);
 
 					// AST REWRITE
-					// elements: GetRotation, expression
+					// elements: expression, GetRotation
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5171,7 +5171,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen237);
 
 					// AST REWRITE
-					// elements: expression, GetStart
+					// elements: GetStart, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5410,7 +5410,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen253);
 
 					// AST REWRITE
-					// elements: exprList, GetAngle
+					// elements: GetAngle, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -5787,7 +5787,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen261);
 
 					// AST REWRITE
-					// elements: expression, Cosine
+					// elements: Cosine, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6006,7 +6006,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen277);
 
 					// AST REWRITE
-					// elements: Random, exprList
+					// elements: exprList, Random
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6072,7 +6072,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen281);
 
 					// AST REWRITE
-					// elements: exprList, Pow
+					// elements: Pow, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6169,7 +6169,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen289);
 
 					// AST REWRITE
-					// elements: expression, Sq
+					// elements: Sq, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6230,7 +6230,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen293);
 
 					// AST REWRITE
-					// elements: exprList, Gaussian
+					// elements: Gaussian, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6296,7 +6296,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen297);
 
 					// AST REWRITE
-					// elements: Noise, exprList
+					// elements: exprList, Noise
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6347,7 +6347,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen301);
 
 					// AST REWRITE
-					// elements: Round, expression
+					// elements: expression, Round
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6408,7 +6408,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen305);
 
 					// AST REWRITE
-					// elements: exprList, Map
+					// elements: Map, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6551,7 +6551,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen317);
 
 					// AST REWRITE
-					// elements: expression, Cm
+					// elements: Cm, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -6708,7 +6708,7 @@ public class PyEsqueParser extends Parser {
 			stream_CParen.add(CParen325);
 
 			// AST REWRITE
-			// elements: exprList, Slider
+			// elements: Slider, exprList
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -7085,7 +7085,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen337);
 
 					// AST REWRITE
-					// elements: exprList, SetHeight
+					// elements: SetHeight, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7151,7 +7151,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen341);
 
 					// AST REWRITE
-					// elements: SetSeam, exprList
+					// elements: exprList, SetSeam
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7217,7 +7217,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen345);
 
 					// AST REWRITE
-					// elements: SetName, exprList
+					// elements: exprList, SetName
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7349,7 +7349,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen353);
 
 					// AST REWRITE
-					// elements: exprList, SetHFold
+					// elements: SetHFold, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7481,7 +7481,7 @@ public class PyEsqueParser extends Parser {
 					stream_CParen.add(CParen361);
 
 					// AST REWRITE
-					// elements: exprList, TemplateCollection
+					// elements: TemplateCollection, exprList
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -7684,7 +7684,7 @@ public class PyEsqueParser extends Parser {
 			}
 
 			// AST REWRITE
-			// elements: ifStat, elseIfStat, elseStat
+			// elements: elseIfStat, ifStat, elseStat
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8130,7 +8130,7 @@ public class PyEsqueParser extends Parser {
 
 			stream_block.add(block390.getTree());
 			// AST REWRITE
-			// elements: block, expression, expression, expression, Identifier, Repeat
+			// elements: expression, Identifier, expression, expression, Repeat, block
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8258,7 +8258,7 @@ public class PyEsqueParser extends Parser {
 
 			stream_block.add(block398.getTree());
 			// AST REWRITE
-			// elements: expression, block, Identifier, Repeat, Identifier
+			// elements: expression, Identifier, Repeat, block, Identifier
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8401,7 +8401,7 @@ public class PyEsqueParser extends Parser {
 
 			stream_block.add(block410.getTree());
 			// AST REWRITE
-			// elements: expression, block, Identifier, expression, Identifier, Radial, Identifier
+			// elements: expression, Identifier, block, expression, Identifier, Identifier, Radial
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8546,7 +8546,7 @@ public class PyEsqueParser extends Parser {
 
 			stream_block.add(block422.getTree());
 			// AST REWRITE
-			// elements: expression, Spiral, expression, Identifier, Identifier, Identifier, block
+			// elements: Identifier, Identifier, Identifier, Spiral, block, expression, expression
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8691,7 +8691,7 @@ public class PyEsqueParser extends Parser {
 
 			stream_block.add(block434.getTree());
 			// AST REWRITE
-			// elements: expression, Identifier, Row, Identifier, expression, block, Identifier
+			// elements: Row, block, Identifier, expression, Identifier, expression, Identifier
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8857,7 +8857,7 @@ public class PyEsqueParser extends Parser {
 
 			stream_block.add(block450.getTree());
 			// AST REWRITE
-			// elements: expression, Identifier, Identifier, expression, Identifier, block, Arc, expression, Identifier
+			// elements: Identifier, Identifier, Identifier, expression, Arc, block, expression, Identifier, expression
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -8995,7 +8995,7 @@ public class PyEsqueParser extends Parser {
 
 			stream_block.add(block460.getTree());
 			// AST REWRITE
-			// elements: expression, Identifier, Identifier, block, FollowCurve, statement
+			// elements: expression, Identifier, block, statement, Identifier, FollowCurve
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -9094,7 +9094,7 @@ public class PyEsqueParser extends Parser {
 
 			stream_block.add(block464.getTree());
 			// AST REWRITE
-			// elements: block, expression, While
+			// elements: While, block, expression
 			// token labels: 
 			// rule labels: retval
 			// token list labels: 
@@ -9448,7 +9448,7 @@ public class PyEsqueParser extends Parser {
 
 					stream_expression.add(expression473.getTree());
 					// AST REWRITE
-					// elements: orExpr, In, expression
+					// elements: In, expression, orExpr
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -11220,7 +11220,7 @@ public class PyEsqueParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: Identifier, indexes
+					// elements: indexes, Identifier
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 
@@ -11348,7 +11348,7 @@ public class PyEsqueParser extends Parser {
 					}
 
 					// AST REWRITE
-					// elements: expression, indexes
+					// elements: indexes, expression
 					// token labels: 
 					// rule labels: retval
 					// token list labels: 

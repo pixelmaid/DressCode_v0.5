@@ -280,6 +280,8 @@ public class LogicDialog extends JDialog implements ActionListener{
 		        
 		        
 	    }
+	    
+	 
 
 	    public void actionPerformed(ActionEvent e) {
 	        if(okButton == e.getSource()) {

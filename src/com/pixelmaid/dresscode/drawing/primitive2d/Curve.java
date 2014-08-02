@@ -124,11 +124,13 @@ public class Curve extends Polygon { //series of symmetrical curved lines groupe
 			e.translate((float)(getOrigin().getX()),(float)(getOrigin().getY()));
 			e.rotate(PApplet.radians((float)getRotation()));
 			e.scale((float)getScaleX(),(float)getScaleY());
-			e.bezier((float)start.getX(), (float)start.getY(),(float)control1.getX(), (float)control1.getY(), (float)control2.getX(), (float)control2.getY(),(float)end.getX(), (float)end.getY());
+			e.bezier((float)(start.getX()-getOrigin().getX()), (float)(start.getY()-getOrigin().getY()),(float)(control1.getX()-getOrigin().getX()), (float)(control1.getY()-getOrigin().getY()), (float)(control2.getX()-origin.getX()), (float)(control2.getY()-origin.getY()),(float)(end.getX()-origin.getX()), (float)(end.getY()-origin.getY()));
 			e.popMatrix();
 		}
 
 	}
+	
+	
 
 	@Override 
 	public Drawable setAbsolute() {
