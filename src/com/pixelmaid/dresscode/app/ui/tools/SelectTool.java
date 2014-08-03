@@ -46,7 +46,6 @@ public class SelectTool extends Tool  {
 		group = new Drawable();
 		selected = false;
 		moved = false;
-		textField.removeHighlights();
 	}
 	
 	@Override 

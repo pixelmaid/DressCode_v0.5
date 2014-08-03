@@ -655,6 +655,7 @@ public JMenuItem getUndoMenu(){
 	
 	
 	public void removeHighlights(){
+		System.out.println("removing highlights");
 		this.getHighlighter().removeAllHighlights();
 		this.highlightedText.clear();
 	}
@@ -684,7 +685,6 @@ public JMenuItem getUndoMenu(){
 	public void highlightLine(int lineNumber){
 		
 		int lineNum = lineNumber-2;
-		System.out.println("lineNumber:"+lineNum);
 		String text = this.getText();
 		ArrayList<String> lines = new ArrayList<String>();
 		final BufferedReader br = new BufferedReader(new StringReader(text));
@@ -729,6 +729,7 @@ public JMenuItem getUndoMenu(){
 			h1.startPos = pos;
 			h1.endPos=pos+endPos;
 			this.highlightedText.add(h1);
+			System.out.println("adding highlight at"+(highlightedText.size()-1));
 		} catch (BadLocationException e) {
 			// TODO Auto-generated catch block
 			//e.printStackTrace();

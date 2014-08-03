@@ -720,11 +720,10 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		 //treeManager.getNodes(drawableManager.getDrawables());
 		 ArrayList<Drawable> drawables =drawableManager.getDrawables();
-		 codeField.removeHighlights();
-			for(int i=0;i<drawables.size();i++){
+		 for(int i=0;i<drawables.size();i++){
 				if(drawables.get(i).getSelected()){
 					codeField.highlightLine(drawables.get(i).getLine());
-					System.out.println("highlighted at"+ i);
+					
 				}
 			}
 			 canvas.setDrawables(drawables);
@@ -790,17 +789,15 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 if(lg.getAnswer()){
 			 String groupName = lg.getName();
 			 ArrayList<String>values = lg.getVals();
-			 String selectedCode ="";// codeField.getSelectedText();
-			 for(int i=0;i<codeField.highlightedText.size();i++){
-				 	if(selectedCode.length()<1){
+			 String selectedCode = codeField.getSelectedText();
+			 /*for(int i=0;i<codeField.highlightedText.size();i++){
+				 	
 				 		selectedCode+=codeField.highlightedText.get(i).string;
-				 	}
-				 	else{
-				 		selectedCode+="\n"+codeField.highlightedText.get(i).string;
-				 	}
-			 }
+				 
+			 }*/
+			 System.out.println("selected code ="+selectedCode);
 			 //codeField.deleteSelectedText();
-			 codeField.deleteHighlights();
+			 //codeField.deleteHighlights();
 			 String statement ="";
 			 switch (type){
 			 	case LogicDialog.REPEAT_TYPE:
@@ -906,7 +903,6 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			console.clearText();
 			curveTool.reset();
 			codeField.removeHighlights();
-			
 			codeField.checkForComments();
 			uiManager.clearAllUserUIs();
 			

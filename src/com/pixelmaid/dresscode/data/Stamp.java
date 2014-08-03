@@ -496,11 +496,11 @@ public class Stamp {
 			statement+="\n\t//enter your code here";
 		}
 		else{
-			String[] lines=selectedCode.split("\t");
+			String[] lines=selectedCode.split("\n");
 			String statementNew = "";
 			//cut off the beginning of each one
 			for(int i=0;i<lines.length;i++){
-				if(lines[i].charAt(0)=='\t'){
+				if(lines[i].charAt(0)=='\n'){
 					lines[i]=lines[i].substring(1,lines[i].length());
 				}
 				statementNew+=lines[i];
