@@ -85,7 +85,7 @@ public class SelectTool extends Tool  {
 				Drawable sD = tempDrawables.get(i);
 				selectedDrawable.add(sD);
 				textField.grabFocus();
-				textField.highlightLine(sD.getLine());
+				//textField.highlightLine(sD.getLine());
 				selected=true;
 				sD.setSelected(true);
 				

@@ -13,6 +13,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.StringReader;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -31,6 +33,7 @@ import javax.swing.text.DefaultStyledDocument;
 import javax.swing.text.Document;
 import javax.swing.text.DocumentFilter;
 import javax.swing.text.Element;
+import javax.swing.text.Highlighter.Highlight;
 import javax.swing.text.PlainDocument;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
@@ -49,6 +52,16 @@ import com.pixelmaid.dresscode.drawing.primitive2d.Curve;
 import com.pixelmaid.dresscode.drawing.primitive2d.Drawable;
 import com.pixelmaid.dresscode.drawing.primitive2d.Line;
 import com.pixelmaid.dresscode.drawing.primitive2d.Polygon;
+class HighlightedText implements Comparable<HighlightedText> {
+
+	public int startPos;
+	public int endPos;
+	public String string;
+    @Override
+    public int compareTo(HighlightedText other) {
+        return this.startPos - other.startPos; // or whatever property you want to sort
+    }
+}
 
 class Filter extends DocumentFilter {
 	  private int promptPosition =0;
@@ -87,6 +100,7 @@ public class CodeField extends JTextPane implements DocumentListener, KeyListene
 	//protected TabAction tabAction = null;
     private Filter filter;
     private String id="";
+  public ArrayList<HighlightedText> highlightedText = new ArrayList<HighlightedText>();
     private boolean unsavedChanges= false;
     private Pattern p = Pattern.compile("(?:/\\*(?:[^*]|(?:\\*+[^*/]))*\\*+/)|(?://.*)");
     final StyleContext cont = StyleContext.getDefaultStyleContext();
@@ -296,7 +310,7 @@ public JMenuItem getUndoMenu(){
 		// TODO Auto-generated method stub
 		//this.getParent().dispatchEvent(e);
 		unsavedChanges = true;
-		removeHighlights();
+		this.removeHighlights();
 		//checkForComments();
 		
 	}
@@ -642,6 +656,29 @@ public JMenuItem getUndoMenu(){
 	
 	public void removeHighlights(){
 		this.getHighlighter().removeAllHighlights();
+		this.highlightedText.clear();
+	}
+	
+	//deletes all highlighted text
+	public void deleteHighlights(){
+		Collections.sort(this.highlightedText);
+		for(int i=0;i<highlightedText.size();i++){
+			System.out.println("deleting text at"+ i);
+			HighlightedText highlight = highlightedText.get(i);
+			System.out.println("highlight=");
+			System.out.println(highlight.string);
+			
+			int start =highlight.startPos;
+			int end = highlight.endPos;
+			
+			System.out.println("start:"+start);
+			System.out.println("end:"+end);
+
+			/*String startText = this.getText().substring(0,start);
+			String endText = this.getText().substring(end,this.getText().length());
+			this.setText(startText+endText);*/
+		}
+		
 	}
 	
 	public void highlightLine(int lineNumber){
@@ -687,9 +724,14 @@ public JMenuItem getUndoMenu(){
 		DefaultHighlightPainter painter = new DefaultHighlighter.DefaultHighlightPainter(Color.GREEN);
         try {
 			this.getHighlighter().addHighlight(pos,pos+endPos, painter);
+			HighlightedText h1 = new HighlightedText(); 
+			h1.string = this.getText(pos,pos+endPos);
+			h1.startPos = pos;
+			h1.endPos=pos+endPos;
+			this.highlightedText.add(h1);
 		} catch (BadLocationException e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
 		
 

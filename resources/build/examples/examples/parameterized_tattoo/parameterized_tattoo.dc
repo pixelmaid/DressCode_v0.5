@@ -1,0 +1,55 @@
+//create three different spiral shapes
+s1 = spiral1()
+s2 = spiral2()
+s3 = spiral3()
+//scale sliders
+scale1=1
+scale2=0.79
+scale3=0.67
+slider(scale1,0.25,1.25)
+slider(scale2,0.25,1.25)
+slider(scale3,0.25,1.25)
+//rotation sliders
+r1=-18
+r2=28.80
+r3=9.00
+slider(r1,-90,90)
+slider(r2,-90,90)
+slider(r3,-90,90)
+//gap sliders
+gap1=300 
+gap2=414.00
+slider(gap1,0,500);
+slider(gap2,0,600);
+//scaling and rotation action on original shape
+scale(s1,scale1) scale(s2,scale2) scale(s3,scale3)
+rotate(s1,r1) rotate(s2,r2) rotate(s3,r3)
+//group them together
+g = group(s1,s2,s3)
+//set the group fill to black
+fill(g,BLACK)
+//create a copy of the group and mirror it on the y axis
+g2 = copy(g)
+mirrorY(g2)
+//create a group of g and g3 and move it
+g3 = group(g2,g)
+moveTo(g3,235,428)
+//create a copy of g4 and mirror it on the x axis
+g4 = copy(g3)
+mirrorX(g4)
+moveBy(g4,gap1,0)
+//create a copy of g4, scale it and rotate it
+g5= copy(g4);
+rotate(g5,90)
+scale(g5,0.5)
+//create a copy of g5, and mirror it on the y axis
+g6 = copy(g5)
+mirrorY(g6)
+moveBy(g5,0,gap2)
+moveBy(g6,0,0-gap2)
+
+gH = group(g3,g4) gV = group(g5,g6)
+moveTo(gH,WIDTH/2,HEIGHT/2) moveTo(gV,WIDTH/2,HEIGHT/2)
+//group all the pieces, move them and scale them
+finalTattoo = group(gH,gV)
+scale(finalTattoo,0.5)

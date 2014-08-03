@@ -1,0 +1,13 @@
+function curve1(w,h):
+	g= group();
+	c0 = curve(18,17,18+w,17+h,129+w,10+h,135,153)
+	noFill(c0)
+	add(g,c0)
+	c1 = curve(135,153,141+w,296+h,22+w,323+h,21,221)
+	noFill(c1)
+	add(g,c1)
+	c2 = curve(21,221,20+w,119+h,157+w,183+h,156,365)
+	noFill(c2)
+	add(g,c2)
+	return g
+

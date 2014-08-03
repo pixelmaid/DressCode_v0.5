@@ -51,6 +51,7 @@ import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.text.BadLocationException;
+import javax.swing.text.Highlighter.Highlight;
 
 
 
@@ -719,11 +720,11 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		
 		 //treeManager.getNodes(drawableManager.getDrawables());
 		 ArrayList<Drawable> drawables =drawableManager.getDrawables();
-		
+		 codeField.removeHighlights();
 			for(int i=0;i<drawables.size();i++){
 				if(drawables.get(i).getSelected()){
-				codeField.highlightLine(drawables.get(i).getLine());
-				System.out.println("highlighted at"+ i);
+					codeField.highlightLine(drawables.get(i).getLine());
+					System.out.println("highlighted at"+ i);
 				}
 			}
 			 canvas.setDrawables(drawables);
@@ -789,8 +790,17 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 		 if(lg.getAnswer()){
 			 String groupName = lg.getName();
 			 ArrayList<String>values = lg.getVals();
-			 String selectedCode = codeField.getSelectedText();
-			 codeField.deleteSelectedText();
+			 String selectedCode ="";// codeField.getSelectedText();
+			 for(int i=0;i<codeField.highlightedText.size();i++){
+				 	if(selectedCode.length()<1){
+				 		selectedCode+=codeField.highlightedText.get(i).string;
+				 	}
+				 	else{
+				 		selectedCode+="\n"+codeField.highlightedText.get(i).string;
+				 	}
+			 }
+			 //codeField.deleteSelectedText();
+			 codeField.deleteHighlights();
 			 String statement ="";
 			 switch (type){
 			 	case LogicDialog.REPEAT_TYPE:
@@ -809,6 +819,7 @@ public class DisplayFrame extends javax.swing.JFrame implements CustomEventListe
 			 		statement = Stamp.addSpiralStatement(groupName, drawableManager.identifierExists(groupName), values, selectedCode);
 				 break;
 			 }
+			 codeField.removeHighlights();
 			 codeField.insertStampStatement(statement);
 			 this.runButton.toggleAnimate();
 			

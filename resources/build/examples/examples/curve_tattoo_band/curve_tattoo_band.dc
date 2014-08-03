@@ -1,0 +1,25 @@
+w1=-54
+slider(w1,-100,100,"w1")
+h1=-16
+slider(h1,-100,100,"h1")
+myWeight=6.50
+slider(myWeight,3,10,"weight");
+c1= curve1(w1,h1)
+weight(c1,myWeight);
+
+c2 = copy(c1);
+mirrorX(c2)
+g = group(c1,c2);
+moveTo(g,WIDTH/2,HEIGHT/2)
+g2 = copy(g)
+mirrorY(g2)
+d = group(g,g2)
+
+band= group()
+row band, gap=140.0, num=4.0:
+	dx = copy(d)
+	rotate(dx,90)
+	scale(dx,0.5)
+
+moveTo(band,WIDTH/2,HEIGHT/2);
+hide(d)

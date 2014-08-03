@@ -1,0 +1,26 @@
+//offset for x points on curve
+w1=-38
+slider(w1,-100,100,"w1")
+
+//offset for y points on curve
+h1=6
+slider(h1,-100,100,"h1")
+
+//weight of curve
+myWeight=7.34
+slider(myWeight,3,10,"weight")
+
+//initialize curve
+c1= curve1(w1,h1)
+//set weight
+weight(c1,myWeight)
+
+//create mirrored copy in along x axis
+c2 = copy(c1)
+mirrorX(c2)
+
+//group and create mirrored copy of group along y axis
+g = group(c1,c2);
+moveTo(g,WIDTH/2,HEIGHT/2)
+g2 = copy(g)
+mirrorY(g2)
